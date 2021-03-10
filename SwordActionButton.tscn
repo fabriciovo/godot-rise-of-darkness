@@ -6,3 +6,7 @@
 [node name="SwordActionButton" instance=ExtResource( 1 )]
 text = "Sword"
 script = ExtResource( 2 )
+
+[node name="HoverInfo" parent="." index="0"]
+description = "Sword
+Deals 4 damage"

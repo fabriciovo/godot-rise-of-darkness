@@ -12,3 +12,6 @@ texture = ExtResource( 2 )
 
 [node name="HPLabel" parent="." index="1"]
 text = "35hp"
+
+[node name="HoverInfo" parent="." index="3"]
+description = "Slime"
