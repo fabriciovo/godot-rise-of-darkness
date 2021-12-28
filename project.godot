@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "BattleUnits",
 "language": "GDScript",
-"path": "res://BattleUnits.gd"
+"path": "res://Assets/Battle/BattleUnits.gd"
 } ]
 _global_script_class_icons={
 "BattleUnits": ""
@@ -21,13 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="MobileRPG"
-run/main_scene="res://Battle.tscn"
+run/main_scene="res://Assets/Battle/Battle.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=90
-window/size/height=160
+window/size/width=200
+window/size/height=140
+window/size/fullscreen=true
 window/size/test_width=360
 window/size/test_height=640
 window/stretch/mode="2d"
