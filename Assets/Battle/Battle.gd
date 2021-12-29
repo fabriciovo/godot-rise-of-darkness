@@ -55,5 +55,5 @@ func _on_NextRoomButton_pressed():
 	battleActionButtons.show()
 	var playerStats = BattleUnits.PlayerStats
 	playerStats.ap = playerStats.max_ap
-	create_new_enemy()
+	get_tree().change_scene("res://Assets/World/World_0.tscn")
 	

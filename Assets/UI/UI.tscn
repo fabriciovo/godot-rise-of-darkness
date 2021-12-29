@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Weapon_Icons_nobg_16x16.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+Player = ExtResource( 3 )
+
+[node name="Items" type="Panel" parent="."]
+margin_top = 112.0
+margin_right = 200.0
+margin_bottom = 140.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Panel" parent="Items"]
+margin_left = 136.0
+margin_top = 2.0
+margin_right = 196.0
+margin_bottom = 26.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="Label" parent="Items/Stats"]
+margin_right = 43.0
+margin_bottom = 12.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "HP 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP" type="Label" parent="Items/Stats"]
+margin_top = 13.0
+margin_right = 27.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "MP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AP" type="Label" parent="Items/Stats"]
+margin_left = 32.0
+margin_top = 13.0
+margin_right = 59.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "AP"
+
+[node name="item1" type="Sprite" parent="Items"]
+position = Vector2( 25, 25 )
+z_index = 14
+texture = ExtResource( 1 )
+offset = Vector2( -10, -10 )
+hframes = 2
+frame = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="item1Text" type="Label" parent="Items/item1"]
+margin_left = -15.0
+margin_top = -12.0
+margin_right = 2.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "M1"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="weapon" type="Sprite" parent="Items/item1"]
+position = Vector2( -10, -10 )
+z_as_relative = false
+texture = ExtResource( 4 )
+hframes = 6
+vframes = 3
+
+[node name="item2" type="Sprite" parent="Items"]
+position = Vector2( 47, 25 )
+texture = ExtResource( 1 )
+offset = Vector2( -10, -10 )
+hframes = 2
+frame = 1
+
+[node name="weapon" type="Sprite" parent="Items/item2"]
+position = Vector2( -22, 0 )
+
+[node name="item2Text" type="Label" parent="Items/item2"]
+anchor_left = 0.781
+anchor_top = 0.75
+anchor_right = 0.781
+anchor_bottom = 0.75
+margin_left = -27.496
+margin_top = -24.0
+margin_right = -8.496
+margin_bottom = -12.0
+rect_pivot_offset = Vector2( 13, 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "M2"
+__meta__ = {
+"_edit_use_anchors_": false
+}

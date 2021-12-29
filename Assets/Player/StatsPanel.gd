@@ -14,5 +14,4 @@ func _on_PlayerStats_mp_changed(value):
 
 
 func _on_PlayerStats_hp_changed(value):
-	print(value)
 	hpLabel.text = "HP\n"+str(value)

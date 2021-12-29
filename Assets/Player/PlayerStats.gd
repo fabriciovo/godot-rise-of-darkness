@@ -3,6 +3,7 @@ extends Node
 var max_hp = 25
 var max_ap = 3
 var max_mp = 10
+var items = []
 
 const BattleUnits = preload("res://Assets/Battle/BattleUnits.tres")
 

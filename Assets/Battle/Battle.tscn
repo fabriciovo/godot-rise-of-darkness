@@ -10,25 +10,9 @@
 [ext_resource path="res://Images/Mobile RPG Mockup.png" type="Texture" id=8]
 [ext_resource path="res://Button9Frame.tres" type="StyleBox" id=9]
 [ext_resource path="res://Images/Dungeon.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="Animation" id=1]
-resource_name = "FadeToNewRoom"
-length = 0.5
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("Fade:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
 
 [node name="Battle" type="Node"]
 script = ExtResource( 5 )
@@ -38,8 +22,8 @@ enemies = [ ExtResource( 1 ), ExtResource( 3 ) ]
 script = ExtResource( 6 )
 
 [node name="Dungeon" type="Sprite" parent="."]
-position = Vector2( 100, 80.5 )
-scale = Vector2( 2.22222, 0.99375 )
+position = Vector2( 100, 70.5 )
+scale = Vector2( 2.22222, 0.86875 )
 texture = ExtResource( 10 )
 
 [node name="EnemyPostion" type="Position2D" parent="."]
@@ -58,14 +42,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="TextboxPanel" type="Panel" parent="UI"]
-margin_left = 1.0
-margin_top = 109.0
-margin_right = 130.0
-margin_bottom = 134.0
+margin_top = 138.0
+margin_right = 131.0
+margin_bottom = 164.0
 rect_scale = Vector2( 1.52878, 1.21782 )
 custom_styles/panel = ExtResource( 9 )
 __meta__ = {
@@ -83,9 +67,9 @@ scroll_active = false
 
 [node name="StatsPanel" type="Panel" parent="UI"]
 margin_left = 60.0
-margin_top = 53.0
+margin_top = 69.0
 margin_right = 144.0
-margin_bottom = 76.0
+margin_bottom = 92.0
 custom_styles/panel = ExtResource( 9 )
 script = ExtResource( 7 )
 __meta__ = {
@@ -132,9 +116,9 @@ align = 1
 
 [node name="BattleActionButtons" type="GridContainer" parent="UI"]
 margin_left = 1.0
-margin_top = 83.0
+margin_top = 112.0
 margin_right = 196.0
-margin_bottom = 108.0
+margin_bottom = 137.0
 custom_constants/vseparation = 3
 custom_constants/hseparation = 8
 columns = 2
@@ -178,7 +162,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeToNewRoom = SubResource( 1 )
+anims/FadeToNewRoom = ExtResource( 11 )
 
 [connection signal="ap_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_ap_changed"]
 [connection signal="hp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_hp_changed"]
