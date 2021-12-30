@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/player.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Player/Player.gd" type="Script" id=2]
@@ -97,6 +97,9 @@ extents = Vector2( 4.5, 5.5 )
 [sub_resource type="CircleShape2D" id=7]
 radius = 8.0
 
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 5.3, 6.22222 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -104,7 +107,7 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 5
-frame = 18
+frame = 4
 __meta__ = {
 "_edit_lock_": true
 }
@@ -136,11 +139,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="action" type="Sprite" parent="."]
+[node name="ActionArea" type="Area2D" parent="."]
 position = Vector2( 12, 1.5 )
 scale = Vector2( 0.625, 0.5625 )
+
+[node name="action" type="Sprite" parent="ActionArea"]
 texture = ExtResource( 3 )
 hframes = 6
 vframes = 3
 
+[node name="AreaCollision" type="CollisionShape2D" parent="ActionArea"]
+position = Vector2( 1.1, -2.38419e-07 )
+shape = SubResource( 9 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="ActionArea" to="." method="_on_ActionArea_body_entered"]

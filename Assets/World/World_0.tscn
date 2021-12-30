@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/World/map_0.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/World/World_0.gd" type="Script" id=5]
+[ext_resource path="res://Assets/RoomControll.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [  ]
 }
 
-[node name="World_0" type="Node2D" groups=["Door", "Enemy"]]
+[node name="World_0" type="Node2D" groups=["Door", "Enemy", "Stone"]]
 script = ExtResource( 5 )
 
 [node name="Floor" type="ColorRect" parent="."]
@@ -34,9 +34,6 @@ color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 166, 80 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BattleFadeToNewRoom = ExtResource( 1 )
@@ -57,12 +54,16 @@ __meta__ = {
 
 [node name="map_0" parent="." instance=ExtResource( 4 )]
 
-[node name="Door_0" parent="." instance=ExtResource( 6 )]
-position = Vector2( 81, 13 )
-targetScene = "res://Assets/World/World_1.tscn"
-
 [node name="UI" parent="." instance=ExtResource( 2 )]
 margin_top = 30.0
 margin_bottom = 30.0
+Player = ExtResource( 3 )
 
-[connection signal="touchDoor" from="Player" to="Door_0" method="_on_Player_touchDoor"]
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 168, 73 )
+
+[node name="Door_1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 168, 41 )
+target_scene = "res://Assets/World/World_2.tscn"
+
+[connection signal="touchDoor" from="Player" to="Door_1" method="_on_Player_touchDoor"]

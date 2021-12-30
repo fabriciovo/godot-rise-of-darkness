@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Actions/Door.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.5, 5 )
+extents = Vector2( 7, 7 )
 
 [node name="Door" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -11,5 +11,4 @@ script = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
 light_mask = 2
-position = Vector2( -0.5, -14 )
 shape = SubResource( 1 )

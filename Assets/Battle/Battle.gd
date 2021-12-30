@@ -29,7 +29,7 @@ func start_enemy_turn():
 func start_player_turn():
 	var playerStats = BattleUnits.PlayerStats
 	battleActionButtons.show()
-	playerStats.ap = playerStats.max_ap
+	playerStats.ap = PlayerControll.max_ap
 	yield(playerStats, "end_turn")
 	start_enemy_turn()
 
@@ -54,6 +54,6 @@ func _on_NextRoomButton_pressed():
 	yield(animationPlayer, "animation_finished")
 	battleActionButtons.show()
 	var playerStats = BattleUnits.PlayerStats
-	playerStats.ap = playerStats.max_ap
+	playerStats.ap = PlayerControll.max_mp
 	get_tree().change_scene("res://Assets/World/World_0.tscn")
 	

@@ -1,14 +1,14 @@
-extends Node2D
+extends Area2D
 
 export(int) var item
 
-signal get_item(item)
+signal get_item
 
 func _input(event):
 	if event.is_action_pressed("action_1"):
-		playerGetItem()
+		if get_overlapping_bodies().size() > 0:
+			emit_signal("get_item")
+			queue_free()
 
 
-func playerGetItem():
-	emit_signal("get_item", item)
-	queue_free()
+
