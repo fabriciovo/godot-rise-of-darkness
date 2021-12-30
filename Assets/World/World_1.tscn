@@ -56,12 +56,7 @@ __meta__ = {
 [node name="map_1" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 79, 123 )
-
-[node name="Door_1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 80, 143 )
-rotation = 3.1338
-target_scene = "res://Assets/World/World_0.tscn"
+position = Vector2( 80, 83 )
 
 [node name="Chest" parent="." instance=ExtResource( 7 )]
 position = Vector2( 56, 24 )
@@ -70,5 +65,10 @@ position = Vector2( 56, 24 )
 margin_top = 30.0
 margin_bottom = 30.0
 
-[connection signal="touchDoor" from="Player" to="Door_1" method="_on_Player_touchDoor"]
+[node name="Door_world_0" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 133 )
+rotation = 3.1338
+target_scene = "res://Assets/World/World_0.tscn"
+
+[connection signal="touchDoor" from="Player" to="Door_world_0" method="_on_Player_touchDoor"]
 [connection signal="get_item" from="Chest" to="Player" method="_on_Chest_get_item"]

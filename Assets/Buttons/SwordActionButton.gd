@@ -1,4 +1,4 @@
-extends "res://Assets/Player/ActionButton.gd"
+extends "res://Assets/Buttons/ActionButton.gd"
 
 const Slash = preload("res://Assets/Animations/Slash.tscn")
 

@@ -1,11 +1,19 @@
 extends GridContainer
 
-const action_button = preload("res://Assets/Player/ActionButton.tscn")
-var buttons = []
+
+const heal_button = preload("res://Assets/Buttons/HealActionButton.tscn")
+const sword_button = preload("res://Assets/Buttons/SwordActionButton.tscn")
 
 func _ready():
 	for i in PlayerControll.items.size():
-		var instance = action_button.instance()
-		self.add_child(instance)
+		
+		match PlayerControll.items[i]:
+			"sword":
+				var instance = sword_button.instance()
+				self.add_child(instance)
+			"heal":
+				var instance = heal_button.instance()
+				self.add_child(instance)
+
 
 

@@ -6,7 +6,7 @@ onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 
 signal encounter(enemy)
-signal touchDoor
+signal touchDoor(door_name)
 
 var dir = "right"
 var speed = 30  # speed in pixels/sec
@@ -83,23 +83,18 @@ func check_slot():
 	elif PlayerControll.equiped_item[1] <= 0:
 		return 1
 
-
 func _on_Chest_get_item():
-	PlayerControll.set_hp(20)
 	PlayerControll.set_equiped_item(1,check_slot())
-
+	PlayerControll.set_item("sword")
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Enemy"):
-		emit_signal("encounter", body)
+		#emit_signal("encounter", body)
+		get_tree().change_scene("res://Assets/Battle/Battle.tscn")
 	if body.is_in_group("Door"):
-		emit_signal("touchDoor")
-
+		Global.doorName = body.name
+		get_tree().change_scene(body.target_scene)
 
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group("Stone"):
 		body.queue_free()
-
-
-
-
