@@ -11,7 +11,6 @@ onready var animationPlayer = $AnimationPlayer
 signal died
 signal end_turn
 
-
 func set_hp(new_hp):
 	hp = new_hp
 	if hpLabel != null:
