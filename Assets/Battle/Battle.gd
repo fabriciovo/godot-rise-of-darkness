@@ -38,7 +38,9 @@ func start_player_turn():
 func _on_Enemy_died():
 	battleActionButtons.hide()
 	nextRoomButton.show()
-
+	Global.dead_enemies.push_front(Global.last_enemy)
+	print(Global.last_enemy)
+	print(Global.dead_enemies)
 func create_new_enemy():
 	enemies.shuffle()
 	var Enemy = enemies.front()
@@ -55,5 +57,5 @@ func _on_NextRoomButton_pressed():
 	battleActionButtons.show()
 	var playerStats = BattleUnits.PlayerStats
 	playerStats.ap = PlayerControll.max_mp
-	get_tree().change_scene("res://Assets/World/World_0.tscn")
+	get_tree().change_scene("res://Assets/World/World_2.tscn")
 	

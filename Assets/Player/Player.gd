@@ -4,7 +4,7 @@ extends KinematicBody2D
 onready var action_area = $ActionArea
 onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
-
+onready var actionArea = $ActionArea
 signal encounter(enemy)
 signal touchDoor(door_name)
 
@@ -13,9 +13,11 @@ var speed = 30  # speed in pixels/sec
 var velocity = Vector2.ZERO
 var action_state = false
 
+
 func _ready():
 	action_collision.disabled = true
 	action_area.visible = false
+	actionArea.knockback_vector = Vector2.LEFT
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -25,23 +27,26 @@ func get_input():
 			$PlayerAnimation.play("walk_right")
 			velocity.x += 1
 			dir = "right"
+			actionArea.knockback_vector = velocity
 		elif Input.is_action_pressed('ui_left'):
 			velocity.x -= 1
 			$PlayerAnimation.play("walk_left")
 			dir = "left"
+			actionArea.knockback_vector = velocity
 		elif Input.is_action_pressed('ui_down'):
 			velocity.y += 1
 			$PlayerAnimation.play("walk_down")
 			dir = "down"
+			actionArea.knockback_vector = velocity
 		elif Input.is_action_pressed('ui_up'):
 			velocity.y -= 1
 			$PlayerAnimation.play("walk_up")
 			dir = "up"
+			actionArea.knockback_vector = velocity
 		else:
 			$PlayerAnimation.stop()
-		# Make sure diagonal movement isn't faster
 		velocity = velocity.normalized() * speed
-	
+		
 	if Input.is_action_pressed("action_1"):
 		if PlayerControll.equiped_item[0] != -1:
 			action(0)
@@ -90,10 +95,10 @@ func _on_Chest_get_item():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Enemy"):
 		#emit_signal("encounter", body)
+		Global.last_enemy = body.ID
 		get_tree().change_scene("res://Assets/Battle/Battle.tscn")
 	if body.is_in_group("Door"):
-		Global.doorName = body.name
-		get_tree().change_scene(body.target_scene)
+		emit_signal("touchDoor",body.name)
 
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group("Stone"):

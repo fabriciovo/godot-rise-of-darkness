@@ -9,5 +9,5 @@ func _ready():
 
 
 func _physics_process(delta):
-	var dir = (obj.global_position - global_position).normalized()
-	move_and_collide(dir * speed * delta)
+		var dir = (obj.global_position - global_position).normalized()
+		move_and_collide(dir * speed * delta)

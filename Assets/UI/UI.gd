@@ -13,8 +13,8 @@ var player = PlayerControll
 
 func _process(delta):
 	HP.text = "HP " + str(PlayerControll.hp)
-	MP.text = "HP " + str(PlayerControll.mp)
-	AP.text = "HP " + str(PlayerControll.ap)
+	MP.text = "MP " + str(PlayerControll.mp)
+	AP.text = "AP " + str(PlayerControll.ap)
 	if PlayerControll.equiped_item[0] <= 0:
 		item_1.visible = false
 	else:

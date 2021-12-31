@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/map_1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/RoomControll.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=5]
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=6]
@@ -26,7 +25,6 @@ tracks/0/keys = {
 }
 
 [node name="World_1" type="Node2D" groups=["Door", "Enemy"]]
-script = ExtResource( 3 )
 
 [node name="Floor" type="ColorRect" parent="."]
 margin_right = 200.0
@@ -56,7 +54,7 @@ __meta__ = {
 [node name="map_1" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 80, 83 )
+position = Vector2( 80, 133 )
 
 [node name="Chest" parent="." instance=ExtResource( 7 )]
 position = Vector2( 56, 24 )

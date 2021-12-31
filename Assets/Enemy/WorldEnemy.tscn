@@ -5,13 +5,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.5, 7.5 )
 
-[node name="EnemyBody" type="KinematicBody2D"]
+[node name="Bat" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 9
-vframes = 6
-frame = 7
+vframes = 7
+frame = 55
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, -1.5 )

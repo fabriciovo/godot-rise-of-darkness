@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="MobileRPG"
-run/main_scene="res://Assets/Battle/Battle.tscn"
+run/main_scene="res://Assets/TitleScene/Title_Scene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -89,10 +89,11 @@ action_2={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Door"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Objects"
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
