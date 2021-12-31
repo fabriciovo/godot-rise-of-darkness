@@ -42,6 +42,7 @@ func _on_Body_area_entered(area):
 	if area.name == "ActionArea":
 		knockback = area.knockback_vector * 90
 		hit = true
+		$Bat_Animation.play("damage_anim")
 		timer.start(1)
 		
 
@@ -50,6 +51,11 @@ func _on_Body_area_entered(area):
 func _on_Timer_timeout():
 	timer.stop()
 	hp+=1
-	speed = speed * hp
-	hit = false
+	if hp > 3:
+		Global.dead_enemies.push_front(ID)
+		queue_free()
+	else:
+		speed = speed * hp
+		hit = false
+		$Bat_Animation.play("Bat_anim")
 

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Tilesets/map_0.tres" type="TileSet" id=1]
 
-[node name="map_1" type="TileMap"]
+[node name="dungeon_map_0" type="TileMap"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 show_collision = true

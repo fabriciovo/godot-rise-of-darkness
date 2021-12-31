@@ -6,10 +6,10 @@ onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 onready var actionArea = $ActionArea
 signal encounter(enemy)
-signal touchDoor(door_name)
+signal change_scene(target_scene)
 
 var dir = "right"
-var speed = 30  # speed in pixels/sec
+var speed = 30
 var velocity = Vector2.ZERO
 var action_state = false
 
@@ -98,7 +98,8 @@ func _on_Area2D_body_entered(body):
 		Global.last_enemy = body.ID
 		get_tree().change_scene("res://Assets/Battle/Battle.tscn")
 	if body.is_in_group("Door"):
-		emit_signal("touchDoor",body.name)
+		Global.doorName = body.name
+		emit_signal("change_scene",body.target_scene)
 
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group("Stone"):

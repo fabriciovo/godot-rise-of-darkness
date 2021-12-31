@@ -39,8 +39,6 @@ func _on_Enemy_died():
 	battleActionButtons.hide()
 	nextRoomButton.show()
 	Global.dead_enemies.push_front(Global.last_enemy)
-	print(Global.last_enemy)
-	print(Global.dead_enemies)
 func create_new_enemy():
 	enemies.shuffle()
 	var Enemy = enemies.front()

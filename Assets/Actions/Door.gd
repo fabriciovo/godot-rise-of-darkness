@@ -8,7 +8,3 @@ func _ready():
 
 
 
-
-func _on_Player_touchDoor(door_name):
-	get_tree().change_scene(target_scene)
-	Global.doorName = door_name
