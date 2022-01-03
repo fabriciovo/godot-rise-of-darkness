@@ -24,6 +24,7 @@ func set_item(value):
 
 func set_equiped_item(value, slot):
 	equiped_item[slot] = value
+	print(equiped_item)
 
 
 

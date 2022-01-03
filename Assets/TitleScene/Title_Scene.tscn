@@ -26,27 +26,26 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 200.0
+margin_right = 224.0
 margin_bottom = 170.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Control" type="Control" parent="."]
-margin_right = 201.0
+margin_left = 13.0
+margin_right = 214.0
 margin_bottom = 170.0
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Button" parent="Control"]
-margin_left = 24.0
-margin_top = 8.0
-margin_right = 176.0
-margin_bottom = 160.0
+margin_left = 25.0
+margin_top = 9.0
+margin_right = 177.0
+margin_bottom = 161.0
 disabled = true
 button_mask = 0
 __meta__ = {
@@ -79,9 +78,9 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 76.0
+margin_left = 88.0
 margin_top = 120.0
-margin_right = 124.0
+margin_right = 136.0
 margin_bottom = 136.0
 text = "Start Game"
 __meta__ = {

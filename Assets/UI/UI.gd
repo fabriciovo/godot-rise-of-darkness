@@ -15,13 +15,13 @@ func _process(delta):
 	HP.text = "HP " + str(PlayerControll.hp)
 	MP.text = "MP " + str(PlayerControll.mp)
 	AP.text = "AP " + str(PlayerControll.ap)
-	if PlayerControll.equiped_item[0] <= 0:
+	if PlayerControll.equiped_item[0] < 0:
 		item_1.visible = false
 	else:
 		item_1.visible = true
 		item_1.frame = PlayerControll.equiped_item[0]
 		
-	if PlayerControll.equiped_item[1] <= 0:
+	if PlayerControll.equiped_item[1] < 0:
 		item_2.visible = false
 	else:
 		item_2.visible = true
@@ -34,13 +34,13 @@ func _ready():
 	MP.text = "MP " + str(PlayerControll.mp)
 	AP.text = "AP " + str(PlayerControll.ap)
 	
-	if PlayerControll.equiped_item[0] <= 0:
+	if PlayerControll.equiped_item[0] < 0:
 		item_1.visible = false
 	else:
 		item_1.visible = true
 		item_1.frame = PlayerControll.equiped_item[0]
 		
-	if PlayerControll.equiped_item[1] <= 0:
+	if PlayerControll.equiped_item[1] < 0:
 		item_2.visible = false
 	else:
 		item_2.visible = true
@@ -48,7 +48,6 @@ func _ready():
 
 
 func _on_Player_equiped_item(value, slot):
-	player.set_hp(20)
 	if slot == 0:
 		item_1.frame = value 
 		item_1.visible = true

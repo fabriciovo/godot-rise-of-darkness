@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 export (String) var ID
-
-const battle_unit_damage = 3
-const battle_unit_hp = 10
-
 onready var timer = $Timer
+const frame = 9
+
+const battle_unit_damage = 8
+const battle_unit_hp = 50
 var speed = 10
 var knockback = Vector2.ZERO
 var direction = Vector2(-20, 20)
@@ -30,8 +30,6 @@ func _physics_process(delta):
 	if collision:
 		direction = direction.bounce(collision.normal)
 	
-
-
 
 func _on_Body_area_entered(area):
 	if area.name == "ActionArea":

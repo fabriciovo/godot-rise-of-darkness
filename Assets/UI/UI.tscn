@@ -9,25 +9,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Items" type="Button" parent="."]
 margin_top = 112.0
-margin_right = 200.0
+margin_right = 224.0
 margin_bottom = 140.0
 disabled = true
 shortcut_in_tooltip = false
 button_mask = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Stats" type="Panel" parent="Items"]
-margin_left = 136.0
+margin_left = 161.0
 margin_top = 2.0
-margin_right = 196.0
+margin_right = 221.0
 margin_bottom = 26.0
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

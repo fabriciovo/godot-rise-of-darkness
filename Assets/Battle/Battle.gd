@@ -39,6 +39,7 @@ func _on_Enemy_died():
 	battleActionButtons.hide()
 	nextRoomButton.show()
 	Global.dead_enemies.push_front(Global.last_enemy)
+
 func create_new_enemy():
 	enemies.shuffle()
 	var Enemy = enemies.front()
@@ -46,8 +47,6 @@ func create_new_enemy():
 	startPosition.add_child(enemy) 
 	enemy.connect("died", self, "_on_Enemy_died")
 	
-
-
 func _on_NextRoomButton_pressed():
 	nextRoomButton.hide()
 	animationPlayer.play("FadeToNewRoom")
@@ -55,5 +54,5 @@ func _on_NextRoomButton_pressed():
 	battleActionButtons.show()
 	var playerStats = BattleUnits.PlayerStats
 	playerStats.ap = PlayerControll.max_mp
-	get_tree().change_scene("res://Assets/World/World_2.tscn")
+	get_tree().change_scene("res://Assets/World/Dungeon/Dungeon_2.tscn")
 	

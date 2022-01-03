@@ -70,7 +70,7 @@ func get_input():
 func action(value):
 	action_state = true
 	action_area.visible = true
-	action_sprite.frame = 1
+	action_sprite.frame = PlayerControll.equiped_item[value]
 	action_collision.disabled = false
 	$PlayerAnimation.play("action")
 	yield($PlayerAnimation, "animation_finished")
@@ -89,13 +89,17 @@ func check_slot():
 		return 1
 
 func _on_Chest_get_item():
-	PlayerControll.set_equiped_item(1,check_slot())
+	PlayerControll.set_equiped_item(0,check_slot())
 	PlayerControll.set_item("sword")
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Enemy"):
 		#emit_signal("encounter", body)
 		Global.last_enemy = body.ID
+		Global.enemy_battle_unit_damage = body.battle_unit_damage
+		Global.enemy_battle_unit_hp = body.battle_unit_hp
+		Global.enemy_frame = body.frame
+		
 		get_tree().change_scene("res://Assets/Battle/Battle.tscn")
 	if body.is_in_group("Door"):
 		Global.doorName = body.name
@@ -104,3 +108,7 @@ func _on_Area2D_body_entered(body):
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group("Stone"):
 		body.queue_free()
+
+
+func _on_Player_change_scene(target_scene):
+	pass # Replace with function body.

@@ -31,7 +31,7 @@ PlayerControll="*res://Assets/Autoloads/PlayerControll.gd"
 
 [display]
 
-window/size/width=200
+window/size/width=224
 window/size/height=170
 window/size/fullscreen=true
 window/size/test_width=360

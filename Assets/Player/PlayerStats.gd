@@ -17,6 +17,8 @@ func set_hp(value):
 	hp = clamp(value, 0 , PlayerControll.max_hp)
 	PlayerControll.set_hp(hp)
 	emit_signal("hp_changed", hp)
+	if(hp <= 0):
+		get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 
 func set_ap(value):
 	ap = clamp(value, 0 , PlayerControll.max_ap)

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (String) var ID
-
+onready var frame = $Sprite.frame
 const battle_unit_damage = 3
 const battle_unit_hp = 10
 
@@ -25,15 +25,9 @@ func _ready():
 
 
 func _physics_process(delta):
-	
-	
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	knockback = move_and_slide(knockback) 
-	
-#	var collision = move_and_collide(direction * delta)
-#	if collision:
-#		direction = direction.bounce(collision.normal)
-		
+
 	if obj and not hit:
 		var dir = (obj.global_position - global_position).normalized()
 		move_and_collide(dir * speed * delta)
