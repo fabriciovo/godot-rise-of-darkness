@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
-
 onready var action_area = $ActionArea
 onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 onready var actionArea = $ActionArea
+
 signal encounter(enemy)
-signal change_scene(target_scene)
+signal change_scene(target_scene, value)
 
 var dir = "right"
 var speed = 30
@@ -47,12 +47,12 @@ func get_input():
 			$PlayerAnimation.stop()
 		velocity = velocity.normalized() * speed
 		
-	if Input.is_action_pressed("action_1"):
+	if Input.is_action_just_pressed("action_1"):
 		if PlayerControll.equiped_item[0] != -1:
 			action(0)
-	elif Input.is_action_pressed("action_2"):
+	elif Input.is_action_just_pressed("action_2"):
 		if PlayerControll.equiped_item[1] != -1:
-			action(0)
+			action(1)
 			
 	if dir == "right":
 		action_area.position.x = 10
@@ -72,8 +72,20 @@ func action(value):
 	action_area.visible = true
 	action_sprite.frame = PlayerControll.equiped_item[value]
 	action_collision.disabled = false
-	$PlayerAnimation.play("action")
-	yield($PlayerAnimation, "animation_finished")
+	
+	if dir == "right":
+		$PlayerAnimation.play("action_right")
+		yield($PlayerAnimation, "animation_finished")
+	elif dir == "left":
+		$PlayerAnimation.play("action_left")
+		yield($PlayerAnimation, "animation_finished")
+	elif dir == "up":
+		$PlayerAnimation.play("action_up")
+		yield($PlayerAnimation, "animation_finished")
+	elif dir == "down":
+		$PlayerAnimation.play("action_down")
+		yield($PlayerAnimation, "animation_finished")
+	
 	action_area.visible = false
 	action_state = false
 	action_collision.disabled = true
@@ -82,16 +94,6 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
-func check_slot():
-	if PlayerControll.equiped_item[0] <= 0:
-		return 0
-	elif PlayerControll.equiped_item[1] <= 0:
-		return 1
-
-func _on_Chest_get_item():
-	PlayerControll.set_equiped_item(0,check_slot())
-	PlayerControll.set_item("sword")
-
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Enemy"):
 		#emit_signal("encounter", body)
@@ -99,16 +101,13 @@ func _on_Area2D_body_entered(body):
 		Global.enemy_battle_unit_damage = body.battle_unit_damage
 		Global.enemy_battle_unit_hp = body.battle_unit_hp
 		Global.enemy_frame = body.frame
-		
 		get_tree().change_scene("res://Assets/Battle/Battle.tscn")
 	if body.is_in_group("Door"):
-		Global.doorName = body.name
-		emit_signal("change_scene",body.target_scene)
+		emit_signal("change_scene",body.target_scene, body.door_name)
 
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group("Stone"):
-		body.queue_free()
-
+		body.Destroy()
 
 func _on_Player_change_scene(target_scene):
 	pass # Replace with function body.

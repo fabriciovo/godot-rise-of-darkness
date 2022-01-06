@@ -5,6 +5,8 @@ onready var frame = $Sprite.frame
 const battle_unit_damage = 3
 const battle_unit_hp = 10
 
+var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
+
 onready var obj = get_parent().get_parent().get_node("Player")
 onready var timer = $Timer
 var speed = 10
@@ -49,10 +51,15 @@ func _on_Timer_timeout():
 	timer.stop()
 	hp+=1
 	if hp > 3:
-		Global.dead_enemies.push_front(ID)
-		queue_free()
+		Destroy()
 	else:
 		speed = speed * hp
 		hit = false
 		$Bat_Animation.play("Bat_anim")
 
+func Destroy():
+	Global.dead_enemies.push_front(ID)
+	$Sprite.visible = false
+	add_child(smoke)
+	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
+	queue_free()

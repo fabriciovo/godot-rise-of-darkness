@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_Controll.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Enviroment/Object.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Transicao.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -24,6 +25,7 @@ margin_right = 224.0
 margin_bottom = 146.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -32,24 +34,26 @@ anims/BattleFadeToNewRoom = ExtResource( 2 )
 anims/FadeToNewRoom = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 104, 132 )
+position = Vector2( 112, 129 )
 collision_layer = 3
 
 [node name="Dungeon_door_1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 104, 129 )
+position = Vector2( 112, 129 )
 rotation = 3.1338
-target_scene = "res://Assets/Dungeon/Dungeon_1.tscn"
+target_scene = "res://Assets/World/Dungeon/Dungeon_1.tscn"
+door_name = "Dungeon_door_2"
 
 [node name="Dungeon_door_3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 104, -2.99998 )
-rotation = 3.1338
-target_scene = "res://Assets/Dungeon/Dungeon_3.tscn"
+position = Vector2( 112, 0 )
+rotation = 6.28319
+target_scene = "res://Assets/World/Dungeon/Dungeon_3.tscn"
+door_name = "Dungeon_door_2"
+
+[node name="dungeon_map_0" parent="." instance=ExtResource( 7 )]
 
 [node name="UI" parent="." instance=ExtResource( 9 )]
 margin_top = 30.0
 margin_bottom = 30.0
-
-[node name="dungeon_map_0" parent="." instance=ExtResource( 7 )]
 
 [node name="Enviroment" type="Node2D" parent="."]
 
@@ -168,10 +172,10 @@ __meta__ = {
 }
 
 [node name="Stone" parent="Enviroment/Box" instance=ExtResource( 5 )]
-position = Vector2( 104, 38 )
+position = Vector2( 88, 39 )
 
 [node name="Stone2" parent="Enviroment/Box" instance=ExtResource( 5 )]
-position = Vector2( 121, 38 )
+position = Vector2( 136, 39 )
 
 [node name="Monsters" type="Node" parent="."]
 
@@ -182,3 +186,7 @@ ID = "bat_1"
 [node name="Bat2" parent="Monsters" instance=ExtResource( 4 )]
 position = Vector2( 185, 41 )
 ID = "bat_2"
+
+[node name="Transicao" parent="." instance=ExtResource( 11 )]
+
+[connection signal="change_scene" from="Player" to="Transicao" method="_on_Player_change_scene"]

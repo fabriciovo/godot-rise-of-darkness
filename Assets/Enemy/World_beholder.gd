@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
+
 export (String) var ID
 onready var timer = $Timer
 const frame = 9
@@ -36,17 +38,22 @@ func _on_Body_area_entered(area):
 		knockback = area.knockback_vector * 120
 		hit = true
 		$Beholder_Animation.play("damage_anim")
-		if hp > 3:
-			Global.dead_enemies.push_front(ID)
-			queue_free()
-		else:
-			timer.start(1)
+		timer.start(1)
 		
 
 func _on_Timer_timeout():
 	timer.stop()
 	hp+=1
-	speed = speed * hp
-	hit = false
-	$Beholder_Animation.play("Beholder_anim")
+	if hp > 3:
+		Destroy()
+	else:
+		speed = speed * hp
+		hit = false
+		$Beholder_Animation.play("Beholder_anim")
 
+func Destroy():
+	Global.dead_enemies.push_front(ID)
+	$Sprite.visible = false
+	add_child(smoke)
+	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
+	queue_free()

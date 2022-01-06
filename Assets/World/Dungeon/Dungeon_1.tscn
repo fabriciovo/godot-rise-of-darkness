@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=2]
 [ext_resource path="res://Assets/World/Tilemap/dungeon_map_0.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Shaders/Transition.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Transicao.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enviroment/Movable_Object.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Object.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=8]
@@ -32,20 +32,26 @@ anims/BattleFadeToNewRoom = ExtResource( 2 )
 anims/FadeToNewRoom = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 127 )
+position = Vector2( 112, 146 )
 collision_layer = 3
 
 [node name="Dungeon_exit" parent="." instance=ExtResource( 8 )]
-position = Vector2( 109, 130 )
+position = Vector2( 112, 146 )
 rotation = 3.1338
 target_scene = "res://Assets/World/World_0.tscn"
+door_name = "Dungeon_door_0"
 
 [node name="Dungeon_door_2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 104, -4 )
-rotation = 3.1338
-target_scene = "res://Assets/Dungeon/Dungeon_2.tscn"
+position = Vector2( 112, 0 )
+rotation = 6.28319
+target_scene = "res://Assets/World/Dungeon/Dungeon_2.tscn"
+door_name = "Dungeon_door_2"
 
 [node name="map_1" parent="." instance=ExtResource( 3 )]
+
+[node name="UI" parent="." instance=ExtResource( 9 )]
+margin_top = 30.0
+margin_bottom = 30.0
 
 [node name="Enviroment" type="Node2D" parent="."]
 
@@ -92,14 +98,6 @@ position = Vector2( 152, 41 )
 position = Vector2( 176, 48 )
 ID = "bat_1"
 
-[node name="UI" parent="." instance=ExtResource( 9 )]
-margin_top = 30.0
-margin_bottom = 30.0
+[node name="Transicao" parent="." instance=ExtResource( 5 )]
 
-[node name="Transition" parent="." instance=ExtResource( 5 )]
-visible = false
-margin_right = 185.0
-margin_bottom = 170.0
-rect_scale = Vector2( 1.123, 1 )
-
-[connection signal="change_scene" from="Player" to="Transition" method="_on_Player_change_scene"]
+[connection signal="change_scene" from="Player" to="Transicao" method="_on_Player_change_scene"]

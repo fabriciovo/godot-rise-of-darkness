@@ -23,10 +23,12 @@ tracks/0/keys = {
 [sub_resource type="Theme" id=2]
 
 [node name="Title_Scene" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 224.0
+margin_left = -1.0
+margin_right = 223.0
 margin_bottom = 170.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {

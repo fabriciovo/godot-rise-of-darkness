@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Actions/Door.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 5.5 )
+extents = Vector2( 15, 5.5 )
 
 [node name="Door" type="KinematicBody2D"]
 script = ExtResource( 1 )
