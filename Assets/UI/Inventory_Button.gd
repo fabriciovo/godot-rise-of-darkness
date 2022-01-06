@@ -1,17 +1,16 @@
 extends Button
 
-signal input(value)
+export (int) var item
 
 func _ready():
 	disabled = true
 
 func _input(event):
-	if event.type == InputEvent.MOUSE_BUTTON:
-		if event.button_index == 0 and event.pressed:
-			Check_input()
-
-func Check_input():
-	if Input.is_action_just_pressed('action_1'):
-		emit_signal("input", 0)
-	if Input.is_action_just_pressed('action_2'):
-		emit_signal("input", 1)
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		if get_rect().has_point(get_local_mouse_position()):
+			print(item)
+			PlayerControll.set_equiped_item(item, 0)
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_RIGHT:
+		if get_rect().has_point(get_local_mouse_position()):
+			PlayerControll.set_equiped_item(item, 1)
+			print(item)

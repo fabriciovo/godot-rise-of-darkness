@@ -98,6 +98,8 @@ margin_left = 6.0
 margin_top = 5.0
 margin_right = 22.0
 margin_bottom = 20.0
+disabled = true
+button_mask = 3
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -110,11 +112,55 @@ texture = ExtResource( 4 )
 hframes = 6
 vframes = 3
 
-[node name="heal" type="Button" parent="Items/Inventory"]
-margin_left = 27.0
+[node name="bow" type="Button" parent="Items/Inventory"]
+margin_left = 28.0
 margin_top = 5.0
-margin_right = 43.0
+margin_right = 44.0
 margin_bottom = 20.0
+disabled = true
+button_mask = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+item = 1
+
+[node name="Sprite" type="Sprite" parent="Items/Inventory/bow"]
+position = Vector2( 8, 7 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+hframes = 6
+vframes = 3
+frame = 1
+
+[node name="bomb" type="Button" parent="Items/Inventory"]
+margin_left = 48.0
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 20.0
+disabled = true
+button_mask = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+item = 2
+
+[node name="Sprite" type="Sprite" parent="Items/Inventory/bomb"]
+position = Vector2( 8, 7 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+hframes = 6
+vframes = 3
+frame = 2
+
+[node name="heal" type="Button" parent="Items/Inventory"]
+margin_left = 68.0
+margin_top = 5.0
+margin_right = 84.0
+margin_bottom = 20.0
+disabled = true
+button_mask = 3
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,40 +172,7 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 hframes = 6
 vframes = 3
-
-[node name="bomb" type="Button" parent="Items/Inventory"]
-margin_left = 47.0
-margin_top = 5.0
-margin_right = 63.0
-margin_bottom = 20.0
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="Items/Inventory/bomb"]
-position = Vector2( 8, 7 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
-hframes = 6
-vframes = 3
-
-[node name="bow" type="Button" parent="Items/Inventory"]
-margin_left = 67.0
-margin_top = 5.0
-margin_right = 83.0
-margin_bottom = 20.0
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="Items/Inventory/bow"]
-position = Vector2( 8, 7 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
-hframes = 6
-vframes = 3
+frame = 4
 
 [node name="item1" type="Sprite" parent="Items"]
 position = Vector2( 25, 25 )
@@ -198,7 +211,12 @@ hframes = 2
 frame = 1
 
 [node name="weapon" type="Sprite" parent="Items/item2"]
-position = Vector2( -22, 0 )
+position = Vector2( -10, -10 )
+z_as_relative = false
+texture = ExtResource( 4 )
+hframes = 6
+vframes = 3
+frame = 4
 
 [node name="item2Text" type="Label" parent="Items/item2"]
 anchor_left = 0.781
@@ -216,8 +234,3 @@ text = "M2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="input" from="Items/Inventory/sword" to="." method="_on_sword_input"]
-[connection signal="input" from="Items/Inventory/heal" to="." method="_on_heal_input"]
-[connection signal="input" from="Items/Inventory/bomb" to="." method="_on_bomb_input"]
-[connection signal="input" from="Items/Inventory/bow" to="." method="_on_bow_input"]
