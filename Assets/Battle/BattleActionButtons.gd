@@ -14,6 +14,11 @@ func _ready():
 			"heal":
 				var instance = heal_button.instance()
 				self.add_child(instance)
-
+			"bow":
+				var instance = sword_button.instance()
+				self.add_child(instance)
+			"bomb":
+				var instance = sword_button.instance()
+				self.add_child(instance)
 
 

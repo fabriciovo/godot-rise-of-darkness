@@ -147,8 +147,8 @@ __meta__ = {
 item = 2
 
 [node name="Sprite" type="Sprite" parent="Items/Inventory/bomb"]
-position = Vector2( 8, 7 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 7.3, 7.2 )
+scale = Vector2( 0.9625, 0.9 )
 texture = ExtResource( 4 )
 hframes = 6
 vframes = 3

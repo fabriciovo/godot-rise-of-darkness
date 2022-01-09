@@ -7,10 +7,11 @@ func _input(event):
 	if event.is_action_pressed("action_1"):
 		if get_overlapping_areas().size() > 0:
 			get_item(item)
-			queue_free()
+
 
 
 func get_item(item):
+	$Sprite.frame = 0
 	match item:
 		"sword":
 			PlayerControll.set_item(item)
@@ -28,4 +29,8 @@ func get_item(item):
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
 			print(item)
-	
+		"key":
+			PlayerControll.key += 1
+			Global.dead_enemies.push_front(ID)
+
+

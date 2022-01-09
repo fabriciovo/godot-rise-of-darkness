@@ -33,7 +33,9 @@ anims/FadeToNewRoom = SubResource( 1 )
 [node name="map_0" parent="." instance=ExtResource( 4 )]
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
+margin_left = 1.0
 margin_top = 30.0
+margin_right = 1.0
 margin_bottom = 30.0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]

@@ -3,6 +3,7 @@ extends Button
 export (int) var item
 
 func _ready():
+	print(item)
 	disabled = true
 
 func _input(event):

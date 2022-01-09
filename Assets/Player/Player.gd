@@ -70,8 +70,10 @@ func get_input():
 func action(value):
 	action_state = true
 	action_area.visible = true
-	action_sprite.frame = PlayerControll.equiped_item[value]
 	action_collision.disabled = false
+	print(PlayerControll.equiped_item)
+	print(PlayerControll.equiped_item[value])
+	action_sprite.frame = PlayerControll.equiped_item[value]
 	
 	if dir == "right":
 		$PlayerAnimation.play("action_right")
