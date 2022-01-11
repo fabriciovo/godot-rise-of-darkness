@@ -53,6 +53,7 @@ position = Vector2( 0, 2 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 7 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 hframes = 9

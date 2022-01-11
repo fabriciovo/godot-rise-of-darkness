@@ -26,8 +26,9 @@ script = ExtResource( 1 )
 anims/game_over = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 200.0
-margin_bottom = 170.0
+margin_top = -1.0
+margin_right = 225.0
+margin_bottom = 172.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

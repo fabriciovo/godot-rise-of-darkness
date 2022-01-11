@@ -4,5 +4,8 @@
 
 [node name="Rat" instance=ExtResource( 1 )]
 
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, 7 )
+
 [node name="HoverInfo" parent="." index="3"]
 description = "Rat"

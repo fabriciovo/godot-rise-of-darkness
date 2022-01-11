@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=1]
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=2]
@@ -8,13 +8,15 @@
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Box.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Transicao.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Enviroment/Bomb_Object.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Enviroment/Jar.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
 length = 0.5
 step = 0.05
 
-[node name="World_0" type="Node2D" groups=["Door", "Enemy", "Stone"]]
+[node name="World_0" type="Node2D" groups=["Bomb", "Door", "Enemy", "Jar", "Stone"]]
 position = Vector2( -1, 0 )
 script = ExtResource( 5 )
 
@@ -39,7 +41,7 @@ margin_right = 1.0
 margin_bottom = 30.0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 87, 79 )
+position = Vector2( 31, 80 )
 
 [node name="Door_world_1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 80, 12 )
@@ -57,5 +59,11 @@ position = Vector2( 169, 72 )
 [node name="Transicao" parent="." instance=ExtResource( 8 )]
 
 [node name="Entities" type="Node2D" parent="."]
+
+[node name="Jar" parent="." instance=ExtResource( 10 )]
+position = Vector2( 47, 82 )
+
+[node name="Bomb_Object" parent="." instance=ExtResource( 9 )]
+position = Vector2( 58, 83 )
 
 [connection signal="change_scene" from="Player" to="Transicao" method="_on_Player_change_scene"]
