@@ -3,7 +3,7 @@
 ![prints](./doc/game.png)
 
 
-# [1Bit Hero](https://github.com/fabriciovo/PurpleHell)
+# [1Bit Hero](https://github.com/fabriciovo/godotRPG)
 
 
 ## About
