@@ -14,3 +14,22 @@ var chest_sword = false
 var chest_heal = false
 var chest_bow = false
 var chest_bomb = false
+
+var GROUPS = {
+	PLAYER = "PLAYER",
+	BOX = "BOX",
+	DOOR = "DOOR", 
+	ENEMY = "ENEMY", 
+	BOMB = "BOMB", 
+	STATIC = "STATIC", 
+	ARROW = "ARROW",
+	MOVABLE = "MOVABLE",  
+}
+
+var WEAPONS = {
+	SWORD = 0,
+	BOW = 1, 
+	BOMB = 2, 
+	HEAL = 3,
+}
+

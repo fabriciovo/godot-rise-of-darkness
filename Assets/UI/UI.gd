@@ -34,13 +34,13 @@ func _process(delta):
 		
 	for i in PlayerControll.items.size():
 		 match PlayerControll.items[i]:
-				"sword":
+				0:
 					inventory_sword.get_node("Sprite").visible = true
-				"heal":
+				1:
 					inventory_heal.get_node("Sprite").visible = true
-				"bow":
+				2:
 					inventory_bow.get_node("Sprite").visible = true
-				"bomb":
+				3:
 					inventory_bomb.get_node("Sprite").visible = true
 
 

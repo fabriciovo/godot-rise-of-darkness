@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enviroment/Static_Object.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.01783
 
-[node name="Node2D" type="StaticBody2D"]
+[node name="Static_Object" type="StaticBody2D"]
 collision_layer = 8
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -14,7 +16,7 @@ hframes = 9
 vframes = 18
 frame = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Static_Shape" type="CollisionShape2D" parent="."]
 light_mask = 0
 position = Vector2( 0, 0.5 )
 shape = SubResource( 1 )

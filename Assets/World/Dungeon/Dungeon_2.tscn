@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/World/Tilemap/dungeon_map_0.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Enviroment/Object.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Enviroment/Static_Object.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Transicao.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]

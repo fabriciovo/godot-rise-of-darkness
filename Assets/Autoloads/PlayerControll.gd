@@ -7,7 +7,7 @@ var hp = max_hp setget set_hp
 var ap = max_ap setget set_ap
 var mp = max_mp setget set_mp
 var items = [] setget set_item
-var equiped_item = [-1,-1] 
+var equiped_item = [0,2] 
 var key = 0
 
 

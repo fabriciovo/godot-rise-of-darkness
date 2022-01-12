@@ -1,4 +1,7 @@
+class_name Player
 extends KinematicBody2D
+
+
 
 onready var action_area = $ActionArea
 onready var action_sprite =  $ActionArea/action
@@ -68,12 +71,16 @@ func get_input():
 		action_area.position.x = 1
 
 func action(value):
-	action_state = true
-	action_area.visible = true
-	action_collision.disabled = false
-	print(PlayerControll.equiped_item)
-	print(PlayerControll.equiped_item[value])
-	action_sprite.frame = PlayerControll.equiped_item[value]
+	match PlayerControll.equiped_item[value]:
+		Global.WEAPONS.SWORD:
+			create_sword(value)
+		Global.WEAPONS.BOW:
+			create_arrow()
+		Global.WEAPONS.BOMB:
+			create_bomb()
+		Global.WEAPONS.HEAL: 
+			heal()
+		
 	
 	if dir == "right":
 		$PlayerAnimation.play("action_right")
@@ -108,8 +115,42 @@ func _on_Area2D_body_entered(body):
 		emit_signal("change_scene",body.target_scene, body.door_name)
 
 func _on_ActionArea_body_entered(body):
-	if body.is_in_group("Stone"):
+	if body.is_in_group(Global.GROUPS.BOX):
 		body.Destroy()
 
 func _on_Player_change_scene(target_scene):
 	pass # Replace with function body.
+
+func create_sword(value):
+	action_state = true
+	action_area.visible = true
+	action_collision.disabled = false
+	action_sprite.frame = PlayerControll.equiped_item[value]
+
+func create_bomb():
+		var bomb_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
+		bomb_object.global_position = global_position
+		get_tree().get_current_scene().add_child(bomb_object)
+
+func create_arrow():
+		var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
+		arrow_object.global_position = global_position
+		arrow_object.direction = player_dir()
+		get_tree().get_current_scene().add_child(arrow_object)
+		
+func heal():
+		var arrow_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
+		arrow_object.global_position = global_position
+		get_tree().get_current_scene().add_child(arrow_object)
+
+func player_dir():
+	match dir:
+		"right":
+			return Vector2.RIGHT
+		"left":
+			return Vector2.LEFT
+		"up":
+			return Vector2.UP
+		"down":
+			return Vector2.DOWN
+

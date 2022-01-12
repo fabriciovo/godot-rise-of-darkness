@@ -1,6 +1,6 @@
 extends Area2D
 
-export(String) var item
+export(int) var item
 export(String) var ID
 
 func _input(event):
@@ -13,24 +13,25 @@ func _input(event):
 func get_item(item):
 	$Sprite.frame = 0
 	match item:
-		"sword":
+		0:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
 			print(item)
-		"heal":
+		1:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
 			print(item)
-		"bow":
+		2:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
 			print(item)
-		"bomb":
+		3:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
 			print(item)
-		"key":
+		4:
 			PlayerControll.key += 1
 			Global.dead_enemies.push_front(ID)
+	print(PlayerControll.items)
 
 

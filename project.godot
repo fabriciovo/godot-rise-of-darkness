@@ -13,9 +13,39 @@ _global_script_classes=[ {
 "class": "BattleUnits",
 "language": "GDScript",
 "path": "res://Assets/Battle/BattleUnits.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Bomb_Object",
+"language": "GDScript",
+"path": "res://Assets/Enviroment/Bomb_Object.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enviroment_Object",
+"language": "GDScript",
+"path": "res://Enviroment_Object.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Assets/Player/Player.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Static_Box",
+"language": "GDScript",
+"path": "res://Box.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Static_Object",
+"language": "GDScript",
+"path": "res://Assets/Enviroment/Static_Object.gd"
 } ]
 _global_script_class_icons={
-"BattleUnits": ""
+"BattleUnits": "",
+"Bomb_Object": "",
+"Enviroment_Object": "",
+"Player": "",
+"Static_Box": "",
+"Static_Object": ""
 }
 
 [application]
