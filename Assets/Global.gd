@@ -24,6 +24,7 @@ var GROUPS = {
 	STATIC = "STATIC", 
 	ARROW = "ARROW",
 	MOVABLE = "MOVABLE",  
+	TILEMAP = "TILEMAP", 
 }
 
 var WEAPONS = {

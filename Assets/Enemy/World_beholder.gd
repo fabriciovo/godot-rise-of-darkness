@@ -19,7 +19,7 @@ var hit = false
 
 func _ready():
 	$Beholder_Animation.play("Beholder_anim")
-	add_to_group("Enemy")
+	add_to_group(Global.GROUPS.ENEMY)
 	randomize()
 	direction.x = rand_range(-20, 20)
 	direction.y = rand_range(-20, 20)
@@ -35,11 +35,7 @@ func _physics_process(delta):
 
 func _on_Body_area_entered(area):
 	if area.name == "ActionArea":
-		knockback = area.knockback_vector * 120
-		hit = true
-		$Beholder_Animation.play("damage_anim")
-		timer.start(1)
-		
+		Knockback(area)
 
 func _on_Timer_timeout():
 	timer.stop()
@@ -57,3 +53,9 @@ func Destroy():
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
+	
+func Knockback(area):
+		knockback = area.knockback_vector * 120
+		hit = true
+		$Beholder_Animation.play("damage_anim")
+		timer.start(1)

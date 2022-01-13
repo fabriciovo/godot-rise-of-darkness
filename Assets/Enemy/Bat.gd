@@ -20,7 +20,7 @@ var hit = false
 
 func _ready():
 	$Bat_Animation.play("Bat_anim")
-	add_to_group("Enemy")
+	add_to_group(Global.GROUPS.ENEMY)
 	randomize()
 	direction.x = rand_range(-20, 20)
 	direction.y = rand_range(-20, 20)

@@ -4,7 +4,7 @@ export(String, FILE, "*.tscn,*.scn") var target_scene
 export(String) var door_name
 
 func _ready():
-	add_to_group("Door")
+	add_to_group(Global.GROUPS.DOOR)
 
 
 

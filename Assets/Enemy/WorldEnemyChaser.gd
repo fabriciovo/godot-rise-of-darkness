@@ -5,7 +5,7 @@ var speed = 10
 onready var obj = get_parent().get_node("Player")
 
 func _ready():
-	add_to_group("Enemy")
+	add_to_group(Global.GROUPS.ENEMY)
 
 
 func _physics_process(delta):

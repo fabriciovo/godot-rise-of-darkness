@@ -1,8 +1,6 @@
 class_name Player
 extends KinematicBody2D
 
-
-
 onready var action_area = $ActionArea
 onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
@@ -15,7 +13,6 @@ var dir = "right"
 var speed = 30
 var velocity = Vector2.ZERO
 var action_state = false
-
 
 func _ready():
 	action_collision.disabled = true
@@ -75,13 +72,18 @@ func action(value):
 		Global.WEAPONS.SWORD:
 			create_sword(value)
 		Global.WEAPONS.BOW:
-			create_arrow()
+			if PlayerControll.mp >= 1:
+				create_arrow()
+				PlayerControll.set_mp(PlayerControll.mp-1)
 		Global.WEAPONS.BOMB:
-			create_bomb()
+			if PlayerControll.mp >= 3:
+				create_bomb()
+				PlayerControll.set_mp(PlayerControll.mp-3)
 		Global.WEAPONS.HEAL: 
-			heal()
-		
-	
+			if PlayerControll.mp >= 5:
+				heal()
+				PlayerControll.set_mp(PlayerControll.mp-5)
+
 	if dir == "right":
 		$PlayerAnimation.play("action_right")
 		yield($PlayerAnimation, "animation_finished")
@@ -104,22 +106,19 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("Enemy"):
+	if body.is_in_group(Global.GROUPS.ENEMY):
 		#emit_signal("encounter", body)
 		Global.last_enemy = body.ID
 		Global.enemy_battle_unit_damage = body.battle_unit_damage
 		Global.enemy_battle_unit_hp = body.battle_unit_hp
 		Global.enemy_frame = body.frame
 		get_tree().change_scene("res://Assets/Battle/Battle.tscn")
-	if body.is_in_group("Door"):
+	if body.is_in_group(Global.GROUPS.DOOR):
 		emit_signal("change_scene",body.target_scene, body.door_name)
 
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group(Global.GROUPS.BOX):
 		body.Destroy()
-
-func _on_Player_change_scene(target_scene):
-	pass # Replace with function body.
 
 func create_sword(value):
 	action_state = true
@@ -135,22 +134,23 @@ func create_bomb():
 func create_arrow():
 		var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
 		arrow_object.global_position = global_position
-		arrow_object.direction = player_dir()
+		match dir:
+			"right":
+				arrow_object.direction = Vector2.RIGHT
+				arrow_object.frame = 23
+			"left":
+				arrow_object.direction = Vector2.LEFT
+				arrow_object.frame = 21
+			"up":
+				arrow_object.direction = Vector2.UP
+				arrow_object.frame = 22
+			"down":
+				arrow_object.direction = Vector2.DOWN
+				arrow_object.frame = 20
 		get_tree().get_current_scene().add_child(arrow_object)
-		
+
 func heal():
 		var arrow_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
 		arrow_object.global_position = global_position
 		get_tree().get_current_scene().add_child(arrow_object)
-
-func player_dir():
-	match dir:
-		"right":
-			return Vector2.RIGHT
-		"left":
-			return Vector2.LEFT
-		"up":
-			return Vector2.UP
-		"down":
-			return Vector2.DOWN
 
