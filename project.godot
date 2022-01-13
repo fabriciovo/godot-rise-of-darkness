@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Enviroment_Object",
 "language": "GDScript",
-"path": "res://Enviroment_Object.gd"
+"path": "res://Assets/Enviroment/Enviroment_Object.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -32,12 +32,17 @@ _global_script_classes=[ {
 "base": "StaticBody2D",
 "class": "Static_Box",
 "language": "GDScript",
-"path": "res://Box.gd"
+"path": "res://Assets/Enviroment/Box.gd"
 }, {
 "base": "StaticBody2D",
 "class": "Static_Object",
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Static_Object.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "World_Enemy",
+"language": "GDScript",
+"path": "res://Assets/Enemy/World Enemy/World_Enemy.gd"
 } ]
 _global_script_class_icons={
 "BattleUnits": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "Enviroment_Object": "",
 "Player": "",
 "Static_Box": "",
-"Static_Object": ""
+"Static_Object": "",
+"World_Enemy": ""
 }
 
 [application]

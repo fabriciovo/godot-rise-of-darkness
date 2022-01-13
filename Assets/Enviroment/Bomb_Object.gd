@@ -1,6 +1,8 @@
 class_name Bomb_Object
 extends KinematicBody2D
 
+
+
 func _ready():
 	add_to_group(Global.GROUPS.BOMB)
 

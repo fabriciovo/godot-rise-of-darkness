@@ -8,8 +8,8 @@
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Box.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Transicao.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Enviroment/Bomb_Object.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Enviroment/Jar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Beholder.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -60,10 +60,14 @@ position = Vector2( 169, 72 )
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="Jar" parent="." instance=ExtResource( 10 )]
-position = Vector2( 47, 82 )
+[node name="Bat_Enemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( 87, 62 )
+collision_layer = 1
+collision_mask = 1
 
-[node name="Bomb_Object" parent="." instance=ExtResource( 9 )]
-position = Vector2( 58, 83 )
+[node name="World_Beholder" parent="." instance=ExtResource( 12 )]
+position = Vector2( 100, 97 )
+collision_layer = 1
+collision_mask = 1
 
 [connection signal="change_scene" from="Player" to="Transicao" method="_on_Player_change_scene"]

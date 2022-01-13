@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Animations/Bat_anim.tres" type="Animation" id=1]
+[ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=2]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 5.0
+
+[node name="World_Bat" instance=ExtResource( 4 )]
+script = ExtResource( 3 )
+
+[node name="Area_Shape" parent="Area" index="0"]
+shape = SubResource( 1 )
+
+[node name="Enemy_Animation" parent="." index="4"]
+autoplay = "Bat_anim"
+anims/Bat_anim = ExtResource( 1 )
+anims/damage_anim = ExtResource( 2 )
