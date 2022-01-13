@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=1]
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=2]
@@ -8,8 +8,7 @@
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Box.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Transicao.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Beholder.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Enviroment/Mana_Pillar.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -53,21 +52,14 @@ position = Vector2( 168, 50 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_1.tscn"
 door_name = "Dungeon_exit"
 
-[node name="Stone" parent="." instance=ExtResource( 7 )]
+[node name="Box" parent="." instance=ExtResource( 7 )]
 position = Vector2( 169, 72 )
 
 [node name="Transicao" parent="." instance=ExtResource( 8 )]
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="Bat_Enemy" parent="." instance=ExtResource( 11 )]
-position = Vector2( 87, 62 )
-collision_layer = 1
-collision_mask = 1
-
-[node name="World_Beholder" parent="." instance=ExtResource( 12 )]
-position = Vector2( 100, 97 )
-collision_layer = 1
-collision_mask = 1
+[node name="Mana_Pillar" parent="." instance=ExtResource( 9 )]
+position = Vector2( 68, 73 )
 
 [connection signal="change_scene" from="Player" to="Transicao" method="_on_Player_change_scene"]

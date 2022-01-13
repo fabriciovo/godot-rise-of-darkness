@@ -15,6 +15,7 @@ var velocity = Vector2.ZERO
 var action_state = false
 
 func _ready():
+	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
 	action_area.visible = false
 	actionArea.knockback_vector = Vector2.LEFT

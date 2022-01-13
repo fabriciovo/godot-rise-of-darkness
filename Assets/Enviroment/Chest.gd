@@ -1,3 +1,4 @@
+class_name Chest
 extends Area2D
 
 export(int) var item
@@ -9,26 +10,21 @@ func _input(event):
 		if get_overlapping_areas().size() > 0:
 			get_item(item)
 
-
-
 func get_item(item):
 	$Sprite.frame = 0
 	match item:
-		0:
+		Global.WEAPONS.SWORD:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
-		1:
+		Global.WEAPONS.BOW:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
-
-		2:
+		Global.WEAPONS.BOMB:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
-
-		3:
+		Global.WEAPONS.HEAL:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
-
 		4:
 			PlayerControll.key += 1
 			Global.dead_enemies.push_front(ID)
