@@ -14,6 +14,12 @@ onready var inventory_heal = $Items/Inventory/heal
 onready var inventory_bomb = $Items/Inventory/bomb
 onready var inventory_bow = $Items/Inventory/bow
 
+var can_equip_sword = false
+var can_equip_heal = false
+var can_equip_bomb = false
+var can_equip_bow = false
+
+
 func _process(delta):
 	HP.text = "HP " + str(PlayerControll.hp)
 	MP.text = "MP " + str(PlayerControll.mp)
@@ -34,13 +40,17 @@ func _process(delta):
 		
 	for i in PlayerControll.items.size():
 		 match PlayerControll.items[i]:
-				0:
+				Global.WEAPONS.SWORD:
 					inventory_sword.get_node("Sprite").visible = true
-				1:
+					can_equip_sword = true
+				Global.WEAPONS.HEAL:
 					inventory_heal.get_node("Sprite").visible = true
-				2:
+					can_equip_heal = true
+				Global.WEAPONS.BOW:
 					inventory_bow.get_node("Sprite").visible = true
-				3:
+					can_equip_bow = true
+				Global.WEAPONS.BOMB:
+					can_equip_bomb = true
 					inventory_bomb.get_node("Sprite").visible = true
 
 
@@ -53,5 +63,39 @@ func _ready():
 
 func _on_PlayerControl_hp_changed(value):
 	HP.text = "HP " + str(value)
+
+
+
+
+func _on_heal_gui_input(event):
+	if can_equip_heal:
+		if event.is_action_pressed("action_1"):
+			PlayerControll.set_equiped_item(Global.WEAPONS.HEAL, 0)
+		if event.is_action_pressed("action_2"):
+			PlayerControll.set_equiped_item(Global.WEAPONS.HEAL, 1)
+
+
+func _on_bomb_gui_input(event):
+	if can_equip_bomb:
+		if event.is_action_pressed("action_1"):
+			PlayerControll.set_equiped_item(Global.WEAPONS.BOMB, 0)
+		if event.is_action_pressed("action_2"):
+			PlayerControll.set_equiped_item(Global.WEAPONS.BOMB, 1)
+
+
+func _on_bow_gui_input(event):
+	if can_equip_bow:
+		if event.is_action_pressed("action_1"):
+			PlayerControll.set_equiped_item(Global.WEAPONS.BOW, 0)
+		if event.is_action_pressed("action_2"):
+			PlayerControll.set_equiped_item(Global.WEAPONS.BOW, 1)
+
+
+func _on_sword_gui_input(event):
+	if can_equip_sword:
+		if event.is_action_pressed("action_1"):
+			PlayerControll.set_equiped_item(Global.WEAPONS.SWORD, 0)
+		if event.is_action_pressed("action_2"):
+			PlayerControll.set_equiped_item(Global.WEAPONS.SWORD, 1)
 
 

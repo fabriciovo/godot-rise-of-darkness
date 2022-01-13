@@ -106,21 +106,21 @@ func action(value):
 				if mp >= 5:
 					heal()
 					set_hp(mp-5)
-		$AP_Timer.start(1)
+		if dir == "right":
+			$PlayerAnimation.play("action_right")
+			yield($PlayerAnimation, "animation_finished")
+		elif dir == "left":
+			$PlayerAnimation.play("action_left")
+			yield($PlayerAnimation, "animation_finished")
+		elif dir == "up":
+			$PlayerAnimation.play("action_up")
+			yield($PlayerAnimation, "animation_finished")
+		elif dir == "down":
+			$PlayerAnimation.play("action_down")
+			yield($PlayerAnimation, "animation_finished")
+	$AP_Timer.start(1)
 
-	if dir == "right":
-		$PlayerAnimation.play("action_right")
-		yield($PlayerAnimation, "animation_finished")
-	elif dir == "left":
-		$PlayerAnimation.play("action_left")
-		yield($PlayerAnimation, "animation_finished")
-	elif dir == "up":
-		$PlayerAnimation.play("action_up")
-		yield($PlayerAnimation, "animation_finished")
-	elif dir == "down":
-		$PlayerAnimation.play("action_down")
-		yield($PlayerAnimation, "animation_finished")
-	
+
 	action_area.visible = false
 	action_state = false
 	action_collision.disabled = true
@@ -179,9 +179,10 @@ func create_arrow():
 		get_tree().get_current_scene().add_child(arrow_object)
 
 func heal():
-		var arrow_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
-		arrow_object.global_position = global_position
-		get_tree().get_current_scene().add_child(arrow_object)
+	pass
+#		var arrow_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
+#		arrow_object.global_position = global_position
+#		get_tree().get_current_scene().add_child(arrow_object)
 
 func spike_damage():
 	$PlayerAnimation.stop()

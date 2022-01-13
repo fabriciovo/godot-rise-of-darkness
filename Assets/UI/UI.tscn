@@ -227,3 +227,8 @@ text = "M2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="gui_input" from="Items/Inventory/sword" to="." method="_on_sword_gui_input"]
+[connection signal="gui_input" from="Items/Inventory/bow" to="." method="_on_bow_gui_input"]
+[connection signal="gui_input" from="Items/Inventory/bomb" to="." method="_on_bomb_gui_input"]
+[connection signal="gui_input" from="Items/Inventory/heal" to="." method="_on_heal_gui_input"]
