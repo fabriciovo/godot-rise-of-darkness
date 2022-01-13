@@ -13,6 +13,8 @@ var key = 0
 
 func set_hp(value):
 	hp = clamp(value, 0 , max_hp)
+	if hp <= 0:
+		get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 
 func set_ap(value):
 	ap = clamp(value, 0 , max_ap)

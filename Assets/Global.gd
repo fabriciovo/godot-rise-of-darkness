@@ -33,5 +33,6 @@ var WEAPONS = {
 	BOW = 1, 
 	BOMB = 2, 
 	HEAL = 3,
+	KEY = 4
 }
 

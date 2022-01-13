@@ -6,6 +6,24 @@ onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 onready var actionArea = $ActionArea
 
+var hp = PlayerControll.hp setget set_hp
+var ap = PlayerControll.ap setget set_ap
+var mp = PlayerControll.mp setget set_mp
+var items = PlayerControll.items
+
+func set_hp(value):
+	hp = clamp(value, 0 , PlayerControll.max_hp)
+	PlayerControll.set_hp(hp)
+
+func set_ap(value):
+	ap = clamp(value, 0 , PlayerControll.max_ap)
+	PlayerControll.set_ap(ap)
+
+func set_mp(value):
+	mp = min(value, PlayerControll.max_mp)
+	PlayerControll.set_mp(mp)
+
+
 signal encounter(enemy)
 signal change_scene(target_scene, value)
 
@@ -13,12 +31,16 @@ var dir = "right"
 var speed = 30
 var velocity = Vector2.ZERO
 var action_state = false
+var hit = false
 
 func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
 	action_area.visible = false
 	actionArea.knockback_vector = Vector2.LEFT
+	
+	if ap <= 0:
+		$AP_Timer.start(1)
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -69,21 +91,23 @@ func get_input():
 		action_area.position.x = 1
 
 func action(value):
-	match PlayerControll.equiped_item[value]:
-		Global.WEAPONS.SWORD:
-			create_sword(value)
-		Global.WEAPONS.BOW:
-			if PlayerControll.mp >= 1:
-				create_arrow()
-				PlayerControll.set_mp(PlayerControll.mp-1)
-		Global.WEAPONS.BOMB:
-			if PlayerControll.mp >= 3:
-				create_bomb()
-				PlayerControll.set_mp(PlayerControll.mp-3)
-		Global.WEAPONS.HEAL: 
-			if PlayerControll.mp >= 5:
-				heal()
-				PlayerControll.set_mp(PlayerControll.mp-5)
+	if ap > 0:
+		match PlayerControll.equiped_item[value]:
+			Global.WEAPONS.SWORD:
+				create_sword(value)
+			Global.WEAPONS.BOW:
+				if mp >= 1:
+					create_arrow()
+					set_mp(mp-1)
+			Global.WEAPONS.BOMB:
+				if mp >= 3:
+					create_bomb()
+					set_mp(mp-3)
+			Global.WEAPONS.HEAL: 
+				if mp >= 5:
+					heal()
+					set_hp(mp-5)
+		$AP_Timer.start(1)
 
 	if dir == "right":
 		$PlayerAnimation.play("action_right")
@@ -101,12 +125,14 @@ func action(value):
 	action_area.visible = false
 	action_state = false
 	action_collision.disabled = true
-	
-func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
 
-func _on_Area2D_body_entered(body):
+func _physics_process(delta):
+	if not hit:
+		get_input()
+		velocity = move_and_slide(velocity)
+
+
+func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
 		#emit_signal("encounter", body)
 		Global.last_enemy = body.ID
@@ -122,17 +148,20 @@ func _on_ActionArea_body_entered(body):
 		body.Destroy()
 
 func create_sword(value):
+	set_ap(ap-1)
 	action_state = true
 	action_area.visible = true
 	action_collision.disabled = false
 	action_sprite.frame = PlayerControll.equiped_item[value]
 
 func create_bomb():
+		set_ap(ap-1)
 		var bomb_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
 		bomb_object.global_position = global_position
 		get_tree().get_current_scene().add_child(bomb_object)
 
 func create_arrow():
+		set_ap(ap-1)
 		var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
 		arrow_object.global_position = global_position
 		match dir:
@@ -154,4 +183,21 @@ func heal():
 		var arrow_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
 		arrow_object.global_position = global_position
 		get_tree().get_current_scene().add_child(arrow_object)
+
+func spike_damage():
+	$PlayerAnimation.stop()
+	hit = true
+	set_hp(hp-3)
+	$PlayerAnimation.play("damage_anim")
+	yield($PlayerAnimation, "animation_finished")
+	hit = false
+	
+func recover_mana():
+	set_mp(PlayerControll.max_mp)
+
+
+func _on_AP_Timer_timeout():
+	set_ap(ap+1)
+
+
 

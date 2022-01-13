@@ -8,8 +8,6 @@ func _ready():
 	const_speed = 10
 	speed = const_speed
 
-
-
 func _physics_process(delta):
 	if obj != null:
 		if hp <= 4:

@@ -6,7 +6,7 @@ export(String) var ID
 var disable = false
 
 func _input(event):
-	if event.is_action_pressed("action_1") and not disable:
+	if event.is_action_pressed("action_3") and not disable:
 		if get_overlapping_areas().size() > 0:
 			get_item(item)
 
@@ -25,7 +25,7 @@ func get_item(item):
 		Global.WEAPONS.HEAL:
 			PlayerControll.set_item(item)
 			Global.dead_enemies.push_front(ID)
-		4:
+		Global.WEAPONS.KEY:
 			PlayerControll.key += 1
 			Global.dead_enemies.push_front(ID)
 	disable = true
