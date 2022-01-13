@@ -1,7 +1,8 @@
 class_name Static_Box
 extends StaticBody2D
-
+var ID = ""
 func _ready():
+	ID = name
 	add_to_group(Global.GROUPS.BOX)
 
 var smoke = preload("res://Assets/Animations/smoke.tscn").instance()

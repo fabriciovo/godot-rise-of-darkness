@@ -2,8 +2,13 @@ class_name Chest
 extends Area2D
 
 export(int) var item
-export(String) var ID
+var ID = ""
 var disable = false
+
+
+func _ready():
+	ID = name
+
 
 func _input(event):
 	if event.is_action_pressed("action_3") and not disable:
@@ -15,19 +20,19 @@ func get_item(item):
 	match item:
 		Global.WEAPONS.SWORD:
 			PlayerControll.set_item(item)
-			Global.dead_enemies.push_front(ID)
+			Global.open_chests.push_front(ID)
 		Global.WEAPONS.BOW:
 			PlayerControll.set_item(item)
-			Global.dead_enemies.push_front(ID)
+			Global.open_chests.push_front(ID)
 		Global.WEAPONS.BOMB:
 			PlayerControll.set_item(item)
-			Global.dead_enemies.push_front(ID)
+			Global.open_chests.push_front(ID)
 		Global.WEAPONS.HEAL:
 			PlayerControll.set_item(item)
-			Global.dead_enemies.push_front(ID)
+			Global.open_chests.push_front(ID)
 		Global.WEAPONS.KEY:
 			PlayerControll.key += 1
-			Global.dead_enemies.push_front(ID)
+			Global.open_chests.push_front(ID)
 	disable = true
 
 

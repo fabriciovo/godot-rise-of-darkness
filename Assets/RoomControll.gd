@@ -11,4 +11,13 @@ func _ready():
 		for id in Global.dead_enemies.size():
 			if m.ID == Global.dead_enemies[id]:
 				m.queue_free()
+				
+		for id in Global.open_chests.size():
+			if m.ID == Global.open_chests[id]:
+				m.disable = true
+				m.get_node("Sprite").frame = 0
+				
+		for id in Global.dead_objects.size():
+			if m.ID == Global.dead_objects[id]:
+				m.queue_free()
 

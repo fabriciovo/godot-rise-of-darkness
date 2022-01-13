@@ -38,8 +38,7 @@ func _ready():
 	action_collision.disabled = true
 	action_area.visible = false
 	actionArea.knockback_vector = Vector2.LEFT
-	
-	if ap <= 0:
+	if ap < 3:
 		$AP_Timer.start(1)
 
 func get_input():

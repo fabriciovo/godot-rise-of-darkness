@@ -1,6 +1,11 @@
 extends KinematicBody2D
 
+var ID = ""
+
 var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
+
+func _ready():
+	ID = name
 
 func Destroy() :
 	$Sprite.visible = false

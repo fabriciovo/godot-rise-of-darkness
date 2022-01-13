@@ -5,6 +5,7 @@ const battle_unit_hp = 10
 onready var obj = get_parent().get_node("Player")
 
 func _ready():
+	ID = name
 	const_speed = 10
 	speed = const_speed
 

@@ -1,7 +1,7 @@
 class_name World_Enemy
 extends KinematicBody2D
 
-export (String) var ID
+var ID = name
 
 onready var frame = $Sprite.frame
 onready var timer = $Timer
