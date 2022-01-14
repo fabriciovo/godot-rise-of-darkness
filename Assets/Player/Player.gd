@@ -91,6 +91,7 @@ func get_input():
 
 func action(value):
 	if ap > 0:
+		$AP_Timer.start(1)
 		match PlayerControll.equiped_item[value]:
 			Global.WEAPONS.SWORD:
 				create_sword(value)
@@ -118,12 +119,14 @@ func action(value):
 		elif dir == "down":
 			$PlayerAnimation.play("action_down")
 			yield($PlayerAnimation, "animation_finished")
-	$AP_Timer.start(1)
+
 
 
 	action_area.visible = false
 	action_state = false
 	action_collision.disabled = true
+
+
 
 func _physics_process(delta):
 	if not hit:
