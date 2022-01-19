@@ -30,7 +30,7 @@ position = Vector2( 96, 97 )
 position = Vector2( 104, 40 )
 
 [node name="Box2" parent="Enviroment/Static" index="7" instance=ExtResource( 3 )]
-position = Vector2( 113, 16 )
+position = Vector2( 144, 41 )
 
 [node name="Box4" parent="Enviroment/Static" index="8" instance=ExtResource( 3 )]
 position = Vector2( 121, 40 )
@@ -41,7 +41,7 @@ position = Vector2( 112, 64 )
 [node name="Dungeon_3" parent="." index="8" instance=ExtResource( 5 )]
 position = Vector2( 111, 12 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_3.tscn"
-door_name = "Dungeon_3"
+door_name = "Dungeon_2"
 
 [node name="Dungeon_1" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( 111, 134 )
