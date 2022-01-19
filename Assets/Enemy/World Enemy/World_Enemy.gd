@@ -44,9 +44,9 @@ func _on_Area_area_entered(area):
 		knockback = area.knockback_vector * 120
 		Knockback()
 
-
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW):
+		print("pokerfpoksadfpo")
 		knockback = body.knockback_vector * 120
 		body.queue_free()
 		Knockback()

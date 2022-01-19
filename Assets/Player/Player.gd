@@ -187,7 +187,7 @@ func heal():
 #		arrow_object.global_position = global_position
 #		get_tree().get_current_scene().add_child(arrow_object)
 
-func spike_damage():
+func damage():
 	$PlayerAnimation.stop()
 	hit = true
 	set_hp(hp-3)

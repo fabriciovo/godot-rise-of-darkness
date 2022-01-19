@@ -43,6 +43,8 @@ position = Vector2( 33, 48 )
 
 [node name="Dungeon_1" parent="." index="8" instance=ExtResource( 5 )]
 position = Vector2( 113, 12 )
+target_scene = "res://Assets/World/Dungeon/Dungeon_1.tscn"
+door_name = "Dungeon_0"
 
 [node name="Dungeon_exit" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( 113, 134 )

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enviroment/The Door.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.5, 8 )
+
+[node name="The Door" type="Node2D"]
+position = Vector2( 105, 22 )
+script = ExtResource( 2 )
+
+[node name="Wall_1" type="Sprite" parent="."]
+position = Vector2( -2, 2 )
+texture = ExtResource( 1 )
+hframes = 9
+vframes = 18
+frame = 38
+
+[node name="Wall_2" type="Sprite" parent="."]
+position = Vector2( 14, 2 )
+texture = ExtResource( 1 )
+hframes = 9
+vframes = 18
+frame = 38
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 6.5, 2 )
+shape = SubResource( 1 )

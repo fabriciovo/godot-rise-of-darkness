@@ -2,7 +2,7 @@ extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
 
 const battle_unit_damage = 3
 const battle_unit_hp = 10
-onready var obj = get_parent().get_node("Player")
+onready var obj = get_parent().get_parent().get_node("Player")
 
 func _ready():
 	ID = name
