@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Enviroment/Movable_Object.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Enviroment/Skulls.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=4]
+[ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Enviroment/Jar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Enviroment/Static_Object.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/World/Dungeon/Boss_Gate.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 8 )
+
+[node name="Dungeon_6" instance=ExtResource( 5 )]
+
+[node name="map_1" parent="." index="2"]
+tile_data = PoolIntArray( 0, 12, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 43, 0, 8, 43, 0, 9, 43, 0, 10, 43, 0, 11, 43, 0, 12, 43, 0, 13, 10, 0, 65536, 42, 0, 65537, 27, 0, 65538, 27, 0, 65539, 27, 0, 65540, 27, 0, 65541, 27, 0, 65544, 27, 0, 65545, 27, 0, 65546, 27, 0, 65547, 27, 0, 65548, 27, 0, 65549, 42, 0, 131072, 42, 0, 131085, 42, 0, 196608, 42, 0, 196621, 42, 0, 262155, 0, 0, 393216, 42, 0, 393229, 42, 0, 458752, 42, 0, 458765, 42, 0, 524288, 4, 0, 524289, 43, 0, 524290, 43, 0, 524291, 43, 0, 524292, 43, 0, 524293, 45, 0, 524296, 46, 0, 524297, 43, 0, 524298, 43, 0, 524299, 43, 0, 524300, 43, 0, 524301, 6, 0 )
+
+[node name="Player" parent="." index="3"]
+position = Vector2( 9, 81 )
+
+[node name="Boss_Gate" type="Node2D" parent="." index="4"]
+position = Vector2( -13, 23 )
+script = ExtResource( 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boss_Gate" index="0"]
+position = Vector2( 125, 105 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss_Gate/StaticBody2D" index="0"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Boss_Gate/StaticBody2D" index="1"]
+position = Vector2( -8, 8 )
+texture = ExtResource( 4 )
+hframes = 9
+vframes = 18
+frame = 38
+
+[node name="Sprite3" type="Sprite" parent="Boss_Gate/StaticBody2D" index="2"]
+position = Vector2( 8, 8 )
+texture = ExtResource( 4 )
+hframes = 9
+vframes = 18
+frame = 38
+
+[node name="Static_Object" parent="Enviroment/Static" index="0" instance=ExtResource( 7 )]
+position = Vector2( 136, 40 )
+
+[node name="Static_Object2" parent="Enviroment/Static" index="1" instance=ExtResource( 7 )]
+position = Vector2( 104, 40 )
+
+[node name="Movable_Object" parent="Enviroment/Movable" index="0" instance=ExtResource( 1 )]
+position = Vector2( 120, 56 )
+
+[node name="Jar" parent="Entities" index="0" instance=ExtResource( 6 )]
+position = Vector2( 203, 65 )
+
+[node name="Jar2" parent="Entities" index="1" instance=ExtResource( 6 )]
+position = Vector2( 201, 73 )
+
+[node name="Jar3" parent="Entities" index="2" instance=ExtResource( 6 )]
+position = Vector2( 206, 78 )
+
+[node name="Jar4" parent="Entities" index="3" instance=ExtResource( 6 )]
+position = Vector2( 203, 86 )
+
+[node name="Jar5" parent="Entities" index="4" instance=ExtResource( 6 )]
+position = Vector2( 203, 96 )
+
+[node name="World_Bat" parent="Entities" index="5" instance=ExtResource( 2 )]
+position = Vector2( 48, 48 )
+
+[node name="World_Bat2" parent="Entities" index="6" instance=ExtResource( 2 )]
+position = Vector2( 176, 112 )
+
+[node name="Skulls" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 66, 113 )

@@ -35,7 +35,10 @@ position = Vector2( 105, 43 )
 position = Vector2( 58, 104 )
 
 [node name="World_Beholder4" parent="Entities" index="2" instance=ExtResource( 2 )]
-position = Vector2( 154, 89 )
+position = Vector2( 168, 104 )
+
+[node name="World_Beholder5" parent="Entities" index="3" instance=ExtResource( 2 )]
+position = Vector2( 176, 65 )
 
 [node name="Dungeon_4" parent="." index="8" instance=ExtResource( 4 )]
 position = Vector2( 209, 80 )

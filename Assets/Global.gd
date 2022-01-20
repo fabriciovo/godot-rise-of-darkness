@@ -12,6 +12,8 @@ var enemy_battle_unit_hp = 10
 var enemy_battle_unit_damage = 10
 var enemy_frame = 1
 
+var altar_hit = false
+var boss_gate = false
 
 var chest_sword = false
 var chest_heal = false
