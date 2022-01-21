@@ -141,6 +141,9 @@ func _on_PlayerBody_body_entered(body):
 		Global.enemy_battle_unit_damage = body.battle_unit_damage
 		Global.enemy_battle_unit_hp = body.battle_unit_hp
 		Global.enemy_frame = body.frame
+		Global.player_last_position = global_position
+		Global.player_last_scene = get_tree().current_scene.filename
+		print(Global.player_last_scene )
 		get_tree().change_scene("res://Assets/Battle/Battle.tscn")
 	if body.is_in_group(Global.GROUPS.DOOR):
 		emit_signal("change_scene",body.target_scene, body.door_name)

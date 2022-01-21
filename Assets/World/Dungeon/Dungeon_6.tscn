@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enviroment/Jar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Static_Object.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/World/Dungeon/Boss_Gate.gd" type="Script" id=8]
+[ext_resource path="res://Assets/World/Dungeon/Scripts/Boss_Gate.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 8 )

@@ -3,7 +3,12 @@ extends Node2D
 
 func _ready():
 
-	if Global.doorName:
+	if Global.player_last_scene != "" and Global.player_last_position:
+		$Player.global_position = Global.player_last_position
+		Global.player_last_scene = ""
+		Global.player_last_position = null
+		
+	if Global.doorName and Global.last_player_scene == "":
 		var door_node = find_node(Global.doorName)
 		if door_node:
 			$Player.global_position = door_node.global_position

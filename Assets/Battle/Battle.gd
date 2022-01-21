@@ -54,5 +54,5 @@ func _on_NextRoomButton_pressed():
 	battleActionButtons.show()
 	var playerStats = BattleUnits.PlayerStats
 	playerStats.ap = PlayerControll.max_mp
-	get_tree().change_scene("res://Assets/World/Dungeon/Dungeon_2.tscn")
-	
+	get_tree().change_scene(Global.player_last_scene)
+
