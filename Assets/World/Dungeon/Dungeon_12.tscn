@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Beholder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Enviroment/Spike.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/World/Dungeon/Scripts/Key_Gate.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 16 )
@@ -71,3 +72,20 @@ frame = 39
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key_Gate/StaticBody2D" index="0"]
 position = Vector2( 0, 8 )
 shape = SubResource( 1 )
+
+[node name="Dungeon_14" parent="." index="17" instance=ExtResource( 6 )]
+position = Vector2( 112, 131 )
+rotation = 3.14159
+target_scene = "res://Assets/World/Dungeon/Dungeon_Mini_Boss.tscn"
+door_name = "Dungeon_14"
+
+[node name="Dungeon_11" parent="." index="18" instance=ExtResource( 6 )]
+position = Vector2( 112, 13 )
+target_scene = "res://Assets/World/Dungeon/Dungeon_11.tscn"
+door_name = "Dungeon_12"
+
+[node name="Dungeon_13" parent="." index="19" instance=ExtResource( 6 )]
+position = Vector2( 12, 80 )
+rotation = -1.5708
+target_scene = "res://Assets/World/Dungeon/Dungeon_13.tscn"
+door_name = "Dungeon_12"

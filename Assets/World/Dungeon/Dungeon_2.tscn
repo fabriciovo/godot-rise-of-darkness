@@ -8,6 +8,9 @@
 
 [node name="Dungeon_2" instance=ExtResource( 2 )]
 
+[node name="Player" parent="." index="3"]
+position = Vector2( 111, 134 )
+
 [node name="Static_Object" parent="Enviroment/Static" index="0" instance=ExtResource( 4 )]
 position = Vector2( 80, 112 )
 
@@ -38,8 +41,8 @@ position = Vector2( 121, 40 )
 [node name="Skulls" parent="Entities" index="0" instance=ExtResource( 1 )]
 position = Vector2( 112, 64 )
 
-[node name="Dungeon_3" parent="." index="8" instance=ExtResource( 5 )]
-position = Vector2( 111, 12 )
+[node name="Dungeon_2" parent="." index="8" instance=ExtResource( 5 )]
+position = Vector2( 112, 12 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_3.tscn"
 door_name = "Dungeon_2"
 

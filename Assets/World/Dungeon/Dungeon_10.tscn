@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Beholder.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=5]
 
 [node name="Dungeon_10" instance=ExtResource( 3 )]
 
@@ -28,3 +29,9 @@ position = Vector2( -96, 0 )
 
 [node name="World_Bat2" parent="Entities/Chest" index="4" instance=ExtResource( 2 )]
 position = Vector2( -16, 64 )
+
+[node name="Dungeon_6" parent="." index="8" instance=ExtResource( 5 )]
+position = Vector2( 12, 81 )
+rotation = -1.5708
+target_scene = "res://Assets/World/Dungeon/Dungeon_6.tscn"
+door_name = "Dungeon_12"
