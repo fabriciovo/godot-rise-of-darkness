@@ -1,11 +1,10 @@
 extends ColorRect
 
-
-func _ready():
+func fade_out():
 	$Transition_Animator.play("fade_out_anim")
-
-
-func _on_Player_change_scene(target_scene):
+	yield ($Transition_Animator, "animation_finished")
+	
+func fade_in():
 	$Transition_Animator.play("fade_in_anim")
 	yield ($Transition_Animator, "animation_finished")
-	get_tree().change_scene(target_scene)
+	get_tree().change_scene("res://Assets/Battle/Battle.tscn")

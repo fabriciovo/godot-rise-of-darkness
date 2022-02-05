@@ -8,9 +8,11 @@ onready var animationPlayer = $AnimationPlayer
 onready var nextRoomButton = $UI/CenterContainer/NextRoomButton	
 onready var startPosition = $EnemyPostion
 
-
+onready var transition = $Transition/Transition_Animator
 
 func _ready():
+	transition.play("fade_out_anim")
+	yield(transition,"animation_finished")
 	start_player_turn()
 	nextRoomButton.hide()
 	var enemy = BattleUnits.Enemy

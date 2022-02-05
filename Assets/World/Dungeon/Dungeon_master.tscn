@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=2]
 [ext_resource path="res://Assets/World/Tilemap/dungeon_map_0.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Transicao.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Shaders/Transition.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
@@ -52,6 +52,6 @@ __meta__ = {
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="Transicao" parent="." instance=ExtResource( 5 )]
+[node name="Transition" parent="." instance=ExtResource( 5 )]
 
-[connection signal="change_scene" from="Player" to="Transicao" method="_on_Player_change_scene"]
+[connection signal="change_scene" from="Player" to="Transition" method="_on_Player_change_scene"]

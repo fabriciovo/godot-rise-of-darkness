@@ -11,6 +11,7 @@ var dead_objects = []
 var enemy_battle_unit_hp = 10
 var enemy_battle_unit_damage = 10
 var enemy_frame = 1
+var enemy_battle_unit_type = ""
 var player_last_position = Vector2.ZERO
 var player_last_scene = ""
 

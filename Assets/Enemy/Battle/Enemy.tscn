@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/UI/HoverInfo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/Battle/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://defaultTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Sprites/Enemies.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Enemy/Enemy.gdshader" type="Shader" id=5]
+[ext_resource path="res://Assets/Animations/Bat_anim.tres" type="Animation" id=6]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 5 )
+shader_param/offset = 2.0
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack"
@@ -53,17 +59,18 @@ position = Vector2( 0, 2 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, 7 )
+material = SubResource( 4 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 hframes = 9
 vframes = 7
+frame = 54
 
 [node name="HPLabel" type="Label" parent="."]
-margin_left = -16.0
-margin_top = -31.0
-margin_right = 16.0
-margin_bottom = -17.0
+margin_left = -14.0
+margin_top = -37.0
+margin_right = 18.0
+margin_bottom = -23.0
 theme = ExtResource( 3 )
 text = "25hp"
 align = 1
@@ -73,6 +80,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 1 )
+anims/Bat_anim = ExtResource( 6 )
 anims/Shake = SubResource( 2 )
 
 [node name="HoverInfo" parent="." instance=ExtResource( 1 )]
