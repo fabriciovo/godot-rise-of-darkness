@@ -1,37 +1,24 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Shaders/Mask/shards.png" type="Texture" id=1]
 [ext_resource path="res://Shaders/transition.tres" type="Shader" id=2]
-[ext_resource path="res://Assets/Animations/fade_in_battle_anim.tres" type="Animation" id=3]
+[ext_resource path="res://Assets/Animations/fade_in_anim.tres" type="Animation" id=3]
 [ext_resource path="res://Assets/Animations/fade_out_anim.tres" type="Animation" id=4]
 [ext_resource path="res://Shaders/Transition.gd" type="Script" id=5]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
-shader_param/cutoff = 0.0
+shader_param/cutoff = 1.0
 shader_param/smooth_size = 0.5
 shader_param/color = Color( 0, 0, 0, 1 )
 shader_param/mask = ExtResource( 1 )
 
-[sub_resource type="Animation" id=3]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:material:shader_param/cutoff")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
 [node name="Transition" type="ColorRect"]
 material = SubResource( 2 )
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 224.0
+margin_bottom = 146.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -39,6 +26,5 @@ __meta__ = {
 }
 
 [node name="Transition_Animator" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 3 )
 anims/fade_in_anim = ExtResource( 3 )
 anims/fade_out_anim = ExtResource( 4 )

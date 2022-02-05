@@ -1,7 +1,7 @@
 extends Node2D
 
 const BattleUnits = preload("res://Assets/Battle/BattleUnits.tres")
-
+var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
 
 
 var hp = Global.enemy_battle_unit_hp setget set_hp 
@@ -44,7 +44,11 @@ func attack() -> void:
 func take_damage(amount):
 	self.hp -= amount
 	if is_dead():
+		$Sprite.visible = false
 		emit_signal("died")
+		add_child(smoke)
+		smoke.get_node("Sprite").scale = Vector2(3,3)
+		yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 		queue_free()
 	else:
 		animationPlayer.play("Shake")

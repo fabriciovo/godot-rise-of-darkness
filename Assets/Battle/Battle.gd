@@ -51,8 +51,8 @@ func create_new_enemy():
 	
 func _on_NextRoomButton_pressed():
 	nextRoomButton.hide()
-	animationPlayer.play("FadeToNewRoom")
-	yield(animationPlayer, "animation_finished")
+	transition.play("fade_in_anim")
+	yield(transition, "animation_finished")
 	battleActionButtons.show()
 	var playerStats = BattleUnits.PlayerStats
 	playerStats.ap = PlayerControll.max_mp

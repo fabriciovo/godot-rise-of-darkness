@@ -53,5 +53,3 @@ __meta__ = {
 [node name="Entities" type="Node2D" parent="."]
 
 [node name="Transition" parent="." instance=ExtResource( 5 )]
-
-[connection signal="change_scene" from="Player" to="Transition" method="_on_Player_change_scene"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Enemy/Battle/Slime.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/Battle/Enemy.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Images/Mobile RPG Mockup.png" type="Texture" id=8]
 [ext_resource path="res://Button9Frame.tres" type="StyleBox" id=9]
 [ext_resource path="res://Images/Dungeon.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=11]
 [ext_resource path="res://Assets/Battle/BattleActionButtons.gd" type="Script" id=12]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -37,8 +36,6 @@ visible = false
 modulate = Color( 1, 1, 1, 0.184314 )
 position = Vector2( 45, 80 )
 texture = ExtResource( 8 )
-
-[node name="Transition" parent="." instance=ExtResource( 4 )]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -156,8 +153,11 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 70, 13 )
 text = "ENTER NEXT ROOM"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeToNewRoom = ExtResource( 11 )
+[node name="Transition" parent="." instance=ExtResource( 4 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
 
 [connection signal="ap_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_ap_changed"]
 [connection signal="hp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_hp_changed"]
