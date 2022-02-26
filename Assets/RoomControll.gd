@@ -25,3 +25,5 @@ func _ready():
 			if m.ID == Global.dead_objects[id]:
 				m.queue_free()
 
+
+

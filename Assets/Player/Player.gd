@@ -147,7 +147,8 @@ func _on_PlayerBody_body_entered(body):
 		get_parent().get_node("Transition").fade_in()
 
 	if body.is_in_group(Global.GROUPS.DOOR):
-		emit_signal("change_scene",body.target_scene, body.door_name)
+		Global.doorName = body.door_name
+		get_tree().change_scene(body.target_scene)
 
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group(Global.GROUPS.BOX):

@@ -21,9 +21,6 @@ mouse_filter = 2
 input_pass_on_modal_close_click = false
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Transition_Animator" type="AnimationPlayer" parent="."]
 anims/fade_in_anim = ExtResource( 3 )

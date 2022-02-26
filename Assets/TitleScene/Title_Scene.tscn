@@ -50,9 +50,6 @@ margin_right = 177.0
 margin_bottom = 161.0
 disabled = true
 button_mask = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Title_Player" type="Sprite" parent="Control"]
 position = Vector2( 95, 67 )
@@ -85,8 +82,5 @@ margin_top = 120.0
 margin_right = 136.0
 margin_bottom = 136.0
 text = "Start Game"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
