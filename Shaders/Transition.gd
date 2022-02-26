@@ -1,5 +1,9 @@
 extends ColorRect
 
+
+func _ready():
+	fade_out()
+
 func fade_out():
 	$Transition_Animator.play("fade_out_anim")
 	yield ($Transition_Animator, "animation_finished")

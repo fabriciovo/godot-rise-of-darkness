@@ -2,7 +2,7 @@ extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
 
 const battle_unit_damage = 8
 const battle_unit_hp = 30
-
+const battle_unit_type = "skull"
 var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
 

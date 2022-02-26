@@ -17,21 +17,21 @@ tile_data = PoolIntArray( 0, 12, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 [node name="Player" parent="." index="4"]
 position = Vector2( 112, 135 )
 
+[node name="The Door" parent="." index="7" instance=ExtResource( 2 )]
+
+[node name="Dungeon_1" parent="." index="8" instance=ExtResource( 4 )]
+position = Vector2( 111, 12 )
+target_scene = "res://Assets/World/Dungeon/Dungeon_2.tscn"
+door_name = "Dungeon_1"
+
+[node name="Dungeon_0" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 111, 134 )
+rotation = 3.14159
+target_scene = "res://Assets/World/Dungeon/Dungeon_0.tscn"
+door_name = "Dungeon_1"
+
 [node name="World_Bat31232" parent="Entities" index="0" instance=ExtResource( 3 )]
 position = Vector2( 48, 48 )
 
 [node name="World_Bat23211" parent="Entities" index="1" instance=ExtResource( 3 )]
 position = Vector2( 176, 48 )
-
-[node name="The Door" parent="." index="8" instance=ExtResource( 2 )]
-
-[node name="Dungeon_1" parent="." index="9" instance=ExtResource( 4 )]
-position = Vector2( 111, 12 )
-target_scene = "res://Assets/World/Dungeon/Dungeon_2.tscn"
-door_name = "Dungeon_1"
-
-[node name="Dungeon_0" parent="." index="10" instance=ExtResource( 4 )]
-position = Vector2( 111, 134 )
-rotation = 3.14159
-target_scene = "res://Assets/World/Dungeon/Dungeon_0.tscn"
-door_name = "Dungeon_1"
