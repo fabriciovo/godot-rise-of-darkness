@@ -7,7 +7,7 @@
 radius = 3.53553
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 4.0
+radius = 4.52769
 
 [node name="Arrow_Object" type="KinematicBody2D"]
 collision_layer = 8

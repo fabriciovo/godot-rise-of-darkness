@@ -15,32 +15,35 @@ extents = Vector2( 8, 16 )
 [node name="map_1" parent="." index="2"]
 tile_data = PoolIntArray( 0, 12, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 45, 0, 8, 46, 0, 9, 43, 0, 10, 43, 0, 11, 43, 0, 12, 43, 0, 13, 10, 0, 65536, 42, 0, 65537, 27, 0, 65538, 27, 0, 65539, 27, 0, 65540, 27, 0, 65541, 27, 0, 65544, 27, 0, 65545, 27, 0, 65546, 27, 0, 65547, 27, 0, 65548, 27, 0, 65549, 42, 0, 131072, 42, 0, 131085, 42, 0, 196608, 44, 0, 196611, 12, 0, 196612, 11, 0, 196613, 11, 0, 196614, 11, 0, 196615, 11, 0, 196616, 11, 0, 196617, 11, 0, 196618, 10, 0, 196621, 42, 0, 262147, 9, 0, 262148, 8, 0, 262149, 8, 0, 262150, 8, 0, 262151, 8, 0, 262152, 8, 0, 262153, 8, 0, 262154, 7, 0, 262155, 0, 0, 262157, 42, 0, 327683, 9, 0, 327684, 8, 0, 327685, 8, 0, 327686, 8, 0, 327687, 8, 0, 327688, 8, 0, 327689, 8, 0, 327690, 7, 0, 327693, 42, 0, 393216, 42, 0, 393219, 4, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 6, 0, 393229, 42, 0, 458752, 42, 0, 458765, 42, 0, 524288, 4, 0, 524289, 43, 0, 524290, 43, 0, 524291, 43, 0, 524292, 43, 0, 524293, 45, 0, 524296, 46, 0, 524297, 43, 0, 524298, 43, 0, 524299, 43, 0, 524300, 43, 0, 524301, 6, 0 )
 
-[node name="Player" parent="." index="3"]
-position = Vector2( 112, 10 )
-
 [node name="World_Beholder" parent="Entities" index="0" instance=ExtResource( 3 )]
 position = Vector2( 192, 80 )
 
 [node name="World_Beholder2" parent="Entities" index="1" instance=ExtResource( 3 )]
 position = Vector2( 32, 80 )
 
-[node name="Spike" parent="." index="8" instance=ExtResource( 4 )]
+[node name="Spike6" parent="." index="7" instance=ExtResource( 4 )]
+position = Vector2( 88, 39 )
+z_as_relative = false
+collision_layer = 12
+
+[node name="Player" parent="." index="8"]
+position = Vector2( 112, 13 )
+z_index = 2
+
+[node name="Spike" parent="." index="9" instance=ExtResource( 4 )]
 position = Vector2( 41, 119 )
 
-[node name="Spike2" parent="." index="9" instance=ExtResource( 4 )]
+[node name="Spike2" parent="." index="10" instance=ExtResource( 4 )]
 position = Vector2( 88, 119 )
 
-[node name="Spike3" parent="." index="10" instance=ExtResource( 4 )]
+[node name="Spike3" parent="." index="11" instance=ExtResource( 4 )]
 position = Vector2( 184, 119 )
 
-[node name="Spike4" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Spike4" parent="." index="12" instance=ExtResource( 4 )]
 position = Vector2( 137, 119 )
 
-[node name="Spike5" parent="." index="12" instance=ExtResource( 4 )]
+[node name="Spike5" parent="." index="13" instance=ExtResource( 4 )]
 position = Vector2( 41, 39 )
-
-[node name="Spike6" parent="." index="13" instance=ExtResource( 4 )]
-position = Vector2( 88, 39 )
 
 [node name="Spike7" parent="." index="14" instance=ExtResource( 4 )]
 position = Vector2( 184, 39 )
