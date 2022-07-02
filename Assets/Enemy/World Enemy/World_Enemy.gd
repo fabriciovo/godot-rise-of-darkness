@@ -46,11 +46,9 @@ func _on_Area_area_entered(area):
 
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW):
-		print("pokerfpoksadfpo")
 		knockback = body.knockback_vector * 120
 		body.queue_free()
 		Knockback()
 	if body.is_in_group(Global.GROUPS.BOMB):
-		print("Okasfpdokpoafskposka")
 		knockback = -global_position * 120
 		Knockback()

@@ -43,7 +43,6 @@ func _ready():
 
 func get_input():
 	velocity = Vector2.ZERO
-	
 	if !action_state:
 		if Input.is_action_pressed('ui_right'):
 			$PlayerAnimation.play("walk_right")

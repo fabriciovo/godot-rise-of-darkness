@@ -20,9 +20,6 @@ script = ExtResource( 8 )
 margin_right = 224.0
 margin_bottom = 146.0
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 80, 133 )

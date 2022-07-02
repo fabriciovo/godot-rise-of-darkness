@@ -3,14 +3,14 @@
 [ext_resource path="res://Assets/Enviroment/Arrow_Object.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Weapons_nobg_16x16.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 3.53553
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.5, 1.5 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 4.52769
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.5, 2.5 )
 
 [node name="Arrow_Object" type="KinematicBody2D"]
-collision_layer = 8
+collision_layer = 12
 collision_mask = 12
 script = ExtResource( 1 )
 
@@ -24,12 +24,10 @@ frame = 21
 position = Vector2( -0.5, -0.5 )
 shape = SubResource( 1 )
 
-[node name="Arrow_Area" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 12
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arrow_Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -0.5, -0.5 )
 shape = SubResource( 2 )
 
-[connection signal="body_entered" from="Arrow_Area" to="." method="_on_Arrow_Area_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

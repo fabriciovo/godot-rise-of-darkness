@@ -11,6 +11,9 @@ radius = 5.0
 [node name="World_Bat" instance=ExtResource( 4 )]
 script = ExtResource( 3 )
 
+[node name="Body_Shape" parent="." index="1"]
+position = Vector2( 0, 1 )
+
 [node name="Area_Shape" parent="Area" index="0"]
 shape = SubResource( 1 )
 

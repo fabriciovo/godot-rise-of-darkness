@@ -18,6 +18,8 @@ func _physics_process(delta):
 				move_and_collide(dir * speed * delta)
 		knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
 		knockback = move_and_slide(knockback)
+ 
+
 
 
 func _on_Timer_timeout():
