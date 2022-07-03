@@ -141,9 +141,6 @@ margin_top = 7.5
 margin_right = 35.0
 margin_bottom = 46.5
 mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NextRoomButton" type="Button" parent="UI/CenterContainer"]
 visible = false

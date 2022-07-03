@@ -37,8 +37,6 @@ func Knockback():
 		else:
 			timer.start(1)
 
-
-		
 func _on_Area_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SWORD):
 		knockback = area.knockback_vector * 120

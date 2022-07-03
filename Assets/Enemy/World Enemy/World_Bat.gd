@@ -11,14 +11,15 @@ func _ready():
 	speed = const_speed
 
 func _physics_process(delta):
+	if obj == null:
+		obj = get_parent().get_node("Player")
 	if obj != null:
 		if hp <= 4:
 			if not hit:
 				var dir = (obj.global_position - global_position).normalized()
 				move_and_collide(dir * speed * delta)
-		knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
-		knockback = move_and_slide(knockback)
- 
+	knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
+	knockback = move_and_slide(knockback / 1.1)
 
 
 
