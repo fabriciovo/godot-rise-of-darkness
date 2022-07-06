@@ -32,6 +32,7 @@ var speed = 30
 var velocity = Vector2.ZERO
 var action_state = false
 var hit = false
+var can_execute_action = false
 
 func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
@@ -42,55 +43,14 @@ func _ready():
 		$AP_Timer.start(1)
 
 func get_input():
-	velocity = Vector2.ZERO
-	if !action_state:
-		if Input.is_action_pressed('ui_right'):
-			$PlayerAnimation.play("walk_right")
-			velocity.x += 1
-			dir = "right"
-			actionArea.knockback_vector = velocity
-		elif Input.is_action_pressed('ui_left'):
-			velocity.x -= 1
-			$PlayerAnimation.play("walk_left")
-			dir = "left"
-			actionArea.knockback_vector = velocity
-		elif Input.is_action_pressed('ui_down'):
-			velocity.y += 1
-			$PlayerAnimation.play("walk_down")
-			dir = "down"
-			actionArea.knockback_vector = velocity
-		elif Input.is_action_pressed('ui_up'):
-			velocity.y -= 1
-			$PlayerAnimation.play("walk_up")
-			dir = "up"
-			actionArea.knockback_vector = velocity
-		else:
-			$PlayerAnimation.stop()
-		velocity = velocity.normalized() * speed
-		
-	if Input.is_action_just_pressed("action_1"):
-		if PlayerControll.equiped_item[0] != -1:
-			action(0)
-	elif Input.is_action_just_pressed("action_2"):
-		if PlayerControll.equiped_item[1] != -1:
-			action(1)
-			
-	if dir == "right":
-		action_area.position.x = 10
-		action_area.position.y = 2
-	elif dir == "left":
-		action_area.position.x = -8
-		action_area.position.y = 2
-	elif dir == "up":
-		action_area.position.y = -8
-		action_area.position.x = 1
-	elif dir == "down":
-		action_area.position.y = 10
-		action_area.position.x = 1
+	movement()
+	execute_action()
+	change_action_area_direction()
+
 
 func action(value):
-	if ap > 0:
-		$AP_Timer.start(1)
+	if ap > 0 and value != -1:
+		$AP_Timer.start(.8)
 		match PlayerControll.equiped_item[value]:
 			Global.WEAPONS.SWORD:
 				create_sword(value)
@@ -118,9 +78,6 @@ func action(value):
 		elif dir == "down":
 			$PlayerAnimation.play("action_down")
 			yield($PlayerAnimation, "animation_finished")
-
-
-
 	action_area.visible = false
 	action_state = false
 	action_collision.disabled = true
@@ -206,5 +163,59 @@ func recover_mana():
 func _on_AP_Timer_timeout():
 	set_ap(ap+1)
 
+func change_action_area_direction():
+	if dir == "right":
+		action_area.position.x = 10
+		action_area.position.y = 2
+	elif dir == "left":
+		action_area.position.x = -8
+		action_area.position.y = 2
+	elif dir == "up":
+		action_area.position.y = -8
+		action_area.position.x = 1
+	elif dir == "down":
+		action_area.position.y = 10
+		action_area.position.x = 1
+
+func execute_action():
+	if can_execute_action:
+		if Input.is_action_just_pressed("action_1"):
+			if PlayerControll.equiped_item[0] != -1:
+				action(0)
+		elif Input.is_action_just_pressed("action_2"):
+			if PlayerControll.equiped_item[1] != -1:
+				action(1)
+
+func movement(): 
+	velocity = Vector2.ZERO
+	if !action_state:
+		if Input.is_action_pressed('ui_right'):
+			$PlayerAnimation.play("walk_right")
+			velocity.x += 1
+			dir = "right"
+			actionArea.knockback_vector = velocity
+		elif Input.is_action_pressed('ui_left'):
+			velocity.x -= 1
+			$PlayerAnimation.play("walk_left")
+			dir = "left"
+			actionArea.knockback_vector = velocity
+		elif Input.is_action_pressed('ui_down'):
+			velocity.y += 1
+			$PlayerAnimation.play("walk_down")
+			dir = "down"
+			actionArea.knockback_vector = velocity
+		elif Input.is_action_pressed('ui_up'):
+			velocity.y -= 1
+			$PlayerAnimation.play("walk_up")
+			dir = "up"
+			actionArea.knockback_vector = velocity
+		else:
+			$PlayerAnimation.stop()
+		velocity = velocity.normalized() * speed
+
+func _on_Floor_mouse_entered():
+	can_execute_action = true
 
 
+func _on_Floor_mouse_exited():
+	can_execute_action = false

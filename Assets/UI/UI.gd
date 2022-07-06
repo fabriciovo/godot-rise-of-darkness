@@ -93,9 +93,7 @@ func _on_bow_gui_input(event):
 
 func _on_sword_gui_input(event):
 	if can_equip_sword:
-		if event.is_action_pressed("action_1"):
+		if event.is_action_released("action_1"):
 			PlayerControll.set_equiped_item(Global.WEAPONS.SWORD, 0)
-		if event.is_action_pressed("action_2"):
+		if event.is_action_released("action_2"):
 			PlayerControll.set_equiped_item(Global.WEAPONS.SWORD, 1)
-
-
