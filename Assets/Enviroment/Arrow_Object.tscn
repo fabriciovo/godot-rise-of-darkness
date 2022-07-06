@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Weapons_nobg_16x16.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2.5, 1.5 )
+extents = Vector2( 4.5, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 3.5, 2.5 )
