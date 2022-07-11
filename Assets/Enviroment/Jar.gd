@@ -10,6 +10,7 @@ func _ready():
 
 func Destroy() :
 	$Sprite.visible = false
+	$Body_Shape.visible = true
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()

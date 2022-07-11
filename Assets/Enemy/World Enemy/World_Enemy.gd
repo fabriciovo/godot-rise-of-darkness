@@ -22,6 +22,9 @@ func _on_Timer_timeout():
 
 func Destroy():
 	Global.dead_enemies.push_front(ID)
+	speed = 0
+	$Body_Shape.disabled = true
+	$Area/Area_Shape.disabled = true
 	$Sprite.visible = false
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")

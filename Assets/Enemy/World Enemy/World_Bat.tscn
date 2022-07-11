@@ -5,8 +5,8 @@
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.5, 3 )
 
 [node name="World_Bat" instance=ExtResource( 4 )]
 script = ExtResource( 3 )
@@ -15,6 +15,7 @@ script = ExtResource( 3 )
 position = Vector2( 0, 1 )
 
 [node name="Area_Shape" parent="Area" index="0"]
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="Enemy_Animation" parent="." index="4"]
