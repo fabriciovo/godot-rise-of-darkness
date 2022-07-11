@@ -12,8 +12,10 @@ var hp = 1
 var hit = false
 var speed = 10
 var const_speed = 0
+var normal_speed = speed
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
+	Enable()
 
 
 func _on_Timer_timeout():
@@ -22,10 +24,6 @@ func _on_Timer_timeout():
 
 func Destroy():
 	Global.dead_enemies.push_front(ID)
-	speed = 0
-	$Body_Shape.disabled = true
-	$Area/Area_Shape.disabled = true
-	$Sprite.visible = false
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
@@ -53,3 +51,17 @@ func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.BOMB):
 		knockback = -global_position * 120
 		Knockback()
+
+
+func Disable():
+	speed = 0
+	$Body_Shape.disabled = true
+	$Area/Area_Shape.disabled = true
+	$Sprite.visible = false
+	
+	
+func Enable():
+	speed = normal_speed
+	$Body_Shape.disabled = false
+	$Area/Area_Shape.disabled = false
+	$Sprite.visible = true

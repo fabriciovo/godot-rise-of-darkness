@@ -33,19 +33,21 @@ var velocity = Vector2.ZERO
 var action_state = false
 var hit = false
 var can_execute_action = false
-
+var battle_mode = false 
 func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
 	action_area.visible = false
 	actionArea.knockback_vector = Vector2.LEFT
+	battle_mode = false
 	if ap < 3:
 		$AP_Timer.start(1)
 
 func get_input():
-	movement()
-	execute_action()
-	change_action_area_direction()
+	if !battle_mode:
+		movement()
+		execute_action()
+		change_action_area_direction()
 
 
 func action(value):
@@ -85,7 +87,7 @@ func action(value):
 
 
 func _physics_process(delta):
-	if not hit:
+	if not hit && not battle_mode:
 		get_input()
 		velocity = move_and_slide(velocity)
 
@@ -93,6 +95,8 @@ func _physics_process(delta):
 func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
 		#emit_signal("encounter", body)
+		body.Disable()
+		battle_mode = true
 		Global.last_enemy = body.ID
 		Global.enemy_battle_unit_damage = body.battle_unit_damage
 		Global.enemy_battle_unit_hp = body.battle_unit_hp
