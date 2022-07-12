@@ -19,11 +19,12 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	pass
+	hit = false
 
 
 func Destroy():
 	Global.dead_enemies.push_front(ID)
+	Disable()
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
@@ -39,16 +40,16 @@ func Knockback():
 			timer.start(1)
 
 func _on_Area_area_entered(area):
-	if area.is_in_group(Global.GROUPS.SWORD):
+	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
 		knockback = area.knockback_vector * 120
 		Knockback()
 
 func _on_Area_body_entered(body):
-	if body.is_in_group(Global.GROUPS.ARROW):
+	if body.is_in_group(Global.GROUPS.ARROW) and not hit:
 		knockback = body.knockback_vector * 120
 		body.queue_free()
 		Knockback()
-	if body.is_in_group(Global.GROUPS.BOMB):
+	if body.is_in_group(Global.GROUPS.BOMB) and not hit:
 		knockback = -global_position * 120
 		Knockback()
 
@@ -58,8 +59,7 @@ func Disable():
 	$Body_Shape.disabled = true
 	$Area/Area_Shape.disabled = true
 	$Sprite.visible = false
-	
-	
+
 func Enable():
 	speed = normal_speed
 	$Body_Shape.disabled = false
