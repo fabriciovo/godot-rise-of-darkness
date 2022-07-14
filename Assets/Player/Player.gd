@@ -68,21 +68,23 @@ func action(value):
 				if mp >= 5:
 					heal()
 					set_hp(mp-5)
-		if dir == "right":
-			$PlayerAnimation.play("action_right")
-			yield($PlayerAnimation, "animation_finished")
-		elif dir == "left":
-			$PlayerAnimation.play("action_left")
-			yield($PlayerAnimation, "animation_finished")
-		elif dir == "up":
-			$PlayerAnimation.play("action_up")
-			yield($PlayerAnimation, "animation_finished")
-		elif dir == "down":
-			$PlayerAnimation.play("action_down")
-			yield($PlayerAnimation, "animation_finished")
-	action_area.visible = false
-	action_state = false
-	action_collision.disabled = true
+					
+		match dir:
+			"right":
+				$PlayerAnimation.play("action_right")
+				yield($PlayerAnimation, "animation_finished")
+			"left":
+				$PlayerAnimation.play("action_left")
+				yield($PlayerAnimation, "animation_finished")
+			"up":
+				$PlayerAnimation.play("action_up")
+				yield($PlayerAnimation, "animation_finished")
+			"down":
+				$PlayerAnimation.play("action_down")
+				yield($PlayerAnimation, "animation_finished")
+		action_area.visible = false
+		action_state = false
+		action_collision.disabled = true
 
 
 

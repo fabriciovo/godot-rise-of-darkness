@@ -3,7 +3,6 @@ extends "res://Assets/Buttons/ActionButton.gd"
 const Slash = preload("res://Assets/Animations/Slash.tscn")
 
 func _on_pressed():
-
 	var enemy = BattleUnits.Enemy
 	var playerStats = BattleUnits.PlayerStats
 	

@@ -15,9 +15,10 @@ func _ready():
 
 func _physics_process(delta):
 	if hp <= 4:
-		var collision = move_and_collide(direction * delta)
-		if collision:
-			direction = direction.bounce(collision.normal)
+		if !hit:
+			var collision = move_and_collide(direction * delta)
+			if collision:
+					direction = direction.bounce(collision.normal)
 		knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
 		knockback = move_and_slide(knockback) 
 	

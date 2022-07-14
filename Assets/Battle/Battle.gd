@@ -19,7 +19,6 @@ func _ready():
 	if enemy: 
 		enemy.connect("died",self,"_on_Enemy_died")
 
-
 func start_enemy_turn():
 	var enemy = BattleUnits.Enemy
 	battleActionButtons.hide()
@@ -30,25 +29,16 @@ func start_enemy_turn():
 	
 func start_player_turn():
 	var playerStats = BattleUnits.PlayerStats
+	playerStats.set_ap(PlayerControll.max_ap)
 	battleActionButtons.show()
-	playerStats.ap = PlayerControll.max_ap
 	yield(playerStats, "end_turn")
 	start_enemy_turn()
-
-
 
 func _on_Enemy_died():
 	battleActionButtons.hide()
 	nextRoomButton.show()
 	Global.dead_enemies.push_front(Global.last_enemy)
 
-func create_new_enemy():
-	enemies.shuffle()
-	var Enemy = enemies.front()
-	var enemy = Enemy.instance()
-	startPosition.add_child(enemy) 
-	enemy.connect("died", self, "_on_Enemy_died")
-	
 func _on_NextRoomButton_pressed():
 	nextRoomButton.hide()
 	transition.play("fade_in_anim")

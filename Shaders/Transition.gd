@@ -2,7 +2,7 @@ extends ColorRect
 
 
 func _ready():
-	fade_out()
+	#check if last scene was BATTLE
 
 func fade_out():
 	$Transition_Animator.play("fade_out_anim")
