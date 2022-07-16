@@ -24,11 +24,11 @@ tile_data = PoolIntArray( 0, 12, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 [node name="Player" parent="." index="3"]
 position = Vector2( 112, 13 )
 
-[node name="Chest3" parent="Entities" index="0" instance=ExtResource( 5 )]
+[node name="Chest_1" parent="Entities" index="0" instance=ExtResource( 5 )]
 position = Vector2( 27, 118 )
 item = 1
 
-[node name="Hole" type="StaticBody2D" parent="." index="8"]
+[node name="Hole" type="StaticBody2D" parent="." index="7"]
 position = Vector2( 176, 80 )
 script = ExtResource( 6 )
 
@@ -42,7 +42,7 @@ frame = 73
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole" index="1"]
 shape = SubResource( 1 )
 
-[node name="Altar" type="Node2D" parent="." index="9"]
+[node name="Altar" type="Node2D" parent="." index="8"]
 position = Vector2( 196, 116 )
 script = ExtResource( 1 )
 
@@ -67,12 +67,12 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar/Area2D" index="0"]
 shape = SubResource( 3 )
 
-[node name="Dungeon_4" parent="." index="10" instance=ExtResource( 7 )]
+[node name="Dungeon_4" parent="." index="9" instance=ExtResource( 7 )]
 position = Vector2( 112, 13 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_4.tscn"
 door_name = "Dungeon_5"
 
-[node name="Dungeon_5" parent="." index="11" instance=ExtResource( 7 )]
+[node name="Dungeon_5" parent="." index="10" instance=ExtResource( 7 )]
 position = Vector2( 212, 80 )
 rotation = 1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_6.tscn"

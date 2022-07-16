@@ -7,6 +7,7 @@ var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
 
 func _ready():
+	ID = name
 	const_speed = 200
 	speed = const_speed
 	randomize()

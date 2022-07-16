@@ -50,21 +50,5 @@ door_name = "Door_world_1"
 [node name="Chest" parent="Entities" instance=ExtResource( 7 )]
 position = Vector2( 56, 24 )
 
-[node name="Chest2" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 33, 115 )
-item = 3
-
-[node name="Chest5" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 55, 117 )
-item = 4
-
-[node name="Chest3" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 79, 71 )
-item = 1
-
-[node name="Chest4" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 31, 50 )
-item = 2
-
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]

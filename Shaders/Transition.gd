@@ -2,7 +2,8 @@ extends ColorRect
 
 
 func _ready():
-	#check if last scene was BATTLE
+	if Global.player_last_scene.find("Dungeon_") > 0:
+		fade_out()
 
 func fade_out():
 	$Transition_Animator.play("fade_out_anim")
