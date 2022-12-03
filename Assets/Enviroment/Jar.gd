@@ -13,6 +13,7 @@ func Destroy() :
 	$Body_Shape.visible = true
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
+	Global.dead_objects.push_front(ID)
 	queue_free()
 
 func _on_Area_body_entered(body):

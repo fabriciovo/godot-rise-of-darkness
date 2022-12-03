@@ -8,6 +8,7 @@ func _ready():
 var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
 
 func Destroy() :
+	set_physics_process(false)
 	$Sprite.visible = false
 	$Static_Shape.disabled = true
 	add_child(smoke)

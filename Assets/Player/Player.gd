@@ -106,6 +106,7 @@ func _on_PlayerBody_body_entered(body):
 		Global.enemy_frame = body.frame
 		Global.player_last_position = global_position
 		Global.player_last_scene = get_tree().current_scene.filename
+		Global.stop = true;
 		get_parent().get_node("Transition").fade_in()
 
 	if body.is_in_group(Global.GROUPS.DOOR):

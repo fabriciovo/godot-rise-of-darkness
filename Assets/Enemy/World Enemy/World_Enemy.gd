@@ -18,6 +18,13 @@ func _ready():
 	Enable()
 
 
+func _process(delta):
+	if(!Global.stop):
+		set_physics_process(true)
+	else:
+		set_physics_process(false)
+
+
 func _on_Timer_timeout():
 	hit = false
 
@@ -56,11 +63,13 @@ func _on_Area_body_entered(body):
 
 func Disable():
 	speed = 0
+	set_physics_process(false);
 	$Body_Shape.disabled = true
 	$Area/Area_Shape.disabled = true
 	$Sprite.visible = false
 
 func Enable():
+	set_physics_process(true);
 	speed = normal_speed
 	$Body_Shape.disabled = false
 	$Area/Area_Shape.disabled = false
