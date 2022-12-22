@@ -9,7 +9,6 @@
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 5 )
-shader_param/offset = 2.0
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack"
