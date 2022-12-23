@@ -2,7 +2,7 @@ extends Area2D
 
 var spikes = false
 var player_damage = false
-onready var body = get_parent().get_node("Player")
+onready var body = get_parent().get_parent().get_node("Player")
 
 
 
