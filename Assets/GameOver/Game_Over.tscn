@@ -29,9 +29,12 @@ anims/game_over = SubResource( 1 )
 margin_right = 225.0
 margin_bottom = 173.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 119, 85 )
+position = Vector2( 112, 69 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 9
@@ -43,22 +46,19 @@ margin_right = 224.0
 margin_bottom = 41.0
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = 57.0
-margin_top = 6.0
-margin_right = 180.0
-margin_bottom = 52.0
+margin_left = 82.0
+margin_top = 22.0
+margin_right = 142.0
+margin_bottom = 35.0
 text = "GAME OVER"
 align = 1
 valign = 1
 
 [node name="Button" type="Button" parent="Control"]
-margin_left = 91.0
-margin_top = 120.0
-margin_right = 151.0
-margin_bottom = 136.0
+margin_left = 82.0
+margin_top = 94.0
+margin_right = 142.0
+margin_bottom = 110.0
 text = "RESTART"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
