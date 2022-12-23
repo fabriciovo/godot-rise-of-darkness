@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var obj = get_parent().get_node("Player")
-var speed = 20
+var speed = 100
 var direction = Vector2.ZERO
 func _ready():
 	if obj != null:

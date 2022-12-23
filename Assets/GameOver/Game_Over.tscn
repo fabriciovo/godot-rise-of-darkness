@@ -26,46 +26,36 @@ script = ExtResource( 1 )
 anims/game_over = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_top = -1.0
 margin_right = 225.0
-margin_bottom = 172.0
+margin_bottom = 173.0
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 113, 64 )
+position = Vector2( 119, 85 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 9
 vframes = 5
-frame = 17
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_top = 1.0
+margin_right = 224.0
+margin_bottom = 41.0
 
 [node name="Label" type="Label" parent="Control"]
 margin_left = 57.0
-margin_top = 17.0
+margin_top = 6.0
 margin_right = 180.0
-margin_bottom = 36.0
+margin_bottom = 52.0
 text = "GAME OVER"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Button" type="Button" parent="Control"]
-margin_left = 93.0
-margin_top = 105.0
-margin_right = 135.0
-margin_bottom = 121.0
+margin_left = 91.0
+margin_top = 120.0
+margin_right = 151.0
+margin_bottom = 136.0
 text = "RESTART"
 __meta__ = {
 "_edit_use_anchors_": false
