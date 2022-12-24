@@ -5,10 +5,17 @@ export(int) var item
 var ID = ""
 var disable = false
 
+onready var interactButton = get_node("InteractionButton")
 
 func _ready():
+	interactButton.visible = false;
 	ID = name
 
+func _process(delta):
+	if get_overlapping_areas().size() > 0:
+		interactButton.visible = true;
+	else:
+		interactButton.visible = false;
 
 func _input(event):
 	if event.is_action_pressed("action_3") and not disable:

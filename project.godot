@@ -70,7 +70,7 @@ config/icon="res://icon.png"
 
 Global="*res://Assets/Global.gd"
 PlayerControll="*res://Assets/Autoloads/PlayerControll.gd"
-Pause="*res://Pause.tscn"
+Pause="*res://Assets/Pause.tscn"
 
 [display]
 

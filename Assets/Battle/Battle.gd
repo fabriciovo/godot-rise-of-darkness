@@ -1,7 +1,5 @@
 extends Node
 
-export (Array, PackedScene) var enemies = []
-
 const BattleUnits = preload("res://Assets/Battle/BattleUnits.tres")
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
