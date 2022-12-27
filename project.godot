@@ -29,10 +29,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Enviroment_Object.gd"
 }, {
-"base": "Area2D",
+"base": "Reference",
 "class": "Lever",
 "language": "GDScript",
-"path": "res://Lever.gd"
+"path": "res://Assets/Enviroment/Lever.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -89,8 +89,8 @@ window/stretch/aspect="keep"
 
 [gui]
 
-theme/custom="res://defaultTheme.tres"
-theme/custom_font="res://DefaultFont.tres"
+theme/custom="res://Assets/UI/defaultTheme.tres"
+theme/custom_font="res://Assets/UI/DefaultFont.tres"
 
 [input]
 
@@ -149,4 +149,4 @@ action_3={
 
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Assets/UI/default_env.tres"

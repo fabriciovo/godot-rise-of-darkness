@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=5]
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/RoomControll.gd" type="Script" id=8]
+[ext_resource path="res://Assets/World/RoomControll.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"

@@ -1,12 +1,149 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/Altar.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Enviroment/Altar.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/hole.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Altars_nobg_16x16.png" type="Texture" id=3]
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/World/Dungeon/Scripts/Hole.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=7]
+
+[sub_resource type="TileSet" id=4]
+10/name = "hole.png 10"
+10/texture = ExtResource( 2 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 16, 0, 16, 16 )
+10/tile_mode = 1
+10/autotile/bitmask_mode = 0
+10/autotile/bitmask_flags = [  ]
+10/autotile/icon_coordinate = Vector2( 0, 0 )
+10/autotile/tile_size = Vector2( 16, 16 )
+10/autotile/spacing = 0
+10/autotile/occluder_map = [  ]
+10/autotile/navpoly_map = [  ]
+10/autotile/priority_map = [  ]
+10/autotile/z_index_map = [  ]
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "hole.png 11"
+11/texture = ExtResource( 2 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 16, 16 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "hole.png 12"
+12/texture = ExtResource( 2 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 32, 0, 16, 16 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "hole.png 13"
+13/texture = ExtResource( 2 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 32, 16, 16, 16 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "hole.png 14"
+14/texture = ExtResource( 2 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 16, 0, 16, 16 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "hole.png 15"
+15/texture = ExtResource( 2 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 32, 32, 16, 16 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "hole.png 16"
+16/texture = ExtResource( 2 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 16, 32, 16, 16 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+17/name = "hole.png 17"
+17/texture = ExtResource( 2 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 32, 16, 16 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
+18/name = "hole.png 18"
+18/texture = ExtResource( 2 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 16, 16, 16 )
+18/tile_mode = 0
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape_one_way = false
+18/shape_one_way_margin = 0.0
+18/shapes = [  ]
+18/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 48 )
@@ -24,25 +161,26 @@ tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 [node name="Player" parent="." index="3"]
 position = Vector2( 112, 13 )
 
+[node name="Hole" type="StaticBody2D" parent="Enviroment" index="2"]
+position = Vector2( 176, 83 )
+script = ExtResource( 6 )
+
+[node name="Hole" type="TileMap" parent="Enviroment/Hole" index="0"]
+position = Vector2( 0, -2 )
+tile_set = SubResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131075, 11, 0, -131074, 12, 0, -65539, 18, 0, -65538, 13, 0, -3, 18, 0, -2, 13, 0, 65533, 18, 0, 65534, 13, 0, 131069, 18, 0, 131070, 13, 0, 196605, 17, 0, 196606, 15, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Hole" index="1"]
+position = Vector2( -39, -3 )
+shape = SubResource( 1 )
+
 [node name="Chest_1" parent="Entities" index="0" instance=ExtResource( 5 )]
 position = Vector2( 27, 118 )
 item = 1
 
-[node name="Hole" type="StaticBody2D" parent="." index="7"]
-position = Vector2( 176, 80 )
-script = ExtResource( 6 )
-
-[node name="Sprite" type="Sprite" parent="Hole" index="0"]
-scale = Vector2( 1, 6 )
-texture = ExtResource( 2 )
-hframes = 9
-vframes = 18
-frame = 73
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole" index="1"]
-shape = SubResource( 1 )
-
-[node name="Altar" type="Node2D" parent="." index="8"]
+[node name="Altar" type="Node2D" parent="." index="7"]
 position = Vector2( 196, 116 )
 script = ExtResource( 1 )
 
@@ -67,16 +205,21 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar/Area2D" index="0"]
 shape = SubResource( 3 )
 
-[node name="Dungeon_4" parent="." index="9" instance=ExtResource( 7 )]
+[node name="Dungeon_4" parent="." index="8" instance=ExtResource( 7 )]
 position = Vector2( 112, 13 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_4.tscn"
 door_name = "Dungeon_5"
 
-[node name="Dungeon_5" parent="." index="10" instance=ExtResource( 7 )]
+[node name="Dungeon_5" parent="." index="9" instance=ExtResource( 7 )]
 position = Vector2( 212, 80 )
 rotation = 1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_6.tscn"
 door_name = "Dungeon_5"
 
-[connection signal="altar_hit" from="Altar" to="Hole" method="_on_Altar_altar_hit"]
+[node name="Transition" parent="." index="10"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="altar_hit" from="Altar" to="Enviroment/Hole" method="_on_Altar_altar_hit"]
 [connection signal="body_entered" from="Altar/Area2D" to="Altar" method="_on_Area2D_body_entered"]
