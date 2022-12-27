@@ -21,7 +21,7 @@ door_name = "Dungeon_12"
 
 [node name="Chest_4" parent="Entities" index="0" instance=ExtResource( 1 )]
 position = Vector2( 160, 60 )
-item = 4
+item = 5
 
 [node name="World_Bat_403i" parent="Entities" index="1" instance=ExtResource( 2 )]
 position = Vector2( 35, 46 )
