@@ -51,8 +51,6 @@ func _process(delta):
 					can_equip_bomb = true
 					inventory_bomb.get_node("Sprite").visible = true
 
-
-
 func _ready():
 	self.raise()
 	inventory_sword.get_node("Sprite").visible = false
@@ -62,8 +60,6 @@ func _ready():
 
 func _on_PlayerControl_hp_changed(value):
 	HP.text = "HP " + str(value)
-
-
 
 
 func _on_heal_gui_input(event):

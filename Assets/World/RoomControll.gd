@@ -2,7 +2,6 @@ extends Node
 
 
 func _ready():
-	get_node("UI").raise()
 	if Global.doorName and Global.last_player_scene == "":
 		var door_node = find_node(Global.doorName)
 		if door_node:

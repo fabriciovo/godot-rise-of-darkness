@@ -12,7 +12,6 @@ var mp = PlayerControll.mp setget set_mp
 var items = PlayerControll.items
 var key = PlayerControll.key
 
-
 func set_hp(value):
 	hp = clamp(value, 0 , PlayerControll.max_hp)
 	PlayerControll.set_hp(hp)
@@ -36,7 +35,9 @@ var action_state = false
 var hit = false
 var can_execute_action = false
 var battle_mode = false 
+var heal = false
 func _ready():
+	set_hp(1)
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
 	action_area.visible = false
@@ -69,21 +70,24 @@ func action(value):
 			Global.WEAPONS.HEAL: 
 				if mp >= 5:
 					heal()
-					set_hp(mp-5)
-					
+					set_mp(mp-5)
 		match dir:
 			"right":
 				$PlayerAnimation.play("action_right")
 				yield($PlayerAnimation, "animation_finished")
+				pass
 			"left":
 				$PlayerAnimation.play("action_left")
 				yield($PlayerAnimation, "animation_finished")
+				pass
 			"up":
 				$PlayerAnimation.play("action_up")
 				yield($PlayerAnimation, "animation_finished")
+				pass
 			"down":
 				$PlayerAnimation.play("action_down")
 				yield($PlayerAnimation, "animation_finished")
+				pass
 		action_area.visible = false
 		action_state = false
 		action_collision.disabled = true
@@ -152,10 +156,10 @@ func create_arrow():
 		get_tree().get_current_scene().add_child(arrow_object)
 
 func heal():
-	pass
-#		var arrow_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
-#		arrow_object.global_position = global_position
-#		get_tree().get_current_scene().add_child(arrow_object)
+	set_ap(0)
+	set_hp(hp+5)
+
+
 
 func damage():
 	$PlayerAnimation.stop()

@@ -6,10 +6,13 @@
 
 [node name="Dungeon_9" instance=ExtResource( 1 )]
 
-[node name="map_1" parent="." index="2"]
+[node name="Transition" parent="." index="1"]
+rect_pivot_offset = Vector2( 96, 96 )
+
+[node name="map_1" parent="." index="4"]
 tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 43, 0, 8, 43, 0, 9, 43, 0, 10, 43, 0, 11, 43, 0, 12, 43, 0, 13, 51, 0, 65536, 42, 0, 65537, 8, 0, 65538, 8, 0, 65539, 58, 0, 65540, 6, 0, 65541, 27, 0, 65544, 27, 0, 65545, 4, 0, 65546, 57, 0, 65547, 8, 0, 65548, 8, 0, 65549, 42, 0, 131072, 42, 0, 131073, 8, 0, 131074, 58, 0, 131075, 6, 0, 131082, 4, 0, 131083, 57, 0, 131084, 8, 0, 131085, 42, 0, 196608, 42, 0, 196609, 5, 0, 196610, 6, 0, 196619, 4, 0, 196620, 5, 0, 196621, 42, 0, 262144, 42, 0, 262145, 30, 0, 262155, 0, 0, 262156, 30, 0, 262157, 42, 0, 327680, 42, 0, 327693, 42, 0, 393216, 42, 0, 393229, 42, 0, 458752, 42, 0, 458765, 42, 0, 524288, 53, 0, 524289, 43, 0, 524290, 43, 0, 524291, 43, 0, 524292, 43, 0, 524293, 43, 0, 524294, 43, 0, 524295, 43, 0, 524296, 43, 0, 524297, 43, 0, 524298, 43, 0, 524299, 43, 0, 524300, 43, 0, 524301, 54, 0 )
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="5"]
 position = Vector2( 112, 9 )
 
 [node name="Static_Object" parent="Enviroment/Static" index="0" instance=ExtResource( 3 )]
@@ -59,9 +62,3 @@ position = Vector2( 56, 56 )
 
 [node name="Fire_Wall3" parent="Enviroment/Static" index="15" instance=ExtResource( 2 )]
 position = Vector2( 40, 72 )
-
-[node name="Transition" parent="." index="7"]
-rect_pivot_offset = Vector2( 96, 96 )
-__meta__ = {
-"_edit_lock_": true
-}

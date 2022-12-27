@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Sprites/character_spritesheet_nobg_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Player/Player.gd" type="Script" id=2]
@@ -6,8 +6,17 @@
 [ext_resource path="res://Assets/Player/ActionArea.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=5]
 
+[sub_resource type="CanvasItemMaterial" id=15]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
 [sub_resource type="Animation" id=1]
 resource_name = "Nova Animação"
+
+[sub_resource type="Animation" id=16]
+length = 0.001
 
 [sub_resource type="Animation" id=8]
 resource_name = "action"
@@ -116,6 +125,21 @@ tracks/1/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
+[sub_resource type="Animation" id=17]
+resource_name = "heal_anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 0.0358968, 0.0358968 ),
+"update": 0,
+"values": [ Color( 0, 1, 0, 1 ), Color( 0, 1, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=4]
 resource_name = "walk_down"
 length = 0.4
@@ -198,16 +222,18 @@ z_index = 1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 15 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 5
-frame = 9
+frame = 12
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="PlayerAnimation" type="AnimationPlayer" parent="."]
 "anims/Nova Animação" = SubResource( 1 )
+anims/RESET = SubResource( 16 )
 anims/action = SubResource( 8 )
 anims/action_down = SubResource( 10 )
 anims/action_left = SubResource( 11 )
@@ -215,6 +241,7 @@ anims/action_right = SubResource( 12 )
 anims/action_up = SubResource( 13 )
 anims/damage_anim = ExtResource( 5 )
 anims/get_item = SubResource( 14 )
+anims/heal_anim = SubResource( 17 )
 anims/walk_down = SubResource( 4 )
 anims/walk_left = SubResource( 6 )
 anims/walk_right = SubResource( 2 )
