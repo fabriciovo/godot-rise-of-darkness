@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/World/Tilemap/hole.tres" type="TileSet" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 96.5, 6 )
+extents = Vector2( 96.5, 7 )
 
 [node name="Dungeon_Mini_Boss" instance=ExtResource( 1 )]
 
@@ -34,10 +34,10 @@ position = Vector2( 152, 40 )
 position = Vector2( 184, 56 )
 
 [node name="Spike6" parent="Spikes" index="5" instance=ExtResource( 4 )]
-position = Vector2( 88, 72 )
+position = Vector2( 88, 71 )
 
 [node name="Spike7" parent="Spikes" index="6" instance=ExtResource( 4 )]
-position = Vector2( 152, 72 )
+position = Vector2( 152, 71 )
 
 [node name="Player" parent="." index="4"]
 position = Vector2( 112, 9 )
@@ -49,12 +49,13 @@ position = Vector2( 88, 24 )
 position = Vector2( 136, 24 )
 
 [node name="Hole" type="StaticBody2D" parent="Enviroment" index="2"]
+light_mask = 0
 
 [node name="TileMap" type="TileMap" parent="Enviroment/Hole" index="0"]
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 327681, 11, 0, 327692, 12, 0, 393217, 17, 0, 393218, 16, 0, 393219, 16, 0, 393220, 16, 0, 393221, 16, 0, 393222, 16, 0, 393223, 16, 0, 393224, 16, 0, 393225, 16, 0, 393226, 16, 0, 393227, 16, 0, 393228, 15, 0 )
+tile_data = PoolIntArray( 327681, 11, 0, 327682, 14, 0, 327683, 14, 0, 327684, 14, 0, 327685, 14, 0, 327686, 14, 0, 327687, 14, 0, 327688, 14, 0, 327689, 14, 0, 327690, 14, 0, 327691, 14, 0, 327692, 12, 0, 393217, 17, 0, 393218, 16, 0, 393219, 16, 0, 393220, 16, 0, 393221, 16, 0, 393222, 16, 0, 393223, 16, 0, 393224, 16, 0, 393225, 16, 0, 393226, 16, 0, 393227, 16, 0, 393228, 15, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Hole" index="1"]
 position = Vector2( 111.5, 87 )

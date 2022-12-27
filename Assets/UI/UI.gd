@@ -1,6 +1,4 @@
-extends Control
-
-
+extends CanvasLayer
 
 onready var HP = $Items/Stats/HP
 onready var MP = $Items/Stats/MP
@@ -56,6 +54,7 @@ func _process(delta):
 
 
 func _ready():
+	self.raise()
 	inventory_sword.get_node("Sprite").visible = false
 	inventory_bomb.get_node("Sprite").visible = false
 	inventory_bow.get_node("Sprite").visible = false

@@ -86,8 +86,13 @@ position = Vector2( 104, 88 )
 [node name="Box2" parent="Entities" index="2" instance=ExtResource( 3 )]
 position = Vector2( 121, 56 )
 
-[node name="Dungeon_4" parent="." index="8" instance=ExtResource( 5 )]
+[node name="Dungeon_4" parent="." index="7" instance=ExtResource( 5 )]
 position = Vector2( 112, 132 )
 rotation = 3.14159
 target_scene = "res://Assets/World/Dungeon/Dungeon_6.tscn"
 door_name = "Dungeon_7"
+
+[node name="Transition" parent="." index="9"]
+__meta__ = {
+"_edit_lock_": true
+}

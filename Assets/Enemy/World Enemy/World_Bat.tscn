@@ -9,6 +9,7 @@
 extents = Vector2( 5.5, 3 )
 
 [node name="World_Bat" instance=ExtResource( 4 )]
+z_index = 1
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]

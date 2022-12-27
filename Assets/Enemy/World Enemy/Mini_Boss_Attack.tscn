@@ -11,7 +11,7 @@ radius = 4.0
 
 [node name="Mini_Boss_Attack" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 11
+collision_mask = 10
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
