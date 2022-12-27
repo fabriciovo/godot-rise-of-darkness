@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11, 10 )
 
 [node name="Dungeon_12" instance=ExtResource( 2 )]
 
@@ -53,18 +56,18 @@ position = Vector2( 192, 80 )
 [node name="World_Beholder2" parent="Entities" index="1" instance=ExtResource( 3 )]
 position = Vector2( 32, 80 )
 
-[node name="Key_Gate" type="Node2D" parent="." index="9"]
+[node name="Key_Gate" type="Area2D" parent="." index="9"]
 position = Vector2( 8, 72 )
 script = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="Key_Gate" index="0"]
+[node name="gate_1" type="Sprite" parent="Key_Gate" index="0"]
 rotation = -1.5708
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 18
 frame = 39
 
-[node name="Sprite2" type="Sprite" parent="Key_Gate" index="1"]
+[node name="gate_2" type="Sprite" parent="Key_Gate" index="1"]
 position = Vector2( 0, 16 )
 rotation = -1.5708
 texture = ExtResource( 1 )
@@ -77,6 +80,10 @@ frame = 39
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key_Gate/StaticBody2D" index="0"]
 position = Vector2( 0, 8 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key_Gate" index="3"]
+position = Vector2( 2, 7 )
+shape = SubResource( 2 )
 
 [node name="Dungeon_14" parent="." index="10" instance=ExtResource( 6 )]
 position = Vector2( 112, 131 )
@@ -94,3 +101,5 @@ position = Vector2( 12, 80 )
 rotation = -1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_13.tscn"
 door_name = "Dungeon_12"
+
+[connection signal="body_entered" from="Key_Gate" to="Key_Gate" method="_on_Key_Gate_body_entered"]

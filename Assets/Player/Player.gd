@@ -10,6 +10,8 @@ var hp = PlayerControll.hp setget set_hp
 var ap = PlayerControll.ap setget set_ap
 var mp = PlayerControll.mp setget set_mp
 var items = PlayerControll.items
+var key = PlayerControll.key
+
 
 func set_hp(value):
 	hp = clamp(value, 0 , PlayerControll.max_hp)

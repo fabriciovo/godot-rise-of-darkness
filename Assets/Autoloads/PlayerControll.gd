@@ -28,6 +28,5 @@ func set_item(value):
 func set_equiped_item(value, slot):
 	equiped_item[slot] = value
 
-
-
-
+func set_key(value):
+	key = value

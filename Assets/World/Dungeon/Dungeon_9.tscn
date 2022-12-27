@@ -62,3 +62,6 @@ position = Vector2( 40, 72 )
 
 [node name="Transition" parent="." index="7"]
 rect_pivot_offset = Vector2( 96, 96 )
+__meta__ = {
+"_edit_lock_": true
+}

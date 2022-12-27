@@ -7,10 +7,8 @@ var direction = Vector2.ZERO
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
-	const_speed = 120
-	speed = const_speed
-	randomize()
-	direction.x = rand_range(-speed, speed)
+	const_speed = 50
+	direction.x = const_speed
 	$Attack_Timer.start(1)
 
 
