@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=1]
 [ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Assets/RoomControll.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -57,10 +56,6 @@ door_name = "Dungeon_exit"
 position = Vector2( 169, 72 )
 
 [node name="Entities" type="Node2D" parent="."]
-
-[node name="Chest_1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 53, 84 )
-item = 1
 
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]

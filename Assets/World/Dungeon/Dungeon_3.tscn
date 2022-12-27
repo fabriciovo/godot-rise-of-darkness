@@ -13,19 +13,19 @@ tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 [node name="Player" parent="." index="3"]
 position = Vector2( 111, 134 )
 
-[node name="Jar2" parent="Entities" index="0" instance=ExtResource( 3 )]
+[node name="Jar_23" parent="Entities" index="0" instance=ExtResource( 3 )]
 position = Vector2( 32, 88 )
 
-[node name="Jar4" parent="Entities" index="1" instance=ExtResource( 3 )]
+[node name="Jar_2131" parent="Entities" index="1" instance=ExtResource( 3 )]
 position = Vector2( 23, 96 )
 
-[node name="Jar5" parent="Entities" index="2" instance=ExtResource( 3 )]
+[node name="Jar_1234" parent="Entities" index="2" instance=ExtResource( 3 )]
 position = Vector2( 24, 61 )
 
-[node name="Jar" parent="Entities" index="3" instance=ExtResource( 3 )]
+[node name="Jar_438" parent="Entities" index="3" instance=ExtResource( 3 )]
 position = Vector2( 34, 72 )
 
-[node name="Jar3" parent="Entities" index="4" instance=ExtResource( 3 )]
+[node name="Jar_23145" parent="Entities" index="4" instance=ExtResource( 3 )]
 position = Vector2( 35, 80 )
 
 [node name="World_Beholder_213" parent="Entities" index="5" instance=ExtResource( 2 )]
@@ -57,3 +57,8 @@ position = Vector2( 13, 80 )
 rotation = -1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_11.tscn"
 door_name = "Dungeon_11"
+
+[node name="Transition" parent="." index="10"]
+__meta__ = {
+"_edit_lock_": true
+}

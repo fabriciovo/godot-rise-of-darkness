@@ -57,7 +57,7 @@ func _on_Area_body_entered(body):
 		body.queue_free()
 		Knockback()
 	if body.is_in_group(Global.GROUPS.BOMB) and not hit:
-		knockback = -global_position * 120
+		knockback = -global_position
 		Knockback()
 
 
