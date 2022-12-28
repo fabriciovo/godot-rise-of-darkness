@@ -37,6 +37,7 @@ var GROUPS = {
 	MOVABLE = "MOVABLE",  
 	TILEMAP = "TILEMAP",
 	SWORD = "SWORD", 
+	ARROW_AREA = "ARROW_AREA"
 }
 
 var WEAPONS = {

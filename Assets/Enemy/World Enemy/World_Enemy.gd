@@ -13,6 +13,7 @@ var hit = false
 var speed = 10
 var const_speed = 0
 var normal_speed = speed
+
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
 	Enable()

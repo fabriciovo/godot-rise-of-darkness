@@ -6,6 +6,9 @@
 [node name="SwordActionButton" instance=ExtResource( 1 )]
 text = "Sword"
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HoverInfo" parent="." index="0"]
 description = "Sword

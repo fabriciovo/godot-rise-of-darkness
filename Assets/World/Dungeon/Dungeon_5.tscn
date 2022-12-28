@@ -155,10 +155,10 @@ extents = Vector2( 6, 5.5 )
 
 [node name="Dungeon_5" instance=ExtResource( 4 )]
 
-[node name="map_1" parent="." index="4"]
+[node name="map_1" parent="." index="3"]
 tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 45, 0, 8, 46, 0, 9, 43, 0, 10, 43, 0, 11, 43, 0, 12, 43, 0, 13, 51, 0, 65536, 42, 0, 65537, 27, 0, 65538, 27, 0, 65539, 27, 0, 65540, 27, 0, 65541, 27, 0, 65544, 27, 0, 65545, 27, 0, 65546, 27, 0, 65547, 27, 0, 65548, 27, 0, 65549, 42, 0, 131072, 42, 0, 131085, 44, 0, 196608, 42, 0, 196621, 27, 0, 262144, 42, 0, 262155, 0, 0, 327680, 42, 0, 393216, 42, 0, 393229, 49, 0, 458752, 42, 0, 458765, 42, 0, 524288, 53, 0, 524289, 43, 0, 524290, 43, 0, 524291, 43, 0, 524292, 43, 0, 524293, 43, 0, 524294, 43, 0, 524295, 43, 0, 524296, 43, 0, 524297, 43, 0, 524298, 43, 0, 524299, 43, 0, 524300, 43, 0, 524301, 54, 0 )
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="4"]
 position = Vector2( 112, 13 )
 
 [node name="Hole" type="StaticBody2D" parent="Enviroment" index="2"]
@@ -175,6 +175,10 @@ tile_data = PoolIntArray( -131075, 11, 0, -131074, 12, 0, -65539, 18, 0, -65538,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Hole" index="1"]
 position = Vector2( -39, -3 )
 shape = SubResource( 1 )
+
+[node name="Chest_1" parent="Entities" index="0" instance=ExtResource( 5 )]
+position = Vector2( 27, 118 )
+item = 1
 
 [node name="Altar" type="Node2D" parent="." index="7"]
 position = Vector2( 196, 116 )
@@ -211,10 +215,6 @@ position = Vector2( 212, 80 )
 rotation = 1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_6.tscn"
 door_name = "Dungeon_5"
-
-[node name="Chest_1" parent="Entities" index="0" instance=ExtResource( 5 )]
-position = Vector2( 27, 118 )
-item = 1
 
 [connection signal="altar_hit" from="Altar" to="Enviroment/Hole" method="_on_Altar_altar_hit"]
 [connection signal="body_entered" from="Altar/Area2D" to="Altar" method="_on_Area2D_body_entered"]

@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Chest.gd"
 }, {
+"base": "Node2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Assets/Enemy/Battle/Enemy.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enviroment_Object",
 "language": "GDScript",
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "BattleUnits": "",
 "Bomb_Object": "",
 "Chest": "",
+"Enemy": "",
 "Enviroment_Object": "",
 "Lever": "",
 "Player": "",

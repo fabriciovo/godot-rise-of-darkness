@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
+[ext_resource path="res://Sprites/Weapons_nobg_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Enemy/Battle/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Battle/PlayerAim.gd" type="Script" id=3]
 [ext_resource path="res://Shaders/Transition.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Battle/Battle.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Player/PlayerStats.gd" type="Script" id=6]
@@ -8,6 +10,12 @@
 [ext_resource path="res://Assets/UI/Button9Frame.tres" type="StyleBox" id=9]
 [ext_resource path="res://Images/Dungeon.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Battle/BattleActionButtons.gd" type="Script" id=12]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 4.12311
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 6.0
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -27,6 +35,33 @@ position = Vector2( 113, 38 )
 
 [node name="Enemy" parent="EnemyPostion" instance=ExtResource( 2 )]
 
+[node name="PlayerAim" type="KinematicBody2D" parent="."]
+visible = false
+position = Vector2( 16, 56 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="PlayerAim"]
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="PlayerAim"]
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAim"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area" type="Area2D" parent="PlayerAim"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAim/Area"]
+shape = SubResource( 4 )
+
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,9 +77,6 @@ margin_right = 147.0
 margin_bottom = 164.0
 rect_scale = Vector2( 1.52878, 1.21782 )
 custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Textbox" type="RichTextLabel" parent="UI/TextboxPanel"]
 margin_left = 1.0
@@ -66,9 +98,6 @@ margin_right = 42.0
 margin_bottom = 11.5
 custom_styles/panel = ExtResource( 9 )
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StatsContainer" type="HBoxContainer" parent="UI/StatsPanel"]
 margin_left = 1.0
@@ -142,8 +171,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 0.0
 margin_bottom = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="ap_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_ap_changed"]
 [connection signal="hp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_hp_changed"]
 [connection signal="mp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_mp_changed"]
+[connection signal="timeout" from="PlayerAim/Timer" to="PlayerAim" method="_on_Timer_timeout"]
+[connection signal="area_entered" from="PlayerAim/Area" to="PlayerAim" method="_on_Area_area_entered"]
+[connection signal="area_exited" from="PlayerAim/Area" to="PlayerAim" method="_on_Area_area_exited"]
 [connection signal="pressed" from="UI/CenterContainer/NextRoomButton" to="." method="_on_NextRoomButton_pressed"]

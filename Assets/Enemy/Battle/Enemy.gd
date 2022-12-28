@@ -1,9 +1,10 @@
+class_name Enemy
 extends Node2D
 
 const BattleUnits = preload("res://Assets/Battle/BattleUnits.tres")
 var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
 
-
+onready var array_areas = get_node("Areas")
 var hp = Global.enemy_battle_unit_hp setget set_hp 
 var damage = Global.enemy_battle_unit_damage
 var type = Global.enemy_battle_unit_type

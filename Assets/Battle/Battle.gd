@@ -2,10 +2,8 @@ extends Node
 
 const BattleUnits = preload("res://Assets/Battle/BattleUnits.tres")
 onready var battleActionButtons = $UI/BattleActionButtons
-onready var animationPlayer = $AnimationPlayer
 onready var nextRoomButton = $UI/CenterContainer/NextRoomButton	
 onready var startPosition = $EnemyPostion
-
 onready var transition = $Transition/Transition_Animator
 
 func _ready():
