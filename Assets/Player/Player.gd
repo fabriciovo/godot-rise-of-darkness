@@ -37,7 +37,6 @@ var can_execute_action = false
 var battle_mode = false 
 var heal = false
 func _ready():
-	set_hp(1)
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
 	action_area.visible = false
