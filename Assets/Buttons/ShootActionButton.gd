@@ -14,7 +14,7 @@ func _on_pressed():
 			enemy.take_damage(20)
 			playerStats.mp -= 1
 			playerStats.ap -= 1
-		elif playerAim.area_name in "Hit":
+		elif "Hit" in playerAim.area_name:
 			create_slash(enemy.global_position)
 			enemy.take_damage(6)
 			playerStats.mp -= 1

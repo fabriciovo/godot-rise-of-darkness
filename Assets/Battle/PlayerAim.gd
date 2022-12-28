@@ -9,13 +9,12 @@ var speed = 10
 var area_name = ""
 
 func randomArea():
-
 	var minValue = 0
 	var maxValue = array_areas.size()
 	return lerp(minValue, maxValue, randf())
 
 func getDir():
-	if array_areas:
+	if active:
 		var direction = array_areas[randomArea()].global_position
 		dir = (direction - global_position).normalized()
 	else:
@@ -31,13 +30,14 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	$Timer.start(0.5)
-	getDir()
+	if active:
+		$Timer.start(0.5)
+		getDir()
 
 
-func _on_Area_area_entered(area):
+func _on_Area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	area_name = area.name
+	print(area_name)
 
-
-func _on_Area_area_exited(area):
+func _on_Area_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	area_name = ""

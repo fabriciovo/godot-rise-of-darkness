@@ -4,7 +4,7 @@
 
 [node name="bat" instance=ExtResource( 1 )]
 
-[node name="Hit_Area_1" parent="Areas" index="0"]
+[node name="Critical_Area" parent="Areas" index="0"]
 position = Vector2( -2, 1 )
 
 [node name="Miss_Area_3" parent="Areas" index="5"]

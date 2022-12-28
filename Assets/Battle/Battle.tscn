@@ -15,7 +15,7 @@
 radius = 4.12311
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 6.0
+radius = 3.16228
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -36,7 +36,6 @@ position = Vector2( 113, 38 )
 [node name="Enemy" parent="EnemyPostion" instance=ExtResource( 2 )]
 
 [node name="PlayerAim" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 16, 56 )
 script = ExtResource( 3 )
 
@@ -179,6 +178,6 @@ __meta__ = {
 [connection signal="hp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_hp_changed"]
 [connection signal="mp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_mp_changed"]
 [connection signal="timeout" from="PlayerAim/Timer" to="PlayerAim" method="_on_Timer_timeout"]
-[connection signal="area_entered" from="PlayerAim/Area" to="PlayerAim" method="_on_Area_area_entered"]
-[connection signal="area_exited" from="PlayerAim/Area" to="PlayerAim" method="_on_Area_area_exited"]
+[connection signal="area_shape_entered" from="PlayerAim/Area" to="PlayerAim" method="_on_Area_area_shape_entered"]
+[connection signal="area_shape_exited" from="PlayerAim/Area" to="PlayerAim" method="_on_Area_area_shape_exited"]
 [connection signal="pressed" from="UI/CenterContainer/NextRoomButton" to="." method="_on_NextRoomButton_pressed"]
