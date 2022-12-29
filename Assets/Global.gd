@@ -16,7 +16,6 @@ var enemy_battle_unit_type = ""
 var player_last_position = Vector2.ZERO
 var player_last_scene = ""
 
-
 var altar_hit = false
 var boss_gate = false
 var key_gate = false

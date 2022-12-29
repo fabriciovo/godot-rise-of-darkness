@@ -21,6 +21,7 @@ func _on_pressed():
 			playerStats.ap -= 1
 		else:
 			playerStats.ap -= 2
+			playerStats.mp -= 2
 		playerAim.active = false
 		playerAim.visible = false
 		

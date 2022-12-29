@@ -6,10 +6,10 @@
 [ext_resource path="res://Assets/Enviroment/Spike.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enviroment/Fire_Wall.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/World/Tilemap/hole.tres" type="TileSet" id=7]
+[ext_resource path="res://Tilesets/map_0.tres" type="TileSet" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 96.5, 7 )
+extents = Vector2( 96.5, 8 )
 
 [node name="Dungeon_Mini_Boss" instance=ExtResource( 1 )]
 
@@ -36,11 +36,17 @@ position = Vector2( 88, 71 )
 [node name="Spike7" parent="Spikes" index="6" instance=ExtResource( 4 )]
 position = Vector2( 152, 71 )
 
-[node name="map_1" parent="." index="4"]
+[node name="map_1" parent="." index="5"]
 tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 45, 0, 8, 46, 0, 9, 43, 0, 10, 43, 0, 11, 43, 0, 12, 43, 0, 13, 51, 0, 65536, 42, 0, 65537, 27, 0, 65538, 27, 0, 65539, 27, 0, 65540, 27, 0, 65545, 27, 0, 65546, 27, 0, 65547, 27, 0, 65548, 27, 0, 65549, 42, 0, 131072, 42, 0, 131084, 0, 0, 131085, 42, 0, 196608, 42, 0, 196621, 42, 0, 262144, 42, 0, 262155, 0, 0, 262157, 42, 0, 327680, 42, 0, 327693, 42, 0, 393216, 42, 0, 393229, 42, 0, 458752, 42, 0, 458765, 42, 0, 524288, 53, 0, 524289, 43, 0, 524290, 43, 0, 524291, 43, 0, 524292, 43, 0, 524293, 43, 0, 524294, 43, 0, 524295, 43, 0, 524296, 43, 0, 524297, 43, 0, 524298, 43, 0, 524299, 43, 0, 524300, 43, 0, 524301, 54, 0 )
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="6"]
 position = Vector2( 112, 9 )
+
+[node name="Mana_Pillar" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 24, 39 )
+
+[node name="Mana_Pillar2" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 201, 39 )
 
 [node name="Fire_Wall5" parent="Enviroment/Static" index="0" instance=ExtResource( 6 )]
 position = Vector2( 88, 24 )
@@ -55,22 +61,16 @@ light_mask = 0
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 327681, 11, 0, 327682, 14, 0, 327683, 14, 0, 327684, 14, 0, 327685, 14, 0, 327686, 14, 0, 327687, 14, 0, 327688, 14, 0, 327689, 14, 0, 327690, 14, 0, 327691, 14, 0, 327692, 12, 0, 393217, 17, 0, 393218, 16, 0, 393219, 16, 0, 393220, 16, 0, 393221, 16, 0, 393222, 16, 0, 393223, 16, 0, 393224, 16, 0, 393225, 16, 0, 393226, 16, 0, 393227, 16, 0, 393228, 15, 0 )
+tile_data = PoolIntArray( 327681, 16, 0, 327682, 16, 0, 327683, 16, 0, 327684, 16, 0, 327685, 16, 0, 327686, 16, 0, 327687, 16, 0, 327688, 16, 0, 327689, 16, 0, 327690, 16, 0, 327691, 16, 0, 327692, 16, 0, 393217, 23, 0, 393218, 23, 0, 393219, 23, 0, 393220, 23, 0, 393221, 23, 0, 393222, 23, 0, 393223, 23, 0, 393224, 23, 0, 393225, 23, 0, 393226, 23, 0, 393227, 23, 0, 393228, 23, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Hole" index="1"]
-position = Vector2( 111.5, 87 )
+position = Vector2( 111.5, 88 )
 shape = SubResource( 1 )
-
-[node name="Mana_Pillar" parent="." index="7" instance=ExtResource( 2 )]
-position = Vector2( 24, 39 )
-
-[node name="Mana_Pillar2" parent="." index="8" instance=ExtResource( 2 )]
-position = Vector2( 201, 39 )
-
-[node name="World_Mini_Boss" parent="Entities" index="0" instance=ExtResource( 3 )]
-position = Vector2( 111, 115 )
 
 [node name="Dungeon_4" parent="." index="10" instance=ExtResource( 5 )]
 position = Vector2( 112, 13 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_12.tscn"
 door_name = "Dungeon_14"
+
+[node name="World_Mini_Boss" parent="Entities" index="0" instance=ExtResource( 3 )]
+position = Vector2( 111, 115 )

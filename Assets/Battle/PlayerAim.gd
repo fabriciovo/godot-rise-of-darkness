@@ -34,10 +34,8 @@ func _on_Timer_timeout():
 		$Timer.start(0.5)
 		getDir()
 
-
 func _on_Area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	area_name = area.name
-	print(area_name)
 
 func _on_Area_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	area_name = ""
