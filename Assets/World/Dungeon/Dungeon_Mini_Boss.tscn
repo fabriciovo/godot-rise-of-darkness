@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Mana_Pillar.tscn" type="PackedScene" id=2]
@@ -7,9 +7,13 @@
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enviroment/Fire_Wall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tilesets/map_0.tres" type="TileSet" id=7]
+[ext_resource path="res://Assets/World/Dungeon/BridgeColision.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 2.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 96.5, 8 )
+extents = Vector2( 40.5, 16 )
 
 [node name="Dungeon_Mini_Boss" instance=ExtResource( 1 )]
 
@@ -54,23 +58,46 @@ position = Vector2( 88, 24 )
 [node name="Fire_Wall6" parent="Enviroment/Static" index="1" instance=ExtResource( 6 )]
 position = Vector2( 136, 24 )
 
-[node name="Hole" type="StaticBody2D" parent="Enviroment" index="2"]
+[node name="Water" type="StaticBody2D" parent="Enviroment" index="2"]
 light_mask = 0
 
-[node name="TileMap" type="TileMap" parent="Enviroment/Hole" index="0"]
+[node name="TileMap" type="TileMap" parent="Enviroment/Water" index="0"]
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 327681, 16, 0, 327682, 16, 0, 327683, 16, 0, 327684, 16, 0, 327685, 16, 0, 327686, 16, 0, 327687, 16, 0, 327688, 16, 0, 327689, 16, 0, 327690, 16, 0, 327691, 16, 0, 327692, 16, 0, 393217, 23, 0, 393218, 23, 0, 393219, 23, 0, 393220, 23, 0, 393221, 23, 0, 393222, 23, 0, 393223, 23, 0, 393224, 23, 0, 393225, 23, 0, 393226, 23, 0, 393227, 23, 0, 393228, 23, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Hole" index="1"]
-position = Vector2( 111.5, 88 )
+[node name="BridgeColision" type="CollisionShape2D" parent="Enviroment/Water" index="1"]
+position = Vector2( 112, 82.5 )
+shape = SubResource( 2 )
+script = ExtResource( 8 )
+
+[node name="water1" type="CollisionShape2D" parent="Enviroment/Water" index="2"]
+position = Vector2( 55.5, 96 )
 shape = SubResource( 1 )
 
-[node name="Dungeon_4" parent="." index="10" instance=ExtResource( 5 )]
-position = Vector2( 112, 13 )
-target_scene = "res://Assets/World/Dungeon/Dungeon_12.tscn"
-door_name = "Dungeon_14"
+[node name="water2" type="CollisionShape2D" parent="Enviroment/Water" index="3"]
+position = Vector2( 168.5, 96 )
+shape = SubResource( 1 )
+
+[node name="Bridge" type="Node2D" parent="Enviroment" index="3"]
+position = Vector2( -64, 32 )
+
+[node name="TileMap" type="TileMap" parent="Enviroment/Bridge" index="0"]
+position = Vector2( 176, 48 )
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65535, 65, 0, 0, 65, 0, 131071, 65, 0, 65536, 65, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="World_Mini_Boss" parent="Entities" index="0" instance=ExtResource( 3 )]
 position = Vector2( 111, 115 )
+z_index = 1
+
+[node name="Dungeon_4" parent="." index="11" instance=ExtResource( 5 )]
+position = Vector2( 112, 13 )
+target_scene = "res://Assets/World/Dungeon/Dungeon_12.tscn"
+door_name = "Dungeon_14"

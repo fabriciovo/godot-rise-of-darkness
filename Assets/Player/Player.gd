@@ -102,8 +102,9 @@ func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
 		if body.name != "Boss": 
 			body.Disable()
-		battle_mode = true
 		$AP_Timer.stop()
+		set_ap(3)
+		battle_mode = true
 		Global.last_enemy = body.ID
 		Global.enemy_battle_unit_damage = body.battle_unit_damage
 		Global.enemy_battle_unit_hp = body.battle_unit_hp
@@ -113,7 +114,6 @@ func _on_PlayerBody_body_entered(body):
 		Global.player_last_scene = get_tree().current_scene.filename
 		Global.stop = true;
 		get_parent().get_node("CanvasTransition/Transition").fade_in()
-
 	if body.is_in_group(Global.GROUPS.DOOR):
 		Global.doorName = body.door_name
 		get_tree().change_scene(body.target_scene)

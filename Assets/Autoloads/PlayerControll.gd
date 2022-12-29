@@ -30,3 +30,8 @@ func set_equiped_item(value, slot):
 
 func set_key(value):
 	key = value
+
+func restart():
+	set_hp(max_hp)
+	set_mp(max_mp)
+	set_ap(max_ap)

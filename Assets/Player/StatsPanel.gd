@@ -4,6 +4,10 @@ onready var hpLabel = $StatsContainer/HP
 onready var mpLabel = $StatsContainer/MP
 onready var apLabel = $StatsContainer/AP
 
+func _ready():
+	hpLabel.text = "HP\n"+str(PlayerControll.hp)
+	mpLabel.text = "MP\n"+str(PlayerControll.mp)
+	apLabel.text = "AP\n"+str(PlayerControll.ap)
 
 func _on_PlayerStats_ap_changed(value):
 	apLabel.text = "AP\n"+str(value)

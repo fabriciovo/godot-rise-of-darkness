@@ -1,5 +1,6 @@
 extends Node
 
+
 func _ready():
 	if Global.doorName and Global.last_player_scene == "":
 		var door_node = find_node(Global.doorName)
@@ -23,6 +24,7 @@ func _ready():
 		for id in Global.dead_objects.size():
 			if m.ID == Global.dead_objects[id]:
 				m.queue_free()
+
 
 
 
