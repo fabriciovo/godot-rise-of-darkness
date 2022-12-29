@@ -42,8 +42,7 @@ func _ready():
 	action_area.visible = false
 	actionArea.knockback_vector = Vector2.LEFT
 	battle_mode = false
-	if ap < 3:
-		$AP_Timer.start(1)
+	$AP_Timer.start(1)
 
 func get_input():
 	if !battle_mode:
@@ -104,6 +103,7 @@ func _on_PlayerBody_body_entered(body):
 		if body.name != "Boss": 
 			body.Disable()
 		battle_mode = true
+		$AP_Timer.stop()
 		Global.last_enemy = body.ID
 		Global.enemy_battle_unit_damage = body.battle_unit_damage
 		Global.enemy_battle_unit_hp = body.battle_unit_hp
