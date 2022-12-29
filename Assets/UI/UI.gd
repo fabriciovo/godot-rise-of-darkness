@@ -52,7 +52,6 @@ func _process(delta):
 					inventory_bomb.get_node("Sprite").visible = true
 
 func _ready():
-	self.raise()
 	inventory_sword.get_node("Sprite").visible = false
 	inventory_bomb.get_node("Sprite").visible = false
 	inventory_bow.get_node("Sprite").visible = false
