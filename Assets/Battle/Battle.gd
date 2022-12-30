@@ -6,9 +6,34 @@ onready var nextRoomButton = $UI/CenterContainer/NextRoomButton
 onready var startPosition = $EnemyPostion
 onready var transition = $Transition/Transition_Animator
 
+const enemy_bat = preload("res://Assets/Enemy/Battle/bat.tscn")
+const enemy_beholder = preload("res://Assets/Enemy/Battle/bat.tscn")
+const enemy_slime = preload("res://Assets/Enemy/Battle/bat.tscn")
+const enemy_skull = preload("res://Assets/Enemy/Battle/bat.tscn")
+const enemy_boss = preload("res://Assets/Enemy/Battle/bat.tscn")
+const player_aim = preload("res://Assets/Battle/PlayerAim.tscn")
+
 func _ready():
 	Global.stop = false;
+	match Global.enemy_battle_unit_type:
+		"bat":
+			var instance = enemy_bat.instance()
+			get_node("EnemyPosition").add_child(instance)
+		"beholder":
+			var instance = enemy_beholder.instance()
+			get_node("EnemyPosition").add_child(instance)
+		"slime":
+			var instance = enemy_bat.instance()
+			get_node("EnemyPosition").add_child(instance)
+		"skull":
+			var instance = enemy_skull.instance()
+			get_node("EnemyPosition").add_child(instance)
+		"boss":
+			var instance = enemy_boss.instance()
+			get_node("EnemyPostion").add_child(instance)
 	transition.play("fade_out_anim")
+	var aim = player_aim.instance()
+	self.add_child(aim)
 	yield(transition,"animation_finished")
 	start_player_turn()
 	nextRoomButton.hide()

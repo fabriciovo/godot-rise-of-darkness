@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
+onready var main = get_tree().current_scene
 
-onready var areas = get_parent().get_node("EnemyPostion/Enemy").get_node("Areas").get_children()
+var areas = null
 var array_areas = []
 var active = false
 var dir = Vector2.ZERO
@@ -20,13 +21,18 @@ func getDir():
 	else:
 		dir = Vector2.ZERO
 func _ready():
-	for area in areas:
-		array_areas.append(area)
+	print(areas)
+	if areas:
+		print(areas)
+		for area in areas:
+			array_areas.append(area)
 	getDir()
 
 func _process(delta):
 	if active:
 		move_and_collide(dir * 0.3)
+		areas = main.get_node("EnemyPosition")
+		print(areas)
 
 
 func _on_Timer_timeout():
