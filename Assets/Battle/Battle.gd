@@ -15,6 +15,7 @@ const player_aim = preload("res://Assets/Battle/PlayerAim.tscn")
 
 func _ready():
 	Global.stop = false;
+	var aim = player_aim.instance()
 	match Global.enemy_battle_unit_type:
 		"bat":
 			var instance = enemy_bat.instance()
@@ -32,7 +33,6 @@ func _ready():
 			var instance = enemy_boss.instance()
 			get_node("EnemyPostion").add_child(instance)
 	transition.play("fade_out_anim")
-	var aim = player_aim.instance()
 	self.add_child(aim)
 	yield(transition,"animation_finished")
 	start_player_turn()

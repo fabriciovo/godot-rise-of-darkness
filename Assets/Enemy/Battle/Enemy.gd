@@ -21,9 +21,6 @@ func set_hp(new_hp):
 
 func _ready():
 	basic_animation()
-	#hp = Global.enemy_battle_unit_hp
-	#damage = Global.enemy_battle_unit_damage
-	#$Sprite.frame = Global.enemy_frame
 	hpLabel.text = str(hp) + "hp"
 	BattleUnits.Enemy = self
 

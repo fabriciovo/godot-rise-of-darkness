@@ -7,10 +7,9 @@
 radius = 4.12311
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 3.16228
+radius = 6.08276
 
 [node name="PlayerAim" type="KinematicBody2D"]
-visible = false
 position = Vector2( 110, 64 )
 script = ExtResource( 1 )
 
@@ -34,4 +33,3 @@ shape = SubResource( 4 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_shape_entered" from="Area" to="." method="_on_Area_area_shape_entered"]
-[connection signal="area_shape_exited" from="Area" to="." method="_on_Area_area_shape_exited"]

@@ -27,15 +27,18 @@ func _ready():
 	
 
 func _process(delta):
-	if playerAim.active == true:
-		for child in get_children():
-			if child.name != "ShootActionButton":
-				child.visible = false
-			else:
-				child.visible = true
+	if playerAim != null:
+		if playerAim.active == true:
+			for child in get_children():
+				if child.name != "ShootActionButton":
+					child.visible = false
+				else:
+					child.visible = true
+		else:
+			for child in get_children():
+				if child.name != "ShootActionButton":
+					child.visible = true
+				else:
+					child.visible = false
 	else:
-		for child in get_children():
-			if child.name != "ShootActionButton":
-				child.visible = true
-			else:
-				child.visible = false
+		playerAim = get_tree().current_scene.get_node("PlayerAim")

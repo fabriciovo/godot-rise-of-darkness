@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+#TODO TRANSFORM THIS TO AREA2D
 onready var main = get_tree().current_scene
 
 var areas = null
@@ -21,19 +21,20 @@ func getDir():
 	else:
 		dir = Vector2.ZERO
 func _ready():
-	print(areas)
-	if areas:
-		print(areas)
-		for area in areas:
-			array_areas.append(area)
 	getDir()
 
 func _process(delta):
 	if active:
-		move_and_collide(dir * 0.3)
-		areas = main.get_node("EnemyPosition")
-		print(areas)
+		var collision = move_and_collide(dir * 100 * delta)
+		if collision:
+			print("Kinematic body collided with ", collision.collider)
+	getAreas()
 
+func getAreas():
+	if areas == null:
+		areas = main.get_node("EnemyPosition").get_child(0).get_node("Areas").get_children()
+		for area in areas:
+			array_areas.append(area)
 
 func _on_Timer_timeout():
 	if active:
@@ -42,6 +43,3 @@ func _on_Timer_timeout():
 
 func _on_Area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	area_name = area.name
-
-func _on_Area_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
-	area_name = ""
