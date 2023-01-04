@@ -9,7 +9,7 @@
 [ext_resource path="res://Tilesets/map_0.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/World/Dungeon/BridgeColision.gd" type="Script" id=8]
 [ext_resource path="res://Assets/World/Dungeon/Bridge.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Enviroment/Lever.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 2.5 )
@@ -92,7 +92,7 @@ position = Vector2( 176, 48 )
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 65535, 65, 0, 0, 65, 0, 131071, 65, 0, 65536, 65, 0 )
+tile_data = PoolIntArray( -1, 66, 0, -65536, 66, 0, 65535, 65, 0, 0, 65, 0, 131071, 65, 0, 65536, 65, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -101,11 +101,10 @@ __meta__ = {
 position = Vector2( 111, 115 )
 z_index = 1
 
-[node name="Chest_1" parent="Entities" index="1" instance=ExtResource( 10 )]
-position = Vector2( 32, 64 )
-item = 1
-
 [node name="Dungeon_4" parent="." index="11" instance=ExtResource( 5 )]
 position = Vector2( 112, 13 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_12.tscn"
 door_name = "Dungeon_14"
+
+[node name="Lever" parent="." index="12" instance=ExtResource( 10 )]
+position = Vector2( 200, 119 )

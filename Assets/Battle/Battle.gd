@@ -31,7 +31,7 @@ func _ready():
 			get_node("EnemyPosition").add_child(instance)
 		"boss":
 			var instance = enemy_boss.instance()
-			get_node("EnemyPostion").add_child(instance)
+			get_node("EnemyPosition").add_child(instance)
 	transition.play("fade_out_anim")
 	self.add_child(aim)
 	yield(transition,"animation_finished")
