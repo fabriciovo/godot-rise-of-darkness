@@ -74,6 +74,7 @@ func _on_Area_body_entered(body):
 
 func Disable():
 	speed = 0
+	$Sprite.visible = false
 	set_physics_process(false);
 
 func Enable():

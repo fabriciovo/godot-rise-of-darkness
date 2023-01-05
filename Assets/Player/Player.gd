@@ -100,20 +100,7 @@ func _physics_process(delta):
 
 func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
-		if body.name != "Boss": 
-			body.Disable()
-		$AP_Timer.stop()
-		set_ap(3)
-		battle_mode = true
-		Global.last_enemy = body.ID
-		Global.enemy_battle_unit_damage = body.battle_unit_damage
-		Global.enemy_battle_unit_hp = body.battle_unit_hp
-		Global.enemy_battle_unit_type = body.battle_unit_type
-		Global.enemy_frame = body.frame
-		Global.player_last_position = global_position
-		Global.player_last_scene = get_tree().current_scene.filename
-		Global.stop = true;
-		get_parent().get_node("CanvasTransition/Transition").fade_in()
+		damage(body.battle_unit_damage)
 	if body.is_in_group(Global.GROUPS.DOOR):
 		Global.doorName = body.door_name
 		get_tree().change_scene(body.target_scene)

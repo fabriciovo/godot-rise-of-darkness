@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
-"class": "BattleUnits",
-"language": "GDScript",
-"path": "res://Assets/Battle/BattleUnits.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Bomb_Object",
 "language": "GDScript",
@@ -23,11 +18,6 @@ _global_script_classes=[ {
 "class": "Chest",
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Chest.gd"
-}, {
-"base": "Node2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://Assets/Enemy/Battle/Enemy.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Enviroment_Object",
@@ -60,10 +50,8 @@ _global_script_classes=[ {
 "path": "res://Assets/Enemy/World Enemy/World_Enemy.gd"
 } ]
 _global_script_class_icons={
-"BattleUnits": "",
 "Bomb_Object": "",
 "Chest": "",
-"Enemy": "",
 "Enviroment_Object": "",
 "Lever": "",
 "Player": "",
