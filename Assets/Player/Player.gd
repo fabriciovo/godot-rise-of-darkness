@@ -160,10 +160,10 @@ func heal():
 
 
 
-func damage():
+func damage(value):
 	$PlayerAnimation.stop()
 	hit = true
-	set_hp(hp-3)
+	set_hp(hp-value)
 	$PlayerAnimation.play("damage_anim")
 	yield($PlayerAnimation, "animation_finished")
 	hit = false

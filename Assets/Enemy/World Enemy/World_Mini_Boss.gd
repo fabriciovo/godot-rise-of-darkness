@@ -1,11 +1,14 @@
 extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
 
-const battle_unit_damage = 8
-const battle_unit_hp = 30
+
 
 var direction = Vector2.ZERO
 
 func _ready():
+	battle_unit_max_hp = 100
+	battle_unit_damage = 0
+	battle_unit_type = "miniboss"
+	battle_unit_hp = battle_unit_max_hp
 	add_to_group(Global.GROUPS.ENEMY)
 	const_speed = 50
 	direction.x = const_speed
@@ -13,7 +16,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if hp <= 4:
+	if hits <= 4:
 		var collision = move_and_collide(direction * delta)
 		if collision:
 			direction = direction.bounce(collision.normal)

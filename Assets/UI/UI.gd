@@ -12,6 +12,9 @@ onready var inventory_heal = $Items/Inventory/heal
 onready var inventory_bomb = $Items/Inventory/bomb
 onready var inventory_bow = $Items/Inventory/bow
 
+onready var level = $Stats/Level
+onready var xp = $Stats/xp
+
 var can_equip_sword = false
 var can_equip_heal = false
 var can_equip_bomb = false
@@ -23,6 +26,8 @@ func _process(delta):
 	MP.text = "MP " + str(PlayerControll.mp)
 	AP.text = "AP " + str(PlayerControll.ap)
 	key_label.text = str(PlayerControll.key) 
+	level.text = "Level: " + str(PlayerControll.level)
+	xp.text = "XP: " + str(PlayerControll.xp) + "/" + str(PlayerControll.xp_to_level_up)
 
 	if PlayerControll.equiped_item[0] < 0:
 		item_1.visible = false

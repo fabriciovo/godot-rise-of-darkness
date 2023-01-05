@@ -5,14 +5,19 @@ var ID = name
 onready var frame = $Sprite.frame
 onready var timer = $Timer
 
+var battle_unit_max_hp = 10
+var battle_unit_type = "enemy"
+var battle_unit_damage = 0
+var battle_unit_hp = battle_unit_max_hp
+
 var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
+var damageText = preload("res://Assets/UI/DamageText.tscn")
 var knockback = Vector2.ZERO
-var hp = 1
+var hits = 1
 var hit = false
 var speed = 10
 var const_speed = 0
 var normal_speed = speed
-var damageText = preload("res://Assets/UI/DamageText.tscn")
 
 
 func _ready():
@@ -33,6 +38,7 @@ func _on_Timer_timeout():
 
 func Destroy():
 	Global.dead_enemies.push_front(ID)
+	PlayerControll.set_xp(battle_unit_max_hp/2)
 	Disable()
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
@@ -45,8 +51,9 @@ func Knockback():
 		hit = true
 		$Enemy_Animation.play("damage_anim")
 		yield($Enemy_Animation, "animation_finished")
-		hp+=1
-		if hp >= 4:
+		battle_unit_hp -= PlayerControll.atk
+		hits+=1
+		if battle_unit_hp <= 0:
 			Destroy()
 		else:
 			timer.start(1)
@@ -65,17 +72,10 @@ func _on_Area_body_entered(body):
 		knockback = -global_position
 		Knockback()
 
-
 func Disable():
 	speed = 0
 	set_physics_process(false);
-	$Body_Shape.disabled = true
-	$Area/Area_Shape.disabled = true
-	$Sprite.visible = false
 
 func Enable():
 	set_physics_process(true);
 	speed = normal_speed
-	$Body_Shape.disabled = false
-	$Area/Area_Shape.disabled = false
-	$Sprite.visible = true
