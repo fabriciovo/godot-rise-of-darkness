@@ -6,6 +6,7 @@ onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 onready var actionArea = $ActionArea
 
+var damageText = preload("res://Assets/UI/DamageText.tscn")
 var hp = PlayerControll.hp setget set_hp
 var ap = PlayerControll.ap setget set_ap
 var mp = PlayerControll.mp setget set_mp
@@ -50,7 +51,6 @@ func get_input():
 		execute_action()
 		change_action_area_direction()
 
-
 func action(value):
 	if ap > 0 and value != -1:
 		$AP_Timer.start(.8)
@@ -90,13 +90,10 @@ func action(value):
 		action_state = false
 		action_collision.disabled = true
 
-
-
 func _physics_process(delta):
 	if not hit && not battle_mode:
 		get_input()
 		velocity = move_and_slide(velocity)
-
 
 func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
@@ -145,9 +142,13 @@ func heal():
 	set_ap(0)
 	set_hp(hp+5)
 
-
+func knockback():
+	pass
 
 func damage(value):
+	var text = damageText.instance()
+	text.set_text(str(value))
+	add_child(text)
 	$PlayerAnimation.stop()
 	hit = true
 	set_hp(hp-value)
@@ -214,7 +215,6 @@ func movement():
 
 func _on_Floor_mouse_entered():
 	can_execute_action = true
-
 
 func _on_Floor_mouse_exited():
 	can_execute_action = false

@@ -16,7 +16,7 @@ func _process(delta):
 		$Sprite.frame = 27
 	if body:
 		if overlaps_body(body) and spikes and not player_damage:
-			body.damage()
+			body.damage(3)
 			player_damage = true
 
 
