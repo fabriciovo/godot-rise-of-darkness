@@ -6,6 +6,8 @@ var max_mp = 10
 var hp = max_hp setget set_hp
 var ap = max_ap setget set_ap
 var mp = max_mp setget set_mp
+var xp = 0 setget set_xp 
+var atk = 2 setget set_atk
 var items = [-1,-1] setget set_item
 var equiped_item = [-1,-1] 
 var key = 0
@@ -30,6 +32,12 @@ func set_equiped_item(value, slot):
 
 func set_key(value):
 	key = value
+
+func set_xp(value):
+	xp = value
+
+func set_atk(value):
+	atk = value
 
 func restart():
 	set_hp(max_hp)

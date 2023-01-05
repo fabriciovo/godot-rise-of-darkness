@@ -12,6 +12,8 @@ var hit = false
 var speed = 10
 var const_speed = 0
 var normal_speed = speed
+var damageText = preload("res://Assets/UI/DamageText.tscn")
+
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
@@ -37,6 +39,9 @@ func Destroy():
 	queue_free()
 
 func Knockback():
+		var text = damageText.instance()
+		text.set_text(str(PlayerControll.atk))
+		add_child(text)
 		hit = true
 		$Enemy_Animation.play("damage_anim")
 		yield($Enemy_Animation, "animation_finished")
