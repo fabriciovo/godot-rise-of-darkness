@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Enviroment/Altar.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/map_0.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/World/Dungeon/BridgeColisionAltar.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/World/Dungeon/BridgeAltar.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -101,7 +102,13 @@ rotation = 1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_6.tscn"
 door_name = "Dungeon_5"
 
-[node name="Chest_1" parent="Entities" index="0" instance=ExtResource( 5 )]
+[node name="World_Bat_2384cs" parent="Entities" index="0" instance=ExtResource( 9 )]
+position = Vector2( 30, 60 )
+
+[node name="World_Bat_3421dkasm" parent="Entities" index="1" instance=ExtResource( 9 )]
+position = Vector2( 83, 92 )
+
+[node name="Chest_1" parent="Entities" index="2" instance=ExtResource( 5 )]
 position = Vector2( 27, 118 )
 item = 1
 
