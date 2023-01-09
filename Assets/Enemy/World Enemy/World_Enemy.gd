@@ -5,6 +5,8 @@ var ID = name
 onready var frame = $Sprite.frame
 onready var timer = $Timer
 
+
+var battle_unit_xp = 50
 var battle_unit_max_hp = 10
 var battle_unit_type = "enemy"
 var battle_unit_damage = 0
@@ -38,7 +40,7 @@ func _on_Timer_timeout():
 
 func Destroy():
 	Global.dead_enemies.push_front(ID)
-	PlayerControll.set_xp(battle_unit_max_hp/2)
+	PlayerControll.set_xp(battle_unit_xp)
 	Disable()
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")

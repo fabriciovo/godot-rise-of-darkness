@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/UI/MaxStats.gd" type="Script" id=6]
 [ext_resource path="res://Assets/UI/Upgrade.gd" type="Script" id=7]
 [ext_resource path="res://Assets/UI/CloseUpgrades.gd" type="Script" id=8]
+[ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -211,10 +212,10 @@ frame = 4
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
-margin_left = 144.0
-margin_top = 0.0499954
+margin_left = 131.0
+margin_top = 2.05
 margin_right = 0.895996
-margin_bottom = 0.0699921
+margin_bottom = 2.07001
 theme = ExtResource( 5 )
 
 [node name="Level" type="Label" parent="Stats"]
@@ -226,10 +227,11 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 1"
 
 [node name="xp" type="Label" parent="Stats"]
+anchor_right = 1.0
+anchor_bottom = 0.875
 margin_left = 34.0
 margin_top = 2.0
-margin_right = 79.0
-margin_bottom = 14.0
+margin_right = -14.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "XP: 0/100"
 
@@ -258,6 +260,7 @@ margin_left = 123.0
 margin_top = 7.0
 margin_right = 224.0
 margin_bottom = 103.0
+script = ExtResource( 9 )
 
 [node name="Title" type="Label" parent="Upgrades/UpgradePanel"]
 anchor_top = 0.021
@@ -357,3 +360,7 @@ text = "Max Magic Points: "
 [connection signal="gui_input" from="Items/Inventory/heal" to="." method="_on_heal_gui_input"]
 [connection signal="pressed" from="Upgrade" to="Upgrade" method="_on_Upgrade_pressed"]
 [connection signal="pressed" from="Upgrades/Close Upgrades" to="Upgrades/Close Upgrades" method="_on_Close_Upgrades_pressed"]
+[connection signal="pressed" from="Upgrades/UpgradePanel/upgrade hp" to="Upgrades/UpgradePanel" method="_on_upgrade_hp_pressed"]
+[connection signal="pressed" from="Upgrades/UpgradePanel/upgrade atk" to="Upgrades/UpgradePanel" method="_on_upgrade_atk_pressed"]
+[connection signal="pressed" from="Upgrades/UpgradePanel/upgrade Magic" to="Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]
+[connection signal="pressed" from="Upgrades/UpgradePanel/upgrade action points" to="Upgrades/UpgradePanel" method="_on_upgrade_action_points_pressed"]
