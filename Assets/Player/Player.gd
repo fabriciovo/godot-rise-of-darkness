@@ -13,6 +13,8 @@ var mp = PlayerControll.mp setget set_mp
 var items = PlayerControll.items
 var key = PlayerControll.key
 
+var knockback = Vector2.ZERO
+
 func set_hp(value):
 	hp = clamp(value, 0 , PlayerControll.max_hp)
 	PlayerControll.set_hp(hp)
@@ -35,21 +37,18 @@ var velocity = Vector2.ZERO
 var action_state = false
 var hit = false
 var can_execute_action = false
-var battle_mode = false 
 var heal = false
 func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
 	action_area.visible = false
 	actionArea.knockback_vector = Vector2.LEFT
-	battle_mode = false
 	$AP_Timer.start(1)
 
 func get_input():
-	if !battle_mode:
-		movement()
-		execute_action()
-		change_action_area_direction()
+	movement()
+	execute_action()
+	change_action_area_direction()
 
 func action(value):
 	if ap > 0 and value != -1:
@@ -91,7 +90,7 @@ func action(value):
 		action_collision.disabled = true
 
 func _physics_process(delta):
-	if not hit && not battle_mode:
+	if not hit:
 		get_input()
 		velocity = move_and_slide(velocity)
 

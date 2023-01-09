@@ -10,6 +10,7 @@ var xp = 0 setget set_xp
 var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
 var atk = 2 setget set_atk
+var points = 0 setget set_points
 var items = [-1,-1] setget set_item
 var equiped_item = [-1,-1] 
 var key = 0
@@ -39,6 +40,7 @@ func set_xp(value):
 	xp += value
 	if xp >= xp_to_level_up:
 		level+=1
+		points = level + 2
 		xp_to_level_up = xp_to_level_up * 1.2
 		xp =  xp_to_level_up - xp
 
@@ -50,6 +52,9 @@ func set_xp_to_level_up(value):
 
 func set_atk(value):
 	atk = value
+
+func set_points(value):
+	points = value
 
 func restart():
 	set_hp(max_hp)

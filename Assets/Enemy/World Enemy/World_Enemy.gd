@@ -44,7 +44,7 @@ func Destroy():
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
 
-func Knockback():
+func damage():
 		var text = damageText.instance()
 		text.set_text(str(PlayerControll.atk))
 		add_child(text)
@@ -61,16 +61,16 @@ func Knockback():
 func _on_Area_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
 		knockback = area.knockback_vector * 120
-		Knockback()
+		damage()
 
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW) and not hit:
 		knockback = body.knockback_vector * 120
 		body.queue_free()
-		Knockback()
+		damage()
 	if body.is_in_group(Global.GROUPS.BOMB) and not hit:
 		knockback = -global_position
-		Knockback()
+		damage()
 
 func Disable():
 	speed = 0

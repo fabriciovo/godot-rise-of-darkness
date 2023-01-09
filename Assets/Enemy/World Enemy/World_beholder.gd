@@ -9,7 +9,8 @@ func _ready():
 	const_speed = 200
 	speed = const_speed
 	battle_unit_damage = 8
-	battle_unit_hp = 30
+	battle_unit_max_hp = 30
+	battle_unit_hp = battle_unit_max_hp
 	battle_unit_type = "beholder"
 	randomize()
 	direction.x = rand_range(-20, 20)
