@@ -234,6 +234,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "XP: 0/100"
 
 [node name="Upgrade" type="Button" parent="."]
+visible = false
 margin_left = 186.0
 margin_top = 111.0
 margin_right = 224.0
@@ -242,6 +243,7 @@ text = "Upgrade"
 script = ExtResource( 7 )
 
 [node name="Upgrades" type="Node2D" parent="."]
+visible = false
 
 [node name="Close Upgrades" type="Button" parent="Upgrades"]
 margin_left = 144.0
@@ -306,6 +308,7 @@ margin_bottom = 72.0
 text = "Upgrade Action Poins"
 
 [node name="Max Stats" type="Panel" parent="."]
+visible = false
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
