@@ -6,6 +6,7 @@ var velocity = Vector2(20,20)
 
 func _ready():
 	ID = name
+	battle_unit_xp = 20
 	const_speed = 200
 	speed = const_speed
 	battle_unit_damage = 8

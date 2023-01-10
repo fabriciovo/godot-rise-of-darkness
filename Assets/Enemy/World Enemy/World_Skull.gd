@@ -4,6 +4,7 @@ var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
 
 func _ready():
+	battle_unit_xp = 5
 	battle_unit_max_hp = 5
 	battle_unit_hp = battle_unit_max_hp
 	battle_unit_damage = 10
