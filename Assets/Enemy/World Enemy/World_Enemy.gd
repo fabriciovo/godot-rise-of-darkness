@@ -80,7 +80,7 @@ func _on_Area_body_entered(body):
 		var text = damageText.instance()
 		text.set_text(str(PlayerControll.atk+5))
 		add_child(text)
-		battle_unit_hp -= PlayerControll.atk+5
+		battle_unit_hp -= PlayerControll.atk
 
 func Disable():
 	speed = 0
