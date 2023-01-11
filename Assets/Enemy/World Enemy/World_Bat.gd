@@ -7,7 +7,7 @@ onready var obj = get_tree().current_scene.get_node("Player")
 func _ready():
 	ID = name
 	battle_unit_xp = 10
-	battle_unit_max_hp = 10
+	battle_unit_max_hp = 5
 	battle_unit_type = "bat"
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
