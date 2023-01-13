@@ -27,3 +27,60 @@ shape = SubResource( 1 )
 autoplay = "Bat_anim"
 anims/Bat_anim = ExtResource( 1 )
 anims/damage_anim = ExtResource( 2 )
+
+[node name="Raycast" type="Node2D" parent="." index="5"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Raycast" index="0"]
+position = Vector2( -1, 0 )
+enabled = true
+cast_to = Vector2( 0, 30 )
+collision_mask = 13
+
+[node name="RayCast2D5" type="RayCast2D" parent="Raycast" index="1"]
+visible = false
+position = Vector2( -1, 0 )
+enabled = true
+cast_to = Vector2( -22, 24 )
+collision_mask = 13
+
+[node name="RayCast2D6" type="RayCast2D" parent="Raycast" index="2"]
+visible = false
+position = Vector2( -1, 0 )
+enabled = true
+cast_to = Vector2( 24, -22 )
+collision_mask = 13
+
+[node name="RayCast2D7" type="RayCast2D" parent="Raycast" index="3"]
+visible = false
+position = Vector2( -1, 0 )
+enabled = true
+cast_to = Vector2( -21, -22 )
+collision_mask = 13
+
+[node name="RayCast2D8" type="RayCast2D" parent="Raycast" index="4"]
+visible = false
+position = Vector2( -1, 0 )
+enabled = true
+cast_to = Vector2( 20, 22 )
+collision_mask = 13
+
+[node name="RayCast2D2" type="RayCast2D" parent="Raycast" index="5"]
+visible = false
+position = Vector2( -1, 0 )
+enabled = true
+cast_to = Vector2( -30, 0 )
+collision_mask = 13
+
+[node name="RayCast2D3" type="RayCast2D" parent="Raycast" index="6"]
+visible = false
+position = Vector2( -1, 0 )
+enabled = true
+cast_to = Vector2( 0, -30 )
+collision_mask = 13
+
+[node name="RayCast2D4" type="RayCast2D" parent="Raycast" index="7"]
+visible = false
+position = Vector2( -1, 0 )
+enabled = true
+cast_to = Vector2( 30, 0 )
+collision_mask = 13
