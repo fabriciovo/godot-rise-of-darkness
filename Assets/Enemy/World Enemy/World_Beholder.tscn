@@ -26,3 +26,30 @@ shape = SubResource( 1 )
 autoplay = "Beholder_anim"
 anims/Beholder_anim = ExtResource( 3 )
 anims/damage_anim = ExtResource( 4 )
+
+[node name="Area_Left" type="Area2D" parent="." index="5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area_Left" index="0"]
+polygon = PoolVector2Array( -1, 2, -19, 33, -34, 31, -33, -24, -13, -27 )
+
+[node name="Area_Right" type="Area2D" parent="." index="6"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area_Right" index="0"]
+polygon = PoolVector2Array( -1, 2, 14, 34, 34, 31, 33, -24, 17, -26 )
+
+[node name="Area_Down" type="Area2D" parent="." index="7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area_Down" index="0"]
+position = Vector2( -10, 21 )
+polygon = PoolVector2Array( 10, -19, -5, 13, 22, 13 )
+
+[node name="Area_Up" type="Area2D" parent="." index="8"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area_Up" index="0"]
+position = Vector2( -10, 21 )
+polygon = PoolVector2Array( 10, -19, -4, -52, 27, -51 )
+
+[node name="Shoot_Timer" type="Timer" parent="." index="9"]
+
+[connection signal="body_entered" from="Area_Left" to="." method="_on_Area_Left_body_entered"]
+[connection signal="body_exited" from="Area_Left" to="." method="_on_Area_Left_body_exited"]

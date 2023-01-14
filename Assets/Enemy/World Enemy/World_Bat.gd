@@ -14,12 +14,6 @@ func _ready():
 	const_speed = 10
 	speed = const_speed
 
-func _process(delta):
-	if raycast.is_colliding():
-			var collision_obj = raycast.get_collision_object()
-			if collision_obj.is_in_group("PLAYER"):
-					speed = 200
-			if collision_obj.is_in_group
 
 func _physics_process(delta):
 	if obj == null: return

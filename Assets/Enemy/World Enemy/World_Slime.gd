@@ -5,14 +5,15 @@ var wakeup = false
 
 var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
-
+var dir = Vector2.ZERO
+var jump = false
 func _ready():
 	battle_unit_xp = 10
 	battle_unit_max_hp = 5
 	battle_unit_hp = battle_unit_max_hp
 	battle_unit_damage = 5
 	battle_unit_type = "slime"
-	const_speed = 10
+	const_speed = 80
 	speed = const_speed
 	randomize()
 	direction.x = rand_range(-20, 20)
@@ -25,8 +26,7 @@ func _physics_process(delta):
 		set_physics_process(false)
 	else:
 		set_physics_process(true)
-		if not hit:
-			var dir = (obj.global_position - global_position).normalized()
+		if not hit and jump:
 			move_and_collide(dir * speed * delta)
 		knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
 		knockback = move_and_slide(knockback / 1.1)
@@ -46,3 +46,10 @@ func _on_DetectArea_body_entered(body):
 		yield($Enemy_Animation,"animation_finished")
 		wakeup = true
 		$Enemy_Animation.play("slime_anim")
+		$Jump_Timer.start(2)
+
+
+func _on_Jump_Timer_timeout():
+	dir = (obj.global_position - global_position).normalized()
+	jump = !jump
+	$Jump_Timer.start(2)

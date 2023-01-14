@@ -95,15 +95,18 @@ position = Vector2( 0, 5.5 )
 position = Vector2( -0.5, 4.5 )
 shape = SubResource( 1 )
 
-[node name="Enemy_Animation" parent="." index="4"]
+[node name="Jump_Timer" type="Timer" parent="." index="4"]
+
+[node name="Enemy_Animation" parent="." index="5"]
 anims/RESET = SubResource( 2 )
 anims/damage_anim = ExtResource( 1 )
 anims/slime_anim = SubResource( 3 )
 anims/slime_wakeup_anim = SubResource( 4 )
 
-[node name="DetectArea" type="Area2D" parent="." index="5"]
+[node name="DetectArea" type="Area2D" parent="." index="6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea" index="0"]
 shape = SubResource( 5 )
 
+[connection signal="timeout" from="Jump_Timer" to="." method="_on_Jump_Timer_timeout"]
 [connection signal="body_entered" from="DetectArea" to="." method="_on_DetectArea_body_entered"]
