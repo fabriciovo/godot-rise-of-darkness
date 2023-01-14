@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_beholder.gd" type="Script" id=2]
@@ -7,6 +7,51 @@
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.07107
+
+[sub_resource type="Animation" id=3]
+resource_name = "Beholder_teleport_end"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.4 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Beholder_teleport_start"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="World_Beholder" instance=ExtResource( 1 )]
 z_index = 1
@@ -25,31 +70,38 @@ shape = SubResource( 1 )
 [node name="Enemy_Animation" parent="." index="4"]
 autoplay = "Beholder_anim"
 anims/Beholder_anim = ExtResource( 3 )
+anims/Beholder_teleport_end = SubResource( 3 )
+anims/Beholder_teleport_start = SubResource( 2 )
+anims/RESET = SubResource( 4 )
 anims/damage_anim = ExtResource( 4 )
 
 [node name="Area_Left" type="Area2D" parent="." index="5"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area_Left" index="0"]
-polygon = PoolVector2Array( -1, 2, -19, 33, -34, 31, -33, -24, -13, -27 )
+polygon = PoolVector2Array( -1, 2, -19, 33, -40, 33, -39, -27, -13, -27 )
 
 [node name="Area_Right" type="Area2D" parent="." index="6"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area_Right" index="0"]
-polygon = PoolVector2Array( -1, 2, 14, 34, 34, 31, 33, -24, 17, -26 )
+polygon = PoolVector2Array( -1, 2, 14, 34, 38, 33, 38, -26, 17, -26 )
 
 [node name="Area_Down" type="Area2D" parent="." index="7"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area_Down" index="0"]
 position = Vector2( -10, 21 )
-polygon = PoolVector2Array( 10, -19, -5, 13, 22, 13 )
+polygon = PoolVector2Array( 10, -19, -8, 12, 23, 13 )
 
 [node name="Area_Up" type="Area2D" parent="." index="8"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area_Up" index="0"]
 position = Vector2( -10, 21 )
-polygon = PoolVector2Array( 10, -19, -4, -52, 27, -51 )
+polygon = PoolVector2Array( 10, -19, -2, -48, 26, -48 )
 
 [node name="Shoot_Timer" type="Timer" parent="." index="9"]
 
 [connection signal="body_entered" from="Area_Left" to="." method="_on_Area_Left_body_entered"]
 [connection signal="body_exited" from="Area_Left" to="." method="_on_Area_Left_body_exited"]
+[connection signal="body_entered" from="Area_Right" to="." method="_on_Area_Right_body_entered"]
+[connection signal="body_entered" from="Area_Down" to="." method="_on_Area_Down_body_entered"]
+[connection signal="body_entered" from="Area_Up" to="." method="_on_Area_Up_body_entered"]
+[connection signal="timeout" from="Shoot_Timer" to="." method="_on_Shoot_Timer_timeout"]
