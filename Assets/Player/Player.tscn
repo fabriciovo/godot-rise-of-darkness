@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Sprites/character_spritesheet_nobg_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Weapon_Icons_nobg_16x16.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/Slash/Slash.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Player/ActionArea.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=5]
 
@@ -271,10 +271,7 @@ position = Vector2( 12, 1.5 )
 scale = Vector2( 0.625, 0.5625 )
 script = ExtResource( 4 )
 
-[node name="action" type="Sprite" parent="ActionArea"]
-texture = ExtResource( 3 )
-hframes = 6
-vframes = 3
+[node name="action" parent="ActionArea" instance=ExtResource( 3 )]
 
 [node name="AreaCollision" type="CollisionShape2D" parent="ActionArea"]
 position = Vector2( 1.1, -2.38419e-07 )

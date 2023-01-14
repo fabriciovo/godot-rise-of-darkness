@@ -13,7 +13,7 @@ func _ready():
 	battle_unit_hp = battle_unit_max_hp
 	battle_unit_damage = 5
 	battle_unit_type = "slime"
-	const_speed = 80
+	const_speed = 90
 	speed = const_speed
 	randomize()
 	direction.x = rand_range(-20, 20)

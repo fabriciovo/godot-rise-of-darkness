@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SlashEffect.png-2d3810c3aacd380354c8a60ca96fe2a6.stex"
+path="res://.import/sword3.png-14b6eb9bf54d25e4204f70bf1f31df61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/SlashEffect.png"
-dest_files=[ "res://.import/SlashEffect.png-2d3810c3aacd380354c8a60ca96fe2a6.stex" ]
+source_file="res://Sprites/Animations/Slash/sword3.png"
+dest_files=[ "res://.import/sword3.png-14b6eb9bf54d25e4204f70bf1f31df61.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

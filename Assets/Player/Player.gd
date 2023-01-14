@@ -102,13 +102,15 @@ func _on_PlayerBody_body_entered(body):
 		get_tree().change_scene(body.target_scene)
 
 func _on_ActionArea_body_entered(body):
-	if body.is_in_group(Global.GROUPS.BOX):
+	if body.is_in_group(Global.GROUPS.BOX): 
 		body.Destroy()
 
 func create_sword(value):
 	set_ap(ap-1)
 	action_state = true
 	action_area.visible = true
+	action_area.get_node("action").visible = true
+	action_area.get_node("action").get_node("AnimationPlayer").play("Slash_anim")
 	action_collision.disabled = false
 	action_sprite.frame = PlayerControll.equiped_item[value]
 
@@ -139,7 +141,7 @@ func create_arrow():
 
 func heal():
 	set_ap(0)
-	set_hp(hp+5)
+	set_hp(hp+10)
 
 func knockback():
 	pass
@@ -164,17 +166,29 @@ func _on_AP_Timer_timeout():
 
 func change_action_area_direction():
 	if dir == "right":
+		action_area.get_node("action").rotation_degrees = 0
+		action_area.get_node("action").flip_h = false
 		action_area.position.x = 10
 		action_area.position.y = 2
+
 	elif dir == "left":
+		action_area.get_node("action").rotation_degrees = 0
+		action_area.get_node("action").flip_h = true
 		action_area.position.x = -8
 		action_area.position.y = 2
+
 	elif dir == "up":
+		action_area.get_node("action").flip_h = true
+		action_area.get_node("action").rotation_degrees = 90
+		action_area.position.x = 1
 		action_area.position.y = -8
-		action_area.position.x = 1
+
 	elif dir == "down":
-		action_area.position.y = 10
+		action_area.get_node("action").flip_h = true
+		action_area.get_node("action").rotation_degrees = -90
 		action_area.position.x = 1
+		action_area.position.y = 10
+
 
 func execute_action():
 	if can_execute_action:
