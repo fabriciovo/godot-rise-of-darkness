@@ -35,51 +35,54 @@ func _on_Timer_timeout():
 	hit = false
 	timer.stop()
 
-func _on_Area_Left_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		$Enemy_Animation.play("Beholder_teleport_start")
-		telepor_dir = obj.global_position
-		dir_frame = 10
-		speed = 0
-		yield($Enemy_Animation, "animation_finished")
-		action()
+func change_sprite_dir():
+	
 
-func _on_Area_Right_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		$Enemy_Animation.play("Beholder_teleport_start")
-		telepor_dir = obj.global_position
-		dir_frame = 12
-		speed = 0
-		yield($Enemy_Animation, "animation_finished")
-		action()
-
-func _on_Area_Down_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		$Enemy_Animation.play("Beholder_teleport_start")
-		telepor_dir = obj.global_position
-		dir_frame = 9
-		speed = 0
-		yield($Enemy_Animation, "animation_finished")
-		action()
-
-func _on_Area_Up_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		$Enemy_Animation.play("Beholder_teleport_start")
-		telepor_dir = obj.global_position
-		dir_frame = 11
-		speed = 0
-		yield($Enemy_Animation, "animation_finished")
-		action()
-
-func _on_Area_Left_body_exited(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		dir_frame = 9
-		speed = const_speed
+#
+#func _on_Area_Left_body_entered(body):
+#	if body.is_in_group(Global.GROUPS.PLAYER):
+#		$Enemy_Animation.play("Beholder_teleport_start")
+#		telepor_dir = obj.global_position
+#		dir_frame = 10
+#		speed = 0
+#		yield($Enemy_Animation, "animation_finished")
+#		action()
+#
+#func _on_Area_Right_body_entered(body):
+#	if body.is_in_group(Global.GROUPS.PLAYER):
+#		$Enemy_Animation.play("Beholder_teleport_start")
+#		telepor_dir = obj.global_position
+#		dir_frame = 12
+#		speed = 0
+#		yield($Enemy_Animation, "animation_finished")
+#		action()
+#
+#func _on_Area_Down_body_entered(body):
+#	if body.is_in_group(Global.GROUPS.PLAYER):
+#		$Enemy_Animation.play("Beholder_teleport_start")
+#		telepor_dir = obj.global_position
+#		dir_frame = 9
+#		speed = 0
+#		yield($Enemy_Animation, "animation_finished")
+#		action()
+#
+#func _on_Area_Up_body_entered(body):
+#	if body.is_in_group(Global.GROUPS.PLAYER):
+#		$Enemy_Animation.play("Beholder_teleport_start")
+#		telepor_dir = obj.global_position
+#		dir_frame = 11
+#		speed = 0
+#		yield($Enemy_Animation, "animation_finished")
+#		action()
+#
+#func _on_Area_Left_body_exited(body):
+#	if body.is_in_group(Global.GROUPS.PLAYER):
+#		dir_frame = 9
+#		speed = const_speed
 
 
 func action():
-	global_position = telepor_dir 
-	$Enemy_Animation.play("Beholder_teleport_end")
+	pass
 
 
 func _on_Shoot_Timer_timeout():
