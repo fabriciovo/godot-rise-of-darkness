@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/Collectibles_nobg_16x16.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Enemy/World Enemy/Mini_Boss_Attack.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Enemy/World Enemy/enemy_projectile.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.16228
@@ -9,8 +9,8 @@ radius = 3.16228
 [sub_resource type="CircleShape2D" id=2]
 radius = 4.0
 
-[node name="Mini_Boss_Attack" type="KinematicBody2D"]
-collision_layer = 4
+[node name="Enemy_Projectile" type="KinematicBody2D"]
+collision_layer = 0
 collision_mask = 10
 script = ExtResource( 2 )
 

@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var damage = 12
 onready var obj = get_tree().current_scene.get_node("Player")
 var speed = 1
 var direction = Vector2.ZERO
@@ -24,6 +25,6 @@ func _on_Area2D_body_entered(body):
 		body.queue_free()
 	if body.is_in_group(Global.GROUPS.PLAYER):
 		queue_free()
-		body.damage(12)
+		body.damage(damage)
 	if body.is_in_group(Global.GROUPS.DOOR):
 		queue_free()

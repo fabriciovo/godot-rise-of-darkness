@@ -37,7 +37,6 @@ func _process(delta):
 func _on_Timer_timeout():
 	hit = false
 
-
 func Destroy():
 	Global.dead_enemies.push_front(ID)
 	PlayerControll.set_xp(battle_unit_xp)

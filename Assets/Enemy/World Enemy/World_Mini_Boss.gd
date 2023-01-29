@@ -27,12 +27,11 @@ func _on_Timer_timeout():
 
 func _on_Attack_Timer_timeout():
 	$Attack_Timer.start(4)
-	var attack = preload("res://Assets/Enemy/World Enemy/Mini_Boss_Attack.tscn").instance()
+	var attack = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn").instance()
 	attack.global_position = global_position
 	get_tree().get_current_scene().add_child(attack)
 
-
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW):
-		Knockback()
+		damage()
 
