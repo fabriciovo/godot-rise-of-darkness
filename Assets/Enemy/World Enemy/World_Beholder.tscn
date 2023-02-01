@@ -91,6 +91,9 @@ script = ExtResource( 5 )
 [node name="Collision_Area" type="CollisionShape2D" parent="Player_Detect_Area" index="0"]
 shape = SubResource( 5 )
 
+[node name="Eye_Timer" type="Timer" parent="." index="8"]
+
 [connection signal="timeout" from="Shoot_Timer" to="." method="_on_Shoot_Timer_timeout"]
 [connection signal="body_entered" from="Player_Detect_Area" to="." method="_on_Player_Detect_Area_body_entered"]
 [connection signal="body_exited" from="Player_Detect_Area" to="." method="_on_Player_Detect_Area_body_exited"]
+[connection signal="timeout" from="Eye_Timer" to="." method="_on_Eye_Timer_timeout"]

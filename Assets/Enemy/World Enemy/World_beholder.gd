@@ -38,6 +38,7 @@ func _on_Timer_timeout():
 	hit = false
 	timer.stop()
 
+
 func _on_Shoot_Timer_timeout():
 	action()
 
@@ -47,7 +48,7 @@ func action():
 	attack.global_position = global_position
 	get_tree().get_current_scene().add_child(attack)
 	$Shoot_Timer.stop()
-	eye = false
+	$Eye_Timer.start(3)
 
 func sprite_dir():
 	if not eye:
@@ -72,3 +73,8 @@ func _on_Player_Detect_Area_body_exited(body):
 		speed = const_speed
 		eye = false
 		$Shoot_Timer.stop()
+		$Eye_Timer.stop()
+
+
+func _on_Eye_Timer_timeout():
+	eye = false
