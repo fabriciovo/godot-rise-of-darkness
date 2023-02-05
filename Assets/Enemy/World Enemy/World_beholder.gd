@@ -24,6 +24,12 @@ func _ready():
 	direction.x = rand_range(-20, 20)
 	direction.y = rand_range(-20, 20)
 
+func _process(delta):
+	if eye:
+		$Area.set_process(false)
+	else:
+		$Area.set_process(true)
+
 func _physics_process(delta):
 	#TODO create hits mechanics
 	sprite_dir()
@@ -38,7 +44,6 @@ func _on_Timer_timeout():
 	hit = false
 	timer.stop()
 
-
 func _on_Shoot_Timer_timeout():
 	action()
 
@@ -46,6 +51,7 @@ func action():
 	var attack = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn").instance()
 	attack.damage = 5
 	attack.global_position = global_position
+	attack.speed = 0.4
 	get_tree().get_current_scene().add_child(attack)
 	$Shoot_Timer.stop()
 	$Eye_Timer.start(3)

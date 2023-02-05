@@ -55,7 +55,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 38.0
+radius = 44.1814
 
 [node name="World_Beholder" instance=ExtResource( 1 )]
 z_index = 1
