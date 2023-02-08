@@ -1,6 +1,6 @@
 extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
 
-onready var raycast = get_node("Raycast/RayCast2D")
+
 
 onready var obj = get_tree().current_scene.get_node("Player")
 

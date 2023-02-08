@@ -45,11 +45,16 @@ func Destroy():
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
 
-func damage():
+func damage(knockbackValue, damageValue):
+		knockback = knockbackValue
+		var text = damageText.instance()
+		text.set_text(str(damageValue))
+		add_child(text)
 		hit = true
+		battle_unit_hp -= PlayerControll.atk
+		hits+=1
 		$Enemy_Animation.play("damage_anim")
 		yield($Enemy_Animation, "animation_finished")
-		hits+=1
 		if battle_unit_hp <= 0:
 			Destroy()
 		else:
@@ -58,34 +63,18 @@ func damage():
 func _on_Area_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
 		knockback = area.knockback_vector * 120
-		damage()
-		var text = damageText.instance()
-		text.set_text(str(PlayerControll.atk))
-		add_child(text)
-		battle_unit_hp -= PlayerControll.atk
-
+		damage(knockback,  PlayerControll.atk)
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW) and not hit:
-		knockback = body.knockback_vector * 120
 		body.queue_free()
-		damage()
-		var text = damageText.instance()
-		text.set_text(str(PlayerControll.atk+1))
-		add_child(text)
-		battle_unit_hp -= PlayerControll.atk+1
+		damage(knockback,  PlayerControll.atk+1)
 	if body.is_in_group(Global.GROUPS.BOMB) and not hit:
 		knockback = -global_position
-		damage()
-		var text = damageText.instance()
-		text.set_text(str(PlayerControll.atk+5))
-		add_child(text)
-		battle_unit_hp -= PlayerControll.atk
-
+		damage(knockback,  PlayerControll.atk+5)
 func Disable():
 	speed = 0
 	$Sprite.visible = false
 	set_physics_process(false);
-
 func Enable():
 	set_physics_process(true);
 	speed = normal_speed

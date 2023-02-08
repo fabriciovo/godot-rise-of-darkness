@@ -9,7 +9,7 @@ var dir_frame_closed_eye = [14,15,16,17,9]
 var dir_frame = 0
 var eye = false
 var can_take_damage = false
-
+var collision
 func _ready():
 	$Enemy_Animation.stop(true)
 	ID = name
@@ -24,21 +24,30 @@ func _ready():
 	direction.x = rand_range(-20, 20)
 	direction.y = rand_range(-20, 20)
 
-func _process(delta):
-	if eye:
-		$Area.set_process(false)
-	else:
-		$Area.set_process(true)
-
 func _physics_process(delta):
 	#TODO create hits mechanics
 	sprite_dir()
 	if !hit:
-		var collision = move_and_collide(direction * speed * delta)
-		if collision:
-				direction = direction.bounce(collision.normal)
+		move_and_collide(direction * speed * delta)
 	knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
-	knockback = move_and_slide(knockback) 
+	knockback = move_and_slide(knockback / 1.1) 
+
+func damage(knockbackValue, damageValue):
+	if !eye:
+		damageValue = 0
+	knockback = knockbackValue
+	var text = damageText.instance()
+	text.set_text(str(damageValue))
+	add_child(text)
+	hit = true
+	battle_unit_hp -= PlayerControll.atk
+	hits+=1
+	$Enemy_Animation.play("damage_anim")
+	yield($Enemy_Animation, "animation_finished")
+	if battle_unit_hp <= 0:
+		Destroy()
+	else:
+		timer.start(1)
 
 func _on_Timer_timeout():
 	hit = false
