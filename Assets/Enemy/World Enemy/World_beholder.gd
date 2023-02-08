@@ -28,6 +28,9 @@ func _physics_process(delta):
 	#TODO create hits mechanics
 	sprite_dir()
 	if !hit:
+		var collision = move_and_collide(direction * speed * delta)
+		if collision:
+			direction = direction.bounce(collision.normal)
 		move_and_collide(direction * speed * delta)
 	knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
 	knockback = move_and_slide(knockback / 1.1) 
