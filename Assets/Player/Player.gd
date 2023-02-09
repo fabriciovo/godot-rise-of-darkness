@@ -27,8 +27,6 @@ func set_mp(value):
 	mp = min(value, PlayerControll.max_mp)
 	PlayerControll.set_mp(mp)
 
-
-signal encounter(enemy)
 signal change_scene(target_scene, value)
 
 var dir = "right"
@@ -41,11 +39,12 @@ var heal = false
 func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
-	action_area.visible = false
+	#action_area.visible = false
 	actionArea.knockback_vector = Vector2.LEFT
 	$AP_Timer.start(1)
 
 func get_input():
+	action_area.get_node("action").visible = true
 	movement()
 	execute_action()
 	change_action_area_direction()
@@ -174,20 +173,20 @@ func change_action_area_direction():
 	elif dir == "left":
 		action_area.get_node("action").rotation_degrees = 0
 		action_area.get_node("action").flip_h = true
-		action_area.position.x = -8
+		action_area.position.x = -12
 		action_area.position.y = 2
 
 	elif dir == "up":
 		action_area.get_node("action").flip_h = true
 		action_area.get_node("action").rotation_degrees = 90
-		action_area.position.x = 1
-		action_area.position.y = -8
+		action_area.position.x = 2
+		action_area.position.y = -12
 
 	elif dir == "down":
 		action_area.get_node("action").flip_h = true
 		action_area.get_node("action").rotation_degrees = -90
-		action_area.position.x = 1
-		action_area.position.y = 10
+		action_area.position.x = -3
+		action_area.position.y = 14
 
 
 func execute_action():
