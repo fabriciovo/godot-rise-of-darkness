@@ -30,7 +30,7 @@ position = Vector2( 38, 73 )
 position = Vector2( 160, 84 )
 
 [node name="Static_Object7" parent="Enviroment/Static" index="5" instance=ExtResource( 3 )]
-position = Vector2( 106, 105 )
+position = Vector2( 109, 99 )
 
 [node name="Static_Object5" parent="Enviroment/Static" index="6" instance=ExtResource( 3 )]
 position = Vector2( 68, 107 )

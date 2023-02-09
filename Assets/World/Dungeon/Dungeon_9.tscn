@@ -1,40 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Fire_Wall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Enviroment/Static_Object.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/World/Dungeon/Boss.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Final BOSS.png" type="Texture" id=5]
-
-[sub_resource type="Animation" id=1]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 112, 113 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "boss_start_anim"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 112, 113 ), Vector2( 110, 115 ), Vector2( 108, 113 ), Vector2( 111, 112 ), Vector2( 109, 109 ), Vector2( 108, 112 ), Vector2( 109, 109 ), Vector2( 113, 113 ), Vector2( 112, 108 ), Vector2( 113, 23 ) ]
-}
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 5, 4.5 )
@@ -49,52 +18,22 @@ tile_data = PoolIntArray( 0, 12, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 64, 0, 5, 4
 [node name="Player" parent="." index="5"]
 position = Vector2( 111, 23 )
 
-[node name="Static_Object" parent="Enviroment/Static" index="0" instance=ExtResource( 3 )]
-position = Vector2( 90, 40 )
-
-[node name="Static_Object2" parent="Enviroment/Static" index="1" instance=ExtResource( 3 )]
-position = Vector2( 90, 60 )
-
-[node name="Static_Object3" parent="Enviroment/Static" index="2" instance=ExtResource( 3 )]
-position = Vector2( 78, 78 )
-
-[node name="Static_Object4" parent="Enviroment/Static" index="3" instance=ExtResource( 3 )]
-position = Vector2( 64, 96 )
-
-[node name="Static_Object5" parent="Enviroment/Static" index="4" instance=ExtResource( 3 )]
-position = Vector2( 48, 115 )
-
-[node name="Static_Object6" parent="Enviroment/Static" index="5" instance=ExtResource( 3 )]
-position = Vector2( 134, 40 )
-
-[node name="Static_Object7" parent="Enviroment/Static" index="6" instance=ExtResource( 3 )]
-position = Vector2( 134, 60 )
-
-[node name="Static_Object8" parent="Enviroment/Static" index="7" instance=ExtResource( 3 )]
-position = Vector2( 147, 78 )
-
-[node name="Static_Object9" parent="Enviroment/Static" index="8" instance=ExtResource( 3 )]
-position = Vector2( 160, 96 )
-
-[node name="Static_Object10" parent="Enviroment/Static" index="9" instance=ExtResource( 3 )]
-position = Vector2( 177, 115 )
-
-[node name="Fire_Wall" parent="Enviroment/Static" index="10" instance=ExtResource( 2 )]
+[node name="Fire_Wall" parent="Enviroment/Static" index="0" instance=ExtResource( 2 )]
 position = Vector2( 72, 40 )
 
-[node name="Fire_Wall4" parent="Enviroment/Static" index="11" instance=ExtResource( 2 )]
+[node name="Fire_Wall4" parent="Enviroment/Static" index="1" instance=ExtResource( 2 )]
 position = Vector2( 152, 40 )
 
-[node name="Fire_Wall5" parent="Enviroment/Static" index="12" instance=ExtResource( 2 )]
+[node name="Fire_Wall5" parent="Enviroment/Static" index="2" instance=ExtResource( 2 )]
 position = Vector2( 168, 56 )
 
-[node name="Fire_Wall6" parent="Enviroment/Static" index="13" instance=ExtResource( 2 )]
+[node name="Fire_Wall6" parent="Enviroment/Static" index="3" instance=ExtResource( 2 )]
 position = Vector2( 184, 72 )
 
-[node name="Fire_Wall2" parent="Enviroment/Static" index="14" instance=ExtResource( 2 )]
+[node name="Fire_Wall2" parent="Enviroment/Static" index="4" instance=ExtResource( 2 )]
 position = Vector2( 56, 56 )
 
-[node name="Fire_Wall3" parent="Enviroment/Static" index="15" instance=ExtResource( 2 )]
+[node name="Fire_Wall3" parent="Enviroment/Static" index="5" instance=ExtResource( 2 )]
 position = Vector2( 40, 72 )
 
 [node name="Boss" type="KinematicBody2D" parent="." index="8"]
@@ -106,15 +45,11 @@ script = ExtResource( 4 )
 scale = Vector2( 0.240741, 0.240741 )
 texture = ExtResource( 5 )
 
-[node name="BossAnimation" type="AnimationPlayer" parent="Boss" index="1"]
-anims/RESET = SubResource( 1 )
-anims/boss_start_anim = SubResource( 2 )
-
-[node name="Body_Shape" type="CollisionShape2D" parent="Boss" index="2"]
+[node name="Body_Shape" type="CollisionShape2D" parent="Boss" index="1"]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 4 )
 
-[node name="Area" type="Area2D" parent="Boss" index="3"]
+[node name="Area" type="Area2D" parent="Boss" index="2"]
 
 [node name="Area_Shap" type="CollisionShape2D" parent="Boss/Area" index="0"]
 shape = SubResource( 3 )
