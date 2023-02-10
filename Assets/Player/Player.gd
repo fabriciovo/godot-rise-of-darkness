@@ -39,12 +39,11 @@ var heal = false
 func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
-	#action_area.visible = false
+	action_area.visible = false
 	actionArea.knockback_vector = Vector2.LEFT
 	$AP_Timer.start(1)
 
 func get_input():
-	action_area.get_node("action").visible = true
 	movement()
 	execute_action()
 	change_action_area_direction()
@@ -92,6 +91,12 @@ func _physics_process(delta):
 	if not hit:
 		get_input()
 		velocity = move_and_slide(velocity)
+
+func _process(delta):
+	if(!Global.stop):
+		set_physics_process(true)
+	else:
+		set_physics_process(false)
 
 func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):

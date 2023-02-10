@@ -10,9 +10,12 @@ var collision
 
 func _ready():
 	ID = name
-	battle_unit_damage = 5
-	battle_unit_hp = 300
-	speed = 0.8
+	battle_unit_max_hp = 300
+	battle_unit_xp = 1000
+	battle_unit_damage = 3
+	battle_unit_hp = battle_unit_max_hp
+	const_speed = 0.4
+	speed = const_speed
 	add_to_group(Global.GROUPS.ENEMY)
 
 func _physics_process(delta):

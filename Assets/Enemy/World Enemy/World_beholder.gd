@@ -19,7 +19,6 @@ func _ready():
 	battle_unit_damage = 8
 	battle_unit_max_hp = 30
 	battle_unit_hp = battle_unit_max_hp
-	battle_unit_type = "beholder"
 	randomize()
 	direction.x = rand_range(-20, 20)
 	direction.y = rand_range(-20, 20)
@@ -77,8 +76,6 @@ func sprite_dir():
 		$Sprite.frame = dir_frame_closed_eye[dir_frame]
 	else:
 		$Sprite.frame = dir_frame_open_eye[dir_frame]
-	
-
 
 func _on_Player_Detect_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
@@ -92,7 +89,6 @@ func _on_Player_Detect_Area_body_exited(body):
 		eye = false
 		$Shoot_Timer.stop()
 		$Eye_Timer.stop()
-
 
 func _on_Eye_Timer_timeout():
 	eye = false

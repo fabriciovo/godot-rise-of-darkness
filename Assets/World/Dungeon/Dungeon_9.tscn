@@ -1,22 +1,115 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Fire_Wall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/World/Dungeon/Boss.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/Final BOSS.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Boss.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/World/Dungeon/start_boss.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Animations/smoke.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 5, 4.5 )
+[sub_resource type="Animation" id=1]
+resource_name = "start_boss"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../gate:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 4.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../Smoke2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_animation"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../Smoke3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_animation"
+} ]
+}
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 7.5 )
 
 [node name="Dungeon_9" instance=ExtResource( 1 )]
 
-[node name="map_1" parent="." index="4"]
+[node name="start_boss" type="Node2D" parent="." index="0"]
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="start_boss" index="0"]
+autoplay = "start_boss"
+anims/start_boss = SubResource( 1 )
+
+[node name="map_1" parent="." index="5"]
 tile_data = PoolIntArray( 0, 12, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 64, 0, 5, 45, 0, 8, 46, 0, 9, 68, 0, 10, 11, 0, 11, 11, 0, 12, 11, 0, 13, 10, 0, 65536, 9, 0, 65537, 8, 0, 65538, 8, 0, 65539, 58, 0, 65540, 6, 0, 65541, 27, 0, 65544, 27, 0, 65545, 4, 0, 65546, 57, 0, 65547, 8, 0, 65548, 8, 0, 65549, 7, 0, 131072, 9, 0, 131073, 8, 0, 131074, 58, 0, 131075, 6, 0, 131082, 4, 0, 131083, 57, 0, 131084, 8, 0, 131085, 7, 0, 196608, 72, 0, 196609, 5, 0, 196610, 6, 0, 196619, 4, 0, 196620, 5, 0, 196621, 71, 0, 262144, 42, 0, 262145, 30, 0, 262155, 0, 0, 262156, 30, 0, 262157, 42, 0, 327680, 42, 0, 327693, 42, 0, 393216, 42, 0, 393229, 42, 0, 458752, 42, 0, 458765, 42, 0, 524288, 53, 0, 524289, 43, 0, 524290, 43, 0, 524291, 43, 0, 524292, 43, 0, 524293, 43, 0, 524294, 43, 0, 524295, 43, 0, 524296, 43, 0, 524297, 43, 0, 524298, 43, 0, 524299, 43, 0, 524300, 43, 0, 524301, 54, 0 )
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="6"]
 position = Vector2( 111, 23 )
+
+[node name="gate" type="KinematicBody2D" parent="." index="7"]
+visible = false
+position = Vector2( 104, -3 )
+
+[node name="Sprite" type="Sprite" parent="gate" index="0"]
+position = Vector2( 0, 11 )
+texture = ExtResource( 6 )
+hframes = 9
+vframes = 18
+frame = 38
+
+[node name="Sprite2" type="Sprite" parent="gate" index="1"]
+position = Vector2( 16, 11 )
+texture = ExtResource( 6 )
+hframes = 9
+vframes = 18
+frame = 38
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gate" index="2"]
+position = Vector2( 8, 11.5 )
+shape = SubResource( 2 )
+
+[node name="Smoke2" parent="." index="8" instance=ExtResource( 5 )]
+position = Vector2( 121, 7 )
+
+[node name="Smoke3" parent="." index="9" instance=ExtResource( 5 )]
+position = Vector2( 104, 7 )
 
 [node name="Fire_Wall" parent="Enviroment/Static" index="0" instance=ExtResource( 2 )]
 position = Vector2( 72, 40 )
@@ -36,20 +129,5 @@ position = Vector2( 56, 56 )
 [node name="Fire_Wall3" parent="Enviroment/Static" index="5" instance=ExtResource( 2 )]
 position = Vector2( 40, 72 )
 
-[node name="Boss" type="KinematicBody2D" parent="." index="8"]
-position = Vector2( 112, 113 )
-z_index = 2
-script = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="Boss" index="0"]
-scale = Vector2( 0.240741, 0.240741 )
-texture = ExtResource( 5 )
-
-[node name="Body_Shape" type="CollisionShape2D" parent="Boss" index="1"]
-position = Vector2( 0, 0.5 )
-shape = SubResource( 4 )
-
-[node name="Area" type="Area2D" parent="Boss" index="2"]
-
-[node name="Area_Shap" type="CollisionShape2D" parent="Boss/Area" index="0"]
-shape = SubResource( 3 )
+[node name="World_Boss" parent="." index="12" instance=ExtResource( 3 )]
+position = Vector2( 109, 112 )

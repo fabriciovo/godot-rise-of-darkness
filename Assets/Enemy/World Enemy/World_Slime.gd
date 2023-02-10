@@ -12,7 +12,6 @@ func _ready():
 	battle_unit_max_hp = 5
 	battle_unit_hp = battle_unit_max_hp
 	battle_unit_damage = 5
-	battle_unit_type = "slime"
 	const_speed = 90
 	speed = const_speed
 	randomize()
@@ -36,8 +35,6 @@ func _on_Timer_timeout():
 	hit = false
 	timer.stop()
 	$Enemy_Animation.play("slime_anim")
-
-
 
 func _on_DetectArea_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER) and not wakeup:

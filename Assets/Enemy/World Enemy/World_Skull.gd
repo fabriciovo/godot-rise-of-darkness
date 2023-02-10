@@ -8,7 +8,6 @@ func _ready():
 	battle_unit_max_hp = 15
 	battle_unit_hp = battle_unit_max_hp
 	battle_unit_damage = 10
-	battle_unit_type = "skull"
 	const_speed = 200
 	speed = const_speed
 	randomize()

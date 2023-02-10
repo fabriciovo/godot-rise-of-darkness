@@ -8,7 +8,6 @@ onready var timer = $Timer
 
 var battle_unit_xp = 50
 var battle_unit_max_hp = 10
-var battle_unit_type = "enemy"
 var battle_unit_damage = 0
 var battle_unit_hp = battle_unit_max_hp
 
@@ -19,7 +18,6 @@ var hits = 1
 var hit = false
 var speed = 10
 var const_speed = 0
-var normal_speed = speed
 
 
 func _ready():
@@ -36,6 +34,7 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	hit = false
+	Enable()
 
 func Destroy():
 	Global.dead_enemies.push_front(ID)
@@ -76,5 +75,5 @@ func Disable():
 	$Sprite.visible = false
 	set_physics_process(false);
 func Enable():
+	speed = const_speed
 	set_physics_process(true);
-	speed = normal_speed
