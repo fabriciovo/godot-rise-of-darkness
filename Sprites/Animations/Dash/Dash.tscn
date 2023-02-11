@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Animations/Destroy_after_anim.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Animations/player_dash_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Animations/player_dash_1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/player_dash_4.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/player_dash_3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Animations/player_dash_5.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Animations/player_dash_2.png" type="Texture" id=7]
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/player_dash_0.png-2b9654b4c761d5e31708d5b4c585ea09.stex"
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 3 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "dash_anim"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ) ]
+}
+
+[node name="Dash" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 3 )
+offset = Vector2( -5, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "dash_anim"
+anims/RESET = SubResource( 1 )
+anims/dash_anim = SubResource( 2 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

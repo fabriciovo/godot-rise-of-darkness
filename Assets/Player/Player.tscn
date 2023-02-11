@@ -276,6 +276,11 @@ shape = SubResource( 18 )
 
 [node name="AP_Timer" type="Timer" parent="."]
 
+[node name="Dash_Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="body_entered" from="PlayerBody" to="." method="_on_PlayerBody_body_entered"]
 [connection signal="body_entered" from="ActionArea" to="." method="_on_ActionArea_body_entered"]
 [connection signal="timeout" from="AP_Timer" to="." method="_on_AP_Timer_timeout"]
+[connection signal="timeout" from="Dash_Timer" to="." method="_on_Dash_Timer_timeout"]

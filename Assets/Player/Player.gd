@@ -12,6 +12,7 @@ var ap = PlayerControll.ap setget set_ap
 var mp = PlayerControll.mp setget set_mp
 var items = PlayerControll.items
 var key = PlayerControll.key
+var dashing = false
 
 var knockback = Vector2.ZERO
 
@@ -88,9 +89,9 @@ func action(value):
 		action_collision.disabled = true
 
 func _physics_process(delta):
-	if not hit:
-		get_input()
-		velocity = move_and_slide(velocity)
+	if hit: return
+	get_input()
+	velocity = move_and_slide(velocity)
 
 func _process(delta):
 	if(!Global.stop):
@@ -204,30 +205,33 @@ func execute_action():
 				action(1)
 
 func movement(): 
-	velocity = Vector2.ZERO
-	if !action_state:
-		if Input.is_action_pressed('ui_right'):
-			$PlayerAnimation.play("walk_right")
-			velocity.x += 1
-			dir = "right"
-			actionArea.knockback_vector = velocity
-		elif Input.is_action_pressed('ui_left'):
-			velocity.x -= 1
-			$PlayerAnimation.play("walk_left")
-			dir = "left"
-			actionArea.knockback_vector = velocity
-		elif Input.is_action_pressed('ui_down'):
-			velocity.y += 1
-			$PlayerAnimation.play("walk_down")
-			dir = "down"
-			actionArea.knockback_vector = velocity
-		elif Input.is_action_pressed('ui_up'):
-			velocity.y -= 1
-			$PlayerAnimation.play("walk_up")
-			dir = "up"
-			actionArea.knockback_vector = velocity
-		else:
-			$PlayerAnimation.stop()
+	if not dashing:
+		velocity = Vector2.ZERO
+		if !action_state:
+			if Input.is_action_pressed('ui_right'):
+				$PlayerAnimation.play("walk_right")
+				velocity.x += 1
+				dir = "right"
+				actionArea.knockback_vector = velocity
+			elif Input.is_action_pressed('ui_left'):
+				velocity.x -= 1
+				$PlayerAnimation.play("walk_left")
+				dir = "left"
+				actionArea.knockback_vector = velocity
+			elif Input.is_action_pressed('ui_down'):
+				velocity.y += 1
+				$PlayerAnimation.play("walk_down")
+				dir = "down"
+				actionArea.knockback_vector = velocity
+			elif Input.is_action_pressed('ui_up'):
+				velocity.y -= 1
+				$PlayerAnimation.play("walk_up")
+				dir = "up"
+				actionArea.knockback_vector = velocity
+			else:
+				$PlayerAnimation.stop()
+		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2:
+			dash()
 		velocity = velocity.normalized() * speed
 
 func _on_Floor_mouse_entered():
@@ -235,3 +239,34 @@ func _on_Floor_mouse_entered():
 
 func _on_Floor_mouse_exited():
 	can_execute_action = false
+
+func dash():
+	dashing = true
+	var dash_object = preload("res://Sprites/Animations/Dash/Dash.tscn").instance()
+	dash_object.global_position = global_position
+	get_tree().get_current_scene().add_child(dash_object)
+	set_ap(ap-2)
+	match dir:
+		"up":
+			velocity.y -= 1
+			$PlayerAnimation.play("walk_up")
+			dash_object.rotation_degrees = 0
+		"down":
+			velocity.y += 1
+			$PlayerAnimation.play("walk_down")
+			dash_object.rotation_degrees = 180
+		"left":
+			velocity.x -= 1
+			$PlayerAnimation.play("walk_left")
+			dash_object.rotation_degrees = -90
+		"right":
+			velocity.x += 1
+			$PlayerAnimation.play("walk_right")
+			dash_object.rotation_degrees = 90
+	speed = 60
+	$Dash_Timer.start()
+
+
+func _on_Dash_Timer_timeout():
+	speed = 30
+	dashing = false
