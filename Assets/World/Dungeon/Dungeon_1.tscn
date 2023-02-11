@@ -27,11 +27,11 @@ rotation = 3.14159
 target_scene = "res://Assets/World/Dungeon/Dungeon_0.tscn"
 door_name = "Dungeon_1"
 
-[node name="World_Slime_1_D0" parent="Entities" index="0" instance=ExtResource( 5 )]
+[node name="World_Slime_1_D1" parent="Entities" index="0" instance=ExtResource( 5 )]
 position = Vector2( 50, 106 )
 
-[node name="World_Slime_2_D0" parent="Entities" index="1" instance=ExtResource( 5 )]
+[node name="World_Slime_2_D1" parent="Entities" index="1" instance=ExtResource( 5 )]
 position = Vector2( 171, 107 )
 
-[node name="World_Slime_3_D0" parent="Entities" index="2" instance=ExtResource( 5 )]
+[node name="World_Slime_3_D1" parent="Entities" index="2" instance=ExtResource( 5 )]
 position = Vector2( 110, 47 )

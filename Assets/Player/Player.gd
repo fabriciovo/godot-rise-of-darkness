@@ -152,6 +152,7 @@ func knockback():
 	pass
 
 func damage(value):
+	SoundController.play_effect(SoundController.EFFECTS.player_hit)
 	var text = damageText.instance()
 	text.set_text(str(value))
 	add_child(text)

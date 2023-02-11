@@ -53,14 +53,14 @@ rotation = -1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_11.tscn"
 door_name = "Dungeon_11"
 
-[node name="World_Beholder_213" parent="Entities" index="0" instance=ExtResource( 2 )]
+[node name="World_Beholder_d3_1" parent="Entities" index="0" instance=ExtResource( 2 )]
 position = Vector2( 105, 43 )
 
-[node name="World_Beholder_2432" parent="Entities" index="1" instance=ExtResource( 2 )]
+[node name="World_Beholder_d3_2" parent="Entities" index="1" instance=ExtResource( 2 )]
 position = Vector2( 52, 105 )
 
-[node name="World_Beholder_123" parent="Entities" index="2" instance=ExtResource( 2 )]
+[node name="World_Beholder_d3_3" parent="Entities" index="2" instance=ExtResource( 2 )]
 position = Vector2( 168, 104 )
 
-[node name="World_Beholder_5432" parent="Entities" index="3" instance=ExtResource( 2 )]
+[node name="World_Beholder_d3_4" parent="Entities" index="3" instance=ExtResource( 2 )]
 position = Vector2( 176, 65 )

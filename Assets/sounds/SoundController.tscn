@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/sounds/SoundController.gd" type="Script" id=1]
+
+[node name="SoundController" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundEffect" type="Node" parent="."]
+
+[node name="effect" type="AudioStreamPlayer" parent="SoundEffect"]
+
+[node name="effect2" type="AudioStreamPlayer" parent="SoundEffect"]
+
+[node name="effect3" type="AudioStreamPlayer" parent="SoundEffect"]
+
+[node name="effect4" type="AudioStreamPlayer" parent="SoundEffect"]
+
+[node name="effect5" type="AudioStreamPlayer" parent="SoundEffect"]
+
+[node name="effect6" type="AudioStreamPlayer" parent="SoundEffect"]
+
+[node name="effect7" type="AudioStreamPlayer" parent="SoundEffect"]
+
+[node name="effect8" type="AudioStreamPlayer" parent="SoundEffect"]

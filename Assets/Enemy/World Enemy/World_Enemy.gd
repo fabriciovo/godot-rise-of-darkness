@@ -37,14 +37,17 @@ func _on_Timer_timeout():
 	Enable()
 
 func Destroy():
+	
 	Global.dead_enemies.push_front(ID)
 	PlayerControll.set_xp(battle_unit_xp)
 	Disable()
 	add_child(smoke)
+	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
 
 func damage(knockbackValue, damageValue):
+		SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
 		knockback = knockbackValue
 		var text = damageText.instance()
 		text.set_text(str(damageValue))

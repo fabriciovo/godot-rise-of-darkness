@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Slime.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Enviroment/Skulls.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=4]
@@ -48,10 +49,22 @@ position = Vector2( 9, 81 )
 position = Vector2( 136, 40 )
 
 [node name="Static_Object2" parent="Enviroment/Static" index="1" instance=ExtResource( 7 )]
-position = Vector2( 104, 40 )
+position = Vector2( 89, 40 )
+
+[node name="Static_Object3" parent="Enviroment/Static" index="2" instance=ExtResource( 7 )]
+position = Vector2( 56, 81 )
+
+[node name="Static_Object4" parent="Enviroment/Static" index="3" instance=ExtResource( 7 )]
+position = Vector2( 166, 80 )
+
+[node name="Static_Object5" parent="Enviroment/Static" index="4" instance=ExtResource( 7 )]
+position = Vector2( 81, 108 )
+
+[node name="Static_Object6" parent="Enviroment/Static" index="5" instance=ExtResource( 7 )]
+position = Vector2( 150, 108 )
 
 [node name="Skulls" parent="." index="8" instance=ExtResource( 3 )]
-position = Vector2( 66, 113 )
+position = Vector2( 118, 82 )
 
 [node name="Dungeon_7" parent="." index="9" instance=ExtResource( 9 )]
 position = Vector2( 112, 13 )
@@ -91,8 +104,14 @@ position = Vector2( 194, 86 )
 [node name="Jar5" parent="Entities" index="4" instance=ExtResource( 6 )]
 position = Vector2( 203, 96 )
 
-[node name="World_Bat_8092" parent="Entities" index="5" instance=ExtResource( 2 )]
+[node name="World_Bat_d6_0" parent="Entities" index="5" instance=ExtResource( 2 )]
 position = Vector2( 48, 48 )
 
-[node name="World_Bat_324" parent="Entities" index="6" instance=ExtResource( 2 )]
+[node name="World_Bat_d6_1" parent="Entities" index="6" instance=ExtResource( 2 )]
 position = Vector2( 176, 112 )
+
+[node name="World_Slime_d6_0" parent="Entities" index="7" instance=ExtResource( 1 )]
+position = Vector2( 112, 21 )
+
+[node name="World_Slime_d6_1" parent="Entities" index="8" instance=ExtResource( 1 )]
+position = Vector2( 112, 113 )
