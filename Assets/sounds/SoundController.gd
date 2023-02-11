@@ -7,6 +7,10 @@ const EFFECTS = {
 	player_hit = preload("res://Assets/sounds/Player_Hit.wav"),
 	enemy_hit = preload("res://Assets/sounds/Enemy_Hit.wav"),
 	enemy_die = preload("res://Assets/sounds/Enemy_Die.wav"),
+	player_die = preload("res://Assets/sounds/Player_Hit.wav"),
+	bomb_explode = preload("res://Assets/sounds/Player_Hit.wav"),
+	put_bomb = preload("res://Assets/sounds/Player_Hit.wav"),
+	shoot_arrow = preload("res://Assets/sounds/Player_Hit.wav"),
 }
 
 func play_music(sound):

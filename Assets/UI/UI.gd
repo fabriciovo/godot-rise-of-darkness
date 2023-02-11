@@ -21,7 +21,7 @@ var can_equip_bomb = false
 var can_equip_bow = false
 
 func _process(delta):
-	if get_tree().current_scene.name == "Title_Scene" || get_tree().current_scene.name == "Game Over":
+	if get_tree().current_scene.name == "Title_Scene" || get_tree().current_scene.name == "Game_Over":
 		visible = false
 	else:
 		visible = true

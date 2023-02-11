@@ -8,6 +8,7 @@ var velocity = Vector2(20,20)
 var dir = Vector2.ZERO
 var jump = false
 func _ready():
+	ID = name
 	battle_unit_xp = 10
 	battle_unit_max_hp = 5
 	battle_unit_hp = battle_unit_max_hp
