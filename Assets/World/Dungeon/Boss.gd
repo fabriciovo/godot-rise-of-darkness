@@ -27,3 +27,22 @@ func _physics_process(delta):
 		move_and_collide(direction * speed * delta)
 	knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
 	knockback = move_and_slide(knockback / 1.1) 
+
+func show_shields():
+	get_node("Boss_Shield").visible = true
+	get_node("Boss_Shield2").visible = true
+
+func action():
+	var attack = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn").instance()
+	attack.damage = 5
+	attack.global_position = global_position
+	attack.speed = 0.4
+	get_tree().get_current_scene().add_child(attack)
+	$Shoot_Timer.start(1.3)
+
+
+func _on_Shoot_Timer_timeout():
+	action()
+
+func start_shooter():
+	$Shoot_Timer.start(1.3)

@@ -32,5 +32,5 @@ func _on_Attack_Timer_timeout():
 
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW):
-		damage()
+		damage(1, PlayerControll.atk+1)
 
