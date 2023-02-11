@@ -37,7 +37,6 @@ func _on_Timer_timeout():
 	Enable()
 
 func Destroy():
-	
 	Global.dead_enemies.push_front(ID)
 	PlayerControll.set_xp(battle_unit_xp)
 	Disable()
