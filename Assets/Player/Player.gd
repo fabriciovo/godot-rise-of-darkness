@@ -204,6 +204,8 @@ func execute_action():
 		elif Input.is_action_just_pressed("action_2"):
 			if PlayerControll.equiped_item[1] != -1:
 				action(1)
+	if Input.is_action_just_pressed("open_panel"):
+		Ui.show_hidden_panels()
 
 func movement(): 
 	if not dashing:

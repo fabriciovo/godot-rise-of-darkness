@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/World/RoomControll.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=2]
 [ext_resource path="res://Assets/World/Tilemap/dungeon_map_0.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Shaders/Transition.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/UI/UI.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -21,8 +20,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="UI" parent="." instance=ExtResource( 9 )]
 
 [node name="Floor" type="ColorRect" parent="."]
 margin_right = 224.0

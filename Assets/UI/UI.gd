@@ -20,8 +20,12 @@ var can_equip_heal = false
 var can_equip_bomb = false
 var can_equip_bow = false
 
-
 func _process(delta):
+	if get_tree().current_scene.name == "Title_Scene" || get_tree().current_scene.name == "Game Over":
+		visible = false
+	else:
+		visible = true
+	
 	HP.text = "HP " + str(PlayerControll.hp)
 	MP.text = "MP " + str(PlayerControll.mp)
 	AP.text = "AP " + str(PlayerControll.ap)
@@ -96,3 +100,8 @@ func _on_sword_gui_input(event):
 			PlayerControll.set_equiped_item(Global.WEAPONS.SWORD, 0)
 		if event.is_action_released("action_2"):
 			PlayerControll.set_equiped_item(Global.WEAPONS.SWORD, 1)
+
+
+func show_hidden_panels():
+	$"Sound Panel".visible = !$"Sound Panel".visible
+	$"Max Stats".visible = !$"Max Stats".visible

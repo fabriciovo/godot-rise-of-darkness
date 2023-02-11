@@ -1,5 +1,6 @@
 extends Node
 
+
 onready var sound_effects = $SoundEffect
 
 const EFFECTS = {
@@ -20,8 +21,10 @@ func play_effect(sound):
 func set_music_volume():
 	pass
 
-func set_effect_volume():
-	pass
+func set_effect_volume(value):
+	for effect in sound_effects.get_children():
+		effect.volume_db = value
+
 
 
 func mute_effect_volume():
