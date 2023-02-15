@@ -40,6 +40,14 @@ func action():
 	get_tree().get_current_scene().add_child(attack)
 	$Shoot_Timer.start(1.3)
 
+func Destroy():
+	Global.dead_enemies.push_front(ID)
+	PlayerControll.set_xp(battle_unit_xp)
+	Disable()
+	add_child(smoke)
+	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
+	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
+	queue_free()
 
 func _on_Shoot_Timer_timeout():
 	action()
