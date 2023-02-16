@@ -10,7 +10,7 @@ var collision
 
 func _ready():
 	ID = name
-	battle_unit_max_hp = 300
+	battle_unit_max_hp = 1
 	battle_unit_xp = 1000
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
@@ -45,6 +45,9 @@ func Destroy():
 	PlayerControll.set_xp(battle_unit_xp)
 	Disable()
 	add_child(smoke)
+	var win_item = preload("res://Assets/WinScene/Win_Item.tscn").instance()
+	win_item.global_position = global_position
+	get_tree().get_current_scene().add_child(win_item)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()

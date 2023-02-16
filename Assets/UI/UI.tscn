@@ -421,3 +421,4 @@ tick_count = 1
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade Magic" to="Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade action points" to="Upgrades/UpgradePanel" method="_on_upgrade_action_points_pressed"]
 [connection signal="value_changed" from="Sound Panel/SFX/SFX_Slider" to="Sound Panel" method="_on_SFX_Slider_value_changed"]
+[connection signal="value_changed" from="Sound Panel/Music/Music_Slider" to="Sound Panel" method="_on_Music_Slider_value_changed"]

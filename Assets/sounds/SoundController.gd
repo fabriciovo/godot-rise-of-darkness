@@ -2,6 +2,15 @@ extends Node
 
 
 onready var sound_effects = $SoundEffect
+onready var music = $Music
+
+const MUSIC = {
+	tilte = preload("res://Assets/sounds/Music/title.wav"),
+	florest = preload("res://Assets/sounds/Music/florest.wav"),
+	dungeon = preload("res://Assets/sounds/Player_Hit.wav"),
+	miniboss = preload("res://Assets/sounds/Music/miniboss_music.wav"),
+	boss = preload("res://Assets/sounds/Music/boss_music.wav"),
+}
 
 const EFFECTS = {
 	player_hit = preload("res://Assets/sounds/Player_Hit.wav"),
@@ -14,7 +23,9 @@ const EFFECTS = {
 }
 
 func play_music(sound):
-	pass
+	if sound != music.stream:
+		music.stream = sound
+		music.play()
 
 func play_effect(sound):
 	for effect in sound_effects.get_children():
@@ -22,14 +33,12 @@ func play_effect(sound):
 		effect.play() 
 		break
 
-func set_music_volume():
-	pass
+func set_music_volume(value):
+	music.volume_db = value
 
 func set_effect_volume(value):
 	for effect in sound_effects.get_children():
 		effect.volume_db = value
-
-
 
 
 func mute_effect_volume():

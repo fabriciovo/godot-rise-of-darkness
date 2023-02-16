@@ -24,7 +24,14 @@ func _ready():
 		for id in Global.dead_objects.size():
 			if m.ID == Global.dead_objects[id]:
 				m.queue_free()
-
+	if get_tree().current_scene.name == "World_0":
+		SoundController.play_music(SoundController.MUSIC.florest)
+	elif get_tree().current_scene.name == "Dungeon_0":
+		SoundController.play_music(SoundController.MUSIC.florest)
+	elif get_tree().current_scene.name == "Dungeon_Mini_Boss":
+		SoundController.play_music(SoundController.MUSIC.miniboss)
+	elif get_tree().current_scene.name == "Dungeon_9":
+		SoundController.play_music(SoundController.MUSIC.boss)
 
 
 
