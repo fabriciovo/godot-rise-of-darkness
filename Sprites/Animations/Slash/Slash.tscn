@@ -35,6 +35,7 @@ tracks/1/keys = {
 resource_name = "Slash_anim_down"
 
 [node name="Slash" type="Sprite"]
+z_index = 3
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 

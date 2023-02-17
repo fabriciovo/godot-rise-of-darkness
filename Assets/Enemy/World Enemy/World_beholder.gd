@@ -4,9 +4,6 @@ onready var obj = get_tree().current_scene.get_node("Player")
 
 var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
-var dir_frame_open_eye = [9,10,11,12]
-var dir_frame_closed_eye = [14,15,16,17,9]
-var dir_frame = 0
 var eye = false
 var can_take_damage = false
 var collision
@@ -20,12 +17,11 @@ func _ready():
 	battle_unit_max_hp = 30
 	battle_unit_hp = battle_unit_max_hp
 	randomize()
-	direction.x = rand_range(-20, 20)
-	direction.y = rand_range(-20, 20)
+	direction.x = rand_range(-5, 5)
+	direction.y = rand_range(-5, 5)
 
 func _physics_process(delta):
 	#TODO create hits mechanics
-	sprite_dir()
 	if !hit:
 		var collision = move_and_collide(direction * speed * delta)
 		if collision:
@@ -66,16 +62,6 @@ func action():
 	get_tree().get_current_scene().add_child(attack)
 	$Shoot_Timer.stop()
 	$Eye_Timer.start(3)
-
-func sprite_dir():
-	if not eye:
-		if speed > 0:
-			dir_frame = 0
-		elif speed < 0:
-			dir_frame = 1
-		$Sprite.frame = dir_frame_closed_eye[dir_frame]
-	else:
-		$Sprite.frame = dir_frame_open_eye[dir_frame]
 
 func _on_Player_Detect_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
