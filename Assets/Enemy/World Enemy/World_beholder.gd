@@ -42,7 +42,7 @@ func damage(knockbackValue, damageValue):
 	text.set_text(str(damageValue))
 	add_child(text)
 	hit = true
-	battle_unit_hp -= PlayerControll.atk
+	battle_unit_hp -= damageValue
 	hits+=1
 	$Enemy_Animation.play("damage_anim")
 	yield($Enemy_Animation, "animation_finished")

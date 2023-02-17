@@ -406,7 +406,7 @@ margin_left = 30.0
 margin_top = -1.0
 margin_right = 96.0
 margin_bottom = 15.0
-min_value = -30.0
+min_value = -80.0
 max_value = 0.0
 tick_count = 1
 
