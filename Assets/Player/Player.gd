@@ -6,7 +6,8 @@ onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 onready var actionArea = $ActionArea
 
-var damageText = preload("res://Assets/UI/DamageText.tscn")
+var damageText = preload("res://Assets/UI/FloatText.tscn")
+var floatText = preload("res://Assets/UI/FloatText.tscn")
 var hp = PlayerControll.hp setget set_hp
 var ap = PlayerControll.ap setget set_ap
 var mp = PlayerControll.mp setget set_mp
@@ -59,12 +60,27 @@ func action(value):
 				if mp >= 1:
 					create_arrow()
 					set_mp(mp-1)
+					var text = floatText.instance()
+					text.set_text("MP -1")
+					add_child(text)
+
 			Global.WEAPONS.BOMB:
 				if mp >= 3:
 					create_bomb()
 					set_mp(mp-3)
+					var text = floatText.instance()
+					text.set_text("MP -3")
+					add_child(text)
 			Global.WEAPONS.HEAL: 
 				if mp >= 5:
+					var textMP = floatText.instance()
+					var textHP = floatText.instance()
+					textMP.set_text("MP -5")
+					add_child(textMP)
+					textHP.set_text("HP +5")
+					textHP.get_position_in_parent()
+					textHP.pos.x = -34
+					add_child(textHP)
 					heal()
 					set_mp(mp-5)
 		match dir:
@@ -148,9 +164,6 @@ func heal():
 	set_ap(0)
 	set_hp(hp+10)
 
-func knockback():
-	pass
-
 func damage(value):
 	SoundController.play_effect(SoundController.EFFECTS.player_hit)
 	var text = damageText.instance()
@@ -165,6 +178,9 @@ func damage(value):
 	
 func recover_mana():
 	set_mp(PlayerControll.max_mp)
+	var text = floatText.instance()
+	text.set_text("MP " + str(PlayerControll.max_mp))
+	add_child(text)
 
 
 func _on_AP_Timer_timeout():

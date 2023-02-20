@@ -8,9 +8,6 @@
 
 [node name="Dungeon_0" instance=ExtResource( 1 )]
 
-[node name="map_1" parent="." index="3"]
-z_index = 2
-
 [node name="Player" parent="." index="4"]
 position = Vector2( 113, 134 )
 z_index = 4

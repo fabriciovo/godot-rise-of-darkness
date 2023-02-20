@@ -11,7 +11,7 @@ var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
 var atk = 2 setget set_atk
 var points = 0 setget set_points
-var items = [-1,-1] setget set_item
+var items = [0,1,2,3,4] setget set_item
 var equiped_item = [0,-1] 
 var key = 0
 

@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_beholder.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Animations/Beholder_anim.tres" type="Animation" id=3]
 [ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=4]
-[ext_resource path="res://Assets/Enemy/World Enemy/ray_cast_beholder.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.07107
@@ -81,17 +80,12 @@ anims/damage_anim = ExtResource( 4 )
 
 [node name="Shoot_Timer" type="Timer" parent="." index="5"]
 
-[node name="ray_cast" type="RayCast2D" parent="." index="6"]
-visible = false
-enabled = true
-script = ExtResource( 5 )
-
-[node name="Player_Detect_Area" type="Area2D" parent="." index="7"]
+[node name="Player_Detect_Area" type="Area2D" parent="." index="6"]
 
 [node name="Collision_Area" type="CollisionShape2D" parent="Player_Detect_Area" index="0"]
 shape = SubResource( 5 )
 
-[node name="Eye_Timer" type="Timer" parent="." index="8"]
+[node name="Eye_Timer" type="Timer" parent="." index="7"]
 
 [connection signal="timeout" from="Shoot_Timer" to="." method="_on_Shoot_Timer_timeout"]
 [connection signal="body_entered" from="Player_Detect_Area" to="." method="_on_Player_Detect_Area_body_entered"]

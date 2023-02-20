@@ -2,7 +2,6 @@ extends Label
 
 var pos = Vector2.ZERO
 
-
 func _on_Timer_timeout():
 	queue_free()
 

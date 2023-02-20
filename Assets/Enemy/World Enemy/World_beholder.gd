@@ -7,6 +7,8 @@ var velocity = Vector2(20,20)
 var eye = false
 var can_take_damage = false
 var collision
+var frame_open_eye = 9
+var frame_closed_eye = 14
 func _ready():
 	$Enemy_Animation.stop(true)
 	ID = name
@@ -21,7 +23,7 @@ func _ready():
 	direction.y = rand_range(-5, 5)
 
 func _physics_process(delta):
-	#TODO create hits mechanics
+	eye_sprite()
 	if !hit:
 		var collision = move_and_collide(direction * speed * delta)
 		if collision:
@@ -53,6 +55,12 @@ func _on_Timer_timeout():
 
 func _on_Shoot_Timer_timeout():
 	action()
+
+func eye_sprite():
+	if not eye:
+		$Sprite.frame = frame_closed_eye
+	else:
+		$Sprite.frame = frame_open_eye
 
 func action():
 	var attack = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn").instance()

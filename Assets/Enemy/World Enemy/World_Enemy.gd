@@ -12,7 +12,7 @@ var battle_unit_damage = 0
 var battle_unit_hp = battle_unit_max_hp
 
 var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
-var damageText = preload("res://Assets/UI/DamageText.tscn")
+var damageText = preload("res://Assets/UI/FloatText.tscn")
 var knockback = Vector2.ZERO
 var hits = 1
 var hit = false
