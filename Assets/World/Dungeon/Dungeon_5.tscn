@@ -68,7 +68,7 @@ format = 1
 tile_data = PoolIntArray( -1, 66, 0, -65536, 66, 0, 65535, 65, 0, 0, 65, 0, 131071, 65, 0, 65536, 65, 0 )
 
 [node name="World_Slime_d5_0" parent="Entities" index="0" instance=ExtResource( 10 )]
-position = Vector2( 210, 79 )
+position = Vector2( 210, 78 )
 
 [node name="World_Slime_d5_1" parent="Entities" index="1" instance=ExtResource( 10 )]
 position = Vector2( 72, 95 )
