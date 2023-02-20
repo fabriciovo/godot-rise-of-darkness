@@ -10,7 +10,7 @@ var collision
 
 func _ready():
 	ID = name
-	battle_unit_max_hp = 1
+	battle_unit_max_hp = 300
 	battle_unit_xp = 1000
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
