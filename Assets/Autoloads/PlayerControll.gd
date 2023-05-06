@@ -15,6 +15,7 @@ var items = [] setget set_item
 var equiped_item = [-1,-1] 
 var key = 0
 
+var float_text = preload("res://Assets/UI/FloatText.tscn")
 
 func increase_max_hp():
 	points-=1
@@ -61,7 +62,9 @@ func set_xp(value):
 		level+=1
 		xp_to_level_up = floor(xp_to_level_up * 1.2)
 		xp =  xp_to_level_up - xp
-
+		var xp_text = float_text.instance()
+		xp_text.set_text("LEVEL UP!!")
+		get_tree().get_current_scene().get_node("Player").add_child(xp_text)
 func set_level(value):
 	level = value
 
