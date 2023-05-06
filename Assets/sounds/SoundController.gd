@@ -5,11 +5,11 @@ onready var sound_effects = $SoundEffect
 onready var music = $Music
 
 const MUSIC = {
-	tilte = preload("res://Assets/sounds/Music/title.wav"),
+	title = preload("res://Assets/sounds/Music/title.wav"),
 	florest = preload("res://Assets/sounds/Music/florest.wav"),
-	dungeon = preload("res://Assets/sounds/Player_Hit.wav"),
-	miniboss = preload("res://Assets/sounds/Music/miniboss_music.wav"),
-	boss = preload("res://Assets/sounds/Music/boss_music.wav"),
+	dungeon = preload("res://Assets/sounds/Music/dungeon.wav"),
+	miniboss = preload("res://Assets/sounds/Music/mini boss.wav"),
+	boss = preload("res://Assets/sounds/Music/boss.wav"),
 }
 
 const EFFECTS = {

@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	$Control/Title_Player/Title_Player_Animator.play("Title_Player_Anim")
+	SoundController.play_music(SoundController.MUSIC.title)
 
 
 func _on_Button_pressed():
