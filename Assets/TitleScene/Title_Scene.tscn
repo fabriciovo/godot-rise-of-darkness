@@ -36,9 +36,6 @@ color = Color( 0, 0, 0, 1 )
 margin_left = 13.0
 margin_right = 214.0
 margin_bottom = 170.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Button" parent="Control"]
 margin_left = 25.0
@@ -75,11 +72,20 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 88.0
-margin_top = 120.0
-margin_right = 136.0
-margin_bottom = 136.0
+margin_left = 89.0
+margin_top = 110.0
+margin_right = 137.0
+margin_bottom = 126.0
 theme = ExtResource( 3 )
 text = "Start Game"
 
+[node name="Options" type="Button" parent="."]
+margin_left = 89.0
+margin_top = 130.0
+margin_right = 137.0
+margin_bottom = 146.0
+theme = ExtResource( 3 )
+text = "Options"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]

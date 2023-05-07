@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/UI/Upgrade.gd" type="Script" id=7]
 [ext_resource path="res://Assets/UI/CloseUpgrades.gd" type="Script" id=8]
 [ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
-[ext_resource path="res://Assets/UI/Sound Panel.gd" type="Script" id=10]
+[ext_resource path="res://Assets/sounds/Sound Panel.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -358,57 +358,7 @@ margin_bottom = 44.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Max Magic Points: "
 
-[node name="Sound Panel" type="Panel" parent="."]
-anchor_top = 0.735
-anchor_right = 0.996
-anchor_bottom = 0.829
-margin_left = 11.0
-margin_top = -43.95
-margin_right = -109.104
-margin_bottom = -11.93
-theme = ExtResource( 5 )
-script = ExtResource( 10 )
-
-[node name="Title" type="Label" parent="Sound Panel"]
-margin_left = 20.0
-margin_top = 2.0
-margin_right = 81.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Sound Settings"
-
-[node name="SFX" type="Label" parent="Sound Panel"]
-margin_left = 8.0
-margin_top = 16.0
-margin_right = 30.0
-margin_bottom = 28.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "SFX:"
-
-[node name="SFX_Slider" type="HSlider" parent="Sound Panel/SFX"]
-margin_left = 22.0
-margin_top = -2.0
-margin_right = 88.0
-margin_bottom = 14.0
-min_value = -80.0
-max_value = 0.0
-tick_count = 1
-
-[node name="Music" type="Label" parent="Sound Panel"]
-margin_top = 31.0
-margin_right = 30.0
-margin_bottom = 43.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Music:"
-
-[node name="Music_Slider" type="HSlider" parent="Sound Panel/Music"]
-margin_left = 30.0
-margin_top = -1.0
-margin_right = 96.0
-margin_bottom = 15.0
-min_value = -80.0
-max_value = 0.0
-tick_count = 1
+[node name="Sound Panel" parent="." instance=ExtResource( 10 )]
 
 [connection signal="gui_input" from="Items/Inventory/sword" to="." method="_on_sword_gui_input"]
 [connection signal="gui_input" from="Items/Inventory/bow" to="." method="_on_bow_gui_input"]
@@ -420,5 +370,3 @@ tick_count = 1
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade atk" to="Upgrades/UpgradePanel" method="_on_upgrade_atk_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade Magic" to="Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade action points" to="Upgrades/UpgradePanel" method="_on_upgrade_action_points_pressed"]
-[connection signal="value_changed" from="Sound Panel/SFX/SFX_Slider" to="Sound Panel" method="_on_SFX_Slider_value_changed"]
-[connection signal="value_changed" from="Sound Panel/Music/Music_Slider" to="Sound Panel" method="_on_Music_Slider_value_changed"]

@@ -25,7 +25,6 @@ func _process(delta):
 		visible = false
 	else:
 		visible = true
-	
 	HP.text = "HP " + str(PlayerControll.hp)
 	MP.text = "MP " + str(PlayerControll.mp)
 	AP.text = "AP " + str(PlayerControll.ap)
@@ -105,3 +104,6 @@ func _on_sword_gui_input(event):
 func show_hidden_panels():
 	$"Sound Panel".visible = !$"Sound Panel".visible
 	$"Max Stats".visible = !$"Max Stats".visible
+
+func open_sound_panel():
+	$"Sound Panel".visible = !$"Sound Panel".visible

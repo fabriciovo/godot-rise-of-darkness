@@ -4,6 +4,9 @@ extends Node
 onready var sound_effects = $SoundEffect
 onready var music = $Music
 
+onready var music_value = music.volume_db 
+var sfx_value = 0
+
 const MUSIC = {
 	title = preload("res://Assets/sounds/Music/title.wav"),
 	florest = preload("res://Assets/sounds/Music/florest.wav"),
@@ -34,11 +37,13 @@ func play_effect(sound):
 		break
 
 func set_music_volume(value):
-	music.volume_db = value
+	music_value = value
+	music.volume_db = music_value
 
 func set_effect_volume(value):
 	for effect in sound_effects.get_children():
-		effect.volume_db = value
+		sfx_value = value
+		effect.volume_db = sfx_value
 
 
 func mute_effect_volume():
