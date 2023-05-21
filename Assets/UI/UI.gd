@@ -15,16 +15,20 @@ onready var inventory_bow = $Items/Inventory/bow
 onready var level = $Stats/Level
 onready var xp = $Stats/xp
 
+
 var can_equip_sword = false
 var can_equip_heal = false
 var can_equip_bomb = false
 var can_equip_bow = false
 
+func _ready():
+	print("start")
+	inventory_sword.get_node("Sprite").visible = false
+	inventory_bomb.get_node("Sprite").visible = false
+	inventory_bow.get_node("Sprite").visible = false
+	inventory_heal.get_node("Sprite").visible = false
+
 func _process(delta):
-	if get_tree().current_scene.name == "Title_Scene" || get_tree().current_scene.name == "Game_Over" || get_tree().current_scene.name == "Win":
-		visible = false
-	else:
-		visible = true
 	HP.text = "HP " + str(PlayerControll.hp)
 	MP.text = "MP " + str(PlayerControll.mp)
 	AP.text = "AP " + str(PlayerControll.ap)
@@ -59,11 +63,7 @@ func _process(delta):
 					can_equip_bomb = true
 					inventory_bomb.get_node("Sprite").visible = true
 
-func _ready():
-	inventory_sword.get_node("Sprite").visible = false
-	inventory_bomb.get_node("Sprite").visible = false
-	inventory_bow.get_node("Sprite").visible = false
-	inventory_heal.get_node("Sprite").visible = false
+
 
 func _on_PlayerControl_hp_changed(value):
 	HP.text = "HP " + str(value)
@@ -107,3 +107,9 @@ func show_hidden_panels():
 
 func open_sound_panel():
 	$"Sound Panel".visible = !$"Sound Panel".visible
+
+func title_screen():
+	pass
+func game_start():
+	$Items.visible = true
+	$Stats.visible = true

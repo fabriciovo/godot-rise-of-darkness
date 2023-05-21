@@ -24,6 +24,7 @@ corner_detail = 1
 script = ExtResource( 2 )
 
 [node name="Items" type="Panel" parent="."]
+visible = false
 anchor_top = 0.835
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -213,6 +214,7 @@ vframes = 3
 frame = 4
 
 [node name="Stats" type="Panel" parent="."]
+visible = false
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
@@ -359,6 +361,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Max Magic Points: "
 
 [node name="Sound Panel" parent="." instance=ExtResource( 10 )]
+visible = false
 
 [connection signal="gui_input" from="Items/Inventory/sword" to="." method="_on_sword_gui_input"]
 [connection signal="gui_input" from="Items/Inventory/bow" to="." method="_on_bow_gui_input"]

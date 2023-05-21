@@ -7,6 +7,7 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Assets/World/World_0.tscn")
+	Ui.game_start()
 
 
 
