@@ -73,19 +73,28 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 margin_left = 89.0
-margin_top = 110.0
+margin_top = 104.0
 margin_right = 137.0
-margin_bottom = 126.0
+margin_bottom = 120.0
 theme = ExtResource( 3 )
 text = "Start Game"
 
 [node name="Options" type="Button" parent="."]
 margin_left = 89.0
-margin_top = 130.0
+margin_top = 123.0
 margin_right = 137.0
-margin_bottom = 146.0
+margin_bottom = 139.0
 theme = ExtResource( 3 )
 text = "Options"
 
+[node name="Load_Game" type="Button" parent="."]
+margin_left = 89.0
+margin_top = 142.0
+margin_right = 137.0
+margin_bottom = 158.0
+theme = ExtResource( 3 )
+text = "Load Game"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Load_Game" to="." method="_on_Load_Game_pressed"]

@@ -81,3 +81,34 @@ func restart():
 	set_hp(max_hp)
 	set_mp(max_mp)
 	set_ap(max_ap)
+
+func player_data(): 
+	var data = {
+		"max_hp": max_hp,
+		"max_ap": max_ap,
+		"hp": hp,
+		"ap": ap,
+		"mp": mp,
+		"xp": xp,
+		"xp_to_level_up": xp_to_level_up,
+		"atk": atk,
+		"points": points,
+		"items": items,
+		"equiped_item": equiped_item,
+		"key": key,
+	}
+	return data
+
+func load_player_data(data):
+	max_hp = data["max_hp"]
+	max_ap = data["max_ap"]
+	hp = data["hp"] 
+	ap = data["ap"]
+	mp = data["mp"]
+	xp = data["xp"]
+	xp_to_level_up = data["xp_to_level_up"]
+	atk = data["atk"]
+	points = data["points"]
+	items = data["items"]
+	data["equiped_item"] = equiped_item
+	key = data["key"]
