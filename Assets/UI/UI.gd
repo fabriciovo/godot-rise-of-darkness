@@ -113,3 +113,4 @@ func title_screen():
 func game_start():
 	$Items.visible = true
 	$Stats.visible = true
+	$"Sound Panel".visible = false
