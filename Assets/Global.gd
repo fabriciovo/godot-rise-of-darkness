@@ -51,16 +51,27 @@ func global_data():
 	}
 	return data
 
-func save_game_data():
+#func save_game_data():
+#	var file = File.new()
+#	if file.open(saveFilePath, File.WRITE) == OK:
+#		file.store_var(global_data())
+#		file.close()
+#		print("Game data saved.")
+#	if file.open(saveFilePath, File.WRITE) == OK:
+#		file.store_var(PlayerControll.player_data())
+#		file.close()
+#		print("Game data saved.")
+
+func saveJSONData(fileName, data):
+	var filePath = saveDirectory + fileName + ".json"
 	var file = File.new()
-	if file.open(saveFilePath, File.WRITE) == OK:
-		file.store_var(global_data())
+
+	if file.open(filePath, File.WRITE) == OK:
+		file.store_line(data.to_json())
 		file.close()
-		print("Game data saved.")
-	if file.open(saveFilePath, File.WRITE) == OK:
-		file.store_var(PlayerControll.player_data())
-		file.close()
-		print("Game data saved.")
+		print("Saved JSON data to file:", fileName)
+	else:
+		print("Failed to save JSON data to file:", fileName)
 
 
 func load_global_data(data):
