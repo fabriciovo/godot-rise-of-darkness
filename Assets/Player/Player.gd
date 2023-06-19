@@ -119,7 +119,7 @@ func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
 		damage(body.battle_unit_damage)
 	if body.is_in_group(Global.GROUPS.DOOR):
-		Global.doorName = body.door_name
+		Global.door_name = body.door_name
 		get_tree().change_scene(body.target_scene)
 
 func _on_ActionArea_body_entered(body):

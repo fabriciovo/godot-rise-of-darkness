@@ -1,5 +1,5 @@
 extends Node2D
-var filePath = "user://1-bit-hero-player.json"
+var filePath = "user://save-data/1-bit-hero-player.json"
 
 func _ready():
 	$Control/Title_Player/Title_Player_Animator.play("Title_Player_Anim")
@@ -27,5 +27,5 @@ func _on_Options_pressed():
 
 
 func _on_Load_Game_pressed():
-	Global.load_game_data()
+	PlayerControll.load_player_data(Global.loadJSONData("player_data"))
 	Ui.game_start()

@@ -3,8 +3,8 @@ extends Panel
 
 
 func _ready():
-	SoundController.set_effect_volume(SoundController.sfx_value)
-	SoundController.set_music_volume(SoundController.music_value)
+	SoundController.set_effect_volume(-40)
+	SoundController.set_music_volume(-40)
 
 func _process(delta):
 	if get_tree().current_scene.name == "Title_Scene":

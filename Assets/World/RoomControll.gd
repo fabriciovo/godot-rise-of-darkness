@@ -2,10 +2,10 @@ extends Node
 
 
 func _ready():
-	Global.save_game_data()
+	Global.saveJSONData("player_data",PlayerControll.player_data())
 	var scene_name = get_tree().current_scene.name
-	if Global.doorName and Global.last_player_scene == "":
-		var door_node = find_node(Global.doorName)
+	if Global.door_name and Global.last_player_scene == "":
+		var door_node = find_node(Global.door_name)
 		if door_node:
 			$Player.global_position = door_node.global_position
 	if Global.player_last_scene != "" and Global.player_last_position != Vector2.ZERO:
@@ -34,6 +34,3 @@ func _ready():
 		SoundController.play_music(SoundController.MUSIC.miniboss)
 	elif scene_name == "Dungeon_9":
 		SoundController.play_music(SoundController.MUSIC.boss)
-
-
-
