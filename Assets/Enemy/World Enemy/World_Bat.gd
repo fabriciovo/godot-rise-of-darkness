@@ -18,10 +18,6 @@ func _ready():
 
 func _physics_process(delta):
 	if obj == null: return
-#	if hits < 2:
-#		chase_state(delta)
-#	else:
-#		rotation_state()
 	chase_state(delta)
 	knockback_state(delta)
 
@@ -34,18 +30,17 @@ func _on_Timer_timeout():
 
 
 func rotation_state():
-	#TODO smooth animation to start this state
 	angle += 0.1 / 4
 	var x = obj.position.x  + radius * cos(angle)
 	var y = obj.position.y  + radius * sin(angle)
 	position = Vector2(x, y)
 
 
-func chase_state(delta):
+func chase_state(_delta):
 	if not hit:
 		var dir = (obj.global_position - global_position).normalized()
-		move_and_collide(dir * speed * delta)
+		dir = move_and_collide(dir * speed * _delta)
 
-func knockback_state(delta):
-	knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
+func knockback_state(_delta):
+	knockback = knockback.move_toward(Vector2.ZERO, speed * _delta)
 	knockback = move_and_slide(knockback / 1.1)

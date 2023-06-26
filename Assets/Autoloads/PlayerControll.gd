@@ -11,7 +11,7 @@ var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
 var atk = 2 setget set_atk
 var points = 0 setget set_points
-var items = [] setget set_item
+var items = []
 var equiped_item = [-1,-1] 
 var key = 0
 
@@ -38,7 +38,9 @@ func increase_atk():
 func set_hp(value):
 	hp = clamp(value, 0 , max_hp)
 	if hp <= 0:
-		get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
+		var scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
+		if scene_instance == OK:
+			PlayerControll.load_player_data(Global.loadJSONData("player_data"))
 
 func set_ap(value):
 	ap = clamp(value, 0 , max_ap)
@@ -110,5 +112,5 @@ func load_player_data(data):
 	atk = data["atk"]
 	points = data["points"]
 	items = data["items"]
-	data["equiped_item"] = equiped_item
+	equiped_item = data["equiped_item"]
 	key = data["key"]

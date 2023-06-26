@@ -12,7 +12,7 @@ func _ready():
 	interactButton.visible = false;
 	ID = name
 
-func _process(delta):
+func _process(_delta):
 	if player_in_area:
 		interactButton.visible = true;
 	else:

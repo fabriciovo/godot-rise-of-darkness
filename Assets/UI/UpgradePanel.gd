@@ -2,7 +2,7 @@ extends Panel
 
 onready var points = get_node("Points")
 
-func _process(delta):
+func _process(_delta):
 	points.text = "Points: " + str(PlayerControll.points)
 
 

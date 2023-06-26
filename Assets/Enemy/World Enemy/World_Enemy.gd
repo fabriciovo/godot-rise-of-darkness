@@ -25,7 +25,7 @@ func _ready():
 	Enable()
 
 
-func _process(delta):
+func _process(_delta):
 	if(!Global.stop):
 		set_physics_process(true)
 	else:

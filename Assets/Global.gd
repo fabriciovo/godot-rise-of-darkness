@@ -1,5 +1,5 @@
 extends Node
-var save_dir = "user://save_data/"
+var save_dir = "user://"
 var door_name = null
 var last_enemy = ""
 var last_player_scene = ""
@@ -51,44 +51,32 @@ func global_data():
 	}
 	return data
 
-#func save_game_data():
-#	var file = File.new()
-#	if file.open(saveFilePath, File.WRITE) == OK:
-#		file.store_var(global_data())
-#		file.close()
-#		print("Game data saved.")
-#	if file.open(saveFilePath, File.WRITE) == OK:
-#		file.store_var(PlayerControll.player_data())
-#		file.close()
-#		print("Game data saved.")
-
-func saveJSONData(fileName, data):
+func saveJSONData(file_name, data):
 	print(data)
-	var file_path = save_dir + fileName + ".json"
+	var file_path = save_dir + file_name + ".json"
 	var file = File.new()
 	file.open(file_path, File.WRITE)
 	file.store_line(to_json(data))
 	file.close()
 
-
-func loadJSONData(fileName):
-	var filePath = save_dir + fileName + ".json"
+func loadJSONData(file_name):
+	var file_path = save_dir + file_name + ".json"
 	var file = File.new()
-	if file.file_exists(filePath):
-		if file.open(filePath, File.READ) == OK:
-			var jsonData = file.get_line()
+	if file.file_exists(file_path):
+		if file.open(file_path, File.READ) == OK:
+			var json_data = file.get_line()
 			file.close()
-			if jsonData != "":
-				var data = parse_json(jsonData)
+			if json_data != "":
+				var data = parse_json(json_data)
 				if data:
-					print("Loaded JSON data from file:", fileName)
+					print("Loaded JSON data from file:", file_name)
 					return data
 				else:
-					print("Failed to parse JSON data from file:", fileName)
+					print("Failed to parse JSON data from file:", file_name)
 			else:
-				print("Empty JSON data in file:", fileName)
+				print("Empty JSON data in file:", file_name)
 		else:
-			print("Failed to open file:", fileName)
+			print("Failed to open file:", file_name)
 	else:
-		print("File does not exist:", fileName)
+		print("File does not exist:", file_name)
 	return null

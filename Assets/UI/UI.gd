@@ -28,7 +28,7 @@ func _ready():
 	inventory_bow.get_node("Sprite").visible = false
 	inventory_heal.get_node("Sprite").visible = false
 
-func _process(delta):
+func _process(_delta):
 	HP.text = "HP " + str(PlayerControll.hp)
 	MP.text = "MP " + str(PlayerControll.mp)
 	AP.text = "AP " + str(PlayerControll.ap)

@@ -1,5 +1,5 @@
 extends Node2D
-var filePath = "user://save-data/1-bit-hero-player.json"
+var filePath = "user://player_data.json"
 
 func _ready():
 	$Control/Title_Player/Title_Player_Animator.play("Title_Player_Anim")
@@ -17,15 +17,18 @@ func check_file_existence():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Assets/World/World_0.tscn")
-	Ui.game_start()
-
+	var scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")
+	if scene_instance == OK:
+		Ui.game_start()
 
 
 func _on_Options_pressed():
 	Ui.open_sound_panel()
 
-
 func _on_Load_Game_pressed():
-	PlayerControll.load_player_data(Global.loadJSONData("player_data"))
+	var scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")
+	if scene_instance == OK:
+		PlayerControll.load_player_data(Global.loadJSONData("player_data"))
+	
+	
 	Ui.game_start()

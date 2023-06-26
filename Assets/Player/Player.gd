@@ -29,15 +29,13 @@ func set_mp(value):
 	mp = min(value, PlayerControll.max_mp)
 	PlayerControll.set_mp(mp)
 
-signal change_scene(target_scene, value)
-
 var dir = "right"
 var speed = 30
 var velocity = Vector2.ZERO
 var action_state = false
 var hit = false
 var can_execute_action = false
-var heal = false
+
 func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
@@ -104,12 +102,12 @@ func action(value):
 		action_state = false
 		action_collision.disabled = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if hit: return
 	get_input()
 	velocity = move_and_slide(velocity)
 
-func _process(delta):
+func _process(_delta):
 	if(!Global.stop):
 		set_physics_process(true)
 	else:
@@ -119,8 +117,9 @@ func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
 		damage(body.battle_unit_damage)
 	if body.is_in_group(Global.GROUPS.DOOR):
-		Global.door_name = body.door_name
-		get_tree().change_scene(body.target_scene)
+		var scene_instance = get_tree().change_scene(body.target_scene)
+		if scene_instance == OK: 
+				Global.door_name = body.door_name
 
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group(Global.GROUPS.BOX): 
@@ -215,6 +214,9 @@ func change_action_area_direction():
 func execute_action():
 	if can_execute_action:
 		if Input.is_action_just_pressed("action_1"):
+			print(PlayerControll.equiped_item[0])
+			print(PlayerControll.equiped_item)
+			print(PlayerControll.items)
 			if PlayerControll.equiped_item[0] != -1:
 				action(0)
 		elif Input.is_action_just_pressed("action_2"):

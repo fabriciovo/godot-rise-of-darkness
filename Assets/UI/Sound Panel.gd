@@ -6,7 +6,7 @@ func _ready():
 	SoundController.set_effect_volume(-40)
 	SoundController.set_music_volume(-40)
 
-func _process(delta):
+func _process(_delta):
 	if get_tree().current_scene.name == "Title_Scene":
 		var viewport = get_viewport_rect().size
 		var x = viewport.x / 2
