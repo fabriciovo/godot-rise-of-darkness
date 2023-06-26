@@ -23,20 +23,20 @@ func _input(event):
 		if player_in_area:
 			get_item(item)
 
-func get_item(item):
+func get_item(_item):
 	$Sprite.frame = 0
-	match item:
+	match _item:
 		Global.WEAPONS.SWORD:
-			PlayerControll.set_item(item)
+			PlayerControll.set_item(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.BOW:
-			PlayerControll.set_item(item)
+			PlayerControll.set_item(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.BOMB:
-			PlayerControll.set_item(item)
+			PlayerControll.set_item(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.HEAL:
-			PlayerControll.set_item(item)
+			PlayerControll.set_item(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.KEY:
 			PlayerControll.key += 1

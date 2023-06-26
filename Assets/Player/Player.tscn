@@ -225,7 +225,7 @@ material = SubResource( 15 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 5
-frame = 12
+frame = 18
 __meta__ = {
 "_edit_lock_": true
 }

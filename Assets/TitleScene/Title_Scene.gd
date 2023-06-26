@@ -21,7 +21,6 @@ func _on_Button_pressed():
 	if scene_instance == OK:
 		Ui.game_start()
 
-
 func _on_Options_pressed():
 	Ui.open_sound_panel()
 

@@ -9,7 +9,6 @@
 [ext_resource path="res://Sprites/Animations/player_dash_2.png" type="Texture" id=7]
 
 [sub_resource type="StreamTexture" id=3]
-load_path = "res://.import/player_dash_0.png-2b9654b4c761d5e31708d5b4c585ea09.stex"
 
 [sub_resource type="Animation" id=1]
 length = 0.001
