@@ -112,6 +112,5 @@ func load_player_data(data):
 	atk = data["atk"]
 	points = data["points"]
 	key = data["key"]
-	#saving but not working on load
 	items = data["items"]
 	equiped_item = data["equiped_item"]

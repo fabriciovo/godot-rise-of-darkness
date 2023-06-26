@@ -28,6 +28,4 @@ func _on_Load_Game_pressed():
 	var scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")
 	if scene_instance == OK:
 		PlayerControll.load_player_data(Global.loadJSONData("player_data"))
-	
-	
-	Ui.game_start()
+		Ui.game_start()
