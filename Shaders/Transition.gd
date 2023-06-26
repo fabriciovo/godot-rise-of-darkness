@@ -12,4 +12,6 @@ func fade_out():
 func fade_in():
 	$Transition_Animator.play("fade_in_anim")
 	yield ($Transition_Animator, "animation_finished")
-	get_tree().change_scene("res://Assets/Battle/Battle.tscn")
+	var scene_instance =  get_tree().change_scene("res://Assets/Battle/Battle.tscn")
+	if scene_instance != OK:
+		push_error("Scene not load")
