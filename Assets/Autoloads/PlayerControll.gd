@@ -111,6 +111,7 @@ func load_player_data(data):
 	xp_to_level_up = data["xp_to_level_up"]
 	atk = data["atk"]
 	points = data["points"]
+	key = data["key"]
+	#saving but not working on load
 	items = data["items"]
 	equiped_item = data["equiped_item"]
-	key = data["key"]

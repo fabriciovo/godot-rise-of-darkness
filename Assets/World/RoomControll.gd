@@ -2,6 +2,7 @@ extends Node
 
 
 func _ready():
+	Global.saveJSONData("player_data",PlayerControll.player_data())
 	var scene_name = get_tree().current_scene.name
 	if Global.door_name and Global.last_player_scene == "":
 		var door_node = find_node(Global.door_name)

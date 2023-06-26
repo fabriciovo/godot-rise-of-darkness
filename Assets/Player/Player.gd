@@ -51,6 +51,12 @@ func get_input():
 func action(value):
 	if ap > 0 and value != -1:
 		$AP_Timer.start(.8)
+		print('PlayerControll.equiped_item[value]')
+		print(PlayerControll.equiped_item[value])
+		print("PlayerControll.equiped_item[value]")
+		print("PlayerControll.equiped_item")
+		print(PlayerControll.equiped_item)
+		print("PlayerControll.equiped_item")
 		match PlayerControll.equiped_item[value]:
 			Global.WEAPONS.SWORD:
 				create_sword(value)
@@ -61,7 +67,6 @@ func action(value):
 					var text = floatText.instance()
 					text.set_text("MP -1")
 					add_child(text)
-
 			Global.WEAPONS.BOMB:
 				if mp >= 3:
 					create_bomb()
