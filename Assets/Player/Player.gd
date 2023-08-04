@@ -140,29 +140,29 @@ func create_sword(value):
 	action_sprite.frame = PlayerControll.equiped_item[value]
 
 func create_bomb():
-		set_ap(ap-1)
-		var bomb_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
-		bomb_object.global_position = global_position
-		get_tree().get_current_scene().add_child(bomb_object)
+	set_ap(ap-1)
+	var bomb_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
+	bomb_object.global_position = global_position
+	get_tree().get_current_scene().add_child(bomb_object)
 
 func create_arrow():
-		set_ap(ap-1)
-		var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
-		arrow_object.global_position = global_position
-		match dir:
-			"right":
-				arrow_object.direction = Vector2.RIGHT
-				arrow_object.frame = 23
-			"left":
-				arrow_object.direction = Vector2.LEFT
-				arrow_object.frame = 21
-			"up":
-				arrow_object.direction = Vector2.UP
-				arrow_object.frame = 22
-			"down":
-				arrow_object.direction = Vector2.DOWN
-				arrow_object.frame = 20
-		get_tree().get_current_scene().add_child(arrow_object)
+	set_ap(ap-1)
+	var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
+	arrow_object.global_position = global_position
+	match dir:
+		"right":
+			arrow_object.direction = Vector2.RIGHT
+			arrow_object.frame = 23
+		"left":
+			arrow_object.direction = Vector2.LEFT
+			arrow_object.frame = 21
+		"up":
+			arrow_object.direction = Vector2.UP
+			arrow_object.frame = 22
+		"down":
+			arrow_object.direction = Vector2.DOWN
+			arrow_object.frame = 20
+	get_tree().get_current_scene().add_child(arrow_object)
 
 func heal():
 	set_ap(0)

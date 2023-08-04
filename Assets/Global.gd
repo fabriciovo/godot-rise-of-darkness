@@ -68,6 +68,12 @@ func loadJSONData(file_name):
 			file.close()
 			if json_data != "":
 				var data = parse_json(json_data)
+				print("json_data")
+				print(json_data)
+				print("json_data")
+				print("parse_json(json_data)")
+				print(parse_json(json_data).items)
+				print("parse_json(json_data)")
 				if data:
 					print("Loaded JSON data from file:", file_name)
 					return data

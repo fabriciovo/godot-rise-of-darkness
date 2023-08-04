@@ -2,7 +2,6 @@ extends Node2D
 var filePath = "user://player_data.json"
 
 func _ready():
-	$Control/Title_Player/Title_Player_Animator.play("Title_Player_Anim")
 	SoundController.play_music(SoundController.MUSIC.title)
 	check_file_existence()
 
