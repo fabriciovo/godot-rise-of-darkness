@@ -117,6 +117,7 @@ func _process(_delta):
 		set_physics_process(true)
 	else:
 		set_physics_process(false)
+	change_z_index()
 
 func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
@@ -296,3 +297,13 @@ func dash():
 func _on_Dash_Timer_timeout():
 	speed = 30
 	dashing = false
+
+func change_z_index():
+	var height = get_tree().get_root().size.y;
+
+	if (global_position.y < height / 5):
+		self.z_index = 6
+		print("a")
+	else:
+		self.z_index = 1
+		print("b")

@@ -34,11 +34,10 @@ anims/BattleFadeToNewRoom = ExtResource( 2 )
 anims/FadeToNewRoom = SubResource( 1 )
 
 [node name="map_1" parent="." instance=ExtResource( 3 )]
-z_index = 5
 collision_mask = 15
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 146 )
+position = Vector2( 111, 141 )
 collision_layer = 3
 
 [node name="Enviroment" type="Node2D" parent="."]
@@ -54,6 +53,8 @@ __meta__ = {
 }
 
 [node name="Entities" type="Node2D" parent="."]
+
+[node name="Collision Area" type="StaticBody2D" parent="."]
 
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]

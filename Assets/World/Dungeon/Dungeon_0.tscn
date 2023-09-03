@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Static_Object.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Enviroment/Movable_Object.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.125, 55.875 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 36.75, 8.8125 )
 
 [node name="Dungeon_0" instance=ExtResource( 1 )]
 
@@ -62,3 +71,33 @@ __meta__ = {
 }
 target_scene = "res://Assets/World/World_0.tscn"
 door_name = "Dungeon_door_0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Area" index="0"]
+position = Vector2( 56, 15.5 )
+z_index = 7
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collision Area" index="1"]
+position = Vector2( 168, 15 )
+z_index = 7
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collision Area" index="2"]
+position = Vector2( 215.125, 84.875 )
+z_index = 7
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collision Area" index="3"]
+position = Vector2( 10.25, 86.25 )
+z_index = 7
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collision Area" index="4"]
+position = Vector2( 165, 136 )
+z_index = 7
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collision Area" index="5"]
+position = Vector2( 58.25, 135.813 )
+z_index = 7
+shape = SubResource( 3 )
