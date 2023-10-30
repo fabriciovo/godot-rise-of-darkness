@@ -103,6 +103,7 @@ func _on_sword_gui_input(event):
 func show_hidden_panels():
 	$"Sound Panel".visible = !$"Sound Panel".visible
 	$"Max Stats".visible = !$"Max Stats".visible
+	$Upgrades.visible = !$Upgrades.visible
 
 func open_sound_panel():
 	$"Sound Panel".visible = !$"Sound Panel".visible

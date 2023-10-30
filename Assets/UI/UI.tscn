@@ -254,6 +254,7 @@ script = ExtResource( 7 )
 visible = false
 
 [node name="Close Upgrades" type="Button" parent="Upgrades"]
+visible = false
 margin_left = 144.0
 margin_top = 111.0
 margin_right = 182.0
@@ -293,6 +294,7 @@ margin_left = 19.0
 margin_top = 17.0
 margin_right = 76.0
 margin_bottom = 34.0
+disabled = true
 text = "Upgrade Hp"
 
 [node name="upgrade atk" type="Button" parent="Upgrades/UpgradePanel"]
