@@ -5,7 +5,6 @@ var ID = name
 onready var frame = $Sprite.frame
 onready var timer = $Timer
 
-
 var battle_unit_xp = 50
 var battle_unit_max_hp = 10
 var battle_unit_damage = 0
@@ -71,10 +70,12 @@ func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.BOMB) and not hit:
 		knockback = -global_position
 		damage(knockback,  PlayerControll.atk+5)
+		
 func Disable():
 	speed = 0
 	$Sprite.visible = false
 	set_physics_process(false);
+	
 func Enable():
 	speed = const_speed
 	set_physics_process(true);

@@ -13,7 +13,9 @@ var ap = PlayerControll.ap setget set_ap
 var mp = PlayerControll.mp setget set_mp
 var items = PlayerControll.items
 var key = PlayerControll.key
-var dashing = false
+
+
+var enemiesBody = []
 
 var knockback = Vector2.ZERO
 
@@ -34,6 +36,8 @@ var speed = 30
 var velocity = Vector2.ZERO
 var action_state = false
 var hit = false
+var dashing = false
+var invincible = false
 var can_execute_action = false
 
 func _ready():
@@ -109,20 +113,31 @@ func _physics_process(_delta):
 func _process(_delta):
 	if(!Global.stop):
 		set_physics_process(true)
+		take_damage_by_enemies()
 	else:
 		set_physics_process(false)
 
+func take_damage_by_enemies():
+	for i in enemiesBody.size():
+		if !hit:
+			damage(enemiesBody[i].battle_unit_damage)
+
 func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
-		damage(body.battle_unit_damage)
+		enemiesBody.append(body)
 	if body.is_in_group(Global.GROUPS.DOOR):
 		var scene_instance = get_tree().change_scene(body.target_scene)
 		if scene_instance == OK: 
 				Global.door_name = body.door_name
 
+func _on_PlayerBody_body_exited(body):
+	if body.is_in_group(Global.GROUPS.ENEMY):
+		enemiesBody.erase(body)
+
 func _on_ActionArea_body_entered(body):
 	if body.is_in_group(Global.GROUPS.BOX): 
 		body.Destroy()
+
 
 func create_sword(value):
 	set_ap(ap-1)
@@ -163,6 +178,8 @@ func heal():
 	set_hp(hp+10)
 
 func damage(value):
+	if invincible: return
+	invincible = true
 	SoundController.play_effect(SoundController.EFFECTS.player_hit)
 	var text = damageText.instance()
 	text.set_text(str(value))
@@ -172,6 +189,7 @@ func damage(value):
 	set_hp(hp-value)
 	$PlayerAnimation.play("damage_anim")
 	yield($PlayerAnimation, "animation_finished")
+	$Invincible_Timer.start(2)
 	hit = false
 	
 func recover_mana():
@@ -287,4 +305,10 @@ func dash():
 func _on_Dash_Timer_timeout():
 	speed = 30
 	dashing = false
+
+func _on_Invincible_Timer_timeout():
+	invincible = false
+
+
+
 
