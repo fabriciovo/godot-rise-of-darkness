@@ -10,18 +10,6 @@ func _ready():
 	knockback_vector = direction
 
 func _physics_process(delta):
-	direction = move_and_slide(direction.normalized() * speed) 
-
-func _on_Arrow_Area_body_entered(body):
-	if body.is_in_group(Global.GROUPS.STATIC):
-		queue_free()
-	if body.is_in_group(Global.GROUPS.BOX):
-		queue_free()
-	if body.is_in_group(Global.GROUPS.MOVABLE):
-		queue_free()
-	if body.is_in_group(Global.GROUPS.ENEMY):
-		queue_free()
-	if body.is_in_group(Global.GROUPS.TILEMAP):
-		queue_free()
-	if body.is_in_group(Global.GROUPS.ARROW):
+	var collision = move_and_collide(direction.normalized() * speed * delta) 
+	if collision:
 		queue_free()

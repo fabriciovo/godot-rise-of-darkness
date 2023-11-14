@@ -102,10 +102,6 @@ func player_data():
 	return data
 
 func load_player_data(data):
-	print("items")
-	print(data["items"])
-	print(data)
-	print("items")
 	max_hp = data["max_hp"]
 	max_ap = data["max_ap"]
 	hp = data["hp"] 

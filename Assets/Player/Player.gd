@@ -51,12 +51,6 @@ func get_input():
 func action(value):
 	if ap > 0 and value != -1:
 		$AP_Timer.start(.8)
-		print('PlayerControll.equiped_item[value]')
-		print(PlayerControll.equiped_item[value])
-		print("PlayerControll.equiped_item[value]")
-		print("PlayerControll.equiped_item")
-		print(PlayerControll.equiped_item)
-		print("PlayerControll.equiped_item")
 		match PlayerControll.equiped_item[value]:
 			Global.WEAPONS.SWORD:
 				create_sword(value)
@@ -117,7 +111,6 @@ func _process(_delta):
 		set_physics_process(true)
 	else:
 		set_physics_process(false)
-	change_z_index()
 
 func _on_PlayerBody_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
@@ -220,9 +213,6 @@ func change_action_area_direction():
 func execute_action():
 	if can_execute_action:
 		if Input.is_action_just_pressed("action_1"):
-			print(PlayerControll.equiped_item[0])
-			print(PlayerControll.equiped_item)
-			print(PlayerControll.items)
 			if PlayerControll.equiped_item[0] != -1:
 				action(0)
 		elif Input.is_action_just_pressed("action_2"):
@@ -298,12 +288,3 @@ func _on_Dash_Timer_timeout():
 	speed = 30
 	dashing = false
 
-func change_z_index():
-	var height = get_tree().get_root().size.y;
-
-	if (global_position.y < height / 5):
-		self.z_index = 6
-		print("a")
-	else:
-		self.z_index = 1
-		print("b")

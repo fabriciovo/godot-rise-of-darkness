@@ -67,7 +67,6 @@ func _on_Area_area_entered(area):
 		damage(knockback,  PlayerControll.atk)
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW) and not hit:
-		body.queue_free()
 		damage(knockback,  PlayerControll.atk+1)
 	if body.is_in_group(Global.GROUPS.BOMB) and not hit:
 		knockback = -global_position

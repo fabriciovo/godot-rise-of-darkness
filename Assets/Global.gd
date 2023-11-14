@@ -52,7 +52,6 @@ func global_data():
 	return data
 
 func saveJSONData(file_name, data):
-	print(data)
 	var file_path = save_dir + file_name + ".json"
 	var file = File.new()
 	file.open(file_path, File.WRITE)
