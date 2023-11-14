@@ -25,6 +25,8 @@ position = Vector2( -0.5, -0.5 )
 shape = SubResource( 1 )
 
 [node name="Arrow_Area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="Arrow_Collision" type="CollisionShape2D" parent="Arrow_Area"]
 shape = SubResource( 2 )

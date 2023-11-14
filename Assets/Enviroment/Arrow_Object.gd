@@ -9,8 +9,8 @@ func _ready():
 	$Arrow_Sprite.frame = frame
 	knockback_vector = direction
 
-func _physics_process(_delta):
-	direction = move_and_slide(direction * speed) 
+func _physics_process(delta):
+	direction = move_and_slide(direction.normalized() * speed) 
 
 func _on_Arrow_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.STATIC):
