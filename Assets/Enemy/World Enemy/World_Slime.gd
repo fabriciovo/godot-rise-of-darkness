@@ -23,9 +23,11 @@ func _ready():
 
 func _physics_process(delta):
 	if not wakeup:
+		$Area/Area_Shape.disabled = true
 		set_physics_process(false)
 	else:
 		set_physics_process(true)
+		$Area/Area_Shape.disabled = false
 		if not hit and jump:
 			direction = move_and_collide(dir * speed * delta)
 		knockback = knockback.move_toward(Vector2.ZERO, speed * delta)

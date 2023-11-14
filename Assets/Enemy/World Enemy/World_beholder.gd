@@ -13,7 +13,7 @@ func _ready():
 	$Enemy_Animation.stop(true)
 	ID = name
 	battle_unit_xp = 20
-	const_speed = 1
+	const_speed = 3
 	speed = const_speed
 	battle_unit_damage = 8
 	battle_unit_max_hp = 30
@@ -28,8 +28,7 @@ func _physics_process(delta):
 		var collision = move_and_collide(direction * speed * delta)
 		if collision:
 			direction = direction.bounce(collision.normal)
-		move_and_collide(direction * speed * delta)
-	knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
+	knockback = knockback.move_toward(Vector2.ZERO, speed  * delta)
 	knockback = move_and_slide(knockback / 1.1) 
 
 func damage(knockbackValue, damageValue):

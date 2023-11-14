@@ -16,7 +16,7 @@ void fragment(){
 shader = SubResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1.75, 2 )
+extents = Vector2( 5, 4.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.5, 3 )

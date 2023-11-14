@@ -119,7 +119,6 @@ func _process(_delta):
 
 func take_damage_by_enemies():
 	for i in enemiesBody.size():
-		if !hit:
 			damage(enemiesBody[i].battle_unit_damage)
 
 func _on_PlayerBody_body_entered(body):
@@ -179,17 +178,17 @@ func heal():
 
 func damage(value):
 	if invincible: return
+	hit = true
 	invincible = true
 	SoundController.play_effect(SoundController.EFFECTS.player_hit)
 	var text = damageText.instance()
 	text.set_text(str(value))
 	add_child(text)
 	$PlayerAnimation.stop()
-	hit = true
 	set_hp(hp-value)
 	$PlayerAnimation.play("damage_anim")
 	yield($PlayerAnimation, "animation_finished")
-	$Invincible_Timer.start(2)
+	$Invincible_Timer.start(1)
 	hit = false
 	
 func recover_mana():

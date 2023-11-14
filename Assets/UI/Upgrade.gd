@@ -1,8 +1,5 @@
 extends Button
 
-onready var upgrades_container = get_parent().get_node("Upgrades")
-onready var max_stats = get_parent().get_node("Max Stats")
-
 func _process(_delta):
 	if PlayerControll.points > 0:
 		visible = true
@@ -13,5 +10,4 @@ func _process(_delta):
 
 
 func _on_Upgrade_pressed():
-	upgrades_container.visible = true
-	max_stats.visible = true
+	Ui.show_hidden_panels()
