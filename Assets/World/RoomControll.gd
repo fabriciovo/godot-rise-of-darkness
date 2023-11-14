@@ -1,6 +1,5 @@
 extends Node
 
-
 func _ready():
 	Global.saveJSONData("player_data",PlayerControll.player_data())
 	var scene_name = get_tree().current_scene.name

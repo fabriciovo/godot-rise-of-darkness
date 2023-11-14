@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/World/Tilemap/dungeon_map_0.gd" type="Script" id=2]
 
 [node name="dungeon_map" type="TileMap"]
-z_index = 5
+z_index = 3
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 show_collision = true
