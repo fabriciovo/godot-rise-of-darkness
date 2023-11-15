@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/MaxStats.gd" type="Script" id=6]
 [ext_resource path="res://Assets/UI/Upgrade.gd" type="Script" id=7]
-[ext_resource path="res://Assets/UI/CloseUpgrades.gd" type="Script" id=8]
 [ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
 [ext_resource path="res://Assets/sounds/Sound Panel.tscn" type="PackedScene" id=10]
 
@@ -241,26 +240,26 @@ margin_right = -14.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "XP: 0/100"
 
-[node name="Upgrade" type="Button" parent="."]
+[node name="Panel" type="Panel" parent="."]
 visible = false
-margin_left = 186.0
-margin_top = 111.0
-margin_right = 224.0
-margin_bottom = 124.0
-text = "Upgrade"
+margin_left = 182.0
+margin_top = 110.0
+margin_right = 223.0
+margin_bottom = 125.0
 script = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 39.0
+margin_bottom = 13.0
+text = "Upgrade"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Upgrades" type="Node2D" parent="."]
 visible = false
-
-[node name="Close Upgrades" type="Button" parent="Upgrades"]
-visible = false
-margin_left = 144.0
-margin_top = 111.0
-margin_right = 182.0
-margin_bottom = 124.0
-text = "Close"
-script = ExtResource( 8 )
 
 [node name="UpgradePanel" type="Panel" parent="Upgrades"]
 margin_left = 123.0
@@ -369,8 +368,6 @@ visible = false
 [connection signal="gui_input" from="Items/Inventory/bow" to="." method="_on_bow_gui_input"]
 [connection signal="gui_input" from="Items/Inventory/bomb" to="." method="_on_bomb_gui_input"]
 [connection signal="gui_input" from="Items/Inventory/heal" to="." method="_on_heal_gui_input"]
-[connection signal="pressed" from="Upgrade" to="Upgrade" method="_on_Upgrade_pressed"]
-[connection signal="pressed" from="Upgrades/Close Upgrades" to="Upgrades/Close Upgrades" method="_on_Close_Upgrades_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade hp" to="Upgrades/UpgradePanel" method="_on_upgrade_hp_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade atk" to="Upgrades/UpgradePanel" method="_on_upgrade_atk_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade Magic" to="Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]

@@ -1,13 +1,9 @@
-extends Button
+extends Panel
+
 
 func _process(_delta):
-	if PlayerControll.points > 0:
+	if PlayerControll.points > 0 and get_tree().get_current_scene().name != "Title_Scene" and get_tree().get_current_scene().name != "Game_Over":
 		visible = true
-		disabled = false
 	else:
 		visible = false
-		disabled = true
 
-
-func _on_Upgrade_pressed():
-	Ui.show_hidden_panels()
