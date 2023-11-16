@@ -71,14 +71,15 @@ func loadJSONData(file_name):
 					return data
 				else:
 					printerr("Failed to parse JSON data from file:", file_name)
-					get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
+					var _change_scene = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
+					
 			else:
 				printerr("Empty JSON data in file:", file_name)
-				get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
+				var _change_scene = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
 		else:
 			printerr("Failed to open file:", file_name)
-			get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
+			var _change_scene = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
 	else:
 		printerr("File does not exist:", file_name)
-		get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn") 
+		var _change_scene = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn") 
 	return null
