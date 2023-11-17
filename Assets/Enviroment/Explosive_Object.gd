@@ -1,10 +1,12 @@
+class_name explosive_object
 extends KinematicBody2D
 
 var ID = ""
-
+export var frame = 0
 var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
 
 func _ready():
+	$Sprite.frame = frame
 	ID = name
 	add_to_group(Global.GROUPS.STATIC)
 

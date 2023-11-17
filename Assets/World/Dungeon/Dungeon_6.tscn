@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Enviroment/Skulls.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=4]
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Enviroment/Jar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Enviroment/Explosive_Object.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Static_Object.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/World/Dungeon/Scripts/Boss_Gate.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=9]
@@ -65,18 +65,23 @@ position = Vector2( 150, 108 )
 
 [node name="Jar" parent="Entities" index="0" instance=ExtResource( 6 )]
 position = Vector2( 203, 65 )
+frame = 3
 
 [node name="Jar2" parent="Entities" index="1" instance=ExtResource( 6 )]
 position = Vector2( 196, 71 )
+frame = 3
 
 [node name="Jar3" parent="Entities" index="2" instance=ExtResource( 6 )]
 position = Vector2( 195, 79 )
+frame = 3
 
 [node name="Jar4" parent="Entities" index="3" instance=ExtResource( 6 )]
 position = Vector2( 194, 86 )
+frame = 3
 
 [node name="Jar5" parent="Entities" index="4" instance=ExtResource( 6 )]
 position = Vector2( 203, 96 )
+frame = 3
 
 [node name="World_Bat_d6_0" parent="Entities" index="5" instance=ExtResource( 2 )]
 position = Vector2( 48, 48 )

@@ -25,6 +25,9 @@ func _ready():
 		for id in Global.dead_objects.size():
 			if m.ID == Global.dead_objects[id]:
 				m.queue_free()
+		for id in Global.walls_objects.size():
+			if m.ID == Global.walls_objects[id]:
+				m.queue_free()
 	if "World_" in scene_name:
 		SoundController.play_music(SoundController.MUSIC.florest)
 	elif "Dungeon_" in scene_name:

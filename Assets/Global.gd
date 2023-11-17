@@ -8,6 +8,7 @@ var stop = false
 var dead_enemies = []
 var open_chests = []
 var dead_objects = []
+var walls_objects = []
 
 var player_last_position = Vector2.ZERO
 var player_last_scene = ""
@@ -48,6 +49,7 @@ func global_data():
 		"dead_enemies": dead_enemies,
 		"open_chests": open_chests,
 		"dead_objects": dead_objects,
+		"walls_objects": walls_objects,
 	}
 	return data
 

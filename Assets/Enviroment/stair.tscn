@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/World_nobg_spritesheet_16x16.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Actions/Door.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2, 1.5 )
+
+[node name="Stair" type="KinematicBody2D"]
+script = ExtResource( 2 )
+target_scene = "res://Assets/World/World_1.tscn"
+door_name = "Stair"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 9 )
+texture = ExtResource( 1 )
+hframes = 9
+vframes = 18
+frame = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 13.5 )
+shape = SubResource( 1 )

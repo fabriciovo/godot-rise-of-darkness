@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "World_Enemy",
 "language": "GDScript",
 "path": "res://Assets/Enemy/World Enemy/World_Enemy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "explosive_object",
+"language": "GDScript",
+"path": "res://Assets/Enviroment/Explosive_Object.gd"
 } ]
 _global_script_class_icons={
 "Bomb_Object": "",
@@ -57,7 +62,8 @@ _global_script_class_icons={
 "Player": "",
 "Static_Box": "",
 "Static_Object": "",
-"World_Enemy": ""
+"World_Enemy": "",
+"explosive_object": ""
 }
 
 [application]
