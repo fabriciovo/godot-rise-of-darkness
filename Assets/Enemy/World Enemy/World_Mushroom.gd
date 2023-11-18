@@ -5,6 +5,8 @@ onready var agent = $NavigationAgent2D
 var paths: Array = []
 var navigation_path = null
 var velocity := Vector2.ZERO
+var chase_player = false
+var direction = Vector2(rand_range(-5, 5),rand_range(-5, 5))
 
 func _ready():
 	ID = name
@@ -18,7 +20,7 @@ func _ready():
 	navigation_path = get_parent().get_node("Navigation_Path")
 
 func _physics_process(delta):
-	if player and navigation_path:
+	if player and navigation_path and chase_player:
 		generate_path()
 		navigate()
 	velocity = move_and_slide(velocity)
@@ -31,3 +33,13 @@ func navigate():
 		velocity = global_position.direction_to(paths[1]) * 10
 		if global_position == paths[0]:
 			paths.pop_front()
+
+
+func _on_Chase_Area_body_entered(body):
+	if body.is_in_group(Global.GROUPS.PLAYER):
+		chase_player = true
+
+
+func _on_Chase_Area_body_exited(body):
+	if body.is_in_group(Global.GROUPS.PLAYER):
+		chase_player = false
