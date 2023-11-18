@@ -17,12 +17,14 @@ func _ready():
 	const_speed = 4
 	speed = const_speed
 	yield(get_tree(), "idle_frame")
-	navigation_path = get_parent().get_node("Navigation_Path")
+	navigation_path = get_parent().get_parent().get_node("Navigation")
 
 func _physics_process(delta):
 	if player and navigation_path and chase_player:
 		generate_path()
 		navigate()
+	else: 
+		velocity = direction * 2
 	velocity = move_and_slide(velocity)
 
 func generate_path():
