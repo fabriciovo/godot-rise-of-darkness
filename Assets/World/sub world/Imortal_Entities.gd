@@ -6,7 +6,7 @@ var count = 1
 
 func _ready():
 	rng.randomize()
-	var count = rng.randi_range(1, 4)
+	count = rng.randi_range(1, 4)
 	print(count)
 	for i in count:
 		random_spawn()

@@ -10,7 +10,7 @@ var battle_unit_max_hp = 10
 var battle_unit_damage = 0
 var battle_unit_hp = battle_unit_max_hp
 
-var smoke = preload("res://Assets/Animations/smoke.tscn").instance()
+var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damageText = preload("res://Assets/UI/FloatText.tscn")
 var knockback = Vector2.ZERO
 var hits = 1
@@ -39,9 +39,10 @@ func Destroy():
 	Global.dead_enemies.push_front(ID)
 	PlayerControll.set_xp(battle_unit_xp)
 	Disable()
-	add_child(smoke)
+	var temp_smoke = smoke.instance()
+	add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
-	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
+	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
 
 func damage(knockbackValue, damageValue):

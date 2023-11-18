@@ -37,8 +37,10 @@ func explosion():
 		yield($Enemy_Animation, "animation_finished")
 		dead = true
 		Disable()
-		add_child(smoke)
-		yield(smoke.get_node("AnimationPlayer"),"animation_finished")
+		var temp_smoke = smoke.instance()
+		add_child(temp_smoke)
+		SoundController.play_effect(SoundController.EFFECTS.enemy_die)
+		yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
 		queue_free()
 
 
