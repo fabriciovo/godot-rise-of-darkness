@@ -61,7 +61,7 @@ z_index = 1
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
-frame = 12
+frame = 9
 
 [node name="Body_Shape" parent="." index="1"]
 position = Vector2( -0.5, 0.5 )

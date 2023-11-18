@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=1]
+[ext_resource path="res://Assets/World/sub world/Imortal_Entities.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/World/RoomControll.gd" type="Script" id=5]
@@ -9,6 +10,9 @@
 resource_name = "FadeToNewRoom"
 length = 0.5
 step = 0.05
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 9.05539
 
 [node name="World_Master" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
 position = Vector2( -1, 0 )
@@ -33,6 +37,14 @@ collision_mask = 3
 tile_data = PoolIntArray( 262149, 0, 0, 327685, 0, 0, 327691, 0, 0 )
 
 [node name="Entities" type="Node2D" parent="."]
+
+[node name="Imortal_Entities" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Check_If_Place_Free" type="Area2D" parent="Imortal_Entities"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Imortal_Entities/Check_If_Place_Free"]
+shape = SubResource( 2 )
 
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]
