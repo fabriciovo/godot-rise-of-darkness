@@ -12,7 +12,7 @@ var chase_speed = 43
 func _ready():
 	ID = name
 	battle_unit_xp = 3
-	battle_unit_max_hp = 9
+	battle_unit_max_hp = 4
 	battle_unit_damage = 2
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 4

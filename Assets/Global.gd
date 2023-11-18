@@ -9,13 +9,14 @@ var dead_enemies = []
 var open_chests = []
 var dead_objects = []
 var walls_objects = []
+var key_gate = []
 
 var player_last_position = Vector2.ZERO
 var player_last_scene = ""
 
 var altar_hit = false
 var boss_gate = false
-var key_gate = false
+
 
 var chest_sword = false
 var chest_heal = false
