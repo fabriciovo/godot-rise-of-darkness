@@ -36,3 +36,5 @@ func _ready():
 		SoundController.play_music(SoundController.MUSIC.miniboss)
 	elif scene_name == "Dungeon_9":
 		SoundController.play_music(SoundController.MUSIC.boss)
+	if scene_name == "Dungeon_0":
+		Ui.show_text("The Dungeon")

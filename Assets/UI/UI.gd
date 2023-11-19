@@ -110,9 +110,16 @@ func show_hidden_panels():
 func open_sound_panel():
 	$"Sound Panel".visible = !$"Sound Panel".visible
 
-func title_screen():
-	pass
 func game_start():
 	$Items.visible = true
 	$Stats.visible = true
 	$"Sound Panel".visible = false
+
+func _on_Timer_timeout():
+	$Title_Scene.visible = false
+	$Title_Scene/Title_Panel/Title_Text.text = ""
+
+func show_text(text):
+	$Title_Scene.visible = true
+	$Title_Scene/Timer.start(3)
+	$Title_Scene/Title_Panel/Title_Text.text = text

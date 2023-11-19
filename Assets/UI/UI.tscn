@@ -364,6 +364,34 @@ text = "Max Magic Points: "
 [node name="Sound Panel" parent="." instance=ExtResource( 10 )]
 visible = false
 
+[node name="Title_Scene" type="Control" parent="."]
+margin_right = 64.0
+margin_bottom = 17.0
+
+[node name="Timer" type="Timer" parent="Title_Scene"]
+one_shot = true
+autostart = true
+
+[node name="Title_Panel" type="Panel" parent="Title_Scene"]
+anchor_right = 1.525
+anchor_bottom = 1.125
+margin_top = 1.0
+margin_right = -34.6
+margin_bottom = 0.875
+
+[node name="Title_Text" type="Label" parent="Title_Scene/Title_Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.941
+margin_left = 4.0
+margin_right = -5.0
+margin_bottom = 0.00299931
+text = "Scene name"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="gui_input" from="Items/Inventory/sword" to="." method="_on_sword_gui_input"]
 [connection signal="gui_input" from="Items/Inventory/bow" to="." method="_on_bow_gui_input"]
 [connection signal="gui_input" from="Items/Inventory/bomb" to="." method="_on_bomb_gui_input"]
@@ -372,3 +400,4 @@ visible = false
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade atk" to="Upgrades/UpgradePanel" method="_on_upgrade_atk_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade Magic" to="Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade action points" to="Upgrades/UpgradePanel" method="_on_upgrade_action_points_pressed"]
+[connection signal="timeout" from="Title_Scene/Timer" to="." method="_on_Timer_timeout"]
