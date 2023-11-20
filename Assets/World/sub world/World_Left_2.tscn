@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/World/RoomControll.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Enemy/Boss/World_Boss_Giant_Bat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=6]
@@ -308,6 +309,9 @@ rotation = -1.5708
 
 [node name="Door6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 112, 15 )
+
+[node name="World_Boss_Giant_Bat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 67, 74 )
 
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]
