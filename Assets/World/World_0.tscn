@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/World/RoomControll.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Enviroment/Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Enviroment/Key_Gate_Single_Gate.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -19,8 +19,12 @@ script = ExtResource( 5 )
 
 [node name="Floor" type="ColorRect" parent="."]
 margin_right = 225.0
-margin_bottom = 142.0
+margin_bottom = 144.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="Key_Gate_Single_Gate" parent="Floor" instance=ExtResource( 7 )]
+position = Vector2( 168, 40 )
+z_index = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BattleFadeToNewRoom = ExtResource( 1 )
@@ -49,9 +53,6 @@ texture = ExtResource( 2 )
 hframes = 9
 vframes = 18
 frame = 47
-
-[node name="Box" parent="." instance=ExtResource( 7 )]
-position = Vector2( 169, 72 )
 
 [node name="Entities" type="Node2D" parent="."]
 

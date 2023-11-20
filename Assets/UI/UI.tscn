@@ -365,6 +365,7 @@ text = "Max Magic Points: "
 visible = false
 
 [node name="Title_Scene" type="Control" parent="."]
+visible = false
 margin_right = 64.0
 margin_bottom = 17.0
 

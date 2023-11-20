@@ -13,8 +13,8 @@ var ap = PlayerControll.ap setget set_ap
 var mp = PlayerControll.mp setget set_mp
 var items = PlayerControll.items
 var key = PlayerControll.key
-
-
+var get_item_frame = 0
+var get_item_anim = false
 var enemiesBody = []
 
 var knockback = Vector2.ZERO
@@ -106,11 +106,13 @@ func action(value):
 		action_collision.disabled = true
 
 func _physics_process(_delta):
+	if get_item_anim: return
 	if hit: return
 	get_input()
 	velocity = move_and_slide(velocity)
 
 func _process(_delta):
+	if get_item_anim: return
 	if(!Global.stop):
 		set_physics_process(true)
 		take_damage_by_enemies()
@@ -306,6 +308,19 @@ func _on_Dash_Timer_timeout():
 func _on_Invincible_Timer_timeout():
 	invincible = false
 
+func play_get_item_animation():
+	get_item_anim = true
+	Global.stop = true
+	$PlayerAnimation.play("get_item")
+	yield($PlayerAnimation, "animation_finished")
+	Global.stop = false
+	get_item_anim = false
 
+func show_get_item():
+	$Get_Item_Sprite.visible = true
+	$Get_Item_Sprite.frame = get_item_frame
+
+func hide_get_item():
+	$Get_Item_Sprite.visible = false
 
 
