@@ -12,7 +12,7 @@ length = 0.5
 step = 0.05
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 9.05539
+radius = 12.0
 
 [node name="World_Master" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
 position = Vector2( -1, 0 )
@@ -38,12 +38,10 @@ tile_data = PoolIntArray( 262149, 0, 0, 327685, 0, 0, 327691, 0, 0 )
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="Imortal_Entities" type="Node2D" parent="."]
+[node name="Imortal_Entities" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="Check_If_Place_Free" type="Area2D" parent="Imortal_Entities"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Imortal_Entities/Check_If_Place_Free"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Imortal_Entities"]
 shape = SubResource( 2 )
 
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]

@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Enviroment/The Door.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16.5, 8 )
+extents = Vector2( 16, 8 )
 
 [node name="The Door" type="Node2D"]
 position = Vector2( 105, 22 )
@@ -27,5 +27,5 @@ frame = 38
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 6.5, 2 )
+position = Vector2( 6, 2 )
 shape = SubResource( 1 )
