@@ -66,7 +66,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 45.0
+radius = 48.3735
 
 [node name="World_Mushroom" instance=ExtResource( 2 )]
 script = ExtResource( 3 )

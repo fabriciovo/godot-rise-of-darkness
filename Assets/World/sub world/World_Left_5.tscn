@@ -305,13 +305,18 @@ position = Vector2( 106, 102 )
 
 [node name="Chest" parent="The Door" instance=ExtResource( 8 )]
 position = Vector2( 7, 19 )
+item = 5
 
 [node name="Door7" parent="." instance=ExtResource( 2 )]
 position = Vector2( 211, 64 )
 rotation = 1.5708
+target_scene = "res://Assets/World/sub world/World_Left_6.tscn"
+door_name = "Door3"
 
 [node name="Door6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 112, 15 )
+target_scene = "res://Assets/World/sub world/World_Left_2.tscn"
+door_name = "Door4"
 
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]
