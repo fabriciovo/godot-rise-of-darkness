@@ -42,9 +42,9 @@ var WEAPONS = {
 	SWORD = 0,
 	BOW = 1, 
 	BOMB = 2, 
-	HEAL = 4,
-	KEY = 5,
-	SHIELD = 6
+	HEAL = 3,
+	KEY = 4,
+	SHIELD = 5,
 }
 
 func global_data():

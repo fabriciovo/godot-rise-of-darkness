@@ -305,7 +305,7 @@ position = Vector2( 106, 102 )
 
 [node name="Chest" parent="The Door" instance=ExtResource( 8 )]
 position = Vector2( 7, 19 )
-item = 5
+item = 4
 
 [node name="Door7" parent="." instance=ExtResource( 2 )]
 position = Vector2( 211, 64 )

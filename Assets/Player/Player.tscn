@@ -310,6 +310,7 @@ position = Vector2( 0, 9 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 hframes = 7
+frame = 5
 
 [connection signal="body_entered" from="PlayerBody" to="." method="_on_PlayerBody_body_entered"]
 [connection signal="body_exited" from="PlayerBody" to="." method="_on_PlayerBody_body_exited"]

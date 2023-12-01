@@ -13,7 +13,7 @@ var atk = 2 setget set_atk
 var points = 0 setget set_points
 var items = []
 var equiped_item = [-1,-1] 
-var key = 0
+var key = 2
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")
 
@@ -55,7 +55,7 @@ func set_equiped_item(value, slot):
 	equiped_item[slot] = value
 
 func set_key(value):
-	key = value
+	key -= value
 
 func set_xp(value):
 	xp += value
