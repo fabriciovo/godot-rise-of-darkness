@@ -1,27 +1,60 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Shaders/Mask/shards.png" type="Texture" id=1]
 [ext_resource path="res://Shaders/transition.tres" type="Shader" id=2]
 [ext_resource path="res://Assets/Animations/fade_in_anim.tres" type="Animation" id=3]
 [ext_resource path="res://Assets/Animations/fade_out_anim.tres" type="Animation" id=4]
 [ext_resource path="res://Shaders/Transition.gd" type="Script" id=5]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
-shader_param/cutoff = 1.0
-shader_param/smooth_size = 0.5
-shader_param/color = Color( 0, 0, 0, 1 )
-shader_param/mask = ExtResource( 1 )
+shader_param/screen_width = 1920.0
+shader_param/screen_height = 1080.0
+shader_param/center = Vector2( 0.5, 0.5 )
+shader_param/player = Vector2( 0.5, 0.5 )
+shader_param/progress = 0.141
+shader_param/pixel_size = 15.0
+shader_param/circle_size = 1.5
+shader_param/curtains = 1.0
+shader_param/type = 0
 
-[node name="Transition" type="ColorRect"]
-material = SubResource( 2 )
-margin_right = 224.0
-margin_bottom = 170.0
-mouse_filter = 2
-input_pass_on_modal_close_click = false
-color = Color( 0, 0, 0, 1 )
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fill:material:shader_param/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Fill:material:shader_param/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.141 ]
+}
+
+[node name="Transition" type="CanvasLayer"]
 script = ExtResource( 5 )
 
-[node name="Transition_Animator" type="AnimationPlayer" parent="."]
+[node name="Fill" type="ColorRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Transition_Animator" type="AnimationPlayer" parent="Fill"]
+root_node = NodePath("../..")
+anims/RESET = SubResource( 2 )
 anims/fade_in_anim = ExtResource( 3 )
 anims/fade_out_anim = ExtResource( 4 )

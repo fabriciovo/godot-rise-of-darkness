@@ -15,7 +15,6 @@ void fragment(){
 [sub_resource type="ShaderMaterial" id=2]
 render_priority = 1
 shader = SubResource( 1 )
-shader_param/offset = 1.0
 
 [node name="Node2D" type="Node2D"]
 
