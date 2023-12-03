@@ -3,7 +3,7 @@
 [resource]
 resource_name = "fade_out_anim"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Fill:material:shader_param/cutoff")
+tracks/0/path = NodePath("Fill:material:shader_param/progress")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
