@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Introduction/Introduction.gd" type="Script" id=2]
+
+[node name="Introduction" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -224.0
+margin_bottom = -170.0
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -7.0
+margin_top = -5.0
+margin_right = 234.0
+margin_bottom = 180.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Text_Container" type="Node2D" parent="."]
+
+[node name="Text" type="RichTextLabel" parent="Text_Container"]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 216.0
+margin_bottom = 1266.0
+theme = ExtResource( 1 )
+meta_underlined = false
+text = "Centuries ago, the land of xxx thrived in peace and harmony, governed by the ancient Guardians of Light, benevolent beings who protected and guided the realm with wisdom. Among these guardians stood a being of great power and goodness known as xxx, whose light radiated hope and security across the kingdom.
+
+However, tranquility was abruptly interrupted when a malevolent shadow infiltrated xxx's mind. Slowly, this darkness grew within him until it corrupted his soul, transforming him into the Dark Lord. Consumed by bitterness and a thirst for power, the Dark Lord betrayed his fellow guardians, unleashing a cataclysm that plunged xxx into darkness.
+
+With newfound nefarious power, the Dark Lord summoned hordes of shadowy creatures, spreading chaos and destruction throughout the realm. The inhabitants found themselves besieged by these horrendous creatures, unable to withstand the Dark Lord's malevolent might. Brave warriors tried in vain to contain the invasion, yet their forces were subdued, and hope began to fade.
+
+Amidst the chaos emerged a fearless warrior, whose determination and combat prowess became legendary. He was summoned by an ancient oracle, prophesied to be the only one with unwavering courage and the will to defy the darkness that once was the radiant xxx.
+
+Determined to restore peace to xxx, the warrior embarks on a solitary journey, armed with courage and the hope of freeing the realm from the clutches of darkness, while seeking redemption for the ancient guardian who succumbed to corruption."
+scroll_active = false
+deselect_on_focus_loss_enabled = false

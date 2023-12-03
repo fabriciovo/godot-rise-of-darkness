@@ -1,6 +1,7 @@
 extends Node
 
 func _ready():
+	Global.in_game = true
 	Global.saveJSONData("player_data",PlayerControll.player_data())
 	var scene_name = get_tree().current_scene.name
 	if Global.door_name and Global.last_player_scene == "":

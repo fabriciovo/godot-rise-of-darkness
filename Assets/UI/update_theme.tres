@@ -1,0 +1,35 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://Assets/UI/Fonts/PressStart2P.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/GUI_16x16.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Panel9Frame.tres" type="StyleBox" id=3]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( -0.149315, -0.277926, 48.2767, 48.0405 )
+margin_left = 44.3779
+margin_right = 44.5168
+margin_top = 4.25585
+margin_bottom = 3.50387
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[resource]
+default_font = SubResource( 1 )
+Panel/styles/panel = SubResource( 2 )
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0, 0, 0, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0, 0, 0, 0.8 )
+RichTextLabel/constants/line_separation = 10
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 0
+RichTextLabel/constants/table_hseparation = 0
+RichTextLabel/constants/table_vseparation = 0
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = ExtResource( 3 )

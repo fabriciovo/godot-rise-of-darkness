@@ -58,7 +58,7 @@ func _process(_delta):
 				Global.WEAPONS.BOMB:
 					can_equip_bomb = true
 					inventory_bomb.get_node("Sprite").visible = true
-	if Input.is_action_just_pressed("open_panel"):
+	if Input.is_action_just_pressed("open_panel") and Global.in_game:
 		Ui.show_hidden_panels()
 
 

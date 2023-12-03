@@ -23,6 +23,8 @@ var chest_sword = false
 var chest_heal = false
 var chest_bow = false
 var chest_bomb = false
+var in_game = false
+
 
 var GROUPS = {
 	PLAYER = "PLAYER",
