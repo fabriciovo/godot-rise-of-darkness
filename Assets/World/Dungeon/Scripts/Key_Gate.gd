@@ -3,7 +3,7 @@ extends Node2D
 var ID = name
 var player_in_gate = false
 
-func _process(delta):
+func _process(_delta):
 	print(player_in_gate)
 
 func _input(event):

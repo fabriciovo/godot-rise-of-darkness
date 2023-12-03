@@ -22,7 +22,6 @@ var can_equip_bomb = false
 var can_equip_bow = false
 
 func _ready():
-	print("start")
 	inventory_sword.get_node("Sprite").visible = false
 	inventory_bomb.get_node("Sprite").visible = false
 	inventory_bow.get_node("Sprite").visible = false
@@ -40,13 +39,11 @@ func _process(_delta):
 	else:
 		item_1.visible = true
 		item_1.frame = PlayerControll.equiped_item[0]
-		
 	if PlayerControll.equiped_item[1] < 0:
 		item_2.visible = false
 	else:
 		item_2.visible = true
 		item_2.frame = PlayerControll.equiped_item[1]
-		
 	for i in PlayerControll.items.size():
 		 match PlayerControll.items[i]:
 				Global.WEAPONS.SWORD:
