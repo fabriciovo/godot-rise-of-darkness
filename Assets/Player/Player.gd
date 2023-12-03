@@ -48,7 +48,7 @@ func _ready():
 	action_collision.disabled = true
 	action_area.visible = false
 	shield_area.visible = false
-	shield_area_collision.disabled = false
+	shield_area_collision.disabled = true
 	actionArea.knockback_vector = Vector2.LEFT
 	$AP_Timer.start(1)
 
@@ -112,6 +112,7 @@ func action(value):
 		shield_area.visible = false
 		action_state = false
 		action_collision.disabled = true
+		shield_area_collision.disabled = true
 
 func _physics_process(_delta):
 	if get_item_anim: return
@@ -160,6 +161,7 @@ func create_sword(value):
 func create_shield():
 	action_state = true
 	shield_area.visible = true
+	shield_area_collision.disabled = false
 	shield_area.get_node("Shield_Sprite").visible = true
 
 
@@ -278,21 +280,25 @@ func movement():
 				velocity.x += 1
 				dir = "right"
 				actionArea.knockback_vector = velocity
+				shield_area.knockback_vector = velocity * 2
 			elif Input.is_action_pressed('ui_left'):
 				velocity.x -= 1
 				$PlayerAnimation.play("walk_left")
 				dir = "left"
 				actionArea.knockback_vector = velocity
+				shield_area.knockback_vector = velocity * 2
 			elif Input.is_action_pressed('ui_down'):
 				velocity.y += 1
 				$PlayerAnimation.play("walk_down")
 				dir = "down"
 				actionArea.knockback_vector = velocity
+				shield_area.knockback_vector = velocity * 2
 			elif Input.is_action_pressed('ui_up'):
 				velocity.y -= 1
 				$PlayerAnimation.play("walk_up")
 				dir = "up"
-				actionArea.knockback_vector = velocity
+				actionArea.knockback_vector = velocity 
+				shield_area.knockback_vector = velocity * 2
 			else:
 				$PlayerAnimation.stop()
 		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2:
