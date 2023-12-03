@@ -2,6 +2,9 @@ class_name Player
 extends KinematicBody2D
 
 onready var action_area = $ActionArea
+onready var shield_area = $Shield_Area
+onready var shield_area_collision = $Shield_Area/Shield_Area_Collision
+onready var shield_area_sprite = $Shield_Area/Shield_Sprite
 onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 onready var actionArea = $ActionArea
@@ -44,6 +47,8 @@ func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
 	action_collision.disabled = true
 	action_area.visible = false
+	shield_area.visible = false
+	shield_area_collision.disabled = false
 	actionArea.knockback_vector = Vector2.LEFT
 	$AP_Timer.start(1)
 
@@ -84,6 +89,8 @@ func action(value):
 					add_child(textHP)
 					heal()
 					set_mp(mp-5)
+			Global.WEAPONS.SHIELD:
+				create_shield()
 		match dir:
 			"right":
 				$PlayerAnimation.play("action_right")
@@ -102,6 +109,7 @@ func action(value):
 				yield($PlayerAnimation, "animation_finished")
 				pass
 		action_area.visible = false
+		shield_area.visible = false
 		action_state = false
 		action_collision.disabled = true
 
@@ -148,6 +156,12 @@ func create_sword(value):
 	action_area.get_node("action").get_node("AnimationPlayer").play("Slash_anim")
 	action_collision.disabled = false
 	action_sprite.frame = PlayerControll.equiped_item[value]
+
+func create_shield():
+	action_state = true
+	shield_area.visible = true
+	shield_area.get_node("Shield_Sprite").visible = true
+
 
 func create_bomb():
 	set_ap(ap-1)
@@ -207,26 +221,43 @@ func change_action_area_direction():
 	if dir == "right":
 		action_area.get_node("action").rotation_degrees = 0
 		action_area.get_node("action").flip_h = false
-		action_area.position.x = 10
+		action_area.position.x = 12
 		action_area.position.y = 2
-
+		#Shield
+		shield_area.position.x = 7
+		shield_area.position.y = 4
+		shield_area_sprite.frame = 27
+		shield_area.z_index = 1
 	elif dir == "left":
 		action_area.get_node("action").rotation_degrees = 0
 		action_area.get_node("action").flip_h = true
 		action_area.position.x = -12
 		action_area.position.y = 2
-
+		#Shield
+		shield_area.position.x = -7
+		shield_area.position.y = 4
+		shield_area_sprite.frame = 25
+		shield_area.z_index = 1
 	elif dir == "up":
 		action_area.get_node("action").flip_h = true
 		action_area.get_node("action").rotation_degrees = 90
-		action_area.position.x = 2
+		action_area.position.x = 3
 		action_area.position.y = -12
-
+		#Shield
+		shield_area.position.x = -3
+		shield_area.position.y = -3
+		shield_area_sprite.frame = 26
+		shield_area.z_index = -1
 	elif dir == "down":
 		action_area.get_node("action").flip_h = true
 		action_area.get_node("action").rotation_degrees = -90
 		action_area.position.x = -3
 		action_area.position.y = 14
+		#Shield
+		shield_area.position.x = -3
+		shield_area.position.y = 6
+		shield_area_sprite.frame = 24
+		shield_area.z_index = 1
 
 
 func execute_action():

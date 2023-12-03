@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Sprites/character_spritesheet_nobg_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Player/Player.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Player/ActionArea.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=5]
 [ext_resource path="res://Sprites/Get_Item_Icons.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Weapons_nobg_16x16.png" type="Texture" id=7]
 
 [sub_resource type="CanvasItemMaterial" id=15]
 particles_animation = true
@@ -234,7 +235,9 @@ extents = Vector2( 4, 5.5 )
 radius = 8.0
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 8, 10.6667 )
+extents = Vector2( 7.6, 8.44445 )
+
+[sub_resource type="RectangleShape2D" id=19]
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
@@ -292,8 +295,25 @@ script = ExtResource( 4 )
 [node name="action" parent="ActionArea" instance=ExtResource( 3 )]
 
 [node name="AreaCollision" type="CollisionShape2D" parent="ActionArea"]
-position = Vector2( 1.43051e-07, 3.55556 )
+position = Vector2( 9.6, -3.55556 )
 shape = SubResource( 18 )
+
+[node name="Shield_Area" type="Area2D" parent="."]
+position = Vector2( 0, 8 )
+scale = Vector2( 0.625, 0.5625 )
+script = ExtResource( 4 )
+
+[node name="Shield_Sprite" type="Sprite" parent="Shield_Area"]
+position = Vector2( -9.53674e-07, -1.77778 )
+scale = Vector2( 1.8, 1.8 )
+texture = ExtResource( 7 )
+hframes = 8
+vframes = 6
+frame = 24
+
+[node name="Shield_Area_Collision" type="CollisionShape2D" parent="Shield_Area"]
+position = Vector2( 0, 1.90735e-06 )
+shape = SubResource( 19 )
 
 [node name="AP_Timer" type="Timer" parent="."]
 
@@ -314,6 +334,7 @@ hframes = 7
 [connection signal="body_entered" from="PlayerBody" to="." method="_on_PlayerBody_body_entered"]
 [connection signal="body_exited" from="PlayerBody" to="." method="_on_PlayerBody_body_exited"]
 [connection signal="body_entered" from="ActionArea" to="." method="_on_ActionArea_body_entered"]
+[connection signal="body_entered" from="Shield_Area" to="." method="_on_ActionArea_body_entered"]
 [connection signal="timeout" from="AP_Timer" to="." method="_on_AP_Timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="." method="_on_Dash_Timer_timeout"]
 [connection signal="timeout" from="Invincible_Timer" to="." method="_on_Invincible_Timer_timeout"]
