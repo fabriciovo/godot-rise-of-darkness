@@ -19,16 +19,20 @@ func _ready():
 
 func fade_out():
 	Global.execute_transition_animation = false
+	Global.stop = true
 	transition.material.set_shader_param("type", transition_type)
 	animation.playback_speed = duration
 	animation.play("fade_out_anim")
 	yield (animation, "animation_finished")
+	Global.stop = false
 	queue_free()
 	
 func fade_in():
 	Global.execute_transition_animation = false
+	Global.stop = true
 	transition.material.set_shader_param("type", transition_type)
 	animation.playback_speed = duration
 	animation.play("fade_in_anim")
 	yield (animation, "animation_finished")
+	Global.stop = false
 	queue_free()
