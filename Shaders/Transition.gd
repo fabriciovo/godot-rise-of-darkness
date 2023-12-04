@@ -5,26 +5,30 @@ onready var animation = $Fill/Transition_Animator
 
 export (int, "Pixels", "Spot Player", "Spot Center","Slah V", "Slash H") var transition_type
 export (int, "Fade In", "Fade Out", "None") var execute
-var duration: float  = 0.5
+var duration: float  = 0.2
 
 
 
 func _ready():
+	if not Global.execute_transition_animation: return
 	if execute == 0:
-		transition.material.set_shader_param("type", transition_type)
 		fade_in()
 	if execute == 1:
-		transition.material.set_shader_param("type", transition_type)
 		fade_out()
 
 
 func fade_out():
+	Global.execute_transition_animation = false
+	transition.material.set_shader_param("type", transition_type)
+	animation.playback_speed = duration
 	animation.play("fade_out_anim")
 	yield (animation, "animation_finished")
+	queue_free()
 	
 func fade_in():
+	Global.execute_transition_animation = false
+	transition.material.set_shader_param("type", transition_type)
+	animation.playback_speed = duration
 	animation.play("fade_in_anim")
 	yield (animation, "animation_finished")
-	var scene_instance =  get_tree().change_scene("res://Assets/Battle/Battle.tscn")
-	if scene_instance != OK:
-		push_error("Scene not load")
+	queue_free()

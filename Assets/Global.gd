@@ -24,6 +24,7 @@ var chest_heal = false
 var chest_bow = false
 var chest_bomb = false
 var in_game = false
+var execute_transition_animation = true
 
 
 var GROUPS = {

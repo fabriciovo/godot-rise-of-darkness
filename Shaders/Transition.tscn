@@ -11,7 +11,7 @@ shader_param/screen_width = 1920.0
 shader_param/screen_height = 1080.0
 shader_param/center = Vector2( 0.5, 0.5 )
 shader_param/player = Vector2( 0.5, 0.5 )
-shader_param/progress = 0.141
+shader_param/progress = 0.0
 shader_param/pixel_size = 15.0
 shader_param/circle_size = 1.5
 shader_param/curtains = 1.0
@@ -19,33 +19,11 @@ shader_param/type = 0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Fill:material:shader_param/cutoff")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Fill:material:shader_param/progress")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.141 ]
-}
 
 [node name="Transition" type="CanvasLayer"]
 script = ExtResource( 5 )
+transition_type = 1
+execute = 2
 
 [node name="Fill" type="ColorRect" parent="."]
 material = SubResource( 1 )
