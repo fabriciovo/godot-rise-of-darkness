@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Weapon_Icons_nobg_16x16.png" type="Texture" id=1]
+
+[node name="Item_Container" type="Button"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 22.0
+margin_bottom = 20.0
+button_mask = 3
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8, 7 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 1 )
+hframes = 6
+vframes = 3

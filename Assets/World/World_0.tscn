@@ -27,10 +27,6 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 168, 40 )
 z_index = 1
 
-[node name="Transition" parent="." instance=ExtResource( 8 )]
-transition_type = 3
-execute = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BattleFadeToNewRoom = ExtResource( 1 )
 anims/FadeToNewRoom = SubResource( 1 )
@@ -66,6 +62,10 @@ vframes = 18
 frame = 47
 
 [node name="Entities" type="Node2D" parent="."]
+
+[node name="Transition" parent="." instance=ExtResource( 8 )]
+transition_type = 3
+execute = 1
 
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]

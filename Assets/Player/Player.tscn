@@ -236,7 +236,7 @@ extents = Vector2( 4, 5.5 )
 radius = 8.0
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 7.6, 8.44445 )
+extents = Vector2( 9.5, 8.44445 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 9.6, 8.95833 )
@@ -297,7 +297,6 @@ script = ExtResource( 4 )
 [node name="action" parent="ActionArea" instance=ExtResource( 3 )]
 
 [node name="AreaCollision" type="CollisionShape2D" parent="ActionArea"]
-position = Vector2( 9.6, -3.55556 )
 shape = SubResource( 18 )
 
 [node name="Shield_Area" type="Area2D" parent="."]

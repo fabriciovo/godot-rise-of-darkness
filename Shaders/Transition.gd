@@ -7,15 +7,12 @@ export (int, "Pixels", "Spot Player", "Spot Center","Slah V", "Slash H") var tra
 export (int, "Fade In", "Fade Out", "None") var execute
 var duration: float  = 0.2
 
-
-
 func _ready():
 	if not Global.execute_transition_animation: return
 	if execute == 0:
 		fade_in()
 	if execute == 1:
 		fade_out()
-
 
 func fade_out():
 	Global.execute_transition_animation = false

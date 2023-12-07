@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/MaxStats.gd" type="Script" id=6]
 [ext_resource path="res://Assets/UI/Upgrade.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/ui_select_arrow.png" type="Texture" id=8]
 [ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
 [ext_resource path="res://Assets/sounds/Sound Panel.tscn" type="PackedScene" id=10]
 
@@ -150,28 +151,38 @@ margin_right = 146.0
 margin_bottom = 26.0
 rect_pivot_offset = Vector2( -65, -2 )
 
-[node name="sword" type="Button" parent="Items/Inventory"]
+[node name="Ui_Select_Arrow" type="Sprite" parent="Items/Inventory"]
+visible = false
+position = Vector2( 13, 3 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 8 )
+
+[node name="Inventory_List" type="Control" parent="Items/Inventory"]
+margin_right = 88.0
+margin_bottom = 24.0
+
+[node name="sword" type="Button" parent="Items/Inventory/Inventory_List"]
 margin_left = 6.0
 margin_top = 5.0
 margin_right = 22.0
 margin_bottom = 20.0
 button_mask = 3
 
-[node name="Sprite" type="Sprite" parent="Items/Inventory/sword"]
+[node name="Sprite" type="Sprite" parent="Items/Inventory/Inventory_List/sword"]
 position = Vector2( 8, 7 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 hframes = 6
 vframes = 3
 
-[node name="bow" type="Button" parent="Items/Inventory"]
+[node name="bow" type="Button" parent="Items/Inventory/Inventory_List"]
 margin_left = 28.0
 margin_top = 5.0
 margin_right = 44.0
 margin_bottom = 20.0
 button_mask = 3
 
-[node name="Sprite" type="Sprite" parent="Items/Inventory/bow"]
+[node name="Sprite" type="Sprite" parent="Items/Inventory/Inventory_List/bow"]
 position = Vector2( 8, 7 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
@@ -179,14 +190,14 @@ hframes = 6
 vframes = 3
 frame = 1
 
-[node name="bomb" type="Button" parent="Items/Inventory"]
+[node name="bomb" type="Button" parent="Items/Inventory/Inventory_List"]
 margin_left = 48.0
 margin_top = 5.0
 margin_right = 64.0
 margin_bottom = 20.0
 button_mask = 3
 
-[node name="Sprite" type="Sprite" parent="Items/Inventory/bomb"]
+[node name="Sprite" type="Sprite" parent="Items/Inventory/Inventory_List/bomb"]
 position = Vector2( 7.3, 7.2 )
 scale = Vector2( 0.9625, 0.9 )
 texture = ExtResource( 4 )
@@ -194,14 +205,14 @@ hframes = 6
 vframes = 3
 frame = 2
 
-[node name="heal" type="Button" parent="Items/Inventory"]
+[node name="heal" type="Button" parent="Items/Inventory/Inventory_List"]
 margin_left = 68.0
 margin_top = 5.0
 margin_right = 84.0
 margin_bottom = 20.0
 button_mask = 3
 
-[node name="Sprite" type="Sprite" parent="Items/Inventory/heal"]
+[node name="Sprite" type="Sprite" parent="Items/Inventory/Inventory_List/heal"]
 position = Vector2( 8, 7 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
@@ -391,6 +402,7 @@ __meta__ = {
 }
 
 [node name="Introdution_Buttons" type="Control" parent="."]
+visible = false
 anchor_top = 0.835
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -399,10 +411,10 @@ margin_top = 1.04999
 margin_right = -1.0
 margin_bottom = -1.0
 
-[connection signal="gui_input" from="Items/Inventory/sword" to="." method="_on_sword_gui_input"]
-[connection signal="gui_input" from="Items/Inventory/bow" to="." method="_on_bow_gui_input"]
-[connection signal="gui_input" from="Items/Inventory/bomb" to="." method="_on_bomb_gui_input"]
-[connection signal="gui_input" from="Items/Inventory/heal" to="." method="_on_heal_gui_input"]
+[connection signal="gui_input" from="Items/Inventory/Inventory_List/sword" to="." method="_on_sword_gui_input"]
+[connection signal="gui_input" from="Items/Inventory/Inventory_List/bow" to="." method="_on_bow_gui_input"]
+[connection signal="gui_input" from="Items/Inventory/Inventory_List/bomb" to="." method="_on_bomb_gui_input"]
+[connection signal="gui_input" from="Items/Inventory/Inventory_List/heal" to="." method="_on_heal_gui_input"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade hp" to="Upgrades/UpgradePanel" method="_on_upgrade_hp_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade atk" to="Upgrades/UpgradePanel" method="_on_upgrade_atk_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade Magic" to="Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]

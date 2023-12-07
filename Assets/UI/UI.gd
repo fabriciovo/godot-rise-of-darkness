@@ -7,10 +7,13 @@ onready var item_1 = $Items/item1/weapon
 onready var item_2 = $Items/item2/weapon
 onready var key_label = $Items/Stats/key/key_label
 
-onready var inventory_sword = $Items/Inventory/sword
-onready var inventory_heal = $Items/Inventory/heal
-onready var inventory_bomb = $Items/Inventory/bomb
-onready var inventory_bow = $Items/Inventory/bow
+onready var inventory_sword = $Items/Inventory/Inventory_List/sword
+onready var inventory_heal = $Items/Inventory/Inventory_List/heal
+onready var inventory_bomb = $Items/Inventory/Inventory_List/bomb
+onready var inventory_bow = $Items/Inventory/Inventory_List/bow
+
+onready var inventory_list = $Items/Inventory/Inventory_List.get_children()
+onready var ui_arrow_sprite = $Items/Inventory/Ui_Select_Arrow
 
 onready var level = $Stats/Level
 onready var xp = $Stats/xp
@@ -20,6 +23,8 @@ var can_equip_sword = false
 var can_equip_heal = false
 var can_equip_bomb = false
 var can_equip_bow = false
+
+var ui_arrow_index = 0
 
 func _ready():
 	inventory_sword.get_node("Sprite").visible = false
@@ -60,7 +65,9 @@ func _process(_delta):
 					inventory_bomb.get_node("Sprite").visible = true
 	if Input.is_action_just_pressed("open_panel") and Global.in_game:
 		Ui.show_hidden_panels()
-
+	select_arrow_controll()
+	if Input.is_action_just_pressed("ui_equip_item_action_1"):
+		set_equip(0,0)
 
 
 func _on_PlayerControl_hp_changed(value):
@@ -98,6 +105,16 @@ func _on_sword_gui_input(event):
 		if event.is_action_released("action_2"):
 			PlayerControll.set_equiped_item(Global.WEAPONS.SWORD, 1)
 
+func set_equip(weapon, slot):
+	if can_equip_sword:
+		PlayerControll.set_equiped_item(weapon, slot)
+
+func select_arrow_controll():
+	if Input.is_action_just_pressed("ui_select_arrow"):
+		ui_arrow_index+=1
+		if ui_arrow_index > inventory_list.size()-1:
+			ui_arrow_index = 0
+	ui_arrow_sprite.position.x = ui_arrow_index * 21.3 + 14
 
 func show_hidden_panels():
 	$"Sound Panel".visible = !$"Sound Panel".visible
