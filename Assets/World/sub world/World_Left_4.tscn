@@ -20,10 +20,6 @@ position = Vector2( 61, 76 )
 [node name="World_Slime2" parent="Entities" index="1" instance=ExtResource( 5 )]
 position = Vector2( 158, 43 )
 
-[node name="Chest" parent="Entities" index="2" instance=ExtResource( 4 )]
-position = Vector2( 72, 25 )
-item = 4
-
 [node name="Position2D" parent="Imortal_Entities/Positions" index="0"]
 position = Vector2( 28, 75 )
 
@@ -47,3 +43,7 @@ position = Vector2( 211, 80 )
 rotation = 1.5708
 target_scene = "res://Assets/World/sub world/World_Left_2.tscn"
 door_name = "Door5"
+
+[node name="Chest" parent="." index="8" instance=ExtResource( 4 )]
+position = Vector2( 72, 25 )
+item = 4

@@ -23,10 +23,6 @@ margin_right = 225.0
 margin_bottom = 144.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Key_Gate_Single_Gate" parent="Floor" instance=ExtResource( 7 )]
-position = Vector2( 168, 40 )
-z_index = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BattleFadeToNewRoom = ExtResource( 1 )
 anims/FadeToNewRoom = SubResource( 1 )
@@ -62,6 +58,10 @@ vframes = 18
 frame = 47
 
 [node name="Entities" type="Node2D" parent="."]
+
+[node name="Key_Gate_Single_Gate" parent="Entities" instance=ExtResource( 7 )]
+position = Vector2( 168, 40 )
+z_index = 1
 
 [node name="Transition" parent="." instance=ExtResource( 8 )]
 transition_type = 3

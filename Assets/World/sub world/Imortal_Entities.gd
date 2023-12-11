@@ -9,7 +9,7 @@ var collision = false
 
 func _ready():
 	rng.randomize()
-	spawns_count = rng.randi_range(1, 4)
+	spawns_count = rng.randi_range(1, 3)
 	for i in spawns_count:
 		random_spawn()
 

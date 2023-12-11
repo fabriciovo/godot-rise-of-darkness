@@ -12,23 +12,23 @@ func _ready():
 		$Player.global_position = Global.player_last_position
 		Global.player_last_scene = ""
 		Global.player_last_position = null
-	for m in get_node("Entities").get_children():
+	for entity in get_node("Entities").get_children():
 		for id in Global.dead_enemies.size():
-			if m.ID == Global.dead_enemies[id]:
-				m.queue_free()
+			if entity.ID == Global.dead_enemies[id]:
+				entity.queue_free()
 		for id in Global.open_chests.size():
-			if m.ID == Global.open_chests[id]:
-				m.disable = true
-				m.get_node("Sprite").frame = 0
+			if entity.ID == Global.open_chests[id]:
+				entity.disable = true
+				entity.get_node("Sprite").frame = 0
 		for id in Global.dead_objects.size():
-			if m.ID == Global.dead_objects[id]:
-				m.queue_free()
+			if entity.ID == Global.dead_objects[id]:
+				entity.queue_free()
 		for id in Global.walls_objects.size():
-			if m.ID == Global.walls_objects[id]:
-				m.queue_free()
+			if entity.ID == Global.walls_objects[id]:
+				entity.queue_free()
 		for id in Global.key_gate.size():
-			if m.ID == Global.key_gate[id]:
-				m.queue_free()
+			if entity.ID == Global.key_gate[id]:
+				entity.queue_free()
 	if "World_" in scene_name:
 		SoundController.play_music(SoundController.MUSIC.florest)
 	elif "Dungeon_" in scene_name:
