@@ -3,6 +3,8 @@ extends Node
 func _ready():
 	Global.in_game = true
 	Global.saveJSONData("player_data",PlayerControll.player_data())
+	queue_entities()
+	queue_enviroment()
 	var scene_name = get_tree().current_scene.name
 	if Global.door_name and Global.last_player_scene == "":
 		var door_node = find_node(Global.door_name)
@@ -12,23 +14,6 @@ func _ready():
 		$Player.global_position = Global.player_last_position
 		Global.player_last_scene = ""
 		Global.player_last_position = null
-	for entity in get_node("Entities").get_children():
-		for id in Global.dead_enemies.size():
-			if entity.ID == Global.dead_enemies[id]:
-				entity.queue_free()
-		for id in Global.open_chests.size():
-			if entity.ID == Global.open_chests[id]:
-				entity.disable = true
-				entity.get_node("Sprite").frame = 0
-		for id in Global.dead_objects.size():
-			if entity.ID == Global.dead_objects[id]:
-				entity.queue_free()
-		for id in Global.walls_objects.size():
-			if entity.ID == Global.walls_objects[id]:
-				entity.queue_free()
-		for id in Global.key_gate.size():
-			if entity.ID == Global.key_gate[id]:
-				entity.queue_free()
 	if "World_" in scene_name:
 		SoundController.play_music(SoundController.MUSIC.florest)
 	elif "Dungeon_" in scene_name:
@@ -39,3 +24,30 @@ func _ready():
 		SoundController.play_music(SoundController.MUSIC.boss)
 	if scene_name == "Dungeon_0":
 		Ui.show_text("The Dungeon")
+
+
+func queue_enviroment():
+	var enviroment_node = get_node("Enviroment")
+	if enviroment_node and enviroment_node.is_instance_valid(): return
+	for env_entity in get_node("Enviroment").get_children():
+		for id in Global.key_gate.size():
+			if env_entity.ID == Global.key_gate[id]:
+				env_entity.queue_free()
+		for id in Global.open_chests.size():
+			if env_entity.ID == Global.open_chests[id]:
+				env_entity.disable = true
+				env_entity.get_node("Sprite").frame = 0
+		for id in Global.dead_objects.size():
+			if env_entity.ID == Global.dead_objects[id]:
+				env_entity.queue_free()
+		for id in Global.walls_objects.size():
+			if env_entity.ID == Global.walls_objects[id]:
+				env_entity.queue_free()
+
+func queue_entities():
+	if not get_node("Enviroment"): return
+	for entity in get_node("Entities").get_children():
+		for id in Global.dead_enemies.size():
+			if entity.ID == Global.dead_enemies[id]:
+				entity.queue_free()
+

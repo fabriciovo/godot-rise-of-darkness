@@ -36,6 +36,8 @@ position = Vector2( 91, 85 )
 collision_mask = 3
 tile_data = PoolIntArray( 262149, 0, 0, 327685, 0, 0, 327691, 0, 0 )
 
+[node name="Enviroment" type="Node2D" parent="."]
+
 [node name="Entities" type="Node2D" parent="."]
 
 [node name="Imortal_Entities" type="Node2D" parent="."]

@@ -39,18 +39,20 @@ door_name = "Door_world_1"
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="Chest_key_0" parent="Entities" instance=ExtResource( 7 )]
+[node name="Stair" parent="." instance=ExtResource( 6 )]
+position = Vector2( 184, 63 )
+target_scene = "res://Assets/World/Dungeon/Dungeon_Bonus.tscn"
+
+[node name="Enviroment" type="Node2D" parent="."]
+
+[node name="Chest_key_0" parent="Enviroment" instance=ExtResource( 7 )]
 position = Vector2( 152, 41 )
 z_index = 7
 item = 4
 
-[node name="Chest_Sword" parent="Entities" instance=ExtResource( 7 )]
+[node name="Chest_Sword" parent="Enviroment" instance=ExtResource( 7 )]
 position = Vector2( 56, 24 )
 z_index = 7
-
-[node name="Stair" parent="." instance=ExtResource( 6 )]
-position = Vector2( 184, 63 )
-target_scene = "res://Assets/World/Dungeon/Dungeon_Bonus.tscn"
 
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]

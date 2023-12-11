@@ -59,7 +59,9 @@ frame = 47
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="Key_Gate_Single_Gate" parent="Entities" instance=ExtResource( 7 )]
+[node name="Enviroment" type="Node2D" parent="."]
+
+[node name="Key_Gate_Single_Gate" parent="Enviroment" instance=ExtResource( 7 )]
 position = Vector2( 168, 40 )
 z_index = 1
 
