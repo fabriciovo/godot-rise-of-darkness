@@ -1,7 +1,10 @@
-extends Node2D
+class_name Key_Gate extends Node2D
 
 var ID = name
 var player_in_gate = false
+
+func _ready():
+	ID = name
 
 func _input(event):
 	if event.is_action_pressed("action_3") and player_in_gate:

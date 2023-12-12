@@ -27,9 +27,8 @@ func _ready():
 
 
 func queue_enviroment():
-	var enviroment_node = get_node("Enviroment")
-	if enviroment_node and enviroment_node.is_instance_valid(): return
-	for env_entity in get_node("Enviroment").get_children():
+	if not get_node("Enviroment_Entities"): return
+	for env_entity in get_node("Enviroment_Entities").get_children():
 		for id in Global.key_gate.size():
 			if env_entity.ID == Global.key_gate[id]:
 				env_entity.queue_free()
@@ -45,7 +44,7 @@ func queue_enviroment():
 				env_entity.queue_free()
 
 func queue_entities():
-	if not get_node("Enviroment"): return
+	if not get_node("Entities"): return
 	for entity in get_node("Entities").get_children():
 		for id in Global.dead_enemies.size():
 			if entity.ID == Global.dead_enemies[id]:

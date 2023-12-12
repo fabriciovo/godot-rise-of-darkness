@@ -59,11 +59,10 @@ frame = 47
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="Enviroment" type="Node2D" parent="."]
+[node name="Enviroment_Entities" type="Node2D" parent="."]
 
-[node name="Key_Gate_Single_Gate" parent="Enviroment" instance=ExtResource( 7 )]
+[node name="Dungeon_Gate_0" parent="Enviroment_Entities" instance=ExtResource( 7 )]
 position = Vector2( 168, 40 )
-z_index = 1
 
 [node name="Transition" parent="." instance=ExtResource( 8 )]
 transition_type = 3

@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Enviroment_Object.gd"
 }, {
+"base": "Node2D",
+"class": "Key_Gate",
+"language": "GDScript",
+"path": "res://Assets/World/Dungeon/Scripts/Key_Gate.gd"
+}, {
 "base": "Area2D",
 "class": "Lever",
 "language": "GDScript",
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "Bomb_Object": "",
 "Chest": "",
 "Enviroment_Object": "",
+"Key_Gate": "",
 "Lever": "",
 "Player": "",
 "Static_Box": "",
