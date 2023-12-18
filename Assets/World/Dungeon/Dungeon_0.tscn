@@ -49,12 +49,12 @@ position = Vector2( 192, 49 )
 position = Vector2( 58, 42 )
 z_index = 8
 
-[node name="Dungeon_1" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Dungeon_1" parent="." index="7" instance=ExtResource( 5 )]
 position = Vector2( 113, 12 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_1.tscn"
 door_name = "Dungeon_0"
 
-[node name="Dungeon_exit" parent="." index="7" instance=ExtResource( 5 )]
+[node name="Dungeon_exit" parent="." index="8" instance=ExtResource( 5 )]
 position = Vector2( 113, 134 )
 rotation = 3.14159
 __meta__ = {

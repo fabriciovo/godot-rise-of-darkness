@@ -47,5 +47,7 @@ __meta__ = {
 
 [node name="Entities" type="Node2D" parent="."]
 
+[node name="Enviroment_Entities" type="Node2D" parent="."]
+
 [connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
 [connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]

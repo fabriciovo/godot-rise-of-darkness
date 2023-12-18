@@ -1,14 +1,15 @@
 extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
 
 onready var obj = get_tree().current_scene.get_node("Player")
+onready var body_shape = $Body_Shape
 var wakeup = false
-
 var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
 var dir = Vector2.ZERO
 var jump = false
 func _ready():
 	ID = name
+	body_shape.disabled = true
 	battle_unit_xp = 10
 	battle_unit_max_hp = 5
 	battle_unit_hp = battle_unit_max_hp
@@ -41,6 +42,8 @@ func _on_Timer_timeout():
 
 func _on_DetectArea_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER) and not wakeup:
+		body_shape.set_deferred("disabled", false)
+		print(body_shape.disabled)
 		$Sprite.visible = true
 		$Enemy_Animation.play("slime_wakeup_anim")
 		yield($Enemy_Animation,"animation_finished")

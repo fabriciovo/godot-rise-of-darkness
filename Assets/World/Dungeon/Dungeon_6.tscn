@@ -15,8 +15,11 @@ extents = Vector2( 16, 8 )
 
 [node name="Dungeon_6" instance=ExtResource( 5 )]
 
-[node name="map_1" parent="." index="3"]
+[node name="map_1" parent="." index="2"]
 tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 45, 0, 8, 46, 0, 9, 43, 0, 10, 43, 0, 11, 43, 0, 12, 43, 0, 13, 51, 0, 65536, 42, 0, 65537, 27, 0, 65538, 27, 0, 65539, 27, 0, 65540, 27, 0, 65541, 27, 0, 65544, 27, 0, 65545, 27, 0, 65546, 27, 0, 65547, 27, 0, 65548, 27, 0, 65549, 42, 0, 131072, 44, 0, 131085, 44, 0, 196608, 27, 0, 196621, 27, 0, 262155, 0, 0, 393216, 49, 0, 393229, 49, 0, 458752, 42, 0, 458765, 42, 0, 524288, 53, 0, 524289, 43, 0, 524290, 43, 0, 524291, 43, 0, 524292, 43, 0, 524293, 45, 0, 524296, 46, 0, 524297, 43, 0, 524298, 43, 0, 524299, 43, 0, 524300, 43, 0, 524301, 54, 0 )
+
+[node name="Player" parent="." index="3"]
+position = Vector2( 9, 81 )
 
 [node name="Boss_Gate" type="Node2D" parent="." index="4"]
 position = Vector2( 112, 128 )
@@ -42,9 +45,6 @@ hframes = 9
 vframes = 18
 frame = 38
 
-[node name="Player" parent="." index="5"]
-position = Vector2( 9, 81 )
-
 [node name="Static_Object" parent="Enviroment/Static" index="0" instance=ExtResource( 7 )]
 position = Vector2( 136, 40 )
 
@@ -63,37 +63,37 @@ position = Vector2( 81, 108 )
 [node name="Static_Object6" parent="Enviroment/Static" index="5" instance=ExtResource( 7 )]
 position = Vector2( 150, 108 )
 
-[node name="Jar" parent="Entities" index="0" instance=ExtResource( 6 )]
+[node name="World_Bat_d6_0" parent="Entities" index="0" instance=ExtResource( 2 )]
+position = Vector2( 48, 48 )
+
+[node name="World_Bat_d6_1" parent="Entities" index="1" instance=ExtResource( 2 )]
+position = Vector2( 176, 112 )
+
+[node name="World_Slime_d6_0" parent="Entities" index="2" instance=ExtResource( 1 )]
+position = Vector2( 112, 21 )
+
+[node name="World_Slime_d6_1" parent="Entities" index="3" instance=ExtResource( 1 )]
+position = Vector2( 112, 113 )
+
+[node name="Jar" parent="Enviroment_Entities" index="0" instance=ExtResource( 6 )]
 position = Vector2( 203, 65 )
 frame = 3
 
-[node name="Jar2" parent="Entities" index="1" instance=ExtResource( 6 )]
+[node name="Jar2" parent="Enviroment_Entities" index="1" instance=ExtResource( 6 )]
 position = Vector2( 196, 71 )
 frame = 3
 
-[node name="Jar3" parent="Entities" index="2" instance=ExtResource( 6 )]
+[node name="Jar3" parent="Enviroment_Entities" index="2" instance=ExtResource( 6 )]
 position = Vector2( 195, 79 )
 frame = 3
 
-[node name="Jar4" parent="Entities" index="3" instance=ExtResource( 6 )]
+[node name="Jar4" parent="Enviroment_Entities" index="3" instance=ExtResource( 6 )]
 position = Vector2( 194, 86 )
 frame = 3
 
-[node name="Jar5" parent="Entities" index="4" instance=ExtResource( 6 )]
+[node name="Jar5" parent="Enviroment_Entities" index="4" instance=ExtResource( 6 )]
 position = Vector2( 203, 96 )
 frame = 3
-
-[node name="World_Bat_d6_0" parent="Entities" index="5" instance=ExtResource( 2 )]
-position = Vector2( 48, 48 )
-
-[node name="World_Bat_d6_1" parent="Entities" index="6" instance=ExtResource( 2 )]
-position = Vector2( 176, 112 )
-
-[node name="World_Slime_d6_0" parent="Entities" index="7" instance=ExtResource( 1 )]
-position = Vector2( 112, 21 )
-
-[node name="World_Slime_d6_1" parent="Entities" index="8" instance=ExtResource( 1 )]
-position = Vector2( 112, 113 )
 
 [node name="Skulls" parent="." index="8" instance=ExtResource( 3 )]
 position = Vector2( 118, 82 )
