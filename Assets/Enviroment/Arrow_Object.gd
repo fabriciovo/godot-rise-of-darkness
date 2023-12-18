@@ -23,3 +23,5 @@ func _on_Arrow_Area_body_entered(body):
 		queue_free()
 	if body.is_in_group(Global.GROUPS.ARROW):
 		queue_free()
+	if body.is_in_group(Global.GROUPS.ENEMY):
+		queue_free()
