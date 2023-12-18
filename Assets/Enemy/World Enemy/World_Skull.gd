@@ -16,7 +16,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	#TODO create hits mechanics
 	if !hit:
 		var collision = move_and_collide(direction * delta)
 		if collision:

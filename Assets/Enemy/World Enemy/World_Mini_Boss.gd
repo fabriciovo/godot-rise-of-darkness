@@ -15,10 +15,9 @@ func _ready():
 
 
 func _physics_process(delta):
-	if hits <= 4:
-		var collision = move_and_collide(direction * delta)
-		if collision:
-			direction = direction.bounce(collision.normal)
+	var collision = move_and_collide(direction * delta)
+	if collision:
+		direction = direction.bounce(collision.normal)
 	direction.y = 0
 func _on_Timer_timeout():
 	hit = false

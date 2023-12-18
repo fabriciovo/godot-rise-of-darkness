@@ -20,7 +20,9 @@ func _ready():
 	
 
 func _physics_process(delta):
-	if not dead:
+	if battle_unit_hp <= 0:
+		dead = true
+	if not dead and not hit:
 		if player and navigation_path and chase_player:
 			generate_path()
 			navigate()

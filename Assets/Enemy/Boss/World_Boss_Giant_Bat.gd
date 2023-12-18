@@ -8,7 +8,7 @@ var damageText = preload("res://Assets/UI/FloatText.tscn")
 var ID = name
 
 var direction = Vector2.ZERO
-var speed = 38
+var speed = 28
 var attack = false
 var player_target = null
 var idle = false
