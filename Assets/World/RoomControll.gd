@@ -6,7 +6,7 @@ func _ready():
 	queue_entities()
 	queue_enviroment()
 	var scene_name = get_tree().current_scene.name
-	if Global.door_name and Global.last_player_scene == "":
+	if Global.door_name:
 		var door_node = find_node(Global.door_name)
 		if door_node:
 			$Player.global_position = door_node.global_position
@@ -22,8 +22,9 @@ func _ready():
 		SoundController.play_music(SoundController.MUSIC.miniboss)
 	elif scene_name == "Dungeon_9":
 		SoundController.play_music(SoundController.MUSIC.boss)
-	if scene_name == "Dungeon_0":
+	if scene_name == "Dungeon_0" and Global.door_name == "Dungeon_exit":
 		Ui.show_text("The Dungeon")
+
 
 
 func queue_enviroment():

@@ -12,11 +12,11 @@ func _ready():
 	interactButton.visible = false;
 	ID = name
 
-func _process(_delta):
-	if player:
-		interactButton.visible = true;
-	else:
-		interactButton.visible = false;
+#func _process(_delta):
+#	if player:
+#		interactButton.visible = true;
+#	else:
+#		interactButton.visible = false;
 
 func _input(event):
 	if event.is_action_pressed("action_3") and not disable:

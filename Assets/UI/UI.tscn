@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Sprites/ui_select_arrow.png" type="Texture" id=8]
 [ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
 [ext_resource path="res://Assets/sounds/Sound Panel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -24,7 +25,6 @@ corner_detail = 1
 script = ExtResource( 2 )
 
 [node name="Items" type="Panel" parent="."]
-visible = false
 anchor_top = 0.835
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -221,7 +221,6 @@ vframes = 3
 frame = 4
 
 [node name="Stats" type="Panel" parent="."]
-visible = false
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
@@ -249,7 +248,6 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "XP: 0/100"
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 margin_left = 182.0
 margin_top = 110.0
 margin_right = 223.0
@@ -267,7 +265,6 @@ __meta__ = {
 }
 
 [node name="Upgrades" type="Node2D" parent="."]
-visible = false
 
 [node name="UpgradePanel" type="Panel" parent="Upgrades"]
 margin_left = 123.0
@@ -326,7 +323,6 @@ margin_bottom = 72.0
 text = "Upgrade Action Poins"
 
 [node name="Max Stats" type="Panel" parent="."]
-visible = false
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
@@ -370,7 +366,6 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Max Magic Points: "
 
 [node name="Sound Panel" parent="." instance=ExtResource( 10 )]
-visible = false
 
 [node name="Title_Scene" type="Control" parent="."]
 visible = false
@@ -410,6 +405,27 @@ margin_left = 2.0
 margin_top = 1.04999
 margin_right = -1.0
 margin_bottom = -1.0
+
+[node name="Book" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Book"]
+visible = false
+anchor_left = 0.75
+anchor_top = 0.275
+anchor_right = 4.9
+anchor_bottom = 3.75
+margin_bottom = -1.52588e-05
+
+[node name="Button" type="Button" parent="Book"]
+margin_left = 136.0
+margin_top = 110.0
+margin_right = 177.0
+margin_bottom = 125.0
+theme = ExtResource( 11 )
+text = "Book"
 
 [connection signal="gui_input" from="Items/Inventory/Inventory_List/sword" to="." method="_on_sword_gui_input"]
 [connection signal="gui_input" from="Items/Inventory/Inventory_List/bow" to="." method="_on_bow_gui_input"]
