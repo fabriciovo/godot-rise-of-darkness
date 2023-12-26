@@ -53,18 +53,18 @@ var QUESTS = {
 	"BAT": {
 		"Title": "Kill Bats",
 		"Description": "",
-		"Reward": "",
-		"progress": 0,
-		"goal": 5,
-		"unlocked": false
+		"Reward": "Reward 50 XP",
+		"Progress": 0,
+		"Goal": 10,
+		"Unlocked": false
 	},
 	"Slimes": {
 		"Title": "Kill Slimes",
 		"Description": "",
-		"Reward": "",
-		"progress": 0,
-		"goal": 5,
-		"unlocked": false
+		"Reward": "Reward 100 XP",
+		"Progress": 0,
+		"Goal": 5,
+		"Unlocked": false
 	},
 }
 

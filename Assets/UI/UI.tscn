@@ -26,6 +26,7 @@ corner_detail = 1
 script = ExtResource( 2 )
 
 [node name="Items" type="Panel" parent="."]
+visible = false
 anchor_top = 0.835
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -222,6 +223,7 @@ vframes = 3
 frame = 4
 
 [node name="Stats" type="Panel" parent="."]
+visible = false
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
@@ -249,6 +251,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "XP: 0/100"
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 margin_left = 182.0
 margin_top = 110.0
 margin_right = 223.0
@@ -266,6 +269,7 @@ __meta__ = {
 }
 
 [node name="Upgrades" type="Node2D" parent="."]
+visible = false
 
 [node name="UpgradePanel" type="Panel" parent="Upgrades"]
 margin_left = 123.0
@@ -324,6 +328,7 @@ margin_bottom = 72.0
 text = "Upgrade Action Poins"
 
 [node name="Max Stats" type="Panel" parent="."]
+visible = false
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
@@ -367,6 +372,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Max Magic Points: "
 
 [node name="Sound Panel" parent="." instance=ExtResource( 10 )]
+visible = false
 
 [node name="Title_Scene" type="Control" parent="."]
 visible = false
@@ -408,6 +414,7 @@ margin_right = -1.0
 margin_bottom = -1.0
 
 [node name="Book" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

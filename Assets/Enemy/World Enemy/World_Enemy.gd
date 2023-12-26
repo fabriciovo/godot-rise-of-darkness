@@ -17,7 +17,7 @@ var hits = 1
 var hit = false
 var speed = 10
 var const_speed = 0
-
+var quest_key = ""
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
@@ -57,6 +57,8 @@ func damage(knockbackValue, damageValue):
 		$Enemy_Animation.play("damage_anim")
 		yield($Enemy_Animation, "animation_finished")
 		if battle_unit_hp <= 0:
+			if quest_key != "":
+				Global.QUESTS[quest_key].progress += 1
 			Destroy()
 		else:
 			timer.start(1)

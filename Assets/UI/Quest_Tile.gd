@@ -8,10 +8,15 @@ var description = ""
 var reward = ""
 var progress = 0
 var goal = 1
-var locked = false
+var unlocked = false
+var quest_key = "BAT"
 
+func _ready():
+	goal = Global.QUESTS[quest_key]["Goal"]
 
 func _process(_delta):
-	Unlocked_Panel.visible = locked
-	Locked_Panel.visible = !locked
+	Unlocked_Panel.visible = unlocked
+	Locked_Panel.visible = !unlocked
+	if Global.QUESTS[quest_key]["Progress"] == goal:
+		unlocked = true
 
