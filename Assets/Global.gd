@@ -49,6 +49,25 @@ var WEAPONS = {
 	SHIELD = 5,
 }
 
+var QUESTS = {
+	"BAT": {
+		"Title": "Kill Bats",
+		"Description": "",
+		"Reward": "",
+		"progress": 0,
+		"goal": 5,
+		"unlocked": false
+	},
+	"Slimes": {
+		"Title": "Kill Slimes",
+		"Description": "",
+		"Reward": "",
+		"progress": 0,
+		"goal": 5,
+		"unlocked": false
+	},
+}
+
 func global_data():
 	var data = {
 		"dead_enemies": dead_enemies,
