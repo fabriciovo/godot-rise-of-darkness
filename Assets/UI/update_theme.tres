@@ -1,11 +1,9 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=5 format=2]
 
 [ext_resource path="res://Assets/UI/Fonts/PressStart2P.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Sprites/GUI_16x16.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/Panel9Frame.tres" type="StyleBox" id=3]
 
 [sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 2 )
 region_rect = Rect2( -0.149315, -0.277926, 48.2767, 48.0405 )
 margin_left = 44.3779
 margin_right = 44.5168

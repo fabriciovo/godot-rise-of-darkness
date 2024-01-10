@@ -119,6 +119,7 @@ func select_arrow_controll():
 func show_hidden_panels():
 	$"Sound Panel".visible = !$"Sound Panel".visible
 	$"Max Stats".visible = !$"Max Stats".visible
+	$Book.visible = !$Book.visible
 	$Upgrades.visible = !$Upgrades.visible
 
 func open_sound_panel():

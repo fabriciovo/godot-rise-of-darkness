@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
 [ext_resource path="res://Assets/sounds/Sound Panel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=11]
+[ext_resource path="res://Assets/UI/Book.gd" type="Script" id=12]
 [ext_resource path="res://Assets/UI/Quest_Tile_Grid.gd" type="Script" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -259,6 +260,7 @@ margin_bottom = 125.0
 script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="Panel"]
+visible = false
 margin_left = 3.0
 margin_top = 1.0
 margin_right = 39.0
@@ -417,8 +419,10 @@ margin_bottom = -1.0
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 12 )
 
 [node name="Book_Panel_Node" type="Control" parent="Book"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -448,7 +452,6 @@ __meta__ = {
 }
 
 [node name="Open_Book" type="Button" parent="Book"]
-visible = false
 margin_left = 136.0
 margin_top = 110.0
 margin_right = 177.0
@@ -465,3 +468,4 @@ text = "Book"
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade Magic" to="Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]
 [connection signal="pressed" from="Upgrades/UpgradePanel/upgrade action points" to="Upgrades/UpgradePanel" method="_on_upgrade_action_points_pressed"]
 [connection signal="timeout" from="Title_Scene/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="button_down" from="Book/Open_Book" to="Book" method="_on_Open_Book_button_down"]
