@@ -1,4 +1,4 @@
-class_name Quest_Tile extends Panel
+class_name Quest_Tile extends NinePatchRect
 
 onready var Unlocked_Panel = $Unlocked_Panel
 onready var Locked_Panel = $Locked_Panel

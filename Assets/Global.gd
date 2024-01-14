@@ -16,14 +16,12 @@ var player_last_scene = ""
 var altar_hit = false
 var boss_gate = false
 
-
 var chest_sword = false
 var chest_heal = false
 var chest_bow = false
 var chest_bomb = false
 var in_game = false
 var execute_transition_animation = true
-
 
 var GROUPS = {
 	PLAYER = "PLAYER",

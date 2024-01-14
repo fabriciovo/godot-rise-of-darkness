@@ -1,4 +1,4 @@
-extends Panel
+extends VBoxContainer
 
 onready var points = get_node("Points")
 

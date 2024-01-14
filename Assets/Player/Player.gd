@@ -41,7 +41,6 @@ var action_state = false
 var hit = false
 var dashing = false
 var invincible = false
-var can_execute_action = false
 
 func _ready():
 	add_to_group(Global.GROUPS.PLAYER)
@@ -263,13 +262,12 @@ func change_action_area_direction():
 
 
 func execute_action():
-	if can_execute_action:
-		if Input.is_action_just_pressed("action_1"):
-			if PlayerControll.equiped_item[0] != -1:
-				action(0)
-		elif Input.is_action_just_pressed("action_2"):
-			if PlayerControll.equiped_item[1] != -1:
-				action(1)
+	if Input.is_action_just_pressed("action_1"):
+		if PlayerControll.equiped_item[0] != -1:
+			action(0)
+	elif Input.is_action_just_pressed("action_2"):
+		if PlayerControll.equiped_item[1] != -1:
+			action(1)
 
 func movement(): 
 	if not dashing:
@@ -304,12 +302,6 @@ func movement():
 		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2:
 			dash()
 		velocity = velocity.normalized() * speed
-
-func _on_Floor_mouse_entered():
-	can_execute_action = true
-
-func _on_Floor_mouse_exited():
-	can_execute_action = false
 
 func dash():
 	dashing = true

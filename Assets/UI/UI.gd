@@ -18,7 +18,6 @@ onready var ui_arrow_sprite = $Items/Inventory/Ui_Select_Arrow
 onready var level = $Stats/Level
 onready var xp = $Stats/xp
 
-
 var can_equip_sword = false
 var can_equip_heal = false
 var can_equip_bomb = false
