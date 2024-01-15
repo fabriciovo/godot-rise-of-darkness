@@ -1,6 +1,7 @@
 extends Panel
 
 func _ready():
+	$SFX/SFX_Slider.grab_focus()
 	SoundController.set_effect_volume(-40)
 	SoundController.set_music_volume(-40)
 

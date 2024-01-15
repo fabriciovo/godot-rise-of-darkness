@@ -1,10 +1,10 @@
 extends Control
 var filePath = "user://player_data.json"
-onready var button_container = $Button_Container
+onready var start = $Button_Container/Start
 onready var btn_load_game = $Button_Container/Load_Game
 func _ready():
-	button_container.set_focus_mode(Control.FOCUS_ALL)
-	button_container.grab_focus()
+	start.set_focus_mode(Control.FOCUS_ALL)
+	start.grab_focus()
 	SoundController.play_music(SoundController.MUSIC.title)
 	check_file_existence()
 

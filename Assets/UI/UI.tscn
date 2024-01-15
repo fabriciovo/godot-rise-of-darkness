@@ -7,12 +7,12 @@
 [ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/MaxStats.gd" type="Script" id=6]
 [ext_resource path="res://Assets/UI/Upgrade.gd" type="Script" id=7]
-[ext_resource path="res://Sprites/ui_select_arrow.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/Weapons.gd" type="Script" id=8]
 [ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
 [ext_resource path="res://Assets/sounds/Sound Panel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=11]
 [ext_resource path="res://Assets/UI/Inventory.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/UI/Pause_Options.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Inventory/Weapon_Slot.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -30,7 +30,12 @@ __meta__ = {
 "_edit_vertical_guides_": [ -50.0 ]
 }
 
-[node name="Items" type="Panel" parent="."]
+[node name="Game_UI" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Items" type="Panel" parent="Game_UI"]
 anchor_top = 0.835
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -38,14 +43,14 @@ margin_top = 0.0499878
 theme = ExtResource( 5 )
 custom_styles/panel = SubResource( 1 )
 
-[node name="item1" type="Sprite" parent="Items"]
+[node name="item1" type="Sprite" parent="Game_UI/Items"]
 position = Vector2( 27, 25 )
 texture = ExtResource( 1 )
 offset = Vector2( -10, -10 )
 hframes = 2
 frame = 1
 
-[node name="weapon" type="Sprite" parent="Items/item1"]
+[node name="weapon" type="Sprite" parent="Game_UI/Items/item1"]
 position = Vector2( -10, -10 )
 z_as_relative = false
 texture = ExtResource( 4 )
@@ -53,7 +58,7 @@ hframes = 6
 vframes = 3
 frame = 3
 
-[node name="item1Text" type="Label" parent="Items/item1"]
+[node name="item1Text" type="Label" parent="Game_UI/Items/item1"]
 anchor_left = 0.781
 anchor_top = 0.75
 anchor_right = 0.781
@@ -67,14 +72,14 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "M1"
 
-[node name="item2" type="Sprite" parent="Items"]
+[node name="item2" type="Sprite" parent="Game_UI/Items"]
 position = Vector2( 47, 25 )
 texture = ExtResource( 1 )
 offset = Vector2( -10, -10 )
 hframes = 2
 frame = 1
 
-[node name="weapon" type="Sprite" parent="Items/item2"]
+[node name="weapon" type="Sprite" parent="Game_UI/Items/item2"]
 position = Vector2( -10, -10 )
 z_as_relative = false
 texture = ExtResource( 4 )
@@ -82,7 +87,7 @@ hframes = 6
 vframes = 3
 frame = 4
 
-[node name="item2Text" type="Label" parent="Items/item2"]
+[node name="item2Text" type="Label" parent="Game_UI/Items/item2"]
 anchor_left = 0.781
 anchor_top = 0.75
 anchor_right = 0.781
@@ -96,7 +101,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "M2"
 
-[node name="Stats" type="Panel" parent="Items"]
+[node name="Stats" type="Panel" parent="Game_UI/Items"]
 margin_left = 161.0
 margin_top = 2.0
 margin_right = 221.0
@@ -107,7 +112,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HP" type="Label" parent="Items/Stats"]
+[node name="HP" type="Label" parent="Game_UI/Items/Stats"]
 margin_right = 43.0
 margin_bottom = 12.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -116,7 +121,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MP" type="Label" parent="Items/Stats"]
+[node name="MP" type="Label" parent="Game_UI/Items/Stats"]
 margin_top = 13.0
 margin_right = 27.0
 margin_bottom = 25.0
@@ -126,7 +131,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AP" type="Label" parent="Items/Stats"]
+[node name="AP" type="Label" parent="Game_UI/Items/Stats"]
 margin_left = 32.0
 margin_top = 13.0
 margin_right = 59.0
@@ -134,99 +139,65 @@ margin_bottom = 25.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "AP"
 
-[node name="key" type="Node2D" parent="Items/Stats"]
+[node name="key" type="Node2D" parent="Game_UI/Items/Stats"]
 position = Vector2( 40, 6 )
 
-[node name="key_sprite" type="Sprite" parent="Items/Stats/key"]
+[node name="key_sprite" type="Sprite" parent="Game_UI/Items/Stats/key"]
 texture = ExtResource( 3 )
 hframes = 6
 vframes = 2
 frame = 2
 
-[node name="key_label" type="Label" parent="Items/Stats/key"]
+[node name="key_label" type="Label" parent="Game_UI/Items/Stats/key"]
 margin_left = 5.0
 margin_top = -6.0
 margin_right = 18.0
 margin_bottom = 6.0
 text = "0"
 
-[node name="Inventory" type="Panel" parent="Items"]
-margin_left = 58.0
+[node name="Weapons" type="Panel" parent="Game_UI/Items"]
+margin_left = 54.0
 margin_top = 2.0
-margin_right = 146.0
+margin_right = 153.0
 margin_bottom = 26.0
 rect_pivot_offset = Vector2( -65, -2 )
+script = ExtResource( 8 )
 
-[node name="Ui_Select_Arrow" type="Sprite" parent="Items/Inventory"]
-visible = false
-position = Vector2( 13, 3 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 8 )
-
-[node name="Inventory_List" type="Control" parent="Items/Inventory"]
+[node name="Inventory_List" type="Control" parent="Game_UI/Items/Weapons"]
 margin_right = 88.0
 margin_bottom = 24.0
 
-[node name="sword" type="Button" parent="Items/Inventory/Inventory_List"]
-margin_left = 6.0
-margin_top = 5.0
-margin_right = 22.0
-margin_bottom = 20.0
-button_mask = 3
+[node name="Weapons_Center_Container" type="CenterContainer" parent="Game_UI/Items/Weapons/Inventory_List"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -12.0
+margin_right = 52.0
+margin_bottom = 12.0
 
-[node name="Sprite" type="Sprite" parent="Items/Inventory/Inventory_List/sword"]
-position = Vector2( 8, 7 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
-hframes = 6
-vframes = 3
+[node name="Weapons_List" type="HBoxContainer" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container"]
+margin_top = 2.0
+margin_right = 92.0
+margin_bottom = 22.0
+alignment = 1
 
-[node name="bow" type="Button" parent="Items/Inventory/Inventory_List"]
-margin_left = 28.0
-margin_top = 5.0
+[node name="Weapon_Slot" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container/Weapons_List" instance=ExtResource( 13 )]
+
+[node name="Weapon_Slot2" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container/Weapons_List" instance=ExtResource( 13 )]
+margin_left = 24.0
 margin_right = 44.0
-margin_bottom = 20.0
-button_mask = 3
 
-[node name="Sprite" type="Sprite" parent="Items/Inventory/Inventory_List/bow"]
-position = Vector2( 8, 7 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
-hframes = 6
-vframes = 3
-frame = 1
-
-[node name="bomb" type="Button" parent="Items/Inventory/Inventory_List"]
+[node name="Weapon_Slot3" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container/Weapons_List" instance=ExtResource( 13 )]
 margin_left = 48.0
-margin_top = 5.0
-margin_right = 64.0
-margin_bottom = 20.0
-button_mask = 3
+margin_right = 68.0
 
-[node name="Sprite" type="Sprite" parent="Items/Inventory/Inventory_List/bomb"]
-position = Vector2( 7.3, 7.2 )
-scale = Vector2( 0.9625, 0.9 )
-texture = ExtResource( 4 )
-hframes = 6
-vframes = 3
-frame = 2
+[node name="Weapon_Slot4" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container/Weapons_List" instance=ExtResource( 13 )]
+margin_left = 72.0
+margin_right = 92.0
 
-[node name="heal" type="Button" parent="Items/Inventory/Inventory_List"]
-margin_left = 68.0
-margin_top = 5.0
-margin_right = 84.0
-margin_bottom = 20.0
-button_mask = 3
-
-[node name="Sprite" type="Sprite" parent="Items/Inventory/Inventory_List/heal"]
-position = Vector2( 8, 7 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
-hframes = 6
-vframes = 3
-frame = 4
-
-[node name="Stats" type="Panel" parent="."]
+[node name="Stats" type="Panel" parent="Game_UI"]
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
@@ -236,7 +207,7 @@ margin_right = 0.895996
 margin_bottom = 2.07001
 theme = ExtResource( 5 )
 
-[node name="Level" type="Label" parent="Stats"]
+[node name="Level" type="Label" parent="Game_UI/Stats"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 36.0
@@ -244,7 +215,7 @@ margin_bottom = 14.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 1"
 
-[node name="xp" type="Label" parent="Stats"]
+[node name="xp" type="Label" parent="Game_UI/Stats"]
 anchor_right = 1.0
 anchor_bottom = 0.875
 margin_left = 34.0
@@ -253,14 +224,15 @@ margin_right = -14.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "XP: 0/100"
 
-[node name="Upgrade_Label" type="Panel" parent="."]
+[node name="Upgrade_Label" type="Panel" parent="Game_UI"]
+visible = false
 margin_left = 182.0
 margin_top = 110.0
 margin_right = 223.0
 margin_bottom = 125.0
 script = ExtResource( 7 )
 
-[node name="Label" type="Label" parent="Upgrade_Label"]
+[node name="Label" type="Label" parent="Game_UI/Upgrade_Label"]
 visible = false
 margin_left = 3.0
 margin_top = 1.0
@@ -275,6 +247,9 @@ __meta__ = {
 visible = false
 margin_right = 64.0
 margin_bottom = 17.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Timer" type="Timer" parent="Title_Scene"]
 one_shot = true
@@ -309,12 +284,17 @@ margin_left = 2.0
 margin_top = 1.04999
 margin_right = -1.0
 margin_bottom = -1.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Pause_Options" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="background" type="ColorRect" parent="Pause_Options"]
 anchor_right = 1.0
@@ -379,6 +359,9 @@ text = "Book"
 [node name="Pause_Options_Containers" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player_Info" type="Control" parent="Pause_Options_Containers"]
 visible = false
@@ -506,11 +489,8 @@ margin_bottom = 12.0
 text = "Settings"
 
 [node name="Inventory" parent="Pause_Options_Containers" instance=ExtResource( 12 )]
+visible = false
 
-[connection signal="gui_input" from="Items/Inventory/Inventory_List/sword" to="." method="_on_sword_gui_input"]
-[connection signal="gui_input" from="Items/Inventory/Inventory_List/bow" to="." method="_on_bow_gui_input"]
-[connection signal="gui_input" from="Items/Inventory/Inventory_List/bomb" to="." method="_on_bomb_gui_input"]
-[connection signal="gui_input" from="Items/Inventory/Inventory_List/heal" to="." method="_on_heal_gui_input"]
 [connection signal="timeout" from="Title_Scene/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel/upgrade hp" to="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_hp_pressed"]
 [connection signal="pressed" from="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel/upgrade atk" to="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_atk_pressed"]

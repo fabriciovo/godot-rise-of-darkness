@@ -23,7 +23,8 @@ var chest_bomb = false
 var in_game = false
 var execute_transition_animation = true
 
-var GROUPS = {
+
+const GROUPS = {
 	PLAYER = "PLAYER",
 	BOX = "BOX",
 	DOOR = "DOOR", 
@@ -38,7 +39,7 @@ var GROUPS = {
 	SHIELD = "SHIELD"
 }
 
-var WEAPONS = {
+const WEAPONS = {
 	SWORD = 0,
 	BOW = 1, 
 	BOMB = 2, 
@@ -47,7 +48,7 @@ var WEAPONS = {
 	SHIELD = 5,
 }
 
-var QUESTS = {
+const QUESTS = {
 	"BAT": {
 		"Title": "Kill Bats",
 		"Description": "",

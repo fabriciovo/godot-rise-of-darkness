@@ -1,6 +1,6 @@
 extends Control
 
-onready var pause_conatainer = $Pause_Button_Container
+onready var btn_options = $Pause_Button_Container/Options
 
 func _ready():
-	pause_conatainer.grab_focus()
+	btn_options.grab_focus()
