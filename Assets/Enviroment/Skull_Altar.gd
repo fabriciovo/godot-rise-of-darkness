@@ -9,7 +9,7 @@ func _ready():
 		$Sprite.frame = 0
 
 
-func _input(event):
-	if event.is_action_pressed("action_3"):
+func _input(_event):
+	if _event.is_action_pressed("action_3"):
 		if not Global.skull_altar[altar_number]:
 			$Sprite.frame = 8
