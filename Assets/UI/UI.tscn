@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/MaxStats.gd" type="Script" id=6]
 [ext_resource path="res://Assets/UI/Upgrade.gd" type="Script" id=7]
-[ext_resource path="res://Assets/UI/Weapons.gd" type="Script" id=8]
+[ext_resource path="res://Assets/UI/Game_UI_Controller.gd" type="Script" id=8]
 [ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
 [ext_resource path="res://Assets/sounds/Sound Panel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=11]
@@ -34,6 +34,8 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+focus_mode = 2
+script = ExtResource( 8 )
 
 [node name="Items" type="Panel" parent="Game_UI"]
 anchor_top = 0.835
@@ -161,7 +163,6 @@ margin_top = 2.0
 margin_right = 153.0
 margin_bottom = 26.0
 rect_pivot_offset = Vector2( -65, -2 )
-script = ExtResource( 8 )
 
 [node name="Inventory_List" type="Control" parent="Game_UI/Items/Weapons"]
 margin_right = 88.0

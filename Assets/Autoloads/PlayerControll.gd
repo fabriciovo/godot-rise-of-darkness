@@ -11,7 +11,8 @@ var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
 var atk = 2 setget set_atk
 var points = 0 setget set_points
-var items = []
+var weapons = []
+var inventory = []
 var equiped_item = [-1,-1] 
 var key = 0
 
@@ -48,8 +49,8 @@ func set_ap(value):
 func set_mp(value):
 	mp = min(value, max_mp)
 
-func set_item(value):
-	items.push_front(value)
+func set_weapon(value):
+	weapons.push_front(value)
 
 func set_equiped_item(value, slot):
 	equiped_item[slot] = value
@@ -95,7 +96,8 @@ func player_data():
 		"xp_to_level_up": xp_to_level_up,
 		"atk": atk,
 		"points": points,
-		"items": items,
+		"weapons": weapons,
+		"inventory": inventory,
 		"equiped_item": equiped_item,
 		"key": key,
 	}
@@ -112,4 +114,6 @@ func load_player_data(data):
 	atk = data["atk"]
 	points = data["points"]
 	key = data["key"]
-	items = data["items"]
+	weapons = data["weapons"]
+	inventory = data["inventory"]
+

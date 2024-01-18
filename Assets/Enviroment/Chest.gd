@@ -12,33 +12,27 @@ func _ready():
 	interactButton.visible = false;
 	ID = name
 
-#func _process(_delta):
-#	if player:
-#		interactButton.visible = true;
-#	else:
-#		interactButton.visible = false;
-
 func _input(event):
 	if event.is_action_pressed("action_3") and not disable:
 		if player:
 			player.get_item_frame = item
 			player.play_get_item_animation()
-			get_item(item)
+			get_weapon(item)
 
-func get_item(_item):
+func get_weapon(_item):
 	$Sprite.frame = 0
 	match _item:
 		Global.WEAPONS.SWORD:
-			PlayerControll.set_item(_item)
+			PlayerControll.set_weapon(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.BOW:
-			PlayerControll.set_item(_item)
+			PlayerControll.set_weapon(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.BOMB:
-			PlayerControll.set_item(_item)
+			PlayerControll.set_weapon(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.HEAL:
-			PlayerControll.set_item(_item)
+			PlayerControll.set_weapon(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.KEY:
 			PlayerControll.key += 1

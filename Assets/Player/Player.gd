@@ -14,7 +14,7 @@ var floatText = preload("res://Assets/UI/FloatText.tscn")
 var hp = PlayerControll.hp setget set_hp
 var ap = PlayerControll.ap setget set_ap
 var mp = PlayerControll.mp setget set_mp
-var items = PlayerControll.items
+var weapons = PlayerControll.weapons
 var key = PlayerControll.key
 var get_item_frame = 0
 var get_item_anim = false
@@ -273,25 +273,25 @@ func movement():
 	if not dashing:
 		velocity = Vector2.ZERO
 		if !action_state:
-			if Input.is_action_pressed('ui_right'):
+			if Input.is_action_pressed("move_right"):
 				$PlayerAnimation.play("walk_right")
 				velocity.x += 1
 				dir = "right"
 				actionArea.knockback_vector = velocity
 				shield_area.knockback_vector = velocity * 2
-			elif Input.is_action_pressed('ui_left'):
+			elif Input.is_action_pressed('move_left'):
 				velocity.x -= 1
 				$PlayerAnimation.play("walk_left")
 				dir = "left"
 				actionArea.knockback_vector = velocity
 				shield_area.knockback_vector = velocity * 2
-			elif Input.is_action_pressed('ui_down'):
+			elif Input.is_action_pressed('move_down'):
 				velocity.y += 1
 				$PlayerAnimation.play("walk_down")
 				dir = "down"
 				actionArea.knockback_vector = velocity
 				shield_area.knockback_vector = velocity * 2
-			elif Input.is_action_pressed('ui_up'):
+			elif Input.is_action_pressed('move_up'):
 				velocity.y -= 1
 				$PlayerAnimation.play("walk_up")
 				dir = "up"

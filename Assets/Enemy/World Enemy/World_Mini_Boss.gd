@@ -7,7 +7,7 @@ var direction = Vector2.ZERO
 func _ready():
 	battle_unit_max_hp = 100
 	battle_unit_damage = 0
-	battle_unit_hp = battle_unit_max_hp
+	battle_unit_hp = battle_unit_max_hp 
 	add_to_group(Global.GROUPS.ENEMY)
 	const_speed = 50
 	direction.x = const_speed
