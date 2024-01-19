@@ -25,10 +25,8 @@ func _ready():
 	if scene_name == "Dungeon_0" and Global.door_name == "Dungeon_exit":
 		Ui.show_text("The Dungeon")
 
-
-
 func queue_enviroment():
-	if not get_node("Enviroment_Entities"): return
+	if not get_node_or_null("Enviroment_Entities"): return
 	for env_entity in get_node("Enviroment_Entities").get_children():
 		for id in Global.key_gate.size():
 			if env_entity.ID == Global.key_gate[id]:
