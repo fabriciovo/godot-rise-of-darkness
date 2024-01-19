@@ -1,17 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Build/index.icon.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Inventory/Weapon_Slot.gd" type="Script" id=2]
 
 [node name="Weapon_Slot" type="Button"]
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
-button_mask = 3
+shortcut_in_tooltip = false
+button_mask = 0
 script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="."]
-visible = false
-position = Vector2( 9.4, -6 )
-scale = Vector2( 0.16875, 0.15 )
-texture = ExtResource( 1 )

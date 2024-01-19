@@ -5,10 +5,17 @@ var heal_icon = preload("res://Sprites/Button/healstaff_btn_icon.png")
 var bow_icon = preload("res://Sprites/Button/bow_btn_icon.png")
 var bomb_icon = preload("res://Sprites/Button/bomb_btn_icon.png")
 var shield_icon = preload("res://Sprites/Button/shield_btn_icon.png")
-var weapon_type = 0
+var weapon_type = -1
+
+func _process(_delta):
+	var game_ui_node = get_tree().get_node("Game_UI")
+	print(game_ui_node)
+	if game_ui_node:
+		print("connect")
+		game_ui_node.connect("on_equip_weapon", self, "_on_equip_weapon")
 
 func set_weapon_type(_weapon_type):
-	if weapon_type == -1: return
+	if _weapon_type == -1: return
 	weapon_type = _weapon_type
 	match weapon_type:
 		Global.WEAPONS.SWORD:
@@ -21,3 +28,8 @@ func set_weapon_type(_weapon_type):
 			icon = bomb_icon
 		Global.WEAPONS.SHIELD:
 			icon = shield_icon
+
+func _on_equip_weapon(_weapon_type, _slot):
+	print("ue")
+	print(_weapon_type)
+	PlayerControll.set_equiped_item(_weapon_type, _slot)

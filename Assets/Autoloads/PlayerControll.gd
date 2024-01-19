@@ -49,6 +49,11 @@ func set_ap(value):
 func set_mp(value):
 	mp = min(value, max_mp)
 
+func set_inventory_item(value):
+	inventory.push_front(value)
+	if weapons.size() <= 4:
+		set_weapon(value)
+
 func set_weapon(value):
 	weapons.push_front(value)
 

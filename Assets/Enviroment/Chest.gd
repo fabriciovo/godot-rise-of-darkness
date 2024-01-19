@@ -23,16 +23,16 @@ func get_weapon(_item):
 	$Sprite.frame = 0
 	match _item:
 		Global.WEAPONS.SWORD:
-			PlayerControll.set_weapon(_item)
+			PlayerControll.set_inventory_item(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.BOW:
-			PlayerControll.set_weapon(_item)
+			PlayerControll.set_inventory_item(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.BOMB:
-			PlayerControll.set_weapon(_item)
+			PlayerControll.set_inventory_item(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.HEAL:
-			PlayerControll.set_weapon(_item)
+			PlayerControll.set_inventory_item(_item)
 			Global.open_chests.push_front(ID)
 		Global.WEAPONS.KEY:
 			PlayerControll.key += 1

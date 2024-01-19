@@ -47,7 +47,7 @@ func explosion():
 
 
 func generate_path():
-		paths = navigation_path.get_simple_path(global_position, player.global_position,false)
+	paths = navigation_path.get_simple_path(global_position, player.global_position,false)
 
 func navigate():
 	if paths.size() > 0:
