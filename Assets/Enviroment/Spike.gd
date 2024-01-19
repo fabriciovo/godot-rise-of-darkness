@@ -9,7 +9,7 @@ onready var body = get_parent().get_parent().get_node("Player")
 func _ready():
 	$Timer.start(2)
 
-func _process(delta):
+func _process(_delta):
 	if spikes:
 		$Sprite.frame = 28
 	else:

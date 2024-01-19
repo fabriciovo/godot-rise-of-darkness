@@ -202,9 +202,9 @@ anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
 margin_left = 131.0
-margin_top = 2.05
+margin_top = 2.04999
 margin_right = 0.895996
-margin_bottom = 2.07001
+margin_bottom = 2.06999
 theme = ExtResource( 5 )
 
 [node name="Level" type="Label" parent="Game_UI/Stats"]
@@ -226,10 +226,9 @@ text = "XP: 0/100"
 
 [node name="Upgrade_Label" type="Panel" parent="Game_UI"]
 visible = false
-margin_left = 182.0
-margin_top = 110.0
-margin_right = 223.0
-margin_bottom = 125.0
+margin_top = 128.0
+margin_right = 41.0
+margin_bottom = 143.0
 script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="Game_UI/Upgrade_Label"]

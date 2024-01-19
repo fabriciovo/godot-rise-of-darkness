@@ -6,7 +6,6 @@ var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
 var eye = false
 var can_take_damage = false
-var collision
 var frame_open_eye = 9
 var frame_closed_eye = 14
 func _ready():

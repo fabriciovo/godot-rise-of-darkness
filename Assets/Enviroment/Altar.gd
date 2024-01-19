@@ -1,6 +1,5 @@
 extends Node2D
 
-signal altar_hit
 func _ready():
 	if Global.altar_hit:
 		$Sprite.frame = 0
@@ -10,7 +9,3 @@ func _on_Area2D_body_entered(body):
 		Global.altar_hit = true
 		$Sprite.frame = 0
 		body.queue_free()
-		emit_signal("altar_hit")
-
-
-

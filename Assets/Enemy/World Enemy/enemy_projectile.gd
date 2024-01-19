@@ -10,7 +10,7 @@ func _ready():
 		direction = obj.global_position
 		dir = (direction - global_position).normalized()
 
-func _process(delta):
+func _process(_delta):
 	move_and_collide(dir * speed)
 
 func _on_Area2D_body_entered(body):

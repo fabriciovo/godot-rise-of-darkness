@@ -119,5 +119,4 @@ rotation = 1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_6.tscn"
 door_name = "Dungeon_5"
 
-[connection signal="altar_hit" from="Altar" to="Enviroment/Static/Watter" method="_on_Altar_altar_hit"]
 [connection signal="body_entered" from="Altar/Area2D" to="Altar" method="_on_Area2D_body_entered"]

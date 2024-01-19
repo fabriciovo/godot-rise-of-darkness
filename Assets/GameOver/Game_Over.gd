@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	Ui.visible = false
+	$Control/Button.grab_focus()
 	$AnimationPlayer.play("game_over")
 
 
