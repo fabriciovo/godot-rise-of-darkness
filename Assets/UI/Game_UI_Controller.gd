@@ -9,15 +9,12 @@ var index = -1
 func add_weapons():
 	if PlayerControll.weapons.size() > 0:
 		for i in range(min(PlayerControll.weapons.size(), weapons_list.size())):
-			if weapons_list[i].weapon_type == -1:
-				print(i)
-				print(PlayerControll.weapons[i])
+			if weapons_list[i].weapon_type == -1 or weapons_list[i].weapon_type != PlayerControll.weapons[i]:
 				weapons_list[i].set_weapon_type(PlayerControll.weapons[i])
-			
 
 func _process(_delta):
-	add_weapons()
 	focus_controller()
+	add_weapons()
 
 func _input(_event):
 	if _event.is_action_pressed("weapons_right") and visible and not Global.stop:

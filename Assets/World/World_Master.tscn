@@ -15,14 +15,6 @@ step = 0.05
 position = Vector2( -1, 0 )
 script = ExtResource( 5 )
 
-[node name="Floor" type="ColorRect" parent="."]
-margin_right = 225.0
-margin_bottom = 142.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BattleFadeToNewRoom = ExtResource( 1 )
 anims/FadeToNewRoom = SubResource( 1 )
@@ -59,6 +51,3 @@ position = Vector2( 132, 101 )
 
 [node name="Position2D3" type="Position2D" parent="Imortal_Entities/Positions"]
 position = Vector2( 64, 115 )
-
-[connection signal="mouse_entered" from="Floor" to="Player" method="_on_Floor_mouse_entered"]
-[connection signal="mouse_exited" from="Floor" to="Player" method="_on_Floor_mouse_exited"]

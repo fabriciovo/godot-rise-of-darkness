@@ -48,7 +48,7 @@ const WEAPONS = {
 	SHIELD = 5,
 }
 
-const QUESTS = {
+var QUESTS = {
 	"BAT": {
 		"Title": "Kill Bats",
 		"Description": "",

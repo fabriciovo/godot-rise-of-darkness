@@ -58,7 +58,7 @@ func damage(knockbackValue, damageValue):
 		yield($Enemy_Animation, "animation_finished")
 		if battle_unit_hp <= 0:
 			if quest_key != "":
-				Global.QUESTS[quest_key].progress += 1
+				Global.QUESTS[quest_key].Progress += 1
 			Destroy()
 		else:
 			timer.start(1)
