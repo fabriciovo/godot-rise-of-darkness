@@ -8,7 +8,7 @@ var shield_icon = preload("res://Sprites/Button/shield_btn_icon.png")
 var weapon_type = -1
 
 func _process(_delta):
-	var game_ui_node = get_tree().get_node("Game_UI")
+	var game_ui_node = get_tree().get_node("/root/UI/Game_UI")
 	print(game_ui_node)
 	if game_ui_node:
 		print("connect")
