@@ -17,24 +17,28 @@ func add_weapons():
 
 func _process(_delta):
 	add_weapons()
+	focus_controller()
 
 func _input(_event):
 	if _event.is_action_pressed("weapons_right") and visible and not Global.stop:
 		index += 1
 		if index > weapons_list.size()-1:
-			index = 0
-		weapons_list[index].grab_focus()
+			index = weapons_list.size()-1
 		grab = true
 		print(index)
 	if _event.is_action_pressed("weapons_left") and visible and not Global.stop:
 		index -= 1
 		if index < 0:
 			index = 0
-		weapons_list[index].grab_focus()
 		grab = true
-		print(index)
-	if _event.is_action_pressed("action_1") and grab:
+	if _event.is_action_pressed("equip_weapon_1") and grab:
 		emit_signal("on_equip_weapon", weapons_list[index].weapon_type, 0)
-	if _event.is_action_pressed("action_2") and grab:
+	if _event.is_action_pressed("equip_weapon_2") and grab:
 		emit_signal("on_equip_weapon", weapons_list[index].weapon_type, 1)
 
+func focus_controller():
+	for i in weapons_list.size():
+		if i == index:
+			weapons_list[i].set_focus(true)
+		else:
+			weapons_list[i].set_focus(false)

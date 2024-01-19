@@ -2,6 +2,7 @@ extends CanvasLayer
 
 onready var game_ui = $Game_UI
 onready var pause_options = $Pause_Options
+onready var settings_panel = $UI_Containers/Settings
 
 onready var HP = $Game_UI/Items/Stats/HP
 onready var MP = $Game_UI/Items/Stats/MP
@@ -83,8 +84,11 @@ func show_hidden_panels():
 	Global.stop = pause_options.visible
 	pause_options.get_node("Pause_Button_Container/Options").grab_focus()
 
-func open_sound_panel():
-	$"Sound Panel".visible = !$"Sound Panel".visible
+func open_settings():
+	settings_panel.visible = !settings_panel.visible
+	if settings_panel.visible:
+		settings_panel.get_node("Sound Panel/SFX").get_focus_owner()
+		settings_panel.get_node("Sound Panel/SFX").grab_focus()
 
 func game_start():
 	game_ui.visible = true

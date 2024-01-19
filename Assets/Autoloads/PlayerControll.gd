@@ -58,6 +58,10 @@ func set_weapon(value):
 	weapons.push_front(value)
 
 func set_equiped_item(value, slot):
+	if equiped_item[0] == value: 
+		equiped_item[0] = -1 
+	elif equiped_item[1] == value: 
+		equiped_item[1] = -1 
 	equiped_item[slot] = value
 
 func set_key(value):

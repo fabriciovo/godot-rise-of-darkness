@@ -23,7 +23,7 @@ func _on_Button_pressed():
 		Ui.game_start()
 
 func _on_Options_pressed():
-	Ui.open_sound_panel()
+	Ui.open_settings()
 
 func _on_Load_Game_pressed():
 	var scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")

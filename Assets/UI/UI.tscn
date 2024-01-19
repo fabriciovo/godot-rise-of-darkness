@@ -31,7 +31,6 @@ __meta__ = {
 }
 
 [node name="Game_UI" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 focus_mode = 2
@@ -185,22 +184,18 @@ margin_bottom = 22.0
 alignment = 1
 
 [node name="Weapon_Slot" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container/Weapons_List" instance=ExtResource( 13 )]
-theme = ExtResource( 11 )
 
 [node name="Weapon_Slot2" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container/Weapons_List" instance=ExtResource( 13 )]
 margin_left = 24.0
 margin_right = 44.0
-theme = ExtResource( 11 )
 
 [node name="Weapon_Slot3" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container/Weapons_List" instance=ExtResource( 13 )]
 margin_left = 48.0
 margin_right = 68.0
-theme = ExtResource( 11 )
 
 [node name="Weapon_Slot4" parent="Game_UI/Items/Weapons/Inventory_List/Weapons_Center_Container/Weapons_List" instance=ExtResource( 13 )]
 margin_left = 72.0
 margin_right = 92.0
-theme = ExtResource( 11 )
 
 [node name="Stats" type="Panel" parent="Game_UI"]
 anchor_top = 0.735
@@ -361,29 +356,29 @@ margin_bottom = 92.0
 theme = ExtResource( 11 )
 text = "Book"
 
-[node name="Pause_Options_Containers" type="Control" parent="."]
+[node name="UI_Containers" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player_Info" type="Control" parent="Pause_Options_Containers"]
+[node name="Player_Info" type="Control" parent="UI_Containers"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="background" type="ColorRect" parent="Pause_Options_Containers/Player_Info"]
+[node name="background" type="ColorRect" parent="UI_Containers/Player_Info"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.647059 )
 
-[node name="Label" type="Label" parent="Pause_Options_Containers/Player_Info"]
+[node name="Label" type="Label" parent="UI_Containers/Player_Info"]
 margin_right = 51.0
 margin_bottom = 12.0
 text = "Player Info"
 
-[node name="Max Stats" type="Panel" parent="Pause_Options_Containers/Player_Info"]
+[node name="Max Stats" type="Panel" parent="UI_Containers/Player_Info"]
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
@@ -394,7 +389,7 @@ margin_bottom = -50.93
 theme = ExtResource( 5 )
 script = ExtResource( 6 )
 
-[node name="MaxHp" type="Label" parent="Pause_Options_Containers/Player_Info/Max Stats"]
+[node name="MaxHp" type="Label" parent="UI_Containers/Player_Info/Max Stats"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 36.0
@@ -402,7 +397,7 @@ margin_bottom = 14.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Max HP: "
 
-[node name="AttackPower" type="Label" parent="Pause_Options_Containers/Player_Info/Max Stats"]
+[node name="AttackPower" type="Label" parent="UI_Containers/Player_Info/Max Stats"]
 margin_left = 2.0
 margin_top = 12.0
 margin_right = 45.0
@@ -410,7 +405,7 @@ margin_bottom = 24.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Attack Power: "
 
-[node name="MaxAp" type="Label" parent="Pause_Options_Containers/Player_Info/Max Stats"]
+[node name="MaxAp" type="Label" parent="UI_Containers/Player_Info/Max Stats"]
 margin_left = 2.0
 margin_top = 22.0
 margin_right = 83.0
@@ -418,7 +413,7 @@ margin_bottom = 34.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Max Action Points: "
 
-[node name="MaxMp" type="Label" parent="Pause_Options_Containers/Player_Info/Max Stats"]
+[node name="MaxMp" type="Label" parent="UI_Containers/Player_Info/Max Stats"]
 margin_left = 2.0
 margin_top = 32.0
 margin_right = 83.0
@@ -426,13 +421,13 @@ margin_bottom = 44.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Max Magic Points: "
 
-[node name="Upgrades" type="Panel" parent="Pause_Options_Containers/Player_Info"]
+[node name="Upgrades" type="Panel" parent="UI_Containers/Player_Info"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 136.0
 margin_bottom = -81.0
 
-[node name="UpgradePanel" type="VBoxContainer" parent="Pause_Options_Containers/Player_Info/Upgrades"]
+[node name="UpgradePanel" type="VBoxContainer" parent="UI_Containers/Player_Info/Upgrades"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -440,64 +435,64 @@ margin_left = -86.0
 margin_right = -3.0
 script = ExtResource( 9 )
 
-[node name="Title" type="Label" parent="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel"]
+[node name="Title" type="Label" parent="UI_Containers/Player_Info/Upgrades/UpgradePanel"]
 margin_right = 83.0
 margin_bottom = 12.0
 text = "Upgdades"
 
-[node name="Points" type="Label" parent="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel"]
+[node name="Points" type="Label" parent="UI_Containers/Player_Info/Upgrades/UpgradePanel"]
 margin_top = 16.0
 margin_right = 83.0
 margin_bottom = 28.0
 text = "Points:0"
 
-[node name="upgrade hp" type="Button" parent="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel"]
+[node name="upgrade hp" type="Button" parent="UI_Containers/Player_Info/Upgrades/UpgradePanel"]
 margin_top = 32.0
 margin_right = 83.0
 margin_bottom = 40.0
 disabled = true
 text = "Upgrade Hp"
 
-[node name="upgrade atk" type="Button" parent="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel"]
+[node name="upgrade atk" type="Button" parent="UI_Containers/Player_Info/Upgrades/UpgradePanel"]
 margin_top = 44.0
 margin_right = 83.0
 margin_bottom = 52.0
 text = "Upgrade Attack "
 
-[node name="upgrade Magic" type="Button" parent="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel"]
+[node name="upgrade Magic" type="Button" parent="UI_Containers/Player_Info/Upgrades/UpgradePanel"]
 margin_top = 56.0
 margin_right = 83.0
 margin_bottom = 64.0
 text = "Upgrade Magic points"
 
-[node name="upgrade action points" type="Button" parent="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel"]
+[node name="upgrade action points" type="Button" parent="UI_Containers/Player_Info/Upgrades/UpgradePanel"]
 margin_top = 68.0
 margin_right = 83.0
 margin_bottom = 76.0
 text = "Upgrade Action Poins"
 
-[node name="Settings" type="Control" parent="Pause_Options_Containers"]
+[node name="Settings" type="Control" parent="UI_Containers"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="background" type="ColorRect" parent="Pause_Options_Containers/Settings"]
+[node name="background" type="ColorRect" parent="UI_Containers/Settings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.647059 )
 
-[node name="Sound Panel" parent="Pause_Options_Containers/Settings" instance=ExtResource( 10 )]
+[node name="Sound Panel" parent="UI_Containers/Settings" instance=ExtResource( 10 )]
 
-[node name="Label" type="Label" parent="Pause_Options_Containers/Settings"]
+[node name="Label" type="Label" parent="UI_Containers/Settings"]
 margin_right = 51.0
 margin_bottom = 12.0
 text = "Settings"
 
-[node name="Inventory" parent="Pause_Options_Containers" instance=ExtResource( 12 )]
+[node name="Inventory" parent="UI_Containers" instance=ExtResource( 12 )]
 visible = false
 
 [connection signal="timeout" from="Title_Scene/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel/upgrade hp" to="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_hp_pressed"]
-[connection signal="pressed" from="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel/upgrade atk" to="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_atk_pressed"]
-[connection signal="pressed" from="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel/upgrade Magic" to="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]
-[connection signal="pressed" from="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel/upgrade action points" to="Pause_Options_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_action_points_pressed"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/UpgradePanel/upgrade hp" to="UI_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_hp_pressed"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/UpgradePanel/upgrade atk" to="UI_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_atk_pressed"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/UpgradePanel/upgrade Magic" to="UI_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_Magic_pressed"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/UpgradePanel/upgrade action points" to="UI_Containers/Player_Info/Upgrades/UpgradePanel" method="_on_upgrade_action_points_pressed"]
