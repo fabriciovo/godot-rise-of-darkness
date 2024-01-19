@@ -43,7 +43,6 @@ func _on_Timer_timeout():
 func _on_DetectArea_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER) and not wakeup:
 		body_shape.set_deferred("disabled", false)
-		print(body_shape.disabled)
 		$Sprite.visible = true
 		$Enemy_Animation.play("slime_wakeup_anim")
 		yield($Enemy_Animation,"animation_finished")

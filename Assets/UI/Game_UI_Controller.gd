@@ -19,12 +19,20 @@ func _process(_delta):
 	add_weapons()
 
 func _input(_event):
-	if _event.is_action_pressed("ui_select_weapons") and visible and not Global.stop:
+	if _event.is_action_pressed("weapons_right") and visible and not Global.stop:
 		index += 1
 		if index > weapons_list.size()-1:
 			index = 0
 		weapons_list[index].grab_focus()
 		grab = true
+		print(index)
+	if _event.is_action_pressed("weapons_left") and visible and not Global.stop:
+		index -= 1
+		if index < 0:
+			index = 0
+		weapons_list[index].grab_focus()
+		grab = true
+		print(index)
 	if _event.is_action_pressed("action_1") and grab:
 		emit_signal("on_equip_weapon", weapons_list[index].weapon_type, 0)
 	if _event.is_action_pressed("action_2") and grab:

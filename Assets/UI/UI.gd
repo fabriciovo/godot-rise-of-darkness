@@ -40,20 +40,6 @@ func _process(_delta):
 	else:
 		item_2.visible = true
 		item_2.frame = PlayerControll.equiped_item[1]
-#	for i in PlayerControll.items.size():
-#		 match PlayerControll.items[i]:
-#				Global.WEAPONS.SWORD:
-#					inventory_sword.get_node("Sprite").visible = true
-#					can_equip_sword = true
-#				Global.WEAPONS.HEAL:
-#					inventory_heal.get_node("Sprite").visible = true
-#					can_equip_heal = true
-#				Global.WEAPONS.BOW:
-#					inventory_bow.get_node("Sprite").visible = true
-#					can_equip_bow = true
-#				Global.WEAPONS.BOMB:
-#					can_equip_bomb = true
-#					inventory_bomb.get_node("Sprite").visible = true
 	if Input.is_action_just_pressed("start") and Global.in_game and not Global.execute_transition_animation:
 		Ui.show_hidden_panels()
 
