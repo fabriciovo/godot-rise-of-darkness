@@ -147,7 +147,6 @@ func _on_ActionArea_body_entered(body):
 	if body.is_in_group(Global.GROUPS.BOX): 
 		body.Destroy()
 
-
 func create_sword(value):
 	set_ap(ap-1)
 	action_state = true
@@ -351,5 +350,3 @@ func show_get_item():
 
 func hide_get_item():
 	$Get_Item_Sprite.visible = false
-
-

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/World_nobg_spritesheet_16x16.png-06cd94c734d8e54afcb6dae7c84ff427.stex"
+path="res://.import/World_spritesheet_16x16.png-94452f353b2304c9b6147f952f9cae74.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/World_nobg_spritesheet_16x16.png"
-dest_files=[ "res://.import/World_nobg_spritesheet_16x16.png-06cd94c734d8e54afcb6dae7c84ff427.stex" ]
+source_file="res://Sprites/World_spritesheet_16x16.png"
+dest_files=[ "res://.import/World_spritesheet_16x16.png-94452f353b2304c9b6147f952f9cae74.stex" ]
 
 [params]
 
