@@ -1,19 +1,16 @@
-extends VBoxContainer
+extends Panel
 
 onready var points = get_node("Points")
+onready var buttons = $Upgrade_Panel.get_children()
 
 func _process(_delta):
 	points.text = "Points: " + str(PlayerControll.points)
 	if PlayerControll.points > 0:
-		$"upgrade hp".disabled = false
-		$"upgrade atk".disabled = false
-		$"upgrade Magic".disabled = false
-		$"upgrade action points".disabled = false
+		for button in buttons:
+			button.disabled = false
 	else:
-		$"upgrade hp".disabled = true
-		$"upgrade atk".disabled = true
-		$"upgrade Magic".disabled = true
-		$"upgrade action points".disabled = true
+		for button in buttons:
+			button.disabled = true
 
 func _on_upgrade_hp_pressed():
 	if PlayerControll.points >= 1:

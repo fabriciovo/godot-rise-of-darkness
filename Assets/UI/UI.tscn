@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/UI/MaxStats.gd" type="Script" id=6]
 [ext_resource path="res://Assets/UI/Upgrade.gd" type="Script" id=7]
 [ext_resource path="res://Assets/UI/Game_UI_Controller.gd" type="Script" id=8]
-[ext_resource path="res://Assets/UI/UpgradePanel.gd" type="Script" id=9]
+[ext_resource path="res://Assets/UI/Player_Stats_Controller.gd" type="Script" id=9]
 [ext_resource path="res://Assets/sounds/Sound Panel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=11]
 [ext_resource path="res://Assets/UI/Inventory.tscn" type="PackedScene" id=12]
@@ -371,6 +371,8 @@ anchor_bottom = 1.0
 [node name="background" type="ColorRect" parent="UI_Containers/Player_Info"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
 color = Color( 0, 0, 0, 0.647059 )
 
 [node name="Label" type="Label" parent="UI_Containers/Player_Info"]
@@ -379,13 +381,14 @@ margin_bottom = 12.0
 text = "Player Info"
 
 [node name="Max Stats" type="Panel" parent="UI_Containers/Player_Info"]
-anchor_top = 0.735
-anchor_right = 0.996
-anchor_bottom = 0.829
-margin_left = 9.0
-margin_top = -82.95
-margin_right = -111.104
-margin_bottom = -50.93
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -87.5
+margin_top = -53.0
+margin_right = 87.5
+margin_bottom = -5.0
 theme = ExtResource( 5 )
 script = ExtResource( 6 )
 
@@ -422,53 +425,62 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Max Magic Points: "
 
 [node name="Upgrades" type="Panel" parent="UI_Containers/Player_Info"]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 136.0
-margin_bottom = -81.0
-
-[node name="Upgrade_Panel" type="VBoxContainer" parent="UI_Containers/Player_Info/Upgrades"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -86.0
-margin_right = -3.0
+margin_top = -74.0
 script = ExtResource( 9 )
 
-[node name="Title" type="Label" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_right = 83.0
+[node name="Title" type="Label" parent="UI_Containers/Player_Info/Upgrades"]
+margin_left = 2.0
+margin_right = 85.0
 margin_bottom = 12.0
 text = "Upgdades"
 
-[node name="Points" type="Label" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
+[node name="Points" type="Label" parent="UI_Containers/Player_Info/Upgrades"]
+margin_left = 2.0
 margin_top = 16.0
-margin_right = 83.0
+margin_right = 85.0
 margin_bottom = 28.0
 text = "Points:0"
 
+[node name="Upgrade_Panel" type="VBoxContainer" parent="UI_Containers/Player_Info/Upgrades"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.0
+margin_top = -30.0
+margin_right = 103.0
+margin_bottom = 30.0
+focus_mode = 2
+
 [node name="upgrade hp" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_top = 32.0
-margin_right = 83.0
-margin_bottom = 40.0
+margin_right = 164.0
+margin_bottom = 12.0
+theme = ExtResource( 11 )
 disabled = true
 text = "Upgrade Hp"
 
 [node name="upgrade atk" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_top = 44.0
-margin_right = 83.0
-margin_bottom = 52.0
+margin_top = 16.0
+margin_right = 164.0
+margin_bottom = 28.0
+theme = ExtResource( 11 )
 text = "Upgrade Attack "
 
 [node name="upgrade Magic" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_top = 56.0
-margin_right = 83.0
-margin_bottom = 64.0
+margin_top = 32.0
+margin_right = 164.0
+margin_bottom = 44.0
+theme = ExtResource( 11 )
 text = "Upgrade Magic points"
 
 [node name="upgrade action points" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_top = 68.0
-margin_right = 83.0
-margin_bottom = 76.0
+margin_top = 48.0
+margin_right = 164.0
+margin_bottom = 60.0
+theme = ExtResource( 11 )
 text = "Upgrade Action Poins"
 
 [node name="Settings" type="Control" parent="UI_Containers"]
@@ -493,7 +505,7 @@ visible = false
 
 [connection signal="timeout" from="Title_Scene/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Pause_Options/Pause_Button_Container/Player" to="." method="_on_Player_pressed"]
-[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade hp" to="UI_Containers/Player_Info/Upgrades/Upgrade_Panel" method="_on_upgrade_hp_pressed"]
-[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade atk" to="UI_Containers/Player_Info/Upgrades/Upgrade_Panel" method="_on_upgrade_atk_pressed"]
-[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade Magic" to="UI_Containers/Player_Info/Upgrades/Upgrade_Panel" method="_on_upgrade_Magic_pressed"]
-[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade action points" to="UI_Containers/Player_Info/Upgrades/Upgrade_Panel" method="_on_upgrade_action_points_pressed"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade hp" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_hp_pressed"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade atk" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_atk_pressed"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade Magic" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_Magic_pressed"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade action points" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_action_points_pressed"]

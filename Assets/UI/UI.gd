@@ -4,7 +4,7 @@ onready var game_ui = $Game_UI
 onready var pause_options = $Pause_Options
 onready var settings_panel = $UI_Containers/Settings
 onready var player_info = $UI_Containers/Player_Info
-
+onready var ui_containers = $UI_Containers.get_children()
 onready var HP = $Game_UI/Items/Stats/HP
 onready var MP = $Game_UI/Items/Stats/MP
 onready var AP = $Game_UI/Items/Stats/AP
@@ -24,6 +24,13 @@ var ui_arrow_index = 0
 
 func _ready():
 	game_ui.visible = false
+
+func _input(_event):
+	if (_event.is_action_pressed("ui_cancel") or _event.is_action_pressed("start")) and pause_options.visible:
+		for i in ui_containers.size():
+			ui_containers[i].visible = false
+		if pause_options.visible:
+			pause_options.get_node("Pause_Button_Container/Options").grab_focus()
 
 func _process(_delta):
 	HP.text = "HP " + str(PlayerControll.hp)
