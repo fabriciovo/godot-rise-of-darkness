@@ -24,6 +24,18 @@ var in_game = false
 var execute_transition_animation = true
 var trigger_tutorial_animation = false
 
+var player_movements = 6
+
+
+var BOSS_BAT_STATES = {
+	NORMAL_BEHAVIOR = true,
+	GET_ITEM_WITHOUT_FIGHT = false,
+	ANGRY_DIALOG = false,
+	CHASING_PLAYER = false,
+	DEAD = false
+}
+
+
 const GROUPS = {
 	PLAYER = "PLAYER",
 	BOX = "BOX",
