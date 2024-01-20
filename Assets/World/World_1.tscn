@@ -1,17 +1,66 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Tilemap/map_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/generic.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=5]
 [ext_resource path="res://Assets/Enviroment/stair.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/World/RoomControll.gd" type="Script" id=8]
+[ext_resource path="res://Assets/World/Room_Controll_World_1.gd" type="Script" id=8]
+[ext_resource path="res://Sprites/bat_angry.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
 length = 0.5
 step = 0.05
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+
+[sub_resource type="Animation" id=4]
+resource_name = "tutorial_animation_end"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Owl:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 68, 118 ), Vector2( 335, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4.4, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -136, 21 ), Vector2( 66, 98 ), Vector2( 66, 98 ), Vector2( 317, 44 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "tutorial_animation_start"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Owl:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.9, 5.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -132, 61 ), Vector2( 68, 118 ) ]
+}
 
 [node name="World_1" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
 script = ExtResource( 8 )
@@ -22,6 +71,9 @@ position = Vector2( 80, 133 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BattleFadeToNewRoom = ExtResource( 5 )
 anims/FadeToNewRoom = SubResource( 1 )
+anims/RESET = SubResource( 3 )
+anims/tutorial_animation_end = SubResource( 4 )
+anims/tutorial_animation_start = SubResource( 2 )
 
 [node name="map_1" parent="." instance=ExtResource( 2 )]
 bake_navigation = false
@@ -48,3 +100,14 @@ item = 4
 
 [node name="Chest_Sword" parent="Enviroment_Entities" instance=ExtResource( 7 )]
 position = Vector2( 56, 24 )
+
+[node name="Owl" type="Sprite" parent="."]
+position = Vector2( -132, 61 )
+scale = Vector2( 0.253086, 0.253086 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -136, 21 )
+texture = ExtResource( 9 )
+hframes = 4
+vframes = 4

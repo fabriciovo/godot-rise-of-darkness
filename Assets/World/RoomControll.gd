@@ -1,4 +1,4 @@
-extends Node
+class_name Room_Controll extends Node
 
 func _ready():
 	Global.in_game = true
