@@ -26,15 +26,15 @@ var trigger_tutorial_animation = false
 
 var player_movements = 6
 
-
 var BOSS_BAT_STATES = {
 	NORMAL_BEHAVIOR = true,
 	GET_ITEM_WITHOUT_FIGHT = false,
 	ANGRY_DIALOG = false,
 	CHASING_PLAYER = false,
-	DEAD = false
+	DEAD = false,
+	HERO_GET_RING_BEFORE_TUTORIAL = false,
+	HERO_RING = 3
 }
-
 
 const GROUPS = {
 	PLAYER = "PLAYER",

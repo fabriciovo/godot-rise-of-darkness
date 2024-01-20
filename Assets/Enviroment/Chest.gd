@@ -15,6 +15,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("action_3") and not disable:
 		if player:
+			disable = true
 			player.get_item_frame = item
 			player.play_get_item_animation()
 			get_weapon(item)
@@ -38,7 +39,6 @@ func get_weapon(_item):
 		Global.WEAPONS.KEY:
 			PlayerControll.key += 1
 			Global.open_chests.push_front(ID)
-	disable = true
 
 func _on_Chest_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER) and not disable:

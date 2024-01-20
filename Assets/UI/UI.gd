@@ -11,7 +11,7 @@ onready var AP = $Game_UI/Items/Stats/AP
 onready var item_1 = $Game_UI/Items/item1/weapon
 onready var item_2 = $Game_UI/Items/item2/weapon
 onready var key_label = $Game_UI/Items/Stats/key/key_label
-
+onready var inventory_panel = $UI_Containers/Inventory
 onready var level = $Game_UI/Stats/Level
 onready var xp = $Game_UI/Stats/xp
 
@@ -26,11 +26,15 @@ func _ready():
 	game_ui.visible = false
 
 func _input(_event):
-	if (_event.is_action_pressed("ui_cancel") or _event.is_action_pressed("start")) and pause_options.visible:
-		for i in ui_containers.size():
-			ui_containers[i].visible = false
-		if pause_options.visible:
-			pause_options.get_node("Pause_Button_Container/Options").grab_focus()
+	if get_tree().get_current_scene().name == "Title_Scene":
+		if _event.is_action_pressed("ui_cancel") and settings_panel.visible:
+			settings_panel.visible = false
+	else:
+		if (_event.is_action_pressed("ui_cancel") or _event.is_action_pressed("start")) and pause_options.visible:
+			for i in ui_containers.size():
+				ui_containers[i].visible = false
+			if pause_options.visible:
+				pause_options.get_node("Pause_Button_Container/Options").grab_focus()
 
 func _process(_delta):
 	HP.text = "HP " + str(PlayerControll.hp)
@@ -116,6 +120,25 @@ func show_text(text):
 	$Title_Scene/Timer.start(3)
 	$Title_Scene/Title_Panel/Title_Text.text = text
 
-
 func _on_Player_pressed():
 	open_player_info()
+
+
+func _on_Settings_pressed():
+	open_settings()
+
+
+func _on_Inventory_pressed():
+	inventory_panel.visible = true
+
+
+func _on_Relics_pressed():
+	pass # Replace with function body.
+
+
+func _on_Quests_pressed():
+	pass # Replace with function body.
+
+
+func _on_Book_pressed():
+	pass # Replace with function body.

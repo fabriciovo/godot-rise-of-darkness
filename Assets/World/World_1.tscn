@@ -102,12 +102,12 @@ item = 4
 position = Vector2( 56, 24 )
 
 [node name="Owl" type="Sprite" parent="."]
-position = Vector2( -132, 61 )
+position = Vector2( 335, 30 )
 scale = Vector2( 0.253086, 0.253086 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -136, 21 )
+position = Vector2( 317, 44 )
 texture = ExtResource( 9 )
 hframes = 4
 vframes = 4

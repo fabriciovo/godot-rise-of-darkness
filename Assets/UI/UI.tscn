@@ -311,11 +311,11 @@ margin_top = -46.0
 margin_right = 46.0
 margin_bottom = 46.0
 focus_neighbour_top = NodePath("Quests")
-focus_neighbour_bottom = NodePath("Options")
-focus_next = NodePath("Options")
+focus_neighbour_bottom = NodePath("Settings")
+focus_next = NodePath("Settings")
 focus_mode = 2
 
-[node name="Options" type="Button" parent="Pause_Options/Pause_Button_Container"]
+[node name="Settings" type="Button" parent="Pause_Options/Pause_Button_Container"]
 margin_right = 92.0
 margin_bottom = 12.0
 theme = ExtResource( 11 )
@@ -504,7 +504,12 @@ text = "Settings"
 visible = false
 
 [connection signal="timeout" from="Title_Scene/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Pause_Options/Pause_Button_Container/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Pause_Options/Pause_Button_Container/Player" to="." method="_on_Player_pressed"]
+[connection signal="pressed" from="Pause_Options/Pause_Button_Container/Inventory" to="." method="_on_Inventory_pressed"]
+[connection signal="pressed" from="Pause_Options/Pause_Button_Container/Relics" to="." method="_on_Relics_pressed"]
+[connection signal="pressed" from="Pause_Options/Pause_Button_Container/Quests" to="." method="_on_Quests_pressed"]
+[connection signal="pressed" from="Pause_Options/Pause_Button_Container/Book" to="." method="_on_Book_pressed"]
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade hp" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_hp_pressed"]
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade atk" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_atk_pressed"]
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade Magic" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_Magic_pressed"]
