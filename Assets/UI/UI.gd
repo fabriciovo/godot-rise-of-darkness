@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var game_ui = $Game_UI
 onready var pause_options = $Pause_Options
 onready var settings_panel = $UI_Containers/Settings
+onready var player_info = $UI_Containers/Player_Info
 
 onready var HP = $Game_UI/Items/Stats/HP
 onready var MP = $Game_UI/Items/Stats/MP
@@ -90,6 +91,12 @@ func open_settings():
 		settings_panel.get_node("Sound Panel/SFX").get_focus_owner()
 		settings_panel.get_node("Sound Panel/SFX").grab_focus()
 
+func open_player_info():
+	player_info.visible = !player_info.visible
+	if player_info.visible:
+		player_info.get_node("Upgrades/Upgrade_Panel/upgrade hp").get_focus_owner()
+		player_info.get_node("Upgrades/Upgrade_Panel/upgrade hp").grab_focus()
+
 func game_start():
 	game_ui.visible = true
 
@@ -101,3 +108,7 @@ func show_text(text):
 	$Title_Scene.visible = true
 	$Title_Scene/Timer.start(3)
 	$Title_Scene/Title_Panel/Title_Text.text = text
+
+
+func _on_Player_pressed():
+	open_player_info()
