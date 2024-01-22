@@ -26,9 +26,11 @@ func _ready():
 	game_ui.visible = false
 
 func _input(_event):
-	if get_tree().get_current_scene().name == "Title_Scene":
+	if get_tree().current_scene.name == "Title_Scene":
 		if _event.is_action_pressed("ui_cancel") and settings_panel.visible:
 			settings_panel.visible = false
+			var btn = get_tree().find_node("start")
+			print(btn)
 	else:
 		if (_event.is_action_pressed("ui_cancel") or _event.is_action_pressed("start")) and pause_options.visible:
 			for i in ui_containers.size():

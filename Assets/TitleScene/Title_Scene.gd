@@ -1,7 +1,8 @@
-extends Control
+class_name Title_Scene extends Control
 var filePath = "user://player_data.json"
 onready var start = $Button_Container/Start
 onready var btn_load_game = $Button_Container/Load_Game
+
 func _ready():
 	start.set_focus_mode(Control.FOCUS_ALL)
 	start.grab_focus()
@@ -30,7 +31,6 @@ func _on_Load_Game_pressed():
 	if scene_instance == OK:
 		PlayerControll.load_player_data(Global.loadJSONData("player_data"))
 		Ui.game_start()
-
 
 func _on_Quit_pressed():
 	get_tree().quit()
