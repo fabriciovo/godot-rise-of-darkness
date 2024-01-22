@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Static_Object.gd"
 }, {
+"base": "MarginContainer",
+"class": "Text_Box",
+"language": "GDScript",
+"path": "res://Assets/TextBox/Text_Box.gd"
+}, {
 "base": "Control",
 "class": "Title_Scene",
 "language": "GDScript",
@@ -90,6 +95,7 @@ _global_script_class_icons={
 "Room_Controll": "",
 "Static_Box": "",
 "Static_Object": "",
+"Text_Box": "",
 "Title_Scene": "",
 "Weapon_Slot": "",
 "World_Enemy": "",

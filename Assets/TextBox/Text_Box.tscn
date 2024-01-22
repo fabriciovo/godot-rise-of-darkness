@@ -6,14 +6,20 @@
 [ext_resource path="res://Assets/TextBox/Text_Box.gd" type="Script" id=4]
 
 [node name="Text_Box" type="MarginContainer"]
-margin_right = 73.0
-margin_bottom = 22.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -112.0
+margin_top = -40.0
+margin_right = 112.0
+rect_min_size = Vector2( 224, 0 )
 script = ExtResource( 4 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 visible = false
-margin_right = 73.0
-margin_bottom = 52.0
+margin_right = 224.0
+margin_bottom = 40.0
 texture = ExtResource( 1 )
 patch_margin_left = 4
 patch_margin_top = 4
@@ -21,8 +27,8 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
-margin_right = 73.0
-margin_bottom = 52.0
+margin_right = 224.0
+margin_bottom = 40.0
 texture = ExtResource( 2 )
 patch_margin_left = 4
 patch_margin_top = 4
@@ -30,32 +36,30 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 73.0
-margin_bottom = 52.0
-custom_constants/margin_right = 8
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
+margin_right = 224.0
+margin_bottom = 40.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
 
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 65.0
-margin_bottom = 44.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 222.0
+margin_bottom = 38.0
 
-[node name="Name" type="Label" parent="MarginContainer/HBoxContainer"]
-margin_right = 57.0
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 220.0
 margin_bottom = 16.0
 theme = ExtResource( 3 )
 text = "Name"
-valign = 1
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_top = 20.0
-margin_right = 57.0
+margin_right = 220.0
 margin_bottom = 36.0
 theme = ExtResource( 3 )
-text = "Text"
-valign = 1
+text = "saddsadsa sdadsa sa sdad"
 
 [node name="Timer" type="Timer" parent="."]

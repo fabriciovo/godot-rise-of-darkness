@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=11]
 [ext_resource path="res://Assets/UI/Inventory.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Inventory/Weapon_Slot.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/TextBox/Text_Box.tscn" type="PackedScene" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -502,6 +503,13 @@ text = "Settings"
 
 [node name="Inventory" parent="UI_Containers" instance=ExtResource( 12 )]
 visible = false
+
+[node name="Text_Box" parent="." instance=ExtResource( 14 )]
+visible = false
+anchor_left = 0.0
+anchor_right = 1.0
+margin_left = 0.0
+margin_right = 0.0
 
 [connection signal="timeout" from="Title_Scene/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Pause_Options/Pause_Button_Container/Settings" to="." method="_on_Settings_pressed"]

@@ -1,17 +1,26 @@
-extends MarginContainer
+class_name Text_Box extends MarginContainer
  
-export var dialogPath = ""
+const MAX_WIDTH = 224
+
+var dialog_name = ""
 export(float) var textSpeed = 0.05
 
-onready var label_name = $MarginContainer/HBoxContainer/Name
-onready var label_text = $MarginContainer/HBoxContainer/Label
+onready var label_name = $MarginContainer/VBoxContainer/Name
+onready var label_text = $MarginContainer/VBoxContainer/Label
 onready var timer = $Timer
- 
+
 var dialog
 var phraseNum = 0
 var finished = false
+var dialog_path = "res://Assets/Dialogs/"
  
 func _ready():
+	visible = false
+
+func start_dialog():
+	visible = true
+	dialog_path += dialog_name
+	print(dialog_path)
 	timer.wait_time = textSpeed
 	dialog = getDialog()
 	assert(dialog, "Dialog not found")
@@ -23,12 +32,14 @@ func _process(_delta):
 			nextPhrase()
 		else:
 			label_text.visible_characters = len(label_text.text)
+	if rect_size.x > 224:
+		rect_size.x = 224
  
 func getDialog():
 	var f = File.new()
-	assert(f.file_exists(dialogPath), "File path does not exist")
+	assert(f.file_exists(dialog_path), "File path does not exist")
 	
-	f.open(dialogPath, File.READ)
+	f.open(dialog_path, File.READ)
 	var json = f.get_as_text()
 	
 	var output = parse_json(json)
@@ -40,18 +51,12 @@ func getDialog():
  
 func nextPhrase():
 	if phraseNum >= len(dialog):
-		queue_free()
+		visible = false
 		return
-	
 	finished = false
-	
-	label_name.bbcode_text = dialog[phraseNum]["Name"]
-	label_text.bbcode_text = dialog[phraseNum]["Text"]
-	
+	label_name.text = dialog[phraseNum]["Name"]
+	label_text.text = dialog[phraseNum]["Text"]
 	label_text.visible_characters = 0
-	
-	var f = File.new()
-	
 	while label_text.visible_characters < len(label_text.text):
 		label_text.visible_characters += 1
 		

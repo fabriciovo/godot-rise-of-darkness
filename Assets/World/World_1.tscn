@@ -100,7 +100,6 @@ item = 4
 
 [node name="Chest_Sword" parent="Enviroment_Entities" instance=ExtResource( 7 )]
 position = Vector2( 56, 24 )
-item = 1
 
 [node name="Owl" type="Sprite" parent="."]
 position = Vector2( 335, 30 )

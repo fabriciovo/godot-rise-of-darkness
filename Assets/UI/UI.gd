@@ -26,7 +26,8 @@ func _ready():
 	game_ui.visible = false
 
 func _input(_event):
-	if get_tree().current_scene.name == "Title_Scene":
+	if not get_tree().get_current_scene(): return
+	if get_tree().get_current_scene().name == "Title_Scene":
 		if _event.is_action_pressed("ui_cancel") and settings_panel.visible:
 			settings_panel.visible = false
 			var btn = get_tree().find_node("start")
@@ -144,3 +145,8 @@ func _on_Quests_pressed():
 
 func _on_Book_pressed():
 	pass # Replace with function body.
+
+
+func start_dialog(dialog):
+	$Text_Box.dialog_name = dialog
+	$Text_Box.start_dialog()
