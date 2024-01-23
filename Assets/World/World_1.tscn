@@ -17,6 +17,18 @@ step = 0.05
 
 [sub_resource type="Animation" id=3]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Owl:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19, 54 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "tutorial_animation_end"
@@ -56,10 +68,24 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1.9, 5.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.3, 4, 4.5, 5, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -132, 61 ), Vector2( 68, 118 ) ]
+"values": [ Vector2( -132, 61 ), Vector2( 68, 118 ), Vector2( 33, 74 ), Vector2( 68, 118 ), Vector2( 19, 54 ), Vector2( 68, 118 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "set_global_stop"
+} ]
 }
 
 [node name="World_1" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
@@ -102,7 +128,7 @@ item = 4
 position = Vector2( 56, 24 )
 
 [node name="Owl" type="Sprite" parent="."]
-position = Vector2( 335, 30 )
+position = Vector2( 19, 54 )
 scale = Vector2( 0.253086, 0.253086 )
 texture = ExtResource( 3 )
 

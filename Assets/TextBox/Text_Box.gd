@@ -2,7 +2,9 @@ class_name Text_Box extends MarginContainer
  
 const MAX_WIDTH = 224
 
+
 var dialog_name = ""
+var can_continue = false
 export(float) var textSpeed = 0.05
 
 onready var label_name = $MarginContainer/VBoxContainer/Name
@@ -23,7 +25,6 @@ func start_dialog():
 	print(dialog_path)
 	timer.wait_time = textSpeed
 	dialog = getDialog()
-	assert(dialog, "Dialog not found")
 	nextPhrase()
  
 func _process(_delta):
@@ -36,6 +37,7 @@ func _process(_delta):
 		rect_size.x = 224
  
 func getDialog():
+	if finished: return
 	var f = File.new()
 	assert(f.file_exists(dialog_path), "File path does not exist")
 	
@@ -52,6 +54,7 @@ func getDialog():
 func nextPhrase():
 	if phraseNum >= len(dialog):
 		visible = false
+		can_continue = true
 		return
 	finished = false
 	label_name.text = dialog[phraseNum]["Name"]

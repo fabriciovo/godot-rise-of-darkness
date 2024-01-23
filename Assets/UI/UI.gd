@@ -140,7 +140,7 @@ func _on_Relics_pressed():
 
 
 func _on_Quests_pressed():
-	pass # Replace with function body.
+	pass # Replace with function body.can_continue
 
 
 func _on_Book_pressed():
@@ -150,3 +150,8 @@ func _on_Book_pressed():
 func start_dialog(dialog):
 	$Text_Box.dialog_name = dialog
 	$Text_Box.start_dialog()
+	while not $Text_Box.can_continue:
+		yield(get_tree(), "idle_frame")
+
+func get_dialog_yield():
+	pass

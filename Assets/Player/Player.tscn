@@ -9,7 +9,6 @@
 [ext_resource path="res://Sprites/Weapons_nobg_16x16.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Player/Shield_Area.gd" type="Script" id=8]
 
-
 [sub_resource type="CanvasItemMaterial" id=15]
 particles_animation = true
 particles_anim_h_frames = 1
