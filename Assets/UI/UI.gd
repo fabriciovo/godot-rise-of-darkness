@@ -145,13 +145,3 @@ func _on_Quests_pressed():
 
 func _on_Book_pressed():
 	pass # Replace with function body.
-
-
-func start_dialog(dialog):
-	$Text_Box.dialog_name = dialog
-	$Text_Box.start_dialog()
-	while not $Text_Box.can_continue:
-		yield(get_tree(), "idle_frame")
-
-func get_dialog_yield():
-	pass

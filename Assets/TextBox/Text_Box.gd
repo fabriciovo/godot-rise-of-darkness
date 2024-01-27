@@ -2,6 +2,7 @@ class_name Text_Box extends MarginContainer
  
 const MAX_WIDTH = 224
 
+signal on_end_dialog()
 
 var dialog_name = ""
 var can_continue = false
@@ -52,9 +53,11 @@ func getDialog():
 		return []
  
 func nextPhrase():
+	print("dasaddas")
 	if phraseNum >= len(dialog):
 		visible = false
 		can_continue = true
+		emit_signal("on_end_dialog")
 		return
 	finished = false
 	label_name.text = dialog[phraseNum]["Name"]

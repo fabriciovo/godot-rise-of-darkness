@@ -1,0 +1,172 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/bat_angry.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/generic.png" type="Texture" id=2]
+[ext_resource path="res://Assets/TextBox/Text_Box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Cutscenes/Tutorial_Cutscene.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "boss_bat_idle_anim"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Owl:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -131, 11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Boss_Giant_Bat:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -54, -15 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "tutorial_0_anim"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Owl:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -131, 11 ), Vector2( 74, 110 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_dialog"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "tutorial_1_anim"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Owl:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 74, 110 ), Vector2( 356, 20 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Boss_Giant_Bat:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.7, 3.8, 4.9, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -86, 14 ), Vector2( -54, -15 ), Vector2( 79, 124 ), Vector2( 79, 124 ), Vector2( 346, 29 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 5.1, 5.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset_global_state"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="Tutorial_Cutscene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Text_Box" parent="." instance=ExtResource( 3 )]
+rect_clip_content = false
+
+[node name="Owl" type="Sprite" parent="."]
+position = Vector2( -131, 11 )
+scale = Vector2( 0.253086, 0.253086 )
+texture = ExtResource( 2 )
+
+[node name="Boss_Giant_Bat" type="Sprite" parent="."]
+position = Vector2( -54, -15 )
+texture = ExtResource( 1 )
+hframes = 4
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boss_Giant_Bat"]
+autoplay = "boss_bat_idle_anim"
+anims/RESET = SubResource( 1 )
+anims/boss_bat_idle_anim = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "tutorial_0_anim"
+anims/RESET = SubResource( 3 )
+anims/tutorial_0_anim = SubResource( 4 )
+anims/tutorial_1_anim = SubResource( 5 )
+
+[connection signal="on_end_dialog" from="Text_Box" to="." method="_on_Text_Box_on_end_dialog"]

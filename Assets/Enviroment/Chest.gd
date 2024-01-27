@@ -28,6 +28,7 @@ func get_weapon(_item):
 			Global.open_chests.push_front(ID)
 			yield(get_tree().create_timer(3),"timeout")
 			Global.trigger_tutorial_animation = true
+			print("dsasd")
 		Global.WEAPONS.BOW:
 			PlayerControll.set_inventory_item(_item)
 			Global.open_chests.push_front(ID)

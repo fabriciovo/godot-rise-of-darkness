@@ -109,7 +109,6 @@ func loadJSONData(file_name):
 				else:
 					printerr("Failed to parse JSON data from file:", file_name)
 					var _change_scene = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
-					
 			else:
 				printerr("Empty JSON data in file:", file_name)
 				var _change_scene = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
