@@ -1,4 +1,12 @@
 extends Control
 
+onready var weapons_list = $Weapons_Container.get_children()
+
+
 func _ready():
-	$GridContainer.grab_focus()
+	pass
+
+func _process(_delta):
+	for weapon in weapons_list:
+		weapon.text = "?????"
+		

@@ -1,13 +1,21 @@
 class_name Title_Scene extends Control
 var filePath = "user://player_data.json"
-onready var start = $Button_Container/Start
-onready var btn_load_game = $Button_Container/Load_Game
+onready var start = $Pause_Button_Container/Start
+onready var btn_load_game = $Pause_Button_Container/Load_Game
+onready var settings_panel = $"/root/Ui/UI_Containers/Settings"
 
 func _ready():
 	start.set_focus_mode(Control.FOCUS_ALL)
 	start.grab_focus()
 	SoundController.play_music(SoundController.MUSIC.title)
 	check_file_existence()
+
+func _input(_event):
+	if _event.is_action_pressed("ui_cancel") and settings_panel.visible:
+		print(settings_panel.visible)
+		print("sadasdasddas")
+		settings_panel.visible = false
+		start.grab_focus()
 
 func check_file_existence():
 	var file = File.new()

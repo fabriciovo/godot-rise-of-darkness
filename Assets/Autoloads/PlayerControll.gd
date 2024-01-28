@@ -11,10 +11,10 @@ var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
 var atk = 2 setget set_atk
 var points = 0 setget set_points
-var weapons = [0]
-var inventory = [0]
-var equiped_item = [0,-1] 
-var key = 1
+var weapons = []
+var inventory = []
+var equiped_item = [-1,-1] 
+var key = 0
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")
 

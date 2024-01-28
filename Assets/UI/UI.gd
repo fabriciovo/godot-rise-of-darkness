@@ -27,17 +27,11 @@ func _ready():
 
 func _input(_event):
 	if not get_tree().get_current_scene(): return
-	if get_tree().get_current_scene().name == "Title_Scene":
-		if _event.is_action_pressed("ui_cancel") and settings_panel.visible:
-			settings_panel.visible = false
-			var btn = get_tree().find_node("start")
-			print(btn)
-	else:
-		if (_event.is_action_pressed("ui_cancel") or _event.is_action_pressed("start")) and pause_options.visible:
-			for i in ui_containers.size():
-				ui_containers[i].visible = false
-			if pause_options.visible:
-				pause_options.get_node("Pause_Button_Container/Options").grab_focus()
+	if (_event.is_action_pressed("ui_cancel") or _event.is_action_pressed("start")) and pause_options.visible:
+		for i in ui_containers.size():
+			ui_containers[i].visible = false
+		if pause_options.visible:
+			pause_options.get_node("Pause_Button_Container/Settings").grab_focus()
 
 func _process(_delta):
 	HP.text = "HP " + str(PlayerControll.hp)
@@ -97,7 +91,7 @@ func set_equip(weapon, slot):
 func show_hidden_panels():
 	pause_options.visible = !pause_options.visible
 	Global.stop = pause_options.visible
-	pause_options.get_node("Pause_Button_Container/Options").grab_focus()
+	pause_options.get_node("Pause_Button_Container/Settings").grab_focus()
 
 func open_settings():
 	settings_panel.visible = !settings_panel.visible
@@ -145,3 +139,5 @@ func _on_Quests_pressed():
 
 func _on_Book_pressed():
 	pass # Replace with function body.
+
+
