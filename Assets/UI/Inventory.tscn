@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/UI/deleteaftertest.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Button/sword_btn_icon.png" type="Texture" id=2]
@@ -8,6 +8,23 @@
 [ext_resource path="res://Sprites/Button/shield_btn_icon.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Button/bomb_btn_icon.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Button/bow_btn_icon.png" type="Texture" id=8]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform vec4 color : hint_color = vec4(1.0, 1.0, 1.0, 1.0); // Default is white
+
+void vertex() {
+    // nothing needed here for 2D shaders
+}
+
+void fragment() {
+
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/color = Color( 1, 1, 1, 1 )
 
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
@@ -19,14 +36,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.647059 )
 
-[node name="Panel" type="Panel" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -144.0
-margin_top = 3.0
-margin_right = -3.0
-margin_bottom = -50.0
+[node name="Weapon_Info" type="RichTextLabel" parent="."]
+anchor_left = 0.325893
+anchor_top = 0.0294118
+anchor_right = 0.973214
+anchor_bottom = 0.711765
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "gdfgsdfdsg"
+text = "gdfgsdfdsg"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Weapons_Container" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0
@@ -37,55 +58,62 @@ margin_bottom = -5.0
 focus_mode = 2
 
 [node name="Sword" type="Button" parent="Weapons_Container"]
-margin_right = 70.0
+material = SubResource( 2 )
+margin_right = 63.0
 margin_bottom = 20.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-text = "Sword"
+text = "????"
 icon = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="Bow" type="Button" parent="Weapons_Container"]
 margin_top = 24.0
-margin_right = 70.0
+margin_right = 63.0
 margin_bottom = 44.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-text = "Bow"
+text = "????"
 icon = ExtResource( 8 )
 script = ExtResource( 1 )
 
 [node name="Bomb" type="Button" parent="Weapons_Container"]
 margin_top = 48.0
-margin_right = 70.0
+margin_right = 63.0
 margin_bottom = 68.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-text = "Bomb"
+text = "????"
 icon = ExtResource( 7 )
 script = ExtResource( 1 )
 
-[node name="Heal" type="Button" parent="Weapons_Container"]
+[node name="Staff" type="Button" parent="Weapons_Container"]
 margin_top = 72.0
-margin_right = 70.0
+margin_right = 63.0
 margin_bottom = 92.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-text = "Staff"
+text = "????"
 icon = ExtResource( 5 )
 script = ExtResource( 1 )
 
 [node name="Shield" type="Button" parent="Weapons_Container"]
 margin_top = 96.0
-margin_right = 70.0
+margin_right = 63.0
 margin_bottom = 116.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-text = "Shield"
+text = "????"
 icon = ExtResource( 6 )
 script = ExtResource( 1 )
+
+[connection signal="focus_entered" from="Weapons_Container/Sword" to="." method="_on_Sword_focus_entered"]
+[connection signal="focus_entered" from="Weapons_Container/Bow" to="." method="_on_Bow_focus_entered"]
+[connection signal="focus_entered" from="Weapons_Container/Bomb" to="." method="_on_Bomb_focus_entered"]
+[connection signal="focus_entered" from="Weapons_Container/Staff" to="." method="_on_Heal_focus_entered"]
+[connection signal="focus_entered" from="Weapons_Container/Shield" to="." method="_on_Shield_focus_entered"]

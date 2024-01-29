@@ -127,6 +127,7 @@ func _on_Settings_pressed():
 
 func _on_Inventory_pressed():
 	inventory_panel.visible = true
+	inventory_panel.set_weapons()
 
 
 func _on_Relics_pressed():

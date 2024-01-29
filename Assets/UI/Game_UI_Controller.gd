@@ -8,11 +8,8 @@ var grab = false
 var index = -1
 func add_weapons():
 	if PlayerControll.weapons.size() > 0:
-		for i in range(min(weapons_list.size(), PlayerControll.weapons.size())):
-			if weapons_list[i].weapon_type == -1:
-				if weapons_list[i].weapon_type == PlayerControll.weapons[i]:
-					i+=1
-				weapons_list[i].set_weapon_type(PlayerControll.weapons[i])
+		for i in  PlayerControll.weapons.size():
+			weapons_list[i].set_weapon_type(PlayerControll.weapons[i])
 
 func _process(_delta):
 	focus_controller()

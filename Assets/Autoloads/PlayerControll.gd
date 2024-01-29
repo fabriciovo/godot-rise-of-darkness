@@ -12,7 +12,7 @@ var level = 1 setget set_level
 var atk = 2 setget set_atk
 var points = 0 setget set_points
 var weapons = []
-var inventory = []
+var inventory = [0]
 var equiped_item = [-1,-1] 
 var key = 0
 
