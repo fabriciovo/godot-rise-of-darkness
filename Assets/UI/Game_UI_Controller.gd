@@ -6,6 +6,12 @@ onready var weapons_list = $Items/Weapons/Inventory_List/Weapons_Center_Containe
 
 var grab = false
 var index = -1
+
+func _ready():
+	var inventory_node = Ui.get_node("UI_Containers/Inventory")
+	if inventory_node:
+		inventory_node.connect("on_set_to_weapon_list", self, "_on_set_to_weapon_list")
+
 func add_weapons():
 	if PlayerControll.weapons.size() > 0:
 		for i in  PlayerControll.weapons.size():
@@ -21,7 +27,6 @@ func _input(_event):
 		if index > weapons_list.size()-1:
 			index = weapons_list.size()-1
 		grab = true
-		print(index)
 	if _event.is_action_pressed("weapons_left") and visible:
 		index -= 1
 		if index < 0:
@@ -38,3 +43,6 @@ func focus_controller():
 			weapons_list[i].set_focus(true)
 		else:
 			weapons_list[i].set_focus(false)
+
+func _on_set_to_weapon_list(weapon_type, index):
+	print("dsasddas")

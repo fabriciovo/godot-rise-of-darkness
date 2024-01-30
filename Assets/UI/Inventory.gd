@@ -1,4 +1,5 @@
 extends Control
+signal on_set_to_weapon_list(weapon_type, index)
 
 onready var weapons_list = $Weapons_Container.get_children()
 onready var weapon_info = $Weapon_Info
@@ -58,7 +59,7 @@ func _on_Shield_focus_entered():
 		weapon_info.bbcode_text = "????"
 
 func _on_Sword_pressed():
-	print("pressed")
+	emit_signal("on_set_to_weapon_list", 0, 3)
 
 func _on_Bow_pressed():
 	print("pressed")

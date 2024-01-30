@@ -52,6 +52,8 @@ func _process(_delta):
 		item_2.frame = PlayerControll.equiped_item[1]
 	if Input.is_action_just_pressed("start") and Global.in_game and not Global.execute_transition_animation and not Global.cutscene:
 		Ui.show_hidden_panels()
+	if pause_options.visible and Global.cutscene:
+		pause_options.visible = false
 
 func _on_PlayerControl_hp_changed(value):
 	HP.text = "HP " + str(value)
