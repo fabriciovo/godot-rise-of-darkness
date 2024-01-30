@@ -9,6 +9,7 @@ var dead_objects = []
 var walls_objects = []
 var key_gate = []
 var skull_altar = [false,false,false]
+var cutscene = false
 
 var player_last_position = Vector2.ZERO
 var player_last_scene = ""

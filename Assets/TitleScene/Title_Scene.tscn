@@ -9,8 +9,10 @@
 [node name="Title_Scene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -224.0
-margin_bottom = -170.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -223.0
+margin_bottom = -169.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -138.0 ]
@@ -20,6 +22,8 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = -8.0
 margin_right = 226.0
 margin_bottom = 171.0
 color = Color( 0, 0, 0, 1 )

@@ -50,7 +50,7 @@ func _process(_delta):
 	else:
 		item_2.visible = true
 		item_2.frame = PlayerControll.equiped_item[1]
-	if Input.is_action_just_pressed("start") and Global.in_game and not Global.execute_transition_animation:
+	if Input.is_action_just_pressed("start") and Global.in_game and not Global.execute_transition_animation and not Global.cutscene:
 		Ui.show_hidden_panels()
 
 func _on_PlayerControl_hp_changed(value):

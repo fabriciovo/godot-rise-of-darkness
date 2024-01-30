@@ -23,18 +23,17 @@ func _ready():
 func start_dialog():
 	visible = true
 	dialog_path += dialog_name
-	print(dialog_path)
 	timer.wait_time = textSpeed
 	dialog = getDialog()
 	nextPhrase()
  
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and visible:
 		if finished:
 			nextPhrase()
 		else:
 			label_text.visible_characters = len(label_text.text)
-	if rect_size.x > 224:
+	if rect_size.x >= 224:
 		rect_size.x = 224
  
 func getDialog():
@@ -53,7 +52,6 @@ func getDialog():
 		return []
  
 func nextPhrase():
-	print("dasaddas")
 	if phraseNum >= len(dialog):
 		visible = false
 		can_continue = true

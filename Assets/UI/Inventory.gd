@@ -1,7 +1,7 @@
 extends Control
 
 onready var weapons_list = $Weapons_Container.get_children()
-
+onready var weapon_info = $Weapon_Info
 
 func set_weapons():
 	weapons_list[0].grab_focus()
@@ -9,47 +9,65 @@ func set_weapons():
 		match weapon:
 			Global.WEAPONS.SWORD:
 				weapons_list[0].text = "Sword"
+				weapons_list[0].disabled = false
+				weapon_info.bbcode_text = "Sword Text"
 			Global.WEAPONS.BOW:
 				weapons_list[1].text = "Bow"
+				weapons_list[1].disabled = false
 			Global.WEAPONS.BOMB:
 				weapons_list[2].text = "Bomb"
+				weapons_list[2].disabled = false
 			Global.WEAPONS.HEAL:
 				weapons_list[3].text = "Staff"
+				weapons_list[3].disabled = false
 			Global.WEAPONS.SHIELD:
 				weapons_list[4].text = "Shield"
+				weapons_list[4].disabled = false
 
 func set_weapon(_weapon):
 	pass
 
 func _on_Sword_focus_entered():
 	if weapons_list[0].text == "Sword":
-		$Weapon_Info.bbcode_text = "Bow Text"
+		weapon_info.bbcode_text = "Sword Text"
 	else:
-		$Weapon_Info.bbcode_text = "????"
+		weapon_info.bbcode_text = "????"
 
 func _on_Bow_focus_entered():
 	if weapons_list[1].text == "Bow":
-		$Weapon_Info.bbcode_text = "Bow Text"
+		weapon_info.bbcode_text = "Bow Text"
 	else:
-		$Weapon_Info.bbcode_text = "????"
-
+		weapon_info.bbcode_text = "????"
 
 func _on_Bomb_focus_entered():
 	if weapons_list[2].text == "Bomb":
-		$Weapon_Info.bbcode_text = "Bomb Text"
+		weapon_info.bbcode_text = "Bomb Text"
 	else:
-		$Weapon_Info.bbcode_text = "????"
+		weapon_info.bbcode_text = "????"
 
 func _on_Heal_focus_entered():
 	if weapons_list[3].text == "Staff":
-		$Weapon_Info.bbcode_text = "Staff Text"
+		weapon_info.bbcode_text = "Staff Text"
 	else:
-		$Weapon_Info.bbcode_text = "????"
-
+		weapon_info.bbcode_text = "????"
 
 func _on_Shield_focus_entered():
 	if weapons_list[4].text == "Shield":
-		$Weapon_Info.bbcode_text = "Shield Text"
+		weapon_info.bbcode_text = "Shield Text"
 	else:
-		$Weapon_Info.bbcode_text = "????"
+		weapon_info.bbcode_text = "????"
 
+func _on_Sword_pressed():
+	print("pressed")
+
+func _on_Bow_pressed():
+	print("pressed")
+
+func _on_Bomb_pressed():
+	print("pressed")
+
+func _on_Staff_pressed():
+	print("pressed")
+
+func _on_Shield_pressed():
+	print("pressed")

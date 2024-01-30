@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/UI/deleteaftertest.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Button/sword_btn_icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/UI/Inventory.gd" type="Script" id=4]
@@ -29,18 +28,14 @@ shader_param/color = Color( 1, 1, 1, 1 )
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -44.0
 script = ExtResource( 4 )
-
-[node name="background" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.647059 )
 
 [node name="Weapon_Info" type="RichTextLabel" parent="."]
 anchor_left = 0.325893
-anchor_top = 0.0294118
+anchor_top = 0.031746
 anchor_right = 0.973214
-anchor_bottom = 0.711765
+anchor_bottom = 0.944444
 theme = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "gdfgsdfdsg"
@@ -50,70 +45,74 @@ __meta__ = {
 }
 
 [node name="Weapons_Container" type="VBoxContainer" parent="."]
-anchor_bottom = 1.0
-margin_left = 5.0
+margin_left = 9.0
 margin_top = 5.0
-margin_right = 68.0
-margin_bottom = -5.0
+margin_right = 63.0
+margin_bottom = 121.0
 focus_mode = 2
 
 [node name="Sword" type="Button" parent="Weapons_Container"]
 material = SubResource( 2 )
-margin_right = 63.0
+margin_right = 54.0
 margin_bottom = 20.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+disabled = true
 text = "????"
 icon = ExtResource( 2 )
-script = ExtResource( 1 )
 
 [node name="Bow" type="Button" parent="Weapons_Container"]
 margin_top = 24.0
-margin_right = 63.0
+margin_right = 54.0
 margin_bottom = 44.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+disabled = true
 text = "????"
 icon = ExtResource( 8 )
-script = ExtResource( 1 )
 
 [node name="Bomb" type="Button" parent="Weapons_Container"]
 margin_top = 48.0
-margin_right = 63.0
+margin_right = 54.0
 margin_bottom = 68.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+disabled = true
 text = "????"
 icon = ExtResource( 7 )
-script = ExtResource( 1 )
 
 [node name="Staff" type="Button" parent="Weapons_Container"]
 margin_top = 72.0
-margin_right = 63.0
+margin_right = 54.0
 margin_bottom = 92.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+disabled = true
 text = "????"
 icon = ExtResource( 5 )
-script = ExtResource( 1 )
 
 [node name="Shield" type="Button" parent="Weapons_Container"]
 margin_top = 96.0
-margin_right = 63.0
+margin_right = 54.0
 margin_bottom = 116.0
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+disabled = true
 text = "????"
 icon = ExtResource( 6 )
-script = ExtResource( 1 )
 
 [connection signal="focus_entered" from="Weapons_Container/Sword" to="." method="_on_Sword_focus_entered"]
+[connection signal="pressed" from="Weapons_Container/Sword" to="." method="_on_Sword_pressed"]
 [connection signal="focus_entered" from="Weapons_Container/Bow" to="." method="_on_Bow_focus_entered"]
+[connection signal="pressed" from="Weapons_Container/Bow" to="." method="_on_Bow_pressed"]
 [connection signal="focus_entered" from="Weapons_Container/Bomb" to="." method="_on_Bomb_focus_entered"]
+[connection signal="pressed" from="Weapons_Container/Bomb" to="." method="_on_Bomb_pressed"]
 [connection signal="focus_entered" from="Weapons_Container/Staff" to="." method="_on_Heal_focus_entered"]
+[connection signal="pressed" from="Weapons_Container/Staff" to="." method="_on_Staff_pressed"]
 [connection signal="focus_entered" from="Weapons_Container/Shield" to="." method="_on_Shield_focus_entered"]
+[connection signal="pressed" from="Weapons_Container/Shield" to="." method="_on_Shield_pressed"]

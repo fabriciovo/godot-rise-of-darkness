@@ -12,8 +12,6 @@ func _ready():
 
 func _input(_event):
 	if _event.is_action_pressed("ui_cancel") and settings_panel.visible:
-		print(settings_panel.visible)
-		print("sadasdasddas")
 		settings_panel.visible = false
 		start.grab_focus()
 

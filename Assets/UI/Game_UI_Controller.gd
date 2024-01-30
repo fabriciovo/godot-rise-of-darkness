@@ -16,13 +16,13 @@ func _process(_delta):
 	add_weapons()
 
 func _input(_event):
-	if _event.is_action_pressed("weapons_right") and visible and not Global.stop:
+	if _event.is_action_pressed("weapons_right") and visible:
 		index += 1
 		if index > weapons_list.size()-1:
 			index = weapons_list.size()-1
 		grab = true
 		print(index)
-	if _event.is_action_pressed("weapons_left") and visible and not Global.stop:
+	if _event.is_action_pressed("weapons_left") and visible:
 		index -= 1
 		if index < 0:
 			index = 0

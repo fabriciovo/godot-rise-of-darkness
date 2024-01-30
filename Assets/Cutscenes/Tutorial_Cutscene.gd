@@ -9,3 +9,4 @@ func _on_Text_Box_on_end_dialog():
 
 func reset_global_state():
 	Global.stop = false
+	Global.cutscene = false

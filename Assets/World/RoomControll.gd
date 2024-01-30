@@ -1,7 +1,6 @@
 class_name Room_Controll extends Node2D
 
 func _ready():
-	print("ready")
 	Global.in_game = true
 	Global.saveJSONData("player_data",PlayerControll.player_data())
 	queue_entities()
