@@ -62,10 +62,10 @@ func _on_Sword_pressed():
 	emit_signal("on_set_to_weapon_list", 0, 3)
 
 func _on_Bow_pressed():
-	print("pressed")
+	emit_signal("on_set_to_weapon_list", 0, 3)
 
 func _on_Bomb_pressed():
-	print("pressed")
+	emit_signal("on_set_to_weapon_list", 0, 3)
 
 func _on_Staff_pressed():
 	print("pressed")

@@ -12,14 +12,14 @@ func _ready():
 	if inventory_node:
 		inventory_node.connect("on_set_to_weapon_list", self, "_on_set_to_weapon_list")
 
-func add_weapons():
-	if PlayerControll.weapons.size() > 0:
-		for i in  PlayerControll.weapons.size():
-			weapons_list[i].set_weapon_type(PlayerControll.weapons[i])
+func add_weapon(weapon):
+	for weapon_slot in weapons_list:
+		if weapon_slot.weapon_type == -1:
+			weapon_slot.set_weapon_type(weapon)
+			return
 
 func _process(_delta):
 	focus_controller()
-	add_weapons()
 
 func _input(_event):
 	if _event.is_action_pressed("weapons_right") and visible:
@@ -44,5 +44,7 @@ func focus_controller():
 		else:
 			weapons_list[i].set_focus(false)
 
-func _on_set_to_weapon_list(weapon_type, index):
-	print("dsasddas")
+func _on_set_to_weapon_list(_weapon_type, _index):
+	#if PlayerControll.weapons.size() < 3: return
+	print("sdaasdsda")
+	PlayerControll.weapons[_index] = _weapon_type

@@ -11,8 +11,8 @@ var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
 var atk = 2 setget set_atk
 var points = 0 setget set_points
-var weapons = []
-var inventory = []
+var weapons = [-1,-1,-1,-1]
+var inventory = [0,1,2,3]
 var equiped_item = [-1,-1] 
 var key = 0
 
@@ -51,11 +51,16 @@ func set_mp(value):
 
 func set_inventory_item(value):
 	inventory.push_front(value)
-	if weapons.size() <= 4:
-		set_weapon(value)
+	for i in weapons.size():
+		if weapons[i] == -1:
+			set_weapon(value)
+			return
 
 func set_weapon(value):
 	weapons.push_front(value)
+	var weapon_list = get_node("/root/Ui").get_node("Game_UI")
+	weapon_list.add_weapon(value)
+	
 
 func set_equiped_item(value, slot):
 	if equiped_item[0] == value: 
