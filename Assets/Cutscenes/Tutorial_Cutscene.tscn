@@ -77,7 +77,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -131, 11 ), Vector2( 74, 110 ) ]
+"values": [ Vector2( -131, 11 ), Vector2( 81, 95 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -107,7 +107,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 74, 110 ), Vector2( 356, 20 ) ]
+"values": [ Vector2( 81, 95 ), Vector2( 356, 20 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Boss_Giant_Bat:position")

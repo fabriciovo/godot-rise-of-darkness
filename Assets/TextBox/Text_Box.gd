@@ -33,8 +33,6 @@ func _process(_delta):
 			nextPhrase()
 		else:
 			label_text.visible_characters = len(label_text.text)
-	if rect_size.x >= 224:
-		rect_size.x = 224
  
 func getDialog():
 	if finished: return
