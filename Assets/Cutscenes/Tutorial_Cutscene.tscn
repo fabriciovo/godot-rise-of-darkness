@@ -145,6 +145,10 @@ anchor_bottom = 1.0
 script = ExtResource( 4 )
 
 [node name="Text_Box" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.632353
+anchor_bottom = 0.997059
+margin_top = 0.0
+margin_bottom = -11.0
 rect_clip_content = false
 
 [node name="Owl" type="Sprite" parent="."]
