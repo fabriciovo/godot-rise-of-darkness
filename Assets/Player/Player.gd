@@ -52,6 +52,7 @@ func _ready():
 	$AP_Timer.start(1)
 
 func get_input():
+	if Global.stop: return
 	movement()
 	execute_action()
 	change_action_area_direction()
@@ -258,7 +259,6 @@ func change_action_area_direction():
 		shield_area.position.y = 6
 		shield_area_sprite.frame = 24
 		shield_area.z_index = 1
-
 
 func execute_action():
 	if Input.is_action_just_pressed("action_1"):

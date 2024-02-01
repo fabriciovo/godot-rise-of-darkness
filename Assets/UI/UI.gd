@@ -21,7 +21,6 @@ var can_equip_bomb = false
 var can_equip_bow = false
 
 var ui_arrow_index = 0
-
 func _ready():
 	game_ui.visible = false
 
