@@ -13,7 +13,6 @@ func _ready():
 		game_ui_node.connect("on_equip_weapon", self, "_on_equip_weapon")
 
 func set_weapon_type(_weapon_type):
-	if _weapon_type == -1: return
 	weapon_type = _weapon_type
 	match weapon_type:
 		Global.WEAPONS.SWORD:
@@ -26,6 +25,8 @@ func set_weapon_type(_weapon_type):
 			icon = bomb_icon
 		Global.WEAPONS.SHIELD:
 			icon = shield_icon
+		_:
+			icon = null
 
 func set_focus(value):
 	if value:

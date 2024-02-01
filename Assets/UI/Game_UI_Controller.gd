@@ -15,7 +15,11 @@ func add_weapon(_weapon):
 
 func update_weapon_slot(_weapon):
 	if weapon_slot_index != -1:
+		for weapon in weapons_list:
+			if weapon.weapon_type == _weapon:
+				weapon.set_weapon_type(-1)
 		weapons_list[weapon_slot_index].set_weapon_type(_weapon)
+		
 
 func _process(_delta):
 	focus_controller()
