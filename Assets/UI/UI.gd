@@ -15,6 +15,8 @@ onready var inventory_panel = $UI_Containers/Inventory
 onready var level = $Game_UI/Stats/Level
 onready var xp = $Game_UI/Stats/xp
 
+onready var relics_container = $UI_Containers/Relics
+
 var can_equip_sword = false
 var can_equip_heal = false
 var can_equip_bomb = false
@@ -132,7 +134,8 @@ func _on_Inventory_pressed():
 
 
 func _on_Relics_pressed():
-	pass # Replace with function body.
+	relics_container.visible = true
+	relics_container.set_relics()
 
 
 func _on_Quests_pressed():

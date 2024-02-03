@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Get_Item_Icons.png-9a008f84a4fd4f7be4be79ac190bea8c.stex"
+path="res://.import/boots_of_speed_icon.png-0fba4410ea423822eeb8c13499cef93b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Get_Item_Icons.png"
-dest_files=[ "res://.import/Get_Item_Icons.png-9a008f84a4fd4f7be4be79ac190bea8c.stex" ]
+source_file="res://Sprites/Button/boots_of_speed_icon.png"
+dest_files=[ "res://.import/boots_of_speed_icon.png-0fba4410ea423822eeb8c13499cef93b.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

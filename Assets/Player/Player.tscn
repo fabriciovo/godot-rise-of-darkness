@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/Animations/Slash/Slash.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Player/ActionArea.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=5]
-[ext_resource path="res://Sprites/Get_Item_Icons.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Get_Weapon_Icons.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Weapons_nobg_16x16.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Player/Shield_Area.gd" type="Script" id=8]
 

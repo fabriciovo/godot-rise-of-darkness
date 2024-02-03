@@ -1,29 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Sprites/Button/sword_btn_icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/UI/Inventory.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/Button/healstaff_btn_icon.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Button/shield_btn_icon.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Button/bomb_btn_icon.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Button/bow_btn_icon.png" type="Texture" id=8]
-
-[sub_resource type="Shader" id=1]
-code = "shader_type spatial;
-
-uniform vec4 color : hint_color = vec4(1.0, 1.0, 1.0, 1.0); // Default is white
-
-void vertex() {
-    // nothing needed here for 2D shaders
-}
-
-void fragment() {
-
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/color = Color( 1, 1, 1, 1 )
 
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
@@ -52,59 +30,58 @@ margin_bottom = 121.0
 focus_mode = 2
 
 [node name="Sword" type="Button" parent="Weapons_Container"]
-material = SubResource( 2 )
 margin_right = 54.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 54, 20 )
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
-icon = ExtResource( 2 )
 
 [node name="Bow" type="Button" parent="Weapons_Container"]
 margin_top = 24.0
 margin_right = 54.0
 margin_bottom = 44.0
+rect_min_size = Vector2( 54, 20 )
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
-icon = ExtResource( 8 )
 
 [node name="Bomb" type="Button" parent="Weapons_Container"]
 margin_top = 48.0
 margin_right = 54.0
 margin_bottom = 68.0
+rect_min_size = Vector2( 54, 20 )
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
-icon = ExtResource( 7 )
 
 [node name="Staff" type="Button" parent="Weapons_Container"]
 margin_top = 72.0
 margin_right = 54.0
 margin_bottom = 92.0
+rect_min_size = Vector2( 54, 20 )
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
-icon = ExtResource( 5 )
 
 [node name="Shield" type="Button" parent="Weapons_Container"]
 margin_top = 96.0
 margin_right = 54.0
 margin_bottom = 116.0
+rect_min_size = Vector2( 54, 20 )
 theme = ExtResource( 3 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
-icon = ExtResource( 6 )
 
 [connection signal="focus_entered" from="Weapons_Container/Sword" to="." method="_on_Sword_focus_entered"]
 [connection signal="pressed" from="Weapons_Container/Sword" to="." method="_on_Sword_pressed"]

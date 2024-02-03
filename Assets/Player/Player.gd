@@ -9,8 +9,11 @@ onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 onready var actionArea = $ActionArea
 
-var damageText = preload("res://Assets/UI/FloatText.tscn")
-var floatText = preload("res://Assets/UI/FloatText.tscn")
+var weapons_texuture = preload("res://Sprites/Get_Weapon_Icons.png")
+var relics_texuture = preload("res://Sprites/Get_Relic_Icons.png")
+
+var damage_text = preload("res://Assets/UI/FloatText.tscn")
+var float_text = preload("res://Assets/UI/FloatText.tscn")
 var hp = PlayerControll.hp setget set_hp
 var ap = PlayerControll.ap setget set_ap
 var mp = PlayerControll.mp setget set_mp
@@ -19,6 +22,8 @@ var key = PlayerControll.key
 var get_item_frame = 0
 var get_item_anim = false
 var enemiesBody = []
+
+var speed = PlayerControll.base_speed
 
 var knockback = Vector2.ZERO
 
@@ -35,7 +40,6 @@ func set_mp(value):
 	PlayerControll.set_mp(mp)
 
 var dir = "right"
-var speed = 30
 var velocity = Vector2.ZERO
 var action_state = false
 var hit = false
@@ -67,20 +71,20 @@ func action(value):
 				if mp >= 1:
 					create_arrow()
 					set_mp(mp-1)
-					var text = floatText.instance()
+					var text = float_text.instance()
 					text.set_text("MP -1")
 					add_child(text)
 			Global.WEAPONS.BOMB:
 				if mp >= 3:
 					create_bomb()
 					set_mp(mp-3)
-					var text = floatText.instance()
+					var text = float_text.instance()
 					text.set_text("MP -3")
 					add_child(text)
 			Global.WEAPONS.HEAL: 
 				if mp >= 5:
-					var textMP = floatText.instance()
-					var textHP = floatText.instance()
+					var textMP = float_text.instance()
+					var textHP = float_text.instance()
 					textMP.set_text("MP -5")
 					add_child(textMP)
 					textHP.set_text("HP +5")
@@ -198,7 +202,7 @@ func damage(value):
 	hit = true
 	invincible = true
 	SoundController.play_effect(SoundController.EFFECTS.player_hit)
-	var text = damageText.instance()
+	var text = damage_text.instance()
 	text.set_text(str(value))
 	add_child(text)
 	$PlayerAnimation.stop()
@@ -210,7 +214,7 @@ func damage(value):
 	
 func recover_mana():
 	set_mp(PlayerControll.max_mp)
-	var text = floatText.instance()
+	var text = float_text.instance()
 	text.set_text("MP " + str(PlayerControll.max_mp))
 	add_child(text)
 
@@ -270,6 +274,7 @@ func execute_action():
 
 func movement(): 
 	if not dashing:
+		speed = PlayerControll.base_speed
 		velocity = Vector2.ZERO
 		if !action_state:
 			if Input.is_action_pressed("move_right"):
@@ -325,12 +330,12 @@ func dash():
 			velocity.x += 1
 			$PlayerAnimation.play("walk_right")
 			dash_object.rotation_degrees = 90
-	speed = 60
+	speed = PlayerControll.base_speed * 2
 	$Dash_Timer.start()
 
 
 func _on_Dash_Timer_timeout():
-	speed = 30
+	speed = PlayerControll.base_speed
 	dashing = false
 
 func _on_Invincible_Timer_timeout():
@@ -350,3 +355,11 @@ func show_get_item():
 
 func hide_get_item():
 	$Get_Item_Sprite.visible = false
+
+
+func set_item_texture(_frame,_texture_type):
+	get_item_frame = _frame
+	if _texture_type == "weapons":
+		$Get_Item_Sprite.texture = weapons_texuture
+	else:
+		$Get_Item_Sprite.texture = relics_texuture

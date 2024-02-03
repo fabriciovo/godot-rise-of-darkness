@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=11]
 [ext_resource path="res://Assets/UI/Inventory.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Inventory/Weapon_Slot.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/UI/Relics_UI.gd" type="Script" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -505,29 +506,56 @@ visible = false
 margin_bottom = -28.0
 
 [node name="Relics" type="Control" parent="UI_Containers"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 15 )
 
-[node name="CenterContainer" type="CenterContainer" parent="UI_Containers/Relics"]
-anchor_bottom = 1.0
-margin_right = 55.0
+[node name="Relics_List" type="VBoxContainer" parent="UI_Containers/Relics"]
+anchor_left = 0.0401786
+anchor_top = 0.0764706
+anchor_right = 0.200893
+anchor_bottom = 0.688235
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI_Containers/Relics/CenterContainer"]
-margin_top = 47.0
-margin_right = 64.0
-margin_bottom = 123.0
+[node name="Ring" type="Button" parent="UI_Containers/Relics/Relics_List"]
+margin_right = 36.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 11 )
+text = "?"
+icon_align = 1
 
-[node name="Button" type="Button" parent="UI_Containers/Relics/CenterContainer/VBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-text = "DASDASf"
+[node name="necklace" type="Button" parent="UI_Containers/Relics/Relics_List"]
+show_behind_parent = true
+margin_top = 36.0
+margin_right = 36.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 11 )
+text = "?"
+icon_align = 1
 
-[node name="Button2" type="Button" parent="UI_Containers/Relics/CenterContainer/VBoxContainer"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 76.0
-text = "sdafasdf"
+[node name="Boots_Of_Speed" type="Button" parent="UI_Containers/Relics/Relics_List"]
+margin_top = 72.0
+margin_right = 36.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 11 )
+text = "?"
+icon_align = 1
+
+[node name="Text_Label" type="RichTextLabel" parent="UI_Containers/Relics"]
+anchor_left = 0.241071
+anchor_top = 0.0764706
+anchor_right = 0.928571
+anchor_bottom = 0.694118
+theme = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [connection signal="timeout" from="Title_Scene/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Pause_Options/Pause_Button_Container/Settings" to="." method="_on_Settings_pressed"]
@@ -540,3 +568,6 @@ text = "sdafasdf"
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade atk" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_atk_pressed"]
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade Magic" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_Magic_pressed"]
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade action points" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_action_points_pressed"]
+[connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Ring" to="UI_Containers/Relics" method="_on_Ring_focus_entered"]
+[connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/necklace" to="UI_Containers/Relics" method="_on_necklace_focus_entered"]
+[connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Boots_Of_Speed" to="UI_Containers/Relics" method="_on_Boots_Of_Speed_focus_entered"]

@@ -61,6 +61,12 @@ const WEAPONS = {
 	SHIELD = 5,
 }
 
+const RELICS = {
+	BOOTS_OF_SPEED = 0,
+	RING = 1,
+	NECKLACE = 2, 
+}
+
 var QUESTS = {
 	"BAT": {
 		"Title": "Kill Bats",

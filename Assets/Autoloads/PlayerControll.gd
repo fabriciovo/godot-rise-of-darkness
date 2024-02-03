@@ -14,7 +14,9 @@ var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = [0,1,2,3]
 var equiped_item = [-1,-1] 
+var relics = []
 var key = 0
+var base_speed = 30
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")
 
@@ -55,6 +57,14 @@ func set_inventory_item(value):
 		if weapons[i] == -1:
 			set_weapon(value)
 			return
+
+func set_relic_item(value):
+	match value:
+		Global.RELICS.BOOTS_OF_SPEED:
+			base_speed = 40
+		_:
+			pass
+	relics.push_front(value)
 
 func set_weapon(value):
 	weapons.push_front(value)
@@ -118,6 +128,7 @@ func player_data():
 		"inventory": inventory,
 		"equiped_item": equiped_item,
 		"key": key,
+		"relics": relics,
 	}
 	return data
 
@@ -134,4 +145,4 @@ func load_player_data(data):
 	key = data["key"]
 	weapons = data["weapons"]
 	inventory = data["inventory"]
-
+	relics = data["relics"]
