@@ -12,7 +12,7 @@ var level = 1 setget set_level
 var atk = 2 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
-var inventory = [0,1,2,3]
+var inventory = []
 var equiped_item = [-1,-1] 
 var relics = []
 var key = 0
@@ -123,6 +123,7 @@ func player_data():
 		"xp": xp,
 		"xp_to_level_up": xp_to_level_up,
 		"atk": atk,
+		"base_speed": base_speed,
 		"points": points,
 		"weapons": weapons,
 		"inventory": inventory,
@@ -146,3 +147,4 @@ func load_player_data(data):
 	weapons = data["weapons"]
 	inventory = data["inventory"]
 	relics = data["relics"]
+	base_speed = data["base_speed"]

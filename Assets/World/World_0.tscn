@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=1]
 [ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Key_Gate_Single_Gate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Shaders/Transition.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -64,7 +63,3 @@ position = Vector2( 168, 40 )
 [node name="Transition" parent="." instance=ExtResource( 8 )]
 transition_type = 3
 execute = 1
-
-[node name="Chest" parent="." instance=ExtResource( 9 )]
-position = Vector2( 54, 78 )
-type = "relics"

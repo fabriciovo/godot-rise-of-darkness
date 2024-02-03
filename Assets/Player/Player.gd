@@ -356,7 +356,6 @@ func show_get_item():
 func hide_get_item():
 	$Get_Item_Sprite.visible = false
 
-
 func set_item_texture(_frame,_texture_type):
 	get_item_frame = _frame
 	if _texture_type == "weapons":

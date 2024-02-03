@@ -112,6 +112,7 @@ func loadJSONData(file_name):
 			if json_data != "":
 				var data = parse_json(json_data)
 				if data:
+					print(data)
 					return data
 				else:
 					printerr("Failed to parse JSON data from file:", file_name)
