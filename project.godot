@@ -74,10 +74,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Inventory/Weapon_Slot.gd"
 }, {
+"base": "World_Enemy_Slime",
+"class": "World_Boss_Slime",
+"language": "GDScript",
+"path": "res://Assets/Enemy/World Enemy/World_Boss_Slime.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "World_Enemy",
 "language": "GDScript",
 "path": "res://Assets/Enemy/World Enemy/World_Enemy.gd"
+}, {
+"base": "World_Enemy",
+"class": "World_Enemy_Slime",
+"language": "GDScript",
+"path": "res://Assets/Enemy/World Enemy/World_Slime.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "explosive_object",
@@ -98,7 +108,9 @@ _global_script_class_icons={
 "Text_Box": "",
 "Title_Scene": "",
 "Weapon_Slot": "",
+"World_Boss_Slime": "",
 "World_Enemy": "",
+"World_Enemy_Slime": "",
 "explosive_object": ""
 }
 

@@ -1,12 +1,13 @@
-extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
+class_name World_Enemy_Slime extends World_Enemy
 
-onready var obj = get_tree().current_scene.get_node("Player")
+onready var player = get_tree().current_scene.get_node("Player")
 onready var body_shape = $Body_Shape
-var wakeup = false
+var is_wake_up = false
 var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
 var dir = Vector2.ZERO
 var jump = false
+
 func _ready():
 	ID = name
 	body_shape.disabled = true
@@ -23,7 +24,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if not wakeup:
+	if not is_wake_up:
 		$Area/Area_Shape.disabled = true
 		set_physics_process(false)
 	else: 
@@ -41,17 +42,21 @@ func _on_Timer_timeout():
 	$Enemy_Animation.play("slime_anim")
 
 func _on_DetectArea_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER) and not wakeup:
-		body_shape.set_deferred("disabled", false)
-		$Sprite.visible = true
-		$Enemy_Animation.play("slime_wakeup_anim")
-		yield($Enemy_Animation,"animation_finished")
-		wakeup = true
-		$Enemy_Animation.play("slime_anim")
-		$Jump_Timer.start(2)
+	if body.is_in_group(Global.GROUPS.PLAYER) and not is_wake_up:
+		wake_up()
+
+func wake_up():
+	body_shape.set_deferred("disabled", false)
+	$Sprite.visible = true
+	$Enemy_Animation.play("slime_wakeup_anim")
+	yield($Enemy_Animation,"animation_finished")
+	is_wake_up = true
+	$Enemy_Animation.play("slime_anim")
+	$Jump_Timer.start(2)
 
 
 func _on_Jump_Timer_timeout():
-	dir = (obj.global_position - global_position).normalized()
+	if not player: return
+	dir = (player.global_position - global_position).normalized()
 	jump = !jump
 	$Jump_Timer.start(2)

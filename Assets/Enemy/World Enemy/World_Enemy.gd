@@ -45,14 +45,14 @@ func Destroy():
 	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
 
-func damage(knockbackValue, damageValue):
+func damage(_knockbackValue, _damageValue):
 		SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
-		knockback = knockbackValue
+		knockback = _knockbackValue
 		var text = damageText.instance()
-		text.set_text(str(damageValue))
+		text.set_text(str(_damageValue))
 		add_child(text)
 		hit = true
-		battle_unit_hp -= damageValue
+		battle_unit_hp -= _damageValue
 		hits+=1
 		$Enemy_Animation.play("damage_anim")
 		yield($Enemy_Animation, "animation_finished")
