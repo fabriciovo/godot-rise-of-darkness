@@ -88,6 +88,7 @@ script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.1, 0.1 )
+z_index = 3
 frame = 27
 
 [node name="Body_Shape" parent="." index="1"]

@@ -46,13 +46,13 @@ func _on_DetectArea_body_entered(body):
 		wake_up()
 
 func wake_up():
-	body_shape.set_deferred("disabled", false)
+	$Body_Shape.set_deferred("disabled", false)
 	$Sprite.visible = true
 	$Enemy_Animation.play("slime_wakeup_anim")
 	yield($Enemy_Animation,"animation_finished")
 	is_wake_up = true
 	$Enemy_Animation.play("slime_anim")
-	$Jump_Timer.start(2)
+	$Jump_Timer.start(0.1)
 
 
 func _on_Jump_Timer_timeout():
