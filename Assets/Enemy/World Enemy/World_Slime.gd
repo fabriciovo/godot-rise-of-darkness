@@ -1,7 +1,6 @@
 class_name World_Enemy_Slime extends World_Enemy
 
 onready var player = get_tree().current_scene.get_node("Player")
-onready var body_shape = $Body_Shape
 var is_wake_up = false
 var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)
@@ -10,7 +9,7 @@ var jump = false
 
 func _ready():
 	ID = name
-	body_shape.disabled = true
+	$Body_Shape.disabled = true
 	battle_unit_xp = 10
 	battle_unit_max_hp = 5
 	battle_unit_hp = battle_unit_max_hp
@@ -35,7 +34,6 @@ func _physics_process(delta):
 		knockback = knockback.move_toward(Vector2.ZERO, speed * delta)
 		knockback = move_and_slide(knockback / 1.1)
 
-
 func _on_Timer_timeout():
 	hit = false
 	timer.stop()
@@ -54,9 +52,12 @@ func wake_up():
 	$Enemy_Animation.play("slime_anim")
 	$Jump_Timer.start(0.1)
 
-
 func _on_Jump_Timer_timeout():
 	if not player: return
 	dir = (player.global_position - global_position).normalized()
 	jump = !jump
 	$Jump_Timer.start(2)
+
+
+func _on_Enable_Timer_timeout():
+	$Area/Area_Shape.disabled = true
