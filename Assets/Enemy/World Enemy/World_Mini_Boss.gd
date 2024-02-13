@@ -1,7 +1,5 @@
 extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
 
-
-
 var direction = Vector2.ZERO
 
 func _ready():
