@@ -1,26 +1,27 @@
-class_name Lever
-extends Area2D
+class_name Lever extends Area2D
 
-export(int) var item
 var ID = ""
-var disable = false
-
-onready var interactButton = get_node("InteractionButton")
+var disabled = true
 
 func _ready():
-	interactButton.visible = false;
 	ID = name
 
-func _process(delta):
-	if get_overlapping_areas().size() > 0:
-		interactButton.visible = true
-	else:
-		interactButton.visible = false
+func _process(_delta):
 	if Global.boss_gate:
 		$Sprite.frame = 19
 	else:
 		$Sprite.frame = 18
-func _input(event):
-	if event.is_action_pressed("action_3") and not disable and not Global.boss_gate:
+func _input(_event):
+	if _event.is_action_pressed("action_3") and not disabled and not Global.boss_gate:
 		if get_overlapping_areas().size() > 0:
 			Global.boss_gate = true
+
+
+func _on_Lever_body_entered(_body):
+	if _body.is_in_group(Global.GROUPS.PLAYER):
+		disabled = false
+
+
+func _on_Lever_body_exited(_body):
+	if _body.is_in_group(Global.GROUPS.PLAYER):
+		disabled = true
