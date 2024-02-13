@@ -5,6 +5,7 @@ onready var obj = get_tree().current_scene.get_node("Player")
 var speed = 1
 var direction = Vector2.ZERO
 var dir = Vector2.ZERO
+
 func _ready():
 	if obj != null:
 		direction = obj.global_position
@@ -19,6 +20,9 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
 		queue_free()
 	if body.is_in_group(Global.GROUPS.STATIC):
+		queue_free()
+	if body.is_in_group(Global.GROUPS.BOX):
+		body.Destroy()
 		queue_free()
 	if body.is_in_group(Global.GROUPS.ARROW):
 		queue_free()
