@@ -15,7 +15,7 @@ tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 position = Vector2( 112, 129 )
 
 [node name="World_Boss_Slime" parent="Entities" index="0" instance=ExtResource( 4 )]
-position = Vector2( 111, 60 )
+position = Vector2( 112, 67 )
 
 [node name="Hide_Stair" type="Node2D" parent="." index="6"]
 script = ExtResource( 5 )

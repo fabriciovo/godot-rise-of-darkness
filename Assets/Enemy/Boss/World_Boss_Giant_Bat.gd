@@ -76,6 +76,7 @@ func Destroy():
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
 	Global.dead_enemies.push_front(ID)
+	queue_free()
 
 
 func _on_Area2D_body_entered(body):

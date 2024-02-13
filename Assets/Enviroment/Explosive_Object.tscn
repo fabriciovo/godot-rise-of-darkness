@@ -8,6 +8,7 @@ script = ExtResource( 2 )
 frame = 0
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 1, 0 )
 frame = 3
 
 [node name="Body_Shape" parent="." index="1"]
