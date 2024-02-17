@@ -199,6 +199,7 @@ margin_left = 72.0
 margin_right = 92.0
 
 [node name="Stats" type="Panel" parent="Game_UI"]
+visible = false
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
