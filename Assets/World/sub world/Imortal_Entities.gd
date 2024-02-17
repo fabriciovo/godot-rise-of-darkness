@@ -13,7 +13,6 @@ func _ready():
 	for i in spawns_count:
 		random_spawn()
 
-
 func random_spawn():
 	rng.randomize()
 	position_index = rng.randi_range(0, positions.size()-1)

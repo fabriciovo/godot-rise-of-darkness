@@ -1,11 +1,11 @@
 extends Node2D
 
-export(NodePath) onready var point = get_node(point) as Node2D
+export(NodePath) onready var point
 
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damageText = preload("res://Assets/UI/FloatText.tscn")
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
-var points
+var points = []
 var ID = name
 
 var battle_unit_xp = 100
@@ -16,9 +16,12 @@ var teleport_pos = Vector2.ZERO
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
-	points = point.get_children()
 	global_position = get_random_pos()
 	$Change_Position_Timer.start(3)
+	point = get_node(point)
+	if point:
+		points = point.get_children()
+
 
 func Destroy():
 	$Sprite.visible = false
@@ -57,15 +60,16 @@ func attack_player():
 	else:
 		pass
 
-
 func _on_Change_Position_Timer_timeout():
 	change_postion()
 
 func get_random_pos():
 	var _size = points.size()
-	var random_index = randi() % _size
-	return points[random_index].position
-
+	if _size == 0:
+		return Vector2(0,0)
+	else:
+		var random_index = randi() % _size
+		return points[random_index].position
 
 func _on_Damage_Area_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SWORD):

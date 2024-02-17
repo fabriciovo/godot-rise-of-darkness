@@ -102,6 +102,10 @@ func open_settings():
 		settings_panel.get_node("Sound Panel/SFX").get_focus_owner()
 		settings_panel.get_node("Sound Panel/SFX").grab_focus()
 
+func check_if_settings_is_open():
+	if settings_panel.visible:
+		settings_panel.visible = false
+
 func open_player_info():
 	player_info.visible = !player_info.visible
 	if player_info.visible:

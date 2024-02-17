@@ -15,6 +15,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("action_3") and not disable:
+		Ui.check_if_settings_is_open()
 		if player:
 			disable = true
 			if type == "weapons":
