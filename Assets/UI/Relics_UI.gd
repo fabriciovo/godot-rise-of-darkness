@@ -14,12 +14,12 @@ func set_relics():
 	relic_list[0].grab_focus()
 	for relic in PlayerControll.relics:
 		match relic:
-			Global.RELICS.RING:
+			Global.RELICS.RING_OF_DASH:
 				relic_list[0].icon = ring_icon
 				relic_list[0].disabled = false
 				relic_list[0].text = ""
 				text_label.bbcode_text = "Ring Text"
-			Global.RELICS.NECKLACE:
+			Global.RELICS.NECKLACE_OF_PROTECTION:
 				relic_list[1].icon = neckalce_icon
 				relic_list[1].disabled = false
 				relic_list[1].text = ""

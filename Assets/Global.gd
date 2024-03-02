@@ -63,8 +63,8 @@ const WEAPONS = {
 
 const RELICS = {
 	BOOTS_OF_SPEED = 0,
-	RING = 1,
-	NECKLACE = 2, 
+	RING_OF_DASH = 1,
+	NECKLACE_OF_PROTECTION = 2, 
 }
 
 var QUESTS = {

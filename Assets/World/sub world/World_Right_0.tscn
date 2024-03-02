@@ -15,6 +15,7 @@ tile_data = PoolIntArray( 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 
 
 [node name="Chest" parent="Enviroment_Entities" index="0" instance=ExtResource( 3 )]
 position = Vector2( 144, 25 )
+type = "relics"
 
 [node name="Explosive_Object" parent="Enviroment_Entities" index="1" instance=ExtResource( 2 )]
 position = Vector2( 135, 55 )
