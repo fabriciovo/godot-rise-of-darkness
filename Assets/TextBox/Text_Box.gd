@@ -13,7 +13,7 @@ onready var label_text = $MarginContainer/VBoxContainer/Label
 onready var timer = $Timer
 
 var dialog
-var phraseNum = 0
+var phrase_num = 0
 var finished = false
 var dialog_path = "res://Assets/Dialogs/"
  
@@ -50,21 +50,20 @@ func getDialog():
 		return []
  
 func nextPhrase():
-	if phraseNum >= len(dialog):
+	if phrase_num >= len(dialog):
 		visible = false
 		can_continue = true
 		emit_signal("on_end_dialog")
 		return
 	finished = false
-	label_name.text = dialog[phraseNum]["Name"]
-	label_text.text = dialog[phraseNum]["Text"]
+	label_name.text = dialog[phrase_num]["Name"]
+	label_text.text = dialog[phrase_num]["Text"]
 	label_text.visible_characters = 0
 	while label_text.visible_characters < len(label_text.text):
 		label_text.visible_characters += 1
-		
 		timer.start()
 		yield(timer, "timeout")
 	
 	finished = true
-	phraseNum += 1
+	phrase_num += 1
 	return
