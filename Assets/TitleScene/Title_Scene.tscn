@@ -56,9 +56,8 @@ focus_neighbour_bottom = NodePath("Start")
 focus_mode = 2
 
 [node name="Start" type="Button" parent="Pause_Button_Container"]
-anchor_bottom = 0.044
 margin_right = 87.0
-margin_bottom = 10.0
+margin_bottom = 12.0
 rect_pivot_offset = Vector2( -175, 213 )
 theme = ExtResource( 3 )
 shortcut_in_tooltip = false
