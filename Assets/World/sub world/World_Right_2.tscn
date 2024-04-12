@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Assets/Enviroment/The Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Phantom.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Slime.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
@@ -39,12 +38,6 @@ position = Vector2( 80, 32 )
 item = 5
 
 [node name="Entities" type="Node2D" parent="."]
-
-[node name="World_Slime2" parent="Entities" instance=ExtResource( 9 )]
-position = Vector2( 73, 98 )
-
-[node name="World_Slime3" parent="Entities" instance=ExtResource( 9 )]
-position = Vector2( 100, 71 )
 
 [node name="World_Phantom" parent="Entities" instance=ExtResource( 8 )]
 position = Vector2( 118, 102 )

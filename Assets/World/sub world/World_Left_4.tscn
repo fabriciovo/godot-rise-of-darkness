@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Enviroment/The Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Slime.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=5]
 
 [node name="World_Left_4" instance=ExtResource( 1 )]
 
@@ -18,11 +18,11 @@ tile_data = PoolIntArray( 0, 25, 0, 1, 25, 0, 2, 25, 0, 3, 25, 0, 4, 25, 0, 5, 2
 position = Vector2( 72, 25 )
 item = 4
 
-[node name="World_Slime" parent="Entities" index="0" instance=ExtResource( 5 )]
-position = Vector2( 61, 76 )
+[node name="World_Wood_Monster_wl4_1" parent="Entities" index="0" instance=ExtResource( 5 )]
+position = Vector2( 64, 78 )
 
-[node name="World_Slime2" parent="Entities" index="1" instance=ExtResource( 5 )]
-position = Vector2( 158, 43 )
+[node name="World_Wood_Monster_wl4_2" parent="Entities" index="1" instance=ExtResource( 5 )]
+position = Vector2( 157, 46 )
 
 [node name="Position2D" parent="Imortal_Entities/Positions" index="0"]
 position = Vector2( 28, 75 )

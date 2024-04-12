@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/World/World_Master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Explosive_Object.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=5]
 
 [node name="World_Right_0" instance=ExtResource( 1 )]
 
@@ -24,6 +25,12 @@ frame = 3
 [node name="Explosive_Object2" parent="Enviroment_Entities" index="2" instance=ExtResource( 2 )]
 position = Vector2( 153, 52 )
 frame = 3
+
+[node name="World_Wood_Monster" parent="Entities" index="0" instance=ExtResource( 5 )]
+position = Vector2( 162, 79 )
+
+[node name="World_Wood_Monster2" parent="Entities" index="1" instance=ExtResource( 5 )]
+position = Vector2( 69, 118 )
 
 [node name="Position2D" parent="Imortal_Entities/Positions" index="0"]
 position = Vector2( 143, 100 )
