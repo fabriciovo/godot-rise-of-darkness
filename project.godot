@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/World/RoomControll.gd"
 }, {
+"base": "Area2D",
+"class": "Simple_Projectile",
+"language": "GDScript",
+"path": "res://Assets/Enemy/World Enemy/Simple_Projectile.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Static_Box",
 "language": "GDScript",
@@ -103,6 +108,7 @@ _global_script_class_icons={
 "Player": "",
 "Quest_Tile": "",
 "Room_Controll": "",
+"Simple_Projectile": "",
 "Static_Box": "",
 "Static_Object": "",
 "Text_Box": "",

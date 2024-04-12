@@ -1,5 +1,4 @@
-extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
-
+extends World_Enemy
 
 
 onready var obj = get_tree().current_scene.get_node("Player")

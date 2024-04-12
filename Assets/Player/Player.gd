@@ -169,7 +169,6 @@ func create_shield():
 	shield_area_collision.disabled = false
 	shield_area.get_node("Shield_Sprite").visible = true
 
-
 func create_bomb():
 	set_ap(ap-1)
 	var bomb_object = preload("res://Assets/Enviroment/Bomb_Object.tscn").instance()
