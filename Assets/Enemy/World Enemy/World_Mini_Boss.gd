@@ -1,7 +1,7 @@
-extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
+extends World_Enemy
 
 var direction = Vector2.ZERO
-
+var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 func _ready():
 	battle_unit_max_hp = 100
 	battle_unit_damage = 0
@@ -23,7 +23,7 @@ func _on_Timer_timeout():
 
 func _on_Attack_Timer_timeout():
 	$Attack_Timer.start(4)
-	var attack = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn").instance()
+	var attack = projectile.instance()
 	attack.global_position = global_position
 	get_tree().get_current_scene().add_child(attack)
 

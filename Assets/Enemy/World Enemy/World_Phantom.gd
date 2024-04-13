@@ -44,6 +44,7 @@ func damage(damageValue):
 		Destroy()
 
 func change_postion():
+	if battle_unit_hp <= 0: return
 	$Animation_Player.play("hide")
 	yield($Animation_Player, "animation_finished")
 	global_position = get_random_pos()
@@ -74,4 +75,7 @@ func get_random_pos():
 func _on_Damage_Area_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SWORD):
 		damage(PlayerControll.atk)
-
+	if area.is_in_group(Global.GROUPS.ARROW):
+		damage(PlayerControll.atk+1)
+	if area.is_in_group(Global.GROUPS.ARROW_AREA):
+		damage(PlayerControll.atk+1)

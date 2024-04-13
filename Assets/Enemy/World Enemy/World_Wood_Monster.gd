@@ -25,6 +25,7 @@ func initialize_movement_control():
 	direction = Vector2.ZERO
 
 func _physics_process(_delta):
+	if battle_unit_hp <= 0: return
 	update_random_direction_timer(_delta)
 	move_enemy()
 
@@ -53,6 +54,8 @@ func move_enemy():
 
 
 func _on_Shoot_Timer_timeout():
+	$Shoot_Timer.start(rand_range(4.0, 10.0))
+	if Global.stop: return
 	var projectile_scene = preload(PROJECTILE_PATH)
 	var projectile = projectile_scene.instance()
 	
@@ -65,4 +68,3 @@ func _on_Shoot_Timer_timeout():
 	
 	get_parent().add_child(projectile)
 	attacking = false
-	$Shoot_Timer.start(5)
