@@ -1,22 +1,24 @@
 extends Node
 
-var max_hp = 10 
+var max_hp = 1000
 var max_ap = 3
-var max_mp = 10 
+var max_mp = 1000 
 var hp = max_hp setget set_hp
 var ap = max_ap setget set_ap
 var mp = max_mp setget set_mp
 var xp = 0 setget set_xp 
 var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
-var atk = 2 setget set_atk
+var atk = 100 setget set_atk
 var points = 0 setget set_points
-var weapons = [-1,-1,-1,-1]
-var inventory = []
-var equiped_item = [-1,-1] 
+var weapons = [0,1,2,3]
+var inventory = [0,1,2,3]
+var equiped_item = [0,1] 
 var relics = []
-var key = 0
+var key = 20
 var base_speed = 30
+var dash_unlocked = false
+
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")
 
@@ -62,6 +64,8 @@ func set_relic_item(value):
 	match value:
 		Global.RELICS.BOOTS_OF_SPEED:
 			base_speed = 40
+		Global.RELICS.RING_OF_DASH:
+			PlayerControll.dash_unlocked = true
 		_:
 			pass
 	relics.push_front(value)

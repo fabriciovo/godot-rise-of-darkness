@@ -22,7 +22,7 @@ var key = PlayerControll.key
 var get_item_frame = 0
 var get_item_anim = false
 var enemiesBody = []
-var dash_unlocked = false
+
 
 
 var speed = PlayerControll.base_speed
@@ -304,7 +304,7 @@ func movement():
 				shield_area.knockback_vector = velocity * 2
 			else:
 				$PlayerAnimation.stop()
-		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2 and dash_unlocked:
+		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2 and PlayerControll.dash_unlocked:
 			dash()
 		velocity = velocity.normalized() * speed
 

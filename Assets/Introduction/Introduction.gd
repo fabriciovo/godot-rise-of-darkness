@@ -13,5 +13,5 @@ func _input(_event):
 		speed = 8
 	if _event.is_action_pressed("action_3"):
 		speed = 0
-	if _event.is_action_pressed("open_panel"):
+	if _event.is_action_pressed("start"):
 		get_tree().change_scene("res://Assets/World/World_0.tscn")

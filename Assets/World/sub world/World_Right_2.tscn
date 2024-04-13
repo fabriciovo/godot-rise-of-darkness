@@ -33,7 +33,7 @@ tile_data = PoolIntArray( 0, 25, 0, 1, 25, 0, 2, 25, 0, 3, 25, 0, 4, 25, 0, 5, 2
 
 [node name="Enviroment_Entities" type="Node2D" parent="."]
 
-[node name="Chest" parent="Enviroment_Entities" instance=ExtResource( 7 )]
+[node name="Chest_Shield" parent="Enviroment_Entities" instance=ExtResource( 7 )]
 position = Vector2( 80, 32 )
 item = 5
 

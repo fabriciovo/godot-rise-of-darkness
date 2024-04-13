@@ -80,7 +80,7 @@ func _on_Bomb_pressed():
 	PlayerControll.update_weapon_slot(2,game_ui.weapon_slot_index)
 
 func _on_Staff_pressed():
-	print("pressed")
+	PlayerControll.update_weapon_slot(3,game_ui.weapon_slot_index)
 
 func _on_Shield_pressed():
-	print("pressed")
+	PlayerControll.update_weapon_slot(4,game_ui.weapon_slot_index)

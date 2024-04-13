@@ -19,7 +19,6 @@ func configure_battle_unit():
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 10
 	speed = const_speed
-	quest_key = "WOOD_MONSTER"
 
 func initialize_movement_control():
 	random_direction_timer = 0.0

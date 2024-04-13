@@ -15,7 +15,8 @@ tile_data = PoolIntArray( 0, 25, 0, 1, 25, 0, 2, 25, 0, 3, 25, 0, 4, 25, 0, 5, 2
 
 [node name="Chest_Left_3" parent="Enviroment_Entities" index="0" instance=ExtResource( 3 )]
 position = Vector2( 112, 25 )
-item = 4
+item = 1
+type = "relics"
 
 [node name="Key_Gate_Left_3" parent="Enviroment_Entities" index="1" instance=ExtResource( 4 )]
 position = Vector2( 120, 56 )
@@ -27,19 +28,14 @@ rotation = 3.14159
 target_scene = "res://Assets/World/sub world/World_Left_2.tscn"
 door_name = "Door6"
 
-[node name="Positions" type="Node2D" parent="." index="7"]
+[node name="Position2D" parent="Imortal_Entities/Positions" index="0"]
+position = Vector2( 36, 57 )
 
-[node name="Position2D" type="Position2D" parent="Positions" index="0"]
-position = Vector2( 150, 70 )
+[node name="Position2D4" parent="Imortal_Entities/Positions" index="2"]
+position = Vector2( 169, 88 )
 
-[node name="Position2D2" type="Position2D" parent="Positions" index="1"]
-position = Vector2( 44, 114 )
+[node name="Position2D5" parent="Imortal_Entities/Positions" index="3"]
+position = Vector2( 77, 71 )
 
-[node name="Position2D4" type="Position2D" parent="Positions" index="2"]
-position = Vector2( 80, 26 )
-
-[node name="Position2D5" type="Position2D" parent="Positions" index="3"]
-position = Vector2( 185, 106 )
-
-[node name="Position2D3" type="Position2D" parent="Positions" index="4"]
-position = Vector2( 29, 78 )
+[node name="Position2D3" parent="Imortal_Entities/Positions" index="4"]
+position = Vector2( 29, 97 )
