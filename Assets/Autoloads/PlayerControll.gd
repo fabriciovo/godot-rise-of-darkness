@@ -18,7 +18,7 @@ var relics = []
 var key = 20
 var base_speed = 30
 var dash_unlocked = false
-
+var neck_of_protection = false
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")
 
@@ -66,6 +66,8 @@ func set_relic_item(value):
 			base_speed = 40
 		Global.RELICS.RING_OF_DASH:
 			PlayerControll.dash_unlocked = true
+		Global.RELICS.RING_OF_DASH:
+			PlayerControll.neck_of_protection = true
 		_:
 			pass
 	relics.push_front(value)

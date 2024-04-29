@@ -56,6 +56,7 @@ func _ready():
 	shield_area_collision.disabled = true
 	actionArea.knockback_vector = Vector2.LEFT
 	$AP_Timer.start(1)
+	create_protection()
 
 func get_input():
 	if Global.stop: return
@@ -363,3 +364,7 @@ func set_item_texture(_frame,_texture_type):
 		$Get_Item_Sprite.texture = weapons_texuture
 	else:
 		$Get_Item_Sprite.texture = relics_texuture
+
+func create_protection():
+	if(PlayerControll.neck_of_protection):
+		pass
