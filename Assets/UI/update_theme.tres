@@ -1,11 +1,10 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
 
 [ext_resource path="res://Assets/UI/Fonts/PressStart2P.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/UI/Fonts/jostix.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/UI/Panel9Frame.tres" type="StyleBox" id=3]
-
-[sub_resource type="StyleBoxTexture" id=3]
-modulate_color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
+[ext_resource path="res://Assets/UI/Button9FrameHover.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/UI/Button9Frame.tres" type="StyleBox" id=5]
 
 [sub_resource type="StyleBoxTexture" id=2]
 region_rect = Rect2( -0.149315, -0.277926, 48.2767, 48.0405 )
@@ -26,7 +25,8 @@ Button/colors/font_color_focus = Color( 1, 1, 1, 1 )
 Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
 Button/colors/font_color_pressed = Color( 0.298039, 0.27451, 0.27451, 1 )
 Button/fonts/font = ExtResource( 2 )
-Button/styles/focus = SubResource( 3 )
+Button/styles/focus = ExtResource( 4 )
+Button/styles/normal = ExtResource( 5 )
 Panel/styles/panel = SubResource( 2 )
 RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0, 0, 0, 1 )

@@ -23,10 +23,7 @@ var get_item_frame = 0
 var get_item_anim = false
 var enemiesBody = []
 
-
-
 var speed = PlayerControll.base_speed
-
 var knockback = Vector2.ZERO
 
 func set_hp(value):
