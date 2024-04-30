@@ -30,7 +30,14 @@ func _on_Simple_Projectile_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
 		queue_free()
 		body.damage(damage)
+	if body.is_in_group(Global.GROUPS.SHIELD):
+		queue_free()
 
 func is_out_of_bounds():
 	var screen_size = get_viewport().size
 	return position.x < 0 or position.y < 0 or position.x > screen_size.x or position.y > screen_size.y
+
+
+func _on_Simple_Projectile_area_entered(area):
+	if area.is_in_group(Global.GROUPS.SHIELD):
+		queue_free()

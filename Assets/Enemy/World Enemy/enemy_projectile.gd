@@ -32,3 +32,5 @@ func _on_Area2D_body_entered(body):
 		body.damage(damage)
 	if body.is_in_group(Global.GROUPS.DOOR):
 		queue_free()
+	if body.is_in_group(Global.GROUPS.SHIELD):
+		queue_free()

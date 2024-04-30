@@ -247,6 +247,7 @@ extents = Vector2( 9.6, 8.95833 )
 radius = 4.0
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 1, 0 )
 z_index = 1
 script = ExtResource( 2 )
 
@@ -341,7 +342,7 @@ hframes = 7
 frame = 5
 
 [node name="Neck_Of_Protection" type="Area2D" parent="."]
-position = Vector2( -17, 0 )
+position = Vector2( -16, 1 )
 script = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="Neck_Of_Protection"]
@@ -357,3 +358,4 @@ shape = SubResource( 20 )
 [connection signal="timeout" from="AP_Timer" to="." method="_on_AP_Timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="." method="_on_Dash_Timer_timeout"]
 [connection signal="timeout" from="Invincible_Timer" to="." method="_on_Invincible_Timer_timeout"]
+[connection signal="body_entered" from="Neck_Of_Protection" to="Neck_Of_Protection" method="_on_Neck_Of_Protection_body_entered"]

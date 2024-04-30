@@ -50,7 +50,7 @@ func pick_random_direction():
 			attacking = true
 
 func move_enemy():
-	move_and_slide(direction * speed)
+	var _dir = move_and_slide(direction * speed)
 
 
 func _on_Shoot_Timer_timeout():
