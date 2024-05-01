@@ -27,9 +27,7 @@ func check_file_existence():
 		btn_load_game.visible = false
 
 func _on_Button_pressed():
-	var scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")
-	if scene_instance == OK:
-		Ui.game_start()
+	var scene_instance = get_tree().change_scene("res://Assets/Introduction/Introduction.tscn")
 
 func _on_Options_pressed():
 	Ui.open_settings()

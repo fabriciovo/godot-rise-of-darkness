@@ -21,12 +21,17 @@ font_data = ExtResource( 1 )
 [resource]
 default_font = ExtResource( 2 )
 Button/colors/font_color = Color( 0.133333, 0.121569, 0.121569, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_focus = Color( 1, 1, 1, 1 )
 Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
 Button/colors/font_color_pressed = Color( 0.298039, 0.27451, 0.27451, 1 )
+Button/constants/hseparation = 2
 Button/fonts/font = ExtResource( 2 )
+Button/styles/disabled = null
 Button/styles/focus = ExtResource( 4 )
+Button/styles/hover = null
 Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = null
 Panel/styles/panel = SubResource( 2 )
 RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0, 0, 0, 1 )

@@ -21,9 +21,9 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Text" type="RichTextLabel" parent="Text_Container"]
 margin_left = 8.0
-margin_top = 5.0
+margin_top = 191.0
 margin_right = 216.0
-margin_bottom = 719.0
+margin_bottom = 905.0
 theme = ExtResource( 1 )
 meta_underlined = false
 text = "
