@@ -486,8 +486,14 @@ text = "Upgrade Action Poins"
 
 [node name="Settings" type="Control" parent="UI_Containers"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -85.0
+margin_right = 112.0
+margin_bottom = 85.0
 
 [node name="background" type="ColorRect" parent="UI_Containers/Settings"]
 anchor_right = 1.0
@@ -495,11 +501,56 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.647059 )
 
 [node name="Sound Panel" parent="UI_Containers/Settings" instance=ExtResource( 10 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_bottom = 48.0
 
 [node name="Label" type="Label" parent="UI_Containers/Settings"]
 margin_right = 51.0
 margin_bottom = 12.0
 text = "Settings"
+
+[node name="Control" type="Control" parent="UI_Containers/Settings"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI_Containers/Settings/Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -26.0
+margin_right = 26.0
+margin_bottom = 4.0
+text = "Language List"
+
+[node name="Language_List" type="HBoxContainer" parent="UI_Containers/Settings/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.0
+margin_top = -7.5
+margin_right = 69.0
+margin_bottom = 7.5
+
+[node name="Button" type="Button" parent="UI_Containers/Settings/Control/Language_List"]
+margin_right = 67.0
+margin_bottom = 15.0
+theme = ExtResource( 11 )
+text = "SELECT_PT"
+
+[node name="Button2" type="Button" parent="UI_Containers/Settings/Control/Language_List"]
+margin_left = 71.0
+margin_right = 138.0
+margin_bottom = 15.0
+theme = ExtResource( 11 )
+text = "SELECT_EN"
 
 [node name="Inventory" parent="UI_Containers" instance=ExtResource( 12 )]
 visible = false

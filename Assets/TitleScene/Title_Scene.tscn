@@ -41,30 +41,30 @@ focus_mode = 2
 
 [node name="Start" type="Button" parent="Pause_Button_Container"]
 margin_right = 132.0
-margin_bottom = 16.0
+margin_bottom = 15.0
 rect_pivot_offset = Vector2( -175, 213 )
 theme = ExtResource( 3 )
 shortcut_in_tooltip = false
 text = "START_GAME"
 
 [node name="Options" type="Button" parent="Pause_Button_Container"]
-margin_top = 20.0
+margin_top = 19.0
 margin_right = 132.0
-margin_bottom = 36.0
+margin_bottom = 34.0
 theme = ExtResource( 3 )
 text = "OPTIONS"
 
 [node name="Load_Game" type="Button" parent="Pause_Button_Container"]
-margin_top = 40.0
+margin_top = 38.0
 margin_right = 132.0
-margin_bottom = 56.0
+margin_bottom = 53.0
 theme = ExtResource( 3 )
 text = "LOAD_GAME"
 
 [node name="Quit" type="Button" parent="Pause_Button_Container"]
-margin_top = 60.0
+margin_top = 57.0
 margin_right = 132.0
-margin_bottom = 76.0
+margin_bottom = 72.0
 theme = ExtResource( 3 )
 text = "QUIT"
 

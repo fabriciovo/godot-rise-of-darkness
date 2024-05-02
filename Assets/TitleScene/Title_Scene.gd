@@ -6,7 +6,6 @@ onready var btn_load_game = $Pause_Button_Container/Load_Game
 onready var settings_panel = $"/root/Ui/UI_Containers/Settings"
 
 func _ready():
-	TranslationServer.set_locale("pt")
 	start.set_focus_mode(Control.FOCUS_ALL)
 	start.grab_focus()
 	SoundController.play_music(SoundController.MUSIC.title)
