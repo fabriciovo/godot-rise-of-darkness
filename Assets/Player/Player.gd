@@ -8,6 +8,7 @@ onready var shield_area_sprite = $Shield_Area/Shield_Sprite
 onready var action_sprite =  $ActionArea/action
 onready var action_collision =  $ActionArea/AreaCollision
 onready var actionArea = $ActionArea
+onready var neck_of_protection = preload("res://Assets/Relics/Neck_Of_Protection.tscn")
 
 var weapons_texuture = preload("res://Sprites/Get_Weapon_Icons.png")
 var relics_texuture = preload("res://Sprites/Get_Relic_Icons.png")
@@ -364,4 +365,5 @@ func set_item_texture(_frame,_texture_type):
 
 func create_protection():
 	if(PlayerControll.neck_of_protection):
-		pass
+		var _inst = neck_of_protection.instance()
+		add_child(_inst)

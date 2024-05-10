@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Relics/Neck_Of_Protection.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/generic.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=20]
+radius = 4.0
+
+[node name="Neck_Of_Protection" type="Area2D"]
+position = Vector2( -16, 1 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.0555556, 0.0555556 )
+texture = ExtResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 20 )
+
+[connection signal="body_entered" from="." to="." method="_on_Neck_Of_Protection_body_entered"]

@@ -16,8 +16,6 @@ func _process(_delta):
 	var y = player.global_position.y + orbit_radius * sin(angle)
 	global_position = Vector2(x, y)
 
-
-
 func _on_Neck_Of_Protection_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ENEMY):
 		body.speed = (body.speed * -1) * 2

@@ -21,8 +21,9 @@ func configure_battle_unit():
 	speed = const_speed
 
 func initialize_movement_control():
-	random_direction_timer = 0.0
+	$Shoot_Timer.start(rand_range(4.0, 10.0))
 	direction = Vector2.ZERO
+	random_direction_timer = 0.0
 
 func _physics_process(_delta):
 	if battle_unit_hp <= 0: return

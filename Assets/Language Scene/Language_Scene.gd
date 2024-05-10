@@ -19,4 +19,4 @@ func _on_PT_pressed():
 	go_to_title()
 
 func go_to_title():
-	get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
+	var _scene_instance = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")

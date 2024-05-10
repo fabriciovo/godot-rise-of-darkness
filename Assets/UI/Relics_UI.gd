@@ -32,7 +32,6 @@ func _on_Ring_focus_entered():
 	if relic_list[0].icon != null:
 		text_label.bbcode_text = "Ring Text"
 	else:
-		relic_list[0].icon
 		text_label.bbcode_text = "?????"
 
 func _on_necklace_focus_entered():

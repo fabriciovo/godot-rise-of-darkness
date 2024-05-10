@@ -7,6 +7,7 @@ func _process(_delta):
 	check_entities()
 
 func check_entities():
+	print(entities.get_children().size())
 	if entities:
 		if entities.get_children().size() == 0:
 			queue_free()
