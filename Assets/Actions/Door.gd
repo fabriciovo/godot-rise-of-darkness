@@ -5,3 +5,4 @@ export(String) var door_name
 
 func _ready():
 	add_to_group(Global.GROUPS.DOOR)
+

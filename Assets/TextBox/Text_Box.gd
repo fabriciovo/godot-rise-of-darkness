@@ -16,15 +16,16 @@ var dialog
 var phrase_num = 0
 var finished = false
 var dialog_path = "res://Assets/Dialogs/"
- 
+var file = ""
 func _ready():
 	visible = false
 
 func start_dialog():
 	visible = true
-	dialog_path += dialog_name
+	file += dialog_path + dialog_name
 	timer.wait_time = textSpeed
 	dialog = getDialog()
+	print(dialog)
 	nextPhrase()
  
 func _process(_delta):
@@ -35,11 +36,12 @@ func _process(_delta):
 			label_text.visible_characters = len(label_text.text)
  
 func getDialog():
+	print(finished)
 	if finished: return
 	var f = File.new()
-	assert(f.file_exists(dialog_path), "File path does not exist")
+	assert(f.file_exists(file), "File path does not exist")
 	
-	f.open(dialog_path, File.READ)
+	f.open(file, File.READ)
 	var json = f.get_as_text()
 	
 	var output = parse_json(json)
@@ -50,9 +52,15 @@ func getDialog():
 		return []
  
 func nextPhrase():
+	print(dialog)
 	if phrase_num >= len(dialog):
 		visible = false
+		finished = false
 		can_continue = true
+		phrase_num = 0
+		dialog = []
+		dialog_name = ""
+		file = ""
 		emit_signal("on_end_dialog")
 		return
 	finished = false
