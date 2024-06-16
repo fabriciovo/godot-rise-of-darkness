@@ -134,9 +134,6 @@ margin_right = 27.0
 margin_bottom = 25.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "MP"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AP" type="Label" parent="Game_UI/Items/Stats"]
 margin_left = 32.0
@@ -162,12 +159,11 @@ margin_right = 18.0
 margin_bottom = 6.0
 text = "0"
 
-[node name="Weapons" type="Panel" parent="Game_UI/Items"]
+[node name="Weapons" type="Container" parent="Game_UI/Items"]
 margin_left = 54.0
 margin_top = 2.0
-margin_right = 154.0
+margin_right = 155.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( -65, -2 )
 
 [node name="Inventory_List" type="Control" parent="Game_UI/Items/Weapons"]
 margin_right = 88.0
@@ -207,10 +203,10 @@ margin_right = 92.0
 anchor_top = 0.735
 anchor_right = 0.996
 anchor_bottom = 0.829
-margin_left = 131.0
-margin_top = 2.04999
+margin_left = 144.0
+margin_top = 2.05
 margin_right = 0.895996
-margin_bottom = 2.06999
+margin_bottom = 2.07001
 theme = ExtResource( 5 )
 
 [node name="Level" type="Label" parent="Game_UI/Stats"]
@@ -219,7 +215,7 @@ margin_top = 2.0
 margin_right = 36.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Level 1"
+text = "LVL 1"
 
 [node name="xp" type="Label" parent="Game_UI/Stats"]
 anchor_right = 1.0
