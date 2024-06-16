@@ -109,13 +109,12 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "X"
 
 [node name="Stats" type="Panel" parent="Game_UI/Items"]
-margin_left = 161.0
+margin_left = 154.0
 margin_top = 2.0
 margin_right = 221.0
 margin_bottom = 26.0
 rect_pivot_offset = Vector2( -65, -2 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -136,9 +135,9 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "MP"
 
 [node name="AP" type="Label" parent="Game_UI/Items/Stats"]
-margin_left = 32.0
+margin_left = 36.0
 margin_top = 13.0
-margin_right = 59.0
+margin_right = 63.0
 margin_bottom = 25.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "AP"
@@ -147,15 +146,16 @@ text = "AP"
 position = Vector2( 40, 6 )
 
 [node name="key_sprite" type="Sprite" parent="Game_UI/Items/Stats/key"]
+position = Vector2( 4, 0 )
 texture = ExtResource( 3 )
 hframes = 6
 vframes = 2
 frame = 2
 
 [node name="key_label" type="Label" parent="Game_UI/Items/Stats/key"]
-margin_left = 5.0
+margin_left = 9.0
 margin_top = -6.0
-margin_right = 18.0
+margin_right = 22.0
 margin_bottom = 6.0
 text = "0"
 

@@ -6,21 +6,16 @@
 [ext_resource path="res://Assets/TextBox/Text_Box.gd" type="Script" id=4]
 
 [node name="Text_Box" type="MarginContainer"]
-anchor_left = 0.09375
-anchor_top = 0.514706
-anchor_right = 0.90625
-anchor_bottom = 0.814706
-margin_top = 20.0
-margin_bottom = 20.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -60.0
 rect_clip_content = true
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 visible = false
-margin_right = 182.0
+margin_right = 224.0
 margin_bottom = 60.0
 texture = ExtResource( 1 )
 patch_margin_left = 4
@@ -29,7 +24,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
-margin_right = 182.0
+margin_right = 224.0
 margin_bottom = 60.0
 texture = ExtResource( 2 )
 patch_margin_left = 4
@@ -38,7 +33,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 182.0
+margin_right = 224.0
 margin_bottom = 60.0
 custom_constants/margin_right = 2
 custom_constants/margin_top = 2
@@ -48,11 +43,11 @@ custom_constants/margin_bottom = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 180.0
+margin_right = 222.0
 margin_bottom = 58.0
 
 [node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_right = 178.0
+margin_right = 220.0
 margin_bottom = 19.0
 theme = ExtResource( 3 )
 text = "Name"
@@ -60,7 +55,7 @@ clip_text = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_top = 23.0
-margin_right = 178.0
+margin_right = 220.0
 margin_bottom = 56.0
 theme = ExtResource( 3 )
 text = "saddsadsa sdadsaasdasdad sa sdad"
