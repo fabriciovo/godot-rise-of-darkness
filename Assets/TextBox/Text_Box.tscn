@@ -21,7 +21,7 @@ __meta__ = {
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 visible = false
 margin_right = 182.0
-margin_bottom = 62.0
+margin_bottom = 60.0
 texture = ExtResource( 1 )
 patch_margin_left = 4
 patch_margin_top = 4
@@ -30,7 +30,7 @@ patch_margin_bottom = 4
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 margin_right = 182.0
-margin_bottom = 62.0
+margin_bottom = 60.0
 texture = ExtResource( 2 )
 patch_margin_left = 4
 patch_margin_top = 4
@@ -39,7 +39,7 @@ patch_margin_bottom = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_right = 182.0
-margin_bottom = 62.0
+margin_bottom = 60.0
 custom_constants/margin_right = 2
 custom_constants/margin_top = 2
 custom_constants/margin_left = 2
@@ -49,19 +49,19 @@ custom_constants/margin_bottom = 2
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 180.0
-margin_bottom = 60.0
+margin_bottom = 58.0
 
 [node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 178.0
-margin_bottom = 16.0
+margin_bottom = 19.0
 theme = ExtResource( 3 )
 text = "Name"
 clip_text = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 20.0
+margin_top = 23.0
 margin_right = 178.0
-margin_bottom = 58.0
+margin_bottom = 56.0
 theme = ExtResource( 3 )
 text = "saddsadsa sdadsaasdasdad sa sdad"
 autowrap = true

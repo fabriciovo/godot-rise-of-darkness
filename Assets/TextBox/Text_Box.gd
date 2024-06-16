@@ -36,7 +36,7 @@ func _process(_delta):
 			label_text.visible_characters = len(label_text.text)
  
 func getDialog():
-	print(finished)
+
 	if finished: return
 	var f = File.new()
 	assert(f.file_exists(file), "File path does not exist")
