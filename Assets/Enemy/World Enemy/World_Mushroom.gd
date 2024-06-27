@@ -19,7 +19,11 @@ func _ready():
 	speed = const_speed
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
+	if Global.stop: 
+		if $Enemy_Animation.get_current_animation() == "mushroom_start_explosion":
+			$Enemy_Animation.stop()
+		return
 	if battle_unit_hp <= 0:
 		dead = true
 	if not dead and not hit:
@@ -27,7 +31,7 @@ func _physics_process(delta):
 			generate_path()
 			navigate()
 		else: 
-			var collision = move_and_collide(direction * speed * delta)
+			var collision = move_and_collide(direction * speed * _delta)
 			if collision:
 				direction = direction.bounce(collision.normal)
 				velocity = direction

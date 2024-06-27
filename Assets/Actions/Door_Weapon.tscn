@@ -25,11 +25,5 @@ anchor_bottom = 1.0
 [node name="Text_Box" parent="CanvasLayer/Control" instance=ExtResource( 3 )]
 visible = false
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -60.0
-margin_bottom = 0.0
 
 [connection signal="on_end_dialog" from="CanvasLayer/Control/Text_Box" to="." method="_on_Text_Box_on_end_dialog"]
