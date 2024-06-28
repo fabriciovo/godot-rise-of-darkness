@@ -9,6 +9,8 @@ var velocity := Vector2.ZERO
 var chase_player = false
 var direction = Vector2(rand_range(-5, 5),rand_range(-5, 5))
 var chase_speed = 43
+var hasToStop = false
+
 func _ready():
 	ID = name
 	battle_unit_xp = 3
@@ -17,13 +19,17 @@ func _ready():
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 4
 	speed = const_speed
-	
 
 func _physics_process(_delta):
 	if Global.stop: 
 		if $Enemy_Animation.get_current_animation() == "mushroom_start_explosion":
 			$Enemy_Animation.stop()
+			hasToStop = true
 		return
+	if hasToStop:
+		print("hasToStop")
+		hasToStop = false
+		$Enemy_Animation.play()
 	if battle_unit_hp <= 0:
 		dead = true
 	if not dead and not hit:
