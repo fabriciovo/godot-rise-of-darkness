@@ -1,11 +1,6 @@
-extends World_Enemy
+extends World_Wood_Monster
 
-const PROJECTILE_PATH = "res://Assets/Enemy/World Enemy/Simple_Projectile.tscn"
-var direction = Vector3.ZERO
-
-func _ready():
-	configure_battle_unit()
-	randomize()
+var directions = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 
 func configure_battle_unit():
 	ID = name
@@ -16,16 +11,15 @@ func configure_battle_unit():
 	const_speed = 10
 	speed = const_speed
 
-
 func _on_Shoot_Timer_timeout():
 	$Shoot_Timer.start(rand_range(3.0, 10.0))
 	direction = Vector2.ZERO
 	if Global.stop: return
-	var projectile_scene = preload(PROJECTILE_PATH)
-	for i in range(3):
+
+	for i in range(4):
 		var projectile = projectile_scene.instance()
 		
-		projectile.direction = last_direction
+		projectile.direction = directions[i]
 		projectile.position = position
 		projectile.damage = battle_unit_damage + 1
 		

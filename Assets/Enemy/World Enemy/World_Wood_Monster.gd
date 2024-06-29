@@ -1,4 +1,4 @@
-extends World_Enemy
+class_name World_Wood_Monster extends World_Enemy
 
 const CHANGE_DIRECTION_INTERVAL = 1.0
 const PROJECTILE_PATH = "res://Assets/Enemy/World Enemy/Simple_Projectile.tscn"
@@ -7,6 +7,8 @@ var random_direction_timer = 0.0
 var direction = Vector2.RIGHT
 var last_direction = Vector2.ZERO
 var attacking = false
+
+var projectile_scene = preload(PROJECTILE_PATH)
 
 func _ready():
 	configure_battle_unit()
@@ -58,7 +60,6 @@ func move_enemy():
 func _on_Shoot_Timer_timeout():
 	$Shoot_Timer.start(rand_range(3.0, 10.0))
 	if Global.stop: return
-	var projectile_scene = preload(PROJECTILE_PATH)
 	var projectile = projectile_scene.instance()
 	
 	last_direction = direction
