@@ -7,9 +7,11 @@ var random_direction_timer = 0.0
 var direction = Vector2.RIGHT
 var last_direction = Vector2.ZERO
 var attacking = false
+
 func _ready():
 	configure_battle_unit()
 	initialize_movement_control()
+	randomize()
 
 func configure_battle_unit():
 	ID = name
@@ -21,9 +23,8 @@ func configure_battle_unit():
 	speed = const_speed
 
 func initialize_movement_control():
-	$Shoot_Timer.start(rand_range(4.0, 10.0))
-	direction = Vector2.ZERO
-	random_direction_timer = 0.0
+	$Shoot_Timer.start(rand_range(3.0, 10.0))
+	pick_random_direction()
 
 func _physics_process(_delta):
 	if battle_unit_hp <= 0: return
@@ -38,7 +39,7 @@ func update_random_direction_timer(_delta):
 
 func pick_random_direction():
 	if attacking: return
-	match randi() % 5:
+	match randi() % 4:
 		0:
 			direction = Vector2.UP
 		1:
@@ -55,7 +56,7 @@ func move_enemy():
 
 
 func _on_Shoot_Timer_timeout():
-	$Shoot_Timer.start(rand_range(4.0, 10.0))
+	$Shoot_Timer.start(rand_range(3.0, 10.0))
 	if Global.stop: return
 	var projectile_scene = preload(PROJECTILE_PATH)
 	var projectile = projectile_scene.instance()
