@@ -22,13 +22,11 @@ func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
 	Enable()
 
-
 func _process(_delta):
 	if(!Global.stop):
 		set_physics_process(true)
 	else:
 		set_physics_process(false)
-
 
 func _on_Timer_timeout():
 	hit = false
