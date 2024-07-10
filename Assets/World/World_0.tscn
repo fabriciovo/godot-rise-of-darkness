@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=1]
 [ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets/Enviroment/Key_Gate_Single_Gate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Shaders/Transition.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Actions/Door_Weapon.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Bear.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -79,12 +78,3 @@ rotation = 1.5708
 [node name="Door_Weapon2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 206, 97 )
 rotation = 1.5708
-
-[node name="World_Bear" parent="." instance=ExtResource( 10 )]
-position = Vector2( 70, 29 )
-
-[node name="World_Bear2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 49, 77 )
-
-[node name="World_Bear3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 157, 87 )

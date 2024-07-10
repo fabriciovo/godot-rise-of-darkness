@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/wanny_npc.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Npc/Npc.gd" type="Script" id=2]
+[ext_resource path="res://Assets/TextBox/Text_Box.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 26.0
+
+[node name="Npc" type="Node2D"]
+position = Vector2( 20, 1 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 4
+vframes = 5
+frame = 4
+
+[node name="Input_Area" type="Area2D" parent="."]
+
+[node name="Collision_Area" type="CollisionShape2D" parent="Input_Area"]
+shape = SubResource( 1 )
+
+[node name="Text_Box_Layer" type="CanvasLayer" parent="."]
+
+[node name="Text_Box" parent="Text_Box_Layer" instance=ExtResource( 3 )]
+
+[connection signal="body_entered" from="Input_Area" to="." method="_on_Input_Area_body_entered"]
+[connection signal="body_exited" from="Input_Area" to="." method="_on_Input_Area_body_exited"]
+[connection signal="on_end_dialog" from="Text_Box_Layer/Text_Box" to="." method="_on_Text_Box_on_end_dialog"]
