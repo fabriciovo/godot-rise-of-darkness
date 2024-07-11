@@ -2,7 +2,6 @@ extends Node2D
 
 var nearPlayer = false
 
-
 func _input(_event):
 	if not nearPlayer: return
 	if (_event.is_action_pressed("action_3") or _event.is_action_pressed("action_1") or _event.is_action_pressed("action_2")) and nearPlayer and not Global.stop:
