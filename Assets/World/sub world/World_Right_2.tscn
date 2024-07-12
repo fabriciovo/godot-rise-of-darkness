@@ -7,8 +7,9 @@
 [ext_resource path="res://Assets/Enviroment/Box.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enviroment/The Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Phantom.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"

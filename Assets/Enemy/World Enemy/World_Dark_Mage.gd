@@ -1,4 +1,4 @@
-extends Node2D
+class_name Dark_Mage extends Node2D
 
 export(NodePath) onready var point
 
@@ -13,6 +13,7 @@ var battle_unit_max_hp = 50
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
 var teleport_pos = Vector2.ZERO
+var has_soul = false
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
