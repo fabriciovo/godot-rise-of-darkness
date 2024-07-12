@@ -43,9 +43,14 @@ func queue_enviroment():
 				env_entity.queue_free()
 
 func queue_entities():
-	if not get_node("Entities"): return
-	for entity in get_node("Entities").get_children():
-		for id in Global.dead_enemies.size():
-			if entity.ID == Global.dead_enemies[id]:
-				entity.queue_free()
+	if not has_node("Entities"): return
+	var entities_node = get_node("Entities")
+	var entities = entities_node.get_children()
+	for entity in entities:
+		for enemy in Global.dead_enemies:
+			if typeof(enemy) == TYPE_DICTIONARY:
+				if entity.ID == enemy["id"]:
+					if enemy["soul"]:
+						entity.create_soul()
+					entity.queue_free()
 

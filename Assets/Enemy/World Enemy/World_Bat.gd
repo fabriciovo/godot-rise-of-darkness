@@ -13,7 +13,7 @@ func _ready():
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 10
 	speed = const_speed
-	quest_key = "BAT"
+	has_soul = true
 
 
 func _physics_process(delta):

@@ -24,8 +24,6 @@ func damage(_knockback_value, _damage_value):
 	$Enemy_Animation.play("damage_anim")
 	yield($Enemy_Animation, "animation_finished")
 	if battle_unit_hp <= 0:
-		if quest_key != "":
-			Global.QUESTS[quest_key].Progress += 1
 		Destroy()
 	else:
 		timer.start(2)
@@ -36,7 +34,7 @@ func _on_DetectArea_body_entered(body):
 		wake_up()
 
 func take_damage(_damage_value):
-	var text = damageText.instance()
+	var text = damage_text.instance()
 	text.set_text(str(_damage_value))
 	add_child(text)
 	battle_unit_hp -= _damage_value

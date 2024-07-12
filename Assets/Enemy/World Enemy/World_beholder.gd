@@ -34,7 +34,7 @@ func damage(knockbackValue, damageValue):
 	if !eye:
 		damageValue = 0
 	knockback = knockbackValue
-	var text = damageText.instance()
+	var text = damage_text.instance()
 	text.set_text(str(damageValue))
 	add_child(text)
 	hit = true

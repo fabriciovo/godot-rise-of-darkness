@@ -3,7 +3,7 @@ extends Node2D
 export(NodePath) onready var point
 
 var smoke = preload("res://Assets/Animations/smoke.tscn")
-var damageText = preload("res://Assets/UI/FloatText.tscn")
+var damage_text = preload("res://Assets/UI/FloatText.tscn")
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var points = []
 var ID = name
@@ -29,12 +29,12 @@ func Destroy():
 	add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
-	Global.dead_enemies.push_front(ID)
+	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	queue_free()
 
 func damage(damageValue):
 	SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
-	var text = damageText.instance()
+	var text = damage_text.instance()
 	text.set_text(str(damageValue))
 	add_child(text)
 	battle_unit_hp -= damageValue

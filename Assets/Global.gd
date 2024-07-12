@@ -66,23 +66,16 @@ const RELICS = {
 	BOOTS_OF_SPEED = 0,
 	RING_OF_DASH = 1,
 	NECKLACE_OF_PROTECTION = 2, 
+	RING_OF_SOULS = 3,
 }
 
 var QUESTS = {
 	"BAT": {
-		"Title": "Kill Bats",
+		"Title": "Collect Bat souls",
 		"Description": "",
 		"Reward": "Reward 50 XP",
 		"Progress": 0,
 		"Goal": 10,
-		"Unlocked": false
-	},
-	"Slimes": {
-		"Title": "Kill Slimes",
-		"Description": "",
-		"Reward": "Reward 100 XP",
-		"Progress": 0,
-		"Goal": 5,
 		"Unlocked": false
 	},
 }

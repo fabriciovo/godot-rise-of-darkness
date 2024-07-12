@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Npc/Npc.tscn" type="PackedScene" id=1]
+
+[node name="Npc_Wanny" instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
+dialog_name = "you_need_a_weapon.json"

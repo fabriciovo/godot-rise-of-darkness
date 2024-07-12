@@ -10,13 +10,16 @@ var battle_unit_damage = 0
 var battle_unit_hp = battle_unit_max_hp
 
 var smoke = preload("res://Assets/Animations/smoke.tscn")
-var damageText = preload("res://Assets/UI/FloatText.tscn")
+var damage_text = preload("res://Assets/UI/FloatText.tscn")
+var soul = preload("res://Assets/Enviroment/Soul.tscn")
 var knockback = Vector2.ZERO
 var hits = 1
 var hit = false
 var speed = 10
 var const_speed = 0
 var quest_key = ""
+var has_soul = false
+var has_soul_collected = false
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
@@ -33,7 +36,7 @@ func _on_Timer_timeout():
 	Enable()
 
 func Destroy():
-	Global.dead_enemies.push_front(ID)
+	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	PlayerControll.set_xp(battle_unit_xp)
 	Disable()
 	var temp_smoke = smoke.instance()
@@ -45,7 +48,7 @@ func Destroy():
 func damage(_knockbackValue, _damageValue):
 		SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
 		knockback = _knockbackValue
-		var text = damageText.instance()
+		var text = damage_text.instance()
 		text.set_text(str(_damageValue))
 		add_child(text)
 		hit = true
@@ -54,8 +57,6 @@ func damage(_knockbackValue, _damageValue):
 		$Enemy_Animation.play("damage_anim")
 		yield($Enemy_Animation, "animation_finished")
 		if battle_unit_hp <= 0:
-			if quest_key != "":
-				Global.QUESTS[quest_key].Progress += 1
 			Destroy()
 		else:
 			timer.start(1)
@@ -87,3 +88,10 @@ func Disable():
 func Enable():
 	speed = const_speed
 	set_physics_process(true);
+
+
+func create_soul():
+	var temp_soul = soul.instance()
+	temp_soul.ID = ID
+	temp_soul.global_position = global_position
+	get_parent().add_child(temp_soul)

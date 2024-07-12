@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 10
+var max_hp = 1000
 var max_ap = 3
 var max_mp = 5 
 var hp = max_hp setget set_hp
@@ -13,9 +13,9 @@ var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
-var equiped_item = [-1,-1] 
+var equiped_item = [0,-1] 
 var relics = []
-var key = 0
+var key = 200
 var base_speed = 30
 var dash_unlocked = false
 var neck_of_protection = false
@@ -66,7 +66,7 @@ func set_relic_item(value):
 			base_speed = 40
 		Global.RELICS.RING_OF_DASH:
 			PlayerControll.dash_unlocked = true
-		Global.RELICS.RING_OF_DASH:
+		Global.RELICS.NECKLACE_OF_PROTECTION:
 			PlayerControll.neck_of_protection = true
 		_:
 			pass

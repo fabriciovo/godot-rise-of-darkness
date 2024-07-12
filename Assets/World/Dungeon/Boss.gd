@@ -1,4 +1,4 @@
-extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
+class_name Boss extends World_Enemy
 
 var direction = Vector2(-20, 20)
 var velocity = Vector2(20,20)

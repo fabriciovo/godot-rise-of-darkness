@@ -3,7 +3,7 @@ onready var player = get_tree().current_scene.get_node("Player")
 onready var positions = $Positions.get_children()
 
 var smoke = preload("res://Assets/Animations/smoke.tscn")
-var damageText = preload("res://Assets/UI/FloatText.tscn")
+var damage_text = preload("res://Assets/UI/FloatText.tscn")
 
 var ID = name
 
@@ -18,6 +18,7 @@ var battle_unit_xp = 100
 var battle_unit_max_hp = 50
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
+var has_soul = false
 
 func _init():
 	if Global.player_movements <= 5:
@@ -75,7 +76,7 @@ func Destroy():
 	add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
-	Global.dead_enemies.push_front(ID)
+	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	queue_free()
 
 
@@ -94,7 +95,7 @@ func _on_Area2D_area_entered(area):
 
 func damage(damageValue):
 		SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
-		var text = damageText.instance()
+		var text = damage_text.instance()
 		text.set_text(str(damageValue))
 		add_child(text)
 		battle_unit_hp -= damageValue

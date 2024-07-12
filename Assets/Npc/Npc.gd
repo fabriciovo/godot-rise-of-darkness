@@ -1,6 +1,7 @@
 extends Node2D
 
 var nearPlayer = false
+export(String) var dialog_name
 
 func _input(_event):
 	if not nearPlayer: return
@@ -18,7 +19,7 @@ func _on_Input_Area_body_exited(body):
 
 func trigger_dialog_box():
 	Global.stop = true
-	$Text_Box_Layer/Text_Box.dialog_name = "you_need_a_weapon.json"
+	$Text_Box_Layer/Text_Box.dialog_name = dialog_name
 	$Text_Box_Layer/Text_Box.start_dialog()
 
 
