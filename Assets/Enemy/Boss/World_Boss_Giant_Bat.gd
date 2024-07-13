@@ -20,10 +20,6 @@ var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
 var has_soul = false
 
-func _init():
-	if Global.player_movements <= 5:
-		queue_free()
-
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
 	find_new_position()

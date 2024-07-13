@@ -1,7 +1,7 @@
 extends Node
 var save_dir = "user://"
 var door_name = null
-var last_enemy = ""
+
 var stop = false
 var dead_enemies = []
 var open_chests = []
@@ -24,18 +24,6 @@ var chest_bomb = false
 var in_game = false
 var execute_transition_animation = true
 var trigger_tutorial_animation = false
-
-var player_movements = 6
-
-var BOSS_BAT_STATES = {
-	NORMAL_BEHAVIOR = true,
-	GET_ITEM_WITHOUT_FIGHT = false,
-	ANGRY_DIALOG = false,
-	CHASING_PLAYER = false,
-	DEAD = false,
-	HERO_GET_RING_BEFORE_TUTORIAL = false,
-	HERO_RING = 3
-}
 
 const GROUPS = {
 	PLAYER = "PLAYER",
@@ -80,18 +68,66 @@ var QUESTS = {
 	},
 }
 
-var world_data = {
-	dead_enemies: dead_enemies,
-}
-
-func global_data():
+func get_world_data():
 	var data = {
 		"dead_enemies": dead_enemies,
 		"open_chests": open_chests,
 		"dead_objects": dead_objects,
 		"walls_objects": walls_objects,
+		"key_gate": key_gate,
+		"skull_altar": skull_altar,
+		"cutscene": cutscene,
+		"player_last_position": player_last_position,
+		"player_last_scene": player_last_scene,
+		"altar_hit": altar_hit,
+		"boss_gate": boss_gate,
+		"chest_sword": chest_sword,
+		"chest_heal": chest_heal,
+		"chest_bow": chest_bow,
+		"chest_bomb": chest_bomb,
+		"in_game": in_game,
+		"execute_transition_animation": execute_transition_animation,
+		"trigger_tutorial_animation": trigger_tutorial_animation,
 	}
 	return data
+
+func set_world_data(data):
+	if data.has("dead_enemies"):
+		dead_enemies = data["dead_enemies"]
+	if data.has("open_chests"):
+		open_chests = data["open_chests"]
+	if data.has("dead_objects"):
+		dead_objects = data["dead_objects"]
+	if data.has("walls_objects"):
+		walls_objects = data["walls_objects"]
+	if data.has("key_gate"):
+		key_gate = data["key_gate"]
+	if data.has("skull_altar"):
+		skull_altar = data["skull_altar"]
+	if data.has("cutscene"):
+		cutscene = data["cutscene"]
+	if data.has("player_last_position"):
+		player_last_position = data["player_last_position"]
+	if data.has("player_last_scene"):
+		player_last_scene = data["player_last_scene"]
+	if data.has("altar_hit"):
+		altar_hit = data["altar_hit"]
+	if data.has("boss_gate"):
+		boss_gate = data["boss_gate"]
+	if data.has("chest_sword"):
+		chest_sword = data["chest_sword"]
+	if data.has("chest_heal"):
+		chest_heal = data["chest_heal"]
+	if data.has("chest_bow"):
+		chest_bow = data["chest_bow"]
+	if data.has("chest_bomb"):
+		chest_bomb = data["chest_bomb"]
+	if data.has("in_game"):
+		in_game = data["in_game"]
+	if data.has("execute_transition_animation"):
+		execute_transition_animation = data["execute_transition_animation"]
+	if data.has("trigger_tutorial_animation"):
+		trigger_tutorial_animation = data["trigger_tutorial_animation"]
 
 func saveJSONData(file_name, data):
 	var file_path = save_dir + file_name + ".json"
@@ -125,3 +161,10 @@ func loadJSONData(file_name):
 		printerr("File does not exist:", file_name)
 		var _change_scene = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn") 
 	return null
+
+func save_world_data():
+	saveJSONData("world_data", get_world_data())
+
+func load_world_data():
+	var data = loadJSONData("world_data")
+	set_world_data(data)

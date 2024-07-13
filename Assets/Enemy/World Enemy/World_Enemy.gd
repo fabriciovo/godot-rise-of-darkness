@@ -38,6 +38,8 @@ func _on_Timer_timeout():
 func Destroy():
 	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	PlayerControll.set_xp(battle_unit_xp)
+	if PlayerControll.ring_of_souls:
+		create_soul()
 	Disable()
 	var temp_smoke = smoke.instance()
 	add_child(temp_smoke)

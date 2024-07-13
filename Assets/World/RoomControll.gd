@@ -3,6 +3,7 @@ class_name Room_Controll extends Node2D
 func _ready():
 	Global.in_game = true
 	Global.saveJSONData("player_data",PlayerControll.player_data())
+	Global.save_world_data()
 	queue_entities()
 	queue_enviroment()
 	var scene_name = get_tree().current_scene.name
