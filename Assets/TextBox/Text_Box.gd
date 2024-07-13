@@ -25,7 +25,6 @@ func start_dialog():
 	file += dialog_path + dialog_name
 	timer.wait_time = textSpeed
 	dialog = getDialog()
-	print(dialog)
 	nextPhrase()
  
 func _process(_delta):
@@ -52,7 +51,6 @@ func getDialog():
 		return []
  
 func nextPhrase():
-	print(dialog)
 	if phrase_num >= len(dialog):
 		visible = false
 		finished = false

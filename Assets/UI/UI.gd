@@ -136,11 +136,9 @@ func _on_Inventory_pressed():
 	inventory_panel.visible = true
 	inventory_panel.set_weapons()
 
-
 func _on_Relics_pressed():
 	relics_container.visible = true
 	relics_container.set_relics()
-
 
 func _on_Quests_pressed():
 	pass # Replace with function body.can_continue

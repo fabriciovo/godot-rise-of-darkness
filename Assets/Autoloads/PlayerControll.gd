@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 1000
+var max_hp = 10
 var max_ap = 3
 var max_mp = 5 
 var hp = max_hp setget set_hp
@@ -13,9 +13,9 @@ var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
-var equiped_item = [0,-1] 
+var equiped_item = [-1,-1] 
 var relics = []
-var key = 200
+var key = 0
 var base_speed = 30
 var dash_unlocked = false
 var neck_of_protection = false
@@ -56,11 +56,14 @@ func set_mp(value):
 	mp = min(value, max_mp)
 
 func set_inventory_item(value):
+	print(value)
 	inventory.push_front(value)
+	print(inventory)
 	for i in weapons.size():
 		if weapons[i] == -1:
 			set_weapon(value)
 			return
+
 
 func set_relic_item(value):
 	match value:
@@ -139,20 +142,50 @@ func player_data():
 		"key": key,
 		"relics": relics,
 	}
+	print(data["inventory"])
 	return data
 
 func load_player_data(data):
-	max_hp = data["max_hp"]
-	max_ap = data["max_ap"]
-	hp = data["hp"] 
-	ap = data["ap"]
-	mp = data["mp"]
-	xp = data["xp"]
-	xp_to_level_up = data["xp_to_level_up"]
-	atk = data["atk"]
-	points = data["points"]
-	key = data["key"]
-	weapons = data["weapons"]
-	inventory = data["inventory"]
-	relics = data["relics"]
-	base_speed = data["base_speed"]
+	if data.has("max_hp"):
+		max_hp = data["max_hp"]
+	if data.has("max_ap"):
+		max_ap = data["max_ap"]
+	if data.has("hp"):
+		hp = data["hp"]
+	if data.has("ap"):
+		ap = data["ap"]
+	if data.has("mp"):
+		mp = data["mp"]
+	if data.has("xp"):
+		xp = data["xp"]
+	if data.has("xp_to_level_up"):
+		xp_to_level_up = data["xp_to_level_up"]
+	if data.has("atk"):
+		atk = data["atk"]
+	if data.has("points"):
+		points = data["points"]
+	if data.has("key"):
+		key = data["key"]
+	if data.has("weapons"):
+		for weapon in data["weapons"]:
+			set_weapon(weapon)
+	if data.has("inventory"):
+		for item in data["inventory"]:
+			set_inventory_item(item)
+	if data.has("relics"):
+		for relic in data["relics"]:
+			set_relic_item(relic)
+	if data.has("base_speed"):
+		base_speed = data["base_speed"]
+	if data.has("equiped_item"):
+		equiped_item = data["equiped_item"]
+		set_equiped_item(equiped_item[0], 0)
+		set_equiped_item(equiped_item[1], 1)
+	if data.has("dash_unlocked"):
+		dash_unlocked = data["dash_unlocked"]
+	if data.has("neck_of_protection"):
+		neck_of_protection = data["neck_of_protection"]
+	if data.has("ring_of_souls"):
+		ring_of_souls = data["ring_of_souls"]
+	if data.has("armor_of_light"):
+		armor_of_light = data["armor_of_light"]

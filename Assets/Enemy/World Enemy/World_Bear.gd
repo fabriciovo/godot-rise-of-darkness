@@ -77,7 +77,6 @@ func _on_Rush_Timer_timeout():
 	speed = 200
 
 func on_wall_hit():
-	print("on wall hit")
 	wall_hit = true
 	var offest = direction_offset * 8
 	var jump = jump_tween.interpolate_property(

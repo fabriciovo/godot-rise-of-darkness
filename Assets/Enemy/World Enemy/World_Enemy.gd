@@ -91,7 +91,6 @@ func Enable():
 	speed = const_speed
 	set_physics_process(true);
 
-
 func create_soul():
 	var temp_soul = soul.instance()
 	temp_soul.ID = ID
