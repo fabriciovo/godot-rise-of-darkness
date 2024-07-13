@@ -2,6 +2,8 @@ extends CanvasLayer
 
 onready var transition = $Fill
 onready var animation = $Fill/Transition_Animator
+onready var player_anim = get_tree().current_scene.get_node("Player").get_node("PlayerAnimation")
+
 
 export (int, "Pixels", "Spot Player", "Spot Center","Slah V", "Slash H") var transition_type
 export (int, "Fade In", "Fade Out", "None") var execute
@@ -9,6 +11,8 @@ var duration: float  = 0.2
 
 func _ready():
 	if Global.execute_transition_animation == false: 
+		print(player_anim)
+		player_anim.play("intro_anim")
 		Global.stop = false
 		queue_free()
 	elif execute == 0:

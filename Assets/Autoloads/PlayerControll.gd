@@ -19,7 +19,7 @@ var key = 200
 var base_speed = 30
 var dash_unlocked = false
 var neck_of_protection = false
-var ring_of_souls = false
+var ring_of_souls = true
 var armor_of_light = false
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")

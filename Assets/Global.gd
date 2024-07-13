@@ -80,6 +80,10 @@ var QUESTS = {
 	},
 }
 
+var world_data = {
+	dead_enemies: dead_enemies,
+}
+
 func global_data():
 	var data = {
 		"dead_enemies": dead_enemies,
