@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Chest.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "Dark_Mage",
 "language": "GDScript",
 "path": "res://Assets/Enemy/World Enemy/World_Dark_Mage.gd"

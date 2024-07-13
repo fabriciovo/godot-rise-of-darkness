@@ -10,9 +10,9 @@ export (int, "Fade In", "Fade Out", "None") var execute
 var duration: float  = 0.2
 
 func _ready():
-	if Global.execute_transition_animation == false: 
-		print(player_anim)
+	if Global.execute_transition_animation:
 		player_anim.play("intro_anim")
+	if Global.execute_transition_animation == false: 
 		Global.stop = false
 		queue_free()
 	elif execute == 0:

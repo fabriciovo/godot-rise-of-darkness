@@ -16,7 +16,7 @@ script = ExtResource( 5 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 96, 119 )
+position = Vector2( 95, 128 )
 
 [node name="map_0" parent="." instance=ExtResource( 4 )]
 collision_mask = 3
