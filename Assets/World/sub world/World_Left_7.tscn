@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=2]
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Enemy/World Enemy/Npc_Wanny.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Npc/Npc_Wanny.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"

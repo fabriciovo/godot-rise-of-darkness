@@ -13,7 +13,7 @@ var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
-var equiped_item = [-1,-1] 
+var equiped_item = [0,-1] 
 var relics = []
 var key = 0
 var base_speed = 30
@@ -56,9 +56,7 @@ func set_mp(value):
 	mp = min(value, max_mp)
 
 func set_inventory_item(value):
-	print(value)
 	inventory.push_front(value)
-	print(inventory)
 	for i in weapons.size():
 		if weapons[i] == -1:
 			set_weapon(value)
@@ -142,7 +140,6 @@ func player_data():
 		"key": key,
 		"relics": relics,
 	}
-	print(data["inventory"])
 	return data
 
 func load_player_data(data):

@@ -10,7 +10,6 @@
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=10]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
 length = 0.5

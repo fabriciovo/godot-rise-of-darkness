@@ -33,15 +33,11 @@ func _on_Options_pressed():
 
 func _on_Load_Game_pressed():
 	var scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")
+	Global.load_world_data()
 	if scene_instance == OK:
-		yield(get_tree(), "idle_frame")  # Wait for the scene to change
-		var player_data = yield(Global.loadJSONData("player_data"), "completed")
-		if player_data:
-			PlayerControll.load_player_data(player_data)
-			yield(Global.load_world_data(), "completed")
-			Ui.game_start()
-		else:
-			printerr("Failed to load player data")
+		Ui.game_start()
+
+
 
 func _on_Quit_pressed():
 	get_tree().quit()

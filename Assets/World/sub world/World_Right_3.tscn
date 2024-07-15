@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=4]
 [ext_resource path="res://Assets/Enviroment/The Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Bear.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
@@ -36,20 +36,9 @@ item = 4
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="World_Wood_Monster" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 156, 82 )
-
-[node name="World_Wood_Monster5" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 112, 96 )
-
-[node name="World_Wood_Monster3" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 56, 117 )
-
-[node name="World_Wood_Monster2" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 112, 54 )
-
-[node name="World_Wood_Monster4" parent="Entities" instance=ExtResource( 7 )]
-position = Vector2( 64, 48 )
+[node name="World_Bear2" parent="Entities" instance=ExtResource( 7 )]
+position = Vector2( 81, 64 )
+collision_mask = 11
 
 [node name="The Door" parent="." instance=ExtResource( 5 )]
 position = Vector2( 186, 54 )
