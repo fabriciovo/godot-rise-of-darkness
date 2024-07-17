@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Bear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=4]
@@ -74,3 +75,6 @@ rotation = 1.5708
 [node name="Door_Weapon3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 96, 129 )
 rotation = 3.14159
+
+[node name="World_Bear" parent="." instance=ExtResource( 1 )]
+position = Vector2( 52, 79 )

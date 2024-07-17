@@ -319,42 +319,42 @@ focus_mode = 2
 
 [node name="Settings" type="Button" parent="Pause_Options/Pause_Button_Container"]
 margin_right = 92.0
-margin_bottom = 12.0
+margin_bottom = 15.0
 theme = ExtResource( 11 )
 text = "Settings"
 
 [node name="Player" type="Button" parent="Pause_Options/Pause_Button_Container"]
-margin_top = 16.0
+margin_top = 19.0
 margin_right = 92.0
-margin_bottom = 28.0
+margin_bottom = 34.0
 theme = ExtResource( 11 )
 text = "Player Info"
 
 [node name="Inventory" type="Button" parent="Pause_Options/Pause_Button_Container"]
-margin_top = 32.0
+margin_top = 38.0
 margin_right = 92.0
-margin_bottom = 44.0
+margin_bottom = 53.0
 theme = ExtResource( 11 )
 text = "Inventory"
 
 [node name="Relics" type="Button" parent="Pause_Options/Pause_Button_Container"]
-margin_top = 48.0
+margin_top = 57.0
 margin_right = 92.0
-margin_bottom = 60.0
+margin_bottom = 72.0
 theme = ExtResource( 11 )
 text = "Relics"
 
 [node name="Quests" type="Button" parent="Pause_Options/Pause_Button_Container"]
-margin_top = 64.0
+margin_top = 76.0
 margin_right = 92.0
-margin_bottom = 76.0
+margin_bottom = 91.0
 theme = ExtResource( 11 )
 text = "Quests"
 
 [node name="Book" type="Button" parent="Pause_Options/Pause_Button_Container"]
-margin_top = 80.0
+margin_top = 95.0
 margin_right = 92.0
-margin_bottom = 92.0
+margin_bottom = 110.0
 theme = ExtResource( 11 )
 text = "Book"
 

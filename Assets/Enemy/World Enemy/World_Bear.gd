@@ -95,7 +95,12 @@ func on_wall_hit():
 	bear_anim.play("bear_wall_hit")
 	bear_anim.playback_speed = 0.4
 	wall_hit = true
-	var offset = direction_offset * 20
+	var offset
+	if knockback == Vector2.ZERO:
+		offset = direction_offset * 20
+	else:
+		offset = knockback * 1
+	print(knockback)
 	var remaining_time = 1
 	while remaining_time > 0:
 		var delta = get_process_delta_time()
@@ -107,9 +112,21 @@ func on_wall_hit():
 	attacking = false
 	speed = 5
 
-func _on_Area_body_entered(body):
+func _on_Area_body_entered(_body):
 	if attacking and not wall_hit:
 		on_wall_hit()
 
+func _on_Area_area_entered(area):
+	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
+		damage(knockback,  PlayerControll.atk)
+	if area.is_in_group(Global.GROUPS.SHIELD) and not hit and not wall_hit and attacking:
+		knockback = area.knockback_vector * 10
+		on_wall_hit()
+	else:
+		pass
+
+
 func _on_Timer_timeout():
 	hit = false
+
+
