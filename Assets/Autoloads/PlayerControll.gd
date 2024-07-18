@@ -13,13 +13,13 @@ var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
-var equiped_item = [0,1] 
+var equiped_item = [-1,-1] 
 var relics = []
 var key = 20
 var base_speed = 30
 var dash_unlocked = false
 var neck_of_protection = false
-var ring_of_souls = true
+var ring_of_souls = false
 var armor_of_light = false
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")

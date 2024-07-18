@@ -30,6 +30,9 @@ func initialize_movement_control():
 	pick_random_direction()
 
 func _physics_process(_delta):
+	if hit: 
+		attacking = false
+		return
 	if battle_unit_hp <= 0: return
 	update_random_direction_timer(_delta)
 	move_enemy()
@@ -41,7 +44,7 @@ func update_random_direction_timer(_delta):
 		pick_random_direction()
 
 func pick_random_direction():
-	if attacking or hit: return
+	if attacking: return
 	match randi() % 4:
 		0:
 			direction = Vector2.UP
