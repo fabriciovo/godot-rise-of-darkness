@@ -91,11 +91,13 @@ position = Vector2( -0.25, 1 )
 anims/RESET = SubResource( 1 )
 anims/damage_anim = ExtResource( 3 )
 anims/enemy_death = ExtResource( 4 )
-anims/wood_down = SubResource( 2 )
-anims/wood_left = SubResource( 3 )
-anims/wood_up = SubResource( 4 )
 
 [node name="Shoot_Timer" type="Timer" parent="." index="5"]
 autostart = true
+
+[node name="Wood_Enemy_Animation" type="AnimationPlayer" parent="." index="6"]
+anims/wood_down = SubResource( 2 )
+anims/wood_left = SubResource( 3 )
+anims/wood_up = SubResource( 4 )
 
 [connection signal="timeout" from="Shoot_Timer" to="." method="_on_Shoot_Timer_timeout"]

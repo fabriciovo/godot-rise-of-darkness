@@ -37,4 +37,4 @@ target_scene = "res://Assets/World/sub world/World_Right_3.tscn"
 door_name = "Door_World_Right_4"
 
 [node name="Npc_Ronan" parent="." instance=ExtResource( 5 )]
-position = Vector2( 70, 53 )
+position = Vector2( 69, 44 )

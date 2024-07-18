@@ -36,8 +36,16 @@ item = 4
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="World_Bear2" parent="Entities" instance=ExtResource( 7 )]
+[node name="World_Bear_wr0" parent="Entities" instance=ExtResource( 7 )]
 position = Vector2( 87, 115 )
+collision_mask = 11
+
+[node name="World_Bear_wr1" parent="Entities" instance=ExtResource( 7 )]
+position = Vector2( 118, 48 )
+collision_mask = 11
+
+[node name="World_Bear_wr2" parent="Entities" instance=ExtResource( 7 )]
+position = Vector2( 56, 56 )
 collision_mask = 11
 
 [node name="The Door" parent="." instance=ExtResource( 5 )]

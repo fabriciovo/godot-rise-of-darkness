@@ -1,5 +1,7 @@
 class_name World_Wood_Monster extends World_Enemy
 
+onready var wood_enemy_anim = $Wood_Enemy_Animation
+
 const CHANGE_DIRECTION_INTERVAL = 1.0
 const PROJECTILE_PATH = "res://Assets/Enemy/World Enemy/Simple_Projectile.tscn"
 
@@ -48,20 +50,20 @@ func pick_random_direction():
 	match randi() % 4:
 		0:
 			direction = Vector2.UP
-			$Enemy_Animation.play("wood_up")
+			wood_enemy_anim.play("wood_up")
 			dir = 2
 		1:
 			direction = Vector2.DOWN
-			$Enemy_Animation.play("wood_down")
+			wood_enemy_anim.play("wood_down")
 			dir = 0
 		2:
 			direction = Vector2.LEFT
-			$Enemy_Animation.play("wood_left")
+			wood_enemy_anim.play("wood_left")
 			$Sprite.flip_h = true
 			dir = 3
 		3:
 			direction = Vector2.RIGHT
-			$Enemy_Animation.play("wood_left")
+			wood_enemy_anim.play("wood_left")
 			$Sprite.flip_h = false
 			dir = 1
 			
@@ -75,7 +77,7 @@ func move_enemy():
 func _on_Shoot_Timer_timeout():
 	$Shoot_Timer.start(rand_range(3.0, 10.0))
 	if Global.stop: return
-	$Enemy_Animation.stop()
+	wood_enemy_anim.stop()
 	$Sprite.frame = dir
 	var projectile = projectile_scene.instance()
 	
@@ -86,5 +88,5 @@ func _on_Shoot_Timer_timeout():
 	projectile.position = position
 	projectile.damage = battle_unit_damage + 1
 	
-	get_parent().add_child(projectile)
+	get_tree().current_scene.add_child(projectile)
 	attacking = false

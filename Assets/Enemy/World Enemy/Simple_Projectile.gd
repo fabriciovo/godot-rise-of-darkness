@@ -41,3 +41,7 @@ func is_out_of_bounds():
 func _on_Simple_Projectile_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SHIELD):
 		queue_free()
+
+
+func _on_Timer_timeout():
+	queue_free()

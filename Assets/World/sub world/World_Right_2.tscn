@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Enviroment/The Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
@@ -39,6 +40,15 @@ item = 5
 
 [node name="Entities" type="Node2D" parent="."]
 
+[node name="World_Wood_Monster_wr0" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 128, 44 )
+
+[node name="World_Wood_Monster_wr1" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 186, 81 )
+
+[node name="World_Wood_Monster_wr2" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 61, 115 )
+
 [node name="World_Phantom" parent="Entities" instance=ExtResource( 8 )]
 position = Vector2( 118, 102 )
 point = NodePath("../../Points")
@@ -47,12 +57,6 @@ point = NodePath("../../Points")
 position = Vector2( 77, 54 )
 
 [node name="Boxs" type="Node2D" parent="."]
-
-[node name="Box" parent="Boxs" instance=ExtResource( 5 )]
-position = Vector2( 57, 115 )
-
-[node name="Box2" parent="Boxs" instance=ExtResource( 5 )]
-position = Vector2( 181, 71 )
 
 [node name="Box4" parent="Boxs" instance=ExtResource( 5 )]
 position = Vector2( 150, 56 )
