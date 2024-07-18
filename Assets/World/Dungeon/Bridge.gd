@@ -1,6 +1,7 @@
 extends Node2D
 
-func _process(delta):
-	var boss = get_tree().current_scene.get_node("Entities/World_Mini_Boss")
-	if not boss:
+onready var entities = get_tree().current_scene.get_node("Entities")
+
+func _process(_delta):
+	if entities.get_children().size() == 0:
 		visible = true

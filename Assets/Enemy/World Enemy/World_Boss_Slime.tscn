@@ -85,16 +85,19 @@ radius = 45.0999
 
 [node name="World_Boss_Slime" instance=ExtResource( 2 )]
 z_index = 0
-collision_mask = 11
+collision_layer = 5
+collision_mask = 10
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.1, 0.1 )
-z_index = 3
 frame = 27
 
 [node name="Body_Shape" parent="." index="1"]
-position = Vector2( 0.5, 11.125 )
+position = Vector2( 0, 11 )
+scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
 shape = SubResource( 6 )
 disabled = true
 

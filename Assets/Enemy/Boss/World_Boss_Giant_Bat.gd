@@ -1,6 +1,6 @@
-extends Node2D
+class_name Boss_Bat extends Node2D
 onready var player = get_tree().current_scene.get_node("Player")
-onready var positions = $Positions.get_children()
+onready var positions = get_tree().current_scene.get_node("Bat_Positions").get_children()
 
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
@@ -25,7 +25,7 @@ func _ready():
 	find_new_position()
 
 func _process(_delta):
-	if not player: return
+	if not player or not positions: return
 	if idle: return
 	elif attack:
 		attack_player(_delta)
@@ -87,7 +87,6 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SWORD):
 		damage(PlayerControll.atk)
-
 
 func damage(damageValue):
 		SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
