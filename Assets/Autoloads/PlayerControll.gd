@@ -1,8 +1,8 @@
 extends Node
 
-var max_hp = 200
+var max_hp = 10
 var max_ap = 3
-var max_mp = 200
+var max_mp = 5
 var hp = max_hp setget set_hp
 var ap = max_ap setget set_ap
 var mp = max_mp setget set_mp
