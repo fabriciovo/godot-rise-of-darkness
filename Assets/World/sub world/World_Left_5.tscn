@@ -14,7 +14,7 @@ resource_name = "FadeToNewRoom"
 length = 0.5
 step = 0.05
 
-[node name="World_Left_2" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
+[node name="World_Left_5" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
 position = Vector2( -1, 0 )
 script = ExtResource( 1 )
 
@@ -55,3 +55,57 @@ door_name = "Door4"
 position = Vector2( 113, 121 )
 item = 2
 type = "relics"
+
+[node name="Bat_Positions" type="Node2D" parent="."]
+position = Vector2( 111, 85 )
+
+[node name="Position2D" type="Position2D" parent="Bat_Positions"]
+position = Vector2( -136, 112 )
+
+[node name="Position2D5" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 218, -60 )
+
+[node name="Position2D9" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 0, 24 )
+
+[node name="Position2D10" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 0, -34 )
+
+[node name="Position2D11" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 45, -3 )
+
+[node name="Position2D13" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 119, -3 )
+
+[node name="Position2D14" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 50, -75 )
+
+[node name="Position2D15" type="Position2D" parent="Bat_Positions"]
+position = Vector2( -75, 67 )
+
+[node name="Position2D16" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 74, 89 )
+
+[node name="Position2D17" type="Position2D" parent="Bat_Positions"]
+position = Vector2( -60, -52 )
+
+[node name="Position2D12" type="Position2D" parent="Bat_Positions"]
+position = Vector2( -48, 1 )
+
+[node name="Position2D6" type="Position2D" parent="Bat_Positions"]
+position = Vector2( -1, 96 )
+
+[node name="Position2D7" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 34, -150 )
+
+[node name="Position2D2" type="Position2D" parent="Bat_Positions"]
+position = Vector2( -184, 19 )
+
+[node name="Position2D8" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 140, -118 )
+
+[node name="Position2D3" type="Position2D" parent="Bat_Positions"]
+position = Vector2( 121, 65 )
+
+[node name="Position2D4" type="Position2D" parent="Bat_Positions"]
+position = Vector2( -133, -109 )

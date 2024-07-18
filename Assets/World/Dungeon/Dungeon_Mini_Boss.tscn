@@ -109,5 +109,4 @@ door_name = "Dungeon_14"
 [node name="Lever" parent="." index="10" instance=ExtResource( 10 )]
 position = Vector2( 200, 119 )
 
-[connection signal="body_entered" from="Lever" to="Lever" method="_on_Lever_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_Lever_body_exited"]

@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 10.0499
+radius = 12.0416
 
 [sub_resource type="Animation" id=2]
 resource_name = "Boss_Giant_Bat_Normal"
@@ -39,10 +39,13 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5.5, 5 )
 
 [node name="World_Boss_Giant_Bat" type="KinematicBody2D"]
+position = Vector2( 0, 1 )
+collision_layer = 4
+collision_mask = 15
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -51,6 +54,8 @@ hframes = 4
 vframes = 3
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -2 )
@@ -68,60 +73,8 @@ autostart = true
 
 [node name="Idle_Timer" type="Timer" parent="."]
 
-[node name="Positions" type="Node2D" parent="."]
-
-[node name="Position2D" type="Position2D" parent="Positions"]
-position = Vector2( -136, 112 )
-
-[node name="Position2D5" type="Position2D" parent="Positions"]
-position = Vector2( 218, -60 )
-
-[node name="Position2D9" type="Position2D" parent="Positions"]
-position = Vector2( 0, 24 )
-
-[node name="Position2D10" type="Position2D" parent="Positions"]
-position = Vector2( 0, -34 )
-
-[node name="Position2D11" type="Position2D" parent="Positions"]
-position = Vector2( 45, -3 )
-
-[node name="Position2D13" type="Position2D" parent="Positions"]
-position = Vector2( 119, -3 )
-
-[node name="Position2D14" type="Position2D" parent="Positions"]
-position = Vector2( 50, -75 )
-
-[node name="Position2D15" type="Position2D" parent="Positions"]
-position = Vector2( -75, 67 )
-
-[node name="Position2D16" type="Position2D" parent="Positions"]
-position = Vector2( 74, 89 )
-
-[node name="Position2D17" type="Position2D" parent="Positions"]
-position = Vector2( -60, -52 )
-
-[node name="Position2D12" type="Position2D" parent="Positions"]
-position = Vector2( -48, 1 )
-
-[node name="Position2D6" type="Position2D" parent="Positions"]
-position = Vector2( -1, 96 )
-
-[node name="Position2D7" type="Position2D" parent="Positions"]
-position = Vector2( 34, -150 )
-
-[node name="Position2D2" type="Position2D" parent="Positions"]
-position = Vector2( -184, 19 )
-
-[node name="Position2D8" type="Position2D" parent="Positions"]
-position = Vector2( 140, -118 )
-
-[node name="Position2D3" type="Position2D" parent="Positions"]
-position = Vector2( 121, 65 )
-
-[node name="Position2D4" type="Position2D" parent="Positions"]
-position = Vector2( -133, -109 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Body_Shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, -1 )
 shape = SubResource( 4 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

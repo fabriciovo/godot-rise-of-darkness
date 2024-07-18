@@ -19,12 +19,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/World/Dungeon/Boss.gd"
 }, {
+"base": "Node2D",
+"class": "Boss_Bat",
+"language": "GDScript",
+"path": "res://Assets/Enemy/Boss/World_Boss_Giant_Bat.gd"
+}, {
 "base": "Area2D",
 "class": "Chest",
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Chest.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "Dark_Mage",
 "language": "GDScript",
 "path": "res://Assets/Enemy/World Enemy/World_Dark_Mage.gd"
@@ -127,6 +132,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Bomb_Object": "",
 "Boss": "",
+"Boss_Bat": "",
 "Chest": "",
 "Dark_Mage": "",
 "Enviroment_Object": "",
