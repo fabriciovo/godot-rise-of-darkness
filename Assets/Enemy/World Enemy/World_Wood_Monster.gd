@@ -41,7 +41,7 @@ func update_random_direction_timer(_delta):
 		pick_random_direction()
 
 func pick_random_direction():
-	if attacking: return
+	if attacking or hit: return
 	match randi() % 4:
 		0:
 			direction = Vector2.UP

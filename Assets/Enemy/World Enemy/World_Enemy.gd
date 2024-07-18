@@ -79,7 +79,7 @@ func _on_Area_body_entered(body):
 		knockback = -global_position
 		damage(knockback,  PlayerControll.atk+5)
 	if body.is_in_group(Global.GROUPS.SHIELD) and not hit:
-		knockback = -global_position
+		knockback = body.knockback_vector
 		damage(knockback,  0)
 
 func Disable():

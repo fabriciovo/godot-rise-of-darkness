@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Actions/Block_Door_Can_Go_Back.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Enviroment/Key_Gate_Single_Gate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Shaders/Transition.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Actions/Door_Weapon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=10]
 
 [node name="World_0" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
 position = Vector2( -1, 0 )
@@ -75,3 +76,12 @@ rotation = 1.5708
 
 [node name="Block_Door_Can_Go_Back" parent="." instance=ExtResource( 1 )]
 position = Vector2( 96, 166 )
+
+[node name="World_Wood_Monster" parent="Block_Door_Can_Go_Back" instance=ExtResource( 10 )]
+position = Vector2( -44, -89 )
+
+[node name="World_Wood_Monster2" parent="Block_Door_Can_Go_Back" instance=ExtResource( 10 )]
+position = Vector2( -18, -97 )
+
+[node name="World_Wood_Monster3" parent="Block_Door_Can_Go_Back" instance=ExtResource( 10 )]
+position = Vector2( 68, -84 )
