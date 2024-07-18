@@ -39,6 +39,13 @@ func set_mp(value):
 	mp = min(value, PlayerControll.max_mp)
 	PlayerControll.set_mp(mp)
 
+func add_mp(_value):
+	mp += min(_value, PlayerControll.max_mp)
+	PlayerControll.set_mp(mp)
+	var _text = float_text.instance()
+	_text.set_text("MP +" + str(_value))
+	add_child(_text)
+
 var dir = "right"
 var velocity = Vector2.ZERO
 var action_state = false

@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-export(String, FILE, "*.tscn,*.scn") var target_scene
-export(String) var door_name
 var can_pass = false
 func _ready():
 	if PlayerControll.inventory.size() > 0:

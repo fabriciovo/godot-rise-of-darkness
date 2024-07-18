@@ -6,7 +6,7 @@ var direction = Vector2.ZERO
 var damage
 
 func _ready():
-	add_to_group(Global.GROUPS.ENEMY)
+	add_to_group(Global.GROUPS.ENEMY_PROJECTILES)
 	if direction == Vector2.ZERO:
 		direction = Vector2.RIGHT
 

@@ -7,6 +7,7 @@ var direction = Vector2.ZERO
 var dir = Vector2.ZERO
 
 func _ready():
+	add_to_group(Global.GROUPS.ENEMY_PROJECTILES)
 	if obj != null:
 		direction = obj.global_position
 		dir = (direction - global_position).normalized()

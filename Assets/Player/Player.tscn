@@ -342,7 +342,7 @@ scale = Vector2( 1.8, 1.8 )
 texture = ExtResource( 7 )
 hframes = 8
 vframes = 6
-frame = 24
+frame = 26
 
 [node name="Shield_Area_Collision" type="CollisionShape2D" parent="Shield_Area"]
 position = Vector2( -3.8147e-07, -0.0694447 )
@@ -368,6 +368,7 @@ frame = 5
 [connection signal="body_entered" from="PlayerBody" to="." method="_on_PlayerBody_body_entered"]
 [connection signal="body_exited" from="PlayerBody" to="." method="_on_PlayerBody_body_exited"]
 [connection signal="body_entered" from="ActionArea" to="." method="_on_ActionArea_body_entered"]
+[connection signal="body_entered" from="Shield_Area" to="Shield_Area" method="_on_Shield_Area_body_entered"]
 [connection signal="timeout" from="AP_Timer" to="." method="_on_AP_Timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="." method="_on_Dash_Timer_timeout"]
 [connection signal="timeout" from="Invincible_Timer" to="." method="_on_Invincible_Timer_timeout"]
