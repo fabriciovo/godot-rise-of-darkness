@@ -144,7 +144,4 @@ func _on_Quests_pressed():
 	pass # Replace with function body.can_continue
 
 
-func _on_Book_pressed():
-	pass # Replace with function body.
-
 
