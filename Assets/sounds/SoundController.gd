@@ -7,6 +7,12 @@ onready var music = $Music
 onready var music_value = music.volume_db 
 var sfx_value = 0
 
+const AUDIO_SERVER_LIST = {
+	MASTER = 0,
+	MUSIC = 1,
+	SFX = 2
+}
+
 const MUSIC = {
 	title = preload("res://Assets/sounds/Music/title.wav"),
 	florest = preload("res://Assets/sounds/Music/florest.wav"),
@@ -36,19 +42,5 @@ func play_effect(sound):
 		effect.play() 
 		break
 
-func set_music_volume(value):
-	music_value = value
-	music.volume_db = music_value
-
-func set_effect_volume(value):
-	for effect in sound_effects.get_children():
-		sfx_value = value
-		effect.volume_db = sfx_value
-
-
-func mute_effect_volume():
-	pass
-
-func mute_music_volume():
-	pass
-	
+func set_bus_volume(_bus_index, _value):
+	AudioServer.set_bus_volume_db(_bus_index,linear2db(_value))
