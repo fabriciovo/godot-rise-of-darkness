@@ -4,9 +4,6 @@ extends Node
 onready var sound_effects = $SoundEffect
 onready var music = $Music
 
-onready var music_value = music.volume_db 
-var sfx_value = 0
-
 const AUDIO_SERVER_LIST = {
 	MASTER = 0,
 	MUSIC = 1,
