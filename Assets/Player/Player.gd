@@ -176,7 +176,7 @@ func create_sword(value):
 	action_collision.disabled = false
 	action_sprite.frame = PlayerControll.equiped_item[value]
 
-func create_shield():
+func create_shield(): 
 	action_state = true
 	shield_area.visible = true
 	shield_area_collision.disabled = false
@@ -280,9 +280,9 @@ func change_action_area_direction():
 
 func execute_action():
 	if Input.is_action_just_pressed("action_1"):
-		if PlayerControll.equiped_item[0] != -1:
+		if PlayerControll.equiped_item[0] != -1 and not dashing:
 			action(0)
-	elif Input.is_action_just_pressed("action_2"):
+	elif Input.is_action_just_pressed("action_2") and not dashing:
 		if PlayerControll.equiped_item[1] != -1:
 			action(1)
 

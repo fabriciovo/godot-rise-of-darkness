@@ -1,10 +1,10 @@
 extends Panel
 
-
-onready var maxhp = get_node("MaxHp")
-onready var attackPower = get_node("AttackPower")
-onready var maxap = get_node("MaxAp")
-onready var maxmp = get_node("MaxMp")
+onready var container = get_node("Container")
+onready var maxhp = container.get_node("MaxHp")
+onready var attackPower = container.get_node("AttackPower")
+onready var maxap = container.get_node("MaxAp")
+onready var maxmp = container.get_node("MaxMp")
 
 
 func _process(_delta):
