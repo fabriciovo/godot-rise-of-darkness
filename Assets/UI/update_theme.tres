@@ -1,10 +1,17 @@
-[gd_resource type="Theme" load_steps=8 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://Assets/UI/Fonts/PressStart2P.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/UI/Fonts/jostix.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/UI/Fonts/dogica.tres" type="BitmapFont" id=2]
 [ext_resource path="res://Assets/UI/Panel9Frame.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/UI/Button9FrameHover.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/UI/Button9Frame.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/UI/Fonts/dogicabold.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=3]
+size = 9
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxTexture" id=2]
 region_rect = Rect2( -0.149315, -0.277926, 48.2767, 48.0405 )
@@ -26,7 +33,7 @@ Button/colors/font_color_focus = Color( 1, 1, 1, 1 )
 Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
 Button/colors/font_color_pressed = Color( 0.298039, 0.27451, 0.27451, 1 )
 Button/constants/hseparation = 2
-Button/fonts/font = ExtResource( 2 )
+Button/fonts/font = SubResource( 3 )
 Button/styles/disabled = null
 Button/styles/focus = ExtResource( 4 )
 Button/styles/hover = null

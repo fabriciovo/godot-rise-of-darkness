@@ -24,7 +24,7 @@ func configure_battle_unit():
 	battle_unit_max_hp = 5
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
-	const_speed = 10
+	const_speed = 200
 	speed = const_speed
 
 func initialize_movement_control():
@@ -37,7 +37,7 @@ func _physics_process(_delta):
 		return
 	if battle_unit_hp <= 0: return
 	update_random_direction_timer(_delta)
-	move_enemy()
+	move_enemy(_delta)
 
 func update_random_direction_timer(_delta):
 	random_direction_timer += _delta
@@ -70,8 +70,8 @@ func pick_random_direction():
 		_:
 			attacking = true
 
-func move_enemy():
-	var _dir = move_and_slide(direction * speed)
+func move_enemy(_delta):
+	var _dir = move_and_slide(direction * speed * _delta)
 
 
 func _on_Shoot_Timer_timeout():

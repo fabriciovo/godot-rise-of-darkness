@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/TitleScene/Title_Scene.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
-
-[sub_resource type="Theme" id=2]
 
 [node name="Title_Scene" type="Control"]
 anchor_right = 1.0
@@ -19,10 +17,9 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_right = 69.0
+margin_right = 120.0
 margin_bottom = 25.0
 rect_scale = Vector2( 2, 2 )
-theme = SubResource( 2 )
 text = "Legend of Godot"
 align = 1
 valign = 1
@@ -38,33 +35,34 @@ margin_right = 66.0
 focus_neighbour_top = NodePath("Load_Game")
 focus_neighbour_bottom = NodePath("Start")
 focus_mode = 2
+theme = ExtResource( 3 )
 
 [node name="Start" type="Button" parent="Pause_Button_Container"]
 margin_right = 132.0
-margin_bottom = 15.0
+margin_bottom = 13.0
 rect_pivot_offset = Vector2( -175, 213 )
 theme = ExtResource( 3 )
 shortcut_in_tooltip = false
 text = "START_GAME"
 
 [node name="Options" type="Button" parent="Pause_Button_Container"]
-margin_top = 19.0
+margin_top = 17.0
 margin_right = 132.0
-margin_bottom = 34.0
+margin_bottom = 30.0
 theme = ExtResource( 3 )
 text = "OPTIONS"
 
 [node name="Load_Game" type="Button" parent="Pause_Button_Container"]
-margin_top = 38.0
+margin_top = 34.0
 margin_right = 132.0
-margin_bottom = 53.0
+margin_bottom = 47.0
 theme = ExtResource( 3 )
 text = "LOAD_GAME"
 
 [node name="Quit" type="Button" parent="Pause_Button_Container"]
-margin_top = 57.0
+margin_top = 51.0
 margin_right = 132.0
-margin_bottom = 72.0
+margin_bottom = 64.0
 theme = ExtResource( 3 )
 text = "QUIT"
 

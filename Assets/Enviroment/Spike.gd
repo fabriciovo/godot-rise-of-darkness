@@ -10,6 +10,7 @@ func _ready():
 	$Timer.start(2)
 
 func _process(_delta):
+	if Global.stop: return
 	if spikes:
 		$Sprite.frame = 28
 	else:
