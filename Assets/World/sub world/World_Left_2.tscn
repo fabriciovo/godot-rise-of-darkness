@@ -34,10 +34,16 @@ tile_data = PoolIntArray( -1, 74, 0, -65536, 74, 0, -65535, 74, 0, -65534, 74, 0
 position = Vector2( 66, 62 )
 
 [node name="World_Wood_Monster_wl1" parent="Entities" instance=ExtResource( 3 )]
-position = Vector2( 161, 96 )
+position = Vector2( 148, 79 )
 
 [node name="World_Wood_Monster_wl2" parent="Entities" instance=ExtResource( 3 )]
-position = Vector2( 114, 84 )
+position = Vector2( 112, 97 )
+
+[node name="World_Wood_Monster_wl3" parent="Entities" instance=ExtResource( 3 )]
+position = Vector2( 59, 102 )
+
+[node name="World_Wood_Monster_wl4" parent="Entities" instance=ExtResource( 3 )]
+position = Vector2( 111, 51 )
 
 [node name="Door4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 112, 129 )

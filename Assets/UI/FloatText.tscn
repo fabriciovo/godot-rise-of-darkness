@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/UI/FloatText.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=2]
 
 [node name="FloatText" type="Label"]
 anchor_right = 0.076
 anchor_bottom = 0.071
 margin_right = -0.0240002
 margin_bottom = -0.0700006
+theme = ExtResource( 2 )
 text = "-0"
 script = ExtResource( 1 )
 

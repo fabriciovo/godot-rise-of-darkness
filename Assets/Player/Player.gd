@@ -1,13 +1,13 @@
 class_name Player
 extends KinematicBody2D
 
-onready var action_area = $ActionArea
+onready var action_area = $Action_Area
 onready var shield_area = $Shield_Area
 onready var shield_area_collision = $Shield_Area/Shield_Area_Collision
 onready var shield_area_sprite = $Shield_Area/Shield_Sprite
-onready var action_sprite =  $ActionArea/action
-onready var action_collision =  $ActionArea/AreaCollision
-onready var actionArea = $ActionArea
+onready var action_sprite =  $Action_Area/action
+onready var action_collision =  $Action_Area/AreaCollision
+
 onready var neck_of_protection = preload("res://Assets/Relics/Neck_Of_Protection.tscn")
 
 var weapons_texuture = preload("res://Sprites/Get_Weapon_Icons.png")
@@ -59,7 +59,7 @@ func _ready():
 	action_area.visible = false
 	shield_area.visible = false
 	shield_area_collision.disabled = true
-	actionArea.knockback_vector = Vector2.LEFT
+	action_area.knockback_vector = Vector2.LEFT
 	$AP_Timer.start(1)
 	create_protection()
 
@@ -107,19 +107,15 @@ func action(value):
 			"right":
 				$PlayerAnimation.play("action_right")
 				yield($PlayerAnimation, "animation_finished")
-				pass
 			"left":
 				$PlayerAnimation.play("action_left")
 				yield($PlayerAnimation, "animation_finished")
-				pass
 			"up":
 				$PlayerAnimation.play("action_up")
 				yield($PlayerAnimation, "animation_finished")
-				pass
 			"down":
 				$PlayerAnimation.play("action_down")
 				yield($PlayerAnimation, "animation_finished")
-				pass
 		action_area.visible = false
 		shield_area.visible = false
 		action_state = false
@@ -232,7 +228,6 @@ func recover_mana():
 	text.set_text("MP " + str(PlayerControll.max_mp))
 	add_child(text)
 
-
 func _on_AP_Timer_timeout():
 	set_ap(ap+1)
 
@@ -295,25 +290,25 @@ func movement():
 				$PlayerAnimation.play("walk_right")
 				velocity.x += 1
 				dir = "right"
-				actionArea.knockback_vector = velocity
+				action_area.knockback_vector = velocity
 				shield_area.knockback_vector = velocity * 2
 			elif Input.is_action_pressed('move_left'):
 				velocity.x -= 1
 				$PlayerAnimation.play("walk_left")
 				dir = "left"
-				actionArea.knockback_vector = velocity
+				action_area.knockback_vector = velocity
 				shield_area.knockback_vector = velocity * 2
 			elif Input.is_action_pressed('move_down'):
 				velocity.y += 1
 				$PlayerAnimation.play("walk_down")
 				dir = "down"
-				actionArea.knockback_vector = velocity
+				action_area.knockback_vector = velocity
 				shield_area.knockback_vector = velocity * 2
 			elif Input.is_action_pressed('move_up'):
 				velocity.y -= 1
 				$PlayerAnimation.play("walk_up")
 				dir = "up"
-				actionArea.knockback_vector = velocity 
+				action_area.knockback_vector = velocity 
 				shield_area.knockback_vector = velocity * 2
 			else:
 				$PlayerAnimation.stop()

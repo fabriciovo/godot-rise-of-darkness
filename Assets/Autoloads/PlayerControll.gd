@@ -13,11 +13,11 @@ var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
-var equiped_item = [5,1] 
+var equiped_item = [-1,-1] 
 var relics = []
 var key = 0
 var base_speed = 30
-var dash_unlocked = true
+var dash_unlocked = false
 var neck_of_protection = false
 var ring_of_souls = false
 var armor_of_light = false
@@ -47,7 +47,9 @@ func set_hp(value):
 	if hp <= 0:
 		var scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 		if scene_instance == OK:
-			PlayerControll.load_player_data(Global.loadJSONData("player_data"))
+			#TODO - Loading are bugging equiped itens
+			#PlayerControll.load_player_data(Global.loadJSONData("player_data"))
+			pass
 
 func set_ap(value):
 	ap = clamp(value, 0 , max_ap)

@@ -12,7 +12,6 @@ func _on_Input_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
 		nearPlayer = true
 
-
 func _on_Input_Area_body_exited(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
 		nearPlayer = false
@@ -21,7 +20,6 @@ func trigger_dialog_box():
 	Global.stop = true
 	$Text_Box_Layer/Text_Box.dialog_name = dialog_name
 	$Text_Box_Layer/Text_Box.start_dialog()
-
 
 func _on_Text_Box_on_end_dialog():
 	Global.stop = false

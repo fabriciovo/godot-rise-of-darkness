@@ -1,24 +1,17 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://Assets/UI/Fonts/PressStart2P.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/UI/Fonts/dogica.tres" type="BitmapFont" id=2]
 [ext_resource path="res://Assets/UI/Panel9Frame.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/UI/Button9FrameHover.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/UI/Button9Frame.tres" type="StyleBox" id=5]
-[ext_resource path="res://Assets/UI/Fonts/dogicabold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/UI/Fonts/dogicapixel.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 size = 9
 extra_spacing_top = 1
 extra_spacing_bottom = 1
 font_data = ExtResource( 6 )
-
-[sub_resource type="StyleBoxTexture" id=2]
-region_rect = Rect2( -0.149315, -0.277926, 48.2767, 48.0405 )
-margin_left = 44.3779
-margin_right = 44.5168
-margin_top = 4.25585
-margin_bottom = 3.50387
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -39,7 +32,6 @@ Button/styles/focus = ExtResource( 4 )
 Button/styles/hover = null
 Button/styles/normal = ExtResource( 5 )
 Button/styles/pressed = null
-Panel/styles/panel = SubResource( 2 )
 RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )

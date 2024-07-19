@@ -308,25 +308,25 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PlayerBody" type="Area2D" parent="."]
+[node name="Player_Body" type="Area2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Body"]
 position = Vector2( 0, 1 )
 shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ActionArea" type="Area2D" parent="."]
+[node name="Action_Area" type="Area2D" parent="."]
 scale = Vector2( 0.625, 0.5625 )
 script = ExtResource( 4 )
 
-[node name="action" parent="ActionArea" instance=ExtResource( 3 )]
+[node name="action" parent="Action_Area" instance=ExtResource( 3 )]
 
-[node name="AreaCollision" type="CollisionShape2D" parent="ActionArea"]
+[node name="AreaCollision" type="CollisionShape2D" parent="Action_Area"]
 shape = SubResource( 18 )
 
 [node name="Shield_Area" type="Area2D" parent="."]
@@ -365,9 +365,9 @@ texture = ExtResource( 6 )
 hframes = 7
 frame = 5
 
-[connection signal="body_entered" from="PlayerBody" to="." method="_on_PlayerBody_body_entered"]
-[connection signal="body_exited" from="PlayerBody" to="." method="_on_PlayerBody_body_exited"]
-[connection signal="body_entered" from="ActionArea" to="." method="_on_ActionArea_body_entered"]
+[connection signal="body_entered" from="Player_Body" to="." method="_on_PlayerBody_body_entered"]
+[connection signal="body_exited" from="Player_Body" to="." method="_on_PlayerBody_body_exited"]
+[connection signal="body_entered" from="Action_Area" to="." method="_on_ActionArea_body_entered"]
 [connection signal="body_entered" from="Shield_Area" to="Shield_Area" method="_on_Shield_Area_body_entered"]
 [connection signal="timeout" from="AP_Timer" to="." method="_on_AP_Timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="." method="_on_Dash_Timer_timeout"]

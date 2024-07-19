@@ -55,4 +55,3 @@ func queue_entities():
 					if enemy["soul"]:
 						entity.create_soul()
 					entity.queue_free()
-
