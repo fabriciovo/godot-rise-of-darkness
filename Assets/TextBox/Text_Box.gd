@@ -22,8 +22,10 @@ func _ready():
 
 func start_dialog():
 	visible = true
+	file = ""
 	file += dialog_path + dialog_name
 	timer.wait_time = textSpeed
+	print(file)
 	dialog = getDialog()
 	nextPhrase()
  
@@ -35,7 +37,6 @@ func _process(_delta):
 			label_text.visible_characters = len(label_text.text)
  
 func getDialog():
-
 	if finished: return
 	var f = File.new()
 	assert(f.file_exists(file), "File path does not exist")
@@ -69,7 +70,6 @@ func nextPhrase():
 		label_text.visible_characters += 1
 		timer.start()
 		yield(timer, "timeout")
-	
 	finished = true
 	phrase_num += 1
 	return

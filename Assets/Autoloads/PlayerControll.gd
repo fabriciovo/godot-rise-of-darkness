@@ -73,6 +73,8 @@ func set_relic_item(value):
 			PlayerControll.dash_unlocked = true
 		Global.RELICS.NECKLACE_OF_PROTECTION:
 			PlayerControll.neck_of_protection = true
+		Global.RELICS.RING_OF_SOULS:
+			PlayerControll.ring_of_souls = true
 		_:
 			pass
 	relics.push_front(value)
