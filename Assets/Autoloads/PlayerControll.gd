@@ -23,6 +23,7 @@ var ring_of_souls = false
 var armor_of_light = false
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")
+var level_up_text_box = preload("res://Assets/TextBox/Text_Box_Level_Up.tscn")
 
 func increase_max_hp():
 	points-=1
@@ -106,9 +107,11 @@ func set_xp(value):
 		level+=1
 		xp_to_level_up = floor(xp_to_level_up * 1.2)
 		xp =  xp_to_level_up - xp
-		var xp_text = float_text.instance()
-		xp_text.set_text("LEVEL UP!!")
-		get_tree().get_current_scene().get_node("Player").add_child(xp_text)
+		var inst_xp_text = float_text.instance()
+		var inst_level_up_text_box = level_up_text_box.instance()
+		inst_xp_text.set_text("LEVEL UP!")
+		get_tree().get_current_scene().get_node("Player").add_child(inst_xp_text)
+		get_tree().get_current_scene().add_child(inst_level_up_text_box)
 func set_level(value):
 	level = value
 

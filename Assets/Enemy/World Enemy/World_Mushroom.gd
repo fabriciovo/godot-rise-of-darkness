@@ -1,8 +1,9 @@
 extends World_Enemy
 
-onready var player = get_tree().current_scene.get_node("Player")
-onready var navigation_path = get_tree().current_scene.get_node("Navigation")
 onready var agent = $NavigationAgent2D
+
+var player = null
+var navigation_path = null
 
 var paths: Array = []
 var dead = false
@@ -14,8 +15,12 @@ var hasToStop = false
 var current_anim_pos
 
 func _ready():
+	if get_tree().current_scene.has_node("Player"):
+		player = get_tree().current_scene.get_node("Player")
+	if get_tree().current_scene.has_node("Navigation"):
+		navigation_path = get_tree().current_scene.get_node("Navigation")
 	ID = name
-	battle_unit_xp = 2
+	battle_unit_xp = 100
 	battle_unit_max_hp = 4
 	battle_unit_damage = 2
 	battle_unit_hp = battle_unit_max_hp
@@ -23,6 +28,7 @@ func _ready():
 	speed = const_speed
 
 func _process(_delta):
+	if  player == null or navigation_path == null: return
 	if Global.stop: 
 		if not $Enemy_Animation.is_playing(): return
 		current_anim_pos = $Enemy_Animation.current_animation_position
@@ -33,9 +39,16 @@ func _process(_delta):
 	if hasToStop and chase_player:
 		hasToStop = false
 		$Enemy_Animation.play("mushroom_start_explosion",-1,1,current_anim_pos)
+	if dead:
+		Disable()
+		var temp_smoke = smoke.instance()
+		get_parent().get_current_scene().add_child(temp_smoke)
+		SoundController.play_effect(SoundController.EFFECTS.enemy_die)
+		queue_free()
 
 func _physics_process(_delta):
 	if Global.stop: return
+	if player == null or navigation_path == null: return
 	if dead: return
 	if battle_unit_hp <= 0:
 		dead = true
@@ -83,12 +96,6 @@ func explosion():
 	dead = true
 	if hits > 0:
 		PlayerControll.set_xp(battle_unit_xp)
-	Disable()
-	var temp_smoke = smoke.instance()
-	add_child(temp_smoke)
-	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
-	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
-	queue_free()
 
 func _on_Explosion_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):

@@ -17,8 +17,8 @@ func _ready():
 	interactButton.visible = false;
 	ID = name
 
-func _input(event):
-	if event.is_action_pressed("action_3") and not disable:
+func _input(_event):
+	if _event.is_action_pressed("action_3") and not disable:
 		Ui.check_if_settings_is_open()
 		if player:
 			disable = true
@@ -55,7 +55,6 @@ func get_relic(_item):
 	yield(player_anim, "animation_finished")
 	text_box.start_dialog()
 
-
 func _on_Chest_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER) and not disable:
 		player = body
@@ -64,7 +63,6 @@ func _on_Chest_body_entered(body):
 func _on_Chest_body_exited(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
 		player = null
-
 
 func _on_Text_Box_on_end_dialog():
 	Global.stop = false
