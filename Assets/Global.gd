@@ -59,12 +59,17 @@ const RELICS = {
 }
 
 var QUESTS = {
-	"BAT": {
-		"Title": "Collect Bat souls",
+	"FIND_WANNY": {
+		"Title": "Find Wanny in lost woods",
+		"Description": "",
+		"Unlocked": false
+	},
+	"SOULS_QUEST": {
+		"Title": "Collect souls",
 		"Description": "",
 		"Reward": "Reward 50 XP",
 		"Progress": 0,
-		"Goal": 10,
+		"Goal": 100,
 		"Unlocked": false
 	},
 }

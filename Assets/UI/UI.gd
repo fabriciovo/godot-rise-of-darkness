@@ -95,6 +95,7 @@ func show_hidden_panels():
 	pause_options.visible = !pause_options.visible
 	Global.stop = pause_options.visible
 	pause_options.get_node("Pause_Button_Container/Settings").grab_focus()
+	pause_options.set_visible_options()
 
 func open_settings():
 	settings_panel.visible = !settings_panel.visible
