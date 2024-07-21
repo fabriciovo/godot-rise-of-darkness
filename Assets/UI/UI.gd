@@ -39,8 +39,8 @@ func _process(_delta):
 	MP.text = "MP " + str(PlayerControll.mp)
 	AP.text = "AP " + str(PlayerControll.ap)
 	key_label.text = str(PlayerControll.key) 
-	level.text = "Level: " + str(PlayerControll.level)
-	xp.text = "XP: " + str(PlayerControll.xp) + "/" + str(PlayerControll.xp_to_level_up)
+	level.text = "LvL: " + str(PlayerControll.level)
+	xp.text = "XP:" + str(PlayerControll.xp) + "/" + str(PlayerControll.xp_to_level_up)
 	if PlayerControll.equiped_item[0] < 0:
 		item_1.visible = false
 	else:

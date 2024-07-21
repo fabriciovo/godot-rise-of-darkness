@@ -55,7 +55,7 @@ func change_postion():
 	$Change_Position_Timer.start(3)
 
 func attack_player():
-	if battle_unit_hp > 20:
+	if battle_unit_hp > 10:
 		var _temp_projectile = projectile.instance()
 		_temp_projectile.global_position = global_position
 		get_tree().get_current_scene().add_child(_temp_projectile)

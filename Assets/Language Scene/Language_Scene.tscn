@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Language Scene/Language_Scene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=2]
-[ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=4]
 
 [node name="Language_Scene" type="Control"]
@@ -24,7 +22,7 @@ anchor_right = 0.5
 margin_left = -98.5
 margin_right = 98.5
 margin_bottom = 20.0
-theme = ExtResource( 2 )
+theme = ExtResource( 4 )
 text = "SELECT_LANGUAGE_TITLE"
 
 [node name="Confirmation_Label" type="Label" parent="."]
@@ -32,7 +30,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -19.0
-theme = ExtResource( 3 )
+theme = ExtResource( 4 )
 text = "Z_TO_CONFIRM"
 align = 1
 valign = 1

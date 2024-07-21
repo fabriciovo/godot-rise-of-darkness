@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var damage = 12
-onready var obj = get_tree().current_scene.get_node("Player")
-var speed = 1
+var obj = null
+var speed = 50
 var direction = Vector2.ZERO
 var dir = Vector2.ZERO
 
@@ -15,7 +15,7 @@ func _ready():
 	dir = (direction - global_position).normalized()
 
 func _process(_delta):
-	move_and_collide(dir * speed)
+	move_and_collide(dir * speed * _delta)
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group(Global.GROUPS.TILEMAP):
