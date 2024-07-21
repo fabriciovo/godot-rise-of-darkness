@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/TitleScene/Title_Scene.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
 
@@ -39,31 +40,31 @@ theme = ExtResource( 3 )
 
 [node name="Start" type="Button" parent="Pause_Button_Container"]
 margin_right = 132.0
-margin_bottom = 13.0
+margin_bottom = 14.0
 rect_pivot_offset = Vector2( -175, 213 )
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 shortcut_in_tooltip = false
 text = "START_GAME"
 
 [node name="Options" type="Button" parent="Pause_Button_Container"]
-margin_top = 17.0
+margin_top = 18.0
 margin_right = 132.0
-margin_bottom = 30.0
-theme = ExtResource( 3 )
+margin_bottom = 32.0
+theme = ExtResource( 1 )
 text = "OPTIONS"
 
 [node name="Load_Game" type="Button" parent="Pause_Button_Container"]
-margin_top = 34.0
+margin_top = 36.0
 margin_right = 132.0
-margin_bottom = 47.0
-theme = ExtResource( 3 )
+margin_bottom = 50.0
+theme = ExtResource( 1 )
 text = "LOAD_GAME"
 
 [node name="Quit" type="Button" parent="Pause_Button_Container"]
-margin_top = 51.0
+margin_top = 54.0
 margin_right = 132.0
-margin_bottom = 64.0
-theme = ExtResource( 3 )
+margin_bottom = 68.0
+theme = ExtResource( 1 )
 text = "QUIT"
 
 [connection signal="pressed" from="Pause_Button_Container/Start" to="." method="_on_Button_pressed"]
