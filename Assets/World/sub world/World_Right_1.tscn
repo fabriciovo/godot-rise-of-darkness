@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=4]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Enemy/World Enemy/World_Bear.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -31,20 +32,23 @@ tile_data = PoolIntArray( 0, 536870937, 0, 1, 536870937, 0, 2, 536870937, 0, 3, 
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="World_Wood_Monster" parent="Entities" instance=ExtResource( 6 )]
+[node name="World_Bear_wr1_0" parent="Entities" instance=ExtResource( 7 )]
+position = Vector2( 109, 60 )
+
+[node name="World_Wood_Monster_wr1_0" parent="Entities" instance=ExtResource( 6 )]
 position = Vector2( 60, 66 )
 
-[node name="World_Wood_Monster3" parent="Entities" instance=ExtResource( 6 )]
-position = Vector2( 192, 32 )
-
-[node name="World_Wood_Monster2" parent="Entities" instance=ExtResource( 6 )]
-position = Vector2( 135, 55 )
+[node name="World_Wood_Monster_wr1_1" parent="Entities" instance=ExtResource( 6 )]
+position = Vector2( 144, 67 )
 
 [node name="Door_World_Right_1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 176, 116 )
 rotation = -3.14159
 target_scene = "res://Assets/World/sub world/World_Right_0.tscn"
 door_name = "Door_World_Right_1"
+
+[node name="World_Bear2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 162, 35 )
 
 [node name="Door_World_Right_2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 213, 96 )

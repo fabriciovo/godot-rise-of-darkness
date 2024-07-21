@@ -24,7 +24,7 @@ func configure_battle_unit():
 	battle_unit_max_hp = 5
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
-	const_speed = 200
+	const_speed = 500
 	speed = const_speed
 
 func initialize_movement_control():

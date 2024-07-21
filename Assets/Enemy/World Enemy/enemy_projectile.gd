@@ -7,10 +7,12 @@ var direction = Vector2.ZERO
 var dir = Vector2.ZERO
 
 func _ready():
+	if get_tree().current_scene.has_node("Player"):
+		obj = get_tree().current_scene.get_node("Player")
+	if obj == null: return
 	add_to_group(Global.GROUPS.ENEMY_PROJECTILES)
-	if obj != null:
-		direction = obj.global_position
-		dir = (direction - global_position).normalized()
+	direction = obj.global_position
+	dir = (direction - global_position).normalized()
 
 func _process(_delta):
 	move_and_collide(dir * speed)

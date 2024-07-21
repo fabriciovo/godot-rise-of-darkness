@@ -82,10 +82,10 @@ vframes = 5
 frame = 0
 
 [node name="Body_Shape" parent="." index="1"]
-position = Vector2( 0, 1 )
+position = Vector2( 0.5, 2.5 )
 
 [node name="Area_Shape" parent="Area" index="0"]
-position = Vector2( -0.25, 1 )
+position = Vector2( 0, 0.5 )
 
 [node name="Enemy_Animation" parent="." index="4"]
 anims/RESET = SubResource( 1 )

@@ -16,10 +16,10 @@ void fragment(){
 shader = SubResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2, 3.25 )
+extents = Vector2( 5.5, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6, 4.5 )
+extents = Vector2( 8, 8.5 )
 
 [node name="World_Enemy" type="KinematicBody2D"]
 z_index = 2
