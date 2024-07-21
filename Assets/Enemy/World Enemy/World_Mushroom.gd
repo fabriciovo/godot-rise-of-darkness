@@ -20,7 +20,7 @@ func _ready():
 	if get_tree().current_scene.has_node("Navigation"):
 		navigation_path = get_tree().current_scene.get_node("Navigation")
 	ID = name
-	battle_unit_xp = 100
+	battle_unit_xp = 2
 	battle_unit_max_hp = 4
 	battle_unit_damage = 2
 	battle_unit_hp = battle_unit_max_hp
@@ -42,7 +42,8 @@ func _process(_delta):
 	if dead:
 		Disable()
 		var temp_smoke = smoke.instance()
-		get_parent().get_current_scene().add_child(temp_smoke)
+		temp_smoke.global_position = global_position
+		get_tree().get_current_scene().add_child(temp_smoke)
 		SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 		queue_free()
 
