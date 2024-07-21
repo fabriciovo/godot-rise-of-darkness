@@ -1,13 +1,16 @@
 class_name Chest
 extends Area2D
 
+
 export(int) var item
 export(String, "weapons", "relics") var type = "weapons"
+
+onready var interactButton = get_node("InteractionButton")
+onready var text_box = $Text_Box_Layer/Text_Box
+
 var ID = ""
 var disable = false
 var player = null
-
-onready var interactButton = get_node("InteractionButton")
 
 func _ready():
 	interactButton.visible = false;
@@ -38,12 +41,16 @@ func get_weapon(_item):
 		Global.WEAPONS.KEY:
 			PlayerControll.key += 1
 		_:
+			text_box.dialog_name = "get_weapon_" + str(_item) + ".json"
 			PlayerControll.set_inventory_item(_item)
+			text_box.start_dialog()
 
 func get_relic(_item):
 	$Sprite.frame = 0
 	Global.open_chests.push_front(ID)
+	text_box.dialog_name = "get_relic_" + str(_item) + ".json"
 	PlayerControll.set_relic_item(_item)
+	text_box.start_dialog()
 
 
 func _on_Chest_body_entered(body):
@@ -53,3 +60,7 @@ func _on_Chest_body_entered(body):
 func _on_Chest_body_exited(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
 		player = null
+
+
+func _on_Text_Box_on_end_dialog():
+	pass # Replace with function body.

@@ -29,7 +29,7 @@ func _on_Text_Box_on_end_dialog():
 	if quest_step == 0:
 		can_talk = false
 		quest_step+=1
-		$Text_Box_Layer/Text_Box.dialog_name = "get_ring_of_souls.json"
+		$Text_Box_Layer/Text_Box.dialog_name = "get_relic_3.json"
 		PlayerControll.set_relic_item(Global.RELICS.RING_OF_SOULS)
 		player.set_item_texture(0, "relics")
 		player.play_get_item_animation()

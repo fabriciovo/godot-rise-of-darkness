@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Enviroment/Chest.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/InteractionButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/TextBox/Text_Box.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 17, 14 )
@@ -32,5 +33,10 @@ visible = false
 position = Vector2( 11, -15 )
 z_index = 1
 
+[node name="Text_Box_Layer" type="CanvasLayer" parent="."]
+
+[node name="Text_Box" parent="Text_Box_Layer" instance=ExtResource( 4 )]
+
 [connection signal="body_entered" from="." to="." method="_on_Chest_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Chest_body_exited"]
+[connection signal="on_end_dialog" from="Text_Box_Layer/Text_Box" to="." method="_on_Text_Box_on_end_dialog"]

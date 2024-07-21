@@ -24,6 +24,7 @@ func _ready():
 
 func _process(_delta):
 	if Global.stop: 
+		if not $Enemy_Animation.is_playing(): return
 		current_anim_pos = $Enemy_Animation.current_animation_position
 		$Enemy_Animation.stop()
 		if chase_player:

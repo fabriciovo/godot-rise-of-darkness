@@ -17,6 +17,7 @@ var phrase_num = 0
 var finished = false
 var dialog_path = "res://Assets/Dialogs/"
 var file = ""
+
 func _ready():
 	visible = false
 
