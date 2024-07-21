@@ -22,6 +22,7 @@ func _ready():
 	visible = false
 
 func start_dialog():
+	Global.stop = true
 	visible = true
 	file = ""
 	file += dialog_path + dialog_name
