@@ -49,7 +49,7 @@ position = Vector2( 186, 81 )
 [node name="World_Wood_Monster_wr2" parent="Entities" instance=ExtResource( 9 )]
 position = Vector2( 61, 115 )
 
-[node name="World_Phantom" parent="Entities" instance=ExtResource( 8 )]
+[node name="World_Dark_Mage_1" parent="Entities" instance=ExtResource( 8 )]
 position = Vector2( 118, 102 )
 point = NodePath("../../Points")
 
