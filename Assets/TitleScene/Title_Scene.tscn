@@ -3,12 +3,13 @@
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/TitleScene/Title_Scene.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
-[ext_resource path="res://Sprites/PressStart2P.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/UI/Fonts/Greenscr.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
 use_mipmaps = true
 use_filter = true
+extra_spacing_bottom = -2
 font_data = ExtResource( 4 )
 
 [node name="Title_Scene" type="Control"]
@@ -26,8 +27,8 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
-margin_right = -112.0
-margin_bottom = 31.0
+margin_right = -154.0
+margin_bottom = 33.0
 rect_scale = Vector2( 2, 2 )
 theme = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
