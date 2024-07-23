@@ -10,10 +10,9 @@ onready var MP = $Game_UI/Items/Stats/MP
 onready var AP = $Game_UI/Items/Stats/AP
 onready var item_1 = $Game_UI/Items/item1/weapon
 onready var item_2 = $Game_UI/Items/item2/weapon
-onready var key_label = $Game_UI/Items/Stats/key/key_label
+onready var key_label = $Game_UI/Items/Stats/key_label
 onready var inventory_panel = $UI_Containers/Inventory
-onready var level = $Game_UI/Stats/Level
-onready var xp = $Game_UI/Stats/xp
+onready var level_panel = $Game_UI/Level_Progress_Panel
 
 onready var relics_container = $UI_Containers/Relics
 
@@ -35,12 +34,12 @@ func _input(_event):
 			pause_options.get_node("Pause_Button_Container/Settings").grab_focus()
 
 func _process(_delta):
-	HP.text = "HP " + str(PlayerControll.hp)
-	MP.text = "MP " + str(PlayerControll.mp)
-	AP.text = "AP " + str(PlayerControll.ap)
-	key_label.text = str(PlayerControll.key) 
-	level.text = "LvL: " + str(PlayerControll.level)
-	xp.text = "XP:" + str(PlayerControll.xp) + "/" + str(PlayerControll.xp_to_level_up)
+	HP.text = "HP: " + str(PlayerControll.hp)
+	MP.text = "MP: " + str(PlayerControll.mp)
+	AP.text = "AP: " + str(PlayerControll.ap)
+	key_label.text = "Key: " + str(PlayerControll.key) 
+	level_panel.get_node("Level").text = "LvL: " + str(PlayerControll.level)
+	level_panel.get_node("xp").text = "XP:" + str(PlayerControll.xp) + "/" + str(PlayerControll.xp_to_level_up)
 	if PlayerControll.equiped_item[0] < 0:
 		item_1.visible = false
 	else:
@@ -51,7 +50,7 @@ func _process(_delta):
 	else:
 		item_2.visible = true
 		item_2.frame = PlayerControll.equiped_item[1]
-	if Input.is_action_just_pressed("start") and Global.in_game and not Global.execute_transition_animation and not Global.cutscene:
+	if Input.is_action_just_pressed("start") and Global.in_game and not Global.execute_transition_animation and not Global.cutscene and not Global.dialog:
 		Ui.show_hidden_panels()
 	if pause_options.visible and Global.cutscene:
 		pause_options.visible = false

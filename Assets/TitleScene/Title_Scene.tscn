@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/TitleScene/Title_Scene.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Sprites/PressStart2P.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
 
 [node name="Title_Scene" type="Control"]
 anchor_right = 1.0
@@ -18,10 +25,15 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_right = 120.0
-margin_bottom = 25.0
+anchor_right = 1.0
+margin_right = -112.0
+margin_bottom = 31.0
 rect_scale = Vector2( 2, 2 )
-text = "Legend of Godot"
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Rise of 
+Darkness"
 align = 1
 valign = 1
 

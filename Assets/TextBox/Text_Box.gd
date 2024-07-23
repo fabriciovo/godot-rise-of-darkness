@@ -23,6 +23,7 @@ func _ready():
 
 func start_dialog():
 	Global.stop = true
+	Global.dialog = true
 	visible = true
 	file = ""
 	file += dialog_path + dialog_name
@@ -62,6 +63,7 @@ func nextPhrase():
 		dialog = []
 		dialog_name = ""
 		file = ""
+		Global.dialog = false
 		emit_signal("on_end_dialog")
 		return
 	finished = false

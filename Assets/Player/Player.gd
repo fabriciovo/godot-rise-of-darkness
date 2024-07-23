@@ -134,6 +134,7 @@ func _process(_delta):
 		set_physics_process(true)
 		take_damage_by_enemies()
 	else:
+		$PlayerAnimation.stop()
 		set_physics_process(false)
 
 func take_damage_by_enemies():

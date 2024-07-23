@@ -3,6 +3,7 @@ var save_dir = "user://"
 var door_name = null
 
 var stop = false
+var dialog = false
 var dead_enemies = []
 var open_chests = []
 var dead_objects = []
@@ -128,8 +129,6 @@ func set_world_data(data):
 		chest_bow = data["chest_bow"]
 	if data.has("chest_bomb"):
 		chest_bomb = data["chest_bomb"]
-	if data.has("in_game"):
-		in_game = data["in_game"]
 	if data.has("execute_transition_animation"):
 		execute_transition_animation = data["execute_transition_animation"]
 	if data.has("trigger_tutorial_animation"):
