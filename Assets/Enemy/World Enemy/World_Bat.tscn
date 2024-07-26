@@ -14,7 +14,7 @@ collision_mask = 11
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
-frame = 54
+material = null
 
 [node name="Body_Shape" parent="." index="1"]
 position = Vector2( -0.75, -1 )

@@ -349,6 +349,8 @@ func _on_Dash_Timer_timeout():
 
 func _on_Invincible_Timer_timeout():
 	invincible = false
+	$Sprite.modulate = Color(1,1,1,1)
+
 
 func play_get_item_animation():
 	get_item_anim = true

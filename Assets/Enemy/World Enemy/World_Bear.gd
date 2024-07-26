@@ -2,7 +2,6 @@ class_name World_Bear extends World_Enemy
 
 const CHANGE_DIRECTION_INTERVAL = 1.0
 onready var raycast = $Detect_Player
-onready var jump_tween = $Jump_Tween
 onready var bear_anim = $Bear_Animation
 onready var enemy_anim = $Enemy_Animation
 
@@ -60,13 +59,13 @@ func pick_random_direction():
 			bear_anim.play("bear_left")
 			direction = Vector2.LEFT
 			direction_offset = Vector2.RIGHT
-			$Sprite.flip_h = true
+			spr.flip_h = true
 			$Area/Area_Shape.rotation_degrees = 0
 		3:
 			bear_anim.play("bear_left")
 			direction = Vector2.RIGHT
 			direction_offset = Vector2.LEFT
-			$Sprite.flip_h = false
+			spr.flip_h = false
 			$Area/Area_Shape.rotation_degrees = 0
 	if not raycast.enabled:
 		raycast.enabled = true
@@ -105,7 +104,7 @@ func on_wall_hit():
 	while remaining_time > 0:
 		var delta = get_process_delta_time()
 		remaining_time -= delta
-		move_and_slide(offset)
+		var _dir = move_and_slide(offset)
 		yield(get_tree().create_timer(delta), "timeout")
 	yield(bear_anim, "animation_finished")
 	wall_hit = false
@@ -122,11 +121,3 @@ func _on_Area_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SHIELD) and not hit and not wall_hit and attacking:
 		knockback = area.knockback_vector * 10
 		on_wall_hit()
-	else:
-		pass
-
-
-func _on_Timer_timeout():
-	hit = false
-
-

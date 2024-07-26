@@ -2,6 +2,10 @@ class_name Dark_Mage extends Node2D
 
 export(NodePath) onready var point
 
+onready var spr = $Sprite
+onready var invincible_timer = $Invincible_Timer
+onready var animation_damage = $Animation_Damage
+onready var animation = $Animation_Dark_Mage
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
@@ -14,6 +18,7 @@ var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
 var teleport_pos = Vector2.ZERO
 var has_soul = false
+var invincible = false
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
@@ -23,9 +28,8 @@ func _ready():
 	if point:
 		points = point.get_children()
 
-
 func Destroy():
-	$Sprite.visible = false
+	spr.visible = false
 	var temp_smoke = smoke.instance()
 	add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
@@ -34,23 +38,27 @@ func Destroy():
 	queue_free()
 
 func damage(damageValue):
+	invincible = true
 	SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
 	var text = damage_text.instance()
 	text.set_text(str(damageValue))
 	add_child(text)
 	battle_unit_hp -= damageValue
-	$Animation_Player.play("damage_anim")
-	yield($Animation_Player, "animation_finished")
+	animation_damage.play("damage_anim")
+	yield(animation_damage, "animation_finished")
+	invincible_timer.start(1)
 	if battle_unit_hp <= 0:
 		Destroy()
 
 func change_postion():
 	if battle_unit_hp <= 0: return
-	$Animation_Player.play("hide")
-	yield($Animation_Player, "animation_finished")
+	invincible = true
+	animation.play("hide")
+	yield(animation, "animation_finished")
 	global_position = get_random_pos()
-	$Animation_Player.play("show")
-	yield($Animation_Player, "animation_finished")
+	animation.play("show")
+	yield(animation, "animation_finished")
+	invincible = false
 	attack_player()
 	$Change_Position_Timer.start(3)
 
@@ -74,9 +82,15 @@ func get_random_pos():
 		return points[random_index].position
 
 func _on_Damage_Area_area_entered(area):
+	if invincible: return
 	if area.is_in_group(Global.GROUPS.SWORD):
 		damage(PlayerControll.atk)
 	if area.is_in_group(Global.GROUPS.ARROW):
 		damage(PlayerControll.atk+1)
 	if area.is_in_group(Global.GROUPS.ARROW_AREA):
 		damage(PlayerControll.atk+1)
+
+
+func _on_Invincible_Timer_timeout():
+	invincible = false
+	spr.modulate = Color(1,1,1,1)

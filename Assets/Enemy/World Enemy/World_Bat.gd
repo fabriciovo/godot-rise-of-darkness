@@ -1,6 +1,5 @@
 extends World_Enemy
 
-
 onready var obj = get_tree().current_scene.get_node("Player")
 var radius = 33.0
 var angle = 0.0
@@ -8,23 +7,22 @@ var angle = 0.0
 func _ready():
 	ID = name
 	battle_unit_xp = 10
-	battle_unit_max_hp = 5
+	battle_unit_max_hp = 8
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 10
 	speed = const_speed
-	has_soul = true
-
+	has_soul = false
 
 func _physics_process(delta):
 	if obj == null: return
 	chase_state(delta)
 	knockback_state(delta)
 
-
 func _on_Timer_timeout():
 	timer.stop()
 	hit = false
+	spr.modulate = Color(1,1,1,1)
 	speed = const_speed * hits
 	$Enemy_Animation.play("Bat_anim")
 

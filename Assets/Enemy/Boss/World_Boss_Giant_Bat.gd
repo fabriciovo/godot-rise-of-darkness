@@ -96,6 +96,7 @@ func damage(damageValue):
 		battle_unit_hp -= damageValue
 		$Animation_Player.play("damage_anim")
 		yield($Animation_Player, "animation_finished")
+		$Sprite.modulate = Color(1,1,1,1)
 		$Animation_Player.play("Boss_Giant_Bat_Normal")
 		if battle_unit_hp <= 0:
 			Destroy()

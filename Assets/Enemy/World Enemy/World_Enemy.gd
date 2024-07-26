@@ -1,6 +1,7 @@
 class_name World_Enemy extends KinematicBody2D
 
 var ID = name
+onready var spr = $Sprite
 onready var frame = $Sprite.frame
 onready var timer = $Timer
 
@@ -33,6 +34,8 @@ func _process(_delta):
 
 func _on_Timer_timeout():
 	hit = false
+	spr.modulate = Color(1,1,1,1)
+	print("sdasdsa")
 	Enable()
 
 func Destroy():
@@ -42,9 +45,9 @@ func Destroy():
 		create_soul()
 	Disable()
 	var temp_smoke = smoke.instance()
-	add_child(temp_smoke)
+	temp_smoke.position = position
+	get_tree().current_scene.add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
-	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
 	queue_free()
 
 func damage(_knockback_value, _damage_value):
@@ -58,6 +61,7 @@ func damage(_knockback_value, _damage_value):
 		hits+=1
 		$Enemy_Animation.play("damage_anim")
 		yield($Enemy_Animation, "animation_finished")
+		spr.modulate = Color(1, 1, 1, 0.6)
 		if battle_unit_hp <= 0:
 			Destroy()
 		else:
@@ -84,7 +88,7 @@ func _on_Area_body_entered(body):
 
 func Disable():
 	speed = 0
-	$Sprite.visible = false
+	spr.visible = false
 	set_physics_process(false);
 	
 func Enable():
