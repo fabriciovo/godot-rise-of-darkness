@@ -64,9 +64,8 @@ func change_postion():
 
 func attack_player():
 	if battle_unit_hp > 10:
-		var _temp_projectile = projectile.instance()
-		_temp_projectile.global_position = global_position
-		get_tree().get_current_scene().add_child(_temp_projectile)
+		animation.play("Attack")
+		yield(animation, "animation_finished")
 	else:
 		pass
 
@@ -94,3 +93,9 @@ func _on_Damage_Area_area_entered(area):
 func _on_Invincible_Timer_timeout():
 	invincible = false
 	spr.modulate = Color(1,1,1,1)
+
+
+func create_projectile():
+	var _temp_projectile = projectile.instance()
+	_temp_projectile.position = position
+	get_tree().current_scene.add_child(_temp_projectile)
