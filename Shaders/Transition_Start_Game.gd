@@ -7,18 +7,20 @@ onready var animation = $Fill/Transition_Animator
 
 export (int, "Pixels", "Spot Player", "Spot Center","Slah V", "Slash H", "Smooth") var transition_type
 export (int, "Fade In", "Fade Out", "None") var execute
+export (int, "Execute on Start", "None") var execute_on_start = 0
 var duration: float  = 0.2
 
 func _ready():
-#	if Global.execute_transition_animation:
-#		player_anim.play("intro_anim")
-#	if Global.execute_transition_animation == false: 
-#		Global.stop = false
-#		queue_free()
-	if execute == 0:
-		fade_in()
-	elif execute == 1:
-		fade_out()
+	if execute_on_start == 0:
+	#	if Global.execute_transition_animation:
+	#		player_anim.play("intro_anim")
+	#	if Global.execute_transition_animation == false: 
+	#		Global.stop = false
+	#		queue_free()
+		if execute == 0:
+			fade_in()
+		elif execute == 1:
+			fade_out()
 
 func fade_out():
 	Global.stop = true

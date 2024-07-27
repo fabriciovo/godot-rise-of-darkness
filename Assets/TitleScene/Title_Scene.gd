@@ -10,7 +10,7 @@ onready var container = $Pause_Button_Container
 func _ready():
 	start.set_focus_mode(Control.FOCUS_ALL)
 	start.grab_focus()
-	SoundController.play_music(SoundController.MUSIC.title)
+	#SoundController.play_music(SoundController.MUSIC.title)
 	check_file_existence()
 
 func _input(_event):
