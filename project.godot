@@ -164,7 +164,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GodotRPG"
+config/name="rise-of-darkness"
 run/main_scene="res://Assets/Language Scene/Language_Scene.tscn"
 config/icon="res://icon.png"
 

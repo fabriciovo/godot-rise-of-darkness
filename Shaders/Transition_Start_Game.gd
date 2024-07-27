@@ -4,6 +4,8 @@ onready var transition = $Fill
 onready var animation = $Fill/Transition_Animator
 #var player_anim = get_tree().current_scene.get_node("Player").get_node("PlayerAnimation")
 
+signal end_fade_out
+signal end_fade_in
 
 export (int, "Pixels", "Spot Player", "Spot Center","Slah V", "Slash H", "Smooth") var transition_type
 export (int, "Fade In", "Fade Out", "None") var execute
@@ -29,8 +31,7 @@ func fade_out():
 	animation.play("fade_out_anim")
 	yield (animation, "animation_finished")
 	Global.stop = false
-	Global.execute_transition_animation = false
-	queue_free()
+	emit_signal("end_fade_out")
 	
 func fade_in():
 	Global.execute_transition_animation = false
@@ -40,4 +41,4 @@ func fade_in():
 	animation.play("fade_in_anim")
 	yield (animation, "animation_finished")
 	Global.stop = false
-	queue_free()
+	emit_signal("end_fade_in")

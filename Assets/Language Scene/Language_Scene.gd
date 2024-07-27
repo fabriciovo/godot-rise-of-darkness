@@ -20,8 +20,11 @@ func _on_PT_pressed():
 	go_to_title()
 
 func go_to_title():
+	transition.fade_out()
+	en_btn.disabled = true
+	pt_btn.disabled = true
+	en_btn.release_focus()
+	pt_btn.release_focus()
+
+func _on_Transition_Start_Game_end_fade_out():
 	var _scene_instance = get_tree().change_scene("res://Assets/TitleScene/Title_Scene.tscn")
-	if _scene_instance == OK:
-		transition.fade_out()
-
-
