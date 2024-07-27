@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/TitleScene/Title_Scene.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/UI/Fonts/Greenscr.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Sprites/Button/sword_btn.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Title/LogoAnimation-Sheet3.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
@@ -13,11 +12,6 @@ use_mipmaps = true
 use_filter = true
 extra_spacing_bottom = -2
 font_data = ExtResource( 4 )
-
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 5 )
-region_rect = Rect2( 1.6813, 1.84299, 2.58347, 3.48768 )
-margin_left = 1.29173
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -33,10 +27,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 1 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "title"
-length = 3.0
+length = 6.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -45,10 +51,67 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 0.7, 0.8, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 3.1, 3.3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "destroy_title_anim"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 0.6, 0.7, 1.3, 1.4, 1.5, 1.7, 1.8, 1.9 ),
+"transitions": PoolRealArray( 1, 1.07177, 1, 1, 1.07177, 1, 1, 1.07177, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.498039 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.498039 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.498039 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "title_teste"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "destroy_title_anim"
+} ]
 }
 
 [node name="Title_Scene" type="Control"]
@@ -59,32 +122,33 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -138.0 ]
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
-visible = false
 anchor_right = 1.0
-margin_right = -154.0
-margin_bottom = 33.0
+margin_right = -112.0
+margin_bottom = 41.0
 rect_scale = Vector2( 2, 2 )
 theme = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Rise of 
+text = "Rise 
+of 
 Darkness"
 align = 1
 valign = 1
 
 [node name="Pause_Button_Container" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -66.0
-margin_top = -108.0
+margin_top = -73.0
 margin_right = 66.0
 focus_neighbour_top = NodePath("Load_Game")
 focus_neighbour_bottom = NodePath("Start")
@@ -93,37 +157,38 @@ theme = ExtResource( 3 )
 
 [node name="Start" type="Button" parent="Pause_Button_Container"]
 margin_right = 132.0
-margin_bottom = 10.0
+margin_bottom = 14.0
 rect_pivot_offset = Vector2( -175, 213 )
 theme = ExtResource( 1 )
-custom_styles/normal = SubResource( 2 )
 shortcut_in_tooltip = false
 text = "START_GAME"
 
 [node name="Options" type="Button" parent="Pause_Button_Container"]
-margin_top = 14.0
+margin_top = 18.0
 margin_right = 132.0
-margin_bottom = 28.0
+margin_bottom = 32.0
 theme = ExtResource( 1 )
 text = "OPTIONS"
 
 [node name="Load_Game" type="Button" parent="Pause_Button_Container"]
-margin_top = 32.0
+margin_top = 36.0
 margin_right = 132.0
-margin_bottom = 46.0
+margin_bottom = 50.0
 theme = ExtResource( 1 )
 text = "LOAD_GAME"
 
 [node name="Quit" type="Button" parent="Pause_Button_Container"]
-margin_top = 50.0
+margin_top = 54.0
 margin_right = 132.0
-margin_bottom = 64.0
+margin_bottom = 68.0
 theme = ExtResource( 1 )
 text = "QUIT"
 
 [node name="Title_Animation" type="Sprite" parent="."]
-position = Vector2( 111, 80 )
+position = Vector2( 111, 69 )
 scale = Vector2( 0.487574, 0.549333 )
+z_index = 1
+z_as_relative = false
 texture = ExtResource( 6 )
 hframes = 18
 frame = 1
@@ -132,6 +197,16 @@ frame = 1
 autoplay = "title"
 anims/RESET = SubResource( 3 )
 anims/title = SubResource( 4 )
+anims/title_teste = SubResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="Title_Animation"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -126.0
+margin_right = -269.0
+margin_bottom = -67.0
+color = Color( 1, 1, 1, 0 )
 
 [connection signal="pressed" from="Pause_Button_Container/Start" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Options" to="." method="_on_Options_pressed"]

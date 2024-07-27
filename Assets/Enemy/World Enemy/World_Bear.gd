@@ -99,7 +99,6 @@ func on_wall_hit():
 		offset = direction_offset * 20
 	else:
 		offset = knockback * 1
-	print(knockback)
 	var remaining_time = 1
 	while remaining_time > 0:
 		var delta = get_process_delta_time()

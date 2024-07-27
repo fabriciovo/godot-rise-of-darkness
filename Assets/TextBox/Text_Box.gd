@@ -28,7 +28,6 @@ func start_dialog():
 	file = ""
 	file += dialog_path + dialog_name
 	timer.wait_time = textSpeed
-	print(file)
 	dialog = getDialog()
 	nextPhrase()
  

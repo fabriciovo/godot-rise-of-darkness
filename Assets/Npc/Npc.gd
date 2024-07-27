@@ -7,7 +7,7 @@ var can_talk = true
 
 func _input(_event):
 	if not player: return
-	if (_event.is_action_pressed("action_3") or _event.is_action_pressed("action_1") or _event.is_action_pressed("action_2")) and player != null and not Global.stop:
+	if (_event.is_action_pressed("action_3") or _event.is_action_pressed("action_2") or _event.is_action_pressed("action_1")) and player != null and not Global.stop:
 		trigger_dialog_box()
 
 func _on_Input_Area_body_entered(body):
@@ -20,14 +20,13 @@ func _on_Input_Area_body_exited(body):
 
 func trigger_dialog_box():
 	if not can_talk: return
-	Global.stop = true
+	can_talk = false
 	$Text_Box_Layer/Text_Box.dialog_name = dialog_name[quest_step]
 	$Text_Box_Layer/Text_Box.start_dialog()
 
 func _on_Text_Box_on_end_dialog():
-	can_talk = true
+	print(quest_step)
 	if quest_step == 0:
-		can_talk = false
 		quest_step+=1
 		$Text_Box_Layer/Text_Box.dialog_name = "get_relic_3.json"
 		PlayerControll.set_relic_item(Global.RELICS.RING_OF_SOULS)
@@ -35,10 +34,11 @@ func _on_Text_Box_on_end_dialog():
 		player.play_get_item_animation()
 		var player_animator = player.get_node("PlayerAnimation")
 		yield(player_animator, "animation_finished")
-		Global.stop = true
 		$Text_Box_Layer/Text_Box.start_dialog()
+		return
 	elif quest_step == 1:
 		pass
 	elif quest_step == 2:
 		pass
+	can_talk = true
 	Global.stop = false

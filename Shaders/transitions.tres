@@ -1,6 +1,7 @@
 [gd_resource type="Shader" format=2]
 
 [resource]
+resource_local_to_scene = true
 code = "	shader_type canvas_item;
 	uniform float screen_width = 1920;
 	uniform float screen_height = 1080;
@@ -11,7 +12,7 @@ code = "	shader_type canvas_item;
 	uniform float circle_size : hint_range(0,2) = 1.5f;
 	uniform float curtains : hint_range(0,1) = 1.0f;
 
-	uniform int type : hint_range(0,4) = 0;
+	uniform int type : hint_range(0,5) = 0;
 
 	void fragment() {
 		//Tipo Diamante Pixel
@@ -51,6 +52,9 @@ code = "	shader_type canvas_item;
 			if (distance(vec2(0.5, 0.5), vec2(UV.y, UV.y)) < curtains * (1.0 - progress)) {
 				COLOR.a = 0.0f;
 			}
+		}
+		else if (type == 5) {
+		    COLOR.a = curtains * (1.0 - progress)
 		}
 	}
 "

@@ -7,7 +7,6 @@ func _ready():
 	battle_unit_hp = battle_unit_max_hp
 
 func damage(_knockback_value, _damage_value):
-	print(battle_unit_hp)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
 	knockback = _knockback_value
 	hit = true

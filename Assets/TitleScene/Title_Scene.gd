@@ -4,6 +4,8 @@ var filePath = "user://player_data.json"
 onready var start = $Pause_Button_Container/Start
 onready var btn_load_game = $Pause_Button_Container/Load_Game
 onready var settings_panel = $"/root/Ui/UI_Containers/Settings"
+onready var title_anim = $Title_Animation
+onready var container = $Pause_Button_Container
 
 func _ready():
 	start.set_focus_mode(Control.FOCUS_ALL)
@@ -37,7 +39,9 @@ func _on_Load_Game_pressed():
 	if scene_instance == OK:
 		Ui.game_start()
 
-
-
 func _on_Quit_pressed():
 	get_tree().quit()
+
+func destroy_title_anim():
+	container.visible = true
+	title_anim.queue_free()

@@ -1,29 +1,28 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Shaders/transition.tres" type="Shader" id=2]
-[ext_resource path="res://Assets/Animations/fade_in_anim.tres" type="Animation" id=3]
-[ext_resource path="res://Assets/Animations/fade_out_anim.tres" type="Animation" id=4]
-[ext_resource path="res://Shaders/Transition.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Animations/fade_in_anim.tres" type="Animation" id=1]
+[ext_resource path="res://Assets/Animations/fade_out_anim.tres" type="Animation" id=2]
+[ext_resource path="res://Shaders/Transition_Start_Game.gd" type="Script" id=3]
+[ext_resource path="res://Shaders/transitions.tres" type="Shader" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 2 )
+shader = ExtResource( 4 )
 shader_param/screen_width = 1920.0
 shader_param/screen_height = 1080.0
 shader_param/center = Vector2( 0.5, 0.5 )
 shader_param/player = Vector2( 0.5, 0.5 )
-shader_param/progress = 0.0
+shader_param/progress = 1.0
 shader_param/pixel_size = 15.0
 shader_param/circle_size = 1.5
 shader_param/curtains = 1.0
-shader_param/type = 0
+shader_param/type = 5
 
 [sub_resource type="Animation" id=2]
 length = 0.001
 
-[node name="Transition" type="CanvasLayer"]
-script = ExtResource( 5 )
-transition_type = 1
-execute = 2
+[node name="Transition_Start_Game" type="CanvasLayer"]
+script = ExtResource( 3 )
+transition_type = 5
 
 [node name="Fill" type="ColorRect" parent="."]
 material = SubResource( 1 )
@@ -34,5 +33,5 @@ color = Color( 0, 0, 0, 1 )
 [node name="Transition_Animator" type="AnimationPlayer" parent="Fill"]
 root_node = NodePath("../..")
 anims/RESET = SubResource( 2 )
-anims/fade_in_anim = ExtResource( 3 )
-anims/fade_out_anim = ExtResource( 4 )
+anims/fade_in_anim = ExtResource( 1 )
+anims/fade_out_anim = ExtResource( 2 )

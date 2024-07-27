@@ -76,7 +76,6 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
-modulate = Color( 1, 1, 1, 0.352941 )
 texture = ExtResource( 5 )
 hframes = 4
 vframes = 5

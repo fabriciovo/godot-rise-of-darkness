@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Language Scene/Language_Scene.gd" type="Script" id=1]
+[ext_resource path="res://Shaders/Transition_Start_Game.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=4]
 
 [node name="Language_Scene" type="Control"]
@@ -61,6 +62,8 @@ margin_right = 132.0
 margin_bottom = 32.0
 theme = ExtResource( 4 )
 text = "SELECT_PT"
+
+[node name="Transition_Start_Game" parent="." instance=ExtResource( 2 )]
 
 [connection signal="focus_entered" from="Pause_Button_Container/EN" to="." method="_on_EN_focus_entered"]
 [connection signal="pressed" from="Pause_Button_Container/EN" to="." method="_on_EN_pressed"]

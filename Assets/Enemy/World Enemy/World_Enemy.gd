@@ -35,7 +35,6 @@ func _process(_delta):
 func _on_Timer_timeout():
 	hit = false
 	spr.modulate = Color(1,1,1,1)
-	print("sdasdsa")
 	Enable()
 
 func Destroy():
