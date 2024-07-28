@@ -54,7 +54,7 @@ code = "	shader_type canvas_item;
 			}
 		}
 		else if (type == 5) {
-		    COLOR.a = curtains * (1.0 - progress)
+			COLOR.a *= progress;
 		}
 	}
 "

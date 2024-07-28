@@ -6,10 +6,11 @@ onready var btn_load_game = $Pause_Button_Container/Load_Game
 onready var settings_panel = $"/root/Ui/UI_Containers/Settings"
 onready var title_anim = $Title_Animation
 onready var container = $Pause_Button_Container
+onready var transition = $Transition_Start_Game
+
 
 func _ready():
 	start.set_focus_mode(Control.FOCUS_ALL)
-	start.grab_focus()
 	#SoundController.play_music(SoundController.MUSIC.title)
 	check_file_existence()
 
@@ -44,4 +45,8 @@ func _on_Quit_pressed():
 
 func destroy_title_anim():
 	container.visible = true
+	start.grab_focus()
 	title_anim.queue_free()
+
+func _on_Transition_Start_Game_end_fade_out():
+	title_anim.get_node("AnimationPlayer").play("title")

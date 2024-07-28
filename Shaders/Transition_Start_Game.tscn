@@ -23,6 +23,7 @@ length = 0.001
 [node name="Transition_Start_Game" type="CanvasLayer"]
 script = ExtResource( 3 )
 transition_type = 5
+execute = 1
 
 [node name="Fill" type="ColorRect" parent="."]
 material = SubResource( 1 )

@@ -63,7 +63,8 @@ position = Vector2( 168, 40 )
 
 [node name="Transition" parent="." instance=ExtResource( 8 )]
 transition_type = 3
-execute = 1
+execute_on_start = 1
+duration = 0.3
 
 [node name="Door_Weapon" parent="." instance=ExtResource( 9 )]
 position = Vector2( -8, 79 )

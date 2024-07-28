@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Enviroment/Key_Gate.tscn" type="PackedScene" id=4]
 
 [node name="World_Left_3" instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
 
 [node name="Player" parent="." index="1"]
 position = Vector2( 112, 129 )

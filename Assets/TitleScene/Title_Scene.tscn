@@ -8,10 +8,8 @@
 [ext_resource path="res://Sprites/Title/LogoAnimation-Sheet3.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 10
-use_mipmaps = true
+size = 12
 use_filter = true
-extra_spacing_bottom = -2
 font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=3]
@@ -129,17 +127,16 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
-anchor_right = 1.0
-margin_right = -112.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -112.0
 margin_bottom = 41.0
 rect_scale = Vector2( 2, 2 )
 theme = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Rise 
-of 
+text = "Rise of  
 Darkness"
-align = 1
 valign = 1
 
 [node name="Pause_Button_Container" type="VBoxContainer" parent="."]
@@ -195,7 +192,6 @@ hframes = 18
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Title_Animation"]
-autoplay = "title"
 anims/RESET = SubResource( 3 )
 anims/title = SubResource( 4 )
 anims/title_teste = SubResource( 5 )
@@ -210,9 +206,10 @@ margin_bottom = -67.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="Transition_Start_Game" parent="." instance=ExtResource( 5 )]
-execute_on_start = 1
+duration = 2.0
 
 [connection signal="pressed" from="Pause_Button_Container/Start" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Load_Game" to="." method="_on_Load_Game_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="end_fade_out" from="Transition_Start_Game" to="." method="_on_Transition_Start_Game_end_fade_out"]

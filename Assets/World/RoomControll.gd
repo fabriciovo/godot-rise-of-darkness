@@ -2,7 +2,6 @@ class_name Room_Controll extends Node2D
 
 func _ready():
 	var scene_name = get_tree().current_scene.name
-	Global.in_game = true
 	if not "World_0" in scene_name:
 		Global.saveJSONData("player_data",PlayerControll.player_data())
 		Global.save_world_data()
