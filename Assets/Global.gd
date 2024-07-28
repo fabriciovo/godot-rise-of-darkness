@@ -66,7 +66,7 @@ var QUESTS = {
 	},
 	"SOULS_QUEST": {
 		"Title": "Collect souls",
-		"Description": "",
+		"Description": "COLLECT_SOULS_DESCRIPTION",
 		"Reward": "Reward 50 XP",
 		"Progress": 0,
 		"Goal": 100,

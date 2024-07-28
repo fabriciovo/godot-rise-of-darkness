@@ -623,9 +623,8 @@ __meta__ = {
 margin_right = 36.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 24, 24 )
-theme = ExtResource( 11 )
+theme = ExtResource( 14 )
 text = "?"
-flat = true
 icon_align = 1
 
 [node name="necklace" type="Button" parent="UI_Containers/Relics/Relics_List"]
@@ -634,9 +633,8 @@ margin_top = 28.0
 margin_right = 36.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 24, 24 )
-theme = ExtResource( 11 )
+theme = ExtResource( 14 )
 text = "?"
-flat = true
 icon_align = 1
 
 [node name="Boots_Of_Speed" type="Button" parent="UI_Containers/Relics/Relics_List"]
@@ -644,9 +642,8 @@ margin_top = 56.0
 margin_right = 36.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 24, 24 )
-theme = ExtResource( 11 )
+theme = ExtResource( 14 )
 text = "?"
-flat = true
 icon_align = 1
 
 [node name="Ring_Of_Souls" type="Button" parent="UI_Containers/Relics/Relics_List"]
@@ -654,9 +651,8 @@ margin_top = 84.0
 margin_right = 36.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 24, 24 )
-theme = ExtResource( 11 )
+theme = ExtResource( 14 )
 text = "?"
-flat = true
 icon_align = 1
 
 [node name="Text_Label" type="RichTextLabel" parent="UI_Containers/Relics"]
@@ -684,4 +680,4 @@ __meta__ = {
 [connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Ring" to="UI_Containers/Relics" method="_on_Ring_focus_entered"]
 [connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/necklace" to="UI_Containers/Relics" method="_on_necklace_focus_entered"]
 [connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Boots_Of_Speed" to="UI_Containers/Relics" method="_on_Boots_Of_Speed_focus_entered"]
-[connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Ring_Of_Souls" to="UI_Containers/Relics" method="_on_Boots_Of_Speed_focus_entered"]
+[connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Ring_Of_Souls" to="UI_Containers/Relics" method="_on_Ring_Of_Souls_focus_entered"]

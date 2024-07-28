@@ -1,8 +1,13 @@
-[gd_resource type="Theme" load_steps=5 format=2]
+[gd_resource type="Theme" load_steps=7 format=2]
 
 [ext_resource path="res://Assets/UI/Fonts/dogicabold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/UI/Button9FrameHover.tres" type="StyleBox" id=2]
 [ext_resource path="res://Assets/UI/Button9Frame.tres" type="StyleBox" id=3]
+[ext_resource path="res://Images/Button9Slice.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 6, 6 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 6
@@ -12,6 +17,7 @@ font_data = ExtResource( 1 )
 
 [resource]
 default_font = SubResource( 4 )
+Button/styles/disabled = SubResource( 5 )
 Button/styles/focus = ExtResource( 2 )
 Button/styles/normal = ExtResource( 3 )
 Label/fonts/font = SubResource( 4 )
