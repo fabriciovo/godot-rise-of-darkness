@@ -22,7 +22,7 @@ func configure_battle_unit():
 	battle_unit_max_hp = 30
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
-	const_speed = 10
+	const_speed = 300
 	speed = const_speed
 
 func initialize_movement_control():
@@ -32,7 +32,7 @@ func _physics_process(_delta):
 	if wall_hit: return
 	if battle_unit_hp <= 0: return
 	update_random_direction_timer(_delta)
-	move_enemy()
+	move_enemy(_delta)
 
 func update_random_direction_timer(_delta):
 	random_direction_timer += _delta
@@ -70,9 +70,9 @@ func pick_random_direction():
 	if not raycast.enabled:
 		raycast.enabled = true
 
-func move_enemy():
+func move_enemy(_delta):
 	raycast.cast_to = direction * 67
-	var _dir = move_and_slide(direction * speed)
+	var _dir = move_and_slide(direction * speed * _delta)
 
 func check_raycast_collision():
 	if raycast.is_colliding():
@@ -87,7 +87,7 @@ func on_player_detected():
 	$Rush_Timer.start(2)
 
 func _on_Rush_Timer_timeout():
-	speed = 200
+	speed = const_speed * 30
 
 func on_wall_hit():
 	raycast.enabled = false
@@ -108,7 +108,7 @@ func on_wall_hit():
 	yield(bear_anim, "animation_finished")
 	wall_hit = false
 	attacking = false
-	speed = 5
+	speed = const_speed
 
 func _on_Area_body_entered(_body):
 	if attacking and not wall_hit:
