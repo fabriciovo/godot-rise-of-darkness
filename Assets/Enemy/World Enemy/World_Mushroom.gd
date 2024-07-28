@@ -95,7 +95,8 @@ func _on_Chase_Area_body_exited(body):
 func explosion():
 	if dead: return
 	dead = true
-	if hits > 0:
+	print(hits)
+	if hits > 1:
 		PlayerControll.set_xp(battle_unit_xp)
 
 func _on_Explosion_Area_body_entered(body):

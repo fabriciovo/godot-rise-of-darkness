@@ -19,6 +19,7 @@ var battle_unit_hp = battle_unit_max_hp
 var teleport_pos = Vector2.ZERO
 var has_soul = false
 var invincible = false
+var hiding = false
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
@@ -53,12 +54,14 @@ func damage(damageValue):
 func change_postion():
 	if battle_unit_hp <= 0: return
 	invincible = true
+	hiding = true
 	animation.play("hide")
 	yield(animation, "animation_finished")
 	global_position = get_random_pos()
 	animation.play("show")
 	yield(animation, "animation_finished")
 	invincible = false
+	hiding = false
 	attack_player()
 	$Change_Position_Timer.start(3)
 
@@ -81,7 +84,7 @@ func get_random_pos():
 		return points[random_index].position
 
 func _on_Damage_Area_area_entered(area):
-	if invincible: return
+	if invincible or hiding: return
 	if area.is_in_group(Global.GROUPS.SWORD):
 		damage(PlayerControll.atk)
 	if area.is_in_group(Global.GROUPS.ARROW):
