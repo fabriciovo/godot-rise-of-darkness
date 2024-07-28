@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/Quest/Quests.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Weapon_Icons_nobg_16x16.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/MaxStats.gd" type="Script" id=6]
@@ -263,7 +264,6 @@ align = 3
 valign = 1
 
 [node name="Title_Scene" type="Control" parent="."]
-visible = false
 margin_right = 64.0
 margin_bottom = 17.0
 __meta__ = {
@@ -275,10 +275,11 @@ one_shot = true
 autostart = true
 
 [node name="Title_Panel" type="Panel" parent="Title_Scene"]
+visible = false
 anchor_right = 1.525
 anchor_bottom = 1.125
 margin_top = 1.0
-margin_right = -34.6
+margin_right = 14.4
 margin_bottom = 0.875
 
 [node name="Title_Text" type="Label" parent="Title_Scene/Title_Panel"]
@@ -337,7 +338,7 @@ focus_mode = 2
 
 [node name="Settings" type="Button" parent="Pause_Options/Pause_Button_Container"]
 margin_right = 92.0
-margin_bottom = 15.0
+margin_bottom = 13.0
 theme = ExtResource( 11 )
 text = "Settings"
 
@@ -367,9 +368,9 @@ text = "Relics"
 
 [node name="Quests" type="Button" parent="Pause_Options/Pause_Button_Container"]
 visible = false
-margin_top = 76.0
+margin_top = 17.0
 margin_right = 92.0
-margin_bottom = 91.0
+margin_bottom = 30.0
 theme = ExtResource( 11 )
 text = "Quests"
 
@@ -584,14 +585,14 @@ margin_bottom = 7.5
 script = ExtResource( 7 )
 
 [node name="PT_Btn" type="Button" parent="UI_Containers/Settings/Control/Panel/Language_List"]
-margin_right = 67.0
+margin_right = 76.0
 margin_bottom = 15.0
 theme = ExtResource( 11 )
 text = "SELECT_PT"
 
 [node name="EN_Btn" type="Button" parent="UI_Containers/Settings/Control/Panel/Language_List"]
-margin_left = 71.0
-margin_right = 138.0
+margin_left = 80.0
+margin_right = 156.0
 margin_bottom = 15.0
 theme = ExtResource( 11 )
 text = "SELECT_EN"
@@ -599,6 +600,9 @@ text = "SELECT_EN"
 [node name="Inventory" parent="UI_Containers" instance=ExtResource( 12 )]
 visible = false
 margin_bottom = -28.0
+
+[node name="Quests" parent="UI_Containers" instance=ExtResource( 3 )]
+visible = false
 
 [node name="Relics" type="Control" parent="UI_Containers"]
 visible = false
@@ -608,45 +612,58 @@ script = ExtResource( 15 )
 
 [node name="Relics_List" type="VBoxContainer" parent="UI_Containers/Relics"]
 anchor_left = 0.0401786
-anchor_top = 0.0764706
+anchor_top = 0.0294118
 anchor_right = 0.200893
-anchor_bottom = 0.688235
+anchor_bottom = 0.852941
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Ring" type="Button" parent="UI_Containers/Relics/Relics_List"]
 margin_right = 36.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
 theme = ExtResource( 11 )
 text = "?"
+flat = true
 icon_align = 1
 
 [node name="necklace" type="Button" parent="UI_Containers/Relics/Relics_List"]
 show_behind_parent = true
-margin_top = 36.0
+margin_top = 28.0
 margin_right = 36.0
-margin_bottom = 68.0
-rect_min_size = Vector2( 32, 32 )
+margin_bottom = 52.0
+rect_min_size = Vector2( 24, 24 )
 theme = ExtResource( 11 )
 text = "?"
+flat = true
 icon_align = 1
 
 [node name="Boots_Of_Speed" type="Button" parent="UI_Containers/Relics/Relics_List"]
-margin_top = 72.0
+margin_top = 56.0
 margin_right = 36.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 32, 32 )
+margin_bottom = 80.0
+rect_min_size = Vector2( 24, 24 )
 theme = ExtResource( 11 )
 text = "?"
+flat = true
+icon_align = 1
+
+[node name="Ring_Of_Souls" type="Button" parent="UI_Containers/Relics/Relics_List"]
+margin_top = 84.0
+margin_right = 36.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 24, 24 )
+theme = ExtResource( 11 )
+text = "?"
+flat = true
 icon_align = 1
 
 [node name="Text_Label" type="RichTextLabel" parent="UI_Containers/Relics"]
 anchor_left = 0.241071
-anchor_top = 0.0764706
+anchor_top = 0.0294118
 anchor_right = 0.928571
-anchor_bottom = 0.694118
+anchor_bottom = 0.670588
 theme = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -667,3 +684,4 @@ __meta__ = {
 [connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Ring" to="UI_Containers/Relics" method="_on_Ring_focus_entered"]
 [connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/necklace" to="UI_Containers/Relics" method="_on_necklace_focus_entered"]
 [connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Boots_Of_Speed" to="UI_Containers/Relics" method="_on_Boots_Of_Speed_focus_entered"]
+[connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Ring_Of_Souls" to="UI_Containers/Relics" method="_on_Boots_Of_Speed_focus_entered"]

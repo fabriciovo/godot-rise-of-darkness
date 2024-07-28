@@ -52,8 +52,8 @@ door_name = "Door4"
 
 [node name="Chest_Left_5" parent="Enviroment_Entities" instance=ExtResource( 8 )]
 position = Vector2( 113, 121 )
-item = 2
 type = "relics"
+item = 2
 
 [node name="Bat_Positions" type="Node2D" parent="."]
 position = Vector2( 111, 85 )

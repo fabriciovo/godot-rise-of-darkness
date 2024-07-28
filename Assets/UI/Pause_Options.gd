@@ -14,3 +14,7 @@ func set_visible_options():
 		relics.visible = true
 	if Global.trigger_tutorial_animation:
 		quests.visible = true
+	if Global.trigger_tutorial_animation:
+		quests.visible = true
+	if true:
+		quests.visible = true

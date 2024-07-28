@@ -28,6 +28,7 @@ func _on_Text_Box_on_end_dialog():
 	print(quest_step)
 	if quest_step == 0:
 		quest_step+=1
+		Global.QUESTS["SOULS_QUEST"]["Unlocked"] = true
 		$Text_Box_Layer/Text_Box.dialog_name = "get_relic_3.json"
 		PlayerControll.set_relic_item(Global.RELICS.RING_OF_SOULS)
 		player.set_item_texture(0, "relics")

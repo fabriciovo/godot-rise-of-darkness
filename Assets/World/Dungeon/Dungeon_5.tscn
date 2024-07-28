@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Enviroment/Altar.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/map_0.tres" type="TileSet" id=2]
 [ext_resource path="res://Sprites/Altars_nobg_16x16.png" type="Texture" id=3]
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/World/Dungeon/BridgeColisionAltar.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/World/Dungeon/BridgeAltar.gd" type="Script" id=8]
@@ -78,10 +77,6 @@ position = Vector2( 30, 60 )
 
 [node name="World_Bat_d5_1" parent="Entities" index="3" instance=ExtResource( 9 )]
 position = Vector2( 120, 73 )
-
-[node name="Chest_1" parent="Enviroment_Entities" index="0" instance=ExtResource( 5 )]
-position = Vector2( 27, 118 )
-item = 1
 
 [node name="Altar" type="Node2D" parent="." index="6"]
 position = Vector2( 196, 116 )

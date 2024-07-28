@@ -54,11 +54,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Player/Player.gd"
 }, {
-"base": "NinePatchRect",
-"class": "Quest_Tile",
-"language": "GDScript",
-"path": "res://Assets/UI/Quest_Tile.gd"
-}, {
 "base": "Node2D",
 "class": "Room_Controll",
 "language": "GDScript",
@@ -144,7 +139,6 @@ _global_script_class_icons={
 "Key_Gate": "",
 "Lever": "",
 "Player": "",
-"Quest_Tile": "",
 "Room_Controll": "",
 "Simple_Projectile": "",
 "Soul": "",

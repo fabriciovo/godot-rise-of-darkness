@@ -12,6 +12,7 @@ onready var item_1 = $Game_UI/Items/item1/weapon
 onready var item_2 = $Game_UI/Items/item2/weapon
 onready var key_label = $Game_UI/Items/Stats/key_label
 onready var inventory_panel = $UI_Containers/Inventory
+onready var quests_panel = $UI_Containers/Quests
 onready var level_panel = $Game_UI/Level_Progress_Panel
 
 onready var relics_container = $UI_Containers/Relics
@@ -50,8 +51,9 @@ func _process(_delta):
 	else:
 		item_2.visible = true
 		item_2.frame = PlayerControll.equiped_item[1]
-	if Input.is_action_just_pressed("start") and Global.in_game and not Global.execute_transition_animation and not Global.cutscene and not Global.dialog:
+	if Input.is_action_just_pressed("start"):
 		Ui.show_hidden_panels()
+		print("aqui")
 	if pause_options.visible and Global.cutscene:
 		pause_options.visible = false
 
@@ -141,7 +143,8 @@ func _on_Relics_pressed():
 	relics_container.set_relics()
 
 func _on_Quests_pressed():
-	pass # Replace with function body.can_continue
+	quests_panel.visible = true
+	quests_panel.set_quest()
 
 
 

@@ -15,8 +15,8 @@ tile_data = PoolIntArray( 0, 25, 0, 1, 25, 0, 2, 25, 0, 3, 25, 0, 4, 25, 0, 5, 2
 
 [node name="Chest_Left_3" parent="Enviroment_Entities" index="0" instance=ExtResource( 3 )]
 position = Vector2( 112, 25 )
-item = 1
 type = "relics"
+item = 1
 
 [node name="Key_Gate_Left_3" parent="Enviroment_Entities" index="1" instance=ExtResource( 4 )]
 position = Vector2( 120, 56 )

@@ -7,7 +7,6 @@
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=5]
 
 [node name="World_Left_4" instance=ExtResource( 1 )]
-position = Vector2( 0, 0 )
 
 [node name="Player" parent="." index="1"]
 position = Vector2( 213, 80 )

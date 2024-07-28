@@ -27,6 +27,10 @@ func set_relics():
 				relic_list[2].icon = boots_of_speed_icon
 				relic_list[2].disabled = false
 				relic_list[2].text = ""
+			Global.RELICS.RING_OF_SOULS:
+				relic_list[3].icon = boots_of_speed_icon
+				relic_list[3].disabled = false
+				relic_list[3].text = ""
 
 func _on_Ring_focus_entered():
 	if relic_list[0].icon != null:

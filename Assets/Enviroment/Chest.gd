@@ -4,10 +4,8 @@ extends Area2D
 export(String, "weapons", "relics") var type = "weapons"
 export(int, "Sword/Boot of Speed", 
 "Bow/Ring of Dash",
- "Bomb/necklace of protection", 
+"Bomb/necklace of protection", 
 "Heal/Ring of souls", "Key", "Shield" ) var item = 0
-
-
 
 onready var interactButton = get_node("InteractionButton")
 onready var text_box = $Text_Box_Layer/Text_Box

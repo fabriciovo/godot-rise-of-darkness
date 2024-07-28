@@ -22,7 +22,6 @@ var chest_sword = false
 var chest_heal = false
 var chest_bow = false
 var chest_bomb = false
-var in_game = false
 var execute_transition_animation = true
 var trigger_tutorial_animation = false
 
@@ -92,7 +91,6 @@ func get_world_data():
 		"chest_heal": chest_heal,
 		"chest_bow": chest_bow,
 		"chest_bomb": chest_bomb,
-		"in_game": in_game,
 		"execute_transition_animation": execute_transition_animation,
 		"trigger_tutorial_animation": trigger_tutorial_animation,
 	}
