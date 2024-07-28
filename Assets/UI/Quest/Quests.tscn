@@ -16,8 +16,8 @@ anchor_bottom = 1.0
 margin_left = -127.0
 theme = ExtResource( 2 )
 bbcode_enabled = true
-bbcode_text = "gdfgsdfdsg"
-text = "gdfgsdfdsg"
+bbcode_text = "COLLECT_SOULS_DESCRIPTION"
+text = "COLLECT_SOULS_DESCRIPTION"
 
 [node name="Quests_Container" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0

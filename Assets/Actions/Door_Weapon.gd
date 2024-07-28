@@ -3,7 +3,7 @@ var can_pass = false
 func _ready():
 	if PlayerControll.inventory.size() > 0:
 		queue_free()
-	add_to_group(Global.GROUPS.DOOR_WITH_INTERACTION)
+	add_to_group(.GROUPS.DOOR_WITH_INTERACTION)
 
 func _process(_delta):
 	if PlayerControll.inventory.size() == 0:

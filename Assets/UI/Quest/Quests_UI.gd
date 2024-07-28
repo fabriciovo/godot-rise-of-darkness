@@ -16,4 +16,4 @@ func set_quest():
 	quests_container.get_children()[0].grab_focus()
 
 func _on_quest_button_focus_entered(_quest):
-	quest_info.bbcode_text = _quest["Description"]
+	quest_info.bbcode_text = tr(_quest["Description"])

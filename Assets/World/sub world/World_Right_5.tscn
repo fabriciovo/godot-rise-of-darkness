@@ -33,8 +33,8 @@ tile_data = PoolIntArray( 0, 25, 0, 1, 25, 0, 2, 25, 0, 3, 25, 0, 4, 25, 0, 5, 2
 [node name="Door_World" parent="." instance=ExtResource( 6 )]
 position = Vector2( 212, 96 )
 rotation = 1.5708
-target_scene = "res://Assets/World/sub world/World_Right_3.tscn"
-door_name = "Door_World_Right_4"
+target_scene = "res://Assets/World/sub world/World_Right_4.tscn"
+door_name = "Door_World_Right_5"
 
 [node name="Npc_Ronan" parent="." instance=ExtResource( 5 )]
 position = Vector2( 69, 44 )

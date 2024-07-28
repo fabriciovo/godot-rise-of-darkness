@@ -13,4 +13,4 @@ dest_files=[ "res://translation.en.translation", "res://translation.pt.translati
 [params]
 
 compress=true
-delimiter=1
+delimiter=0
