@@ -54,8 +54,15 @@ code = "	shader_type canvas_item;
 			}
 		}
 		else if (type == 5) {
-			float easedProgress = smoothstep(0.0, 1.0, progress);
-			COLOR.a *= 1.0 - easedProgress;
+//			float easedProgress = smoothstep(0.0, 1.0, progress);
+//			COLOR.a *= 1.0 - easedProgress;
+			if (progress < 0.2f) {
+			    COLOR.a *= 1.0 - (progress * 0.2);
+			} else if (progress < 0.4) {
+			    COLOR.a *= 0.8 - ((progress - 0.2) * 0.2);
+			} else {
+			    COLOR.a = 0.0f;
+			}
 		}
 	}
 "

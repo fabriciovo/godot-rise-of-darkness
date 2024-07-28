@@ -65,7 +65,7 @@ text = "SELECT_PT"
 
 [node name="Transition_Start_Game" parent="." instance=ExtResource( 2 )]
 execute = 0
-duration = 1.0
+duration = 0.8
 
 [connection signal="focus_entered" from="Pause_Button_Container/EN" to="." method="_on_EN_focus_entered"]
 [connection signal="pressed" from="Pause_Button_Container/EN" to="." method="_on_EN_pressed"]
