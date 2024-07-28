@@ -42,7 +42,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "title"
 length = 6.0
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -127,6 +126,7 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -112.0
@@ -212,4 +212,5 @@ duration = 2.0
 [connection signal="pressed" from="Pause_Button_Container/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Load_Game" to="." method="_on_Load_Game_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="end_fade_in" from="Transition_Start_Game" to="." method="_on_Transition_Start_Game_end_fade_in"]
 [connection signal="end_fade_out" from="Transition_Start_Game" to="." method="_on_Transition_Start_Game_end_fade_out"]

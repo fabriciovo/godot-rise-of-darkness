@@ -20,9 +20,10 @@ func _ready():
 			fade_out()
 	if execute_on_start:
 		if Global.execute_transition_animation:
-			Global.execute_transition_animation = true
+			Global.execute_transition_animation = false
 			var player_anim = get_tree().current_scene.get_node("Player").get_node("PlayerAnimation")
 			player_anim.play("intro_anim")
+			fade_out()
 		else:
 			Global.stop = false
 			queue_free()

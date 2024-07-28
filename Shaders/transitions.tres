@@ -54,7 +54,8 @@ code = "	shader_type canvas_item;
 			}
 		}
 		else if (type == 5) {
-			COLOR.a *= progress;
+			float sigmoid = 1.0 / (1.0 + exp(-10.0 * (progress - 0.8)));
+			COLOR.a *= sigmoid;
 		}
 	}
 "
