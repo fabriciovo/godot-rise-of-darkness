@@ -64,10 +64,11 @@ theme = ExtResource( 4 )
 text = "SELECT_PT"
 
 [node name="Transition_Start_Game" parent="." instance=ExtResource( 2 )]
-duration = 1.5
+execute = 0
+duration = 1.0
 
 [connection signal="focus_entered" from="Pause_Button_Container/EN" to="." method="_on_EN_focus_entered"]
 [connection signal="pressed" from="Pause_Button_Container/EN" to="." method="_on_EN_pressed"]
 [connection signal="focus_entered" from="Pause_Button_Container/PT" to="." method="_on_PT_focus_entered"]
 [connection signal="pressed" from="Pause_Button_Container/PT" to="." method="_on_PT_pressed"]
-[connection signal="end_fade_in" from="Transition_Start_Game" to="." method="_on_Transition_Start_Game_end_fade_in"]
+[connection signal="end_fade_out" from="Transition_Start_Game" to="." method="_on_Transition_Start_Game_end_fade_out"]

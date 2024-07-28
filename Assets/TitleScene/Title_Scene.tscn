@@ -206,7 +206,8 @@ margin_bottom = -67.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="Transition_Start_Game" parent="." instance=ExtResource( 5 )]
-duration = 2.0
+execute = 0
+duration = 1.0
 
 [connection signal="pressed" from="Pause_Button_Container/Start" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Options" to="." method="_on_Options_pressed"]

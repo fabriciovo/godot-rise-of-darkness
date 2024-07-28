@@ -44,17 +44,16 @@ func _on_Quit_pressed():
 	get_tree().quit()
 
 func destroy_title_anim():
-	transition.fade_in()
+	transition.fade_out()
 	title_anim.visible = false
 
 func _on_Transition_Start_Game_end_fade_out():
+	$Label.visible = true
+	container.visible = true
+	transition.fade_in()
+
+func _on_Transition_Start_Game_end_fade_in():
 	if title_anim.visible:
 		title_anim.get_node("AnimationPlayer").play("title")
 	else:
 		start.grab_focus()
-
-
-func _on_Transition_Start_Game_end_fade_in():
-	$Label.visible = true
-	container.visible = true
-	transition.fade_out()
