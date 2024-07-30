@@ -4,6 +4,7 @@ onready var pt_btn = $Pause_Button_Container/PT
 onready var transition = $Transition_Start_Game
 
 func _ready():
+	Global.in_game = false
 	en_btn.set_focus_mode(Control.FOCUS_ALL)
 	en_btn.grab_focus()
 

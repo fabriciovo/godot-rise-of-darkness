@@ -22,7 +22,6 @@ var can_equip_heal = false
 var can_equip_bomb = false
 var can_equip_bow = false
 
-var ui_arrow_index = 0
 func _ready():
 	game_ui.visible = false
 
@@ -33,6 +32,8 @@ func _input(_event):
 			ui_containers[i].visible = false
 		if pause_options.visible:
 			pause_options.get_node("Pause_Button_Container/Settings").grab_focus()
+	if _event.is_action_pressed("start") and Global.in_game and not Global.cutscene:
+		Ui.show_hidden_panels()
 
 func _process(_delta):
 	HP.text = "HP: " + str(PlayerControll.hp)
@@ -51,9 +52,6 @@ func _process(_delta):
 	else:
 		item_2.visible = true
 		item_2.frame = PlayerControll.equiped_item[1]
-	if Input.is_action_just_pressed("start"):
-		Ui.show_hidden_panels()
-		print("aqui")
 	if pause_options.visible and Global.cutscene:
 		pause_options.visible = false
 

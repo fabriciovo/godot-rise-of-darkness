@@ -24,6 +24,7 @@ var chest_bow = false
 var chest_bomb = false
 var execute_transition_animation = true
 var trigger_tutorial_animation = false
+var in_game = false
 
 const GROUPS = {
 	PLAYER = "PLAYER",

@@ -10,6 +10,7 @@ onready var transition = $Transition_Start_Game
 
 
 func _ready():
+	Global.in_game = false
 	start.set_focus_mode(Control.FOCUS_ALL)
 	#SoundController.play_music(SoundController.MUSIC.title)
 	check_file_existence()

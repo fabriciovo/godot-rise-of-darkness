@@ -20,11 +20,9 @@ func _on_upgrade_atk_pressed():
 	if PlayerControll.points >= 1:
 		PlayerControll.increase_atk()
 
-
 func _on_upgrade_Magic_pressed():
 	if PlayerControll.points >= 1:
 		PlayerControll.increase_max_mp()
-
 
 func _on_upgrade_action_points_pressed():
 	if PlayerControll.points >= 1:

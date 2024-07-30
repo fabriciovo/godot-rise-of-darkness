@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	Global.in_game = false
 	Ui.visible = false
 	$Control/Button.grab_focus()
 	$AnimationPlayer.play("game_over")

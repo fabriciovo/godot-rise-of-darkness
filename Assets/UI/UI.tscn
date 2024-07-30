@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Sprites/GUI_Equiped_item.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/UI.gd" type="Script" id=2]
@@ -15,8 +15,7 @@
 [ext_resource path="res://Assets/Inventory/Weapon_Slot.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=14]
 [ext_resource path="res://Assets/UI/Relics_UI.gd" type="Script" id=15]
-[ext_resource path="res://Assets/UI/Fonts/joystix monospace.otf" type="DynamicFontData" id=16]
-[ext_resource path="res://Assets/UI/Fonts/jostix.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Assets/UI/Description_Panel.gd" type="Script" id=16]
 [ext_resource path="res://Assets/UI/Pause_Options.gd" type="Script" id=18]
 [ext_resource path="res://Assets/UI/Fonts/dogicapixel.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://Assets/UI/Fonts/dogicabold.ttf" type="DynamicFontData" id=20]
@@ -45,10 +44,6 @@ size = 5
 extra_spacing_top = 1
 extra_spacing_bottom = 1
 font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 9
-font_data = ExtResource( 16 )
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -396,6 +391,7 @@ color = Color( 0, 0, 0, 0.647059 )
 [node name="Label" type="Label" parent="UI_Containers/Player_Info"]
 margin_right = 51.0
 margin_bottom = 12.0
+theme = ExtResource( 14 )
 text = "Player Info"
 
 [node name="Max Stats" type="Panel" parent="UI_Containers/Player_Info"]
@@ -405,8 +401,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -110.0
 margin_top = -70.0
-margin_right = -5.0
-margin_bottom = -22.0
+margin_right = -14.0
+margin_bottom = 26.0
 theme = ExtResource( 5 )
 script = ExtResource( 6 )
 
@@ -415,69 +411,77 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="MaxHp" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
-margin_right = 136.0
-margin_bottom = 24.0
-theme = ExtResource( 11 )
+margin_right = 96.0
+margin_bottom = 18.0
+theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 17 )
 text = "Max HP: "
 
-[node name="AttackPower" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
-margin_top = 28.0
-margin_right = 136.0
-margin_bottom = 47.0
-theme = ExtResource( 11 )
+[node name="MaxMp" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
+margin_top = 22.0
+margin_right = 96.0
+margin_bottom = 40.0
+theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "Attack Power: "
+text = "Max MP : "
 
 [node name="MaxAp" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
-margin_top = 51.0
-margin_right = 136.0
-margin_bottom = 60.0
-theme = ExtResource( 11 )
+margin_top = 44.0
+margin_right = 96.0
+margin_bottom = 62.0
+theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Max Action Points: "
+text = "Max AP: "
 
-[node name="MaxMp" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
-margin_top = 64.0
-margin_right = 136.0
-margin_bottom = 73.0
-theme = ExtResource( 11 )
+[node name="AttackPower" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
+margin_top = 66.0
+margin_right = 96.0
+margin_bottom = 84.0
+theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Max Magic Points: "
+text = "Attack: "
 
 [node name="Description_Panel" type="Panel" parent="UI_Containers/Player_Info"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 1.0
-margin_top = -70.0
-margin_right = 106.0
-margin_bottom = -22.0
+anchor_bottom = 1.0
+margin_left = -109.0
+margin_top = -54.0
+margin_right = 109.0
 theme = ExtResource( 5 )
+script = ExtResource( 16 )
+
+[node name="Description_Title" type="Label" parent="UI_Containers/Player_Info/Description_Panel"]
+margin_right = 74.0
+margin_bottom = 19.0
+theme = ExtResource( 14 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Title"
 
 [node name="Description_Label" type="Label" parent="UI_Containers/Player_Info/Description_Panel"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 36.0
-margin_bottom = 14.0
-theme = ExtResource( 11 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -39.0
+theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Max HP: "
+text = "Description"
 
 [node name="Upgrades" type="Panel" parent="UI_Containers/Player_Info"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 68.0
+margin_left = 102.0
+margin_top = 15.0
+margin_right = -3.0
+margin_bottom = -59.0
 script = ExtResource( 9 )
 
 [node name="Points" type="Label" parent="UI_Containers/Player_Info/Upgrades"]
 margin_left = 8.0
-margin_right = 216.0
+margin_right = 64.0
 margin_bottom = 19.0
-theme = ExtResource( 11 )
+theme = ExtResource( 14 )
 text = "Points:0"
 
 [node name="Panel" type="Panel" parent="UI_Containers/Player_Info/Upgrades"]
@@ -492,35 +496,37 @@ anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = 22.0
 margin_right = -8.0
+margin_bottom = -5.0
 focus_mode = 2
 
 [node name="upgrade hp" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_right = 208.0
-margin_bottom = 13.0
-theme = ExtResource( 11 )
+margin_right = 103.0
+margin_bottom = 14.0
+theme = ExtResource( 14 )
 disabled = true
 text = "Upgrade Hp"
 
-[node name="upgrade atk" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_top = 17.0
-margin_right = 208.0
-margin_bottom = 30.0
-theme = ExtResource( 11 )
-text = "Upgrade Attack "
-
 [node name="upgrade Magic" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_top = 34.0
-margin_right = 208.0
-margin_bottom = 47.0
-theme = ExtResource( 11 )
-text = "Upgrade Magic points"
+margin_top = 18.0
+margin_right = 103.0
+margin_bottom = 32.0
+theme = ExtResource( 14 )
+text = "Upgrade Magic "
 
 [node name="upgrade action points" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
-margin_top = 51.0
-margin_right = 208.0
-margin_bottom = 64.0
-theme = ExtResource( 11 )
-text = "Upgrade Action Poins"
+margin_top = 36.0
+margin_right = 103.0
+margin_bottom = 50.0
+theme = ExtResource( 14 )
+text = "Upgrade AP "
+
+[node name="upgrade atk" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
+margin_top = 54.0
+margin_right = 103.0
+margin_bottom = 68.0
+theme = ExtResource( 14 )
+text = "Upgrade Attack"
+clip_text = true
 
 [node name="Settings" type="Control" parent="UI_Containers"]
 visible = false
@@ -549,6 +555,7 @@ margin_bottom = 73.0
 [node name="Label" type="Label" parent="UI_Containers/Settings"]
 margin_right = 51.0
 margin_bottom = 12.0
+theme = ExtResource( 14 )
 text = "Settings"
 
 [node name="Control" type="Control" parent="UI_Containers/Settings"]
@@ -568,33 +575,36 @@ margin_bottom = -8.0
 [node name="Label" type="Label" parent="UI_Containers/Settings/Control/Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -30.0
-margin_right = 30.0
-margin_bottom = 12.0
+margin_left = -62.5
+margin_right = 62.5
+margin_bottom = 18.0
+theme = ExtResource( 14 )
 text = "Language List"
+align = 1
+valign = 1
 
 [node name="Language_List" type="HBoxContainer" parent="UI_Containers/Settings/Control/Panel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -69.0
-margin_top = -7.5
-margin_right = 69.0
-margin_bottom = 7.5
+margin_left = -60.5
+margin_top = -7.0
+margin_right = 60.5
+margin_bottom = 7.0
 script = ExtResource( 7 )
 
 [node name="PT_Btn" type="Button" parent="UI_Containers/Settings/Control/Panel/Language_List"]
-margin_right = 76.0
-margin_bottom = 15.0
-theme = ExtResource( 11 )
+margin_right = 58.0
+margin_bottom = 14.0
+theme = ExtResource( 14 )
 text = "SELECT_PT"
 
 [node name="EN_Btn" type="Button" parent="UI_Containers/Settings/Control/Panel/Language_List"]
-margin_left = 80.0
-margin_right = 156.0
-margin_bottom = 15.0
-theme = ExtResource( 11 )
+margin_left = 62.0
+margin_right = 120.0
+margin_bottom = 14.0
+theme = ExtResource( 14 )
 text = "SELECT_EN"
 
 [node name="Inventory" parent="UI_Containers" instance=ExtResource( 12 )]
@@ -671,10 +681,14 @@ __meta__ = {
 [connection signal="pressed" from="Pause_Options/Pause_Button_Container/Inventory" to="." method="_on_Inventory_pressed"]
 [connection signal="pressed" from="Pause_Options/Pause_Button_Container/Relics" to="." method="_on_Relics_pressed"]
 [connection signal="pressed" from="Pause_Options/Pause_Button_Container/Quests" to="." method="_on_Quests_pressed"]
+[connection signal="focus_entered" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade hp" to="UI_Containers/Player_Info/Description_Panel" method="_on_upgrade_hp_focus_entered"]
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade hp" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_hp_pressed"]
-[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade atk" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_atk_pressed"]
+[connection signal="focus_entered" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade Magic" to="UI_Containers/Player_Info/Description_Panel" method="_on_upgrade_Magic_focus_entered"]
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade Magic" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_Magic_pressed"]
+[connection signal="focus_entered" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade action points" to="UI_Containers/Player_Info/Description_Panel" method="_on_upgrade_action_points_focus_entered"]
 [connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade action points" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_action_points_pressed"]
+[connection signal="focus_entered" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade atk" to="UI_Containers/Player_Info/Description_Panel" method="_on_upgrade_atk_focus_entered"]
+[connection signal="pressed" from="UI_Containers/Player_Info/Upgrades/Upgrade_Panel/upgrade atk" to="UI_Containers/Player_Info/Upgrades" method="_on_upgrade_atk_pressed"]
 [connection signal="pressed" from="UI_Containers/Settings/Control/Panel/Language_List/PT_Btn" to="UI_Containers/Settings/Control/Panel/Language_List" method="_on_PT_Btn_pressed"]
 [connection signal="pressed" from="UI_Containers/Settings/Control/Panel/Language_List/EN_Btn" to="UI_Containers/Settings/Control/Panel/Language_List" method="_on_EN_Btn_pressed"]
 [connection signal="focus_entered" from="UI_Containers/Relics/Relics_List/Ring" to="UI_Containers/Relics" method="_on_Ring_focus_entered"]
