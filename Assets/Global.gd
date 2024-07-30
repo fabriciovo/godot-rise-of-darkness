@@ -22,7 +22,7 @@ var chest_sword = false
 var chest_heal = false
 var chest_bow = false
 var chest_bomb = false
-var execute_transition_animation = true
+var execute_start_animation = true
 var trigger_tutorial_animation = false
 var in_game = false
 
@@ -92,7 +92,7 @@ func get_world_data():
 		"chest_heal": chest_heal,
 		"chest_bow": chest_bow,
 		"chest_bomb": chest_bomb,
-		"execute_transition_animation": execute_transition_animation,
+		"execute_start_animation": execute_start_animation,
 		"trigger_tutorial_animation": trigger_tutorial_animation,
 	}
 	return data
@@ -128,8 +128,8 @@ func set_world_data(data):
 		chest_bow = data["chest_bow"]
 	if data.has("chest_bomb"):
 		chest_bomb = data["chest_bomb"]
-	if data.has("execute_transition_animation"):
-		execute_transition_animation = data["execute_transition_animation"]
+	if data.has("execute_start_animation"):
+		execute_start_animation = data["execute_start_animation"]
 	if data.has("trigger_tutorial_animation"):
 		trigger_tutorial_animation = data["trigger_tutorial_animation"]
 

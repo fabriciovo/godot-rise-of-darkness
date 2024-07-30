@@ -19,11 +19,14 @@ func _ready():
 		elif execute == 1:
 			fade_out()
 	if execute_on_start:
-		if Global.execute_transition_animation:
-			Global.execute_transition_animation = false
+		if Global.execute_start_animation:
+			Global.execute_start_animation = false
 			var player_anim = get_tree().current_scene.get_node("Player").get_node("PlayerAnimation")
 			player_anim.play("intro_anim")
 			fade_out()
+			animation.play("fade_out_anim")
+			yield (animation, "animation_finished")
+			Global.in_game = true
 		else:
 			Global.stop = false
 			queue_free()
