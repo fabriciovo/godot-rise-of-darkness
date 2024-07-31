@@ -1,11 +1,11 @@
 class_name Dark_Mage extends Node2D
 
-export(NodePath) onready var point
 
 onready var spr = $Sprite
 onready var invincible_timer = $Invincible_Timer
 onready var animation_damage = $Animation_Damage
 onready var animation = $Animation_Dark_Mage
+onready var text_box = $Text_Box_Layer/Text_Box
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
@@ -23,11 +23,10 @@ var hiding = false
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
-	global_position = get_random_pos()
-	$Change_Position_Timer.start(3)
-	point = get_node(point)
-	if point:
-		points = point.get_children()
+	animation.play("dark_mage_intro")
+	points = get_tree().current_scene.get_node("Points").get_children()
+	text_box.dialog_name = "dark_mage_florest.json"
+	text_box.start_dialog()
 
 func Destroy():
 	spr.visible = false
@@ -102,3 +101,8 @@ func create_projectile():
 	var _temp_projectile = projectile.instance()
 	_temp_projectile.position = position
 	get_tree().current_scene.add_child(_temp_projectile)
+
+
+func _on_Text_Box_on_end_dialog():
+	$Change_Position_Timer.start(1)
+	
