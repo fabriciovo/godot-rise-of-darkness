@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Assets/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/World/RoomControll.gd" type="Script" id=3]
+[ext_resource path="res://Assets/World/sub world/World_Right_2.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Animations/BattleFadeToNewRoom.tres" type="Animation" id=4]
 [ext_resource path="res://Assets/Enviroment/Box.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enviroment/The Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Chest.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Enviroment/Thunder.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -48,10 +48,6 @@ position = Vector2( 186, 81 )
 [node name="World_Wood_Monster_wr2" parent="Entities" instance=ExtResource( 9 )]
 position = Vector2( 61, 115 )
 
-[node name="World_Dark_Mage_1" parent="Entities" instance=ExtResource( 8 )]
-position = Vector2( 118, 102 )
-point = NodePath("../../Points")
-
 [node name="The Door" parent="." instance=ExtResource( 6 )]
 position = Vector2( 77, 54 )
 
@@ -77,7 +73,7 @@ position = Vector2( 61, 84 )
 [node name="Position2D4" type="Position2D" parent="Points"]
 position = Vector2( 95, 115 )
 
-[node name="Position2D5" type="Position2D" parent="Points"]
+[node name="start_point" type="Position2D" parent="Points"]
 position = Vector2( 118, 103 )
 
 [node name="Position2D6" type="Position2D" parent="Points"]
@@ -96,3 +92,9 @@ door_name = "Door_World_Right_2"
 position = Vector2( 195, 12 )
 target_scene = "res://Assets/World/sub world/World_Right_3.tscn"
 door_name = "Door_World_Right_3"
+
+[node name="Thunder" parent="." instance=ExtResource( 11 )]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
