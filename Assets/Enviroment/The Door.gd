@@ -2,7 +2,6 @@ extends Node2D
 
 onready var entities = get_parent().get_node("Entities")
 
-
 func _process(_delta):
 	check_entities()
 

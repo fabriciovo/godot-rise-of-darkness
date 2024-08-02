@@ -102,7 +102,7 @@ func create_projectile():
 	_temp_projectile.position = position
 	get_tree().current_scene.add_child(_temp_projectile)
 
-
 func _on_Text_Box_on_end_dialog():
-	$Change_Position_Timer.start(1)
+	Global.stop = false
+	$Change_Position_Timer.start(3)
 	

@@ -11,7 +11,6 @@
 [ext_resource path="res://Assets/Actions/Door_Weapon.tscn" type="PackedScene" id=9]
 
 [node name="World_0" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
-position = Vector2( -1, 0 )
 script = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
