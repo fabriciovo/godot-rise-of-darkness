@@ -84,6 +84,8 @@ radius = 48.3735
 extents = Vector2( 6, 4.5 )
 
 [node name="World_Mushroom" instance=ExtResource( 2 )]
+collision_layer = 16
+collision_mask = 11
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]

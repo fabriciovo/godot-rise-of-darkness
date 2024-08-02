@@ -96,8 +96,11 @@ anims/enemy_death = ExtResource( 4 )
 autostart = true
 
 [node name="Wood_Enemy_Animation" type="AnimationPlayer" parent="." index="6"]
+playback_process_mode = 0
 anims/wood_down = SubResource( 2 )
 anims/wood_left = SubResource( 3 )
 anims/wood_up = SubResource( 4 )
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." index="7"]
 
 [connection signal="timeout" from="Shoot_Timer" to="." method="_on_Shoot_Timer_timeout"]
