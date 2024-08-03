@@ -38,6 +38,12 @@ position = Vector2( 112, 72 )
 [node name="Entities" parent="." index="4"]
 z_index = 3
 
+[node name="World_Enemy_Skeleton_d0_1" parent="Entities" index="0" instance=ExtResource( 4 )]
+position = Vector2( 64, 80 )
+
+[node name="World_Enemy_Skeleton_d0_2" parent="Entities" index="1" instance=ExtResource( 4 )]
+position = Vector2( 160, 72 )
+
 [node name="Dungeon_1" parent="." index="6" instance=ExtResource( 5 )]
 position = Vector2( 112, 12 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_1.tscn"
@@ -51,9 +57,3 @@ __meta__ = {
 }
 target_scene = "res://Assets/World/World_0.tscn"
 door_name = "Dungeon_door_0"
-
-[node name="World_Enemy_Skeleton" parent="." index="8" instance=ExtResource( 4 )]
-position = Vector2( 64, 80 )
-
-[node name="World_Enemy_Skeleton2" parent="." index="9" instance=ExtResource( 4 )]
-position = Vector2( 160, 72 )
