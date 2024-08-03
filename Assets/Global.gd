@@ -25,6 +25,8 @@ var chest_bomb = false
 var execute_start_animation = true
 var trigger_tutorial_animation = false
 var in_game = false
+var quest_menu = false
+
 
 const GROUPS = {
 	PLAYER = "PLAYER",
@@ -94,6 +96,7 @@ func get_world_data():
 		"chest_bomb": chest_bomb,
 		"execute_start_animation": execute_start_animation,
 		"trigger_tutorial_animation": trigger_tutorial_animation,
+		"quest_menu": quest_menu
 	}
 	return data
 
@@ -132,6 +135,8 @@ func set_world_data(data):
 		execute_start_animation = data["execute_start_animation"]
 	if data.has("trigger_tutorial_animation"):
 		trigger_tutorial_animation = data["trigger_tutorial_animation"]
+	if data.has("quest_menu"):
+		quest_menu = data["quest_menu"]
 
 func saveJSONData(file_name, data):
 	var file_path = save_dir + file_name + ".json"

@@ -16,5 +16,5 @@ func set_visible_options():
 		quests.visible = true
 	if Global.trigger_tutorial_animation:
 		quests.visible = true
-	if true:
+	if Global.quest_menu:
 		quests.visible = true

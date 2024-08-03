@@ -1,9 +1,109 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy_Skeleton.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Weapons_nobg_16x16.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/skeleton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=5]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "down"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.5, 4 )
 
 [node name="World_Enemy_Skeleton" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 4 )
+hframes = 4
+vframes = 5
+frame = 0
+
+[node name="Shield_Sprite" type="Sprite" parent="." index="1"]
+position = Vector2( 2, 3 )
+texture = ExtResource( 3 )
+hframes = 8
+vframes = 6
+frame = 24
+
+[node name="Body_Shape" parent="." index="2"]
+position = Vector2( 0, -3 )
+
+[node name="Area_Shape" parent="Area" index="0"]
+position = Vector2( 0, 1.3125 )
+
+[node name="Enemy_Animation" parent="." index="5"]
+anims/damage_anim = ExtResource( 5 )
+
+[node name="Skeleton_Animation" type="AnimationPlayer" parent="." index="6"]
+anims/RESET = SubResource( 2 )
+anims/down = SubResource( 3 )
+anims/left = SubResource( 4 )
+anims/up = SubResource( 5 )
+
+[node name="Shield_Area" type="Area2D" parent="." index="7"]
+
+[node name="Shield_Def_Collision" type="CollisionShape2D" parent="Shield_Area" index="0"]
+position = Vector2( 0.5, 4 )
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="Shield_Area" to="." method="_on_Shield_Area_area_entered"]

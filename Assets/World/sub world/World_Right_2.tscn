@@ -24,7 +24,7 @@ anims/BattleFadeToNewRoom = ExtResource( 4 )
 anims/FadeToNewRoom = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12, 94 )
+position = Vector2( 9, 96 )
 
 [node name="map_0" parent="." instance=ExtResource( 2 )]
 collision_mask = 3

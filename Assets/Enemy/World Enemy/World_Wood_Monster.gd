@@ -66,7 +66,6 @@ func pick_random_direction():
 			wood_enemy_anim.play("wood_left")
 			$Sprite.flip_h = false
 			dir = 1
-			
 		_:
 			attacking = true
 
