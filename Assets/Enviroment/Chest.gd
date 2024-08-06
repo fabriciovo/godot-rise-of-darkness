@@ -36,18 +36,11 @@ func _input(_event):
 func get_weapon(_item):
 	$Sprite.frame = 0
 	Global.open_chests.push_front(ID)
-	match _item:
-		Global.WEAPONS.SWORD:
-			PlayerControll.set_inventory_item(_item)
-			yield(get_tree().create_timer(3),"timeout")
-			Global.trigger_tutorial_animation = true
-		Global.WEAPONS.KEY:
-			PlayerControll.key += 1
-		_:
-			text_box.dialog_name = "get_weapon_" + str(_item) + ".json"
-			PlayerControll.set_inventory_item(_item)
-			yield(player_anim, "animation_finished")
-			text_box.start_dialog()
+	#TODO FIX GET ITEM DIALOG AND REMOVE INTRO
+	text_box.dialog_name = "get_weapon_" + str(_item) + ".json"
+	PlayerControll.set_inventory_item(_item)
+	yield(player_anim, "animation_finished")
+	text_box.start_dialog()
 
 func get_relic(_item):
 	$Sprite.frame = 0

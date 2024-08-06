@@ -45,7 +45,6 @@ func queue_enviroment():
 
 func queue_entities():
 	if not has_node("Entities"): return
-	print("queue")
 	var entities_node = get_node("Entities")
 	var entities = entities_node.get_children()
 	for entity in entities:

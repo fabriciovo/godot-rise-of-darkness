@@ -40,7 +40,7 @@ func _process(_delta):
 		hasToStop = false
 		$Enemy_Animation.play("mushroom_start_explosion",-1,1,current_anim_pos)
 	if dead:
-		Disable()
+		speed = 0
 		var temp_smoke = smoke.instance()
 		temp_smoke.global_position = global_position
 		get_tree().get_current_scene().add_child(temp_smoke)
@@ -95,7 +95,6 @@ func _on_Chase_Area_body_exited(body):
 func explosion():
 	if dead: return
 	dead = true
-	print(hits)
 	if hits > 1:
 		PlayerControll.set_xp(battle_unit_xp)
 
