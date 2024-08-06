@@ -5,8 +5,6 @@ func _ready():
 	if not "World_0" in scene_name:
 		Global.saveJSONData("player_data",PlayerControll.player_data())
 		Global.save_world_data()
-	queue_entities()
-	queue_enviroment()
 	if Global.door_name:
 		var door_node = find_node(Global.door_name)
 		if door_node:
@@ -25,6 +23,8 @@ func _ready():
 		SoundController.play_music(SoundController.MUSIC.boss)
 	if scene_name == "Dungeon_0" and Global.door_name == "Dungeon_exit":
 		Ui.show_text("The Dungeon")
+	queue_entities()
+	queue_enviroment()
 
 func queue_enviroment():
 	if not get_node_or_null("Enviroment_Entities"): return
@@ -45,6 +45,7 @@ func queue_enviroment():
 
 func queue_entities():
 	if not has_node("Entities"): return
+	print("queue")
 	var entities_node = get_node("Entities")
 	var entities = entities_node.get_children()
 	for entity in entities:
