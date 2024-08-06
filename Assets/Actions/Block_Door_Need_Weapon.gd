@@ -1,9 +1,10 @@
 extends StaticBody2D
 var can_pass = false
+
 func _ready():
+	add_to_group(Global.GROUPS.DOOR_WITH_INTERACTION)
 	if PlayerControll.inventory.size() > 0:
 		queue_free()
-		add_to_group(Global.GROUPS.DOOR_WITH_INTERACTION)
 
 func _process(_delta):
 	if PlayerControll.inventory.size() == 0:

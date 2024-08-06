@@ -4,7 +4,6 @@ var can_pass = false
 func _ready():
 	add_to_group(Global.GROUPS.DOOR_WITH_INTERACTION)
 
-
 func trigger_dialog_box():
 	Global.stop = true
 	$CanvasLayer/Control/Text_Box.dialog_name = "you_need_a_weapon.json"

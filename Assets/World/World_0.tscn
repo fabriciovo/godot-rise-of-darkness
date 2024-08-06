@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Key_Gate_Single_Gate.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Shaders/Transition_Start_Game.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Actions/Door_Weapon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Actions/Block_Door_Need_Weapon.tscn" type="PackedScene" id=9]
 
 [node name="World_0" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
 script = ExtResource( 5 )
@@ -66,7 +66,7 @@ execute_on_start = 1
 duration = 0.2
 
 [node name="Door_Weapon" parent="." instance=ExtResource( 9 )]
-position = Vector2( -8, 79 )
+position = Vector2( -10, 80 )
 rotation = 1.5708
 
 [node name="Door_Weapon2" parent="." instance=ExtResource( 9 )]

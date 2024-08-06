@@ -148,11 +148,7 @@ func _on_PlayerBody_body_entered(body):
 		if scene_instance == OK: 
 				Global.door_name = body.door_name
 	if body.is_in_group(Global.GROUPS.DOOR_WITH_INTERACTION):
-		if body.can_pass:
-			var scene_instance = get_tree().change_scene(body.target_scene)
-			if scene_instance == OK: 
-				Global.door_name = body.door_name
-		else:
+		if not body.can_pass:
 			body.trigger_dialog_box()
 
 func _on_PlayerBody_body_exited(body):
