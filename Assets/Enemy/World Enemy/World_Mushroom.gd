@@ -1,6 +1,7 @@
-extends World_Enemy
+class_name World_Mushroom extends World_Enemy
 
 onready var agent = $NavigationAgent2D
+onready var mushroom_player = $Mushroom_Animation
 
 var player = null
 var navigation_path = null
@@ -11,7 +12,7 @@ var velocity := Vector2.ZERO
 var chase_player = false
 var direction = Vector2(rand_range(-5, 5),rand_range(-5, 5))
 var chase_speed = 43
-var hasToStop = false
+var has_to_stop = false
 var current_anim_pos
 
 func _ready():
@@ -30,15 +31,15 @@ func _ready():
 func _process(_delta):
 	if  player == null or navigation_path == null: return
 	if Global.stop: 
-		if not $Enemy_Animation.is_playing(): return
-		current_anim_pos = $Enemy_Animation.current_animation_position
-		$Enemy_Animation.stop()
+		if not mushroom_player.is_playing(): return
+		current_anim_pos = mushroom_player.current_animation_position
+		mushroom_player.stop()
 		if chase_player:
-			hasToStop = true
+			has_to_stop = true
 		return
-	if hasToStop and chase_player:
-		hasToStop = false
-		$Enemy_Animation.play("mushroom_start_explosion",-1,1,current_anim_pos)
+	if has_to_stop and chase_player:
+		has_to_stop = false
+		mushroom_player.play("mushroom_start_explosion",-1,1,current_anim_pos)
 	if dead:
 		speed = 0
 		var temp_smoke = smoke.instance()
@@ -66,8 +67,8 @@ func _physics_process(_delta):
 		explosion_after_anim()
 
 func explosion_after_anim():
-	if $Enemy_Animation.get_current_animation() == "mushroom_start_explosion":
-		yield($Enemy_Animation, "animation_finished")
+	if mushroom_player.get_current_animation() == "mushroom_start_explosion":
+		yield(mushroom_player, "animation_finished")
 		explosion()
 
 func generate_path():
@@ -79,16 +80,16 @@ func navigate():
 		if global_position == paths[0]:
 			paths.pop_front()
 
-func _on_Chase_Area_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		$Enemy_Animation.play("mushroom_start_explosion")
+func _on_Chase_Area_body_entered(_body):
+	if _body.is_in_group(Global.GROUPS.PLAYER):
+		mushroom_player.play("mushroom_start_explosion")
 		chase_player = true
 
 func _on_Chase_Area_body_exited(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
 		speed = const_speed
 		chase_player = false
-		$Enemy_Animation.play("mushroom_idle")
+		mushroom_player.play("mushroom_idle")
 		velocity = Vector2.ZERO
 		direction = Vector2(rand_range(-5, 5),rand_range(-5, 5))
 

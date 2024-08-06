@@ -20,7 +20,13 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="CircleShape2D" id=3]
+radius = 48.3735
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6, 4.5 )
+
+[sub_resource type="Animation" id=6]
 resource_name = "mushroom_idle"
 length = 2.0
 loop = true
@@ -49,7 +55,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=7]
 resource_name = "mushroom_start_explosion"
 length = 2.0
 tracks/0/type = "value"
@@ -77,12 +83,6 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 48.3735
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 6, 4.5 )
-
 [node name="World_Mushroom" instance=ExtResource( 2 )]
 collision_layer = 16
 collision_mask = 11
@@ -103,11 +103,8 @@ position = Vector2( 0, 1.75 )
 position = Vector2( 0, 0.5 )
 
 [node name="Enemy_Animation" parent="." index="4"]
-autoplay = "mushroom_idle"
 anims/RESET = SubResource( 1 )
 anims/damage_anim = ExtResource( 4 )
-anims/mushroom_idle = SubResource( 2 )
-anims/mushroom_start_explosion = SubResource( 4 )
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="5"]
 path_max_distance = 20.0
@@ -122,6 +119,11 @@ shape = SubResource( 3 )
 [node name="Explosion_Collision_Area" type="CollisionShape2D" parent="Explosion_Area" index="0"]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 5 )
+
+[node name="Mushroom_Animation" type="AnimationPlayer" parent="." index="8"]
+autoplay = "mushroom_idle"
+anims/mushroom_idle = SubResource( 6 )
+anims/mushroom_start_explosion = SubResource( 7 )
 
 [connection signal="body_entered" from="Chase_Area" to="." method="_on_Chase_Area_body_entered"]
 [connection signal="body_exited" from="Chase_Area" to="." method="_on_Chase_Area_body_exited"]

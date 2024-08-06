@@ -115,6 +115,11 @@ _global_script_classes=[ {
 "path": "res://Assets/Enemy/World Enemy/World_Slime.gd"
 }, {
 "base": "World_Enemy",
+"class": "World_Mushroom",
+"language": "GDScript",
+"path": "res://Assets/Enemy/World Enemy/World_Mushroom.gd"
+}, {
+"base": "World_Enemy",
 "class": "World_Skeleton",
 "language": "GDScript",
 "path": "res://Assets/Enemy/World Enemy/World_Enemy_Skeleton.gd"
@@ -151,6 +156,7 @@ _global_script_class_icons={
 "World_Boss_Slime": "",
 "World_Enemy": "",
 "World_Enemy_Slime": "",
+"World_Mushroom": "",
 "World_Skeleton": "",
 "World_Wood_Monster": "",
 "explosive_object": ""
