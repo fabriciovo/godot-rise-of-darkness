@@ -2,6 +2,7 @@ class_name World_Mushroom extends World_Enemy
 
 onready var agent = $NavigationAgent2D
 onready var mushroom_player = $Mushroom_Animation
+onready var enemy_player = $Enemy_Animation
 
 var player = null
 var navigation_path = null
@@ -42,6 +43,7 @@ func _process(_delta):
 		mushroom_player.play("mushroom_start_explosion",-1,1,current_anim_pos)
 	if dead:
 		speed = 0
+		yield(enemy_player, "animation_finished")
 		var temp_smoke = smoke.instance()
 		temp_smoke.global_position = global_position
 		get_tree().get_current_scene().add_child(temp_smoke)
