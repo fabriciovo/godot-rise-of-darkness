@@ -61,9 +61,18 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 5.6 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 1.2, 2, 2.4, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "play_thunder_sound"
+}, {
+"args": [  ],
+"method": "play_thunder_sound"
+}, {
+"args": [  ],
+"method": "play_thunder_sound"
+}, {
 "args": [  ],
 "method": "destroy_title_anim"
 } ]

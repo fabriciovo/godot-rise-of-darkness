@@ -24,6 +24,8 @@ func _input(_event):
 		Ui.check_if_settings_is_open()
 		if player:
 			disable = true
+			SoundController.stop_music()
+			SoundController.play_effect(SoundController.EFFECTS.open_chest)
 			if type == "weapons":
 				player.set_item_texture(item, type)
 				player.play_get_item_animation()
@@ -36,7 +38,6 @@ func _input(_event):
 func get_weapon(_item):
 	$Sprite.frame = 0
 	Global.open_chests.push_front(ID)
-	#TODO FIX GET ITEM DIALOG AND REMOVE INTRO
 	text_box.dialog_name = "get_weapon_" + str(_item) + ".json"
 	PlayerControll.set_inventory_item(_item)
 	yield(player_anim, "animation_finished")
@@ -61,3 +62,4 @@ func _on_Chest_body_exited(body):
 
 func _on_Text_Box_on_end_dialog():
 	Global.stop = false
+	SoundController.keep_music()

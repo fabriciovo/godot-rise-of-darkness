@@ -11,7 +11,7 @@ const AUDIO_SERVER_LIST = {
 }
 
 const MUSIC = {
-	title = preload("res://Assets/sounds/Music/title.wav"),
+	title = preload("res://Assets/sounds/Music/WaltzOfTheDeads.wav"),
 	florest = preload("res://Assets/sounds/Music/florest.wav"),
 	dungeon = preload("res://Assets/sounds/Music/dungeon.wav"),
 	miniboss = preload("res://Assets/sounds/Music/mini boss.wav"),
@@ -26,12 +26,23 @@ const EFFECTS = {
 	bomb_explode = preload("res://Assets/sounds/Player_Hit.wav"),
 	put_bomb = preload("res://Assets/sounds/Player_Hit.wav"),
 	shoot_arrow = preload("res://Assets/sounds/Player_Hit.wav"),
+	thunder = preload("res://Assets/sounds/Thunder.wav"),
+	select = preload("res://Assets/sounds/Select.wav"),
+	open_chest = preload("res://Assets/sounds/Open_Chest_2.wav"),
+	positive_2 = preload("res://Assets/sounds/Positive_2.wav"),
+	positive_10 = preload("res://Assets/sounds/Positive_10.wav")
 }
 
 func play_music(sound):
 	if sound != music.stream:
 		music.stream = sound
 		music.play()
+
+func stop_music():
+	music.stop()
+
+func keep_music():
+	music.play()
 
 func play_effect(sound):
 	for effect in sound_effects.get_children():

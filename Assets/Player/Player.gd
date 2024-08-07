@@ -357,6 +357,7 @@ func play_get_item_animation():
 	get_item_anim = false
 
 func show_get_item():
+	SoundController.play_effect(SoundController.EFFECTS.positive_10)
 	$Get_Item_Sprite.visible = true
 	$Get_Item_Sprite.frame = get_item_frame
 

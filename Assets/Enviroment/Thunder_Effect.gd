@@ -18,3 +18,6 @@ func spawn_dark_mage():
 	var _start_point = _current_scene.get_node("Points").get_node("start_point")
 	_temp.global_position = _start_point.position
 	_entities_node.add_child(_temp)
+
+func play_thunder_effect():
+	SoundController.play_effect(SoundController.EFFECTS.thunder)

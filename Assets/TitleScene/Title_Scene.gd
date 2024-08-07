@@ -12,7 +12,6 @@ onready var transition = $Transition_Start_Game
 func _ready():
 	Global.in_game = false
 	start.set_focus_mode(Control.FOCUS_ALL)
-	#SoundController.play_music(SoundController.MUSIC.title)
 	check_file_existence()
 
 func _input(_event):
@@ -46,6 +45,7 @@ func _on_Quit_pressed():
 
 func destroy_title_anim():
 	transition.fade_out()
+	SoundController.play_music(SoundController.MUSIC.title)
 	title_anim.visible = false
 
 func _on_Transition_Start_Game_end_fade_out():
@@ -58,3 +58,6 @@ func _on_Transition_Start_Game_end_fade_in():
 		title_anim.get_node("AnimationPlayer").play("title")
 	else:
 		start.grab_focus()
+
+func play_thunder_sound():
+	SoundController.play_effect(SoundController.EFFECTS.thunder)
