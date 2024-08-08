@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Cursed_Voices.wav-e12168f0eeff59b3ee9de8121beb6f58.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Music/Cursed_Voices.wav"
+dest_files=[ "res://.import/Cursed_Voices.wav-e12168f0eeff59b3ee9de8121beb6f58.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -16,6 +16,8 @@ const MUSIC = {
 	dungeon = preload("res://Assets/sounds/Music/dungeon.wav"),
 	miniboss = preload("res://Assets/sounds/Music/mini boss.wav"),
 	boss = preload("res://Assets/sounds/Music/boss.wav"),
+	cursed_voices = preload("res://Assets/sounds/Music/Cursed_Voices.wav"),
+	invasion = preload("res://Assets/sounds/Music/Invasion.wav"),
 }
 
 const EFFECTS = {

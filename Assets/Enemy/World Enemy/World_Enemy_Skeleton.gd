@@ -64,22 +64,3 @@ func move_enemy(_delta):
 	if hit:
 		knockback = knockback.move_toward(Vector2.ZERO, speed * _delta)
 		knockback = move_and_slide(knockback / 1.1)
-
-
-#func _on_Area_area_entered(area):
-#	print("Area")
-#	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
-#		knockback = area.knockback_vector * 120
-#		damage(knockback, 1)
-#
-#func _on_Area_body_entered(body):
-#	pass
-#
-#func _on_Shield_Area_area_entered(area):
-#	print("SDhield Area")
-#	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
-#		knockback = area.knockback_vector * 120
-#		damage(knockback,  0)
-#	if area.is_in_group(Global.GROUPS.SHIELD) and not hit:
-#		knockback = area.knockback_vector * 120
-#		damage(knockback, 0)

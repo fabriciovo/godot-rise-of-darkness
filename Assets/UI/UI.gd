@@ -32,7 +32,7 @@ func _input(_event):
 			ui_containers[i].visible = false
 		if pause_options.visible:
 			pause_options.get_node("Pause_Button_Container/Settings").grab_focus()
-	if _event.is_action_pressed("start") and Global.in_game and not Global.cutscene:
+	if _event.is_action_pressed("start") and Global.in_game and not Global.cutscene and not Global.dialog:
 		Ui.show_hidden_panels()
 
 func _process(_delta):

@@ -62,4 +62,5 @@ func _on_Chest_body_exited(body):
 
 func _on_Text_Box_on_end_dialog():
 	Global.stop = false
+	Global.cutscene = false
 	SoundController.keep_music()

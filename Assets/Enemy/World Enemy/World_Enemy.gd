@@ -67,9 +67,7 @@ func damage(_knockback_value, _damage_value):
 			timer.start(1)
 
 func _on_Area_area_entered(area):
-	print("area")
 	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
-		print("sword")
 		knockback = area.knockback_vector * 120
 		damage(knockback,  PlayerControll.atk)
 	if area.is_in_group(Global.GROUPS.SHIELD) and not hit:

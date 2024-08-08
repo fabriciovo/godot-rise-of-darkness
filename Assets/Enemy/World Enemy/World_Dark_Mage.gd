@@ -29,13 +29,18 @@ func _ready():
 	text_box.start_dialog()
 
 func Destroy():
+	SoundController.stop_music()
 	spr.visible = false
 	var temp_smoke = smoke.instance()
 	add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
+	SoundController.play_effect(SoundController.EFFECTS.positive_10)
 	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
-	queue_free()
+	Global.cutscene = true
+	text_box.dialog_name = "dark_mage_florest.json"
+	text_box.start_dialog()
+	
 
 func damage(damageValue):
 	invincible = true
@@ -103,6 +108,13 @@ func create_projectile():
 	get_tree().current_scene.add_child(_temp_projectile)
 
 func _on_Text_Box_on_end_dialog():
-	Global.stop = false
-	$Change_Position_Timer.start(3)
-	
+	if spr.visible:
+		Global.stop = false
+		Global.cutscene = false
+		SoundController.play_music(SoundController.MUSIC.invasion)
+		$Change_Position_Timer.start(3)
+	else:
+		SoundController.play_music(SoundController.MUSIC.florest)
+		Global.stop = false
+		Global.cutscene = false
+		queue_free()

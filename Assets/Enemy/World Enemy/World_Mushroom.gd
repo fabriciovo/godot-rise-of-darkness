@@ -38,17 +38,19 @@ func _process(_delta):
 		if chase_player:
 			has_to_stop = true
 		return
-	if has_to_stop and chase_player:
-		has_to_stop = false
-		mushroom_player.play("mushroom_start_explosion",-1,1,current_anim_pos)
 	if dead:
 		speed = 0
+		if hits > 1:
+			PlayerControll.set_xp(battle_unit_xp)
 		yield(enemy_player, "animation_finished")
 		var temp_smoke = smoke.instance()
 		temp_smoke.global_position = global_position
 		get_tree().get_current_scene().add_child(temp_smoke)
 		SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 		queue_free()
+	if has_to_stop and chase_player:
+		has_to_stop = false
+		mushroom_player.play("mushroom_start_explosion",-1,1,current_anim_pos)
 
 func _physics_process(_delta):
 	if Global.stop: return
@@ -56,6 +58,8 @@ func _physics_process(_delta):
 	if dead: return
 	if battle_unit_hp <= 0:
 		dead = true
+	if hit:
+		explosion()
 	if not dead and not hit:
 		if player and navigation_path and chase_player:
 			generate_path()
@@ -96,7 +100,6 @@ func _on_Chase_Area_body_exited(body):
 		direction = Vector2(rand_range(-5, 5),rand_range(-5, 5))
 
 func explosion():
-	if dead: return
 	dead = true
 	if hits > 1:
 		PlayerControll.set_xp(battle_unit_xp)

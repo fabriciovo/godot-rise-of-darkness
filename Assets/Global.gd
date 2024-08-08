@@ -9,7 +9,6 @@ var open_chests = []
 var dead_objects = []
 var walls_objects = []
 var key_gate = []
-var skull_altar = [false,false,false]
 var cutscene = false
 
 var player_last_position = Vector2.ZERO
@@ -84,7 +83,6 @@ func get_world_data():
 		"dead_objects": dead_objects,
 		"walls_objects": walls_objects,
 		"key_gate": key_gate,
-		"skull_altar": skull_altar,
 		"cutscene": cutscene,
 		"player_last_position": player_last_position,
 		"player_last_scene": player_last_scene,
@@ -111,8 +109,6 @@ func set_world_data(data):
 		walls_objects = data["walls_objects"]
 	if data.has("key_gate"):
 		key_gate = data["key_gate"]
-	if data.has("skull_altar"):
-		skull_altar = data["skull_altar"]
 	if data.has("cutscene"):
 		cutscene = data["cutscene"]
 	if data.has("player_last_position"):

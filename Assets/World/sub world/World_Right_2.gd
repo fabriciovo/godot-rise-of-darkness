@@ -16,6 +16,10 @@ func _process(_delta):
 		dark_mage_spawn_timer.start(3)
 
 func _on_Timer_timeout():
+	if Ui.pause_options.visible:
+		Ui.pause_options.visible = false
+	Global.cutscene = true
+	SoundController.stop_music()
 	var temp_gate_1 = gate.instance()
 	var temp_gate_2 = gate.instance()
 	temp_gate_1.position = door_world_right_1.position

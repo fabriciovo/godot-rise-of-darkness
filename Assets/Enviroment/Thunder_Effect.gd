@@ -10,6 +10,8 @@ onready var animation = $AnimationPlayer
 func florest_dark_mage():
 	emit_signal("on_start")
 	animation.play("thunder_mage_dark_florest")
+	yield(animation,"animation_finished")
+	SoundController.play_music(SoundController.MUSIC.cursed_voices)
 	
 func spawn_dark_mage():
 	var _temp = dark_florest_mage.instance()

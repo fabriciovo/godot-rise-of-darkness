@@ -25,7 +25,6 @@ func trigger_dialog_box():
 	$Text_Box_Layer/Text_Box.start_dialog()
 
 func _on_Text_Box_on_end_dialog():
-	print(quest_step)
 	if quest_step == 0:
 		quest_step+=1
 		Global.quest_menu = true
