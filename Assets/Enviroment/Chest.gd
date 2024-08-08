@@ -24,6 +24,7 @@ func _input(_event):
 		Ui.check_if_settings_is_open()
 		if player:
 			disable = true
+			Global.cutscene = true
 			SoundController.stop_music()
 			SoundController.play_effect(SoundController.EFFECTS.open_chest)
 			if type == "weapons":

@@ -21,6 +21,7 @@ func _on_Input_Area_body_exited(body):
 func trigger_dialog_box():
 	if not can_talk: return
 	can_talk = false
+	Global.cutscene = true
 	$Text_Box_Layer/Text_Box.dialog_name = dialog_name[quest_step]
 	$Text_Box_Layer/Text_Box.start_dialog()
 
@@ -43,3 +44,4 @@ func _on_Text_Box_on_end_dialog():
 		pass
 	can_talk = true
 	Global.stop = false
+	Global.cutscene = false

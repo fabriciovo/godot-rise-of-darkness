@@ -26,6 +26,11 @@ var trigger_tutorial_animation = false
 var in_game = false
 var quest_menu = false
 
+var dark_mages = {
+	right_florest_dark_mage = false,
+	left_florest_dark_mage_defeated = false,
+	dungeon_dark_mage_defeated = false,
+}
 
 const GROUPS = {
 	PLAYER = "PLAYER",
@@ -74,6 +79,14 @@ var QUESTS = {
 		"Goal": 100,
 		"Unlocked": false
 	},
+	"DEFEAT_DARK_MAGES": {
+		"Title": "Defeat the Dark Mages",
+		"Description": "COLLECT_SOULS_DESCRIPTION",
+		"Reward": "Reward 50 XP",
+		"Progress": 0,
+		"Goal": 100,
+		"Unlocked": false
+		}
 }
 
 func get_world_data():
@@ -94,7 +107,8 @@ func get_world_data():
 		"chest_bomb": chest_bomb,
 		"execute_start_animation": execute_start_animation,
 		"trigger_tutorial_animation": trigger_tutorial_animation,
-		"quest_menu": quest_menu
+		"quest_menu": quest_menu,
+		"dark_mages": dark_mages
 	}
 	return data
 
@@ -133,6 +147,8 @@ func set_world_data(data):
 		trigger_tutorial_animation = data["trigger_tutorial_animation"]
 	if data.has("quest_menu"):
 		quest_menu = data["quest_menu"]
+	if data.has("dark_mages"):
+		dark_mages = data["dark_mages"]
 
 func saveJSONData(file_name, data):
 	var file_path = save_dir + file_name + ".json"
