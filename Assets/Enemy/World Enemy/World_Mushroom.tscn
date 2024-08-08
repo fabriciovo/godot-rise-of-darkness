@@ -24,7 +24,7 @@ tracks/0/keys = {
 radius = 48.3735
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 8.13941
+radius = 7.07107
 
 [sub_resource type="Animation" id=6]
 resource_name = "mushroom_idle"
@@ -97,7 +97,7 @@ vframes = 1
 frame = 0
 
 [node name="Body_Shape" parent="." index="1"]
-position = Vector2( 0, 1.75 )
+position = Vector2( 0, 0.625 )
 
 [node name="Area_Shape" parent="Area" index="0"]
 position = Vector2( 0, 0.5 )
@@ -117,6 +117,7 @@ shape = SubResource( 3 )
 [node name="Explosion_Area" type="Area2D" parent="." index="7"]
 
 [node name="Explosion_Collision_Area" type="CollisionShape2D" parent="Explosion_Area" index="0"]
+position = Vector2( 0, 1 )
 shape = SubResource( 8 )
 
 [node name="Mushroom_Animation" type="AnimationPlayer" parent="." index="8"]
