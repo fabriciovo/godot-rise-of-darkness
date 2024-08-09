@@ -46,4 +46,21 @@ position = Vector2( 46, 30 )
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Start_Point" type="Position2D" parent="."]
+position = Vector2( 75, 51 )
+
+[node name="Fire_Spawn_Points" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="Fire_Spawn_Points"]
+position = Vector2( 36, 96 )
+
+[node name="Position2D2" type="Position2D" parent="Fire_Spawn_Points"]
+position = Vector2( 144, 27 )
+
+[node name="Position2D3" type="Position2D" parent="Fire_Spawn_Points"]
+position = Vector2( 43, 61 )
+
+[node name="Position2D4" type="Position2D" parent="Fire_Spawn_Points"]
+position = Vector2( 128, 103 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
