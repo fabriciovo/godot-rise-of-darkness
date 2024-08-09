@@ -29,4 +29,4 @@ func _on_Timer_timeout():
 	add_child(temp_gate_2)
 	dark_mage_spawn_timer.stop()
 	Global.stop = true
-	thunder.florest_dark_mage()
+	thunder.start_left_florest_dark_mage()

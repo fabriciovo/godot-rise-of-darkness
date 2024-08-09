@@ -28,8 +28,8 @@ var quest_menu = false
 
 var dark_mages = {
 	right_florest_dark_mage = false,
-	left_florest_dark_mage_defeated = false,
-	dungeon_dark_mage_defeated = false,
+	left_florest_dark_mage = false,
+	dungeon_dark_mage = false,
 }
 
 const GROUPS = {

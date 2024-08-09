@@ -74,7 +74,7 @@ tracks/2/keys = {
 "method": "play_thunder_effect"
 }, {
 "args": [  ],
-"method": "spawn_dark_mage"
+"method": "left_spawn_dark_mage"
 } ]
 }
 

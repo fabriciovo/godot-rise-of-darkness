@@ -111,10 +111,12 @@ func _on_Text_Box_on_end_dialog():
 	if spr.visible:
 		Global.stop = false
 		Global.cutscene = false
-		SoundController.play_music(SoundController.MUSIC.invasion)
+		#SoundController.play_music(SoundController.MUSIC.invasion)
+		SoundController.transition_to_music(SoundController.MUSIC.invasion)
 		$Change_Position_Timer.start(3)
 	else:
 		SoundController.play_music(SoundController.MUSIC.florest)
 		Global.stop = false
 		Global.cutscene = false
+		Global.dark_mages.right_florest_dark_mage = true
 		queue_free()

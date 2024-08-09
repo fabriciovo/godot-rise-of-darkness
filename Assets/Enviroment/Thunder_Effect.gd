@@ -3,17 +3,17 @@ extends CanvasLayer
 signal on_start
 signal on_end
 
-
-var dark_florest_mage = preload("res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn")
 onready var animation = $AnimationPlayer
 
-func florest_dark_mage():
+var dark_florest_mage = preload("res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn")
+
+func start_left_florest_dark_mage():
 	emit_signal("on_start")
 	animation.play("thunder_mage_dark_florest")
 	yield(animation,"animation_finished")
 	SoundController.play_music(SoundController.MUSIC.cursed_voices)
 	
-func spawn_dark_mage():
+func left_spawn_dark_mage():
 	var _temp = dark_florest_mage.instance()
 	var _current_scene = get_tree().current_scene
 	var _entities_node = _current_scene.get_node("Entities")
