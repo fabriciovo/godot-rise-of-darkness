@@ -32,7 +32,7 @@ tile_data = PoolIntArray( 0, 25, 0, 1, 25, 0, 2, 25, 0, 3, 25, 0, 4, 25, 0, 5, 2
 [node name="Enviroment_Entities" type="Node2D" parent="."]
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 212, 96 )
+position = Vector2( 216, 96 )
 rotation = 1.5708
 target_scene = "res://Assets/World/sub world/World_Left_2.tscn"
 door_name = "Door6"
@@ -40,7 +40,7 @@ door_name = "Door6"
 [node name="Entities" type="Node2D" parent="."]
 
 [node name="Fake_Chest" parent="." instance=ExtResource( 1 )]
-position = Vector2( 46, 30 )
+position = Vector2( 75, 51 )
 
 [node name="Thunder" parent="." instance=ExtResource( 6 )]
 
@@ -49,18 +49,18 @@ position = Vector2( 46, 30 )
 [node name="Start_Point" type="Position2D" parent="."]
 position = Vector2( 75, 51 )
 
-[node name="Fire_Spawn_Points" type="Node2D" parent="."]
+[node name="Points" type="Node2D" parent="."]
 
-[node name="Position2D" type="Position2D" parent="Fire_Spawn_Points"]
+[node name="Position2D" type="Position2D" parent="Points"]
 position = Vector2( 36, 96 )
 
-[node name="Position2D2" type="Position2D" parent="Fire_Spawn_Points"]
+[node name="Position2D2" type="Position2D" parent="Points"]
 position = Vector2( 144, 27 )
 
-[node name="Position2D3" type="Position2D" parent="Fire_Spawn_Points"]
+[node name="Position2D3" type="Position2D" parent="Points"]
 position = Vector2( 43, 61 )
 
-[node name="Position2D4" type="Position2D" parent="Fire_Spawn_Points"]
+[node name="Position2D4" type="Position2D" parent="Points"]
 position = Vector2( 128, 103 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

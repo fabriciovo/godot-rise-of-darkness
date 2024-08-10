@@ -1,6 +1,5 @@
 class_name Dark_Mage extends Node2D
 
-
 onready var spr = $Sprite
 onready var invincible_timer = $Invincible_Timer
 onready var animation_damage = $Animation_Damage
@@ -56,6 +55,7 @@ func damage(damageValue):
 		Destroy()
 
 func change_postion():
+	if Global.stop: return
 	if battle_unit_hp <= 0: return
 	invincible = true
 	hiding = true
@@ -70,11 +70,10 @@ func change_postion():
 	$Change_Position_Timer.start(3)
 
 func attack_player():
+	if Global.stop: return
 	if battle_unit_hp > 10:
 		animation.play("Attack")
 		yield(animation, "animation_finished")
-	else:
-		pass
 
 func _on_Change_Position_Timer_timeout():
 	change_postion()
@@ -103,6 +102,7 @@ func _on_Invincible_Timer_timeout():
 
 
 func create_projectile():
+	if Global.stop: return
 	var _temp_projectile = projectile.instance()
 	_temp_projectile.position = position
 	get_tree().current_scene.add_child(_temp_projectile)
@@ -111,7 +111,6 @@ func _on_Text_Box_on_end_dialog():
 	if spr.visible:
 		Global.stop = false
 		Global.cutscene = false
-		#SoundController.play_music(SoundController.MUSIC.invasion)
 		SoundController.transition_to_music(SoundController.MUSIC.invasion)
 		$Change_Position_Timer.start(3)
 	else:

@@ -15,6 +15,7 @@ func _ready():
 	dir = (direction - global_position).normalized()
 
 func _process(_delta):
+	if Global.stop: return
 	var _dir = move_and_collide(dir * speed * _delta)
 
 func _on_Area2D_body_entered(body):

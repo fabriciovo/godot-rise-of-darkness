@@ -1,25 +1,30 @@
 extends CanvasLayer
 
-signal on_start
-signal on_end
-
 onready var animation = $AnimationPlayer
 
 var dark_florest_mage = preload("res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn")
+var left_dark_mage = preload("res://Assets/Enemy/World Enemy/World_Dark_Mage_2.tscn")
+var mage_name = ""
 
-func start_left_florest_dark_mage():
-	emit_signal("on_start")
+func start_florest_dark_mage():
 	animation.play("thunder_mage_dark_florest")
 	yield(animation,"animation_finished")
 	SoundController.play_music(SoundController.MUSIC.cursed_voices)
 
-func start_right_florest_dark_mage():
-	emit_signal("on_start")
-	animation.play("right_thunder_mage_dark_florest")
-	yield(animation,"animation_finished")
-	SoundController.play_music(SoundController.MUSIC.cursed_voices)
 
-func spawn_dark_mage(_dark_mage_name):
+
+func spawn_dark_mage():
+	print(mage_name)
+	match mage_name:
+		"left_dark_mage":
+			spawn_left_dark_mage()
+		"right_dark_mage": 
+			spawn_right_dark_mage()
+		_:
+			return
+		
+
+func spawn_right_dark_mage():
 	var _temp = dark_florest_mage.instance()
 	var _current_scene = get_tree().current_scene
 	var _entities_node = _current_scene.get_node("Entities")
@@ -27,8 +32,8 @@ func spawn_dark_mage(_dark_mage_name):
 	_temp.global_position = _start_point.position
 	_entities_node.add_child(_temp)
 
-func right_spawn_dark_mage():
-	var _temp = dark_florest_mage.instance()
+func spawn_left_dark_mage():
+	var _temp = left_dark_mage.instance()
 	var _current_scene = get_tree().current_scene
 	var _entities_node = _current_scene.get_node("Entities")
 	var _start_point = _current_scene.get_node("Start_Point")

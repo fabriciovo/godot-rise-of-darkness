@@ -5,15 +5,13 @@ onready var thunder = $Thunder
 onready var door_world_right_1 = $Door_World_Right_1
 onready var door_world_right_2 = $Door_World_Right_2
 onready var entities = $Entities 
-var start_timer = true
 
 var gate = preload("res://Assets/Enviroment/Entities_Gate.tscn")
 
-func _process(_delta):
-	if entities.get_children().size() <= 0: return
-	if start_timer:
-		start_timer = false
+func _ready():
+	if not Global.dark_mages.right_florest_dark_mage:
 		dark_mage_spawn_timer.start(3)
+		thunder.mage_name = "right_dark_mage"
 
 func _on_Timer_timeout():
 	if Ui.pause_options.visible:
@@ -29,4 +27,4 @@ func _on_Timer_timeout():
 	add_child(temp_gate_2)
 	dark_mage_spawn_timer.stop()
 	Global.stop = true
-	thunder.start_left_florest_dark_mage()
+	thunder.start_florest_dark_mage()

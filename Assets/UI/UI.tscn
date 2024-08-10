@@ -46,6 +46,7 @@ extra_spacing_bottom = 1
 font_data = ExtResource( 19 )
 
 [node name="UI" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 177.0 ],

@@ -11,6 +11,7 @@ func _ready():
 		direction = Vector2.RIGHT
 
 func _physics_process(delta):
+	if Global.stop: return
 	var velocity = direction * speed
 	position += velocity * delta
 	if is_out_of_bounds():
@@ -41,7 +42,6 @@ func is_out_of_bounds():
 func _on_Simple_Projectile_area_entered(area):
 	if area.is_in_group(Global.GROUPS.SHIELD):
 		queue_free()
-
 
 func _on_Timer_timeout():
 	queue_free()

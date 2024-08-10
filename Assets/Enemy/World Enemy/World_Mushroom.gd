@@ -13,8 +13,7 @@ var velocity := Vector2.ZERO
 var chase_player = false
 var direction = Vector2(rand_range(-5, 5),rand_range(-5, 5))
 var chase_speed = 43
-var has_to_stop = false
-var current_anim_pos
+
 
 func _ready():
 	if get_tree().current_scene.has_node("Player"):
@@ -30,20 +29,11 @@ func _ready():
 	speed = const_speed
 
 func _process(_delta):
+	if Global.stop: return
 	if  player == null or navigation_path == null: return
-	if Global.stop: 
-		if not mushroom_player.is_playing(): return
-		current_anim_pos = mushroom_player.current_animation_position
-		mushroom_player.stop()
-		if chase_player:
-			has_to_stop = true
-		return
 	if dead: return
 	if hit:
 		explosion()
-	if has_to_stop and chase_player:
-		has_to_stop = false
-		mushroom_player.play("mushroom_start_explosion",-1,1,current_anim_pos)
 
 func _physics_process(_delta):
 	if Global.stop: return
@@ -63,7 +53,7 @@ func _physics_process(_delta):
 func explosion_after_anim():
 	if mushroom_player.get_current_animation() == "mushroom_start_explosion":
 		yield(mushroom_player, "animation_finished")
-		dead = true
+		explosion()
 
 func generate_path():
 	paths = navigation_path.get_simple_path(global_position, player.global_position,false)

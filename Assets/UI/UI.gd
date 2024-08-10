@@ -32,7 +32,7 @@ func _input(_event):
 			ui_containers[i].visible = false
 		if pause_options.visible:
 			pause_options.get_node("Pause_Button_Container/Settings").grab_focus()
-	if _event.is_action_pressed("start") and Global.in_game and not Global.cutscene and not Global.dialog:
+	if _event.is_action_pressed("start") and Global.in_game and not Global.dialog and not Global.cutscene:
 		Ui.show_hidden_panels()
 
 func _process(_delta):
@@ -91,8 +91,9 @@ func set_equip(weapon, slot):
 		PlayerControll.set_equiped_item(weapon, slot)
 
 func show_hidden_panels():
-	pause_options.visible = !pause_options.visible
+	pause_options.visible = not pause_options.visible
 	Global.stop = pause_options.visible
+	get_tree().paused = not get_tree().paused
 	pause_options.get_node("Pause_Button_Container/Settings").grab_focus()
 	pause_options.set_visible_options()
 
