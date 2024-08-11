@@ -40,7 +40,10 @@ func get_weapon(_item):
 	$Sprite.frame = 0
 	Global.open_chests.push_front(ID)
 	text_box.dialog_name = "get_weapon_" + str(_item) + ".json"
-	PlayerControll.set_inventory_item(_item)
+	if _item == Global.WEAPONS.KEY:
+		PlayerControll.key+=1
+	else:
+		PlayerControll.set_inventory_item(_item)
 	yield(player_anim, "animation_finished")
 	text_box.start_dialog()
 

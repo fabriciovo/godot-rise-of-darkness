@@ -17,7 +17,7 @@ var equiped_item = [0,-1]
 var relics = []
 var key = 0
 var base_speed = 30
-var dash_unlocked = false
+var dash_unlocked = true
 var neck_of_protection = false
 var ring_of_souls = false
 var armor_of_light = false
@@ -58,11 +58,11 @@ func set_ap(value):
 func set_mp(value):
 	mp = min(value, max_mp)
 
-func set_inventory_item(value):
-	inventory.push_front(value)
+func set_inventory_item(_value):
+	inventory.push_front(_value)
 	for i in weapons.size():
 		if weapons[i] == -1:
-			set_weapon(value)
+			set_weapon(_value)
 			return
 
 

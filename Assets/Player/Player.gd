@@ -62,6 +62,10 @@ func _ready():
 	action_area.knockback_vector = Vector2.LEFT
 	$AP_Timer.start(1)
 	create_protection()
+	set_collision_layer_bit(0, true)
+	set_collision_mask_bit(0, true)
+	set_collision_layer_bit(7, false)
+	set_collision_mask_bit(7, false)
 
 func get_input():
 	if Global.stop: return
@@ -204,7 +208,7 @@ func heal():
 	set_hp(hp+10)
 
 func damage(value):
-	if invincible: return
+	if invincible or dashing: return
 	hit = true
 	invincible = true
 	SoundController.play_effect(SoundController.EFFECTS.player_hit)
@@ -314,6 +318,10 @@ func movement():
 
 func dash():
 	dashing = true
+	set_collision_layer_bit(7, true)
+	set_collision_mask_bit(7, true)
+	set_collision_layer_bit(0, false)
+	set_collision_mask_bit(0, false)
 	var dash_object = preload("res://Sprites/Animations/Dash/Dash.tscn").instance()
 	dash_object.global_position = global_position
 	get_tree().get_current_scene().add_child(dash_object)
@@ -335,13 +343,17 @@ func dash():
 			velocity.x += 1
 			$PlayerAnimation.play("walk_right")
 			dash_object.rotation_degrees = 90
-	speed = PlayerControll.base_speed * 2
+	speed = PlayerControll.base_speed * 2.2
 	$Dash_Timer.start()
 
 
 func _on_Dash_Timer_timeout():
 	speed = PlayerControll.base_speed
 	dashing = false
+	set_collision_layer_bit(0, true)
+	set_collision_mask_bit(0, true)
+	set_collision_layer_bit(7, false)
+	set_collision_mask_bit(7, false)
 
 func _on_Invincible_Timer_timeout():
 	invincible = false

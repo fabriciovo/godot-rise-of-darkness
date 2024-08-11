@@ -271,6 +271,7 @@ extents = Vector2( 9.6, 8.95833 )
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
+collision_mask = 9
 moving_platform_apply_velocity_on_leave = 1
 script = ExtResource( 2 )
 

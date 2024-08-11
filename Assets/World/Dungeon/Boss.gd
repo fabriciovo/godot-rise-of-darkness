@@ -37,7 +37,7 @@ func action():
 	var attack = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn").instance()
 	attack.damage = 5
 	attack.global_position = global_position
-	attack.speed = 0.4
+	attack.speed = 80
 	get_tree().get_current_scene().add_child(attack)
 	$Shoot_Timer.start(action_timer)
 
