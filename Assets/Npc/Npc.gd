@@ -2,7 +2,6 @@ extends Node2D
 
 var player = null
 var dialog_name = ["wanny_dialog_start_quest.json", "wanny_dialog_during_quest.json", "wanny_dialog_complete_quest.json", "wanny_quest_completed.json"]
-var quest_step = 0
 var can_talk = true
 
 func _input(_event):
@@ -20,14 +19,16 @@ func _on_Input_Area_body_exited(body):
 
 func trigger_dialog_box():
 	if not can_talk: return
+	var quest_step = Global.NPCS_QUEST_STEP_TRACK.Wanny
 	can_talk = false
 	Global.cutscene = true
 	$Text_Box_Layer/Text_Box.dialog_name = dialog_name[quest_step]
 	$Text_Box_Layer/Text_Box.start_dialog()
 
 func _on_Text_Box_on_end_dialog():
+	var quest_step = Global.NPCS_QUEST_STEP_TRACK.Wanny
 	if quest_step == 0:
-		quest_step+=1
+		Global.NPCS_QUEST_STEP_TRACK.Wanny+=1
 		Global.quest_menu = true
 		Global.QUESTS["SOULS_QUEST"]["Unlocked"] = true
 		$Text_Box_Layer/Text_Box.dialog_name = "get_relic_3.json"

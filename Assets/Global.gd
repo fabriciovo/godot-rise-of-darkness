@@ -1,4 +1,5 @@
 extends Node
+
 var save_dir = "user://"
 var door_name = null
 
@@ -87,6 +88,11 @@ var QUESTS = {
 		"Goal": 100,
 		"Unlocked": false
 		}
+}
+
+var NPCS_QUEST_STEP_TRACK = {
+	"Wanny": 0,
+	"Ronan": 0
 }
 
 func get_world_data():

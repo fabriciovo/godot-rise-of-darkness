@@ -20,7 +20,6 @@ var speed = 10
 var const_speed = 0
 var quest_key = ""
 var has_soul = false
-var has_soul_collected = false
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
@@ -40,7 +39,7 @@ func _on_Timer_timeout():
 func Destroy():
 	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	PlayerControll.set_xp(battle_unit_xp)
-	if PlayerControll.ring_of_souls:
+	if PlayerControll.ring_of_souls and has_soul:
 		create_soul()
 	Disable()
 	var temp_smoke = smoke.instance()

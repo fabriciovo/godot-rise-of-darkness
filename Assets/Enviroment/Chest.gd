@@ -40,7 +40,10 @@ func get_weapon(_item):
 	$Sprite.frame = 0
 	Global.open_chests.push_front(ID)
 	text_box.dialog_name = "get_weapon_" + str(_item) + ".json"
-	if _item == Global.WEAPONS.KEY:
+	if _item == Global.WEAPONS.SWORD:
+		Global.NPCS_QUEST_STEP_TRACK.Ronan+=1
+		PlayerControll.set_inventory_item(_item)
+	elif _item == Global.WEAPONS.KEY:
 		PlayerControll.key+=1
 	else:
 		PlayerControll.set_inventory_item(_item)

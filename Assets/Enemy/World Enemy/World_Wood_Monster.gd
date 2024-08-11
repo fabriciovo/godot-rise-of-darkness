@@ -14,6 +14,7 @@ var dir = 0
 var projectile_scene = preload(PROJECTILE_PATH)
 
 func _ready():
+	has_soul = true
 	configure_battle_unit()
 	initialize_movement_control()
 	randomize()
