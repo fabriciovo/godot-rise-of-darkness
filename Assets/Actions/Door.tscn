@@ -6,6 +6,7 @@
 extents = Vector2( 15, 5.5 )
 
 [node name="Door" type="KinematicBody2D"]
+collision_layer = 3
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

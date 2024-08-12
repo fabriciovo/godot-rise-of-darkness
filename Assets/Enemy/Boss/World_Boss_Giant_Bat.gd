@@ -18,7 +18,7 @@ var battle_unit_xp = 100
 var battle_unit_max_hp = 50
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
-var has_soul = false
+var has_soul = true
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)
@@ -68,13 +68,13 @@ func set_attack_values():
 	attack = true
 
 func Destroy():
+	speed = 0
 	var temp_smoke = smoke.instance()
-	add_child(temp_smoke)
+	temp_smoke.position = position
+	get_tree().current_scene.add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
-	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
 	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	queue_free()
-
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW):
