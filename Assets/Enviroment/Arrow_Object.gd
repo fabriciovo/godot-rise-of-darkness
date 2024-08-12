@@ -12,14 +12,16 @@ func _ready():
 func _physics_process(_delta):
 	direction = move_and_slide(direction.normalized() * speed) 
 
-func _on_Arrow_Area_body_entered(body):
-	if body.is_in_group(Global.GROUPS.STATIC):
+func _on_Arrow_Area_body_entered(_body):
+	if _body.is_in_group(Global.GROUPS.DOOR):
 		queue_free()
-	if body.is_in_group(Global.GROUPS.BOX):
+	if _body.is_in_group(Global.GROUPS.STATIC):
 		queue_free()
-	if body.is_in_group(Global.GROUPS.MOVABLE):
+	if _body.is_in_group(Global.GROUPS.BOX):
 		queue_free()
-	if body.is_in_group(Global.GROUPS.TILEMAP):
+	if _body.is_in_group(Global.GROUPS.MOVABLE):
 		queue_free()
-	if body.is_in_group(Global.GROUPS.ARROW):
+	if _body.is_in_group(Global.GROUPS.TILEMAP):
+		queue_free()
+	if _body.is_in_group(Global.GROUPS.ARROW):
 		queue_free()

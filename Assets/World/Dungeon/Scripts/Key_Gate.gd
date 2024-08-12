@@ -4,6 +4,7 @@ var ID = name
 var player_in_gate = false
 
 func _ready():
+	add_to_group(Global.GROUPS.STATIC)
 	ID = name
 
 func _input(event):

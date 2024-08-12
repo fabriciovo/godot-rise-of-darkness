@@ -18,19 +18,17 @@ func _physics_process(_delta):
 		queue_free()
 
 func _on_Simple_Projectile_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		queue_free()
 	if body.is_in_group(Global.GROUPS.STATIC):
 		queue_free()
 	if body.is_in_group(Global.GROUPS.BOX):
 		body.Destroy()
 		queue_free()
 	if body.is_in_group(Global.GROUPS.ARROW):
-		queue_free()
 		body.queue_free()
-	if body.is_in_group(Global.GROUPS.PLAYER):
 		queue_free()
+	if body.is_in_group(Global.GROUPS.PLAYER):
 		body.damage(damage)
+		queue_free()
 	if body.is_in_group(Global.GROUPS.SHIELD):
 		queue_free()
 

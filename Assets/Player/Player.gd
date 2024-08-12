@@ -61,7 +61,6 @@ func _ready():
 	shield_area_collision.disabled = true
 	action_area.knockback_vector = Vector2.LEFT
 	$AP_Timer.start(1)
-	create_protection()
 	set_collision_layer_bit(0, true)
 	set_collision_mask_bit(0, true)
 	set_collision_layer_bit(7, false)
@@ -317,6 +316,7 @@ func movement():
 		velocity = velocity.normalized() * speed
 
 func dash():
+	if action_area.visible: return
 	dashing = true
 	set_collision_layer_bit(7, true)
 	set_collision_mask_bit(7, true)
@@ -382,8 +382,3 @@ func set_item_texture(_frame,_texture_type):
 		$Get_Item_Sprite.texture = weapons_texuture
 	else:
 		$Get_Item_Sprite.texture = relics_texuture
-
-func create_protection():
-	if(PlayerControll.neck_of_protection):
-		var _inst = neck_of_protection.instance()
-		add_child(_inst)

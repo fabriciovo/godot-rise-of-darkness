@@ -13,3 +13,4 @@ func start_animation():
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	visible = false
+	queue_free()

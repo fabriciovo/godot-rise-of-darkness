@@ -21,6 +21,8 @@ item = 1
 [node name="Key_Gate_Left_3" parent="Enviroment_Entities" index="1" instance=ExtResource( 4 )]
 position = Vector2( 120, 56 )
 rotation = 1.5708
+collision_layer = 137
+collision_mask = 143
 
 [node name="Door4" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 112, 129 )
