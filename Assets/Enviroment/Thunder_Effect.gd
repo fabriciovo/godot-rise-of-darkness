@@ -3,7 +3,7 @@ extends CanvasLayer
 onready var animation = $AnimationPlayer
 
 var dark_florest_mage = preload("res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn")
-var left_dark_mage = preload("res://Assets/Enemy/World Enemy/World_Dark_Mage_2.tscn")
+var fire_mage  = preload("res://Assets/Enemy/World Enemy/World_Fire_Mage.tscn")
 var mage_name = ""
 
 func start_florest_dark_mage():
@@ -33,7 +33,7 @@ func spawn_right_dark_mage():
 	_entities_node.add_child(_temp)
 
 func spawn_left_dark_mage():
-	var _temp = left_dark_mage.instance()
+	var _temp = fire_mage.instance()
 	var _current_scene = get_tree().current_scene
 	var _entities_node = _current_scene.get_node("Entities")
 	var _start_point = _current_scene.get_node("Start_Point")

@@ -39,6 +39,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Enviroment_Object.gd"
 }, {
+"base": "Dark_Mage",
+"class": "Fire_Mage",
+"language": "GDScript",
+"path": "res://Assets/Enemy/World Enemy/World_Fire_Mage.gd"
+}, {
+"base": "Simple_Projectile",
+"class": "Fire_Mage_Projectile",
+"language": "GDScript",
+"path": "res://Assets/Enemy/World Enemy/Fire_Mage_Projectile.gd"
+}, {
 "base": "Node2D",
 "class": "Key_Gate",
 "language": "GDScript",
@@ -141,6 +151,8 @@ _global_script_class_icons={
 "Chest": "",
 "Dark_Mage": "",
 "Enviroment_Object": "",
+"Fire_Mage": "",
+"Fire_Mage_Projectile": "",
 "Key_Gate": "",
 "Lever": "",
 "Player": "",

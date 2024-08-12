@@ -10,10 +10,10 @@ func _ready():
 	if direction == Vector2.ZERO:
 		direction = Vector2.RIGHT
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Global.stop: return
 	var velocity = direction * speed
-	position += velocity * delta
+	position += velocity * _delta
 	if is_out_of_bounds():
 		queue_free()
 
@@ -35,12 +35,12 @@ func _on_Simple_Projectile_body_entered(body):
 		queue_free()
 
 func is_out_of_bounds():
-	var screen_size = get_viewport().size
-	return position.x < 0 or position.y < 0 or position.x > screen_size.x or position.y > screen_size.y
+	var _screen_size = get_viewport().size
+	return position.x < 0 or position.y < 0 or position.x > _screen_size.x or position.y > _screen_size.y
 
 
-func _on_Simple_Projectile_area_entered(area):
-	if area.is_in_group(Global.GROUPS.SHIELD):
+func _on_Simple_Projectile_area_entered(_area):
+	if _area.is_in_group(Global.GROUPS.SHIELD):
 		queue_free()
 
 func _on_Timer_timeout():

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Enemy/World Enemy/Simple_Projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Enemy/World Enemy/Fire_Mage_Projectile.gd" type="Script" id=2]
+
+[node name="Fire_Mage_Projectile" instance=ExtResource( 1 )]
+script = ExtResource( 2 )

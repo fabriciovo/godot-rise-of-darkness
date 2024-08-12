@@ -2,6 +2,12 @@ extends World_Wood_Monster
 
 var directions = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 
+func _process(_delta):
+	var screen_size = get_viewport().size
+	return position.x < 0 or position.y < 0 or position.x > screen_size.x or position.y > screen_size.y
+
+
+
 func configure_battle_unit():
 	ID = name
 	battle_unit_xp = 10
@@ -23,5 +29,5 @@ func _on_Shoot_Timer_timeout():
 		projectile.position = position
 		projectile.damage = battle_unit_damage + 1
 		
-		get_parent().add_child(projectile)
+		get_tree().current_scene.add_child(projectile)
 		attacking = false
