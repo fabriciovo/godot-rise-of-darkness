@@ -117,5 +117,5 @@ func _on_Text_Box_on_end_dialog():
 		SoundController.play_music(SoundController.MUSIC.florest)
 		Global.stop = false
 		Global.cutscene = false
-		Global.dark_mages.right_florest_dark_mage = true
+		Global.dark_mages.dark_mage = true
 		queue_free()

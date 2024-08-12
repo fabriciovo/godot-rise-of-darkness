@@ -6,6 +6,7 @@ onready var entities = get_parent().get_node("Entities")
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 
 func _ready():
+	add_to_group(Global.GROUPS.STATIC)
 	spawn_gates()
 
 func _process(_delta):

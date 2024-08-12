@@ -12,8 +12,8 @@ radius = 1.41421
 [node name="Enemy_Projectile" type="KinematicBody2D"]
 z_index = 2
 z_as_relative = false
-collision_layer = 0
-collision_mask = 10
+collision_layer = 9
+collision_mask = 11
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

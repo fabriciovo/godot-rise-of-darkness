@@ -16,6 +16,7 @@ var player = null
 var player_anim = null
 
 func _ready():
+	add_to_group(Global.GROUPS.STATIC)
 	interactButton.visible = false;
 	ID = name
 

@@ -11,7 +11,7 @@ var fire_spirit = preload("res://Assets/Enemy/World Enemy/World_Fire_Spirit.tscn
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 
 func _ready():
-	if not Global.dark_mages.left_florest_dark_mage:
+	if not Global.dark_mages.fire_mage:
 		dark_mage_spawn_timer.start(3)
 		thunder.mage_name = "left_dark_mage"
 

@@ -9,6 +9,10 @@ var smoke = preload("res://Assets/Animations/smoke.tscn")
 
 func _ready():
 	sword_chest = get_tree().current_scene.get_node_or_null("Enviroment_Entities/Chest_Sword")
+	if Global.NPCS_QUEST_STEP_TRACK.Ronan == 0:
+		sword_chest.visible = false
+	else: 
+		sword_chest.visible = true
 
 func _input(_event):
 	if not player: return

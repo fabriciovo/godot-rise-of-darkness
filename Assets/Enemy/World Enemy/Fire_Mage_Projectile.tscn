@@ -4,6 +4,4 @@
 [ext_resource path="res://Assets/Enemy/World Enemy/Fire_Mage_Projectile.gd" type="Script" id=2]
 
 [node name="Fire_Mage_Projectile" instance=ExtResource( 1 )]
-collision_layer = 9
-collision_mask = 15
 script = ExtResource( 2 )

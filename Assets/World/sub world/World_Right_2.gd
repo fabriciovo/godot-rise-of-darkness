@@ -9,7 +9,7 @@ onready var entities = $Entities
 var gate = preload("res://Assets/Enviroment/Entities_Gate.tscn")
 
 func _ready():
-	if not Global.dark_mages.right_florest_dark_mage:
+	if not Global.dark_mages.dark_mage:
 		dark_mage_spawn_timer.start(3)
 		thunder.mage_name = "right_dark_mage"
 

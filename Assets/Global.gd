@@ -28,9 +28,9 @@ var in_game = false
 var quest_menu = false
 
 var dark_mages = {
-	right_florest_dark_mage = false,
-	left_florest_dark_mage = false,
-	dungeon_dark_mage = false,
+	dark_mage = false,
+	fire_mage = false,
+	necromancer = false,
 }
 
 const GROUPS = {
