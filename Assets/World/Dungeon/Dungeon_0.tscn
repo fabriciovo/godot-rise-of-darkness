@@ -39,10 +39,13 @@ position = Vector2( 112, 72 )
 z_index = 3
 
 [node name="World_Enemy_Skeleton_d0_1" parent="Entities" index="0" instance=ExtResource( 4 )]
-position = Vector2( 64, 80 )
+position = Vector2( 74, 72 )
 
 [node name="World_Enemy_Skeleton_d0_2" parent="Entities" index="1" instance=ExtResource( 4 )]
-position = Vector2( 160, 72 )
+position = Vector2( 151, 72 )
+
+[node name="World_Enemy_Skeleton_d0_3" parent="Entities" index="2" instance=ExtResource( 4 )]
+position = Vector2( 112, 41 )
 
 [node name="Dungeon_1" parent="." index="6" instance=ExtResource( 5 )]
 position = Vector2( 112, 12 )

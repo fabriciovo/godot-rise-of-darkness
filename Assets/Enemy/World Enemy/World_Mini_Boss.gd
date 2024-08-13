@@ -11,7 +11,7 @@ func _ready():
 	battle_unit_damage = 0
 	battle_unit_hp = battle_unit_max_hp 
 	add_to_group(Global.GROUPS.ENEMY)
-	const_speed = 50
+	const_speed = 20
 	direction.x = const_speed
 	$Attack_Timer.start(4)
 

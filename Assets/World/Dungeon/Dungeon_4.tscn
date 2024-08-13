@@ -46,7 +46,7 @@ position = Vector2( 104, 119 )
 position = Vector2( 121, 119 )
 
 [node name="Skulls" parent="." index="7" instance=ExtResource( 2 )]
-position = Vector2( 108, 78 )
+position = Vector2( 111, 51 )
 
 [node name="Mana_Pillar" parent="." index="8" instance=ExtResource( 4 )]
 position = Vector2( 192, 48 )
