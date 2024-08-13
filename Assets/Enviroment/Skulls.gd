@@ -1,6 +1,5 @@
 extends Node2D
 
-var ID = "Skulls"
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var skull = preload("res://Assets/Enemy/World Enemy/World_Skull.tscn")
 
