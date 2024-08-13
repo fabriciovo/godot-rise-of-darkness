@@ -6,6 +6,7 @@ onready var sprite = $Sprite
 var direction = Vector2.ZERO
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var attacking = false
+
 func _ready():
 	battle_unit_max_hp = 4
 	battle_unit_damage = 0
@@ -16,6 +17,7 @@ func _ready():
 	$Attack_Timer.start(4)
 
 func _physics_process(_delta):
+	if Global.stop or Global.cutscene: return
 	if attacking: return
 	var collision = move_and_collide(direction * _delta)
 	if collision:
@@ -35,6 +37,7 @@ func _on_Timer_timeout():
 
 func _on_Attack_Timer_timeout():
 	$Attack_Timer.start(4)
+	if Global.stop or Global.cutscene: return
 	var attack = projectile.instance()
 	attack.global_position = global_position
 	direction.x = 0

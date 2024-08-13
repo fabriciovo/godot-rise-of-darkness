@@ -1,16 +1,15 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Mana_Pillar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Mini_Boss.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/TextBox/Text_Box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Enviroment/Skulls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enviroment/Fire_Wall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tilesets/map_0.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/World/Dungeon/BridgeColision.gd" type="Script" id=8]
 [ext_resource path="res://Assets/World/Dungeon/Bridge.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Enviroment/Lever.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Enviroment/The Door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/World/Dungeon/Start_Necromancer_Fight.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 2.5 )
@@ -21,7 +20,55 @@ extents = Vector2( 40.5, 16 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16.5, 1.5 )
 
-[node name="Dungeon_Mini_Boss" instance=ExtResource( 1 )]
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Necromancer_Animation/Layer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "start_fight"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Necromancer_Animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.1, 2.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn"
+}, {
+"args": [  ],
+"method": "start_text_box"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Necromancer_Animation/Layer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.8, 1, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Dungeon_World_Necromancer" instance=ExtResource( 1 )]
 
 [node name="map_1" parent="." index="1"]
 tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 45, 0, 6, 74, 0, 7, 74, 0, 8, 46, 0, 9, 43, 0, 10, 43, 0, 11, 43, 0, 12, 43, 0, 13, 51, 0, 65536, 42, 0, 65537, 27, 0, 65538, 27, 0, 65539, 27, 0, 65540, 27, 0, 65542, 74, 0, 65543, 74, 0, 65545, 27, 0, 65546, 27, 0, 65547, 27, 0, 65548, 27, 0, 65549, 42, 0, 131072, 42, 0, 131073, 74, 0, 131074, 74, 0, 131075, 74, 0, 131076, 74, 0, 131077, 74, 0, 131078, 74, 0, 131079, 74, 0, 131080, 74, 0, 131081, 74, 0, 131082, 74, 0, 131083, 74, 0, 131084, 74, 0, 131085, 42, 0, 196608, 42, 0, 196609, 74, 0, 196610, 74, 0, 196611, 74, 0, 196612, 74, 0, 196613, 74, 0, 196614, 74, 0, 196615, 74, 0, 196616, 74, 0, 196617, 74, 0, 196618, 74, 0, 196619, 74, 0, 196620, 74, 0, 196621, 42, 0, 262144, 42, 0, 262145, 74, 0, 262146, 74, 0, 262147, 74, 0, 262148, 74, 0, 262149, 74, 0, 262150, 74, 0, 262151, 74, 0, 262152, 74, 0, 262153, 74, 0, 262154, 74, 0, 262155, 74, 0, 262156, 74, 0, 262157, 42, 0, 327680, 42, 0, 327691, 23, 0, 327693, 42, 0, 393216, 42, 0, 393226, 23, 0, 393229, 42, 0, 458752, 42, 0, 458753, 74, 0, 458754, 74, 0, 458755, 74, 0, 458756, 74, 0, 458757, 74, 0, 458758, 74, 0, 458759, 74, 0, 458760, 74, 0, 458761, 74, 0, 458762, 41, 0, 458763, 41, 0, 458764, 41, 0, 458765, 42, 0, 524288, 53, 0, 524289, 43, 0, 524290, 43, 0, 524291, 43, 0, 524292, 43, 0, 524293, 43, 0, 524294, 43, 0, 524295, 43, 0, 524296, 43, 0, 524297, 43, 0, 524298, 43, 0, 524299, 43, 0, 524300, 43, 0, 524301, 54, 0 )
@@ -72,10 +119,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="World_Mini_Boss" parent="Entities" index="0" instance=ExtResource( 3 )]
-position = Vector2( 111, 119 )
-z_index = 1
-
 [node name="Mana_Pillar" parent="." index="6" instance=ExtResource( 2 )]
 position = Vector2( 24, 39 )
 
@@ -87,22 +130,42 @@ position = Vector2( 112, 12 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_12.tscn"
 door_name = "Dungeon_14"
 
-[node name="Lever" parent="." index="9" instance=ExtResource( 10 )]
-position = Vector2( 200, 119 )
-
 [node name="Skulls" parent="Imortal_Entities" index="0" instance=ExtResource( 4 )]
 position = Vector2( 47, 58 )
 
 [node name="Skulls2" parent="Imortal_Entities" index="1" instance=ExtResource( 4 )]
 position = Vector2( 172, 58 )
 
-[node name="The Door" parent="." index="11" instance=ExtResource( 11 )]
-position = Vector2( 106, 6 )
+[node name="Necromancer_Animation" type="Node2D" parent="." index="10"]
+script = ExtResource( 10 )
 
-[node name="Start_Line" type="Area2D" parent="." index="12"]
+[node name="Start_Necromancer_Fight" type="Area2D" parent="Necromancer_Animation" index="0"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_Line" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer_Animation/Start_Necromancer_Fight" index="0"]
 position = Vector2( 112.5, 32 )
 shape = SubResource( 3 )
 
-[connection signal="body_exited" from="Lever" to="Lever" method="_on_Lever_body_exited"]
+[node name="Necromancer_Animation" type="AnimationPlayer" parent="Necromancer_Animation" index="1"]
+root_node = NodePath("../..")
+anims/RESET = SubResource( 5 )
+anims/start_fight = SubResource( 4 )
+
+[node name="Layer" type="CanvasLayer" parent="Necromancer_Animation" index="2"]
+
+[node name="ColorRect" type="ColorRect" parent="Necromancer_Animation/Layer" index="0"]
+margin_right = 223.0
+margin_bottom = 144.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="Text_Box" parent="Necromancer_Animation/Layer" index="1" instance=ExtResource( 3 )]
+
+[node name="Points" type="Node2D" parent="." index="11"]
+
+[node name="Gate_Position" type="Position2D" parent="Points" index="0"]
+position = Vector2( 112, 9 )
+
+[node name="Necromancer_Position" type="Position2D" parent="Points" index="1"]
+position = Vector2( 111, 120 )
+
+[connection signal="body_entered" from="Necromancer_Animation/Start_Necromancer_Fight" to="Necromancer_Animation" method="_on_Start_Necromancer_Fight_body_entered"]
+[connection signal="on_end_dialog" from="Necromancer_Animation/Layer/Text_Box" to="Necromancer_Animation" method="_on_Text_Box_on_end_dialog"]
