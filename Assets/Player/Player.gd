@@ -140,36 +140,39 @@ func _process(_delta):
 		set_physics_process(false)
 
 func take_damage_by_enemies():
-	for i in enemiesBody.size():
-			damage(enemiesBody[i].battle_unit_damage)
+#	for i in enemiesBody.size():
+#			damage(enemiesBody[i].battle_unit_damage)
+	pass
 
-func _on_PlayerBody_body_entered(body):
-	if body.is_in_group(Global.GROUPS.ENEMY):
-		enemiesBody.append(body)
-	if body.is_in_group(Global.GROUPS.DOOR):
-		var scene_instance = get_tree().change_scene(body.target_scene)
+func _on_PlayerBody_body_entered(_body):
+	check_projectile_collision(_body)
+	if _body.is_in_group(Global.GROUPS.ENEMY):
+		damage(_body.battle_unit_damage)
+	if _body.is_in_group(Global.GROUPS.DOOR):
+		var scene_instance = get_tree().change_scene(_body.target_scene)
 		if scene_instance == OK: 
-				Global.door_name = body.door_name
-	if body.is_in_group(Global.GROUPS.DOOR_WITH_INTERACTION):
-		if not body.can_pass:
-			body.trigger_dialog_box()
+				Global.door_name = _body.door_name
+	if _body.is_in_group(Global.GROUPS.DOOR_WITH_INTERACTION):
+		if not _body.can_pass:
+			_body.trigger_dialog_box()
 
-func _on_PlayerBody_body_exited(body):
-	if body.is_in_group(Global.GROUPS.ENEMY):
-		enemiesBody.erase(body)
+func _on_PlayerBody_body_exited(_body):
+#	if _body.is_in_group(Global.GROUPS.ENEMY):
+#		enemiesBody.erase(_body)
+	pass
 
-func _on_ActionArea_body_entered(body):
-	if body.is_in_group(Global.GROUPS.BOX): 
-		body.Destroy()
+func _on_ActionArea_body_entered(_body):
+	if _body.is_in_group(Global.GROUPS.BOX): 
+		_body.Destroy()
 
-func create_sword(value):
+func create_sword(_value):
 	set_ap(ap-1)
 	action_state = true
 	action_area.visible = true
 	action_area.get_node("action").visible = true
 	action_area.get_node("action").get_node("AnimationPlayer").play("Slash_anim")
 	action_collision.disabled = false
-	action_sprite.frame = PlayerControll.equiped_item[value]
+	action_sprite.frame = PlayerControll.equiped_item[_value]
 
 func create_shield(): 
 	action_state = true
@@ -382,3 +385,15 @@ func set_item_texture(_frame,_texture_type):
 		$Get_Item_Sprite.texture = weapons_texuture
 	else:
 		$Get_Item_Sprite.texture = relics_texuture
+
+
+func _on_Player_Body_area_entered(_area):
+	check_projectile_collision(_area)
+
+func check_projectile_collision(_body):
+	print(_body)
+	if _body.is_in_group(Global.GROUPS.ENEMY_PROJECTILES) and not dashing:
+		print("damage")
+		damage(_body.damage)
+		_body.queue_free()
+	

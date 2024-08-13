@@ -366,6 +366,7 @@ texture = ExtResource( 6 )
 hframes = 7
 frame = 5
 
+[connection signal="area_entered" from="Player_Body" to="." method="_on_Player_Body_area_entered"]
 [connection signal="body_entered" from="Player_Body" to="." method="_on_PlayerBody_body_entered"]
 [connection signal="body_exited" from="Player_Body" to="." method="_on_PlayerBody_body_exited"]
 [connection signal="body_entered" from="Action_Area" to="." method="_on_ActionArea_body_entered"]

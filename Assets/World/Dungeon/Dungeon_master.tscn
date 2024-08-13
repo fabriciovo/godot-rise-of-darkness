@@ -40,3 +40,5 @@ __meta__ = {
 [node name="Entities" type="Node2D" parent="."]
 
 [node name="Enviroment_Entities" type="Node2D" parent="."]
+
+[node name="Imortal_Entities" type="Node2D" parent="."]

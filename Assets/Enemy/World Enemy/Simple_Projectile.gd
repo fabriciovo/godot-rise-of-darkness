@@ -3,7 +3,7 @@ class_name Simple_Projectile extends Area2D
 
 var speed = 40
 var direction = Vector2.ZERO  
-var damage
+var damage = 5
 
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY_PROJECTILES)
@@ -25,11 +25,6 @@ func _on_Simple_Projectile_body_entered(body):
 		queue_free()
 	if body.is_in_group(Global.GROUPS.ARROW):
 		body.queue_free()
-		queue_free()
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		body.damage(damage)
-		queue_free()
-	if body.is_in_group(Global.GROUPS.SHIELD):
 		queue_free()
 
 func is_out_of_bounds():

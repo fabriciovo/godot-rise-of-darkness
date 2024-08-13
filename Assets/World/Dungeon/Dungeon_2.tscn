@@ -20,23 +20,14 @@ position = Vector2( 144, 112 )
 [node name="Static_Object3" parent="Enviroment/Static" index="2" instance=ExtResource( 4 )]
 position = Vector2( 129, 96 )
 
-[node name="Static_Object5" parent="Enviroment/Static" index="3" instance=ExtResource( 4 )]
-position = Vector2( 176, 63 )
-
-[node name="Static_Object6" parent="Enviroment/Static" index="4" instance=ExtResource( 4 )]
-position = Vector2( 48, 64 )
-
-[node name="Static_Object4" parent="Enviroment/Static" index="5" instance=ExtResource( 4 )]
+[node name="Static_Object4" parent="Enviroment/Static" index="3" instance=ExtResource( 4 )]
 position = Vector2( 96, 97 )
 
-[node name="Box" parent="Enviroment/Static" index="6" instance=ExtResource( 3 )]
+[node name="Box" parent="Enviroment/Static" index="4" instance=ExtResource( 3 )]
 position = Vector2( 104, 40 )
 
-[node name="Box4" parent="Enviroment/Static" index="7" instance=ExtResource( 3 )]
+[node name="Box4" parent="Enviroment/Static" index="5" instance=ExtResource( 3 )]
 position = Vector2( 121, 40 )
-
-[node name="Skulls" parent="Entities" index="0" instance=ExtResource( 1 )]
-position = Vector2( 112, 64 )
 
 [node name="Dungeon_2" parent="." index="6" instance=ExtResource( 5 )]
 position = Vector2( 112, 12 )
@@ -48,3 +39,12 @@ position = Vector2( 111, 134 )
 rotation = 3.14159
 target_scene = "res://Assets/World/Dungeon/Dungeon_1.tscn"
 door_name = "Dungeon_1"
+
+[node name="Skulls" parent="Imortal_Entities" index="0" instance=ExtResource( 1 )]
+position = Vector2( 46, 64 )
+
+[node name="Skulls2" parent="Imortal_Entities" index="1" instance=ExtResource( 1 )]
+position = Vector2( 178, 74 )
+
+[node name="Skulls3" parent="Imortal_Entities" index="2" instance=ExtResource( 1 )]
+position = Vector2( 113, 64 )
