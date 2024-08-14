@@ -7,12 +7,14 @@ func _ready():
 	if Global.dark_mages.necromancer:
 		queue_free()
 
+func _process(_delta):
+	if Global.dark_mages.necromancer:
+		queue_free()
+
 func _on_Timer_timeout():
 	var time = rand_range(2,6)
 	$Timer.start(time)
 	if Global.stop or Global.cutscene: return
-	if Global.dark_mages.necromancer:
-		queue_free()
 	var _skull_inst = skull.instance()
 	var _smoke_inst = smoke.instance()
 	_skull_inst.position = position

@@ -117,3 +117,4 @@ anims/sides = SubResource( 6 )
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Attack_Timer" to="." method="_on_Attack_Timer_timeout"]
+[connection signal="on_end_dialog" from="Text_Box_Layer/Text_Box" to="." method="_on_Text_Box_on_end_dialog"]

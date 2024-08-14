@@ -93,7 +93,7 @@ func action(value):
 					text.set_text("MP -3")
 					add_child(text)
 			Global.WEAPONS.HEAL: 
-				if mp >= 5 and hp < PlayerControll.max_ap:
+				if mp >= 5 and hp < PlayerControll.max_hp:
 					var textMP = float_text.instance()
 					var textHP = float_text.instance()
 					textMP.set_text("MP -5")

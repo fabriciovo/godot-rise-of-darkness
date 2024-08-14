@@ -101,6 +101,4 @@ anims/wood_down = SubResource( 2 )
 anims/wood_left = SubResource( 3 )
 anims/wood_up = SubResource( 4 )
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." index="7"]
-
 [connection signal="timeout" from="Shoot_Timer" to="." method="_on_Shoot_Timer_timeout"]

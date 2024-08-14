@@ -12,7 +12,7 @@ var level = 1 setget set_level
 var atk = 300 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
-var inventory = []
+var inventory = [0]
 var equiped_item = [0,1] 
 var relics = []
 var key = 0
@@ -105,13 +105,14 @@ func set_xp(value):
 	if xp >= xp_to_level_up:
 		points = level + 2
 		level+=1
-		xp_to_level_up = floor(xp_to_level_up * 1.2)
 		xp =  xp_to_level_up - xp
+		xp_to_level_up = floor(xp_to_level_up * 1.2)
 		var inst_xp_text = float_text.instance()
 		var inst_level_up_text_box = level_up_text_box.instance()
 		inst_xp_text.set_text("LEVEL UP!")
 		get_tree().get_current_scene().get_node("Player").add_child(inst_xp_text)
 		get_tree().get_current_scene().add_child(inst_level_up_text_box)
+		yield(inst_level_up_text_box,"tree_exiting")
 func set_level(value):
 	level = value
 

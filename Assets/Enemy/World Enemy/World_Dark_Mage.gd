@@ -11,7 +11,7 @@ var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var points = []
 var ID = name
 
-var battle_unit_xp = 100
+var battle_unit_xp = 50
 var battle_unit_max_hp = 50
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
@@ -118,4 +118,5 @@ func _on_Text_Box_on_end_dialog():
 		Global.stop = false
 		Global.cutscene = false
 		Global.dark_mages.dark_mage = true
+		PlayerControll.set_xp(battle_unit_xp)
 		queue_free()
