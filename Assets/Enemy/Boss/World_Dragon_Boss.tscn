@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/World/Dungeon/Boss.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=2]
 [ext_resource path="res://Sprites/dragon_boss.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=4]
-[ext_resource path="res://Assets/Enemy/World Enemy/Boss_Shield.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Enemy/Boss/Boss_Shield.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Enemy/Boss/World_Dragon_Boss.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 13.0096
@@ -12,8 +12,8 @@ radius = 13.0096
 [sub_resource type="CircleShape2D" id=1]
 radius = 12.0
 
-[node name="World_Boss" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+[node name="World_Dragon_Boss" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 1 )
@@ -31,15 +31,15 @@ position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="Enemy_Animation" parent="." index="4"]
-anims/damage_anim = ExtResource( 4 )
+anims/damage_anim = ExtResource( 2 )
 
-[node name="Boss_Shield2" parent="." index="5" instance=ExtResource( 5 )]
+[node name="Boss_Shield2" parent="." index="5" instance=ExtResource( 4 )]
 visible = false
 x_pos = 5
 y_pos = 7
 dir = 1
 
-[node name="Boss_Shield" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Boss_Shield" parent="." index="6" instance=ExtResource( 4 )]
 visible = false
 position = Vector2( 23, 0 )
 x_pos = -5

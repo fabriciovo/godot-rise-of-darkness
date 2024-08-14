@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Bomb_Object.gd"
 }, {
-"base": "World_Enemy",
-"class": "Boss",
-"language": "GDScript",
-"path": "res://Assets/World/Dungeon/Boss.gd"
-}, {
 "base": "Node2D",
 "class": "Boss_Bat",
 "language": "GDScript",
@@ -112,7 +107,12 @@ _global_script_classes=[ {
 "base": "World_Enemy_Slime",
 "class": "World_Boss_Slime",
 "language": "GDScript",
-"path": "res://Assets/Enemy/World Enemy/World_Boss_Slime.gd"
+"path": "res://Assets/Enemy/Boss/World_Boss_Slime.gd"
+}, {
+"base": "World_Enemy",
+"class": "World_Dragon_Boss",
+"language": "GDScript",
+"path": "res://Assets/Enemy/Boss/World_Dragon_Boss.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "World_Enemy",
@@ -146,7 +146,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bomb_Object": "",
-"Boss": "",
 "Boss_Bat": "",
 "Chest": "",
 "Dark_Mage": "",
@@ -166,6 +165,7 @@ _global_script_class_icons={
 "Weapon_Slot": "",
 "World_Bear": "",
 "World_Boss_Slime": "",
+"World_Dragon_Boss": "",
 "World_Enemy": "",
 "World_Enemy_Slime": "",
 "World_Mushroom": "",

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Boss_Slime.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Enemy/Boss/World_Boss_Slime.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=6]
 

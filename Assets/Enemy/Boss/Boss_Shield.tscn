@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Collectibles_nobg_16x16.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends KinematicBody2D
+
+
+var radius = 33.0
+var angle = 0.0
+onready var center_sprite = get_node(\"Sprite\")
+
+export(int) var x_pos
+export(int) var y_pos
+export(int) var dir
+var battle_unit_damage = 5
+func _ready():
+	add_to_group(Global.GROUPS.ENEMY)
+
+func _process(_delta):
+	angle += 0.1 / 10
+	var x = center_sprite.position.x + x_pos + radius * cos(angle) * dir
+	var y = center_sprite.position.y  + radius * sin(angle)
+	position = Vector2(x, y )
+	rotation = angle
+
+
+"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.12311
+
+[node name="Boss_Shield" type="KinematicBody2D"]
+position = Vector2( -20, 0 )
+script = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )

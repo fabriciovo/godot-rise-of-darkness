@@ -1,4 +1,5 @@
-class_name Boss extends World_Enemy
+class_name World_Dragon_Boss extends World_Enemy
+
 onready var player = get_tree().current_scene.get_node("Player")
 onready var stop_timer = $Stop_Timer
 var direction = Vector2(-20, 20)
