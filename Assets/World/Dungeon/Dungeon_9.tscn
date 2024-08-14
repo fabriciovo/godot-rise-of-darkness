@@ -65,7 +65,7 @@ tracks/3/keys = {
 } ]
 }
 tracks/4/type = "method"
-tracks/4/path = NodePath("../World_Boss")
+tracks/4/path = NodePath("../World_Dragon_Boss")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -134,5 +134,5 @@ position = Vector2( 121, 7 )
 [node name="Smoke3" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( 104, 7 )
 
-[node name="World_Boss" parent="." index="10" instance=ExtResource( 3 )]
+[node name="World_Dragon_Boss" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( 109, 112 )

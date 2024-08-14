@@ -386,7 +386,6 @@ func set_item_texture(_frame,_texture_type):
 	else:
 		$Get_Item_Sprite.texture = relics_texuture
 
-
 func _on_Player_Body_area_entered(_area):
 	check_projectile_collision(_area)
 

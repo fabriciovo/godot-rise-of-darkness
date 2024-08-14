@@ -28,6 +28,7 @@ tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 
 [node name="Player" parent="." index="2"]
 position = Vector2( 112, 13 )
+collision_layer = 1
 
 [node name="Watter" type="StaticBody2D" parent="Enviroment/Static" index="0"]
 position = Vector2( 180, 82 )

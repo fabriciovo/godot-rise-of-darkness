@@ -10,6 +10,7 @@
 [node name="Player" parent="." index="2"]
 position = Vector2( 113, 134 )
 z_index = 4
+collision_layer = 1
 
 [node name="Enviroment" parent="." index="3"]
 z_index = 2

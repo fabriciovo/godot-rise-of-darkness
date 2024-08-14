@@ -20,6 +20,7 @@ tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 
 [node name="Player" parent="." index="2"]
 position = Vector2( 9, 81 )
+collision_layer = 1
 
 [node name="Static_Object" parent="Enviroment/Static" index="0" instance=ExtResource( 7 )]
 position = Vector2( 136, 40 )

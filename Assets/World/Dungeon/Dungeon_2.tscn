@@ -10,6 +10,7 @@
 
 [node name="Player" parent="." index="2"]
 position = Vector2( 111, 134 )
+collision_layer = 1
 
 [node name="Static_Object" parent="Enviroment/Static" index="0" instance=ExtResource( 4 )]
 position = Vector2( 80, 112 )

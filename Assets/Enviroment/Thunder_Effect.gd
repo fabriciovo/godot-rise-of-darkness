@@ -14,7 +14,6 @@ func start_florest_dark_mage():
 
 
 func spawn_dark_mage():
-	print(mage_name)
 	match mage_name:
 		"left_dark_mage":
 			spawn_left_dark_mage()

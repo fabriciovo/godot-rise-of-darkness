@@ -13,6 +13,7 @@ tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 
 [node name="Player" parent="." index="2"]
 position = Vector2( 113, 132 )
+collision_layer = 1
 
 [node name="Spikes" type="Node2D" parent="." index="3"]
 
