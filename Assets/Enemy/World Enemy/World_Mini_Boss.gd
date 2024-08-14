@@ -2,6 +2,7 @@ extends World_Enemy
 
 onready var anim = $AnimationPlayer
 onready var sprite = $Sprite
+onready var text_box = $Text_Box_Layer/Text_Box
 
 var direction = Vector2.ZERO
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
@@ -19,6 +20,7 @@ func _ready():
 func _physics_process(_delta):
 	if Global.stop or Global.cutscene: return
 	if attacking: return
+	if hit: return
 	var collision = move_and_collide(direction * _delta)
 	if collision:
 		direction = direction.bounce(collision.normal)
@@ -53,3 +55,24 @@ func _on_Area_body_entered(body):
 		damage(1, PlayerControll.atk+1)
 		body.queue_free()
 
+
+func Destroy():
+	SoundController.stop_music()
+	spr.visible = false
+	var temp_smoke = smoke.instance()
+	add_child(temp_smoke)
+	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
+	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
+	SoundController.play_effect(SoundController.EFFECTS.positive_10)
+	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
+	Global.cutscene = true
+	text_box.dialog_name = "dark_mage_florest.json"
+	text_box.start_dialog()
+
+
+func _on_Text_Box_on_end_dialog():
+	SoundController.play_music(SoundController.MUSIC.dungeon)
+	Global.stop = false
+	Global.cutscene = false
+	Global.dark_mages.necromancer = true
+	queue_free()
