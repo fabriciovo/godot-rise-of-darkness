@@ -30,9 +30,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 4.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "intro_dialog"
+} ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath("../Smoke2")
@@ -76,6 +79,7 @@ script = ExtResource( 4 )
 [node name="Text_Box" parent="boss_fight/Text_Box_Layer" index="0" instance=ExtResource( 7 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="boss_fight" index="1"]
+autoplay = "start_boss"
 anims/start_boss = SubResource( 1 )
 
 [node name="map_1" parent="." index="2"]
@@ -94,7 +98,6 @@ position = Vector2( 152, 24 )
 position = Vector2( 112, 99 )
 
 [node name="gate" type="KinematicBody2D" parent="." index="7"]
-visible = false
 position = Vector2( 104, -3 )
 
 [node name="Sprite" type="Sprite" parent="gate" index="0"]
@@ -181,5 +184,19 @@ position = Vector2( -54, -81 )
 
 [node name="Position2D9" type="Position2D" parent="Sowrd_Points/Bottom" index="8"]
 position = Vector2( 94, -12 )
+
+[node name="Spawn_Points" type="Node2D" parent="Sowrd_Points" index="2"]
+
+[node name="Position2D" type="Position2D" parent="Sowrd_Points/Spawn_Points" index="0"]
+position = Vector2( 48, 80 )
+
+[node name="Position2D2" type="Position2D" parent="Sowrd_Points/Spawn_Points" index="1"]
+position = Vector2( 72, 96 )
+
+[node name="Position2D3" type="Position2D" parent="Sowrd_Points/Spawn_Points" index="2"]
+position = Vector2( 144, 96 )
+
+[node name="Position2D4" type="Position2D" parent="Sowrd_Points/Spawn_Points" index="3"]
+position = Vector2( 184, 80 )
 
 [connection signal="on_end_dialog" from="boss_fight/Text_Box_Layer/Text_Box" to="boss_fight" method="_on_Text_Box_on_end_dialog"]
