@@ -142,7 +142,7 @@ tracks/3/keys = {
 "values": [ 1 ]
 }
 
-[node name="World_Enemy_Sword" type="KinematicBody2D"]
+[node name="World_Enemy_Sword" type="Area2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -162,4 +162,8 @@ anims/RESET = SubResource( 2 )
 anims/anim = SubResource( 4 )
 anims/intro = SubResource( 3 )
 
+[node name="Chase_Player_Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_World_Enemy_Sword_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Chase_Player_Timer" to="." method="_on_Chase_Player_Timer_timeout"]

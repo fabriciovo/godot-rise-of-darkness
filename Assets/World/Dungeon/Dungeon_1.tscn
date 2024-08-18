@@ -12,7 +12,6 @@ position = Vector2( -1, 0 )
 
 [node name="Player" parent="." index="2"]
 position = Vector2( 112, 135 )
-collision_layer = 1
 
 [node name="World_Slime_1_D1" parent="Entities" index="0" instance=ExtResource( 5 )]
 position = Vector2( 50, 106 )
