@@ -4,6 +4,8 @@ onready var text_box = $Text_Box_Layer/Text_Box
 onready var phase_one_timer = $Phase_One
 var sword_spawn_points
 var sword_boss = preload("res://Assets/Enemy/Boss/World_Enemy_Sword.tscn")
+var flying_dragon = preload("res://Assets/Enviroment/Flying_Dragon.tscn")
+
 var dark_lord
 var phase = 0
 func _ready():
@@ -28,10 +30,11 @@ func _on_Text_Box_on_end_dialog():
 				var _sword_inst = sword_boss.instance()
 				_sword_inst.position = sword_pos.position
 				_world_swords.add_child(_sword_inst)
-				phase_one_timer.start(60)
+				phase_one_timer.start(20)
 				hide_dark_lord()
 		1:
-			pass
+			var _flying_dragon_inst = flying_dragon.instance()
+			get_tree().current_scene.add_child(_flying_dragon_inst)
 		2:
 			pass
 		3:
@@ -40,11 +43,11 @@ func _on_Text_Box_on_end_dialog():
 
 func hide_dark_lord():
 	dark_lord.get_node("Animation_Player").play("hide")
-	
+
 func _on_Phase_One_timeout():
 	Global.stop = true
 	Global.cutscene = true
-	get_tree().current_scene.get_node("World_Swords").queue_free()	
+#	get_parent().get_node("World_Swords").queue_free()
 	phase += 1
 	dark_lord.get_node("Animation_Player").play_backwards("hide")
 	text_box.dialog_name = "you_need_a_weapon.json"

@@ -204,5 +204,22 @@ position = Vector2( 184, 80 )
 
 [node name="World_Swords" type="Node2D" parent="." index="12"]
 
+[node name="Flying_Dragon_Points" type="Node2D" parent="." index="13"]
+
+[node name="Left" type="Position2D" parent="Flying_Dragon_Points" index="0"]
+position = Vector2( -64, 64 )
+
+[node name="Right" type="Position2D" parent="Flying_Dragon_Points" index="1"]
+position = Vector2( 320, 64 )
+
+[node name="Up" type="Position2D" parent="Flying_Dragon_Points" index="2"]
+position = Vector2( 112, -64 )
+
+[node name="Down" type="Position2D" parent="Flying_Dragon_Points" index="3"]
+position = Vector2( 112, 200 )
+
+[node name="Landing" type="Position2D" parent="Flying_Dragon_Points" index="4"]
+position = Vector2( 112, 96 )
+
 [connection signal="on_end_dialog" from="boss_fight/Text_Box_Layer/Text_Box" to="boss_fight" method="_on_Text_Box_on_end_dialog"]
 [connection signal="timeout" from="boss_fight/Phase_One" to="boss_fight" method="_on_Phase_One_timeout"]

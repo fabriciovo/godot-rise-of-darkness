@@ -10,6 +10,7 @@ var dir_frame = 0
 var can_take_damage = false
 var collision
 var action_timer = 3
+
 func _ready():
 	ID = name
 	battle_unit_max_hp = 300
