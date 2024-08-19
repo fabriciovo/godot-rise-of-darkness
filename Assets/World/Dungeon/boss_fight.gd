@@ -45,9 +45,10 @@ func hide_dark_lord():
 	dark_lord.get_node("Animation_Player").play("hide")
 
 func _on_Phase_One_timeout():
+	var world_swords = get_parent().find_node("World_Swords")
+	world_swords.queue_free()
 	Global.stop = true
 	Global.cutscene = true
-#	get_parent().get_node("World_Swords").queue_free()
 	phase += 1
 	dark_lord.get_node("Animation_Player").play_backwards("hide")
 	text_box.dialog_name = "you_need_a_weapon.json"
