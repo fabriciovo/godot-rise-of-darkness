@@ -82,4 +82,4 @@ func _on_Staff_pressed():
 	PlayerControll.update_weapon_slot(3,game_ui.weapon_slot_index)
 
 func _on_Shield_pressed():
-	PlayerControll.update_weapon_slot(4,game_ui.weapon_slot_index)
+	PlayerControll.update_weapon_slot(5,game_ui.weapon_slot_index)

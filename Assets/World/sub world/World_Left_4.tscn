@@ -20,11 +20,9 @@ item = 4
 
 [node name="World_Wood_Monster_wl4_1" parent="Entities" index="0" instance=ExtResource( 5 )]
 position = Vector2( 64, 78 )
-collision_mask = 15
 
 [node name="World_Wood_Monster_wl4_2" parent="Entities" index="1" instance=ExtResource( 5 )]
 position = Vector2( 157, 46 )
-collision_mask = 15
 
 [node name="Position2D" parent="Imortal_Entities/Positions" index="0"]
 position = Vector2( 28, 75 )

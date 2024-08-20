@@ -392,7 +392,6 @@ func _on_Player_Body_area_entered(_area):
 func check_projectile_collision(_body):
 	print(_body)
 	if _body.is_in_group(Global.GROUPS.ENEMY_PROJECTILES) and not dashing:
-		print("damage")
 		damage(_body.damage)
 		_body.queue_free()
 	

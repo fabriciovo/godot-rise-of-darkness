@@ -26,8 +26,6 @@ func _on_Simple_Projectile_area_entered(area):
 func _on_Timer_timeout():
 	var _overlapping_bodies = get_overlapping_bodies()
 	if _overlapping_bodies.size() > 0:
-		print("if bodies")
-		print(_overlapping_bodies.size())
 		queue_free()
 	else:
 		var _fire_enemy_inst = fire_enemy.instance()

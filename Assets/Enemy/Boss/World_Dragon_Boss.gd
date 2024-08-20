@@ -61,6 +61,5 @@ func _on_Shoot_Timer_timeout():
 func start_shooter():
 	$Shoot_Timer.start(action_timer)
 
-
 func _on_Stop_Timer_timeout():
 	speed = const_speed

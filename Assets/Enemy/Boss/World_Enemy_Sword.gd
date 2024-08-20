@@ -63,9 +63,7 @@ func move_to_point(_delta):
 	position = position.move_toward(target_position, _delta * speed)
 
 func intro_end():
-	print(anim.playback_speed)
 	anim.playback_speed = 0
-	print(anim.playback_speed)
 	anim.play("anim")
 
 

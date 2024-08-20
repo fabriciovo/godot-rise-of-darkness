@@ -52,7 +52,6 @@ func move_to_point(_delta):
 			anim.play("down")
 			position = position.move_toward(down_pos, _delta * speed)
 		elif target_index == 4:
-			print("a")
 			anim.play("landing")
 			position = position.move_toward(landing_pos, _delta * 30 )
 			
@@ -61,7 +60,6 @@ func move_to_point(_delta):
 
 func _on_Animation_Player_animation_finished(_anim_name):
 	if _anim_name == "down":
-		print("anim")
 		target_index+=1
 		position = down_pos
 		$Sprite.visible = true
@@ -72,4 +70,6 @@ func _on_Animation_Player_animation_finished(_anim_name):
 		var _inst = dragon.instance()
 		_inst.position = position
 		get_tree().current_scene.add_child(_inst)
+		Global.stop = false
+		Global.cutscene = false
 		queue_free()
