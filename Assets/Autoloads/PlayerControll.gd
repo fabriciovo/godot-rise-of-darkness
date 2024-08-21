@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 30
+var max_hp = 300
 var max_ap = 5
 var max_mp = 15
 var hp = max_hp setget set_hp
@@ -17,7 +17,7 @@ var equiped_item = [-1,-1]
 var relics = []
 var key = 0
 var base_speed = 30
-var dash_unlocked = false
+var dash_unlocked = true
 var neck_of_protection = false
 var ring_of_souls = false
 var armor_of_light = false

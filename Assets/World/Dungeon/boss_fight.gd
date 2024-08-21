@@ -35,6 +35,7 @@ func _on_Text_Box_on_end_dialog():
 		1:
 			var _flying_dragon_inst = flying_dragon.instance()
 			get_tree().current_scene.add_child(_flying_dragon_inst)
+			hide_dark_lord()
 		2:
 			pass
 		3:

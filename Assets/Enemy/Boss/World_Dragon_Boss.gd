@@ -9,7 +9,7 @@ var dir_frame_closed_eye = [14,15,16,17,9]
 var dir_frame = 0
 var can_take_damage = false
 var collision
-var action_timer = 3
+var action_timer = 4
 
 func _ready():
 	ID = name
@@ -20,6 +20,7 @@ func _ready():
 	const_speed = 11
 	speed = const_speed
 	add_to_group(Global.GROUPS.ENEMY)
+	start_shooter()
 
 func _physics_process(_delta):
 	if not player: return
@@ -28,10 +29,6 @@ func _physics_process(_delta):
 		dir = move_and_collide(dir * speed * _delta)
 	knockback = knockback.move_toward(Vector2.ZERO, speed * _delta)
 	knockback = move_and_slide(knockback / 1.1) 
-
-func show_shields():
-	get_node("Boss_Shield").visible = true
-	get_node("Boss_Shield2").visible = true
 
 func action():
 	stop_timer.start(1)

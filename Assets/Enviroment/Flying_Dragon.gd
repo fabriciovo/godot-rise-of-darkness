@@ -70,6 +70,8 @@ func _on_Animation_Player_animation_finished(_anim_name):
 		var _inst = dragon.instance()
 		_inst.position = position
 		get_tree().current_scene.add_child(_inst)
+		visible = false
+		yield(get_tree().create_timer(3), "timeout")
 		Global.stop = false
 		Global.cutscene = false
 		queue_free()
