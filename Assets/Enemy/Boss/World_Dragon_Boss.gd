@@ -10,6 +10,7 @@ var dir_frame = 0
 var can_take_damage = false
 var collision
 var action_timer = 4
+var boss_fight_node
 
 func _ready():
 	ID = name
@@ -21,6 +22,7 @@ func _ready():
 	speed = const_speed
 	add_to_group(Global.GROUPS.ENEMY)
 	start_shooter()
+	boss_fight_node = get_tree().current_scene.get_node("boss_fight")
 
 func _physics_process(_delta):
 	if not player: return
@@ -50,6 +52,7 @@ func Destroy():
 	get_tree().get_current_scene().add_child(win_item)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
+	boss_fight_node.dragon_death()
 	queue_free()
 
 func _on_Shoot_Timer_timeout():
