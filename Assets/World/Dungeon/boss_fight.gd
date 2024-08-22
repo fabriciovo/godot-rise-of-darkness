@@ -56,5 +56,6 @@ func _on_Phase_One_timeout():
 	text_box.start_dialog()
 
 func dragon_death():
+	phase += 1
 	text_box.dialog_name = "you_need_a_weapon.json"
 	text_box.start_dialog()

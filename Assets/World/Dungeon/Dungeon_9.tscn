@@ -80,6 +80,7 @@ script = ExtResource( 4 )
 [node name="Text_Box_Layer" type="CanvasLayer" parent="boss_fight" index="0"]
 
 [node name="Text_Box" parent="boss_fight/Text_Box_Layer" index="0" instance=ExtResource( 7 )]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="boss_fight" index="1"]
 autoplay = "start_boss"
@@ -220,6 +221,35 @@ position = Vector2( 112, -64 )
 position = Vector2( 112, 200 )
 
 [node name="Landing" type="Position2D" parent="Flying_Dragon_Points" index="4"]
+position = Vector2( 112, 96 )
+
+[node name="Dark_Lord_Positions" type="Node2D" parent="." index="14"]
+
+[node name="Position2D" type="Position2D" parent="Dark_Lord_Positions" index="0"]
+position = Vector2( 32, 48 )
+
+[node name="Position2D2" type="Position2D" parent="Dark_Lord_Positions" index="1"]
+position = Vector2( 192, 50 )
+
+[node name="Position2D3" type="Position2D" parent="Dark_Lord_Positions" index="2"]
+position = Vector2( 111, 55 )
+
+[node name="Position2D4" type="Position2D" parent="Dark_Lord_Positions" index="3"]
+position = Vector2( 112, 114 )
+
+[node name="Position2D5" type="Position2D" parent="Dark_Lord_Positions" index="4"]
+position = Vector2( 31, 115 )
+
+[node name="Position2D6" type="Position2D" parent="Dark_Lord_Positions" index="5"]
+position = Vector2( 192, 115 )
+
+[node name="Position2D7" type="Position2D" parent="Dark_Lord_Positions" index="6"]
+position = Vector2( 160, 73 )
+
+[node name="Position2D8" type="Position2D" parent="Dark_Lord_Positions" index="7"]
+position = Vector2( 64, 63 )
+
+[node name="Position2D9" type="Position2D" parent="Dark_Lord_Positions" index="8"]
 position = Vector2( 112, 96 )
 
 [connection signal="on_end_dialog" from="boss_fight/Text_Box_Layer/Text_Box" to="boss_fight" method="_on_Text_Box_on_end_dialog"]
