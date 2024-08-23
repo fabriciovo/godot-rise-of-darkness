@@ -7,7 +7,6 @@ func create_projectile():
 	if Global.stop: return
 	for i in range(4):
 		var projectile = projectile_scene.instance()
-		
 		projectile.direction = directions[i]
 		projectile.position = position
 		projectile.damage = battle_unit_damage + 1

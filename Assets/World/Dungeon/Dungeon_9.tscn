@@ -107,6 +107,8 @@ position = Vector2( 112, 96 )
 
 [node name="gate" type="KinematicBody2D" parent="." index="7"]
 position = Vector2( 104, -3 )
+collision_layer = 9
+collision_mask = 15
 
 [node name="Sprite" type="Sprite" parent="gate" index="0"]
 position = Vector2( 0, 11 )
@@ -224,6 +226,7 @@ position = Vector2( 112, 200 )
 position = Vector2( 112, 96 )
 
 [node name="Dark_Lord_Positions" type="Node2D" parent="." index="14"]
+position = Vector2( 0, 1 )
 
 [node name="Position2D" type="Position2D" parent="Dark_Lord_Positions" index="0"]
 position = Vector2( 32, 48 )
@@ -250,7 +253,7 @@ position = Vector2( 160, 73 )
 position = Vector2( 64, 63 )
 
 [node name="Position2D9" type="Position2D" parent="Dark_Lord_Positions" index="8"]
-position = Vector2( 112, 96 )
+position = Vector2( 112, 95 )
 
 [connection signal="on_end_dialog" from="boss_fight/Text_Box_Layer/Text_Box" to="boss_fight" method="_on_Text_Box_on_end_dialog"]
 [connection signal="timeout" from="boss_fight/Phase_One" to="boss_fight" method="_on_Phase_One_timeout"]

@@ -46,12 +46,13 @@ func Destroy():
 	Global.dead_enemies.push_front(ID)
 	PlayerControll.set_xp(battle_unit_xp)
 	Disable()
-	add_child(smoke)
-	var win_item = preload("res://Assets/WinScene/Win_Item.tscn").instance()
-	win_item.global_position = global_position
-	get_tree().get_current_scene().add_child(win_item)
+	var _inst_smoke = smoke.instance()
+	_inst_smoke.position = position
+	add_child(_inst_smoke)
+#	var win_item = preload("res://Assets/WinScene/Win_Item.tscn").instance()
+#	win_item.global_position = global_position
+#	get_tree().get_current_scene().add_child(win_item)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
-	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	boss_fight_node.dragon_death()
 	queue_free()
 

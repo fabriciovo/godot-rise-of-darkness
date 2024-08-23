@@ -25,25 +25,31 @@ func intro_dialog():
 func _on_Text_Box_on_end_dialog():
 	match phase:
 		0:
-			var _world_swords = get_tree().current_scene.get_node("World_Swords")
-			for sword_pos in sword_spawn_points:
-				var _sword_inst = sword_boss.instance()
-				_sword_inst.position = sword_pos.position
-				_world_swords.add_child(_sword_inst)
-				phase_one_timer.start(20)
-				hide_dark_lord()
+			dark_lord.start()
+			Global.stop = false
+			Global.cutscene = false
+#			var _world_swords = get_tree().current_scene.get_node("World_Swords")
+#			for sword_pos in sword_spawn_points:
+#				var _sword_inst = sword_boss.instance()
+#				_sword_inst.position = sword_pos.position
+#				_world_swords.add_child(_sword_inst)
+#				phase_one_timer.start(20)
+#				hide_dark_lord()
 		1:
 			var _flying_dragon_inst = flying_dragon.instance()
 			get_tree().current_scene.add_child(_flying_dragon_inst)
 			hide_dark_lord()
 		2:
-			pass
+			dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
+			dark_lord.start()
+			Global.stop = false
+			Global.cutscene = false
 		3:
 			pass
 
 
 func hide_dark_lord():
-	dark_lord.get_node("Animation_Player").play("hide")
+	dark_lord.get_node("Animation_Dark_Mage").play("hide")
 
 func _on_Phase_One_timeout():
 	var world_swords = get_parent().find_node("World_Swords")
@@ -51,7 +57,7 @@ func _on_Phase_One_timeout():
 	Global.stop = true
 	Global.cutscene = true
 	phase += 1
-	dark_lord.get_node("Animation_Player").play_backwards("hide")
+	dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
 	text_box.dialog_name = "you_need_a_weapon.json"
 	text_box.start_dialog()
 

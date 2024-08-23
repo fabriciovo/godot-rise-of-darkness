@@ -76,7 +76,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.9 ),
+"times": PoolRealArray( 0, 0.4, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 5, 0 ]
@@ -210,7 +210,7 @@ anims/damage_anim = ExtResource( 2 )
 anims/hide = SubResource( 3 )
 anims/show = SubResource( 4 )
 
-[node name="Animation_Dark_Mage" type="AnimationPlayer" parent="."]
+[node name="Animation_Dark_Lord" type="AnimationPlayer" parent="."]
 anims/Attack = SubResource( 6 )
 anims/RESET = SubResource( 7 )
 anims/damage_anim = SubResource( 8 )
