@@ -41,3 +41,8 @@ func spawn_left_dark_mage():
 
 func play_thunder_effect():
 	SoundController.play_effect(SoundController.EFFECTS.thunder)
+
+func play_dark_lord_death_anim():
+	SoundController.stop_music()
+	animation.play("dark_lord_death")
+	

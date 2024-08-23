@@ -5,3 +5,5 @@
 
 [node name="Fire_Mage_Projectile" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_Mage_Projectile_body_entered"]

@@ -1,4 +1,6 @@
-class_name Dark_Lord extends KinematicBody2D
+class_name Dark_Lord extends Area2D
+
+signal start_ending
 
 onready var spr = $Sprite
 onready var invincible_timer = $Invincible_Timer
@@ -35,28 +37,22 @@ func attack_player():
 	yield(animation, "animation_finished")
 
 func Destroy():
-	SoundController.stop_music()
 	spr.visible = false
 	var temp_smoke = smoke.instance()
 	add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
-	yield(temp_smoke.get_node("AnimationPlayer"),"animation_finished")
-	SoundController.play_effect(SoundController.EFFECTS.positive_10)
-	Global.cutscene = true
-	text_box.dialog_name = "dark_mage_florest.json"
-	text_box.start_dialog()
 
 func create_projectile():
 	if Global.stop: return
 	for i in 4:
-		print(i)
+		if Global.stop: return
 		var _temp_projectile = projectile.instance()
 		_temp_projectile.position = position
 		get_tree().current_scene.add_child(_temp_projectile)
 		yield(get_tree().create_timer(0.4), "timeout")
 	var _temp_fire_projectile = fire_projectile.instance()
 	_temp_fire_projectile.position = position
-	_temp_fire_projectile.direction = player.position.normalized()
+	_temp_fire_projectile.direction = (player.position - position).normalized()
 	get_tree().current_scene.add_child(_temp_fire_projectile)
 
 func _on_Text_Box_on_end_dialog():
@@ -84,7 +80,7 @@ func damage(damageValue):
 	yield(animation_damage, "animation_finished")
 	invincible_timer.start(1)
 	if battle_unit_hp <= 0:
-		Destroy()
+		emit_signal("start_ending")
 
 func _on_Damage_Area_area_entered(area):
 	if invincible or hiding: return
@@ -116,3 +112,12 @@ func _on_Invincible_Timer_timeout():
 
 func _on_Change_Position_Timer_timeout():
 	change_postion()
+
+func _on_Dark_Lord_area_entered(_area):
+	if _area.is_in_group(Global.GROUPS.SWORD) and not invincible:
+		damage(PlayerControll.atk)
+	if _area.is_in_group(Global.GROUPS.ARROW) and not invincible:
+		damage(PlayerControll.atk+1)
+		_area.queue_free()
+	if _area.is_in_group(Global.GROUPS.BOMB) and not invincible:
+		damage(PlayerControll.atk+5)

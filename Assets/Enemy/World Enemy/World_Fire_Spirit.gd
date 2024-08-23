@@ -6,8 +6,6 @@ func _process(_delta):
 	var screen_size = get_viewport().size
 	return position.x < 0 or position.y < 0 or position.x > screen_size.x or position.y > screen_size.y
 
-
-
 func configure_battle_unit():
 	ID = name
 	battle_unit_xp = 10

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Fire_Wall.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Animations/smoke.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=6]
 [ext_resource path="res://Assets/TextBox/Text_Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Enviroment/Thunder.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=3]
 resource_name = "dragon_anim"
@@ -33,39 +34,14 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 4.9 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 1.9, 4.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "create_smoke"
+}, {
 "args": [  ],
 "method": "intro_dialog"
-} ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("../Smoke2")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 1.8 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "start_animation"
-} ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath("../Smoke3")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 1.8 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "start_animation"
 } ]
 }
 
@@ -77,17 +53,18 @@ extents = Vector2( 16, 7.5 )
 [node name="boss_fight" type="Node2D" parent="." index="0"]
 script = ExtResource( 4 )
 
-[node name="Text_Box_Layer" type="CanvasLayer" parent="boss_fight" index="0"]
+[node name="Thunder" parent="boss_fight" index="0" instance=ExtResource( 8 )]
+
+[node name="Text_Box_Layer" type="CanvasLayer" parent="boss_fight" index="1"]
 
 [node name="Text_Box" parent="boss_fight/Text_Box_Layer" index="0" instance=ExtResource( 7 )]
-visible = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="boss_fight" index="1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="boss_fight" index="2"]
 autoplay = "start_boss"
 anims/dragon_anim = SubResource( 3 )
 anims/start_boss = SubResource( 1 )
 
-[node name="Phase_One" type="Timer" parent="boss_fight" index="2"]
+[node name="Phase_One" type="Timer" parent="boss_fight" index="3"]
 one_shot = true
 
 [node name="map_1" parent="." index="2"]
@@ -106,6 +83,7 @@ position = Vector2( 152, 24 )
 position = Vector2( 112, 96 )
 
 [node name="gate" type="KinematicBody2D" parent="." index="7"]
+visible = false
 position = Vector2( 104, -3 )
 collision_layer = 9
 collision_mask = 15
@@ -257,3 +235,4 @@ position = Vector2( 112, 95 )
 
 [connection signal="on_end_dialog" from="boss_fight/Text_Box_Layer/Text_Box" to="boss_fight" method="_on_Text_Box_on_end_dialog"]
 [connection signal="timeout" from="boss_fight/Phase_One" to="boss_fight" method="_on_Phase_One_timeout"]
+[connection signal="start_ending" from="Entities/Dark_Lord" to="boss_fight" method="_on_Dark_Lord_start_ending"]

@@ -10,9 +10,7 @@ func _ready():
 	ID = name
 	add_to_group(Global.GROUPS.STATIC)
 
-func Destroy() :
-	$Sprite.visible = false
-	$Body_Shape.visible = true
+func Destroy():
 	add_child(smoke)
 	yield(smoke.get_node("AnimationPlayer"),"animation_finished")
 	Global.dead_objects.push_front(ID)
