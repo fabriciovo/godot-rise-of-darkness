@@ -44,9 +44,8 @@ func _on_Text_Box_on_end_dialog():
 			Global.stop = false
 			Global.cutscene = false
 		3:
-			Global.stop = false
-			Global.cutscene = false
 			dark_lord.Destroy()
+			var _scene_instance = get_tree().change_scene("res://Assets/EndGame/End_Game.tscn")
 
 func hide_dark_lord():
 	dark_lord.get_node("Animation_Dark_Mage").play("hide")

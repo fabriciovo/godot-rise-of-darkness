@@ -24,6 +24,7 @@ var invincible = false
 var hiding = false
 
 func _ready():
+	set_monitoring(false)
 	points = get_tree().current_scene.get_node("Dark_Lord_Positions").get_children()
 	player = get_tree().current_scene.get_node("Player")
 	battle_unit_xp = 50
@@ -41,6 +42,7 @@ func Destroy():
 	var temp_smoke = smoke.instance()
 	add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
+	queue_free()
 
 func create_projectile():
 	if Global.stop: return
@@ -59,6 +61,7 @@ func _on_Text_Box_on_end_dialog():
 	pass
 
 func start():
+	set_monitoring(true)
 	$Change_Position_Timer.start(1)
 
 func get_random_pos():
@@ -121,3 +124,4 @@ func _on_Dark_Lord_area_entered(_area):
 		_area.queue_free()
 	if _area.is_in_group(Global.GROUPS.BOMB) and not invincible:
 		damage(PlayerControll.atk+5)
+

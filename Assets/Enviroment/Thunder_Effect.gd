@@ -45,4 +45,6 @@ func play_thunder_effect():
 func play_dark_lord_death_anim():
 	SoundController.stop_music()
 	animation.play("dark_lord_death")
-	
+
+func play_flash():
+	animation.play("flash")
