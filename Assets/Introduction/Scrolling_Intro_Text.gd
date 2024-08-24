@@ -1,4 +1,4 @@
-extends Node2D
+class_name Scrolling_Intro_Text extends Node2D
 
 onready var parent = get_parent()
 

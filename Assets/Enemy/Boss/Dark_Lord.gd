@@ -40,7 +40,8 @@ func attack_player():
 func Destroy():
 	spr.visible = false
 	var temp_smoke = smoke.instance()
-	add_child(temp_smoke)
+	temp_smoke.position = position
+	get_tree().current_scene.add_child(temp_smoke)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	queue_free()
 

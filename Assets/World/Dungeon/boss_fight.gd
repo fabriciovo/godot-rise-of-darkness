@@ -44,8 +44,13 @@ func _on_Text_Box_on_end_dialog():
 			Global.stop = false
 			Global.cutscene = false
 		3:
+			Global.stop = false
+			Global.cutscene = false
+			queue_free_entities()
 			dark_lord.Destroy()
-			var _scene_instance = get_tree().change_scene("res://Assets/EndGame/End_Game.tscn")
+			
+			yield(get_tree().create_timer(3.0), "timeout")
+			var _scene_instance = get_tree().change_scene("res://Assets/EndGame/End_1.tscn")
 
 func hide_dark_lord():
 	dark_lord.get_node("Animation_Dark_Mage").play("hide")
@@ -72,7 +77,6 @@ func create_smoke():
 	_smoke_3.start_animation()
 
 func _on_Dark_Lord_start_ending():
-	queue_free_entities()
 	Global.stop = true
 	Global.cutscene = true
 	phase += 1
@@ -87,4 +91,4 @@ func queue_free_entities():
 		if "projectile" in _node.name:
 			_node.queue_free()  
 		if "Fire_Spirit" in _node.name:
-			_node.queue_free() 
+			_node.Destroy() 

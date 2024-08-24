@@ -74,6 +74,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/World/RoomControll.gd"
 }, {
+"base": "Node2D",
+"class": "Scrolling_End_Text",
+"language": "GDScript",
+"path": "res://Assets/EndGame/Scrolling_End_Text.gd"
+}, {
+"base": "Reference",
+"class": "Scrolling_Intro_Text",
+"language": "GDScript",
+"path": "res://Assets/Introduction/Scrolling_Intro_Text.gd"
+}, {
 "base": "Area2D",
 "class": "Simple_Projectile",
 "language": "GDScript",
@@ -173,6 +183,8 @@ _global_script_class_icons={
 "Lever": "",
 "Player": "",
 "Room_Controll": "",
+"Scrolling_End_Text": "",
+"Scrolling_Intro_Text": "",
 "Simple_Projectile": "",
 "Soul": "",
 "Static_Box": "",

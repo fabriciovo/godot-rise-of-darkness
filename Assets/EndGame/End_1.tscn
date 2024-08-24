@@ -7,6 +7,7 @@
 
 [node name="End_1" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
 script = ExtResource( 6 )
+go_to_end = "End_2"
 
 [node name="Animation_Player" type="AnimationPlayer" parent="."]
 

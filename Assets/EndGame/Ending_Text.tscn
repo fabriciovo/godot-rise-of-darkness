@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=1]
-[ext_resource path="res://Assets/Introduction/Introduction.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Introduction/Scrolling_Intro_Text.gd" type="Script" id=3]
+[ext_resource path="res://Assets/EndGame/Ending_Text.gd" type="Script" id=2]
+[ext_resource path="res://Assets/EndGame/Scrolling_End_Text.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Button/necklace_relic_icon.png" type="Texture" id=4]
 
-[node name="Introduction" type="Control"]
+[node name="Ending_Text" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -224.0
@@ -36,3 +37,14 @@ Despite the valiant efforts of the warriors, they couldn't halt the Dark Lord's 
 Determined to restore peace, the last guardian sets out on a lone journey, armed with hope and courage."
 scroll_active = false
 deselect_on_focus_loss_enabled = false
+
+[node name="Sprite" type="Sprite" parent="Text_Container"]
+position = Vector2( 100, 948 )
+scale = Vector2( 6.5, 5.42857 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Text_Container"]
+margin_top = 1012.0
+margin_right = 220.0
+margin_bottom = 1318.0
+text = "ENDING_LABEL_TEXT"
