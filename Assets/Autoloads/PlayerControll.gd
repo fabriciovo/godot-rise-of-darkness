@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 5000
+var max_hp = 1
 var max_ap = 5
 var max_mp = 15
 var hp = max_hp setget set_hp
@@ -13,7 +13,7 @@ var atk = 300 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
-var equiped_item = [0,-1] 
+var equiped_item = [-1,-1] 
 var relics = []
 var key = 0
 var base_speed = 30
@@ -48,9 +48,7 @@ func set_hp(value):
 	if hp <= 0:
 		var scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 		if scene_instance == OK:
-			#TODO - Loading are bugging equiped itens
-			#PlayerControll.load_player_data(Global.loadJSONData("player_data"))
-			pass
+			PlayerControll.load_player_data(Global.loadJSONData("player_data"))
 
 func set_ap(value):
 	ap = clamp(value, 0 , max_ap)
@@ -175,7 +173,11 @@ func load_player_data(data):
 		for weapon in data["weapons"]:
 			set_weapon(weapon)
 	if data.has("inventory"):
+		print("inventory")
+		print(data["inventory"])
 		for item in data["inventory"]:
+			print("item in invetory")
+			print(item)
 			set_inventory_item(item)
 	if data.has("relics"):
 		for relic in data["relics"]:

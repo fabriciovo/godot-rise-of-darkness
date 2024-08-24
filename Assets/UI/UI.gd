@@ -35,6 +35,7 @@ func _input(_event):
 	if _event.is_action_pressed("start") and Global.in_game and not Global.dialog and not Global.cutscene:
 		Ui.show_hidden_panels()
 
+
 func _process(_delta):
 	HP.text = "HP: " + str(PlayerControll.hp)
 	MP.text = "MP: " + str(PlayerControll.mp)
@@ -116,6 +117,7 @@ func open_player_info():
 func game_start():
 	game_ui.visible = true
 
+
 func _on_Timer_timeout():
 	$Title_Scene.visible = false
 	$Title_Scene/Title_Panel/Title_Text.text = ""
@@ -145,5 +147,6 @@ func _on_Quests_pressed():
 	quests_panel.visible = true
 	quests_panel.set_quest()
 
-
-
+func _on_Save_pressed():
+	Global.saveJSONData("player_data",PlayerControll.player_data())
+	Global.save_world_data()
