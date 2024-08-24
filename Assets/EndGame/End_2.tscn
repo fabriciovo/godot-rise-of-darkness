@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/World/Tilemap/map_0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Enviroment/Thunder.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/EndGame/Npc_Ending.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/EndGame/End_Scene.gd" type="Script" id=6]
+
+[node name="End_2" type="Node2D" groups=["ARROW", "BOMB", "BOX", "DOOR", "ENEMY", "MOVABLE", "PLAYER", "STATIC", "TILEMAP"]]
+script = ExtResource( 6 )
+
+[node name="Animation_Player" type="AnimationPlayer" parent="."]
+
+[node name="map_0" parent="." instance=ExtResource( 2 )]
+z_index = -1
+collision_mask = 3
+bake_navigation = false
+tile_data = PoolIntArray( 2, 25, 0, 3, 25, 0, 5, 25, 0, 12, 25, 0, 13, 25, 0, 65539, 41, 0, 65542, 41, 0, 65543, 41, 0, 65544, 41, 0, 65545, 25, 0, 65546, 25, 0, 65549, 25, 0, 65550, 25, 0, 131078, 41, 0, 131079, 41, 0, 131080, 41, 0, 131081, 41, 0, 131082, 41, 0, 131085, 25, 0, 131086, 25, 0, 196608, 25, 0, 196609, 41, 0, 196611, 41, 0, 196614, 41, 0, 196615, 41, 0, 196616, 41, 0, 196617, 41, 0, 196620, 25, 0, 196621, 25, 0, 196622, 25, 0, 262144, 25, 0, 262145, 41, 0, 262147, 41, 0, 262149, 41, 0, 262151, 41, 0, 262152, 25, 0, 262153, 41, 0, 262155, 41, 0, 262156, 41, 0, 262157, 41, 0, 262158, 41, 0, 327680, 25, 0, 327681, 41, 0, 327687, 41, 0, 327688, 41, 0, 327689, 41, 0, 327693, 74, 0, 327694, 74, 0, 393216, 25, 0, 393217, 41, 0, 393218, 41, 0, 393223, 41, 0, 393224, 41, 0, 393225, 41, 0, 393226, 41, 0, 393228, 25, 0, 393229, 74, 0, 393230, 25, 0, 458752, 25, 0, 458753, 41, 0, 458754, 41, 0, 458755, 25, 0, 458757, 25, 0, 458758, 25, 0, 458765, 25, 0, 458766, 25, 0, 524288, 25, 0, 524289, 25, 0, 524290, 25, 0, 524291, 25, 0, 524292, 25, 0, 524295, 25, 0, 524296, 25, 0, 524297, 25, 0, 524298, 25, 0, 524299, 25, 0, 524300, 25, 0, 524301, 25, 0, 524302, 25, 0 )
+
+[node name="Thunder" parent="." instance=ExtResource( 3 )]
+
+[node name="Npcs" type="Node2D" parent="."]
+
+[node name="Npc_Ending" parent="Npcs" instance=ExtResource( 4 )]
+position = Vector2( 38, 76 )
+anim_name = "alt_sides_2"
+
+[node name="Npc_Ending2" parent="Npcs" instance=ExtResource( 4 )]
+position = Vector2( 30, 60 )
+anim_name = "alt_sides_1"
+
+[node name="Monsters" type="Node2D" parent="."]
+
+[node name="Npc_Ending3" parent="Monsters" instance=ExtResource( 4 )]
+position = Vector2( 78, 68 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+anim_name = "alt_wood_side"
+
+[node name="Npc_Ending5" parent="Monsters" instance=ExtResource( 4 )]
+position = Vector2( 67, 37 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+anim_name = "alt_wood_side"
+
+[node name="Npc_Ending6" parent="Monsters" instance=ExtResource( 4 )]
+position = Vector2( 68, 94 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+anim_name = "alt_wood_side"
+
+[node name="Npc_Ending4" parent="Monsters" instance=ExtResource( 4 )]
+position = Vector2( 106, 84 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+anim_name = "alt_wood_side"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

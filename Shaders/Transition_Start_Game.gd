@@ -9,7 +9,7 @@ signal end_fade_in
 
 export (int, "Pixels", "Spot Player", "Spot Center","Slah V", "Slash H", "Smooth") var transition_type
 export (int, "Fade In", "Fade Out", "None") var execute
-export (int, "Execute on Start", "Execute on World_0", "None") var execute_on_start = 0
+export (int, "Execute on Start", "Execute on World_0", "None") var execute_on_start
 export(float, 2.0) var duration
 
 func _ready():
