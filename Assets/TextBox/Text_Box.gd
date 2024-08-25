@@ -37,6 +37,7 @@ func _process(_delta):
 			nextPhrase()
 		else:
 			label_text.visible_characters = len(label_text.text)
+
  
 func getDialog():
 	if finished: return
@@ -67,7 +68,7 @@ func nextPhrase():
 		return
 	finished = false
 	label_name.text = dialog[phrase_num]["Name"]
-	label_text.text = dialog[phrase_num]["Text"]
+	label_text.text = tr(dialog[phrase_num]["Text"])
 	label_text.visible_characters = 0
 	while label_text.visible_characters < len(label_text.text):
 		label_text.visible_characters += 1

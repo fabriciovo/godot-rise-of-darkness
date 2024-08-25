@@ -1,7 +1,7 @@
 extends Node2D
 
 var player = null
-var dialog_name = ["ronan_dialog_1.json", "ronan_dialog_1.json", "ronan_dialog_1.json"]
+var dialog_name = ["ronan_dialog_1.json", "ronan_dialog_2.json", "ronan_dialog_3.json"]
 var can_talk = true
 var sword_chest
 
