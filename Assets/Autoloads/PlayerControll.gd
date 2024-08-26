@@ -13,14 +13,14 @@ var atk = 300 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
-var equiped_item = [-1,-1] 
+var equiped_item = [0,-1] 
 var relics = []
 var key = 0
 var base_speed = 30
 var dash_unlocked = true
-var neck_of_protection = false
+var neck_of_protection = true
 var ring_of_souls = false
-var armor_of_light = false
+var souls_quest_completed = true
 
 var float_text = preload("res://Assets/UI/FloatText.tscn")
 var level_up_text_box = preload("res://Assets/TextBox/Text_Box_Level_Up.tscn")
@@ -194,5 +194,5 @@ func load_player_data(data):
 		neck_of_protection = data["neck_of_protection"]
 	if data.has("ring_of_souls"):
 		ring_of_souls = data["ring_of_souls"]
-	if data.has("armor_of_light"):
-		armor_of_light = data["armor_of_light"]
+	if data.has("souls_quest_completed"):
+		souls_quest_completed = data["souls_quest_completed"]

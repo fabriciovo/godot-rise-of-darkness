@@ -8,7 +8,7 @@ onready var shield_area_sprite = $Shield_Area/Shield_Sprite
 onready var action_sprite =  $Action_Area/action
 onready var action_collision =  $Action_Area/AreaCollision
 
-onready var neck_of_protection = preload("res://Assets/Relics/Neck_Of_Protection.tscn")
+onready var neck_of_protection = preload("res://Assets/Relics/Neck_Of_Protection.tscn").instance()
 
 var weapons_texuture = preload("res://Sprites/Get_Weapon_Icons.png")
 var relics_texuture = preload("res://Sprites/Get_Relic_Icons.png")
@@ -26,7 +26,7 @@ var enemiesBody = []
 
 var speed = PlayerControll.base_speed
 var knockback = Vector2.ZERO
-
+var is_shield_up
 func set_hp(value):
 	hp = clamp(value, 0 , PlayerControll.max_hp)
 	PlayerControll.set_hp(hp)
@@ -65,6 +65,10 @@ func _ready():
 	set_collision_mask_bit(0, true)
 	set_collision_layer_bit(7, false)
 	set_collision_mask_bit(7, false)
+	if PlayerControll.neck_of_protection:
+		add_child(neck_of_protection)
+		is_shield_up = true
+
 
 func get_input():
 	if Global.stop: return
@@ -166,13 +170,36 @@ func _on_ActionArea_body_entered(_body):
 		_body.Destroy()
 
 func create_sword(_value):
+	if action_state: return
 	set_ap(ap-1)
 	action_state = true
 	action_area.visible = true
 	action_area.get_node("action").visible = true
-	action_area.get_node("action").get_node("AnimationPlayer").play("Slash_anim")
+	var _action_area_anim = action_area.get_node("action").get_node("AnimationPlayer")
+	_action_area_anim.play("Slash_anim")
+	yield(_action_area_anim, "animation_finished")
 	action_collision.disabled = false
 	action_sprite.frame = PlayerControll.equiped_item[_value]
+	if PlayerControll.souls_quest_completed and hp == PlayerControll.max_hp:
+		create_sword_projectile()
+
+func create_sword_projectile():
+	var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
+	arrow_object.global_position = global_position
+	match dir:
+		"right":
+			arrow_object.direction = Vector2.RIGHT
+			arrow_object.frame = 23
+		"left":
+			arrow_object.direction = Vector2.LEFT
+			arrow_object.frame = 21
+		"up":
+			arrow_object.direction = Vector2.UP
+			arrow_object.frame = 22
+		"down":
+			arrow_object.direction = Vector2.DOWN
+			arrow_object.frame = 20
+	get_tree().get_current_scene().add_child(arrow_object)
 
 func create_shield(): 
 	action_state = true
@@ -214,6 +241,10 @@ func damage(value):
 	hit = true
 	invincible = true
 	SoundController.play_effect(SoundController.EFFECTS.player_hit)
+	if is_shield_up:
+		value = 0
+		neck_of_protection.queue_free()
+		is_shield_up = false
 	var text = damage_text.instance()
 	text.set_text(str(value))
 	add_child(text)

@@ -8,7 +8,7 @@ var dialog_name = ""
 var can_continue = false
 export(float) var textSpeed = 0.05
 
-onready var label_name = $MarginContainer/VBoxContainer/Name
+#onready var label_name = $MarginContainer/VBoxContainer/Name
 onready var label_text = $MarginContainer/VBoxContainer/Label
 onready var timer = $Timer
 
@@ -67,8 +67,12 @@ func nextPhrase():
 		emit_signal("on_end_dialog")
 		return
 	finished = false
-	label_name.text = dialog[phrase_num]["Name"]
-	label_text.text = tr(dialog[phrase_num]["Text"])
+#	label_name.text = dialog[phrase_num]["Name"]
+	var label_name = dialog[phrase_num]["Name"]
+	if label_name == "":
+		label_text.text = tr(dialog[phrase_num]["Text"])
+	else:
+		label_text.text = dialog[phrase_num]["Name"] + "\n" + tr(dialog[phrase_num]["Text"])
 	label_text.visible_characters = 0
 	while label_text.visible_characters < len(label_text.text):
 		label_text.visible_characters += 1
