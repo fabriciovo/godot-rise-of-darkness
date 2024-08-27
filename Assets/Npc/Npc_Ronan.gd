@@ -1,7 +1,7 @@
 extends Node2D
 
 var player = null
-var dialog_name = ["ronan_dialog_1.json", "ronan_dialog_2.json", "ronan_dialog_3.json"]
+var dialog_name = ["ronan_dialog_1.json", "", "ronan_dialog_2.json", "ronan_dialog_3.json"]
 var can_talk = true
 var sword_chest
 
@@ -35,9 +35,9 @@ func _on_Text_Box_on_end_dialog():
 	if quest_step == 0:
 		Global.NPCS_QUEST_STEP_TRACK.Ronan+=1
 	elif quest_step == 1:
-		pass
+		Global.NPCS_QUEST_STEP_TRACK.Ronan+=1
 	elif quest_step == 2:
-		pass
+		Global.NPCS_QUEST_STEP_TRACK.Ronan+=1
 	can_talk = true
 	Global.stop = false
 	Global.cutscene = false
@@ -54,9 +54,13 @@ func start_dialog():
 func _on_Area2D_body_entered(_body):
 	if _body.is_in_group(Global.GROUPS.PLAYER):
 		var _quest_step = Global.NPCS_QUEST_STEP_TRACK.Ronan
+		print(_quest_step)
 		if _quest_step == 0:
 			var _temp_smoke = smoke.instance()
 			_temp_smoke.global_position = sword_chest.global_position
 			get_tree().current_scene.add_child(_temp_smoke)
 			sword_chest.visible = true
 			start_dialog()
+		if _quest_step == 2:
+			start_dialog()
+

@@ -1,7 +1,12 @@
 extends Control
 
 onready var container = $Text_Container
+onready var text = $Text_Container/Text
 var speed = 8
+
+func _ready():
+	text.bbcode_text = tr("INTRODUCTION")
+
 
 func _input(_event):
 	if  _event.is_action_pressed("action_1"):

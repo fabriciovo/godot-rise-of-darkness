@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/UI/Inventory.gd" type="Script" id=4]
 
 [node name="Inventory" type="Control"]
@@ -10,11 +10,11 @@ margin_bottom = -44.0
 script = ExtResource( 4 )
 
 [node name="Weapon_Info" type="RichTextLabel" parent="."]
-anchor_left = 0.325893
+anchor_left = 0.366071
 anchor_top = 0.031746
 anchor_right = 0.973214
 anchor_bottom = 0.944444
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "gdfgsdfdsg"
 text = "gdfgsdfdsg"
@@ -23,65 +23,70 @@ __meta__ = {
 }
 
 [node name="Weapons_Container" type="VBoxContainer" parent="."]
-margin_left = 9.0
+margin_left = 1.0
 margin_top = 5.0
-margin_right = 63.0
+margin_right = 80.0
 margin_bottom = 121.0
 focus_mode = 2
 
 [node name="Sword" type="Button" parent="Weapons_Container"]
-margin_right = 54.0
+margin_right = 79.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 54, 20 )
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
+clip_text = true
 
 [node name="Bow" type="Button" parent="Weapons_Container"]
 margin_top = 24.0
-margin_right = 54.0
+margin_right = 79.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 54, 20 )
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
+clip_text = true
 
 [node name="Bomb" type="Button" parent="Weapons_Container"]
 margin_top = 48.0
-margin_right = 54.0
+margin_right = 79.0
 margin_bottom = 68.0
 rect_min_size = Vector2( 54, 20 )
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
+clip_text = true
 
 [node name="Staff" type="Button" parent="Weapons_Container"]
 margin_top = 72.0
-margin_right = 54.0
+margin_right = 79.0
 margin_bottom = 92.0
 rect_min_size = Vector2( 54, 20 )
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
+clip_text = true
 
 [node name="Shield" type="Button" parent="Weapons_Container"]
 margin_top = 96.0
-margin_right = 54.0
+margin_right = 79.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 54, 20 )
-theme = ExtResource( 3 )
+theme = ExtResource( 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 disabled = true
 text = "????"
+clip_text = true
 
 [connection signal="focus_entered" from="Weapons_Container/Sword" to="." method="_on_Sword_focus_entered"]
 [connection signal="pressed" from="Weapons_Container/Sword" to="." method="_on_Sword_pressed"]

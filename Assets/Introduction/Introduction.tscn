@@ -28,11 +28,6 @@ margin_right = 216.0
 margin_bottom = 905.0
 theme = ExtResource( 1 )
 meta_underlined = false
-text = "
-Centuries ago, xxx flourished under the care of the benevolent Guardians of Light, led by the powerful and virtuous xxx. However, a malevolent force corrupted xxx's mind, transforming him into the Dark Lord. Betraying his fellow guardians, he plunged the realm into darkness, summoning shadowy creatures that surrounded the land.
-
-Despite the valiant efforts of the warriors, they couldn't halt the Dark Lord's advance. In the midst of despair, one of the guardians resisted but lost all his powers. Guided by an ancient oracle for possessing unparalleled bravery and strength to confront the now-corrupted xxx, the last guardian embarks on a solitary quest, armed with hope and courage.
-
-Determined to restore peace, the last guardian sets out on a lone journey, armed with hope and courage."
+text = "INTRODUCTION"
 scroll_active = false
 deselect_on_focus_loss_enabled = false

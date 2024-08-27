@@ -561,7 +561,7 @@ margin_bottom = 73.0
 margin_right = 51.0
 margin_bottom = 12.0
 theme = ExtResource( 14 )
-text = "Settings"
+text = "OPTIONS"
 
 [node name="Control" type="Control" parent="UI_Containers/Settings"]
 anchor_top = 1.0
@@ -584,7 +584,7 @@ margin_left = -62.5
 margin_right = 62.5
 margin_bottom = 18.0
 theme = ExtResource( 14 )
-text = "Language List"
+text = "LANGUAGE_TITLE"
 align = 1
 valign = 1
 

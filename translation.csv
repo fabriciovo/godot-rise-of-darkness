@@ -1,6 +1,6 @@
 ﻿key;en;pt
 START_GAME;Start Game;Começar Jogo
-OPTIONS;Options;Opcoes
+OPTIONS;Options;Opções
 LOAD_GAME;Load Game;Carregar Jogo
 QUIT;Quit;Sair
 SWORD_NAME;Sword;Espada
@@ -26,13 +26,21 @@ SELECT_LANGUAGE_TITLE;Select your language;Selecione seu idioma
 Z_TO_CONFIRM;Press Z to confirm;Precione Z para confirmar
 COLLECT_SOULS_DESCRIPTION;teste;teste
 CANT_GO_BACK;teste;Não desista de sua aventura, Herói.
-INTRODUCTION;teste;
+INTRODUCTION;"
+Centuries ago, xxx flourished under the care of the benevolent Guardians of Light, led by the powerful and virtuous xxx. However, a malevolent force corrupted xxx's mind, transforming him into the Dark Lord. Betraying his fellow guardians, he plunged the realm into darkness, summoning shadowy creatures that surrounded the land.
+
+Despite the valiant efforts of the warriors, they couldn't halt the Dark Lord's advance. In the midst of despair, one of the guardians resisted but lost all his powers. Guided by an ancient oracle for possessing unparalleled bravery and strength to confront the now-corrupted xxx, the last guardian embarks on a solitary quest, armed with hope and courage.
+
+Determined to restore peace, the last guardian sets out on a lone journey, armed with hope and courage.";"Séculos atrás, xxx floresceu sob os cuidados dos benevolentes Guardiões da Luz, liderados pelos poderosos e virtuosos xxx. No entanto, uma força malévola corrompeu a mente de xxx, transformando-o no Lorde das Trevas. Traindo seus companheiros guardiões, ele mergulhou o reino na escuridão, invocando criaturas sombrias que cercavam a terra.
+
+Apesar dos valentes esforços dos guerreiros, eles não conseguiram deter o avanço do Lorde das Trevas. Em meio ao desespero, um dos guardiões resistiu, mas perdeu todos os seus poderes. Guiado por um antigo oráculo por possuir bravura e força incomparáveis para enfrentar o agora corrompido xxx, o último guardião embarca em uma busca solitária, armado de esperança e coragem.
+
+Determinado a restaurar a paz, o último guardião parte em uma jornada solitária, armado com esperança e coragem."
 RONAN_DIALOG_1;teste;Herói, ainda bem que você está aqui.
 RONAN_DIALOG_2;teste;É perigoso ir sozinho, pegue isto!
-RONAN_DIALOG_3;teste;Uma espada magica que vai te ajudar a derrotar os montros deste mundo.
-RONAN_DIALOG_4;teste;Precione a tecla {action_3} para interagir com objetos.
+RONAN_DIALOG_3;teste;Precione a tecla {action_3} para interagir com objetos.
 RONAN_QUEST_1;teste;Herói, tenho uma missão para você.
-RONAN_QUEST_2;teste;Encontre Wanny na parte esquerda da Floresta Negra.
+RONAN_QUEST_2;teste;Você pode t+C46ário pelo {start}.
 RONAN_QUEST_3;teste;Ela tem uma Reliquia importante para você.
 RONAN_QUEST_4;teste;Ao precionar {start} você abrir o painel de Missões.
 OPEN_CHEST_SWORD_1;teste;Parabéns você pegou a Espada.
@@ -40,3 +48,10 @@ OPEN_CHEST_SWORD_2;teste;Ela irá direto ao seu inventorio rapido, localizado na
 OPEN_CHEST_SWORD_3;teste;Para equipar ela, precione as teclas A ou S para se movimentar pelo inventario rapido.
 OPEN_CHEST_SWORD_4;teste;Depois precione D ou F para equipar nos espectivos Z ou X.
 OPEN_CHEST_SWORD_5;teste;Você pode tambem checar o painel de Inventario pelo {start}.
+SAVE_BUTTON_TEXT;Save;Salvar
+SOUND_TITLE;Sound;Som
+SFX_TEXT;SFX;Efeitos
+MUSIC_TEXT;Music;Música
+LANGUAGE_TITLE;Language List;Selecione seu idioma
+;;
+;;

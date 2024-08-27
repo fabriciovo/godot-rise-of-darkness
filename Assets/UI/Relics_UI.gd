@@ -30,7 +30,7 @@ func set_relics():
 
 func _on_Ring_focus_entered():
 	if relic_list[0].icon != null:
-		text_label.bbcode_text = "RING_OF_DASH_DESCRIPTION_TEXT"
+		text_label.bbcode_text = tr("RING_OF_DASH_DESCRIPTION_TEXT")
 	else:
 		text_label.bbcode_text = "?????"
 

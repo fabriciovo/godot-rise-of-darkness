@@ -18,7 +18,7 @@ func set_weapons():
 				weapons_list[0].icon = sword_icon
 				weapons_list[0].text = "SWORD_NAME"
 				weapons_list[0].disabled = false
-				weapon_info.bbcode_text = "SWORD_DESCRIPTION"
+				weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
 			Global.WEAPONS.BOW:
 				weapons_list[1].icon = bow_icon
 				weapons_list[1].text = "BOW_NAME"
@@ -29,7 +29,7 @@ func set_weapons():
 				weapons_list[2].disabled = false
 			Global.WEAPONS.HEAL:
 				weapons_list[3].icon = staff_icon
-				weapons_list[3].text = "STAFF_NAME"
+				weapons_list[3].text = "HEAL_STAFF_NAME"
 				weapons_list[3].disabled = false
 			Global.WEAPONS.SHIELD:
 				weapons_list[4].icon = shield_icon
@@ -41,31 +41,31 @@ func set_weapon(_weapon):
 
 func _on_Sword_focus_entered():
 	if weapons_list[0].text == "SWORD_NAME":
-		weapon_info.bbcode_text = "SWORD_DESCRIPTION"
+		weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
 	else:
 		weapon_info.bbcode_text = "????"
 
 func _on_Bow_focus_entered():
 	if weapons_list[1].text == "BOW_NAME":
-		weapon_info.bbcode_text = "BOW_DESCRIPTION"
+		weapon_info.bbcode_text = tr("BOW_DESCRIPTION")
 	else:
 		weapon_info.bbcode_text = "????"
 
 func _on_Bomb_focus_entered():
 	if weapons_list[2].text == "BOMB_NAME":
-		weapon_info.bbcode_text = "BOMB_DESCRIPTION"
+		weapon_info.bbcode_text = tr("BOMB_DESCRIPTION")
 	else:
 		weapon_info.bbcode_text = "????"
 
 func _on_Heal_focus_entered():
 	if weapons_list[3].text == "STAFF_NAME":
-		weapon_info.bbcode_text = "STAFF_DESCRIPTION"
+		weapon_info.bbcode_text = tr("STAFF_DESCRIPTION")
 	else:
 		weapon_info.bbcode_text = "????"
 
 func _on_Shield_focus_entered():
 	if weapons_list[4].text == "SHIELD_NAME":
-		weapon_info.bbcode_text = "SHIELD_DESCRIPTION"
+		weapon_info.bbcode_text = tr("SHIELD_DESCRIPTION")
 	else:
 		weapon_info.bbcode_text = "????"
 

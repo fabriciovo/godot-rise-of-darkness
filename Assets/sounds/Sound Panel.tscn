@@ -24,7 +24,7 @@ margin_right = 72.0
 margin_bottom = 18.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Sound"
+text = "SOUND_TITLE"
 align = 1
 
 [node name="SFX" type="Label" parent="."]
@@ -36,7 +36,7 @@ margin_bottom = 9.0
 focus_mode = 2
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "SFX:"
+text = "SFX_TEXT"
 
 [node name="SFX_Slider" type="HSlider" parent="SFX"]
 margin_left = 62.0
@@ -54,7 +54,7 @@ margin_top = -18.0
 margin_right = 143.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Music:"
+text = "MUSIC_TEXT"
 
 [node name="Music_Slider" type="HSlider" parent="Music"]
 margin_left = 62.0
