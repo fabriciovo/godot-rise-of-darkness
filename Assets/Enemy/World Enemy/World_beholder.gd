@@ -1,4 +1,4 @@
-extends "res://Assets/Enemy/World Enemy/World_Enemy.gd"
+extends World_Enemy
 
 onready var obj = get_tree().current_scene.get_node("Player")
 
@@ -42,6 +42,7 @@ func damage(knockbackValue, damageValue):
 	hits+=1
 	$Enemy_Animation.play("damage_anim")
 	yield($Enemy_Animation, "animation_finished")
+	spr.modulate = Color(1, 1, 1, 0.6)
 	if battle_unit_hp <= 0:
 		Destroy()
 	else:
@@ -49,6 +50,7 @@ func damage(knockbackValue, damageValue):
 
 func _on_Timer_timeout():
 	hit = false
+	spr.modulate = Color(1,1,1,1)
 	timer.stop()
 
 func _on_Shoot_Timer_timeout():

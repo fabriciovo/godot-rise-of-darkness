@@ -171,17 +171,18 @@ func _on_ActionArea_body_entered(_body):
 
 func create_sword(_value):
 	if action_state: return
+	if PlayerControll.souls_quest_completed and hp == PlayerControll.max_hp:
+		create_sword_projectile()
 	set_ap(ap-1)
 	action_state = true
 	action_area.visible = true
 	action_area.get_node("action").visible = true
 	var _action_area_anim = action_area.get_node("action").get_node("AnimationPlayer")
 	_action_area_anim.play("Slash_anim")
-	yield(_action_area_anim, "animation_finished")
 	action_collision.disabled = false
 	action_sprite.frame = PlayerControll.equiped_item[_value]
-	if PlayerControll.souls_quest_completed and hp == PlayerControll.max_hp:
-		create_sword_projectile()
+	yield(_action_area_anim, "animation_finished")
+
 
 func create_sword_projectile():
 	var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
