@@ -65,18 +65,18 @@ func damage(_knockback_value, _damage_value):
 		else:
 			timer.start(1)
 
-func _on_Area_area_entered(area):
-	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
-		knockback = area.knockback_vector * 120
+func _on_Area_area_entered(_area):
+	if _area.is_in_group(Global.GROUPS.SWORD) and not hit:
+		knockback = _area.knockback_vector * 120
 		damage(knockback,  PlayerControll.atk)
-	if area.is_in_group(Global.GROUPS.SHIELD) and not hit:
-		knockback = area.knockback_vector * 120
+	if _area.is_in_group(Global.GROUPS.SHIELD) and not hit:
+		knockback = _area.knockback_vector * 120
 		damage(knockback, 0)
-		
-func _on_Area_body_entered(body):
-	if body.is_in_group(Global.GROUPS.ARROW) and not hit:
+	if _area.is_in_group(Global.GROUPS.ARROW) and not hit:
 		damage(knockback,  PlayerControll.atk+1)
-		body.queue_free()
+		_area.queue_free()
+
+func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.BOMB) and not hit:
 		knockback = -global_position
 		damage(knockback,  PlayerControll.atk+5)

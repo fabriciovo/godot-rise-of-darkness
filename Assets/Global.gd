@@ -15,7 +15,6 @@ var cutscene = false
 var player_last_position = Vector2.ZERO
 var player_last_scene = ""
 
-var altar_hit = false
 var boss_gate = false
 
 var chest_sword = false
@@ -105,7 +104,6 @@ func get_world_data():
 		"cutscene": cutscene,
 		"player_last_position": player_last_position,
 		"player_last_scene": player_last_scene,
-		"altar_hit": altar_hit,
 		"boss_gate": boss_gate,
 		"chest_sword": chest_sword,
 		"chest_heal": chest_heal,
@@ -135,8 +133,6 @@ func set_world_data(data):
 		player_last_position = data["player_last_position"]
 	if data.has("player_last_scene"):
 		player_last_scene = data["player_last_scene"]
-	if data.has("altar_hit"):
-		altar_hit = data["altar_hit"]
 	if data.has("boss_gate"):
 		boss_gate = data["boss_gate"]
 	if data.has("chest_sword"):

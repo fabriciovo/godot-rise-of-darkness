@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Enviroment/Key_Gate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Tilesets/map_0.tres" type="TileSet" id=5]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Altar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/World/Dungeon/BridgeAltar.gd" type="Script" id=8]
+[ext_resource path="res://Assets/World/Dungeon/BridgeColisionAltar.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 16.5, 16 )
@@ -58,6 +60,7 @@ position = Vector2( 144.5, 113 )
 shape = SubResource( 4 )
 
 [node name="Bridge" type="Node2D" parent="Enviroment/Static" index="2"]
+script = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="Enviroment/Static/Bridge" index="0"]
 tile_set = ExtResource( 5 )
@@ -68,6 +71,7 @@ tile_data = PoolIntArray( 327686, 66, 0, 327687, 66, 0, 393222, 65, 0, 393223, 6
 [node name="Bridge_Collision" type="StaticBody2D" parent="Enviroment/Static/Bridge" index="1"]
 collision_layer = 11
 collision_mask = 3
+script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Static/Bridge/Bridge_Collision" index="0"]
 position = Vector2( 112.5, 106 )

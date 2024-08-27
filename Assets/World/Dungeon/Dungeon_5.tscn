@@ -12,8 +12,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 0.5, 16 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 0.499992, 16 )
 
 [node name="Dungeon_5" instance=ExtResource( 4 )]
 
@@ -23,8 +23,12 @@ tile_data = PoolIntArray( 0, 52, 0, 1, 43, 0, 2, 43, 0, 3, 43, 0, 4, 43, 0, 5, 4
 [node name="Player" parent="." index="2"]
 position = Vector2( 112, 13 )
 
-[node name="Watter" type="StaticBody2D" parent="Enviroment/Static" index="0"]
+[node name="Altar" parent="Enviroment/Static" index="0" instance=ExtResource( 1 )]
+
+[node name="Watter" type="StaticBody2D" parent="Enviroment/Static" index="1"]
 position = Vector2( 180, 82 )
+collision_layer = 13
+collision_mask = 13
 
 [node name="tilemap" type="TileMap" parent="Enviroment/Static/Watter" index="0"]
 position = Vector2( 0, -2 )
@@ -41,12 +45,7 @@ shape = SubResource( 1 )
 position = Vector2( -32, 29 )
 shape = SubResource( 1 )
 
-[node name="BridgeColision" type="CollisionShape2D" parent="Enviroment/Static/Watter" index="3"]
-position = Vector2( -47.5, -3 )
-shape = SubResource( 4 )
-script = ExtResource( 6 )
-
-[node name="Bridge" type="Node2D" parent="Enviroment/Static" index="1"]
+[node name="Bridge" type="Node2D" parent="Enviroment/Static" index="2"]
 visible = false
 position = Vector2( 164, 79 )
 rotation = 1.5708
@@ -60,6 +59,17 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -1, 66, 0, -65536, 66, 0, 65535, 65, 0, 0, 65, 0, 131071, 65, 0, 65536, 65, 0 )
 
+[node name="Bridge_Collision" type="StaticBody2D" parent="Enviroment/Static/Bridge" index="1"]
+collision_layer = 13
+collision_mask = 13
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Static/Bridge/Bridge_Collision" index="0"]
+position = Vector2( 0.0001297, 28.6363 )
+rotation = -1.5708
+scale = Vector2( 0.909091, 1 )
+shape = SubResource( 2 )
+
 [node name="World_Slime_d5_0" parent="Entities" index="0" instance=ExtResource( 10 )]
 position = Vector2( 210, 78 )
 
@@ -72,14 +82,12 @@ position = Vector2( 30, 60 )
 [node name="World_Bat_d5_1" parent="Entities" index="3" instance=ExtResource( 9 )]
 position = Vector2( 120, 73 )
 
-[node name="Altar" parent="." index="6" instance=ExtResource( 1 )]
-
-[node name="Dungeon_4" parent="." index="7" instance=ExtResource( 7 )]
+[node name="Dungeon_4" parent="." index="6" instance=ExtResource( 7 )]
 position = Vector2( 112, 13 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_4.tscn"
 door_name = "Dungeon_5"
 
-[node name="Dungeon_5" parent="." index="8" instance=ExtResource( 7 )]
+[node name="Dungeon_5" parent="." index="7" instance=ExtResource( 7 )]
 position = Vector2( 212, 80 )
 rotation = 1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_6.tscn"

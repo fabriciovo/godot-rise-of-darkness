@@ -1,6 +1,10 @@
-extends CollisionShape2D
+extends StaticBody2D
 
+var bridge
+
+func _ready():
+	bridge = get_parent()
 
 func _process(_delta):
-	if Global.altar_hit:
+	if bridge.altar_node.hit:
 		queue_free()
