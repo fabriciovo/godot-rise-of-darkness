@@ -1,7 +1,12 @@
 class_name Fire_Mage extends Dark_Mage
+
 const PROJECTILE_PATH = "res://Assets/Enemy/World Enemy/Fire_Mage_Projectile.tscn"
 var projectile_scene = preload(PROJECTILE_PATH)
 var directions = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
+
+func _ready():
+	intro_dialog = "fire_mage.json"
+	dath_dialog = "fire_mage_death.json"
 
 func create_projectile():
 	if Global.stop: return

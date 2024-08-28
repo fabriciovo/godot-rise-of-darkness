@@ -21,7 +21,7 @@ func start():
 	Global.cutscene = false
 
 func intro_dialog():
-	text_box.dialog_name = "you_need_a_weapon.json"
+	text_box.dialog_name = "dark_lord_intro.json"
 	text_box.start_dialog()
 
 func _on_Text_Box_on_end_dialog():
@@ -62,12 +62,12 @@ func _on_Phase_One_timeout():
 	Global.cutscene = true
 	phase += 1
 	dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
-	text_box.dialog_name = "you_need_a_weapon.json"
+	text_box.dialog_name = "dark_lord_phase_one.json"
 	text_box.start_dialog()
 
 func dragon_death():
 	phase += 1
-	text_box.dialog_name = "you_need_a_weapon.json"
+	text_box.dialog_name = "dark_lord_dragon_death.json"
 	text_box.start_dialog()
 
 func create_smoke():
@@ -82,7 +82,7 @@ func _on_Dark_Lord_start_ending():
 	phase += 1
 	thunder.play_dark_lord_death_anim()
 	yield(thunder.animation, "animation_finished")
-	text_box.dialog_name = "dark_mage_florest.json"
+	text_box.dialog_name = "dark_lord_ending.json"
 	text_box.start_dialog()
 
 func queue_free_entities():

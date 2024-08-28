@@ -66,7 +66,7 @@ func Destroy():
 	SoundController.play_effect(SoundController.EFFECTS.positive_10)
 	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	Global.cutscene = true
-	text_box.dialog_name = "dark_mage_florest.json"
+	text_box.dialog_name = "necromancer_death.json"
 	text_box.start_dialog()
 
 

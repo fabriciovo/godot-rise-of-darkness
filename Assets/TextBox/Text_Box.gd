@@ -72,7 +72,7 @@ func nextPhrase():
 	if label_name == "":
 		label_text.text = tr(dialog[phrase_num]["Text"])
 	else:
-		label_text.text = dialog[phrase_num]["Name"] + "\n" + tr(dialog[phrase_num]["Text"])
+		label_text.text = tr(dialog[phrase_num]["Name"]) + "\n" + tr(dialog[phrase_num]["Text"])
 	label_text.visible_characters = 0
 	while label_text.visible_characters < len(label_text.text):
 		label_text.visible_characters += 1

@@ -1,6 +1,6 @@
 ﻿key;en;pt
 START_GAME;Start Game;Começar Jogo
-OPTIONS;Options;Opções
+OPTIONS;Settings;Opções
 LOAD_GAME;Load Game;Carregar Jogo
 QUIT;Quit;Sair
 SWORD_NAME;Sword;Espada
@@ -11,14 +11,14 @@ SHIELD_NAME;Shield;Escudo
 BOOTS_OF_SPEED_NAME;Boots of Speed;Botas da Velocidade
 RING_OF_DASH_NAME;Ring of Dash;Anel do Lampejo
 NECKLACE_OF_PROTECTION_NAME;Necklace of Protection;Colar da Proteção
-SWORD_DESCRIPTION;test;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-BOW_DESCRIPTION;test;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-BOMB_DESCRIPTION;test;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-HEAL_STAFF_DESCRIPTION;test;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-SHIELD_DESCRIPTION;test;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-BOOTS_OF_SPEED_DESCRIPTION;test;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-RING_OF_DASH_DESCRIPTION;test;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-NECKLACE_OF_PROTECTION_DESCRIPTION;test;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+SWORD_DESCRIPTION;No text yet;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+BOW_DESCRIPTION;No text yet;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+BOMB_DESCRIPTION;No text yet;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+HEAL_STAFF_DESCRIPTION;No text yet;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+SHIELD_DESCRIPTION;No text yet;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+BOOTS_OF_SPEED_DESCRIPTION;No text yet;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+RING_OF_DASH_DESCRIPTION;No text yet;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+NECKLACE_OF_PROTECTION_DESCRIPTION;No text yet;Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
 UNLOCKED_ITEM;????;????
 SELECT_EN;English;Inglês
 SELECT_PT;Portuguese;Português
@@ -36,22 +36,35 @@ Determined to restore peace, the last guardian sets out on a lone journey, armed
 Apesar dos valentes esforços dos guerreiros, eles não conseguiram deter o avanço do Lorde das Trevas. Em meio ao desespero, um dos guardiões resistiu, mas perdeu todos os seus poderes. Guiado por um antigo oráculo por possuir bravura e força incomparáveis para enfrentar o agora corrompido xxx, o último guardião embarca em uma busca solitária, armado de esperança e coragem.
 
 Determinado a restaurar a paz, o último guardião parte em uma jornada solitária, armado com esperança e coragem."
-RONAN_DIALOG_1;teste;Herói, ainda bem que você está aqui.
-RONAN_DIALOG_2;teste;É perigoso ir sozinho, pegue isto!
-RONAN_DIALOG_3;teste;Precione a tecla {action_3} para interagir com objetos.
-RONAN_QUEST_1;teste;Herói, tenho uma missão para você.
-RONAN_QUEST_2;teste;Você pode t+C46ário pelo {start}.
-RONAN_QUEST_3;teste;Ela tem uma Reliquia importante para você.
-RONAN_QUEST_4;teste;Ao precionar {start} você abrir o painel de Missões.
-OPEN_CHEST_SWORD_1;teste;Parabéns você pegou a Espada.
-OPEN_CHEST_SWORD_2;teste;Ela irá direto ao seu inventorio rapido, localizado na parte inferior da tela.
-OPEN_CHEST_SWORD_3;teste;Para equipar ela, precione as teclas A ou S para se movimentar pelo inventario rapido.
-OPEN_CHEST_SWORD_4;teste;Depois precione D ou F para equipar nos espectivos Z ou X.
-OPEN_CHEST_SWORD_5;teste;Você pode tambem checar o painel de Inventario pelo {start}.
+RONAN_DIALOG_1;No text yet;Herói, ainda bem que você está aqui.
+RONAN_DIALOG_2;No text yet;É perigoso ir sozinho, pegue isto!
+RONAN_DIALOG_3;No text yet;Precione a tecla {action_3} para interagir com objetos.
+RONAN_QUEST_1;No text yet;Herói, tenho uma missão para você.
+RONAN_QUEST_2;No text yet;Encontre a Wanny na parte esquerda da Floresta Sombria.
+RONAN_QUEST_3;No text yet;Ela tem uma Reliquia importante para você.
+RONAN_QUEST_4;No text yet;Ao precionar {start} você abrir o painel de Missões.
+OPEN_CHEST_SWORD_1;No text yet;Parabéns você pegou a Espada.
+OPEN_CHEST_SWORD_2;No text yet;Ela irá direto ao seu inventorio rapido, localizado na parte inferior da tela.
+OPEN_CHEST_SWORD_3;No text yet;Para equipar ela, precione as teclas A ou S para se movimentar pelo inventario rapido.
+OPEN_CHEST_SWORD_4;No text yet;Depois precione D ou F para equipar nos espectivos Z ou X.
+OPEN_CHEST_SWORD_5;No text yet;Você pode tambem checar o painel de Inventario pelo {start}.
 SAVE_BUTTON_TEXT;Save;Salvar
 SOUND_TITLE;Sound;Som
 SFX_TEXT;SFX;Efeitos
 MUSIC_TEXT;Music;Música
 LANGUAGE_TITLE;Language List;Selecione seu idioma
+LEVEL_UP_TEXT_0;No text yet;Parabéns você subiu de nível!
+LEVEL_UP_TEXT_1;No text yet;Verifique o painel de informções do jogador no pause para aumentar seus atributos.
+YOU_NEED_A_KEY_TEXT;No text yet;Você precisa de uma chave.
+YOU_NEED_A_WEAPON_TEXT;No text yet;Você precisa de uma arma. Há muitos monstros perigosos lá.
+DARK_MAGE_NAME;Dark Mage;Mago do Caos
+DARK_MAGE_DIALOG_0;No text yet;Eu sou o Mago do Caos!
+DARK_MAGE_DIALOG_1;No text yet;Um discípulo do Lorde Das Trevas.
+DARK_MAGE_DIALOG_2;No text yet;Agora você verá uma fração do nosso poder.
+DARK_MAGE_DIALOG_3;No text yet;Sua jornada se encerra aqui, Herói.
+DARK_MAGE_DEATH_DIALOG_0;No text yet;Impossível!
+DARK_MAGE_DEATH_DIALOG_1;No text yet;Como um ser tão insignificante pode me derrotar?
+;;
+;;
 ;;
 ;;

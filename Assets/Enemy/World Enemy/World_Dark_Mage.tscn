@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sprites/dark_mage.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=2]
@@ -67,7 +67,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "Attack"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -76,7 +76,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.9 ),
+"times": PoolRealArray( 0, 0.5, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 5, 0 ]
@@ -96,7 +96,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
@@ -123,7 +123,7 @@ tracks/1/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 resource_name = "damage_anim"
 length = 0.5
 tracks/0/type = "value"
@@ -139,7 +139,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.0588235 ), Color( 0, 0, 0, 0.137255 ), Color( 1, 1, 1, 0.407843 ), Color( 0, 0, 0, 0.521569 ), Color( 1, 1, 1, 0.352941 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 resource_name = "dark_mage_intro"
 length = 3.0
 loop = true
@@ -157,6 +157,34 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=9]
+resource_name = "disappear"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Collision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=10]
 resource_name = "hide"
 length = 0.5
 tracks/0/type = "value"
@@ -172,7 +200,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 resource_name = "show"
 length = 0.5
 tracks/0/type = "value"
@@ -210,13 +238,14 @@ anims/damage_anim = ExtResource( 2 )
 anims/hide = SubResource( 3 )
 anims/show = SubResource( 4 )
 
-[node name="Animation_Dark_Lord" type="AnimationPlayer" parent="."]
-anims/Attack = SubResource( 6 )
-anims/RESET = SubResource( 7 )
-anims/damage_anim = SubResource( 8 )
-anims/dark_mage_intro = SubResource( 11 )
-anims/hide = SubResource( 9 )
-anims/show = SubResource( 10 )
+[node name="Animation_Dark_Mage" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+anims/damage_anim = SubResource( 7 )
+anims/dark_mage_intro = SubResource( 8 )
+anims/disappear = SubResource( 9 )
+anims/hide = SubResource( 10 )
+anims/show = SubResource( 11 )
 
 [node name="Invincible_Timer" type="Timer" parent="."]
 

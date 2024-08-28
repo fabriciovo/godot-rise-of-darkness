@@ -11,6 +11,9 @@ var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var points = []
 var ID = name
 
+var intro_dialog = ""
+var dath_dialog = ""
+
 var battle_unit_xp = 50
 var battle_unit_max_hp = 50
 var battle_unit_damage = 10
@@ -21,10 +24,12 @@ var invincible = false
 var hiding = false
 
 func _ready():
+	intro_dialog = "dark_mage.json"
+	dath_dialog = "dark_mage_death.json"
 	add_to_group(Global.GROUPS.ENEMY)
 	animation.play("dark_mage_intro")
 	points = get_tree().current_scene.get_node("Points").get_children()
-	text_box.dialog_name = "dark_mage_florest.json"
+	text_box.dialog_name = intro_dialog
 	text_box.start_dialog()
 
 func Destroy():
@@ -37,7 +42,7 @@ func Destroy():
 	SoundController.play_effect(SoundController.EFFECTS.positive_10)
 	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	Global.cutscene = true
-	text_box.dialog_name = "dark_mage_florest.json"
+	text_box.dialog_name = dath_dialog 
 	text_box.start_dialog()
 	
 

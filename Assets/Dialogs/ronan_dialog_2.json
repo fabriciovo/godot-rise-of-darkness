@@ -1,18 +1,18 @@
 [
     {
         "Name": "Ronan",
-        "Text": "RONAN_DIALOG_1"
+        "Text": "RONAN_QUEST_1"
     },
     {
         "Name": "Ronan",
-        "Text": "RONAN_DIALOG_2"
+        "Text": "RONAN_QUEST_2"
     },
     {
         "Name": "Ronan",
-        "Text": "RONAN_DIALOG_3"
+        "Text": "RONAN_QUEST_3  "
     },
     {
         "Name": "Ronan",
-        "Text": "RONAN_DIALOG_4"
+        "Text": "RONAN_QUEST_4"
     }
     ]

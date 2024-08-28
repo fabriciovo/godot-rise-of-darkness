@@ -4,7 +4,7 @@ onready var anim = $Necromancer_Animation
 onready var text_box = $Layer/Text_Box
 
 var entities_gate = preload("res://Assets/Enviroment/Entities_Gate.tscn")
-var necromancer = preload("res://Assets/Enemy/World Enemy/World_Mini_Boss.tscn")
+var necromancer = preload("res://Assets/Enemy/World Enemy/World_Necromancer.tscn")
 var skull_spawn = preload("res://Assets/Enviroment/Skulls.tscn")
 
 var points = null
@@ -38,7 +38,7 @@ func spawn():
 	_current_scene.add_child(_inst_gate)
 
 func start_text_box():
-	text_box.dialog_name = "you_need_a_weapon.json"
+	text_box.dialog_name = "necromancer.json"
 	text_box.start_dialog()
 
 func _on_Text_Box_on_end_dialog():
