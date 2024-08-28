@@ -31,16 +31,17 @@ tile_data = PoolIntArray( -131075, 25, 0, -131074, 25, 0, -131073, 25, 0, -19660
 
 [node name="Enviroment_Entities" type="Node2D" parent="."]
 
+[node name="Fire_Mage_Chest" parent="Enviroment_Entities" instance=ExtResource( 1 )]
+position = Vector2( 75, 51 )
+item = 4
+
+[node name="Entities" type="Node2D" parent="."]
+
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( 216, 96 )
 rotation = 1.5708
 target_scene = "res://Assets/World/sub world/World_Left_3.tscn"
 door_name = "Door_Left_8"
-
-[node name="Entities" type="Node2D" parent="."]
-
-[node name="Fake_Chest" parent="." instance=ExtResource( 1 )]
-position = Vector2( 75, 51 )
 
 [node name="Thunder" parent="." instance=ExtResource( 6 )]
 

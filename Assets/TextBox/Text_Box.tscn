@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/hole.png" type="Texture" id=1]
 [ext_resource path="res://Images/Button9Slice.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/TextBox/Text_Box.gd" type="Script" id=4]
-[ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=5]
 
 [node name="Text_Box" type="MarginContainer"]
 anchor_top = 1.0
@@ -50,8 +49,8 @@ margin_bottom = 58.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 220.0
-margin_bottom = 53.0
-theme = ExtResource( 5 )
+margin_bottom = 56.252
+theme = ExtResource( 3 )
 text = "Name
 fokpoaskfopaskfopkaskopfakosdfaopkdopakdopkapdkoaopkdaopdkakosdsoakd"
 autowrap = true

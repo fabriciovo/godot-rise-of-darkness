@@ -29,10 +29,11 @@ func set_weapon_type(_weapon_type):
 			icon = null
 
 func set_focus(value):
+	pass
 	if value:
-		modulate = Color(1,1,1,1)
+		modulate = Color(255,255,255,1)
 	else:
-		modulate = Color(2,2,2,2)
+		modulate = Color(1,1,1,1)
 
 func _on_equip_weapon(_weapon_type, _slot):
 	PlayerControll.set_equiped_item(_weapon_type, _slot)

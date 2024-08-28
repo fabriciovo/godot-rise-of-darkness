@@ -5,7 +5,7 @@ onready var thunder = $Thunder
 onready var door = $Door
 onready var entities = $Entities 
 onready var fire_spawn_points = $Points
-onready var fake_chest = $Fake_Chest
+onready var key_chest = $Enviroment_Entities/Fire_Mage_Chest
 var gate = preload("res://Assets/Enviroment/Entities_Gate.tscn")
 var fire_spirit = preload("res://Assets/Enemy/World Enemy/World_Fire_Spirit.tscn")
 var smoke = preload("res://Assets/Animations/smoke.tscn")
@@ -35,7 +35,7 @@ func _on_Timer_timeout():
 	Global.stop = true
 	dark_mage_spawn_timer.stop()
 	thunder.start_florest_dark_mage()
-	fake_chest.queue_free()
+	key_chest.Hide()
 
 	
 

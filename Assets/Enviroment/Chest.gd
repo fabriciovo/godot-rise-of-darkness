@@ -72,3 +72,15 @@ func _on_Text_Box_on_end_dialog():
 	Global.stop = false
 	Global.cutscene = false
 	SoundController.keep_music()
+
+func Hide():
+	disable = true
+	visible = false
+	monitorable = false
+	$Chest_Static_Body/CollisionShape2D.disabled = true
+
+func Show():
+	disable = false
+	visible = true
+	monitorable = true
+	$Chest_Static_Body/CollisionShape2D.disabled = false
