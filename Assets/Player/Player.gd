@@ -98,13 +98,16 @@ func action(value):
 					add_child(text)
 			Global.WEAPONS.HEAL: 
 				if mp >= 5 and hp < PlayerControll.max_hp:
+					get_item_frame = 3 
+					$PlayerAnimation.play("use_magic")
+					yield($PlayerAnimation, "animation_finished")
 					var textMP = float_text.instance()
 					var textHP = float_text.instance()
 					textMP.set_text("MP -5")
 					add_child(textMP)
 					textHP.set_text("HP +5")
 					textHP.get_position_in_parent()
-					textHP.pos.x = -34
+					textHP.pos.x = -48
 					add_child(textHP)
 					heal()
 					set_mp(mp-5)

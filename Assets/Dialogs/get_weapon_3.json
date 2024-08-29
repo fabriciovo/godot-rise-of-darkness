@@ -1,6 +1,11 @@
 [
-{
-    "Name": "",
-    "Text": "YOU_GET_RING_OF_SOULS"
-}
-]
+    {
+      "Name": "",
+      "Text": "OPEN_CHEST_HEAL_STAFF_0"
+    },
+    {
+      "Name": "",
+      "Text": "OPEN_CHEST_HEAL_STAFF_1"
+    }
+  ]
+  

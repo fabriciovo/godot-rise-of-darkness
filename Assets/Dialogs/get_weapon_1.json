@@ -1,6 +1,10 @@
 [
-{
+  {
     "Name": "",
-    "Text": "YOU_GET_RING_OF_SOULS"
-}
+    "Text": "OPEN_CHEST_BOW_0"
+  },
+  {
+    "Name": "",
+    "Text": "OPEN_CHEST_BOW_1"
+  }
 ]

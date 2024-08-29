@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Sprites/character_spritesheet_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Player/Player.gd" type="Script" id=2]
@@ -189,6 +189,35 @@ tracks/1/keys = {
 "values": [ Vector2( 95, 128 ), Vector2( 95, 100 ) ]
 }
 
+[sub_resource type="Animation" id=21]
+resource_name = "use_magic"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 20, 29, 38, 12, 20, 29, 38, 11 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_get_item"
+} ]
+}
+
 [sub_resource type="Animation" id=4]
 resource_name = "walk_down"
 length = 0.4
@@ -297,6 +326,7 @@ anims/damage_anim = ExtResource( 5 )
 anims/get_item = SubResource( 14 )
 anims/heal_anim = SubResource( 17 )
 anims/intro_anim = SubResource( 20 )
+anims/use_magic = SubResource( 21 )
 anims/walk_down = SubResource( 4 )
 anims/walk_left = SubResource( 6 )
 anims/walk_right = SubResource( 2 )

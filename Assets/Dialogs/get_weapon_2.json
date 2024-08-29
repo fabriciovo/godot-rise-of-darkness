@@ -1,6 +1,15 @@
 [
-{
-    "Name": "",
-    "Text": "YOU_GET_RING_OF_SOULS"
-}
-]
+    {
+      "Name": "",
+      "Text": "OPEN_CHEST_BOMB_0"
+    },
+    {
+      "Name": "",
+      "Text": "OPEN_CHEST_BOMB_1"
+    },
+    {
+      "Name": "",
+      "Text": "OPEN_CHEST_BOMB_2"
+    }
+  ]
+  
