@@ -191,6 +191,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=21]
 resource_name = "use_magic"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -210,11 +211,14 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.8 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.8, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "show_get_item"
+}, {
+"args": [  ],
+"method": "hide_get_item"
 } ]
 }
 

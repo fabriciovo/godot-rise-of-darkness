@@ -23,6 +23,7 @@ var key = PlayerControll.key
 var get_item_frame = 0
 var get_item_anim = false
 var enemiesBody = []
+var casting = false
 
 var speed = PlayerControll.base_speed
 var knockback = Vector2.ZERO
@@ -98,7 +99,10 @@ func action(value):
 					add_child(text)
 			Global.WEAPONS.HEAL: 
 				if mp >= 5 and hp < PlayerControll.max_hp:
+					#TODO CANCEL ANIMATION IF GET HIT
 					get_item_frame = 3 
+					casting = true
+					action_state = true
 					$PlayerAnimation.play("use_magic")
 					yield($PlayerAnimation, "animation_finished")
 					var textMP = float_text.instance()
@@ -107,10 +111,11 @@ func action(value):
 					add_child(textMP)
 					textHP.set_text("HP +5")
 					textHP.get_position_in_parent()
-					textHP.pos.x = -48
+					textHP.pos.x = -52
 					add_child(textHP)
 					heal()
 					set_mp(mp-5)
+					casting = false
 			Global.WEAPONS.SHIELD:
 				create_shield()
 		match dir:
