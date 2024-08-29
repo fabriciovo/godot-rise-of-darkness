@@ -1,6 +1,10 @@
 [
   {
     "Name": "DARK_LORDE_NAME",
+    "Text": "DARK_LORD_DRAGON_DEATH_0"
+  },
+  {
+    "Name": "DARK_LORDE_NAME",
     "Text": "DARK_LORD_DRAGON_DEATH_1"
   },
   {
@@ -10,9 +14,5 @@
   {
     "Name": "DARK_LORDE_NAME",
     "Text": "DARK_LORD_DRAGON_DEATH_3"
-  },
-  {
-    "Name": "DARK_LORDE_NAME",
-    "Text": "DARK_LORD_DRAGON_DEATH_4"
   }
 ]
