@@ -105,17 +105,19 @@ func action(value):
 					action_state = true
 					$PlayerAnimation.play("use_magic")
 					yield($PlayerAnimation, "animation_finished")
-					var textMP = float_text.instance()
-					var textHP = float_text.instance()
-					textMP.set_text("MP -5")
-					add_child(textMP)
-					textHP.set_text("HP +5")
-					textHP.get_position_in_parent()
-					textHP.pos.x = -52
-					add_child(textHP)
-					heal()
-					set_mp(mp-5)
-					casting = false
+					if casting:
+						var textMP = float_text.instance()
+						var textHP = float_text.instance()
+						textMP.set_text("MP -5")
+						add_child(textMP)
+						textHP.set_text("HP +5")
+						textHP.get_position_in_parent()
+						textHP.pos.x = -52
+						add_child(textHP)
+						heal()
+						set_mp(mp-5)
+						casting = false
+					
 			Global.WEAPONS.SHIELD:
 				create_shield()
 		match dir:
@@ -247,6 +249,9 @@ func heal():
 
 func damage(value):
 	if invincible or dashing: return
+	if $PlayerAnimation.current_animation == "use_magic":
+		$PlayerAnimation.stop()
+	casting = false
 	hit = true
 	invincible = true
 	SoundController.play_effect(SoundController.EFFECTS.player_hit)
