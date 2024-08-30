@@ -1,6 +1,50 @@
 [
-{
-    "Name": "Wanny",
-    "Text": "WANNY_START_QUEST_1"
-}
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_0"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_1"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_2"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_3"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_4"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_5"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_6"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_7"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_8"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_9"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_10"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_11"
+    }
 ]

@@ -388,6 +388,7 @@ __meta__ = {
 }
 
 [node name="Player_Info" type="Control" parent="UI_Containers"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 

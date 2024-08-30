@@ -1,6 +1,10 @@
 [
-{
-    "Name": "Wanny",
-    "Text": "WANNY_DURING_QUEST_1"
-}
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_10"
+    },
+    {
+        "Name": "Wanny",
+        "Text": "WANNY_START_QUEST_11"
+    }
 ]

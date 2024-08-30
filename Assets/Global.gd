@@ -68,7 +68,7 @@ const RELICS = {
 var QUESTS = {
 	"FIND_WANNY": {
 		"Title": "Find Wanny in lost woods",
-		"Description": "FIND_WANNY_DESCRIPTION",
+		"Description": "RONAN_QUEST_2",
 		"Has_Track": false,
 		"Unlocked": false,
 		"Completed": false
