@@ -42,6 +42,7 @@ func _process(_delta):
 func getDialog():
 	if finished: return
 	var f = File.new()
+	print(dialog_name)
 	assert(f.file_exists(file), "File path does not exist")
 	
 	f.open(file, File.READ)

@@ -79,7 +79,7 @@ var QUESTS = {
 		"Reward": "Reward 50 XP",
 		"Has_Track": true,
 		"Progress": 0,
-		"Goal": 100,
+		"Goal": 1,
 		"Unlocked": false,
 		"Completed": false
 	},

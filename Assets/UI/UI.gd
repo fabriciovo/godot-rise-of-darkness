@@ -142,7 +142,7 @@ func _on_Relics_pressed():
 
 func _on_Quests_pressed():
 	quests_panel.visible = true
-	quests_panel.set_quest()
+	quests_panel.grab_focus()
 
 func _on_Save_pressed():
 	Global.saveJSONData("player_data",PlayerControll.player_data())

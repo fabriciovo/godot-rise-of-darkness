@@ -5,9 +5,8 @@ onready var quest_info = $Quest_Info
 
 var quest_button = preload("res://Assets/UI/Quest/Quest_Button.tscn")
 
-func set_quest():
-	quests_container.clear()
-	for quest_key in quests_container:
+func _ready():
+	for quest_key in Global.QUESTS:
 		var quest = Global.QUESTS[quest_key]
 		if quest["Unlocked"]:
 			var _temp = quest_button.instance()
@@ -15,9 +14,18 @@ func set_quest():
 			_temp.text = quest["Title"]
 			quests_container.add_child(_temp)
 			quest_info.bbcode_text = tr(quest["Description"])
-	quests_container.get_children()[0].grab_focus()
-	print(quests_container.get_children()[0])
 
+func grab_focus():
+	quests_container.get_children()[0].grab_focus()
+
+func add_quest(_quest_key):
+	var _quest = Global.QUESTS[_quest_key]
+	var _temp = quest_button.instance()
+	_quest["Unlocked"] = true
+	_temp.connect("focus_entered", self, "_on_quest_button_focus_entered", [_quest])
+	_temp.text = _quest["Title"]
+	quests_container.add_child(_temp)
+	quest_info.bbcode_text = tr(_quest["Description"])
 
 func _on_quest_button_focus_entered(_quest):
 	quest_info.bbcode_text = tr(_quest["Description"])
