@@ -1,11 +1,12 @@
 extends Node2D
 
 var player = null
-var dialog_name = ["ronan_dialog_1.json", "", "ronan_dialog_2.json", "ronan_dialog_3.json"]
+var dialog_name = ["ronan_dialog_1.json", "ronan_dialog_1.json", "ronan_dialog_2.json", "ronan_dialog_2.json"]
 var can_talk = true
 var sword_chest
 
 var smoke = preload("res://Assets/Animations/smoke.tscn")
+
 
 func _ready():
 	sword_chest = get_tree().current_scene.get_node_or_null("Enviroment_Entities/Chest_Sword")
@@ -13,6 +14,9 @@ func _ready():
 		sword_chest.visible = false
 	else: 
 		sword_chest.visible = true
+		
+	if Global.QUESTS["FIND_WANNY"].Completed:
+		dialog_name = "ronan_dialog_1.json"
 
 func _input(_event):
 	if not player: return
@@ -34,10 +38,10 @@ func _on_Text_Box_on_end_dialog():
 	var quest_step = Global.NPCS_QUEST_STEP_TRACK.Ronan
 	if quest_step == 0:
 		Global.NPCS_QUEST_STEP_TRACK.Ronan+=1
-	elif quest_step == 1:
-		Global.NPCS_QUEST_STEP_TRACK.Ronan+=1
 	elif quest_step == 2:
 		Global.NPCS_QUEST_STEP_TRACK.Ronan+=1
+		Global.quest_menu = true
+		Global.QUESTS["FIND_WANNY"].Unlocked = true
 	can_talk = true
 	Global.stop = false
 	Global.cutscene = false

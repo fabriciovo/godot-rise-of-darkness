@@ -99,7 +99,6 @@ func action(value):
 					add_child(text)
 			Global.WEAPONS.HEAL: 
 				if mp >= 5 and hp < PlayerControll.max_hp:
-					#TODO CANCEL ANIMATION IF GET HIT
 					get_item_frame = 3 
 					casting = true
 					action_state = true

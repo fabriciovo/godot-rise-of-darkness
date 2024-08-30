@@ -117,7 +117,6 @@ func open_player_info():
 func game_start():
 	game_ui.visible = true
 
-
 func _on_Timer_timeout():
 	$Title_Scene.visible = false
 	$Title_Scene/Title_Panel/Title_Text.text = ""
@@ -130,10 +129,8 @@ func show_text(text):
 func _on_Player_pressed():
 	open_player_info()
 
-
 func _on_Settings_pressed():
 	open_settings()
-
 
 func _on_Inventory_pressed():
 	inventory_panel.visible = true

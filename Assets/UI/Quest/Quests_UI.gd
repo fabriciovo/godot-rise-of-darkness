@@ -17,3 +17,5 @@ func set_quest():
 
 func _on_quest_button_focus_entered(_quest):
 	quest_info.bbcode_text = tr(_quest["Description"])
+	if _quest["Has_Track"]:
+		quest_info.bbcode_text += "\n" + _quest["Progress"] + " / " + _quest["Goal"]

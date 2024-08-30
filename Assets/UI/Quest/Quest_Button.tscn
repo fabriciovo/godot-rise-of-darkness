@@ -10,3 +10,4 @@ theme = ExtResource( 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "????"
+clip_text = true

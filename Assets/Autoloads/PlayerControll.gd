@@ -2,7 +2,7 @@ extends Node
 
 var max_hp = 30
 var max_ap = 5
-var max_mp = 150000
+var max_mp = 15
 var hp = max_hp setget set_hp
 var ap = max_ap setget set_ap
 var mp = max_mp setget set_mp
@@ -12,8 +12,8 @@ var level = 1 setget set_level
 var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
-var inventory = [0,3]
-var equiped_item = [0,3] 
+var inventory = []
+var equiped_item = [-1,-1] 
 var relics = []
 var key = 0
 var base_speed = 30
@@ -103,7 +103,7 @@ func set_xp(value):
 	if xp >= xp_to_level_up:
 		points = level + 2
 		level+=1
-		xp =  xp_to_level_up - xp
+		xp =  xp - xp_to_level_up
 		xp_to_level_up = floor(xp_to_level_up * 1.2)
 		var inst_xp_text = float_text.instance()
 		var inst_level_up_text_box = level_up_text_box.instance()

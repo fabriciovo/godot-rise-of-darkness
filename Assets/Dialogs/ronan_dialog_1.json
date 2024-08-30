@@ -1,14 +1,14 @@
 [
-    {
-        "Name": "Ronan",
-        "Text": "RONAN_DIALOG_1"
-    },
-    {
-        "Name": "Ronan",
-        "Text": "RONAN_DIALOG_2"
-    },
-    {
-        "Name": "Ronan",
-        "Text": "RONAN_DIALOG_3"
-    }
-    ]
+  {
+    "Name": "Ronan",
+    "Text": "RONAN_DIALOG_1"
+  },
+  {
+    "Name": "Ronan",
+    "Text": "RONAN_DIALOG_2"
+  },
+  {
+    "Name": "Ronan",
+    "Text": "RONAN_DIALOG_3"
+  }
+]

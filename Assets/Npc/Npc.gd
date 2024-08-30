@@ -4,6 +4,11 @@ var player = null
 var dialog_name = ["wanny_dialog_start_quest.json", "wanny_dialog_during_quest.json", "wanny_dialog_complete_quest.json", "wanny_quest_completed.json"]
 var can_talk = true
 
+func _ready():
+	if Global.QUESTS["SOULS_QUEST"].Completed:
+		dialog_name = "wanny_dialog_complete_quest.json"
+		Global.NPCS_QUEST_STEP_TRACK.Wanny = 4
+
 func _input(_event):
 	if not player: return
 	if (_event.is_action_pressed("action_3") or _event.is_action_pressed("action_2") or _event.is_action_pressed("action_1")) and player != null and not Global.stop:
@@ -28,8 +33,8 @@ func trigger_dialog_box():
 func _on_Text_Box_on_end_dialog():
 	var quest_step = Global.NPCS_QUEST_STEP_TRACK.Wanny
 	if quest_step == 0:
+		Global.QUESTS["FIND_WANNY"].Completed = true
 		Global.NPCS_QUEST_STEP_TRACK.Wanny+=1
-		Global.quest_menu = true
 		Global.QUESTS["SOULS_QUEST"]["Unlocked"] = true
 		$Text_Box_Layer/Text_Box.dialog_name = "get_relic_3.json"
 		PlayerControll.set_relic_item(Global.RELICS.RING_OF_SOULS)
@@ -43,6 +48,8 @@ func _on_Text_Box_on_end_dialog():
 		pass
 	elif quest_step == 2:
 		pass
+	elif quest_step == 4:
+		PlayerControll.souls_quest_completed = true
 	can_talk = true
 	Global.stop = false
 	Global.cutscene = false

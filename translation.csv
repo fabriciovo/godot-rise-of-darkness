@@ -1,6 +1,6 @@
-ï»¿key;en;pt
-START_GAME;Start Game;ComeÃ§ar Jogo
-OPTIONS;Settings;OpÃ§Ãµes
+key;en;pt
+START_GAME;Start Game;Começar Jogo
+OPTIONS;Settings;Opções
 LOAD_GAME;Load Game;Carregar Jogo
 QUIT;Quit;Sair
 SWORD_NAME;Sword;Espada
@@ -10,61 +10,81 @@ HEAL_STAFF_NAME;Heal Staff;Cajado de Cura
 SHIELD_NAME;Shield;Escudo
 BOOTS_OF_SPEED_NAME;Boots of Speed;Botas da Velocidade
 RING_OF_DASH_NAME;Ring of Dash;Anel do Lampejo
-NECKLACE_OF_PROTECTION_NAME;Necklace of Protection;Colar da ProteÃ§Ã£o
-SWORD_DESCRIPTION;No text yet;Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-BOW_DESCRIPTION;No text yet;Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-BOMB_DESCRIPTION;No text yet;Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-HEAL_STAFF_DESCRIPTION;No text yet;Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-SHIELD_DESCRIPTION;No text yet;Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-BOOTS_OF_SPEED_DESCRIPTION;No text yet;Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-RING_OF_DASH_DESCRIPTION;No text yet;Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-NECKLACE_OF_PROTECTION_DESCRIPTION;No text yet;Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+NECKLACE_OF_PROTECTION_NAME;Necklace of Protection;Colar da Proteção
+SWORD_DESCRIPTION;No text yet;Espada \n\n Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+BOW_DESCRIPTION;No text yet;Sem descricao ainda
+BOMB_DESCRIPTION;No text yet;Sem descricao ainda
+HEAL_STAFF_DESCRIPTION;No text yet;Sem descricao ainda
+SHIELD_DESCRIPTION;No text yet;Sem descricao ainda
+BOOTS_OF_SPEED_DESCRIPTION;No text yet;Sem descricao ainda
+RING_OF_DASH_DESCRIPTION;No text yet;Sem descricao ainda
+NECKLACE_OF_PROTECTION_DESCRIPTION;No text yet;Sem descricao ainda
 UNLOCKED_ITEM;????;????
-SELECT_EN;English;InglÃªs
-SELECT_PT;Portuguese;PortuguÃªs
+SELECT_EN;English;Inglês
+SELECT_PT;Portuguese;Português
 SELECT_LANGUAGE_TITLE;Select your language;Selecione seu idioma
 Z_TO_CONFIRM;Press Z to confirm;Precione Z para confirmar
 COLLECT_SOULS_DESCRIPTION;teste;teste
-CANT_GO_BACK;teste;NÃ£o desista de sua aventura, HerÃ³i.
+CANT_GO_BACK;teste;Não desista de sua aventura, Herói.
 INTRODUCTION;"
 Centuries ago, xxx flourished under the care of the benevolent Guardians of Light, led by the powerful and virtuous xxx. However, a malevolent force corrupted xxx's mind, transforming him into the Dark Lord. Betraying his fellow guardians, he plunged the realm into darkness, summoning shadowy creatures that surrounded the land.
 
 Despite the valiant efforts of the warriors, they couldn't halt the Dark Lord's advance. In the midst of despair, one of the guardians resisted but lost all his powers. Guided by an ancient oracle for possessing unparalleled bravery and strength to confront the now-corrupted xxx, the last guardian embarks on a solitary quest, armed with hope and courage.
 
-Determined to restore peace, the last guardian sets out on a lone journey, armed with hope and courage.";"SÃ©culos atrÃ¡s, xxx floresceu sob os cuidados dos benevolentes GuardiÃµes da Luz, liderados pelos poderosos e virtuosos xxx. No entanto, uma forÃ§a malÃ©vola corrompeu a mente de xxx, transformando-o no Lorde das Trevas. Traindo seus companheiros guardiÃµes, ele mergulhou o reino na escuridÃ£o, invocando criaturas sombrias que cercavam a terra.
+Determined to restore peace, the last guardian sets out on a lone journey, armed with hope and courage.";"Séculos atrás, xxx floresceu sob os cuidados dos benevolentes Guardiões da Luz, liderados pelos poderosos e virtuosos xxx. No entanto, uma força malévola corrompeu a mente de xxx, transformando-o no Lorde das Trevas. Traindo seus companheiros guardiões, ele mergulhou o reino na escuridão, invocando criaturas sombrias que cercavam a terra.
 
-Apesar dos valentes esforÃ§os dos guerreiros, eles nÃ£o conseguiram deter o avanÃ§o do Lorde das Trevas. Em meio ao desespero, um dos guardiÃµes resistiu, mas perdeu todos os seus poderes. Guiado por um antigo orÃ¡culo por possuir bravura e forÃ§a incomparÃ¡veis para enfrentar o agora corrompido xxx, o Ãºltimo guardiÃ£o embarca em uma busca solitÃ¡ria, armado de esperanÃ§a e coragem.
+Apesar dos valentes esforços dos guerreiros, eles não conseguiram deter o avanço do Lorde das Trevas. Em meio ao desespero, um dos guardiões resistiu, mas perdeu todos os seus poderes. Guiado por um antigo oráculo por possuir bravura e força incomparáveis para enfrentar o agora corrompido xxx, o último guardião embarca em uma busca solitária, armado de esperança e coragem.
 
-Determinado a restaurar a paz, o Ãºltimo guardiÃ£o parte em uma jornada solitÃ¡ria, armado com esperanÃ§a e coragem."
-RONAN_DIALOG_1;No text yet;HerÃ³i, ainda bem que vocÃª estÃ¡ aqui.
-RONAN_DIALOG_2;No text yet;Ã‰ perigoso ir sozinho, pegue isto!
-RONAN_DIALOG_3;No text yet;Precione a tecla {action_3} para interagir com objetos.
-RONAN_QUEST_1;No text yet;HerÃ³i, tenho uma missÃ£o para vocÃª.
-RONAN_QUEST_2;No text yet;Encontre a Wanny na parte esquerda da Floresta Sombria.
-RONAN_QUEST_3;No text yet;Ela tem uma Reliquia importante para vocÃª.
-RONAN_QUEST_4;No text yet;Ao precionar {start} vocÃª abrir o painel de MissÃµes.
-OPEN_CHEST_SWORD_1;No text yet;ParabÃ©ns vocÃª pegou a Espada.
-OPEN_CHEST_SWORD_2;No text yet;Ela irÃ¡ direto ao seu inventorio rapido, localizado na parte inferior da tela.
-OPEN_CHEST_SWORD_3;No text yet;Para equipar ela, precione as teclas A ou S para se movimentar pelo inventario rapido.
-OPEN_CHEST_SWORD_4;No text yet;Depois precione D ou F para equipar nos espectivos Z ou X.
-OPEN_CHEST_SWORD_5;No text yet;VocÃª pode tambem checar o painel de Inventario pelo {start}.
+Determinado a restaurar a paz, o último guardião parte em uma jornada solitária, armado com esperança e coragem."
+RONAN_DIALOG_1;Hero, I'm glad you're here.;Herói, ainda bem que você está aqui.
+RONAN_DIALOG_2;It's dangerous to go alone, take this!;É perigoso ir sozinho, pegue isto!
+RONAN_DIALOG_3;Press the {action_3} key to interact with objects.;Pressione a tecla {action_3} para interagir com objetos.
+RONAN_QUEST_1;Hero, I have a mission for you.;Herói, tenho uma missão para você.
+RONAN_QUEST_2;Find Wanny in the left part of the Dark Forest.;Encontre a Wanny na parte esquerda da Floresta Sombria.
+RONAN_QUEST_3;She has an important Relic for you.;Ela tem uma Relíquia importante para você.
+RONAN_QUEST_4;By pressing {start}, you will open the Quests panel.;Ao pressionar {start}, você abrirá o painel de Missões.
+OPEN_CHEST_SWORD_1;Congratulations, you got the Sword.;Parabéns, você pegou a Espada.
+OPEN_CHEST_SWORD_2;It will go straight to your quick inventory, located at the bottom of the screen.;Ela irá direto ao seu inventário rápido, localizado na parte inferior da tela.
+OPEN_CHEST_SWORD_3;To equip it, press the A or S keys to move through the quick inventory.;Para equipá-la, pressione as teclas A ou S para se movimentar pelo inventário rápido.
+OPEN_CHEST_SWORD_4;Then press D or F to equip it in the respective Z or X slots.;Depois, pressione D ou F para equipá-la nos respectivos espaços Z ou X.
+OPEN_CHEST_SWORD_5;You can also check the Inventory panel by pressing {start}.;Você também pode checar o painel de Inventário pelo {start}.
 SAVE_BUTTON_TEXT;Save;Salvar
 SOUND_TITLE;Sound;Som
 SFX_TEXT;SFX;Efeitos
-MUSIC_TEXT;Music;MÃºsica
+MUSIC_TEXT;Music;Música
 LANGUAGE_TITLE;Language List;Selecione seu idioma
-LEVEL_UP_TEXT_0;No text yet;ParabÃ©ns vocÃª subiu de nÃ­vel!
-LEVEL_UP_TEXT_1;No text yet;Verifique o painel de informÃ§Ãµes do jogador no pause para aumentar seus atributos.
-YOU_NEED_A_KEY_TEXT;No text yet;VocÃª precisa de uma chave.
-YOU_NEED_A_WEAPON_TEXT;No text yet;VocÃª precisa de uma arma. HÃ¡ muitos monstros perigosos lÃ¡.
+LEVEL_UP_TEXT_0;Congratulations, you leveled up!;Parabéns, você subiu de nível!
+LEVEL_UP_TEXT_1;Check the player information panel in the pause menu to increase your attributes.;Verifique o painel de informações do jogador no menu de pausa para aumentar seus atributos.
+YOU_NEED_A_KEY_TEXT;You need a key.;Você precisa de uma chave.
+YOU_NEED_A_WEAPON_TEXT;You need a weapon. There are many dangerous monsters there.;Você precisa de uma arma. Há muitos monstros perigosos lá.
 DARK_MAGE_NAME;Dark Mage;Mago do Caos
-DARK_MAGE_DIALOG_0;No text yet;Eu sou o Mago do Caos!
-DARK_MAGE_DIALOG_1;No text yet;Um discÃ­pulo do Lorde Das Trevas.
-DARK_MAGE_DIALOG_2;No text yet;Agora vocÃª verÃ¡ uma fraÃ§Ã£o do nosso poder.
-DARK_MAGE_DIALOG_3;No text yet;Sua jornada se encerra aqui, HerÃ³i.
-DARK_MAGE_DEATH_DIALOG_0;No text yet;ImpossÃ­vel!
-DARK_MAGE_DEATH_DIALOG_1;No text yet;Como um ser tÃ£o insignificante pode me derrotar?
-;;
-;;
-;;
+DARK_MAGE_DIALOG_0;I am the Dark Mage!;Eu sou o Mago do Caos!
+DARK_MAGE_DIALOG_1;A disciple of the Dark Lord.;Um discípulo do Lorde das Trevas.
+DARK_MAGE_DIALOG_2;Now you will see a fraction of our power.;Agora você verá uma fração do nosso poder.
+DARK_MAGE_DIALOG_3;Your journey ends here, Hero.;Sua jornada se encerra aqui, Herói.
+DARK_MAGE_DEATH_DIALOG_0;No! How could this happen?;Não! Como isso pode acontecer?
+DARK_MAGE_DEATH_DIALOG_1;This cannot be...;Isso não pode ser...
+DARK_MAGE_DEATH_DIALOG_2;The Dark Lord will avenge me...;O Lorde das Trevas irá me vingar...
+DARK_MAGE_DEATH_DIALOG_3;But... my magic... is fading...;Mas... minha magia... está desaparecendo...
+DARK_LORD_DRAGON_DEATH_0;No! How did you do it?;Não! Como você conseguiu?
+DARK_LORD_DRAGON_DEATH_1;It was my most powerful creation!;Era minha criação mais poderosa!
+DARK_LORD_DRAGON_DEATH_2;It doesn't matter anymore...;Não importa mais...
+DARK_LORD_DRAGON_DEATH_3;Now, you will face ME!;Agora quem você enfrentará sou EU!
+DARK_LORDE_NAME;Dark Lord;Lorde das Trevas
+OPEN_CHEST_BOW_0;Congratulations! You got a Bow.;Parabéns! Você pegou um arco.
+OPEN_CHEST_BOW_1;Be careful, it consumes your mana points when used.;Cuidado, ele consome seus pontos de mana ao ser utilizado.
+OPEN_CHEST_BOMB_0;Congratulations! You got a Bomb.;Parabéns! Você pegou uma bomba.
+OPEN_CHEST_BOMB_1;A powerful weapon that can expel monsters and destroy structures.;Uma arma poderosa que pode repelir monstros e destruir estruturas.
+OPEN_CHEST_BOMB_2;But be careful, it consumes a significant amount of your mana points.;Mas cuidado, ela consome uma quantidade significativa dos seus pontos de mana.
+OPEN_CHEST_HEAL_STAFF_0;Congratulations! You got the Healing Staff.;Parabéns! Você pegou o Cajado de Cura.
+OPEN_CHEST_HEAL_STAFF_1;Using it recovers your Health points, but it will consume your Mana.;Ao utilizá-lo, você recupera seus pontos de vida, mas isso consumirá seus pontos de mana.
+OPEN_CHEST_KEY_0;Congratulations! You got a Key.;Parabéns! Você pegou uma chave.
+OPEN_CHEST_KEY_1;Use it wisely.;Use com sabedoria.
+OPEN_CHEST_SHIELD_0;Congratulations! You got a Magic Shield.;Parabéns! Você pegou um escudo mágico.
+OPEN_CHEST_SHIELD_1;Use it to defend yourself from monsters.;Use-o para se defender dos monstros.
+OPEN_CHEST_SHIELD_2;Additionally, the defended projectiles are converted into mana.;Além disso, os projéteis defendidos são convertidos em mana.
+INVENTORY;Inventory;Inventário
+RELICS;Relics;Relíquias
+QUESTS;Quests;Missões
+PLAYER_INFO;Player Information;Informações do Jogador
 ;;

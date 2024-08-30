@@ -16,4 +16,7 @@ func _on_Area2D_body_entered(body):
 			if typeof(enemy) == TYPE_DICTIONARY and enemy.has("id"):
 				if enemy["id"] == ID:
 					enemy["soul"] = false
+					Global.QUESTS["SOULS_QUEST"].Progress += 1
+					if Global.QUESTS["SOULS_QUEST"].Progress == Global.QUESTS["SOULS_QUEST"].Goal:
+						Global.QUESTS["SOULS_QUEST"].Completed = true
 			queue_free()

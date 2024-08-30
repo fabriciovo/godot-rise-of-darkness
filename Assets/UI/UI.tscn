@@ -339,40 +339,44 @@ focus_mode = 2
 margin_right = 134.0
 margin_bottom = 13.0
 theme = ExtResource( 11 )
-text = "Settings"
+text = "OPTIONS"
 
 [node name="Player" type="Button" parent="Pause_Options/Pause_Button_Container"]
+visible = false
 margin_top = 17.0
 margin_right = 134.0
 margin_bottom = 30.0
 theme = ExtResource( 11 )
-text = "Player Info"
+text = "PLAYER_INFO"
 
 [node name="Inventory" type="Button" parent="Pause_Options/Pause_Button_Container"]
+visible = false
 margin_top = 34.0
 margin_right = 134.0
 margin_bottom = 47.0
 theme = ExtResource( 11 )
-text = "Inventory"
+text = "INVENTORY"
 
 [node name="Relics" type="Button" parent="Pause_Options/Pause_Button_Container"]
+visible = false
 margin_top = 51.0
 margin_right = 134.0
 margin_bottom = 64.0
 theme = ExtResource( 11 )
-text = "Relics"
+text = "RELICS"
 
 [node name="Quests" type="Button" parent="Pause_Options/Pause_Button_Container"]
+visible = false
 margin_top = 68.0
 margin_right = 134.0
 margin_bottom = 81.0
 theme = ExtResource( 11 )
-text = "Quests"
+text = "QUESTS"
 
 [node name="Save" type="Button" parent="Pause_Options/Pause_Button_Container"]
-margin_top = 85.0
+margin_top = 17.0
 margin_right = 134.0
-margin_bottom = 98.0
+margin_bottom = 30.0
 theme = ExtResource( 11 )
 text = "SAVE_BUTTON_TEXT"
 
@@ -384,7 +388,6 @@ __meta__ = {
 }
 
 [node name="Player_Info" type="Control" parent="UI_Containers"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -399,7 +402,7 @@ color = Color( 0, 0, 0, 0.647059 )
 margin_right = 51.0
 margin_bottom = 12.0
 theme = ExtResource( 14 )
-text = "Player Info"
+text = "PLAYER_INFO"
 
 [node name="Max Stats" type="Panel" parent="UI_Containers/Player_Info"]
 anchor_left = 0.5
@@ -422,7 +425,7 @@ margin_right = 96.0
 margin_bottom = 18.0
 theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Max HP: "
+text = "MAX_HP "
 
 [node name="MaxMp" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
 margin_top = 22.0
@@ -430,7 +433,7 @@ margin_right = 96.0
 margin_bottom = 40.0
 theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Max MP : "
+text = "MAX_MP "
 
 [node name="MaxAp" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
 margin_top = 44.0
@@ -438,7 +441,7 @@ margin_right = 96.0
 margin_bottom = 62.0
 theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Max AP: "
+text = "MAX_AP"
 
 [node name="AttackPower" type="Label" parent="UI_Containers/Player_Info/Max Stats/Container"]
 margin_top = 66.0
@@ -446,7 +449,7 @@ margin_right = 96.0
 margin_bottom = 84.0
 theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Attack: "
+text = "ATK"
 
 [node name="Description_Panel" type="Panel" parent="UI_Containers/Player_Info"]
 anchor_left = 0.5
@@ -489,7 +492,7 @@ margin_left = 8.0
 margin_right = 64.0
 margin_bottom = 19.0
 theme = ExtResource( 14 )
-text = "Points:0"
+text = "POINTS"
 
 [node name="Panel" type="Panel" parent="UI_Containers/Player_Info/Upgrades"]
 margin_left = 8.0
@@ -511,28 +514,28 @@ margin_right = 103.0
 margin_bottom = 14.0
 theme = ExtResource( 14 )
 disabled = true
-text = "Upgrade Hp"
+text = "UPGRADE_HP"
 
 [node name="upgrade Magic" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
 margin_top = 18.0
 margin_right = 103.0
 margin_bottom = 32.0
 theme = ExtResource( 14 )
-text = "Upgrade Magic "
+text = "UPGRADE_MP"
 
 [node name="upgrade action points" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
 margin_top = 36.0
 margin_right = 103.0
 margin_bottom = 50.0
 theme = ExtResource( 14 )
-text = "Upgrade AP "
+text = "UPGRADE_AP"
 
 [node name="upgrade atk" type="Button" parent="UI_Containers/Player_Info/Upgrades/Upgrade_Panel"]
 margin_top = 54.0
 margin_right = 103.0
 margin_bottom = 68.0
 theme = ExtResource( 14 )
-text = "Upgrade Attack"
+text = "UPGRADE_ATK"
 clip_text = true
 
 [node name="Settings" type="Control" parent="UI_Containers"]
