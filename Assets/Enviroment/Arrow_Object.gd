@@ -16,7 +16,6 @@ func _process(_delta):
 	position += velocity * _delta
 
 func _on_Arrow_Object_body_entered(_body):
-	print("body coll")
 	if _body.is_in_group(Global.GROUPS.DOOR):
 		queue_free()
 	if _body.is_in_group(Global.GROUPS.STATIC):

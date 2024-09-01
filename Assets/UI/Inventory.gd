@@ -12,6 +12,7 @@ onready var game_ui = get_node("/root/Ui/Game_UI")
 
 func set_weapons():
 	weapons_list[0].grab_focus()
+	print(PlayerControll.inventory.size())
 	for weapon in PlayerControll.inventory:
 		match weapon:
 			Global.WEAPONS.SWORD: 

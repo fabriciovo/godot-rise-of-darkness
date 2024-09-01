@@ -1,7 +1,135 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/Enemy/World Enemy/World_Wood_Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Animations/damage_anim.tres" type="Animation" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Fire_Spirit.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/fire_spirit.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Animations/enemy_death.tres" type="Animation" id=4]
 
-[node name="World_Fire_Spirit" instance=ExtResource( 1 )]
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+
+void fragment(){
+	
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5, 5 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "wood_down"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "wood_left"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "wood_up"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 13, 14, 15 ]
+}
+
+[node name="World_Fire_Spirit" type="KinematicBody2D"]
+z_index = 2
+collision_layer = 4
+collision_mask = 15
 script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 4 )
+texture = ExtResource( 3 )
+hframes = 4
+vframes = 5
+
+[node name="Body_Shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.5 )
+shape = SubResource( 1 )
+
+[node name="Area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 15
+
+[node name="Area_Shape" type="CollisionShape2D" parent="Area"]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Enemy_Animation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/damage_anim = ExtResource( 1 )
+anims/enemy_death = ExtResource( 4 )
+
+[node name="Shoot_Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Wood_Enemy_Animation" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
+anims/wood_down = SubResource( 6 )
+anims/wood_left = SubResource( 7 )
+anims/wood_up = SubResource( 8 )
+
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Shoot_Timer" to="." method="_on_Shoot_Timer_timeout"]

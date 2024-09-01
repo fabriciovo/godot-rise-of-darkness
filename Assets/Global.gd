@@ -79,17 +79,17 @@ var QUESTS = {
 		"Reward": "Reward 50 XP",
 		"Has_Track": true,
 		"Progress": 0,
-		"Goal": 1,
+		"Goal": 100,
 		"Unlocked": false,
 		"Completed": false
 	},
 	"DEFEAT_DARK_MAGES": {
 		"Title": "Defeat the Dark Mages",
-		"Description": "COLLECT_SOULS_DESCRIPTION",
+		"Description": "CHASE_DARK_MAGES_DESCRIPTION",
 		"Reward": "Reward 50 XP",
 		"Has_Track": true,
 		"Progress": 0,
-		"Goal": 100,
+		"Goal": 3,
 		"Unlocked": false,
 		"Completed": false
 		}
@@ -97,7 +97,8 @@ var QUESTS = {
 
 var NPCS_QUEST_STEP_TRACK = {
 	"Wanny": 0,
-	"Ronan": 0
+	"Ronan": 0,
+	"Ana": 0
 }
 
 func get_world_data():
@@ -118,7 +119,8 @@ func get_world_data():
 		"execute_start_animation": execute_start_animation,
 		"trigger_tutorial_animation": trigger_tutorial_animation,
 		"quest_menu": quest_menu,
-		"dark_mages": dark_mages
+		"dark_mages": dark_mages,
+		"QUESTS": QUESTS
 	}
 	return data
 
@@ -157,6 +159,10 @@ func set_world_data(data):
 		quest_menu = data["quest_menu"]
 	if data.has("dark_mages"):
 		dark_mages = data["dark_mages"]
+	if data.has("dark_mages"):
+		dark_mages = data["dark_mages"]
+	if data.has("QUESTS"):
+		QUESTS = data["QUESTS"]
 
 func saveJSONData(file_name, data):
 	var file_path = save_dir + file_name + ".json"

@@ -9,7 +9,7 @@ var mp = max_mp setget set_mp
 var xp = 0 setget set_xp 
 var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
-var atk = 3 setget set_atk
+var atk = 300 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
@@ -42,6 +42,12 @@ func increase_max_ap():
 func increase_atk():
 	points-=1
 	atk += 1
+
+func set_maxhp():
+	hp = max_hp
+
+func set_maxmp():
+	mp = max_mp
 
 func set_hp(value):
 	hp = clamp(value, 0 , max_hp)
@@ -103,7 +109,7 @@ func set_xp(value):
 	if xp >= xp_to_level_up:
 		points = level + 2
 		level+=1
-		xp =  xp - xp_to_level_up
+		xp = xp - xp_to_level_up
 		xp_to_level_up = floor(xp_to_level_up * 1.2)
 		var inst_xp_text = float_text.instance()
 		var inst_level_up_text_box = level_up_text_box.instance()
@@ -111,6 +117,7 @@ func set_xp(value):
 		get_tree().get_current_scene().get_node("Player").add_child(inst_xp_text)
 		get_tree().get_current_scene().add_child(inst_level_up_text_box)
 		yield(inst_level_up_text_box,"tree_exiting")
+
 func set_level(value):
 	level = value
 
@@ -149,6 +156,7 @@ func player_data():
 	return data
 
 func load_player_data(data):
+	print(data)
 	if data.has("max_hp"):
 		max_hp = data["max_hp"]
 	if data.has("max_ap"):
@@ -186,8 +194,8 @@ func load_player_data(data):
 		base_speed = data["base_speed"]
 	if data.has("equiped_item"):
 		equiped_item = data["equiped_item"]
-		set_equiped_item(equiped_item[0], 0)
-		set_equiped_item(equiped_item[1], 1)
+#		set_equiped_item(equiped_item[0], 0)
+#		set_equiped_item(equiped_item[1], 1)
 	if data.has("dash_unlocked"):
 		dash_unlocked = data["dash_unlocked"]
 	if data.has("neck_of_protection"):
