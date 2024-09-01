@@ -53,8 +53,6 @@ func set_hp(value):
 	hp = clamp(value, 0 , max_hp)
 	if hp <= 0:
 		var scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
-		if scene_instance == OK:
-			PlayerControll.load_player_data(Global.loadJSONData("player_data"))
 
 func set_ap(value):
 	ap = clamp(value, 0 , max_ap)
@@ -178,30 +176,24 @@ func load_player_data(data):
 		points = data["points"]
 	if data.has("key"):
 		key = data["key"]
-
 	if data.has("weapons"):
-		weapons.clear() # Limpa o array antes de adicionar novos itens
+		weapons.clear() 
 		for weapon in data["weapons"]:
-			set_weapon(weapon)  # Usa a função para garantir a lógica correta
-
+			set_weapon(weapon)  
 	if data.has("inventory"):
 		inventory.clear()
 		for item in data["inventory"]:
-			set_inventory_item(item)  # Adiciona cada item corretamente
-
+			set_inventory_item(item) 
 	if data.has("relics"):
 		relics.clear()
 		for relic in data["relics"]:
-			set_relic_item(relic)  # Garante que os efeitos das relíquias sejam aplicados
-
+			set_relic_item(relic) 
 	if data.has("base_speed"):
 		base_speed = data["base_speed"]
-
 	if data.has("equiped_item"):
-		equiped_item = data["equiped_item"].duplicate()  # Duplicar para evitar problemas de referência
+		equiped_item = data["equiped_item"].duplicate() 
 		set_equiped_item(equiped_item[0], 0)
 		set_equiped_item(equiped_item[1], 1)
-
 	if data.has("dash_unlocked"):
 		dash_unlocked = data["dash_unlocked"]
 	if data.has("neck_of_protection"):
