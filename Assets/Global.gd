@@ -120,7 +120,8 @@ func get_world_data():
 		"trigger_tutorial_animation": trigger_tutorial_animation,
 		"quest_menu": quest_menu,
 		"dark_mages": dark_mages,
-		"QUESTS": QUESTS
+		"QUESTS": QUESTS,
+		"NPCS_QUEST_STEP_TRACK": NPCS_QUEST_STEP_TRACK
 	}
 	return data
 
@@ -163,6 +164,8 @@ func set_world_data(data):
 		dark_mages = data["dark_mages"]
 	if data.has("QUESTS"):
 		QUESTS = data["QUESTS"]
+	if data.has("NPCS_QUEST_STEP_TRACK"):
+		NPCS_QUEST_STEP_TRACK = data["NPCS_QUEST_STEP_TRACK"]
 
 func saveJSONData(file_name, data):
 	var file_path = save_dir + file_name + ".json"
