@@ -157,6 +157,7 @@ func player_data():
 
 func load_player_data(data):
 	print(data)
+
 	if data.has("max_hp"):
 		max_hp = data["max_hp"]
 	if data.has("max_ap"):
@@ -177,25 +178,30 @@ func load_player_data(data):
 		points = data["points"]
 	if data.has("key"):
 		key = data["key"]
+
 	if data.has("weapons"):
+		weapons.clear() # Limpa o array antes de adicionar novos itens
 		for weapon in data["weapons"]:
-			set_weapon(weapon)
+			set_weapon(weapon)  # Usa a função para garantir a lógica correta
+
 	if data.has("inventory"):
-		print("inventory")
-		print(data["inventory"])
+		inventory.clear()
 		for item in data["inventory"]:
-			print("item in invetory")
-			print(item)
-			set_inventory_item(item)
+			set_inventory_item(item)  # Adiciona cada item corretamente
+
 	if data.has("relics"):
+		relics.clear()
 		for relic in data["relics"]:
-			set_relic_item(relic)
+			set_relic_item(relic)  # Garante que os efeitos das relíquias sejam aplicados
+
 	if data.has("base_speed"):
 		base_speed = data["base_speed"]
+
 	if data.has("equiped_item"):
-		equiped_item = data["equiped_item"]
-#		set_equiped_item(equiped_item[0], 0)
-#		set_equiped_item(equiped_item[1], 1)
+		equiped_item = data["equiped_item"].duplicate()  # Duplicar para evitar problemas de referência
+		set_equiped_item(equiped_item[0], 0)
+		set_equiped_item(equiped_item[1], 1)
+
 	if data.has("dash_unlocked"):
 		dash_unlocked = data["dash_unlocked"]
 	if data.has("neck_of_protection"):

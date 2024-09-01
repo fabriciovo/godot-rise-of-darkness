@@ -69,6 +69,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Player/Player.gd"
 }, {
+"base": "Button",
+"class": "Quest_Button",
+"language": "GDScript",
+"path": "res://Assets/UI/Quest/Quest_Button.gd"
+}, {
 "base": "Node2D",
 "class": "Room_Controll",
 "language": "GDScript",
@@ -182,6 +187,7 @@ _global_script_class_icons={
 "Key_Gate": "",
 "Lever": "",
 "Player": "",
+"Quest_Button": "",
 "Room_Controll": "",
 "Scrolling_End_Text": "",
 "Scrolling_Intro_Text": "",

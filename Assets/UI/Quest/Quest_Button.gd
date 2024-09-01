@@ -1,6 +1,3 @@
-extends Button
+class_name Quest_Button extends Button
 
 var quest = ""
-
-func _on_Quest_Button_focus_entered():
-	pass # Replace with function body.
