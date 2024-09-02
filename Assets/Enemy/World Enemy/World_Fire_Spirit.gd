@@ -14,6 +14,7 @@ func configure_battle_unit():
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 500
 	speed = const_speed
+	has_soul = false
 
 func _on_Shoot_Timer_timeout():
 	$Shoot_Timer.start(rand_range(3.0, 10.0))

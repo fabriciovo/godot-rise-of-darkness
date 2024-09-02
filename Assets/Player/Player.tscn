@@ -368,7 +368,7 @@ shape = SubResource( 18 )
 position = Vector2( 0, 8 )
 scale = Vector2( 0.625, 0.5625 )
 collision_layer = 12
-collision_mask = 12
+collision_mask = 13
 script = ExtResource( 8 )
 
 [node name="Shield_Sprite" type="Sprite" parent="Shield_Area"]
@@ -404,6 +404,7 @@ frame = 5
 [connection signal="body_entered" from="Player_Body" to="." method="_on_PlayerBody_body_entered"]
 [connection signal="body_exited" from="Player_Body" to="." method="_on_PlayerBody_body_exited"]
 [connection signal="body_entered" from="Action_Area" to="." method="_on_ActionArea_body_entered"]
+[connection signal="area_entered" from="Shield_Area" to="Shield_Area" method="_on_Shield_Area_area_entered"]
 [connection signal="body_entered" from="Shield_Area" to="Shield_Area" method="_on_Shield_Area_body_entered"]
 [connection signal="timeout" from="AP_Timer" to="." method="_on_AP_Timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="." method="_on_Dash_Timer_timeout"]

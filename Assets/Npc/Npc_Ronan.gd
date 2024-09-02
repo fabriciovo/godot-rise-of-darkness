@@ -41,7 +41,8 @@ func _on_Text_Box_on_end_dialog():
 	elif quest_step == 2:
 		Global.NPCS_QUEST_STEP_TRACK.Ronan+=1
 		Global.quest_menu = true
-		Global.QUESTS["FIND_WANNY"].Unlocked = true
+#		Global.QUESTS["FIND_WANNY"].Unlocked = true
+		Ui.quests_panel.add_quest("FIND_WANNY")
 	can_talk = true
 	Global.stop = false
 	Global.cutscene = false

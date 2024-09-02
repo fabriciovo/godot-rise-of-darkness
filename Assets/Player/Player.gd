@@ -28,6 +28,7 @@ var casting = false
 var speed = PlayerControll.base_speed
 var knockback = Vector2.ZERO
 var is_shield_up
+
 func set_hp(value):
 	hp = clamp(value, 0 , PlayerControll.max_hp)
 	PlayerControll.set_hp(hp)

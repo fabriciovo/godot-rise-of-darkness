@@ -1,6 +1,6 @@
-key;en;pt
-START_GAME;Start Game;Começar Jogo
-OPTIONS;Settings;Opções
+ï»¿key;en;pt
+START_GAME;Start Game;ComeÃ§ar Jogo
+OPTIONS;Settings;OpÃ§Ãµes
 LOAD_GAME;Load Game;Carregar Jogo
 QUIT;Quit;Sair
 SWORD_NAME;Sword;Espada
@@ -10,8 +10,8 @@ HEAL_STAFF_NAME;Heal Staff;Cajado de Cura
 SHIELD_NAME;Shield;Escudo
 BOOTS_OF_SPEED_NAME;Boots of Speed;Botas da Velocidade
 RING_OF_DASH_NAME;Ring of Dash;Anel do Lampejo
-NECKLACE_OF_PROTECTION_NAME;Necklace of Protection;Colar da Proteção
-SWORD_DESCRIPTION;No text yet;Espada \n\n Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+NECKLACE_OF_PROTECTION_NAME;Necklace of Protection;Colar da ProteÃ§Ã£o
+SWORD_DESCRIPTION;No text yet;Espada \n\n Esta espada Ã© uma heranÃ§a dos antigos GuardiÃµes da Luz, forjada nas chamas de um vulcÃ£o sagrado e temperada com Ã¡gua de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
 BOW_DESCRIPTION;No text yet;Sem descricao ainda
 BOMB_DESCRIPTION;No text yet;Sem descricao ainda
 HEAL_STAFF_DESCRIPTION;No text yet;Sem descricao ainda
@@ -20,71 +20,107 @@ BOOTS_OF_SPEED_DESCRIPTION;No text yet;Sem descricao ainda
 RING_OF_DASH_DESCRIPTION;No text yet;Sem descricao ainda
 NECKLACE_OF_PROTECTION_DESCRIPTION;No text yet;Sem descricao ainda
 UNLOCKED_ITEM;????;????
-SELECT_EN;English;Inglês
-SELECT_PT;Portuguese;Português
+SELECT_EN;English;InglÃªs
+SELECT_PT;Portuguese;PortuguÃªs
 SELECT_LANGUAGE_TITLE;Select your language;Selecione seu idioma
 Z_TO_CONFIRM;Press Z to confirm;Precione Z para confirmar
 COLLECT_SOULS_DESCRIPTION;teste;teste
-CANT_GO_BACK;teste;Não desista de sua aventura, Herói.
+CANT_GO_BACK;teste;NÃ£o desista de sua aventura, HerÃ³i.
 INTRODUCTION;"
 Centuries ago, xxx flourished under the care of the benevolent Guardians of Light, led by the powerful and virtuous xxx. However, a malevolent force corrupted xxx's mind, transforming him into the Dark Lord. Betraying his fellow guardians, he plunged the realm into darkness, summoning shadowy creatures that surrounded the land.
 
 Despite the valiant efforts of the warriors, they couldn't halt the Dark Lord's advance. In the midst of despair, one of the guardians resisted but lost all his powers. Guided by an ancient oracle for possessing unparalleled bravery and strength to confront the now-corrupted xxx, the last guardian embarks on a solitary quest, armed with hope and courage.
 
-Determined to restore peace, the last guardian sets out on a lone journey, armed with hope and courage.";"Séculos atrás, xxx floresceu sob os cuidados dos benevolentes Guardiões da Luz, liderados pelos poderosos e virtuosos xxx. No entanto, uma força malévola corrompeu a mente de xxx, transformando-o no Lorde das Trevas. Traindo seus companheiros guardiões, ele mergulhou o reino na escuridão, invocando criaturas sombrias que cercavam a terra.
+Determined to restore peace, the last guardian sets out on a lone journey, armed with hope and courage.";"SÃ©culos atrÃ¡s, xxx floresceu sob os cuidados dos benevolentes GuardiÃµes da Luz, liderados pelos poderosos e virtuosos xxx. No entanto, uma forÃ§a malÃ©vola corrompeu a mente de xxx, transformando-o no Lorde das Trevas. Traindo seus companheiros guardiÃµes, ele mergulhou o reino na escuridÃ£o, invocando criaturas sombrias que cercavam a terra.
 
-Apesar dos valentes esforços dos guerreiros, eles não conseguiram deter o avanço do Lorde das Trevas. Em meio ao desespero, um dos guardiões resistiu, mas perdeu todos os seus poderes. Guiado por um antigo oráculo por possuir bravura e força incomparáveis para enfrentar o agora corrompido xxx, o último guardião embarca em uma busca solitária, armado de esperança e coragem.
+Apesar dos valentes esforÃ§os dos guerreiros, eles nÃ£o conseguiram deter o avanÃ§o do Lorde das Trevas. Em meio ao desespero, um dos guardiÃµes resistiu, mas perdeu todos os seus poderes. Guiado por um antigo orÃ¡culo por possuir bravura e forÃ§a incomparÃ¡veis para enfrentar o agora corrompido xxx, o Ãºltimo guardiÃ£o embarca em uma busca solitÃ¡ria, armado de esperanÃ§a e coragem.
 
-Determinado a restaurar a paz, o último guardião parte em uma jornada solitária, armado com esperança e coragem."
-RONAN_DIALOG_1;Hero, I'm glad you're here.;Herói, ainda bem que você está aqui.
-RONAN_DIALOG_2;It's dangerous to go alone, take this!;É perigoso ir sozinho, pegue isto!
+Determinado a restaurar a paz, o Ãºltimo guardiÃ£o parte em uma jornada solitÃ¡ria, armado com esperanÃ§a e coragem."
+RONAN_DIALOG_1;Hero, I'm glad you're here.;HerÃ³i, ainda bem que vocÃª estÃ¡ aqui.
+RONAN_DIALOG_2;It's dangerous to go alone, take this!;Ã‰ perigoso ir sozinho, pegue isto!
 RONAN_DIALOG_3;Press the {action_3} key to interact with objects.;Pressione a tecla {action_3} para interagir com objetos.
-RONAN_QUEST_1;Hero, I have a mission for you.;Herói, tenho uma missão para você.
+RONAN_QUEST_1;Hero, I have a mission for you.;HerÃ³i, tenho uma missÃ£o para vocÃª.
 RONAN_QUEST_2;Find Wanny in the left part of the Dark Forest.;Encontre a Wanny na parte esquerda da Floresta Sombria.
-RONAN_QUEST_3;She has an important Relic for you.;Ela tem uma Relíquia importante para você.
-RONAN_QUEST_4;By pressing {start}, you will open the Quests panel.;Ao pressionar {start}, você abrirá o painel de Missões.
-OPEN_CHEST_SWORD_1;Congratulations, you got the Sword.;Parabéns, você pegou a Espada.
-OPEN_CHEST_SWORD_2;It will go straight to your quick inventory, located at the bottom of the screen.;Ela irá direto ao seu inventário rápido, localizado na parte inferior da tela.
-OPEN_CHEST_SWORD_3;To equip it, press the A or S keys to move through the quick inventory.;Para equipá-la, pressione as teclas A ou S para se movimentar pelo inventário rápido.
-OPEN_CHEST_SWORD_4;Then press D or F to equip it in the respective Z or X slots.;Depois, pressione D ou F para equipá-la nos respectivos espaços Z ou X.
-OPEN_CHEST_SWORD_5;You can also check the Inventory panel by pressing {start}.;Você também pode checar o painel de Inventário pelo {start}.
+RONAN_QUEST_3;She has an important Relic for you.;Ela tem uma RelÃ­quia importante para vocÃª.
+RONAN_QUEST_4;By pressing {start}, you will open the Quests panel.;Ao pressionar {start}, vocÃª abrirÃ¡ o painel de MissÃµes.
+OPEN_CHEST_SWORD_1;Congratulations, you got the Sword.;ParabÃ©ns, vocÃª pegou a Espada.
+OPEN_CHEST_SWORD_2;It will go straight to your quick inventory, located at the bottom of the screen.;Ela irÃ¡ direto ao seu inventÃ¡rio rÃ¡pido, localizado na parte inferior da tela.
+OPEN_CHEST_SWORD_3;To equip it, press the A or S keys to move through the quick inventory.;Para equipÃ¡-la, pressione as teclas A ou S para se movimentar pelo inventÃ¡rio rÃ¡pido.
+OPEN_CHEST_SWORD_4;Then press D or F to equip it in the respective Z or X slots.;Depois, pressione D ou F para equipÃ¡-la nos respectivos espaÃ§os Z ou X.
+OPEN_CHEST_SWORD_5;You can also check the Inventory panel by pressing {start}.;VocÃª tambÃ©m pode checar o painel de InventÃ¡rio pelo {start}.
 SAVE_BUTTON_TEXT;Save;Salvar
 SOUND_TITLE;Sound;Som
 SFX_TEXT;SFX;Efeitos
-MUSIC_TEXT;Music;Música
+MUSIC_TEXT;Music;MÃºsica
 LANGUAGE_TITLE;Language List;Selecione seu idioma
-LEVEL_UP_TEXT_0;Congratulations, you leveled up!;Parabéns, você subiu de nível!
-LEVEL_UP_TEXT_1;Check the player information panel in the pause menu to increase your attributes.;Verifique o painel de informações do jogador no menu de pausa para aumentar seus atributos.
-YOU_NEED_A_KEY_TEXT;You need a key.;Você precisa de uma chave.
-YOU_NEED_A_WEAPON_TEXT;You need a weapon. There are many dangerous monsters there.;Você precisa de uma arma. Há muitos monstros perigosos lá.
+LEVEL_UP_TEXT_0;Congratulations, you leveled up!;ParabÃ©ns, vocÃª subiu de nÃ­vel!
+LEVEL_UP_TEXT_1;Check the player information panel in the pause menu to increase your attributes.;Verifique o painel de informaÃ§Ãµes do jogador no menu de pausa para aumentar seus atributos.
+YOU_NEED_A_KEY_TEXT;You need a key.;VocÃª precisa de uma chave.
+YOU_NEED_A_WEAPON_TEXT;You need a weapon. There are many dangerous monsters there.;VocÃª precisa de uma arma. HÃ¡ muitos monstros perigosos lÃ¡.
 DARK_MAGE_NAME;Dark Mage;Mago do Caos
 DARK_MAGE_DIALOG_0;I am the Dark Mage!;Eu sou o Mago do Caos!
-DARK_MAGE_DIALOG_1;A disciple of the Dark Lord.;Um discípulo do Lorde das Trevas.
-DARK_MAGE_DIALOG_2;Now you will see a fraction of our power.;Agora você verá uma fração do nosso poder.
-DARK_MAGE_DIALOG_3;Your journey ends here, Hero.;Sua jornada se encerra aqui, Herói.
-DARK_MAGE_DEATH_DIALOG_0;No! How could this happen?;Não! Como isso pode acontecer?
-DARK_MAGE_DEATH_DIALOG_1;This cannot be...;Isso não pode ser...
-DARK_MAGE_DEATH_DIALOG_2;The Dark Lord will avenge me...;O Lorde das Trevas irá me vingar...
-DARK_MAGE_DEATH_DIALOG_3;But... my magic... is fading...;Mas... minha magia... está desaparecendo...
-DARK_LORD_DRAGON_DEATH_0;No! How did you do it?;Não! Como você conseguiu?
-DARK_LORD_DRAGON_DEATH_1;It was my most powerful creation!;Era minha criação mais poderosa!
-DARK_LORD_DRAGON_DEATH_2;It doesn't matter anymore...;Não importa mais...
-DARK_LORD_DRAGON_DEATH_3;Now, you will face ME!;Agora quem você enfrentará sou EU!
+DARK_MAGE_DIALOG_1;A disciple of the Dark Lord.;Um discÃ­pulo do Lorde das Trevas.
+DARK_MAGE_DIALOG_2;Now you will see a fraction of our power.;Agora vocÃª verÃ¡ uma fraÃ§Ã£o do nosso poder.
+DARK_MAGE_DIALOG_3;Your journey ends here, Hero.;Sua jornada se encerra aqui, HerÃ³i.
+DARK_MAGE_DEATH_DIALOG_0;No! How could this happen?;NÃ£o! Como isso pode acontecer?
+DARK_MAGE_DEATH_DIALOG_1;This cannot be...;Isso nÃ£o pode ser...
+DARK_MAGE_DEATH_DIALOG_2;The Dark Lord will avenge me...;O Lorde das Trevas irÃ¡ me vingar...
+DARK_MAGE_DEATH_DIALOG_3;But... my magic... is fading...;Mas... minha magia... estÃ¡ desaparecendo...
+DARK_LORD_DRAGON_DEATH_0;No! How did you do it?;NÃ£o! Como vocÃª conseguiu?
+DARK_LORD_DRAGON_DEATH_1;It was my most powerful creation!;Era minha criaÃ§Ã£o mais poderosa!
+DARK_LORD_DRAGON_DEATH_2;It doesn't matter anymore...;NÃ£o importa mais...
+DARK_LORD_DRAGON_DEATH_3;Now, you will face ME!;Agora quem vocÃª enfrentarÃ¡ sou EU!
 DARK_LORDE_NAME;Dark Lord;Lorde das Trevas
-OPEN_CHEST_BOW_0;Congratulations! You got a Bow.;Parabéns! Você pegou um arco.
+OPEN_CHEST_BOW_0;Congratulations! You got a Bow.;ParabÃ©ns! VocÃª pegou um arco.
 OPEN_CHEST_BOW_1;Be careful, it consumes your mana points when used.;Cuidado, ele consome seus pontos de mana ao ser utilizado.
-OPEN_CHEST_BOMB_0;Congratulations! You got a Bomb.;Parabéns! Você pegou uma bomba.
+OPEN_CHEST_BOMB_0;Congratulations! You got a Bomb.;ParabÃ©ns! VocÃª pegou uma bomba.
 OPEN_CHEST_BOMB_1;A powerful weapon that can expel monsters and destroy structures.;Uma arma poderosa que pode repelir monstros e destruir estruturas.
 OPEN_CHEST_BOMB_2;But be careful, it consumes a significant amount of your mana points.;Mas cuidado, ela consome uma quantidade significativa dos seus pontos de mana.
-OPEN_CHEST_HEAL_STAFF_0;Congratulations! You got the Healing Staff.;Parabéns! Você pegou o Cajado de Cura.
-OPEN_CHEST_HEAL_STAFF_1;Using it recovers your Health points, but it will consume your Mana.;Ao utilizá-lo, você recupera seus pontos de vida, mas isso consumirá seus pontos de mana.
-OPEN_CHEST_KEY_0;Congratulations! You got a Key.;Parabéns! Você pegou uma chave.
+OPEN_CHEST_HEAL_STAFF_0;Congratulations! You got the Healing Staff.;ParabÃ©ns! VocÃª pegou o Cajado de Cura.
+OPEN_CHEST_HEAL_STAFF_1;Using it recovers your Health points, but it will consume your Mana.;Ao utilizÃ¡-lo, vocÃª recupera seus pontos de vida, mas isso consumirÃ¡ seus pontos de mana.
+OPEN_CHEST_KEY_0;Congratulations! You got a Key.;ParabÃ©ns! VocÃª pegou uma chave.
 OPEN_CHEST_KEY_1;Use it wisely.;Use com sabedoria.
-OPEN_CHEST_SHIELD_0;Congratulations! You got a Magic Shield.;Parabéns! Você pegou um escudo mágico.
+OPEN_CHEST_SHIELD_0;Congratulations! You got a Magic Shield.;ParabÃ©ns! VocÃª pegou um escudo mÃ¡gico.
 OPEN_CHEST_SHIELD_1;Use it to defend yourself from monsters.;Use-o para se defender dos monstros.
-OPEN_CHEST_SHIELD_2;Additionally, the defended projectiles are converted into mana.;Além disso, os projéteis defendidos são convertidos em mana.
-INVENTORY;Inventory;Inventário
-RELICS;Relics;Relíquias
-QUESTS;Quests;Missões
-PLAYER_INFO;Player Information;Informações do Jogador
+OPEN_CHEST_SHIELD_2;Additionally, the defended projectiles are converted into mana.;AlÃ©m disso, os projÃ©teis defendidos sÃ£o convertidos em mana.
+INVENTORY;Inventory;InventÃ¡rio
+RELICS;Relics;RelÃ­quias
+QUESTS;Quests;MissÃµes
+PLAYER_INFO;Player Information;InformaÃ§Ãµes do Jogador
+MAX_HP;Max HP;PV MÃ¡ximos
+MAX_MP;Max  MP;PM MÃ¡ximos
+MAX_AP;Max  AP;PA MÃ¡ximos
+ATK;Max ATK;ATQ MÃ¡ximo
+UPGRADE_HP;Upgrade HP;Aumentar PV
+UPGRADE_MP;Upgrade MP;Aumentar PM
+UPGRADE_AP;Upgrade AP;Aumentar PA
+UPGRADE_ATK;Upgrade ATK;Aumentar ATQ
+HP_DESCRIPTION;Description of HP;DescriÃ§Ã£o dos Pontos de Vida
+MP_DESCRIPTION;Description of MP;DescriÃ§Ã£o dos Pontos de Mana
+AP_DESCRIPTION;Description of AP;DescriÃ§Ã£o dos Pontos de AÃ§Ã£o
+ATK_DESCRIPTION;Description of Attack;DescriÃ§Ã£o do Ataque
+MAX_HP_INFO_TITLE;Max  Health Points;Pontos de Vida MÃ¡ximos
+MAX_MP_INFO_TITLE;Max  Mana Points;Pontos de Mana MÃ¡ximos
+MAX_AP_INFO_TITLE;Max  Action Points;Pontos de AÃ§Ã£o MÃ¡ximos
+MAX_ATK_INFO_TITLE;Max  Attack;Ataque MÃ¡ximo
+WANNY_START_QUEST_0;Hero, I'm glad you found me.;Heroi, ainda bem que vocÃª me encontrou.
+WANNY_START_QUEST_1;The Dark Lord is using the souls of innocent people to turn them into monsters.;O Lorde das Trevas estÃ¡ usando almas de pessoas inocentes para transformar em monstros.
+WANNY_START_QUEST_2;I have created a Relic that can help us with this.;Eu criei uma RelÃ­quia que pode nos ajudar com isso.
+WANNY_START_QUEST_3;The Ring of Souls.;O Anel das Almas.
+WANNY_START_QUEST_4;Once you kill the monsters, you'll be able to see and collect those souls.;Assim que vocÃª matar os monstros, poderÃ¡ ver e coletar essas almas.
+WANNY_START_QUEST_5;Don't worry about the monsters you've already killed.;NÃ£o se preocupe com os monstros que vocÃª jÃ¡ matou.
+WANNY_START_QUEST_6;You can still collect those souls.;VocÃª ainda pode coletar essas almas.
+WANNY_START_QUEST_7;This ring is not just for collecting souls.;Esse anel nÃ£o serve apenas para coletar as almas.
+WANNY_START_QUEST_8;We will use their power to defeat the Dark Lord.;Vamos usar o poder delas para derrotar o Lorde das Trevas.
+WANNY_START_QUEST_9;But for that, you need to collect at least 100 souls.;Mas para isso vocÃª precisa pelo menos coletar 100 almas.
+WANNY_START_QUEST_10;Bring the ring back to me once you've collected 100 souls.;Me traga o anel aqui quando tiver coletado as 100 almas.
+WANNY_START_QUEST_11;Then you'll have the power to destroy the Dark Lord.;Assim vocÃª terÃ¡ o poder para destruir o Lorde das Trevas.
+YOU_GET_RING_OF_SOULS;You received the Ring of Souls.;VocÃª recebeu o Anel das Almas.
+WANNY_COLLECT_SOULS_COMPLETED_0;Now the Ring of Souls is at full power.;Agora o Anel das Almas estÃ¡ com seu poder total.
+WANNY_COLLECT_SOULS_COMPLETED_1;But to use it, you need to be at full health.;Mas para ser utilizado, vocÃª precisa estar com a vida completa.
+WANNY_COLLECT_SOULS_COMPLETED_2;And now your sword shoots magical projectiles.;E agora sua espada dispara projÃ©teis mÃ¡gicos.
+;;
+;;
+;;
+;;
 ;;

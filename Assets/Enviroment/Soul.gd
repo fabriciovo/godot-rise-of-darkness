@@ -12,6 +12,9 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group(Global.GROUPS.PLAYER):
+		PlayerControll.set_hp(PlayerControll.hp+1)
+		PlayerControll.set_mp(PlayerControll.mp+1)
+		PlayerControll.set_xp(PlayerControll.xp+1)
 		for enemy in Global.dead_enemies:
 			if typeof(enemy) == TYPE_DICTIONARY and enemy.has("id"):
 				if enemy["id"] == ID:

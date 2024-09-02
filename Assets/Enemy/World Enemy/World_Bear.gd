@@ -24,11 +24,13 @@ func configure_battle_unit():
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 300
 	speed = const_speed
+	has_soul = true
 
 func initialize_movement_control():
 	pick_random_direction()
 
 func _physics_process(_delta):
+	print(speed)
 	if wall_hit: return
 	if battle_unit_hp <= 0: return
 	update_random_direction_timer(_delta)
@@ -41,6 +43,7 @@ func update_random_direction_timer(_delta):
 		pick_random_direction()
 
 	check_raycast_collision()
+
 
 func pick_random_direction():
 	if attacking or wall_hit: return
