@@ -92,6 +92,7 @@ door_name = "Door_World_Right_2"
 
 [node name="Door_World_Right_2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 192, 9 )
+z_as_relative = false
 target_scene = "res://Assets/World/sub world/World_Right_3.tscn"
 door_name = "Door_World_Right_3"
 

@@ -1,6 +1,46 @@
 [
     {
-        "Name": "",
-        "Text": "YOU_NEED_A_WEAPON_TEXT"
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_0"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_1"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_2"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_2"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_3"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_4"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_5"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_6"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_7"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_8"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_9"
     }
 ]

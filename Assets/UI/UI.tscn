@@ -26,7 +26,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.678431, 0.678431, 0.678431, 1 )
+border_color = Color( 1, 1, 1, 1 )
 corner_detail = 1
 
 [sub_resource type="DynamicFont" id=5]
@@ -336,7 +336,7 @@ focus_next = NodePath("Settings")
 focus_mode = 2
 
 [node name="Settings" type="Button" parent="Pause_Options/Pause_Button_Container"]
-margin_right = 134.0
+margin_right = 92.0
 margin_bottom = 13.0
 theme = ExtResource( 11 )
 text = "OPTIONS"
@@ -374,6 +374,7 @@ theme = ExtResource( 11 )
 text = "QUESTS"
 
 [node name="Save" type="Button" parent="Pause_Options/Pause_Button_Container"]
+visible = false
 margin_top = 17.0
 margin_right = 134.0
 margin_bottom = 30.0

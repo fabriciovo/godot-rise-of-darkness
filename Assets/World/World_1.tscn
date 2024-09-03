@@ -52,10 +52,10 @@ target_scene = "res://Assets/World/Dungeon/Dungeon_Bonus.tscn"
 
 [node name="Enviroment_Entities" type="Node2D" parent="."]
 
-[node name="Chest_key_0" parent="Enviroment_Entities" instance=ExtResource( 7 )]
+[node name="Chest_boots_of_speed" parent="Enviroment_Entities" instance=ExtResource( 7 )]
 position = Vector2( 152, 41 )
 z_index = 7
-item = 4
+type = "relics"
 
 [node name="Chest_Sword" parent="Enviroment_Entities" instance=ExtResource( 7 )]
 visible = false

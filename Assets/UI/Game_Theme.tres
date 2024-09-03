@@ -1,10 +1,11 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
 
 [ext_resource path="res://Assets/UI/Fonts/dogicabold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/UI/Button9FrameHover.tres" type="StyleBox" id=2]
 [ext_resource path="res://Assets/UI/Panel9Frame.tres" type="StyleBox" id=3]
 [ext_resource path="res://Assets/UI/Button9Frame.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/UI/Button9FramePressed.tres" type="StyleBox" id=5]
+[ext_resource path="res://Images/Button9Slice.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=4]
 size = 6
@@ -19,6 +20,12 @@ Button/styles/focus = ExtResource( 2 )
 Button/styles/hover = ExtResource( 2 )
 Button/styles/normal = ExtResource( 4 )
 Button/styles/pressed = ExtResource( 5 )
+HSlider/icons/grabber = ExtResource( 6 )
+HSlider/icons/grabber_disabled = ExtResource( 6 )
+HSlider/icons/grabber_highlight = ExtResource( 6 )
+HSlider/styles/grabber_area = ExtResource( 3 )
+HSlider/styles/grabber_area_highlight = ExtResource( 4 )
+HSlider/styles/slider = ExtResource( 4 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/fonts/font = SubResource( 4 )
 RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )

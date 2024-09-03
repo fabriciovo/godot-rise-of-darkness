@@ -4,6 +4,7 @@ onready var player_info = $Pause_Button_Container/Player
 onready var inventory = $Pause_Button_Container/Inventory
 onready var relics = $Pause_Button_Container/Relics
 onready var quests = $Pause_Button_Container/Quests
+onready var save = $Pause_Button_Container/Save
 
 func set_visible_options():
 	if PlayerControll.level >= 2:
@@ -18,3 +19,4 @@ func set_visible_options():
 		quests.visible = true
 	if Global.quest_menu:
 		quests.visible = true
+		save.visible = true

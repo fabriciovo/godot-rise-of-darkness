@@ -117,9 +117,12 @@ func _on_Area_body_entered(_body):
 	if attacking and not wall_hit:
 		on_wall_hit()
 
-func _on_Area_area_entered(area):
-	if area.is_in_group(Global.GROUPS.SWORD) and not hit:
+func _on_Area_area_entered(_area):
+	if _area.is_in_group(Global.GROUPS.SWORD) and not hit:
 		damage(knockback,  PlayerControll.atk)
-	if area.is_in_group(Global.GROUPS.SHIELD) and not hit and not wall_hit and attacking:
-		knockback = area.knockback_vector * 10
+	if _area.is_in_group(Global.GROUPS.SHIELD) and not hit and not wall_hit and attacking:
+		knockback = _area.knockback_vector * 10
 		on_wall_hit()
+	if _area.is_in_group(Global.GROUPS.ARROW) and not hit:
+		damage(knockback,  PlayerControll.atk+1)
+		_area.queue_free()

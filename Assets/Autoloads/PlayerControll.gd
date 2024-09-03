@@ -9,7 +9,7 @@ var mp = max_mp setget set_mp
 var xp = 0 setget set_xp 
 var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
-var atk = 300 setget set_atk
+var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
@@ -52,7 +52,7 @@ func set_maxmp():
 func set_hp(value):
 	hp = clamp(value, 0 , max_hp)
 	if hp <= 0:
-		var scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
+		var _scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 
 func set_ap(value):
 	ap = clamp(value, 0 , max_ap)
@@ -145,9 +145,7 @@ func player_data():
 		"atk": atk,
 		"base_speed": base_speed,
 		"points": points,
-		"weapons": weapons,
 		"inventory": inventory,
-		"equiped_item": equiped_item,
 		"key": key,
 		"relics": relics,
 	}
@@ -176,10 +174,6 @@ func load_player_data(data):
 		points = data["points"]
 	if data.has("key"):
 		key = data["key"]
-	if data.has("weapons"):
-		weapons.clear() 
-		for weapon in data["weapons"]:
-			set_weapon(weapon)  
 	if data.has("inventory"):
 		inventory.clear()
 		for item in data["inventory"]:
@@ -190,10 +184,6 @@ func load_player_data(data):
 			set_relic_item(relic) 
 	if data.has("base_speed"):
 		base_speed = data["base_speed"]
-	if data.has("equiped_item"):
-		equiped_item = data["equiped_item"].duplicate() 
-		set_equiped_item(equiped_item[0], 0)
-		set_equiped_item(equiped_item[1], 1)
 	if data.has("dash_unlocked"):
 		dash_unlocked = data["dash_unlocked"]
 	if data.has("neck_of_protection"):

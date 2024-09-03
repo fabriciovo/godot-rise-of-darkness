@@ -33,6 +33,7 @@ func _process(_delta):
 	if  player == null or navigation_path == null: return
 	if dead: return
 	if hit:
+		mushroom_player.play("mushroom_start_explosion")
 		explosion()
 
 func _physics_process(_delta):
@@ -89,6 +90,6 @@ func explosion():
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	queue_free()
 
-func _on_Explosion_Area_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
+func _on_Explosion_Area_body_entered(_body):
+	if _body.is_in_group(Global.GROUPS.PLAYER):
 		explosion()
