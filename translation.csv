@@ -11,21 +11,21 @@ SHIELD_NAME;Shield;Escudo
 BOOTS_OF_SPEED_NAME;Boots of Speed;Botas da Velocidade
 RING_OF_DASH_NAME;Ring of Dash;Anel do Lampejo
 NECKLACE_OF_PROTECTION_NAME;Necklace of Protection;Colar da Proteção
-SWORD_DESCRIPTION;No text yet;Espada \n\n Esta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
-BOW_DESCRIPTION;No text yet;Sem descricao ainda
-BOMB_DESCRIPTION;No text yet;Sem descricao ainda
-HEAL_STAFF_DESCRIPTION;No text yet;Sem descricao ainda
-SHIELD_DESCRIPTION;No text yet;Sem descricao ainda
-BOOTS_OF_SPEED_DESCRIPTION;No text yet;Sem descricao ainda
-RING_OF_DASH_DESCRIPTION;No text yet;Sem descricao ainda
-NECKLACE_OF_PROTECTION_DESCRIPTION;No text yet;Sem descricao ainda
+SWORD_DESCRIPTION;Sword \n\nThis sword is a legacy of the ancient Guardians of Light, forged in the flames of a sacred volcano and tempered with water from a crystalline river. It emits a soft glow, reminiscent of the times of peace in xxx.;Espada \n\nEsta espada é uma herança dos antigos Guardiões da Luz, forjada nas chamas de um vulcão sagrado e temperada com a água de um rio cristalino. Ela emite um brilho suave, lembrando os tempos de paz em xxx.
+BOW_DESCRIPTION;Bow \n\nThe magical bow is a rare gem, a gift from the ancient guardians. It is made of mystical wood and enchanted strings, allowing it to shoot arrows of pure light. The arrows never miss their target and have the power to dispel darkness, piercing through shadows with precision and force.;Arco \n\nO arco mágico é uma joia rara, um presente dos antigos guardiões. Ele é feito de uma madeira mística e fios encantados, permitindo disparar flechas de luz pura. As flechas nunca erram seu alvo e têm o poder de dissipar a escuridão, penetrando as sombras com precisão e força.
+BOMB_DESCRIPTION;Bomb \n\nThe bombs are a creation of the wise alchemists of xxx, used as a weapon of great impact against dark creatures. When activated, they release a brilliant explosion of light and energy, disintegrating anything dark around them. They are essential tools for clearing blocked paths or facing stronger enemies.;Bomba\n\nAs bombas são uma criação dos sábios alquimistas de xxx, utilizadas como uma arma de grande impacto contra as criaturas sombrias. Quando acionadas, liberam uma explosão brilhante de luz e energia, desintegrando qualquer coisa sombria ao seu redor. São ferramentas essenciais para abrir caminho em áreas bloqueadas ou enfrentar inimigos mais fortes.
+HEAL_STAFF_DESCRIPTION;Healing Staff \n\nThis is a relic of the ancient guardians, made from a sacred tree of xxx. It possesses the power to channel the healing energy of the earth, restoring the vitality of the warrior and their allies. When wielded, it emits a healing light that purifies wounds, closing them and revitalizing the warrior.;Cajado de Cura\n\nÉ uma relíquia dos antigos guardiões, feito de uma árvore sagrada de xxx. Ele possui o poder de canalizar a energia curativa da terra, restaurando a vitalidade do guerreiro e seus aliados. Quando empunhado, emite uma luz curativa que purifica as feridas, fechando-as e revitalizando o guerreiro.
+SHIELD_DESCRIPTION;Magic Shield \n\nThis is a protective barrier created from the energy of the guardians. It is strong yet light, with ancient symbols that glow when in use. This shield can deflect dark attacks and even absorb some of the evil energy to return it to the enemy. It is an essential defense for the warrior on their journey against the Dark Lord.;Escudo Mágico\n\nÉ uma barreira protetora criada a partir da energia dos guardiões. Ele é resistente e leve, com símbolos antigos que brilham quando em uso. Este escudo pode desviar ataques sombrios e até mesmo absorver parte da energia maligna para devolver ao inimigo. É uma defesa essencial para o guerreiro em sua jornada contra o Lorde das Trevas.
+BOOTS_OF_SPEED_DESCRIPTION;Boots of Speed \n\nForged by the ancient Guardians of Light, the Boots of Speed grant the wearer supernatural agility. With each step, the warrior moves like the wind, becoming almost impossible to catch by enemies. This relic allows the guardian to swiftly navigate treacherous terrain and escape the clutches of darkness.;Botas da Velocidade\n\nForjada pelos antigos Guardiões da Luz, a Bota da Velocidade concede ao portador uma agilidade sobrenatural. Com cada passo, o guerreiro se move como o vento, tornando-se quase impossível de ser capturado pelos inimigos. Essa relíquia permite ao guardião navegar rapidamente pelos terrenos mais traiçoeiros e escapar das garras da escuridão.
+RING_OF_DASH_DESCRIPTION;Ring of Dash \n\nForged with the essence of shadows and speed, the Ring of Dash allows the warrior to dash through enemies in the blink of an eye. When its power is activated, the wearer performs a swift and precise movement, dodging attacks with supernatural agility. This ring grants the guardian the ability to glide through hordes of monsters, becoming intangible for a brief moment, like a fleeting shadow escaping the touch of darkness.;Anel do Lampejo\n\nForjado com a essência das sombras e da velocidade, o Anel do Lampejo permite ao guerreiro atravessar os inimigos em um piscar de olhos. Ao ativar seu poder, o portador executa um movimento rápido e preciso, esquivando-se dos ataques com agilidade sobrenatural. Esse anel concede ao guardião a habilidade de deslizar através das hordas de monstros, tornando-o intangível por um breve momento, como uma sombra fugaz que escapa ao toque das trevas.
+NECKLACE_OF_PROTECTION_DESCRIPTION;Necklace of Protection\n\nCreated from a fragment of a star's heart, the Amulet of Light emits a radiant glow that repels creatures of darkness. In addition to illuminating the darkest paths, this amulet also strengthens the warrior's spirit, increasing their resistance to the Dark Lord's malevolent influence.;Amuleto da Proteção\n\nCriado a partir de um fragmento do coração de uma estrela, o Amuleto da Luz emite um brilho radiante que afasta as criaturas das trevas. Além de iluminar os caminhos mais sombrios, este amuleto também fortalece o espírito do guerreiro, aumentando sua capacidade de resistir às influências malignas do Lorde das Trevas.
 UNLOCKED_ITEM;????;????
 SELECT_EN;English;Inglês
 SELECT_PT;Portuguese;Português
 SELECT_LANGUAGE_TITLE;Select your language;Selecione seu idioma
 Z_TO_CONFIRM;Press Z to confirm;Precione Z para confirmar
-COLLECT_SOULS_DESCRIPTION;teste;teste
-CANT_GO_BACK;teste;Não desista de sua aventura, Herói.
+COLLECT_SOULS_DESCRIPTION;Defeat monsters and collect their souls. Once you have 100 souls, return to speak with Wanny.;Elimine monstros e colete suas almas. Ao conseguir as 100 almas, volte para falar com a Wanny.
+CANT_GO_BACK;Don't give up on your adventure, Hero.;Não desista de sua aventura, Herói.
 INTRODUCTION;"
 Centuries ago, xxx flourished under the care of the benevolent Guardians of Light, led by the powerful and virtuous xxx. However, a malevolent force corrupted xxx's mind, transforming him into the Dark Lord. Betraying his fellow guardians, he plunged the realm into darkness, summoning shadowy creatures that surrounded the land.
 
@@ -103,6 +103,29 @@ MAX_HP_INFO_TITLE;Max  Health Points;Pontos de Vida Máximos
 MAX_MP_INFO_TITLE;Max  Mana Points;Pontos de Mana Máximos
 MAX_AP_INFO_TITLE;Max  Action Points;Pontos de Ação Máximos
 MAX_ATK_INFO_TITLE;Max  Attack;Ataque Máximo
+FIRE_MAGE_NAME;Fire Mage;Mago do Fogo
+FIRE_MAGE_DIALOG_0;I am the Fire Mage!;Eu sou o Mago do Fogo!
+FIRE_MAGE_DIALOG_1;A disciple of the Dark Lord.;Um discípulo do Lorde das Trevas.
+FIRE_MAGE_DIALOG_2;You will feel the wrath of the Dark Lord!;Você irá sentir a ira do Lorde das Trevas!
+FIRE_MAGE_DIALOG_3;Here you will burn, Hero.;Aqui você irá queimar, Herói.
+ANA_NPC_NAME;Ana;Ana
+ANA_DIALOG_START_0;Hero! I'm glad you came!;Herói! Que bom que você veio!
+ANA_DIALOG_START_1;I need help! I was captured by the Monsters.;Preciso de ajuda! Fui capturada pelos monstros.
+ANA_DIALOG_START_2;To free me from this gate, you need to eliminate all the monsters in this area.;Para me libertar deste portão, você precisa eliminar todos os monstros desta área.
+ANA_DIALOG_SAVED_0;Thank you, Hero! You saved me.;Obrigada, Herói! Você me salvou.
+ANA_DIALOG_SAVED_1;The Dark Forest is filled with powerful monsters.;A Floresta Sombria está repleta de monstros poderosos.
+ANA_DIALOG_SAVED_2;This includes the disciples of the Dark Lord.;Isso inclui os discípulos do Lorde das Trevas.
+ANA_DIALOG_SAVED_3;The Dark Mages.;Os Magos das Trevas.
+ANA_DIALOG_SAVED_4;They are powerful beings, you must be careful with them.;São seres poderosos, você tem que tomar cuidado com eles.
+ANA_DIALOG_SAVED_5;Additionally, they are an important pillar for the Dark Lord.;Além disso, eles são um pilar importante para o Lorde das Trevas.
+ANA_DIALOG_SAVED_6;They are the ones who keep the Dark Lord protected.;São eles que mantêm o Lorde das Trevas protegido.
+ANA_DIALOG_SAVED_7;One of your most important missions is to defeat the 3 Dark Mages.;Uma das suas missões mais importantes é derrotar os 3 Magos das Trevas.
+ANA_DIALOG_SAVED_8;Chaos Mage, Fire Mage, and the Necromancer Mage.;Mago do Caos, Mago do Fogo e o Mago Necromante.
+ANA_DIALOG_SAVED_9;They keep the entrance door to the Dark Lord's chamber sealed.;Eles mantêm a porta de entrada da sala do Lorde das Trevas erguida.
+ANA_DIALOG_SAVED_10;Once they are defeated, the door will fall.;Assim que eles forem derrotados, a porta será derrubada.
+ANA_DIALOG_SAVED_11;You must be prepared for the battles ahead.;Você deve estar preparado para as batalhas que virão.
+ANA_DIALOG_SAVED_12;Because of this, I am here to help you.;Por conta disso, estou aqui para te ajudar.
+ANA_DIALOG_SAVED_13;Whenever you need, come talk to me and I can restore all your HP.;Quando precisar, pode vir falar comigo que eu consigo recuperar todos os seus PVs.
 WANNY_START_QUEST_0;Hero, I'm glad you found me.;Heroi, ainda bem que você me encontrou.
 WANNY_START_QUEST_1;The Dark Lord is using the souls of innocent people to turn them into monsters.;O Lorde das Trevas está usando almas de pessoas inocentes para transformar em monstros.
 WANNY_START_QUEST_2;I have created a Relic that can help us with this.;Eu criei uma Relíquia que pode nos ajudar com isso.
@@ -119,7 +142,15 @@ YOU_GET_RING_OF_SOULS;You received the Ring of Souls.;Você recebeu o Anel das A
 WANNY_COLLECT_SOULS_COMPLETED_0;Now the Ring of Souls is at full power.;Agora o Anel das Almas está com seu poder total.
 WANNY_COLLECT_SOULS_COMPLETED_1;But to use it, you need to be at full health.;Mas para ser utilizado, você precisa estar com a vida completa.
 WANNY_COLLECT_SOULS_COMPLETED_2;And now your sword shoots magical projectiles.;E agora sua espada dispara projéteis mágicos.
-;;
+ANA_HEAL_PLAYER;Ana heals the player.;Ana cura o jogador.
+YOU_GET_BOOTS_OF_SPEED_0;Congratulations! You got the Boots of Speed.;Parabéns! Você pegou as Botas da Velocidade.
+YOU_GET_BOOTS_OF_SPEED_1;This relic grants additional speed to the Hero.;Essa relíquia concede velocidade adicional ao Herói.
+YOU_GET_RING_OF_DASH_0;Congratulations! You got the Ring of Dash.;Parabéns! Você pegou o Anel do Lampejo.
+YOU_GET_RING_OF_DASH_1;This relic can be used by pressing C.;Essa relíquia pode ser utilizada ao pressionar C.
+YOU_GET_RING_OF_DASH_2;Now you can dodge monsters and their attacks.;Agora você pode desviar de monstros e de seus ataques.
+YOU_GET_NEK_OF_PROTECTION_0;Congratulations! You got the Necklace of Protection.;Parabéns! Você pegou o Colar da Proteção.
+YOU_GET_NEK_OF_PROTECTION_1;This necklace grants protection to the Hero, blocking any monster attack.;Esse colar concede uma proteção ao Herói, bloqueando qualquer ataque de um monstro.
+YOU_GET_NEK_OF_PROTECTION_2;But it only blocks one attack and resets when entering a new area.;Mas ele bloqueia apenas um ataque e reseta ao entrar em uma nova área.
 ;;
 ;;
 ;;

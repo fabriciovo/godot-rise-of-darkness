@@ -6,8 +6,9 @@ var can_talk = true
 
 func _ready():
 	var _quest_step = Global.NPCS_QUEST_STEP_TRACK.Ana
-	$Text_Box_Layer/Text_Box.dialog_name = dialog_name[_quest_step]
-	$Text_Box_Layer/Text_Box.start_dialog()
+	if _quest_step == 0:
+		$Text_Box_Layer/Text_Box.dialog_name = dialog_name[_quest_step]
+		$Text_Box_Layer/Text_Box.start_dialog()
 
 func _input(_event):
 	if not player: return
