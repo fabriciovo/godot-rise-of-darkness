@@ -35,6 +35,7 @@ func _on_Text_Box_on_end_dialog():
 	if quest_step == 0:
 		Global.NPCS_QUEST_STEP_TRACK.Ana+=1
 	elif quest_step == 1:
+		Ui.quests_panel.add_quest("DEFEAT_DARK_MAGES")
 		Global.NPCS_QUEST_STEP_TRACK.Ana+=1
 	elif quest_step == 2:
 		PlayerControll.set_maxhp()

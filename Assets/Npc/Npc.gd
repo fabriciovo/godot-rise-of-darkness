@@ -1,7 +1,7 @@
 extends Node2D
 
 var player = null
-var dialog_name = ["wanny_dialog_start_quest.json", "wanny_dialog_during_quest.json", "wanny_dialog_complete_quest.json", "wanny_quest_completed.json", "wanny_quest_completed.json"]
+var dialog_name = ["wanny_dialog_start_quest.json", "wanny_dialog_during_quest.json", "wanny_quest_completed.json", "wanny_quest_completed.json", "wanny_quest_completed.json"]
 var can_talk = true
 
 func _ready():

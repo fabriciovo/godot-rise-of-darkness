@@ -42,5 +42,21 @@
     {
         "Name": "ANA_NPC_NAME",
         "Text": "ANA_DIALOG_SAVED_9"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_10"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_11"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_12"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_SAVED_13"
     }
 ]

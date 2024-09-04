@@ -67,7 +67,6 @@ func set_inventory_item(_value):
 			set_weapon(_value)
 			return
 
-
 func set_relic_item(value):
 	match value:
 		Global.RELICS.BOOTS_OF_SPEED:
@@ -152,8 +151,6 @@ func player_data():
 	return data
 
 func load_player_data(data):
-	print(data)
-
 	if data.has("max_hp"):
 		max_hp = data["max_hp"]
 	if data.has("max_ap"):

@@ -18,15 +18,8 @@ func _ready():
 		quest_info.bbcode_text = tr(_quest["Description"])
 
 func grab_focus():
-	print( Global.QUESTS)
-	print(quests_container)
-	print(quests_container.get_children())
 	for quest_button in quests_container.get_children():
 		quest_button.visible = Global.QUESTS[quest_button.quest].Unlocked
-#		var quest_in_container = quests_container[i]
-#		print(quest_in_container)
-#		print(quest_in_container.quest)
-#		quest_in_container.visible = Global.QUESTS[quest_in_container.quest].Unlocked
 	quests_container.get_children()[0].grab_focus()
 
 func add_quest(_quest_key):
