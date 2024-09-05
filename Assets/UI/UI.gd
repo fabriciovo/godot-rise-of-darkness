@@ -37,12 +37,12 @@ func _input(_event):
 
 
 func _process(_delta):
-	HP.text = "HP: " + str(PlayerControll.hp)
-	MP.text = "MP: " + str(PlayerControll.mp)
-	AP.text = "AP: " + str(PlayerControll.ap)
-	key_label.text = "Key: " + str(PlayerControll.key) 
-	level_panel.get_node("Level").text = "LvL: " + str(PlayerControll.level)
-	level_panel.get_node("xp").text = "XP:" + str(PlayerControll.xp) + "/" + str(PlayerControll.xp_to_level_up)
+	HP.text = tr("HP") + ": " + str(PlayerControll.hp)
+	MP.text = tr("MP") + ": " + str(PlayerControll.mp)
+	AP.text = tr("AP") + ": " + str(PlayerControll.ap)
+	key_label.text = tr("KEY") + str(PlayerControll.key) 
+	level_panel.get_node("Level").text = tr("LVL") + ": " + str(PlayerControll.level)
+	level_panel.get_node("xp").text = tr("XP") + ": " + str(PlayerControll.xp) + "/" + str(PlayerControll.xp_to_level_up)
 	if PlayerControll.equiped_item[0] < 0:
 		item_1.visible = false
 	else:
@@ -57,7 +57,7 @@ func _process(_delta):
 		pause_options.visible = false
 
 func _on_PlayerControl_hp_changed(value):
-	HP.text = "HP " + str(value)
+	HP.text = tr("HP") + ": " + str(value)
 
 func _on_heal_gui_input(event):
 	if can_equip_heal:

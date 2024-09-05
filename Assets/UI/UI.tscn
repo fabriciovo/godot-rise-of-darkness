@@ -137,9 +137,6 @@ margin_top = 2.0
 margin_right = 221.0
 margin_bottom = 26.0
 rect_pivot_offset = Vector2( -65, -2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HP" type="Label" parent="Game_UI/Items/Stats"]
 margin_top = -1.99998
@@ -340,6 +337,7 @@ margin_right = 92.0
 margin_bottom = 13.0
 theme = ExtResource( 11 )
 text = "OPTIONS"
+clip_text = true
 
 [node name="Player" type="Button" parent="Pause_Options/Pause_Button_Container"]
 visible = false
@@ -348,6 +346,7 @@ margin_right = 134.0
 margin_bottom = 30.0
 theme = ExtResource( 11 )
 text = "PLAYER_INFO"
+clip_text = true
 
 [node name="Inventory" type="Button" parent="Pause_Options/Pause_Button_Container"]
 visible = false
@@ -356,6 +355,7 @@ margin_right = 134.0
 margin_bottom = 47.0
 theme = ExtResource( 11 )
 text = "INVENTORY"
+clip_text = true
 
 [node name="Relics" type="Button" parent="Pause_Options/Pause_Button_Container"]
 visible = false
@@ -364,6 +364,7 @@ margin_right = 134.0
 margin_bottom = 64.0
 theme = ExtResource( 11 )
 text = "RELICS"
+clip_text = true
 
 [node name="Quests" type="Button" parent="Pause_Options/Pause_Button_Container"]
 visible = false
@@ -372,6 +373,7 @@ margin_right = 134.0
 margin_bottom = 81.0
 theme = ExtResource( 11 )
 text = "QUESTS"
+clip_text = true
 
 [node name="Save" type="Button" parent="Pause_Options/Pause_Button_Container"]
 visible = false
@@ -380,6 +382,7 @@ margin_right = 134.0
 margin_bottom = 30.0
 theme = ExtResource( 11 )
 text = "SAVE_BUTTON_TEXT"
+clip_text = true
 
 [node name="UI_Containers" type="Control" parent="."]
 anchor_right = 1.0

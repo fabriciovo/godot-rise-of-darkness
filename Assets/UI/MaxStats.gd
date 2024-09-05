@@ -8,7 +8,7 @@ onready var maxmp = container.get_node("MaxMp")
 
 
 func _process(_delta):
-	maxhp.text = "MAX_HP" + str(PlayerControll.max_hp)
-	maxmp.text = "MAX_HP" + str(PlayerControll.max_mp)
-	maxap.text = "MAX_HP" + str(PlayerControll.max_ap)
-	attackPower.text = "ATK" + str(PlayerControll.atk)
+	maxhp.text = tr("MAX_HP") + ":" + str(PlayerControll.max_hp)
+	maxmp.text = tr("MAX_HP") + ":" + str(PlayerControll.max_mp)
+	maxap.text = tr("MAX_HP") + ":" + str(PlayerControll.max_ap)
+	attackPower.text = tr("ATK") + ":" + str(PlayerControll.atk)

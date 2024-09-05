@@ -4,7 +4,7 @@ onready var points = get_node("Points")
 onready var buttons = $Upgrade_Panel.get_children()
 
 func _process(_delta):
-	points.text = "Points: " + str(PlayerControll.points)
+	points.text = tr("POINTS") + ":" + str(PlayerControll.points)
 	if PlayerControll.points > 0:
 		for button in buttons:
 			button.disabled = false
