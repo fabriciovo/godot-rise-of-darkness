@@ -67,16 +67,15 @@ const RELICS = {
 
 var QUESTS = {
 	"FIND_WANNY": {
-		"Title": "Find Wanny in lost woods",
+		"Title": "FIND_WANNY_QUEST_NAME",
 		"Description": "RONAN_QUEST_2",
 		"Has_Track": false,
 		"Unlocked": false,
 		"Completed": false
 	},
 	"SOULS_QUEST": {
-		"Title": "Collect souls",
+		"Title": "COLLECT_SOULS_QUEST_NAME",
 		"Description": "COLLECT_SOULS_DESCRIPTION",
-		"Reward": "Reward 50 XP",
 		"Has_Track": true,
 		"Progress": 0,
 		"Goal": 100,
@@ -84,9 +83,8 @@ var QUESTS = {
 		"Completed": false
 	},
 	"DEFEAT_DARK_MAGES": {
-		"Title": "Defeat the Dark Mages",
+		"Title": "DEFFEAT_DARK_MAGES_QUEST_NAME",
 		"Description": "CHASE_DARK_MAGES_DESCRIPTION",
-		"Reward": "Reward 50 XP",
 		"Has_Track": true,
 		"Progress": 0,
 		"Goal": 3,
