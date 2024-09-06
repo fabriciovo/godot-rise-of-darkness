@@ -124,6 +124,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Inventory/Weapon_Slot.gd"
 }, {
+"base": "World_En",
+"class": "World_Bat",
+"language": "GDScript",
+"path": "res://Assets/Enemy/World Enemy/World_Bat.gd"
+}, {
 "base": "World_Enemy",
 "class": "World_Bear",
 "language": "GDScript",
@@ -198,6 +203,7 @@ _global_script_class_icons={
 "Text_Box": "",
 "Title_Scene": "",
 "Weapon_Slot": "",
+"World_Bat": "",
 "World_Bear": "",
 "World_Boss_Slime": "",
 "World_Dragon_Boss": "",

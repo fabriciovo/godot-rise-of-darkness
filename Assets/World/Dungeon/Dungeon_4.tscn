@@ -45,21 +45,21 @@ position = Vector2( 104, 119 )
 [node name="Box2" parent="Entities" index="3" instance=ExtResource( 5 )]
 position = Vector2( 121, 119 )
 
-[node name="Skulls" parent="." index="7" instance=ExtResource( 2 )]
-position = Vector2( 111, 51 )
-
-[node name="Mana_Pillar" parent="." index="8" instance=ExtResource( 4 )]
+[node name="Mana_Pillar" parent="." index="7" instance=ExtResource( 4 )]
 position = Vector2( 192, 48 )
 
-[node name="Dungeon_5" parent="." index="9" instance=ExtResource( 6 )]
+[node name="Dungeon_5" parent="." index="8" instance=ExtResource( 6 )]
 position = Vector2( 112, 131 )
 rotation = 3.14159
 target_scene = "res://Assets/World/Dungeon/Dungeon_5.tscn"
 door_name = "Dungeon_4"
 
-[node name="Dungeon_3" parent="." index="10" instance=ExtResource( 6 )]
+[node name="Dungeon_3" parent="." index="9" instance=ExtResource( 6 )]
 position = Vector2( 13, 80 )
 rotation = -1.5708
 z_index = 1
 target_scene = "res://Assets/World/Dungeon/Dungeon_3.tscn"
 door_name = "Dungeon_4"
+
+[node name="Skulls" parent="Imortal_Entities" index="0" instance=ExtResource( 2 )]
+position = Vector2( 111, 51 )

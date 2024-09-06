@@ -40,7 +40,7 @@ func _process(_delta):
 	HP.text = tr("HP") + ": " + str(PlayerControll.hp)
 	MP.text = tr("MP") + ": " + str(PlayerControll.mp)
 	AP.text = tr("AP") + ": " + str(PlayerControll.ap)
-	key_label.text = tr("KEY") + str(PlayerControll.key) 
+	key_label.text = tr("KEY") + ": " + str(PlayerControll.key) 
 	level_panel.get_node("Level").text = tr("LVL") + ": " + str(PlayerControll.level)
 	level_panel.get_node("xp").text = tr("XP") + ": " + str(PlayerControll.xp) + "/" + str(PlayerControll.xp_to_level_up)
 	if PlayerControll.equiped_item[0] < 0:

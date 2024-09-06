@@ -177,7 +177,8 @@ margin_bottom = 17.0
 theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 6 )
-text = "Key: 0"
+text = "Chv: 0"
+clip_text = true
 
 [node name="Weapons" type="Control" parent="Game_UI/Items"]
 margin_left = 54.0
@@ -640,6 +641,7 @@ anchor_left = 0.0401786
 anchor_top = 0.0294118
 anchor_right = 0.200893
 anchor_bottom = 0.852941
+theme = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -685,7 +687,7 @@ anchor_left = 0.241071
 anchor_top = 0.0294118
 anchor_right = 0.928571
 anchor_bottom = 0.670588
-theme = ExtResource( 11 )
+theme = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": true
 }

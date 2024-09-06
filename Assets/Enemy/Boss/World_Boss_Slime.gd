@@ -44,6 +44,7 @@ func init_slime(_slime_instance, _knockback_value):
 	var _random_x = randf() * (_max - _min) + _min
 	var _random_y = randf() * (_max - _min) + _min
 	var _random_vector = Vector2(_random_x, _random_y)
+	_slime_instance.has_soul = false
 	_slime_instance.is_wake_up = true
 	_slime_instance.battle_unit_xp = 0
 	_slime_instance.hit = true

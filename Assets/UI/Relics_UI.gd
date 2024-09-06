@@ -14,8 +14,8 @@ func set_relics():
 			Global.RELICS.RING_OF_DASH:
 				relic_list[0].icon = ring_icon
 				relic_list[0].disabled = false
-				relic_list[1].text = ""
-				text_label.bbcode_text = tr("RING_OF_DASH_DESCRIPTION_TEXT")
+				relic_list[0].text = ""
+				text_label.bbcode_text = tr("RING_OF_DASH_DESCRIPTION")
 			Global.RELICS.NECKLACE_OF_PROTECTION:
 				relic_list[1].icon = neckalce_icon
 				relic_list[1].disabled = false
@@ -37,7 +37,7 @@ func _on_Ring_focus_entered():
 
 func _on_necklace_focus_entered():
 	if relic_list[1].icon != null:
-		text_label.bbcode_text = tr("NECKLACE_DESCRIPTION")
+		text_label.bbcode_text = tr("NECKLACE_OF_PROTECTION_DESCRIPTION")
 	else:
 		text_label.bbcode_text = "?????"
 

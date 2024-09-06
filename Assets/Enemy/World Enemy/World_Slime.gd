@@ -20,6 +20,7 @@ func _ready():
 	direction.x = rand_range(-20, 20)
 	direction.y = rand_range(-20, 20)
 	$Sprite.visible = false
+	has_soul = true
 
 
 func _physics_process(delta):
