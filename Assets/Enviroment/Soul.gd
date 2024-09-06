@@ -11,15 +11,16 @@ func _ready():
 		collect_area.monitorable = false
 
 func _on_Area2D_body_entered(body):
-	if body.is_in_group(Global.GROUPS.PLAYER):
-		PlayerControll.set_hp(PlayerControll.hp+1)
-		PlayerControll.set_mp(PlayerControll.mp+1)
-		PlayerControll.set_xp(PlayerControll.xp+1)
+	if body.is_in_group(Global.GROUPS.PLAYER) and PlayerControll.ring_of_souls:
+
 		for enemy in Global.dead_enemies:
 			if typeof(enemy) == TYPE_DICTIONARY and enemy.has("id"):
 				if enemy["id"] == ID:
 					enemy["soul"] = false
 					Global.QUESTS["SOULS_QUEST"].Progress += 1
+					PlayerControll.set_hp(PlayerControll.hp+1)
+					PlayerControll.set_mp(PlayerControll.mp+1)
+					PlayerControll.set_xp(1)
 					if Global.QUESTS["SOULS_QUEST"].Progress == Global.QUESTS["SOULS_QUEST"].Goal:
 						Global.QUESTS["SOULS_QUEST"].Completed = true
 			queue_free()

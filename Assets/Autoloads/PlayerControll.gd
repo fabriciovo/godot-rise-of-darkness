@@ -104,7 +104,7 @@ func set_key(value):
 func set_xp(value):
 	xp += value
 	if xp >= xp_to_level_up:
-		points = level + 2
+		points += level + 2
 		level+=1
 		xp = xp - xp_to_level_up
 		xp_to_level_up = floor(xp_to_level_up * 1.2)
@@ -125,7 +125,7 @@ func set_atk(value):
 	atk = value
 
 func set_points(value):
-	points = value
+	points += value
 
 func restart():
 	set_hp(max_hp)

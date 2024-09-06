@@ -151,7 +151,16 @@ YOU_GET_RING_OF_DASH_2;Now you can dodge monsters and their attacks.;Agora você
 YOU_GET_NEK_OF_PROTECTION_0;Congratulations! You got the Necklace of Protection.;Parabéns! Você pegou o Colar da Proteção.
 YOU_GET_NEK_OF_PROTECTION_1;This necklace grants protection to the Hero, blocking any monster attack.;Esse colar concede uma proteção ao Herói, bloqueando qualquer ataque de um monstro.
 YOU_GET_NEK_OF_PROTECTION_2;But it only blocks one attack and resets when entering a new area.;Mas ele bloqueia apenas um ataque e reseta ao entrar em uma nova área.
-;;
-;;
-;;
-;;
+POINTS;Points;Pontos
+HP;HP;PV
+MP;MP;PM
+AP;AP;PA
+KEY;Key;Chaves
+LVL;LvL;Nv
+XP;Xp;Exp
+CHASE_DARK_MAGES_DESCRIPTION;Find and defeat the 3 Dark Wizards.;Encontrar e derrotar os 3 Magos das Trevas..
+FIND_WANNY_QUEST_NAME;Find Wanny;Encontre Wanny
+COLLECT_SOULS_QUEST_NAME;Collect Souls;Colete Almas
+DEFFEAT_DARK_MAGES_QUEST_NAME;Defeat Dark Mages;Derrote os Magos das Trevas
+END_GAME_TEXT;With a final strike, the Dark Lord was defeated, his dark power undone, and his corrupt influence fading like mist under the morning sun. As the Dark Lord fell, the creatures that had plagued the land began to vanish, retreating back into the shadows from which they came.;Com um último golpe, o Dark Lord foi derrotado, seu poder sombrio desfeito e sua influência corrompida desaparecendo como uma névoa dissipando ao amanhecer. À medida que o corpo do Lorde das Trevas caía, as criaturas que assolavam o reino também começaram a desaparecer, retornando às sombras de onde vieram.
+ENDING_LABEL_TEXT;Thanks for playing.;Obrigado por jogar.
