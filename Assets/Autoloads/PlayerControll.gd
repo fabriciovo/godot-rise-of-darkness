@@ -176,9 +176,7 @@ func load_player_data(data):
 		for item in data["inventory"]:
 			set_inventory_item(item) 
 	if data.has("relics"):
-		relics.clear()
-		for relic in data["relics"]:
-			set_relic_item(relic) 
+		relics = data["relics"]
 	if data.has("base_speed"):
 		base_speed = data["base_speed"]
 	if data.has("dash_unlocked"):

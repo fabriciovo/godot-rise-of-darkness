@@ -95,10 +95,10 @@ UPGRADE_HP;Upgrade HP;Aumentar PV
 UPGRADE_MP;Upgrade MP;Aumentar PM
 UPGRADE_AP;Upgrade AP;Aumentar PA
 UPGRADE_ATK;Upgrade ATK;Aumentar ATQ
-HP_DESCRIPTION;Description of HP;Descrição dos Pontos de Vida
-MP_DESCRIPTION;Description of MP;Descrição dos Pontos de Mana
-AP_DESCRIPTION;Description of AP;Descrição dos Pontos de Ação
-ATK_DESCRIPTION;Description of Attack;Descrição do Ataque
+HP_DESCRIPTION;Represents the character's vitality. When it reaches zero, the character is incapacitated.;Representam a vitalidade do personagem. Ao atingir zero, o personagem é incapacitado.
+MP_DESCRIPTION;Measures the magical energy used to cast special abilities and spells.;Medem a energia mágica usada para conjurar habilidades especiais e feitiços.
+AP_DESCRIPTION;Determines the number of actions the character can perform, such as attacks and abilities.;Determinam o número de ações que o personagem pode realizar, como ataques e habilidades.
+ATK_DESCRIPTION;Defines the strength of physical or magical attacks against enemies. The higher the value, the more damage inflicted.;Define a força dos golpes físicos ou mágicos desferidos contra o inimigo. Quanto maior, mais dano causado.
 MAX_HP_INFO_TITLE;Max  Health Points;Pontos de Vida Máximos
 MAX_MP_INFO_TITLE;Max  Mana Points;Pontos de Mana Máximos
 MAX_AP_INFO_TITLE;Max  Action Points;Pontos de Ação Máximos
@@ -155,7 +155,7 @@ POINTS;Points;Pontos
 HP;HP;PV
 MP;MP;PM
 AP;AP;PA
-KEY;Key;Chaves
+KEY;Key;Chv
 LVL;LvL;Nv
 XP;Xp;Exp
 CHASE_DARK_MAGES_DESCRIPTION;Find and defeat the 3 Dark Wizards.;Encontrar e derrotar os 3 Magos das Trevas..
@@ -164,3 +164,5 @@ COLLECT_SOULS_QUEST_NAME;Collect Souls;Colete Almas
 DEFFEAT_DARK_MAGES_QUEST_NAME;Defeat Dark Mages;Derrote os Magos das Trevas
 END_GAME_TEXT;With a final strike, the Dark Lord was defeated, his dark power undone, and his corrupt influence fading like mist under the morning sun. As the Dark Lord fell, the creatures that had plagued the land began to vanish, retreating back into the shadows from which they came.;Com um último golpe, o Dark Lord foi derrotado, seu poder sombrio desfeito e sua influência corrompida desaparecendo como uma névoa dissipando ao amanhecer. À medida que o corpo do Lorde das Trevas caía, as criaturas que assolavam o reino também começaram a desaparecer, retornando às sombras de onde vieram.
 ENDING_LABEL_TEXT;Thanks for playing.;Obrigado por jogar.
+RING_OF_SOULS_DESCRIPTION;Created by the adventurer Wanny, this ring grants the power to see the souls of monsters. At its full power, it will grant new abilities to the player.;Criado pela Aventureira Wanny, esse anel concede o poder de ver almas de monstros. E em seu poder total concederá novas habilidades ao jogador.
+ACTION_3;Spacebar;Barra de Espaço

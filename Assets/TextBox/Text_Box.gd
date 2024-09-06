@@ -71,9 +71,9 @@ func nextPhrase():
 #	label_name.text = dialog[phrase_num]["Name"]
 	var label_name = dialog[phrase_num]["Name"]
 	if label_name == "":
-		label_text.text = tr(dialog[phrase_num]["Text"])
+		label_text.text = tr(dialog[phrase_num]["Text"]).format({"action_3":"ACTION_3"})
 	else:
-		label_text.text = tr(dialog[phrase_num]["Name"]) + "\n" + tr(dialog[phrase_num]["Text"])
+		label_text.text = tr(dialog[phrase_num]["Name"]) + "\n" + tr(dialog[phrase_num]["Text"]).format({"action_3":"SPACEBAR", "start": "ENTER" })
 	label_text.visible_characters = 0
 	while label_text.visible_characters < len(label_text.text):
 		label_text.visible_characters += 1

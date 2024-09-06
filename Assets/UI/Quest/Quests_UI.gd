@@ -9,7 +9,7 @@ func _ready():
 	for _quest_key in Global.QUESTS:
 		var _quest = Global.QUESTS[_quest_key]
 		var _temp = quest_button.instance()
-		_temp.connect("focus_entered", self, "_on_quest_button_focus_entered", [_quest])
+		_temp.connect("focus_entered", self, "_on_quest_button_focus_entered", [_quest_key])
 		_temp.text = _quest["Title"]
 		_temp.name = _quest["Title"]
 		_temp.quest = _quest_key
@@ -25,8 +25,9 @@ func grab_focus():
 func add_quest(_quest_key):
 	Global.QUESTS[_quest_key].Unlocked = true
 
-
-func _on_quest_button_focus_entered(_quest):
+func _on_quest_button_focus_entered(_quest_key):
+	print(_quest_key)
+	var _quest = Global.QUESTS[_quest_key]
 	quest_info.bbcode_text = tr(_quest["Description"])
 	if _quest["Has_Track"]:
 		quest_info.bbcode_text += "\n" + str(_quest["Progress"]) + " / " + str(_quest["Goal"])
