@@ -141,12 +141,17 @@ func player_data():
 		"mp": mp,
 		"xp": xp,
 		"xp_to_level_up": xp_to_level_up,
+		"level": level,
 		"atk": atk,
 		"base_speed": base_speed,
 		"points": points,
 		"inventory": inventory,
 		"key": key,
 		"relics": relics,
+		"dash_unlocked": dash_unlocked,
+		"neck_of_protection": neck_of_protection,
+		"ring_of_souls": ring_of_souls,
+		"souls_quest_completed": souls_quest_completed
 	}
 	return data
 
@@ -165,6 +170,8 @@ func load_player_data(data):
 		xp = data["xp"]
 	if data.has("xp_to_level_up"):
 		xp_to_level_up = data["xp_to_level_up"]
+	if data.has("level"):
+		level = data["level"]
 	if data.has("atk"):
 		atk = data["atk"]
 	if data.has("points"):

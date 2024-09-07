@@ -15,15 +15,15 @@ func set_relics():
 			relic_list[0].disabled = false
 			relic_list[0].text = ""
 			text_label.bbcode_text = tr("RING_OF_DASH_DESCRIPTION")
-		if Global.RELICS.NECKLACE_OF_PROTECTION:
+		if relic == Global.RELICS.NECKLACE_OF_PROTECTION:
 			relic_list[1].icon = neckalce_icon
 			relic_list[1].disabled = false
 			relic_list[1].text = ""
-		if Global.RELICS.BOOTS_OF_SPEED:
+		if relic == Global.RELICS.BOOTS_OF_SPEED:
 			relic_list[2].icon = boots_of_speed_icon
 			relic_list[2].disabled = false
 			relic_list[2].text = ""
-		if Global.RELICS.RING_OF_SOULS:
+		if relic == Global.RELICS.RING_OF_SOULS:
 			relic_list[3].icon = boots_of_speed_icon
 			relic_list[3].disabled = false
 			relic_list[3].text = ""
