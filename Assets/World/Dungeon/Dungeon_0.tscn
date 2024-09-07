@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Static_Object.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Enviroment/Skulls.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Enemy_Skeleton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=5]
 
@@ -60,3 +61,5 @@ __meta__ = {
 }
 target_scene = "res://Assets/World/World_0.tscn"
 door_name = "Dungeon_door_0"
+
+[node name="Skulls" parent="Imortal_Entities" index="0" instance=ExtResource( 3 )]

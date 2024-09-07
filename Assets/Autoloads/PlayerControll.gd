@@ -9,11 +9,11 @@ var mp = max_mp setget set_mp
 var xp = 0 setget set_xp 
 var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
-var atk = 300 setget set_atk
+var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
-var inventory = []
-var equiped_item = [-1,-1] 
+var inventory = [0,1,2,3,5]
+var equiped_item = [1,0] 
 var relics = []
 var key = 0
 var base_speed = 30
@@ -52,7 +52,7 @@ func set_maxmp():
 func set_hp(value):
 	hp = clamp(value, 0 , max_hp)
 	if hp <= 0:
-		var scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
+		var _scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 
 func set_ap(value):
 	ap = clamp(value, 0 , max_ap)
@@ -66,7 +66,6 @@ func set_inventory_item(_value):
 		if weapons[i] == -1:
 			set_weapon(_value)
 			return
-
 
 func set_relic_item(value):
 	match value:
@@ -105,7 +104,7 @@ func set_key(value):
 func set_xp(value):
 	xp += value
 	if xp >= xp_to_level_up:
-		points = level + 2
+		points += level + 2
 		level+=1
 		xp = xp - xp_to_level_up
 		xp_to_level_up = floor(xp_to_level_up * 1.2)
@@ -126,7 +125,7 @@ func set_atk(value):
 	atk = value
 
 func set_points(value):
-	points = value
+	points += value
 
 func restart():
 	set_hp(max_hp)
@@ -142,20 +141,21 @@ func player_data():
 		"mp": mp,
 		"xp": xp,
 		"xp_to_level_up": xp_to_level_up,
+		"level": level,
 		"atk": atk,
 		"base_speed": base_speed,
 		"points": points,
-		"weapons": weapons,
 		"inventory": inventory,
-		"equiped_item": equiped_item,
 		"key": key,
 		"relics": relics,
+		"dash_unlocked": dash_unlocked,
+		"neck_of_protection": neck_of_protection,
+		"ring_of_souls": ring_of_souls,
+		"souls_quest_completed": souls_quest_completed
 	}
 	return data
 
 func load_player_data(data):
-	print(data)
-
 	if data.has("max_hp"):
 		max_hp = data["max_hp"]
 	if data.has("max_ap"):
@@ -170,30 +170,22 @@ func load_player_data(data):
 		xp = data["xp"]
 	if data.has("xp_to_level_up"):
 		xp_to_level_up = data["xp_to_level_up"]
+	if data.has("level"):
+		level = data["level"]
 	if data.has("atk"):
 		atk = data["atk"]
 	if data.has("points"):
 		points = data["points"]
 	if data.has("key"):
 		key = data["key"]
-	if data.has("weapons"):
-		weapons.clear() 
-		for weapon in data["weapons"]:
-			set_weapon(weapon)  
 	if data.has("inventory"):
 		inventory.clear()
 		for item in data["inventory"]:
 			set_inventory_item(item) 
 	if data.has("relics"):
-		relics.clear()
-		for relic in data["relics"]:
-			set_relic_item(relic) 
+		relics = data["relics"]
 	if data.has("base_speed"):
 		base_speed = data["base_speed"]
-	if data.has("equiped_item"):
-		equiped_item = data["equiped_item"].duplicate() 
-		set_equiped_item(equiped_item[0], 0)
-		set_equiped_item(equiped_item[1], 1)
 	if data.has("dash_unlocked"):
 		dash_unlocked = data["dash_unlocked"]
 	if data.has("neck_of_protection"):

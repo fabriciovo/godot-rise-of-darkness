@@ -20,6 +20,7 @@ func _ready():
 	randomize()
 	direction.x = rand_range(-5, 5)
 	direction.y = rand_range(-5, 5)
+	has_soul = true
 
 func _physics_process(delta):
 	eye_sprite()

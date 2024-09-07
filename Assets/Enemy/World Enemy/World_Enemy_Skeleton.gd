@@ -13,6 +13,7 @@ func _ready():
 	skeleton_enemy_anim.playback_speed = 0.4
 	configure_battle_unit()
 	initialize_movement_control()
+	has_soul = true
 	randomize()
 
 func configure_battle_unit():

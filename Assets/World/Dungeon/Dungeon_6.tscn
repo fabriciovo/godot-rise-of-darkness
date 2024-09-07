@@ -95,28 +95,28 @@ frame = 3
 position = Vector2( 203, 96 )
 frame = 3
 
-[node name="Skulls" parent="." index="7" instance=ExtResource( 3 )]
-position = Vector2( 118, 82 )
-
-[node name="Dungeon_7" parent="." index="8" instance=ExtResource( 9 )]
+[node name="Dungeon_7" parent="." index="7" instance=ExtResource( 9 )]
 position = Vector2( 112, 13 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_7.tscn"
 door_name = "Dungeon_7"
 
-[node name="Dungeon_8" parent="." index="9" instance=ExtResource( 9 )]
+[node name="Dungeon_8" parent="." index="8" instance=ExtResource( 9 )]
 position = Vector2( 112, 133 )
 rotation = -3.14159
 target_scene = "res://Assets/World/Dungeon/Dungeon_8.tscn"
 door_name = "Dungeon_6"
 
-[node name="Dungeon_5" parent="." index="10" instance=ExtResource( 9 )]
+[node name="Dungeon_5" parent="." index="9" instance=ExtResource( 9 )]
 position = Vector2( 13, 80 )
 rotation = -1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_5.tscn"
 door_name = "Dungeon_5"
 
-[node name="Dungeon_12" parent="." index="11" instance=ExtResource( 9 )]
+[node name="Dungeon_12" parent="." index="10" instance=ExtResource( 9 )]
 position = Vector2( 212, 80 )
 rotation = 1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_10.tscn"
 door_name = "Dungeon_6"
+
+[node name="Skulls" parent="Imortal_Entities" index="0" instance=ExtResource( 3 )]
+position = Vector2( 118, 82 )

@@ -1,4 +1,4 @@
-extends Area2D
+class_name Arrow extends Area2D
 
 var direction = Vector2.ZERO
 var speed = 120

@@ -11,36 +11,33 @@ onready var weapon_info = $Weapon_Info
 onready var game_ui = get_node("/root/Ui/Game_UI")
 
 func set_weapons():
+	for _index in PlayerControll.inventory.size():
+		if PlayerControll.inventory[_index] == Global.WEAPONS.SWORD: 
+			weapons_list[0].icon = sword_icon
+			weapons_list[0].text = "SWORD_NAME"
+			weapons_list[0].disabled = false
+			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
+		elif PlayerControll.inventory[_index] == Global.WEAPONS.BOW: 
+			weapons_list[1].icon = bow_icon
+			weapons_list[1].text = "BOW_NAME"
+			weapons_list[1].disabled = false
+			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
+		elif PlayerControll.inventory[_index] == Global.WEAPONS.BOMB: 
+			weapons_list[2].icon = bomb_icon
+			weapons_list[2].text = "BOMB_NAME"
+			weapons_list[2].disabled = false
+			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
+		elif PlayerControll.inventory[_index] == Global.WEAPONS.HEAL: 
+			weapons_list[3].icon = staff_icon
+			weapons_list[3].text = "HEAL_STAFF_NAME"
+			weapons_list[3].disabled = false
+			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
+		elif PlayerControll.inventory[_index] == Global.WEAPONS.SHIELD: 
+			weapons_list[4].icon = shield_icon
+			weapons_list[4].text = "SHIELD_NAME"
+			weapons_list[4].disabled = false
+			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
 	weapons_list[0].grab_focus()
-	print(PlayerControll.inventory.size())
-	for weapon in PlayerControll.inventory:
-		print(weapon)
-		match weapon:
-			Global.WEAPONS.SWORD: 
-				print("aaaaqui")
-				weapons_list[0].icon = sword_icon
-				weapons_list[0].text = "SWORD_NAME"
-				weapons_list[0].disabled = false
-				weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
-			Global.WEAPONS.BOW:
-				weapons_list[1].icon = bow_icon
-				weapons_list[1].text = "BOW_NAME"
-				weapons_list[1].disabled = false
-			Global.WEAPONS.BOMB:
-				weapons_list[2].icon = bomb_icon
-				weapons_list[2].text = "BOMB_NAME"
-				weapons_list[2].disabled = false
-			Global.WEAPONS.HEAL:
-				weapons_list[3].icon = staff_icon
-				weapons_list[3].text = "HEAL_STAFF_NAME"
-				weapons_list[3].disabled = false
-			Global.WEAPONS.SHIELD:
-				weapons_list[4].icon = shield_icon
-				weapons_list[4].text = "SHIELD_NAME"
-				weapons_list[4].disabled = false
-
-func set_weapon(_weapon):
-	pass
 
 func _on_Sword_focus_entered():
 	if weapons_list[0].text == "SWORD_NAME":

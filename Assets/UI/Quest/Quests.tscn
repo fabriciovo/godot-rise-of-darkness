@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/UI/Quest/Quests_UI.gd" type="Script" id=1]
-[ext_resource path="res://Assets/UI/update_theme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=2]
 
 [node name="Quests" type="Control"]
 anchor_right = 1.0
@@ -13,7 +13,7 @@ script = ExtResource( 1 )
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -127.0
+margin_left = -152.0
 theme = ExtResource( 2 )
 bbcode_enabled = true
 bbcode_text = "COLLECT_SOULS_DESCRIPTION"
@@ -21,5 +21,5 @@ text = "COLLECT_SOULS_DESCRIPTION"
 
 [node name="Quests_Container" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0
-margin_right = 96.0
+margin_right = 67.0
 focus_mode = 2

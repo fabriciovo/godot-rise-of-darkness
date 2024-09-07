@@ -13,4 +13,4 @@ func _on_Button_pressed():
 	PlayerControll.restart()
 	Ui.visible = true
 	Global.in_game = true
-	get_tree().change_scene("res://Assets/World/World_0.tscn")
+	var _chnage_scene = get_tree().change_scene("res://Assets/World/World_0.tscn")

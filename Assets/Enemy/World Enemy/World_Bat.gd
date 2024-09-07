@@ -1,5 +1,4 @@
-extends World_Enemy
-
+class_name World_Bat extends World_En
 onready var obj = get_tree().current_scene.get_node("Player")
 var radius = 33.0
 var angle = 0.0
@@ -12,7 +11,7 @@ func _ready():
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 10
 	speed = const_speed
-	has_soul = false
+	has_soul = true
 
 func _physics_process(delta):
 	if obj == null: return

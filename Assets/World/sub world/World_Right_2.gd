@@ -6,7 +6,7 @@ onready var door_world_right_1 = $Door_World_Right_1
 onready var door_world_right_2 = $Door_World_Right_2
 onready var entities = $Entities 
 
-var gate = preload("res://Assets/Enviroment/Entities_Gate.tscn")
+var gate = preload("res://Assets/Enviroment/Door_Dark_Mage.tscn")
 
 func _ready():
 	if not Global.dark_mages.dark_mage:
@@ -23,8 +23,10 @@ func _on_Timer_timeout():
 	temp_gate_1.position = door_world_right_1.position
 	temp_gate_1.rotation_degrees = 90
 	add_child(temp_gate_1)
+	temp_gate_1.create_smoke()
 	temp_gate_2.position = door_world_right_2.position
 	add_child(temp_gate_2)
+	temp_gate_2.create_smoke()
 	dark_mage_spawn_timer.stop()
 	Global.stop = true
 	thunder.start_florest_dark_mage()

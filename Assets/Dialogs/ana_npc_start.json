@@ -1,6 +1,14 @@
 [
     {
-        "Name": "",
-        "Text": "YOU_NEED_A_WEAPON_TEXT"
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_START_0"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_START_1"
+    },
+    {
+        "Name": "ANA_NPC_NAME",
+        "Text": "ANA_DIALOG_START_2"
     }
 ]

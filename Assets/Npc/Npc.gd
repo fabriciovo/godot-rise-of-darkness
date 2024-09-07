@@ -1,7 +1,7 @@
 extends Node2D
 
 var player = null
-var dialog_name = ["wanny_dialog_start_quest.json", "wanny_dialog_during_quest.json", "wanny_dialog_complete_quest.json", "wanny_quest_completed.json", "wanny_quest_completed.json"]
+var dialog_name = ["wanny_dialog_start_quest.json", "wanny_dialog_during_quest.json", "wanny_quest_completed.json", "wanny_quest_completed.json", "wanny_quest_completed.json"]
 var can_talk = true
 
 func _ready():
@@ -34,7 +34,6 @@ func _on_Text_Box_on_end_dialog():
 	if quest_step == 0:
 		Global.QUESTS["FIND_WANNY"].Completed = true
 		Global.NPCS_QUEST_STEP_TRACK.Wanny+=1
-#		Global.QUESTS["SOULS_QUEST"]["Unlocked"] = true
 		Ui.quests_panel.add_quest("SOULS_QUEST")
 		$Text_Box_Layer/Text_Box.dialog_name = "get_relic_3.json"
 		PlayerControll.set_relic_item(Global.RELICS.RING_OF_SOULS)

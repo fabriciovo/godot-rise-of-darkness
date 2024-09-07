@@ -6,8 +6,9 @@ var can_talk = true
 
 func _ready():
 	var _quest_step = Global.NPCS_QUEST_STEP_TRACK.Ana
-	$Text_Box_Layer/Text_Box.dialog_name = dialog_name[_quest_step]
-	$Text_Box_Layer/Text_Box.start_dialog()
+	if _quest_step == 0:
+		$Text_Box_Layer/Text_Box.dialog_name = dialog_name[_quest_step]
+		$Text_Box_Layer/Text_Box.start_dialog()
 
 func _input(_event):
 	if not player: return
@@ -35,6 +36,7 @@ func _on_Text_Box_on_end_dialog():
 	if quest_step == 0:
 		Global.NPCS_QUEST_STEP_TRACK.Ana+=1
 	elif quest_step == 1:
+		Ui.quests_panel.add_quest("DEFEAT_DARK_MAGES")
 		Global.NPCS_QUEST_STEP_TRACK.Ana+=1
 	elif quest_step == 2:
 		PlayerControll.set_maxhp()

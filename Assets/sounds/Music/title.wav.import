@@ -11,7 +11,7 @@ dest_files=[ "res://.import/title.wav-5f721e64b7eb29b9fb563963ea8e2bf1.sample" ]
 
 [params]
 
-force/8_bit=false
+force/8_bit=true
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100

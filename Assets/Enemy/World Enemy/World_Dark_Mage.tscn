@@ -226,6 +226,8 @@ hframes = 4
 vframes = 5
 
 [node name="Damage_Area" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
 
 [node name="Collision" type="CollisionShape2D" parent="Damage_Area"]
 shape = SubResource( 1 )
@@ -252,9 +254,10 @@ anims/show = SubResource( 11 )
 [node name="Text_Box_Layer" type="CanvasLayer" parent="."]
 
 [node name="Text_Box" parent="Text_Box_Layer" instance=ExtResource( 4 )]
-margin_top = -42.0
+margin_top = -48.0
 
 [connection signal="area_entered" from="Damage_Area" to="." method="_on_Damage_Area_area_entered"]
+[connection signal="body_entered" from="Damage_Area" to="." method="_on_Damage_Area_body_entered"]
 [connection signal="timeout" from="Change_Position_Timer" to="." method="_on_Change_Position_Timer_timeout"]
 [connection signal="timeout" from="Invincible_Timer" to="." method="_on_Invincible_Timer_timeout"]
 [connection signal="on_end_dialog" from="Text_Box_Layer/Text_Box" to="." method="_on_Text_Box_on_end_dialog"]

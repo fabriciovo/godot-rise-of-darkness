@@ -12,3 +12,6 @@ texture = ExtResource( 2 )
 hframes = 1
 vframes = 1
 frame = 0
+
+[node name="Text_Box_Layer" parent="." index="2"]
+layer = 3
