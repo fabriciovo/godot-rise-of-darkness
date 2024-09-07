@@ -85,12 +85,8 @@ func action(value):
 			Global.WEAPONS.SWORD:
 				create_sword(value)
 			Global.WEAPONS.BOW:
-				if mp >= 1:
+				if ap >= 3:
 					create_arrow()
-					set_mp(mp-1)
-					var text = float_text.instance()
-					text.set_text("MP -1")
-					add_child(text)
 			Global.WEAPONS.BOMB:
 				if mp >= 3:
 					create_bomb()
@@ -99,7 +95,7 @@ func action(value):
 					text.set_text("MP -3")
 					add_child(text)
 			Global.WEAPONS.HEAL: 
-				if mp >= 5 and hp < PlayerControll.max_hp:
+				if mp >= 3 and hp < PlayerControll.max_hp:
 					get_item_frame = 3 
 					casting = true
 					action_state = true
@@ -108,14 +104,14 @@ func action(value):
 					if casting:
 						var textMP = float_text.instance()
 						var textHP = float_text.instance()
-						textMP.set_text("MP -5")
+						textMP.set_text("MP -3")
 						add_child(textMP)
 						textHP.set_text("HP +5")
 						textHP.get_position_in_parent()
 						textHP.pos.x = -52
 						add_child(textHP)
 						heal()
-						set_mp(mp-5)
+						set_mp(mp-3)
 						casting = false
 					
 			Global.WEAPONS.SHIELD:
@@ -225,7 +221,7 @@ func create_bomb():
 	get_tree().get_current_scene().add_child(bomb_object)
 
 func create_arrow():
-	set_ap(ap-1)
+	set_ap(ap-3)
 	var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
 	arrow_object.global_position = global_position
 	match dir:
@@ -245,7 +241,7 @@ func create_arrow():
 
 func heal():
 	set_ap(0)
-	set_hp(hp+10)
+	set_hp(hp+5)
 
 func damage(value):
 	if invincible or dashing: return

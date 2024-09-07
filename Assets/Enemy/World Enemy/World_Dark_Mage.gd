@@ -72,13 +72,18 @@ func change_postion():
 	invincible = false
 	hiding = false
 	attack_player()
-	$Change_Position_Timer.start(3)
+	if battle_unit_hp > 15:
+		$Change_Position_Timer.start(3)
+	else:
+		$Change_Position_Timer.start(1.4)
 
 func attack_player():
 	if Global.stop: return
-	if battle_unit_hp > 10:
+	if battle_unit_hp > 15:
 		animation.play("Attack")
 		yield(animation, "animation_finished")
+	else:
+		pass
 
 func _on_Change_Position_Timer_timeout():
 	change_postion()
@@ -92,11 +97,13 @@ func get_random_pos():
 		return points[random_index].position
 
 func _on_Damage_Area_area_entered(area):
+	print(area)
 	if invincible or hiding: return
 	if area.is_in_group(Global.GROUPS.SWORD):
 		damage(PlayerControll.atk)
 	if area.is_in_group(Global.GROUPS.ARROW):
 		damage(PlayerControll.atk+1)
+		area.queue_free()
 	if area.is_in_group(Global.GROUPS.ARROW_AREA):
 		damage(PlayerControll.atk+1)
 
@@ -125,3 +132,7 @@ func _on_Text_Box_on_end_dialog():
 		Global.dark_mages.dark_mage = true
 		PlayerControll.set_xp(battle_unit_xp)
 		queue_free()
+
+
+func _on_Damage_Area_body_entered(body):
+	print(body)

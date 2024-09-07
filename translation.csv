@@ -27,15 +27,15 @@ Z_TO_CONFIRM;Press Z to confirm;Precione Z para confirmar
 COLLECT_SOULS_DESCRIPTION;Defeat monsters and collect their souls. Once you have 100 souls, return to speak with Wanny.;Elimine monstros e colete suas almas. Ao conseguir as 100 almas, volte para falar com a Wanny.
 CANT_GO_BACK;Don't give up on your adventure, Hero.;Não desista de sua aventura, Herói.
 INTRODUCTION;"
-Centuries ago, xxx flourished under the care of the benevolent Guardians of Light, led by the powerful and virtuous xxx. However, a malevolent force corrupted xxx's mind, transforming him into the Dark Lord. Betraying his fellow guardians, he plunged the realm into darkness, summoning shadowy creatures that surrounded the land.
+Centuries ago, Alvanor thrived under the care of the benevolent Guardians of Light, led by the powerful and virtuous Alvanor. However, a malevolent force corrupted the mind of Erevan, transforming him into the fearsome Dark Lord. Betraying his fellow guardians, he plunged the realm into darkness, summoning shadowy creatures that spread chaos across the land.
 
-Despite the valiant efforts of the warriors, they couldn't halt the Dark Lord's advance. In the midst of despair, one of the guardians resisted but lost all his powers. Guided by an ancient oracle for possessing unparalleled bravery and strength to confront the now-corrupted xxx, the last guardian embarks on a solitary quest, armed with hope and courage.
+Despite the valiant efforts of the warriors, they could not halt the Dark Lord's advance. In the midst of despair, one of the guardians resisted but lost all his powers. Guided by unparalleled courage, bravery, and strength, he decided to confront the now-corrupted Dark Lord.
 
-Determined to restore peace, the last guardian sets out on a lone journey, armed with hope and courage.";"Séculos atrás, xxx floresceu sob os cuidados dos benevolentes Guardiões da Luz, liderados pelos poderosos e virtuosos xxx. No entanto, uma força malévola corrompeu a mente de xxx, transformando-o no Lorde das Trevas. Traindo seus companheiros guardiões, ele mergulhou o reino na escuridão, invocando criaturas sombrias que cercavam a terra.
+Determined to restore peace, the last guardian embarks on a dangerous journey. However, he is not alone, other adventurers rise to aid him in regaining his powers. Armed with hope and courage, his mission to save the kingdom begins.";"Séculos atrás, Alvanor prosperava sob os cuidados dos benevolentes Guardiões da Luz, liderados pelo poderoso e virtuoso Alvanor. No entanto, uma força malévola corrompeu a mente de Erevan, transformando-o no temível Lorde das Trevas. Traindo seus companheiros guardiões, ele mergulhou o reino na escuridão, invocando criaturas sombrias que espalharam caos pela terra.
 
-Apesar dos valentes esforços dos guerreiros, eles não conseguiram deter o avanço do Lorde das Trevas. Em meio ao desespero, um dos guardiões resistiu, mas perdeu todos os seus poderes. Guiado por um antigo oráculo por possuir bravura e força incomparáveis para enfrentar o agora corrompido xxx, o último guardião embarca em uma busca solitária, armado de esperança e coragem.
+Apesar dos valentes esforços dos guerreiros, eles não conseguiram deter o avanço do Lorde das Trevas. Em meio ao desespero, um dos guardiões resistiu, mas perdeu todos os seus poderes. Guiado por uma coragem, bravura e força incomparáveis, ele decidiu enfrentar o agora corrompido Lorde das Trevas.
 
-Determinado a restaurar a paz, o último guardião parte em uma jornada solitária, armado com esperança e coragem."
+Determinado a restaurar a paz, o último guardião parte em uma jornada perigosa. Contudo, ele não está sozinho, outros aventureiros surgem para ajudá-lo a recuperar seus poderes. Armado com esperança e coragem, sua missão para salvar o reino começa."
 RONAN_DIALOG_1;Hero, I'm glad you're here.;Herói, ainda bem que você está aqui.
 RONAN_DIALOG_2;It's dangerous to go alone, take this!;É perigoso ir sozinho, pegue isto!
 RONAN_DIALOG_3;Press the {action_3} key to interact with objects.;Pressione a tecla {action_3} para interagir com objetos.
@@ -134,7 +134,7 @@ WANNY_START_QUEST_4;Once you kill the monsters, you'll be able to see and collec
 WANNY_START_QUEST_5;Don't worry about the monsters you've already killed.;Não se preocupe com os monstros que você já matou.
 WANNY_START_QUEST_6;You can still collect those souls.;Você ainda pode coletar essas almas.
 WANNY_START_QUEST_7;This ring is not just for collecting souls.;Esse anel não serve apenas para coletar as almas.
-WANNY_START_QUEST_8;We will use their power to defeat the Dark Lord.;Vamos usar o poder delas para derrotar o Lorde das Trevas.
+WANNY_START_QUEST_8;Let's use their power to recover your Hero skill.;Vamos usar o poder delas, para recuperar sua habilidade Heroi.
 WANNY_START_QUEST_9;But for that, you need to collect at least 100 souls.;Mas para isso você precisa pelo menos coletar 100 almas.
 WANNY_START_QUEST_10;Bring the ring back to me once you've collected 100 souls.;Me traga o anel aqui quando tiver coletado as 100 almas.
 WANNY_START_QUEST_11;Then you'll have the power to destroy the Dark Lord.;Assim você terá o poder para destruir o Lorde das Trevas.
