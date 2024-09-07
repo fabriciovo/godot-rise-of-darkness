@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Collectibles_nobg_16x16.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enemy/World Enemy/Dark_Mage_Explosion.gd" type="Script" id=2]
+
+[node name="Dark_Mage_Explosion" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
+scale = Vector2( 5.8125, 5.59375 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -1 )
+hframes = 6
+vframes = 2
