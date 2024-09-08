@@ -124,7 +124,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Inventory/Weapon_Slot.gd"
 }, {
-"base": "World_En",
+"base": "World_Enemy",
 "class": "World_Bat",
 "language": "GDScript",
 "path": "res://Assets/Enemy/World Enemy/World_Bat.gd"

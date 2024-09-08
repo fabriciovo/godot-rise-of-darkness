@@ -21,5 +21,10 @@ func spawn_gates():
 
 func check_entities():
 	if entities:
-		if entities.get_children().size() == 0:
+		var only_souls = true
+		for child in entities.get_children():
+			if not "soul" in child.name:
+				only_souls = false
+				break
+		if only_souls and entities.get_children().size() > 0:
 			queue_free()

@@ -1,4 +1,4 @@
-class_name World_Bat extends World_En
+class_name World_Bat extends World_Enemy
 onready var obj = get_tree().current_scene.get_node("Player")
 var radius = 33.0
 var angle = 0.0

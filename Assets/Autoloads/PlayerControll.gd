@@ -12,12 +12,12 @@ var level = 1 setget set_level
 var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
-var inventory = []
-var equiped_item = [-1,-1] 
+var inventory = [0]
+var equiped_item = [0,-1] 
 var relics = []
-var key = 0
+var key = 1
 var base_speed = 30
-var dash_unlocked = true
+var dash_unlocked = false
 var neck_of_protection = false
 var ring_of_souls = false
 var souls_quest_completed = false
@@ -104,6 +104,7 @@ func set_key(value):
 func set_xp(value):
 	xp += value
 	if xp >= xp_to_level_up:
+		Global.stop = true
 		points += level + 2
 		level+=1
 		xp = xp - xp_to_level_up
@@ -114,6 +115,7 @@ func set_xp(value):
 		get_tree().get_current_scene().get_node("Player").add_child(inst_xp_text)
 		get_tree().get_current_scene().add_child(inst_level_up_text_box)
 		yield(inst_level_up_text_box,"tree_exiting")
+		Global.stop = false
 
 func set_level(value):
 	level = value

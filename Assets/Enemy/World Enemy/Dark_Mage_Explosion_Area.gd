@@ -4,6 +4,9 @@ var explosion = preload("res://Assets/Enemy/World Enemy/Dark_Mage_Explosion.tscn
 
 func _process(_delta):
 	rotation_degrees -= 0.3
+	if Global.dark_mages.dark_mage:
+		queue_free()
+
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	if _anim_name == "dark_explosion":

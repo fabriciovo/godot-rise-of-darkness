@@ -18,7 +18,7 @@ var intro_dialog = ""
 var dath_dialog = ""
 
 var battle_unit_xp = 50
-var battle_unit_max_hp = 10
+var battle_unit_max_hp = 50
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
 var teleport_pos = Vector2.ZERO
@@ -75,10 +75,10 @@ func change_postion():
 	invincible = false
 	hiding = false
 	attack_player()
-	if battle_unit_hp > 15:
+	if battle_unit_hp > 20:
 		$Change_Position_Timer.start(3)
 	else:
-		$Change_Position_Timer.start(1.4)
+		$Change_Position_Timer.start(2)
 
 func attack_player():
 	if Global.stop: return
@@ -116,20 +116,21 @@ func _on_Invincible_Timer_timeout():
 func create_projectile():
 	if Global.stop: return
 	var _current_scene = get_tree().current_scene
-	var _temp_projectile = projectile.instance()
-	_temp_projectile.position = position
-	_current_scene.add_child(_temp_projectile)
-	if battle_unit_hp <= 15:
+	if battle_unit_hp <= 20:
 		var _temp_dark_explosion = dark_explosion.instance()
 		_temp_dark_explosion.position = _current_scene.get_node("Player").position
 		_current_scene.add_child(_temp_dark_explosion)
+	else:
+		var _temp_projectile = projectile.instance()
+		_temp_projectile.position = position
+		_current_scene.add_child(_temp_projectile)
 
 func _on_Text_Box_on_end_dialog():
 	if spr.visible:
 		Global.stop = false
 		Global.cutscene = false
 		SoundController.transition_to_music(SoundController.MUSIC.invasion)
-		$Change_Position_Timer.start(3)
+		$Change_Position_Timer.start(2)
 	else:
 		SoundController.play_music(SoundController.MUSIC.florest)
 		Global.stop = false
