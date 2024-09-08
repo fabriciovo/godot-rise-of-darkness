@@ -136,12 +136,18 @@ func action(value):
 		shield_area_collision.disabled = true
 
 func _physics_process(_delta):
+	if PlayerControll.dead: return
 	if get_item_anim: return
 	if hit: return
 	get_input()
 	velocity = move_and_slide(velocity)
 
 func _process(_delta):
+	if PlayerControll.dead:
+		$PlayerAnimation.play("death")
+		Global.stop = true
+		yield($PlayerAnimation,"animation_finished")
+		var _chnage_scene = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 	if get_item_anim: return
 	if(!Global.stop):
 		set_physics_process(true)
@@ -244,7 +250,7 @@ func heal():
 	set_hp(hp+5)
 
 func damage(value):
-	if invincible or dashing: return
+	if invincible or dashing or PlayerControll.dead: return
 	if $PlayerAnimation.current_animation == "use_magic":
 		$PlayerAnimation.stop()
 	casting = false

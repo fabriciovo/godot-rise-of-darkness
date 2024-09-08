@@ -40,6 +40,7 @@ func spawn_left_dark_mage():
 	_entities_node.add_child(_temp)
 
 func play_thunder_effect():
+	get_tree().current_scene.start_shake(5,0.5)
 	SoundController.play_effect(SoundController.EFFECTS.thunder)
 
 func play_dark_lord_death_anim():

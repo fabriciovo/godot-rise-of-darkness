@@ -12,16 +12,16 @@ var level = 1 setget set_level
 var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
-var inventory = [0,1,2,3,5]
-var equiped_item = [1,0] 
+var inventory = []
+var equiped_item = [-1,-1] 
 var relics = []
 var key = 0
 var base_speed = 30
-var dash_unlocked = false
+var dash_unlocked = true
 var neck_of_protection = false
 var ring_of_souls = false
 var souls_quest_completed = false
-
+var dead = false
 var float_text = preload("res://Assets/UI/FloatText.tscn")
 var level_up_text_box = preload("res://Assets/TextBox/Text_Box_Level_Up.tscn")
 
@@ -52,7 +52,7 @@ func set_maxmp():
 func set_hp(value):
 	hp = clamp(value, 0 , max_hp)
 	if hp <= 0:
-		var _scene_instance = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
+		dead = true
 
 func set_ap(value):
 	ap = clamp(value, 0 , max_ap)
@@ -128,6 +128,7 @@ func set_points(value):
 	points += value
 
 func restart():
+	dead = false
 	set_hp(max_hp)
 	set_mp(max_mp)
 	set_ap(max_ap)

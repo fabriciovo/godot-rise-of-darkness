@@ -5,6 +5,9 @@ onready var invincible_timer = $Invincible_Timer
 onready var animation_damage = $Animation_Damage
 onready var animation = $Animation_Dark_Mage
 onready var text_box = $Text_Box_Layer/Text_Box
+
+var dark_explosion = preload("res://Assets/Enemy/World Enemy/Dark_Mage_Explosion_Area.tscn")
+
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
@@ -15,7 +18,7 @@ var intro_dialog = ""
 var dath_dialog = ""
 
 var battle_unit_xp = 50
-var battle_unit_max_hp = 50
+var battle_unit_max_hp = 10
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
 var teleport_pos = Vector2.ZERO
@@ -79,11 +82,8 @@ func change_postion():
 
 func attack_player():
 	if Global.stop: return
-	if battle_unit_hp > 15:
-		animation.play("Attack")
-		yield(animation, "animation_finished")
-	else:
-		pass
+	animation.play("Attack")
+	yield(animation, "animation_finished")
 
 func _on_Change_Position_Timer_timeout():
 	change_postion()
@@ -115,9 +115,14 @@ func _on_Invincible_Timer_timeout():
 
 func create_projectile():
 	if Global.stop: return
+	var _current_scene = get_tree().current_scene
 	var _temp_projectile = projectile.instance()
 	_temp_projectile.position = position
-	get_tree().current_scene.add_child(_temp_projectile)
+	_current_scene.add_child(_temp_projectile)
+	if battle_unit_hp <= 15:
+		var _temp_dark_explosion = dark_explosion.instance()
+		_temp_dark_explosion.position = _current_scene.get_node("Player").position
+		_current_scene.add_child(_temp_dark_explosion)
 
 func _on_Text_Box_on_end_dialog():
 	if spr.visible:
@@ -133,6 +138,3 @@ func _on_Text_Box_on_end_dialog():
 		PlayerControll.set_xp(battle_unit_xp)
 		queue_free()
 
-
-func _on_Damage_Area_body_entered(body):
-	print(body)

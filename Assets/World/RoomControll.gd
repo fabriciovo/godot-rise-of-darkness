@@ -1,5 +1,26 @@
 class_name Room_Controll extends Node2D
 
+var shake_intensity = 0
+var shake_duration = 0
+var original_position = Vector2()
+
+func start_shake(_intensity: float, _duration: float):
+	shake_intensity = _intensity
+	shake_duration = _duration
+	original_position = position
+
+func shaking_state(_delta):
+	if shake_duration > 0:
+		position = original_position + Vector2(rand_range(-shake_intensity, shake_intensity),rand_range(-shake_intensity, shake_intensity))
+		shake_duration -= _delta
+		shake_intensity = lerp(shake_intensity, 0, _delta * 5)
+	else:
+		position = original_position
+
+func _process(_delta):
+	shaking_state(_delta)
+
+
 func _ready():
 	var scene_name = get_tree().current_scene.name
 	if not "World_0" in scene_name:

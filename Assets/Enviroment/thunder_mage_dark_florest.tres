@@ -34,9 +34,15 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2.6 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 1.1, 2.6, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "play_thunder_effect"
+}, {
+"args": [  ],
+"method": "play_thunder_effect"
+}, {
 "args": [  ],
 "method": "spawn_dark_mage"
 } ]
