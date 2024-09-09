@@ -5,6 +5,7 @@ onready var collect_area = $Collect_Area
 var ID = ""
 
 func _ready():
+	add_to_group(Global.GROUPS.SOUL)
 	if !PlayerControll.ring_of_souls:
 		visible = false
 		collect_area.monitoring = false

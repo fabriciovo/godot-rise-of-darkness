@@ -20,11 +20,13 @@ func spawn_gates():
 		add_child(_temp_smoke)
 
 func check_entities():
-	if entities:
+	if entities and entities.get_child_count() > 0:
 		var only_souls = true
 		for child in entities.get_children():
-			if not "soul" in child.name:
+			if  child.is_in_group(Global.GROUPS.ENEMY):
 				only_souls = false
 				break
-		if only_souls and entities.get_children().size() > 0:
+		if only_souls:
 			queue_free()
+	elif entities.get_child_count() == 0:
+		queue_free()
