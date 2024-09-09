@@ -2,16 +2,16 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Enemy_Die.wav-afc58c6ebf6e015650296ed208904be4.sample"
+path="res://.import/Sword_Slash.wav-7f27291294a00a64ea941abf055e3b4b.sample"
 
 [deps]
 
-source_file="res://Assets/sounds/Enemy_Die.wav"
-dest_files=[ "res://.import/Enemy_Die.wav-afc58c6ebf6e015650296ed208904be4.sample" ]
+source_file="res://Assets/sounds/Sword_Slash.wav"
+dest_files=[ "res://.import/Sword_Slash.wav-7f27291294a00a64ea941abf055e3b4b.sample" ]
 
 [params]
 
-force/8_bit=true
+force/8_bit=false
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100

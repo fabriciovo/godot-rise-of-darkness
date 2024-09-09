@@ -2,16 +2,16 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Enemy_Die.wav-afc58c6ebf6e015650296ed208904be4.sample"
+path="res://.import/Level_Up.wav-e762d8bc1e8dcaf694d15bb19e65fcfc.sample"
 
 [deps]
 
-source_file="res://Assets/sounds/Enemy_Die.wav"
-dest_files=[ "res://.import/Enemy_Die.wav-afc58c6ebf6e015650296ed208904be4.sample" ]
+source_file="res://Assets/sounds/Level_Up.wav"
+dest_files=[ "res://.import/Level_Up.wav-e762d8bc1e8dcaf694d15bb19e65fcfc.sample" ]
 
 [params]
 
-force/8_bit=true
+force/8_bit=false
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100

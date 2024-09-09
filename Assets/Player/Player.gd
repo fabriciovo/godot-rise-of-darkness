@@ -192,6 +192,7 @@ func create_sword(_value):
 	var _action_area_anim = action_area.get_node("action").get_node("AnimationPlayer")
 	_action_area_anim.play("Slash_anim")
 	action_collision.disabled = false
+	SoundController.play_effect_with_random_pitch(SoundController.EFFECTS.sword_slash, 1.4)
 	action_sprite.frame = PlayerControll.equiped_item[_value]
 	yield(_action_area_anim, "animation_finished")
 
@@ -250,6 +251,7 @@ func heal():
 	set_hp(hp+5)
 
 func damage(value):
+	if Global.stop: return
 	if invincible or dashing or PlayerControll.dead: return
 	if $PlayerAnimation.current_animation == "use_magic":
 		$PlayerAnimation.stop()
