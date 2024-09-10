@@ -35,7 +35,8 @@ const EFFECTS = {
 	select = preload("res://Assets/sounds/Select.wav"),
 	open_chest = preload("res://Assets/sounds/Open_Chest_2.wav"),
 	positive_2 = preload("res://Assets/sounds/Positive_2.wav"),
-	positive_10 = preload("res://Assets/sounds/Positive_10.wav")
+	positive_10 = preload("res://Assets/sounds/Positive_10.wav"),
+	sword_slash = preload("res://Assets/sounds/Sword_Slash.wav")
 }
 
 func play_music(_sound):
@@ -51,7 +52,17 @@ func keep_music():
 
 func play_effect(_sound):
 	for effect in sound_effects.get_children():
+		if effect.playing: continue
 		effect.stream = _sound
+		effect.play() 
+		break
+
+func play_effect_with_random_pitch(_sound, _pitch):
+	for effect in sound_effects.get_children():
+		if effect.playing: continue
+		effect.stream = _sound
+		randomize()
+		effect.pitch_scale = rand_range(0.8, _pitch)
 		effect.play() 
 		break
 
@@ -66,13 +77,13 @@ func transition_to_music(_sound):
 	
 	while fade_out_time > 0:
 		fade_out_time -= volume_step
-		music.volume_db = lerp(initial_volume, -80, 1.0 - (fade_out_time / fade_time))
+		music.volume_db = lerp(initial_volume, -13.5, 1.0 - (fade_out_time / fade_time))
 		yield(get_tree().create_timer(volume_step), "timeout")
 	music.stream = _sound
 	music.play()
 	
 	while fade_in_time < fade_time:
 		fade_in_time += volume_step
-		music.volume_db = lerp(-80, target_volume, fade_in_time / fade_time)
+		music.volume_db = lerp(-13.5, target_volume, fade_in_time / fade_time)
 		yield(get_tree().create_timer(volume_step), "timeout")
 	music.volume_db = target_volume

@@ -2,16 +2,16 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Enemy_Die.wav-afc58c6ebf6e015650296ed208904be4.sample"
+path="res://.import/Dash.wav-523175853f1b4ff07ae113adfbc3fd6f.sample"
 
 [deps]
 
-source_file="res://Assets/sounds/Enemy_Die.wav"
-dest_files=[ "res://.import/Enemy_Die.wav-afc58c6ebf6e015650296ed208904be4.sample" ]
+source_file="res://Assets/sounds/Dash.wav"
+dest_files=[ "res://.import/Dash.wav-523175853f1b4ff07ae113adfbc3fd6f.sample" ]
 
 [params]
 
-force/8_bit=true
+force/8_bit=false
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100

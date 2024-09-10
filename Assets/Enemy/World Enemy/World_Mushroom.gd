@@ -87,7 +87,7 @@ func explosion():
 	var temp_smoke = smoke.instance()
 	temp_smoke.global_position = global_position
 	get_tree().get_current_scene().add_child(temp_smoke)
-	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
+	SoundController.play_effect_with_random_pitch(SoundController.EFFECTS.enemy_die,1.6)
 	queue_free()
 
 func _on_Explosion_Area_body_entered(_body):
