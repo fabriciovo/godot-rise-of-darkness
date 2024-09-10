@@ -1,11 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Enviroment/Bomb_Object.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Weapons_nobg_16x16.png" type="Texture" id=2]
 
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bomb_sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=1]
 resource_name = "bomb_anim"
-length = 1.7
+length = 1.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Bomb_sprite:frame")
 tracks/0/interp = 1
@@ -13,7 +28,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.2, 1.3, 1.4, 1.5, 1.6 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.2, 1.4, 1.5, 1.6, 1.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 40, 41, 40, 41, 40, 41, 40, 41, 40, 41, 42, 43, 44, 45, 46, 47 ]
@@ -32,22 +47,36 @@ tracks/1/keys = {
 "method": "on_explosion"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Bomb_sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 1.3, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
 
 [sub_resource type="CircleShape2D" id=2]
+radius = 16.1245
 
 [node name="Bomb_Object" type="KinematicBody2D"]
 collision_layer = 12
-collision_mask = 15
+collision_mask = 14
 script = ExtResource( 1 )
 
 [node name="Bomb_sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 8
 vframes = 6
-frame = 42
+frame = 47
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "bomb_anim"
+anims/RESET = SubResource( 3 )
 anims/bomb_anim = SubResource( 1 )
 
 [node name="Explosion_area" type="CollisionShape2D" parent="."]
