@@ -30,4 +30,5 @@ func _on_quest_button_focus_entered(_quest_key):
 	var _quest = Global.QUESTS[_quest_key]
 	quest_info.bbcode_text = tr(_quest["Description"])
 	if _quest["Has_Track"]:
-		quest_info.bbcode_text += "\n" + str(_quest["Progress"]) + " / " + str(_quest["Goal"])
+		var _quest_completed = "\n Completed" if _quest["Completed"] else "" 
+		quest_info.bbcode_text += "\n" + str(_quest["Progress"]) + " / " + str(_quest["Goal"]) + _quest_completed
