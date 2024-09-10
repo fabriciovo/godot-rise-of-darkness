@@ -231,7 +231,7 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
-"method": "show_get_item"
+"method": "show_item"
 }, {
 "args": [  ],
 "method": "hide_get_item"

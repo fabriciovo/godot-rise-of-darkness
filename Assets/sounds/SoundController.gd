@@ -36,7 +36,9 @@ const EFFECTS = {
 	open_chest = preload("res://Assets/sounds/Open_Chest_2.wav"),
 	positive_2 = preload("res://Assets/sounds/Positive_2.wav"),
 	positive_10 = preload("res://Assets/sounds/Positive_10.wav"),
-	sword_slash = preload("res://Assets/sounds/Sword_Slash.wav")
+	sword_slash = preload("res://Assets/sounds/Sword_Slash.wav"),
+	dash = preload("res://Assets/sounds/Dash.wav"),
+	staff_heal = preload("res://Assets/sounds/Staff_Heal.wav")
 }
 
 func play_music(_sound):
@@ -53,11 +55,12 @@ func keep_music():
 func play_effect(_sound):
 	for effect in sound_effects.get_children():
 		if effect.playing: continue
+		effect.pitch_scale = 1
 		effect.stream = _sound
 		effect.play() 
 		break
 
-func play_effect_with_random_pitch(_sound, _pitch):
+func play_effect_with_random_pitch(_sound, _pitch = 1.5):
 	for effect in sound_effects.get_children():
 		if effect.playing: continue
 		effect.stream = _sound

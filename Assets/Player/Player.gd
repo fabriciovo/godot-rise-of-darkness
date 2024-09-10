@@ -243,6 +243,7 @@ func create_arrow():
 	get_tree().get_current_scene().add_child(arrow_object)
 
 func heal():
+	SoundController.play_effect(SoundController.EFFECTS.staff_heal)
 	set_ap(0)
 	set_hp(hp+5)
 
@@ -366,6 +367,7 @@ func movement():
 
 func dash():
 	if action_area.visible: return
+	SoundController.play_effect_with_random_pitch(SoundController.EFFECTS.dash)
 	dashing = true
 	set_collision_layer_bit(7, true)
 	set_collision_mask_bit(7, true)
@@ -416,6 +418,10 @@ func play_get_item_animation():
 	yield($PlayerAnimation, "animation_finished")
 	Global.stop = false
 	get_item_anim = false
+
+func show_item():
+	$Get_Item_Sprite.visible = true
+	$Get_Item_Sprite.frame = get_item_frame
 
 func show_get_item():
 	SoundController.play_effect(SoundController.EFFECTS.positive_10)
