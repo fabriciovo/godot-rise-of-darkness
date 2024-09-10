@@ -197,22 +197,18 @@ func create_sword(_value):
 
 
 func create_sword_projectile():
-	var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
-	arrow_object.global_position = global_position
+	var _inst = preload("res://Assets/Player/Hero_Projectile.tscn").instance()
+	_inst.global_position = action_area.global_position
 	match dir:
 		"right":
-			arrow_object.direction = Vector2.RIGHT
-			arrow_object.frame = 23
+			_inst.direction = Vector2.RIGHT
 		"left":
-			arrow_object.direction = Vector2.LEFT
-			arrow_object.frame = 21
+			_inst.direction = Vector2.LEFT
 		"up":
-			arrow_object.direction = Vector2.UP
-			arrow_object.frame = 22
+			_inst.direction = Vector2.UP
 		"down":
-			arrow_object.direction = Vector2.DOWN
-			arrow_object.frame = 20
-	get_tree().get_current_scene().add_child(arrow_object)
+			_inst.direction = Vector2.DOWN
+	get_tree().get_current_scene().add_child(_inst)
 
 func create_shield(): 
 	action_state = true

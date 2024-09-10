@@ -18,7 +18,7 @@ var intro_dialog = ""
 var dath_dialog = ""
 
 var battle_unit_xp = 50
-var battle_unit_max_hp = 50
+var battle_unit_max_hp = 75
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
 var teleport_pos = Vector2.ZERO

@@ -1,5 +1,7 @@
 class_name Arrow extends Area2D
 
+
+onready var spr = $Sprite
 var direction = Vector2.ZERO
 var speed = 120
 var frame = 0
@@ -7,11 +9,17 @@ var knockback_vector = Vector2.ZERO
 
 func _ready():
 	add_to_group(Global.GROUPS.ARROW)
-	$Arrow_Sprite.frame = frame
+	set_frame()
 	knockback_vector = direction
 
 func _process(_delta):
 	if Global.stop: return
+	movement(_delta)
+
+func set_frame():
+	spr.frame = frame
+
+func movement(_delta):
 	var velocity = direction * speed
 	position += velocity * _delta
 
