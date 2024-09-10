@@ -49,7 +49,7 @@ func Destroy():
 	Disable()
 	var _inst_smoke = smoke.instance()
 	_inst_smoke.position = position
-	add_child(_inst_smoke)
+	get_tree().current_scene.add_child(_inst_smoke)
 #	var win_item = preload("res://Assets/WinScene/Win_Item.tscn").instance()
 #	win_item.global_position = global_position
 #	get_tree().get_current_scene().add_child(win_item)

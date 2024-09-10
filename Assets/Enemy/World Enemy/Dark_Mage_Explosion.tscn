@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Enemy/World Enemy/Dark_Mage_Explosion.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 13.1529
+radius = 17.0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -50,6 +50,7 @@ vframes = 6
 frame = 47
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

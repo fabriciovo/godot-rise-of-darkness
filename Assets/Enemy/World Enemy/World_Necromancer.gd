@@ -9,8 +9,8 @@ var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var attacking = false
 
 func _ready():
-	battle_unit_max_hp = 4
-	battle_unit_damage = 0
+	battle_unit_max_hp = 100
+	battle_unit_damage = 10
 	battle_unit_hp = battle_unit_max_hp 
 	add_to_group(Global.GROUPS.ENEMY)
 	const_speed = 20
@@ -54,7 +54,6 @@ func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW):
 		damage(1, PlayerControll.atk+1)
 		body.queue_free()
-
 
 func Destroy():
 	SoundController.stop_music()

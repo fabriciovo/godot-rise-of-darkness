@@ -8,14 +8,16 @@ onready var animation_damage = $Animation_Damage
 onready var animation = $Animation_Dark_Mage
 onready var text_box = $Text_Box_Layer/Text_Box
 
+var dark_explosion = preload("res://Assets/Enemy/World Enemy/Dark_Mage_Explosion_Area.tscn")
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var fire_projectile = preload("res://Assets/Enemy/World Enemy/Fire_Mage_Projectile.tscn")
+
 var points = []
 var player
 var battle_unit_xp = 0
-var battle_unit_max_hp = 50
+var battle_unit_max_hp = 150
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
 var teleport_pos = Vector2.ZERO
@@ -47,16 +49,24 @@ func Destroy():
 
 func create_projectile():
 	if Global.stop: return
-	for i in 4:
-		if Global.stop: return
-		var _temp_projectile = projectile.instance()
-		_temp_projectile.position = position
-		get_tree().current_scene.add_child(_temp_projectile)
-		yield(get_tree().create_timer(0.4), "timeout")
-	var _temp_fire_projectile = fire_projectile.instance()
-	_temp_fire_projectile.position = position
-	_temp_fire_projectile.direction = (player.position - position).normalized()
-	get_tree().current_scene.add_child(_temp_fire_projectile)
+	if battle_unit_hp <= 50:
+		for i in 3:
+			if Global.stop: return
+			var _temp_dark_explosion = dark_explosion.instance()
+			_temp_dark_explosion.position = player.position
+			get_tree().current_scene.add_child(_temp_dark_explosion)
+			yield(get_tree().create_timer(0.8), "timeout")
+	else:
+		for i in 4:
+			if Global.stop: return
+			var _temp_projectile = projectile.instance()
+			_temp_projectile.position = position
+			get_tree().current_scene.add_child(_temp_projectile)
+			yield(get_tree().create_timer(0.4), "timeout")
+		var _temp_fire_projectile = fire_projectile.instance()
+		_temp_fire_projectile.position = position
+		_temp_fire_projectile.direction = (player.position - position).normalized()
+		get_tree().current_scene.add_child(_temp_fire_projectile)
 
 func _on_Text_Box_on_end_dialog():
 	pass

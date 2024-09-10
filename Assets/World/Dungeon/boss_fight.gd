@@ -66,6 +66,7 @@ func _on_Phase_One_timeout():
 	text_box.start_dialog()
 
 func dragon_death():
+	yield(get_tree().create_timer(2), "timeout")
 	phase += 1
 	text_box.dialog_name = "dark_lord_dragon_death.json"
 	text_box.start_dialog()

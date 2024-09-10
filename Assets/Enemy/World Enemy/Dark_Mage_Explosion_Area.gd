@@ -14,5 +14,5 @@ func _on_AnimationPlayer_animation_finished(_anim_name):
 		var _temp = explosion.instance()
 		_temp.position = position
 		_current_scene.add_child(_temp)
-		_current_scene.start_shake(10, 0.5)
+		_current_scene.start_shake(3, 0.5)
 		queue_free()
