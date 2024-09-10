@@ -14,7 +14,6 @@ var chase_player = false
 var direction = Vector2(rand_range(-5, 5),rand_range(-5, 5))
 var chase_speed = 43
 
-
 func _ready():
 	if get_tree().current_scene.has_node("Player"):
 		player = get_tree().current_scene.get_node("Player")

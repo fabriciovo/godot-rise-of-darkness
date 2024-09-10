@@ -14,7 +14,7 @@ var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var fire_projectile = preload("res://Assets/Enemy/World Enemy/Fire_Mage_Projectile.tscn")
 var points = []
 var player
-var battle_unit_xp = 50
+var battle_unit_xp = 0
 var battle_unit_max_hp = 50
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp

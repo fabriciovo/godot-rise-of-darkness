@@ -13,9 +13,10 @@ var action_timer = 4
 var boss_fight_node
 
 func _ready():
+	get_tree().current_scene.start_shake(10, 1)
 	ID = name
 	battle_unit_max_hp = 300
-	battle_unit_xp = 1000
+	battle_unit_xp = 0
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 11

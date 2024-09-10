@@ -144,6 +144,7 @@ anims/RESET = SubResource( 5 )
 anims/start_fight = SubResource( 4 )
 
 [node name="Layer" type="CanvasLayer" parent="Necromancer_Animation" index="2"]
+layer = 3
 
 [node name="ColorRect" type="ColorRect" parent="Necromancer_Animation/Layer" index="0"]
 margin_right = 223.0

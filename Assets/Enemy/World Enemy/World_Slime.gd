@@ -38,6 +38,7 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	hit = false
 	timer.stop()
+	spr.modulate = Color(1,1,1,1)
 	$Enemy_Animation.play("slime_anim")
 
 func _on_DetectArea_body_entered(body):

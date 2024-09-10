@@ -12,8 +12,9 @@ func damage(_knockback_value, _damage_value):
 	hit = true
 	scale.x -= 0.10
 	scale.y -= 0.10
-	take_damage(_damage_value)
-	for i in 2:
+	if scale.x <= 2:
+		take_damage(_damage_value)
+	for i in 3:
 		spawn_slime(_knockback_value)
 	$Enemy_Animation.play("damage_anim")
 	yield($Enemy_Animation, "animation_finished")
@@ -39,8 +40,9 @@ func spawn_slime(_knockback_value):
 	call_deferred("init_slime", _slime_instance, _knockback_value)
 	
 func init_slime(_slime_instance, _knockback_value):
-	var _max = 300
-	var _min = -300
+	randomize()
+	var _max = 250
+	var _min = -250
 	var _random_x = randf() * (_max - _min) + _min
 	var _random_y = randf() * (_max - _min) + _min
 	var _random_vector = Vector2(_random_x, _random_y)
@@ -58,6 +60,6 @@ func init_slime(_slime_instance, _knockback_value):
 	_slime_instance.get_node("Sprite").visible = true
 	_slime_instance.get_node("Enemy_Animation").play("slime_anim")
 	_slime_instance.global_position = global_position
-	_slime_instance.get_node("Jump_Timer").start(0.5)
+	_slime_instance.get_node("Jump_Timer").start(rand_range(0.5,3))
 	_slime_instance.get_node("Enable_Timer").start(1)
 	_slime_instance.get_node("Timer").start(1)

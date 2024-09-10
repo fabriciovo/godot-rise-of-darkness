@@ -17,7 +17,6 @@ func create_projectile():
 		projectile.direction = directions[i]
 		projectile.position = position
 		projectile.damage = battle_unit_damage + 1
-		
 		get_parent().add_child(projectile)
 
 func _on_Text_Box_on_end_dialog():
@@ -31,6 +30,7 @@ func _on_Text_Box_on_end_dialog():
 		Global.stop = false
 		Global.cutscene = false
 		Global.dark_mages.fire_mage = true
+		Global.QUESTS["DEFEAT_DARK_MAGES"].Progress+=1
 		queue_free()
 
 func _exit_tree():

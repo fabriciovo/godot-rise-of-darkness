@@ -5,7 +5,7 @@ var velocity = Vector2(20,20)
 
 func _ready():
 	battle_unit_xp = 1
-	battle_unit_max_hp = 15
+	battle_unit_max_hp = 6
 	battle_unit_hp = battle_unit_max_hp
 	battle_unit_damage = 3
 	const_speed = 200

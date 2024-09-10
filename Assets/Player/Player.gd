@@ -251,6 +251,7 @@ func damage(value):
 	if invincible or dashing or PlayerControll.dead: return
 	if $PlayerAnimation.current_animation == "use_magic":
 		$PlayerAnimation.stop()
+		$Get_Item_Sprite.visible = false
 	casting = false
 	hit = true
 	invincible = true

@@ -27,7 +27,6 @@ func get_positions_node():
 	landing_pos = _flying_dragon_points.get_node("Landing").position 
 	position = left_pos
 
-
 func move_to_point(_delta):
 		if target_index == 0:
 			anim.play("side")
@@ -56,8 +55,6 @@ func move_to_point(_delta):
 			position = position.move_toward(landing_pos, _delta * 30 )
 			
 
-
-
 func _on_Animation_Player_animation_finished(_anim_name):
 	if _anim_name == "down":
 		target_index+=1
@@ -74,4 +71,5 @@ func _on_Animation_Player_animation_finished(_anim_name):
 		yield(get_tree().create_timer(3), "timeout")
 		Global.stop = false
 		Global.cutscene = false
+		
 		queue_free()

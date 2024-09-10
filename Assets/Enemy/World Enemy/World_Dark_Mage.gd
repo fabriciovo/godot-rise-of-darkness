@@ -137,5 +137,6 @@ func _on_Text_Box_on_end_dialog():
 		Global.cutscene = false
 		Global.dark_mages.dark_mage = true
 		PlayerControll.set_xp(battle_unit_xp)
+		Global.QUESTS["DEFEAT_DARK_MAGES"].Progress+=1
 		queue_free()
 

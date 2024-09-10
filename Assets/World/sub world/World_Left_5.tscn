@@ -31,7 +31,7 @@ tile_data = PoolIntArray( 0, 25, 0, 1, 25, 0, 2, 25, 0, 3, 25, 0, 4, 25, 0, 5, 2
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="World_Boss_Giant_Bat_0" parent="Entities" instance=ExtResource( 3 )]
+[node name="World_Boss_Giant_Bat_1" parent="Entities" instance=ExtResource( 3 )]
 position = Vector2( 111, 85 )
 
 [node name="The Door" parent="." instance=ExtResource( 7 )]

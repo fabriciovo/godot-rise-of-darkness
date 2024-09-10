@@ -21,6 +21,7 @@ var battle_unit_hp = battle_unit_max_hp
 var has_soul = true
 
 func _ready():
+	ID = name
 	add_to_group(Global.GROUPS.ENEMY)
 	find_new_position()
 

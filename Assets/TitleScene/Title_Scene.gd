@@ -35,11 +35,11 @@ func _on_Options_pressed():
 	Ui.open_settings()
 
 func _on_Load_Game_pressed():
-	var _scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")
 	Global.load_world_data()
 	PlayerControll.load_player_data(Global.loadJSONData("player_data"))
 	Ui.game_start()
 	Global.in_game = true
+	var _scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()

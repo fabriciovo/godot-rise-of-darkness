@@ -75,4 +75,5 @@ func _on_Text_Box_on_end_dialog():
 	Global.stop = false
 	Global.cutscene = false
 	Global.dark_mages.necromancer = true
+	Global.QUESTS["DEFEAT_DARK_MAGES"].Progress+=1
 	queue_free()

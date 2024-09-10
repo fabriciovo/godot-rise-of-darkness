@@ -20,7 +20,6 @@ func shaking_state(_delta):
 func _process(_delta):
 	shaking_state(_delta)
 
-
 func _ready():
 	var scene_name = get_tree().current_scene.name
 	if not "World_0" in scene_name:
