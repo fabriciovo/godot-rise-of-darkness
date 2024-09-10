@@ -1,6 +1,42 @@
 [
-{
-    "Name": "DARK_LORD_NAME",
-    "Text": "DARK_LORD_INTRO_0"
-}
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_0"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_1"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_2"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_3"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_4"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_5"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_6"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_7"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_8"
+    },
+    {
+        "Name": "DARK_LORD_NAME",
+        "Text": "DARK_LORD_INTRO_9"
+    }
 ]

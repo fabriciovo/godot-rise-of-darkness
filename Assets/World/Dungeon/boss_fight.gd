@@ -32,7 +32,7 @@ func _on_Text_Box_on_end_dialog():
 				var _sword_inst = sword_boss.instance()
 				_sword_inst.position = sword_pos.position
 				_world_swords.add_child(_sword_inst)
-				phase_one_timer.start(60)
+				phase_one_timer.start(4)
 				hide_dark_lord()
 		1:
 			var _flying_dragon_inst = flying_dragon.instance()

@@ -1,18 +1,18 @@
 [
 {
     "Name": "FIRE_MAGE_NAME",
-    "Text": "FIRE_MAGE_DEATH_0"
+    "Text": "DARK_MAGE_DEATH_DIALOG_0"
 },
 {
     "Name": "FIRE_MAGE_NAME",
-    "Text": "FIRE_MAGE_DEATH_1"
+    "Text": "DARK_MAGE_DEATH_DIALOG_1"
 },
 {
     "Name": "FIRE_MAGE_NAME",
-    "Text": "FIRE_MAGE_DEATH_2"
+    "Text": "DARK_MAGE_DEATH_DIALOG_2"
 },
 {
     "Name": "FIRE_MAGE_NAME",
-    "Text": "FIRE_MAGE_DEATH_3"
+    "Text": "DARK_MAGE_DEATH_DIALOG_3"
 }
 ]

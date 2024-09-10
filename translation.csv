@@ -57,20 +57,6 @@ LEVEL_UP_TEXT_0;Congratulations, you leveled up!;Parabéns, você subiu de níve
 LEVEL_UP_TEXT_1;Check the player information panel in the pause menu to increase your attributes.;Verifique o painel de informações do jogador no menu de pausa para aumentar seus atributos.
 YOU_NEED_A_KEY_TEXT;You need a key.;Você precisa de uma chave.
 YOU_NEED_A_WEAPON_TEXT;You need a weapon. There are many dangerous monsters there.;Você precisa de uma arma. Há muitos monstros perigosos lá.
-DARK_MAGE_NAME;Dark Mage;Mago do Caos
-DARK_MAGE_DIALOG_0;I am the Dark Mage!;Eu sou o Mago do Caos!
-DARK_MAGE_DIALOG_1;A disciple of the Dark Lord.;Um discípulo do Lorde das Trevas.
-DARK_MAGE_DIALOG_2;Now you will see a fraction of our power.;Agora você verá uma fração do nosso poder.
-DARK_MAGE_DIALOG_3;Your journey ends here, Hero.;Sua jornada se encerra aqui, Herói.
-DARK_MAGE_DEATH_DIALOG_0;No! How could this happen?;Não! Como isso pode acontecer?
-DARK_MAGE_DEATH_DIALOG_1;This cannot be...;Isso não pode ser...
-DARK_MAGE_DEATH_DIALOG_2;The Dark Lord will avenge me...;O Lorde das Trevas irá me vingar...
-DARK_MAGE_DEATH_DIALOG_3;But... my magic... is fading...;Mas... minha magia... está desaparecendo...
-DARK_LORD_DRAGON_DEATH_0;No! How did you do it?;Não! Como você conseguiu?
-DARK_LORD_DRAGON_DEATH_1;It was my most powerful creation!;Era minha criação mais poderosa!
-DARK_LORD_DRAGON_DEATH_2;It doesn't matter anymore...;Não importa mais...
-DARK_LORD_DRAGON_DEATH_3;Now, you will face ME!;Agora quem você enfrentará sou EU!
-DARK_LORDE_NAME;Dark Lord;Lorde das Trevas
 OPEN_CHEST_BOW_0;Congratulations! You got a Bow.;Parabéns! Você pegou um arco.
 OPEN_CHEST_BOW_1;Be careful, it consumes your mana points when used.;Cuidado, ele consome seus pontos de mana ao ser utilizado.
 OPEN_CHEST_BOMB_0;Congratulations! You got a Bomb.;Parabéns! Você pegou uma bomba.
@@ -166,3 +152,31 @@ END_GAME_TEXT;With a final strike, the Dark Lord was defeated, his dark power un
 ENDING_LABEL_TEXT;Thanks for playing.;Obrigado por jogar.
 RING_OF_SOULS_DESCRIPTION;Created by the adventurer Wanny, this ring grants the power to see the souls of monsters. At its full power, it will grant new abilities to the player.;Criado pela Aventureira Wanny, esse anel concede o poder de ver almas de monstros. E em seu poder total concederá novas habilidades ao jogador.
 ACTION_3;Spacebar;Barra de Espaço
+DARK_MAGE_NAME;Dark Mage;Mago do Caos
+DARK_MAGE_DIALOG_0;I am the Dark Mage!;Eu sou o Mago do Caos!
+DARK_MAGE_DIALOG_1;A disciple of the Dark Lord.;Um discípulo do Lorde das Trevas.
+DARK_MAGE_DIALOG_2;Now you will see a fraction of our power.;Agora você verá uma fração do nosso poder.
+DARK_MAGE_DIALOG_3;Your journey ends here, Hero.;Sua jornada se encerra aqui, Herói.
+DARK_MAGE_DEATH_DIALOG_0;No! How could this happen?;Não! Como isso pode acontecer?
+DARK_MAGE_DEATH_DIALOG_1;This cannot be...;Isso não pode ser...
+DARK_MAGE_DEATH_DIALOG_2;The Dark Lord will avenge me...;O Lorde das Trevas irá me vingar...
+DARK_MAGE_DEATH_DIALOG_3;But... my magic... is fading...;Mas... minha magia... está desaparecendo...
+DARK_LORD_DRAGON_DEATH_0;No! How did you do it?;Não! Como você conseguiu?
+DARK_LORD_DRAGON_DEATH_1;It was my most powerful creation!;Era minha criação mais poderosa!
+DARK_LORD_DRAGON_DEATH_2;It doesn't matter anymore...;Não importa mais...
+DARK_LORD_DRAGON_DEATH_3;Now, you will face ME!;Agora quem você enfrentará sou EU!
+DARK_LORDE_NAME;Dark Lord;Lorde das Trevas
+DARK_LORD_INTRO_0;So... you've made it this far.;
+DARK_LORD_INTRO_1;I must admit, I’m impressed.;
+DARK_LORD_INTRO_2;You, the last of the so-called Guardians, somehow clawed your way here. ;
+DARK_LORD_INTRO_3;Did you think it would matter?;
+DARK_LORD_INTRO_4;You’ve seen what I’ve done to this world, haven’t you?;
+DARK_LORD_INTRO_5;The creatures, the chaos... ;
+DARK_LORD_INTRO_6;Iit all bends to my command.;
+DARK_LORD_INTRO_7;Tell me, Hero...;
+DARK_LORD_INTRO_8;What will you do when hope isn’t enough?;
+DARK_LORD_INTRO_9;It's the end for you...;
+DARK_LORD_PHASE_ONE_0;I've just been getting started, hero.;Estou apenas comecando heroi.
+DARK_LORD_PHASE_ONE_1;I've been going easy on you until now.;Peguei leve com voce até agora.
+DARK_LORD_PHASE_ONE_2;But the time has come...;Mas já esta na hora...
+DARK_LORD_PHASE_ONE_3;UNLEASH THE BEAST!!!;SOLTEM A BESTA!!!
