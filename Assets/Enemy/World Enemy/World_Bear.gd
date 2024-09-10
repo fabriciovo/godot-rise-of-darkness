@@ -4,6 +4,7 @@ const CHANGE_DIRECTION_INTERVAL = 1.0
 onready var raycast = $Detect_Player
 onready var bear_anim = $Bear_Animation
 onready var enemy_anim = $Enemy_Animation
+onready var detect_wall_area = $Area/Area_Shape
 
 var random_direction_timer = 0.0
 var direction = Vector2.RIGHT
@@ -52,24 +53,32 @@ func pick_random_direction():
 			bear_anim.play("bear_up")
 			direction = Vector2.UP
 			direction_offset = Vector2.DOWN
-			$Area/Area_Shape.rotation_degrees = 90
+			detect_wall_area.position = Vector2.DOWN
+			detect_wall_area.rotation_degrees = 0
+			detect_wall_area.position = Vector2(0,-11)
 		1:
 			bear_anim.play("bear_down")
 			direction = Vector2.DOWN
 			direction_offset = Vector2.UP
-			$Area/Area_Shape.rotation_degrees = 90
+			detect_wall_area.position = Vector2.UP
+			detect_wall_area.rotation_degrees = 0
+			detect_wall_area.position = Vector2(0,11)
 		2:
 			bear_anim.play("bear_left")
 			direction = Vector2.LEFT
-			direction_offset = Vector2.RIGHT
 			spr.flip_h = true
-			$Area/Area_Shape.rotation_degrees = 0
+			direction_offset = Vector2.RIGHT
+			detect_wall_area.rotation_degrees = 90
+			detect_wall_area.position = Vector2.RIGHT
+			detect_wall_area.position = Vector2(-11,0)
 		3:
 			bear_anim.play("bear_left")
+			spr.flip_h = false
 			direction = Vector2.RIGHT
 			direction_offset = Vector2.LEFT
-			spr.flip_h = false
-			$Area/Area_Shape.rotation_degrees = 0
+			detect_wall_area.rotation_degrees = 90
+			detect_wall_area.position = Vector2(11,0)
+
 	if not raycast.enabled:
 		raycast.enabled = true
 
