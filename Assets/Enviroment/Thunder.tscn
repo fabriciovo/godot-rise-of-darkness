@@ -111,7 +111,7 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "play_thunder_effect"
+"method": "play_flash_effect"
 } ]
 }
 

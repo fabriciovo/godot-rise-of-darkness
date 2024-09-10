@@ -43,6 +43,9 @@ func play_thunder_effect():
 	get_tree().current_scene.start_shake(5,0.5)
 	SoundController.play_effect(SoundController.EFFECTS.thunder)
 
+func play_flash_effect():
+	SoundController.play_effect(SoundController.EFFECTS.thunder)
+
 func play_dark_lord_death_anim():
 	SoundController.stop_music()
 	animation.play("dark_lord_death")

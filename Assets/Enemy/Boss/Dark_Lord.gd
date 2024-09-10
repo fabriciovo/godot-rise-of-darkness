@@ -1,7 +1,7 @@
 class_name Dark_Lord extends Area2D
 
 signal start_ending
-
+var ID = "DARK_LORD"
 onready var spr = $Sprite
 onready var invincible_timer = $Invincible_Timer
 onready var animation_damage = $Animation_Damage
