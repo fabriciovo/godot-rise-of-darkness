@@ -484,6 +484,7 @@ margin_top = -39.0
 theme = ExtResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Description"
+autowrap = true
 
 [node name="Upgrades" type="Panel" parent="UI_Containers/Player_Info"]
 anchor_right = 1.0

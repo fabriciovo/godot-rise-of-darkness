@@ -41,7 +41,6 @@ func update_random_direction_timer(_delta):
 	if random_direction_timer >= CHANGE_DIRECTION_INTERVAL:
 		random_direction_timer = 0.0
 		pick_random_direction()
-
 	check_raycast_collision()
 
 
@@ -77,7 +76,6 @@ func pick_random_direction():
 			direction_offset = Vector2.LEFT
 			detect_wall_area.rotation_degrees = 90
 			detect_wall_area.position = Vector2(11,0)
-
 	if not raycast.enabled:
 		raycast.enabled = true
 

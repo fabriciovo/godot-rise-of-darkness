@@ -26,9 +26,9 @@ func add_quest(_quest_key):
 	Global.QUESTS[_quest_key].Unlocked = true
 
 func _on_quest_button_focus_entered(_quest_key):
-	print(_quest_key)
 	var _quest = Global.QUESTS[_quest_key]
-	quest_info.bbcode_text = tr(_quest["Description"])
+	quest_info.bbcode_text = tr(_quest["Title"]) + "\n" + tr(_quest["Description"])
 	if _quest["Has_Track"]:
-		var _quest_completed = "\n Completed" if _quest["Completed"] else "" 
-		quest_info.bbcode_text += "\n" + str(_quest["Progress"]) + " / " + str(_quest["Goal"]) + _quest_completed
+		quest_info.bbcode_text += "\n" + str(_quest["Progress"]) + " / " + str(_quest["Goal"])
+	if _quest["Completed"]:
+		quest_info.bbcode_text += "\n Completed"

@@ -59,7 +59,6 @@ func start_dialog():
 func _on_Area2D_body_entered(_body):
 	if _body.is_in_group(Global.GROUPS.PLAYER):
 		var _quest_step = Global.NPCS_QUEST_STEP_TRACK.Ronan
-		print(_quest_step)
 		if _quest_step == 0:
 			var _temp_smoke = smoke.instance()
 			_temp_smoke.global_position = sword_chest.global_position

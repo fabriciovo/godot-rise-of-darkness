@@ -12,9 +12,7 @@ func damage(_knockback_value, _damage_value):
 	hit = true
 	scale.x -= 0.10
 	scale.y -= 0.10
-	if scale.x <= 2:
-		take_damage(_damage_value)
-	for i in 3:
+	for i in 2:
 		spawn_slime(_knockback_value)
 	$Enemy_Animation.play("damage_anim")
 	yield($Enemy_Animation, "animation_finished")
