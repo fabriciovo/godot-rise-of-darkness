@@ -31,7 +31,6 @@ func initialize_movement_control():
 	pick_random_direction()
 
 func _physics_process(_delta):
-	print(speed)
 	if wall_hit: return
 	if battle_unit_hp <= 0: return
 	update_random_direction_timer(_delta)

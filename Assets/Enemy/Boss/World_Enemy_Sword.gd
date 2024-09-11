@@ -28,7 +28,6 @@ func _ready():
 
 func _process(_delta):
 	if anim.playback_speed <= 1:
-		print(anim.playback_speed)
 		anim.playback_speed += 0.01 * _delta
 		yield(get_tree().create_timer(1.0), "timeout")
 	if not attacking:

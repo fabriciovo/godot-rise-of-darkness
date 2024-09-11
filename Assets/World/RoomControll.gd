@@ -67,7 +67,6 @@ func queue_entities():
 	if not has_node("Entities"): return
 	var entities_node = get_node("Entities")
 	var entities = entities_node.get_children()
-	print(entities_node)
 	for entity in entities:
 		for enemy in Global.dead_enemies:
 			if typeof(enemy) == TYPE_DICTIONARY:

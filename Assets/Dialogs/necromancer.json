@@ -1,15 +1,15 @@
 [
     {
-      "Name": "Ronan",
-      "Text": "RONAN_DIALOG_1"
+      "Name": "NECROMANCER_NAME",
+      "Text": "NECROMANCER_DIALOG_0"
     },
     {
-      "Name": "Ronan",
-      "Text": "RONAN_DIALOG_2"
+      "Name": "NECROMANCER_NAME",
+      "Text": "NECROMANCER_DIALOG_1"
     },
     {
-      "Name": "Ronan",
-      "Text": "RONAN_DIALOG_3"
+      "Name": "NECROMANCER_NAME",
+      "Text": "NECROMANCER_DIALOG_2"
     }
   ]
   

@@ -122,7 +122,6 @@ func get_world_data():
 		"QUESTS": QUESTS,
 		"NPCS_QUEST_STEP_TRACK": NPCS_QUEST_STEP_TRACK
 	}
-	print(QUESTS["SOULS_QUEST"].Progress)
 	return data
 
 func set_world_data(data):

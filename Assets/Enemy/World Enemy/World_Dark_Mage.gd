@@ -97,7 +97,6 @@ func get_random_pos():
 		return points[random_index].position
 
 func _on_Damage_Area_area_entered(area):
-	print(area)
 	if invincible or hiding: return
 	if area.is_in_group(Global.GROUPS.SWORD):
 		damage(PlayerControll.atk)
