@@ -14,19 +14,17 @@ func _ready():
 
 func set_weapon_type(_weapon_type):
 	weapon_type = _weapon_type
-	match weapon_type:
-		Global.WEAPONS.SWORD:
-			icon = sword_icon
-		Global.WEAPONS.HEAL:
-			icon = heal_icon
-		Global.WEAPONS.BOW:
-			icon = bow_icon
-		Global.WEAPONS.BOMB:
-			icon = bomb_icon
-		Global.WEAPONS.SHIELD:
-			icon = shield_icon
-		_:
-			icon = null
+	if weapon_type == Global.WEAPONS.SWORD:
+		icon = sword_icon
+	elif weapon_type == Global.WEAPONS.HEAL:
+		icon = heal_icon
+	elif weapon_type == Global.WEAPONS.BOW:
+		icon = bow_icon
+	elif weapon_type == Global.WEAPONS.BOMB:
+		icon = bomb_icon
+	if weapon_type == Global.WEAPONS.SHIELD:
+		icon = shield_icon
+
 
 func set_focus(value):
 	pass

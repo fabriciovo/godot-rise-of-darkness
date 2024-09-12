@@ -34,11 +34,13 @@ func _physics_process(_delta):
 
 func _on_Timer_timeout():
 	hit = false
+	spr.modulate = Color(1,1,1,1)
 	timer.stop()
 
 
 func _on_Attack_Timer_timeout():
-	$Attack_Timer.start(4)
+	randomize()
+	$Attack_Timer.start(rand_range(1,4))
 	if Global.stop or Global.cutscene: return
 	var attack = projectile.instance()
 	attack.global_position = global_position
@@ -67,7 +69,6 @@ func Destroy():
 	Global.cutscene = true
 	text_box.dialog_name = "necromancer_death.json"
 	text_box.start_dialog()
-
 
 func _on_Text_Box_on_end_dialog():
 	SoundController.play_music(SoundController.MUSIC.dungeon)

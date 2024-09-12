@@ -92,3 +92,6 @@ func explosion():
 func _on_Explosion_Area_body_entered(_body):
 	if _body.is_in_group(Global.GROUPS.PLAYER):
 		explosion()
+
+func Destroy():
+	explosion()

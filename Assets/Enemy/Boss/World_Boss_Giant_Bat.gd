@@ -61,7 +61,7 @@ func _on_Idle_Timer_timeout():
 	if aggressive >= 50:
 		$Attack_Timer.wait_time = 1
 	else:
-		$Attack_Timer.wait_time = 6
+		$Attack_Timer.wait_time = 3
 
 func set_attack_values():
 	if not player: return
@@ -71,24 +71,27 @@ func set_attack_values():
 
 func Destroy():
 	speed = 0
-	var temp_smoke = smoke.instance()
-	temp_smoke.position = position
-	get_tree().current_scene.add_child(temp_smoke)
+	var _inst = smoke.instance()
+	_inst.position = position
+	get_tree().current_scene.add_child(_inst)
 	SoundController.play_effect(SoundController.EFFECTS.enemy_die)
 	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	queue_free()
 
-func _on_Area2D_body_entered(body):
-	if body.is_in_group(Global.GROUPS.ARROW):
+func _on_Area2D_body_entered(_body):
+	if _body.is_in_group(Global.GROUPS.ARROW):
 		damage(PlayerControll.atk+1)
-		body.queue_free()
-	if body.is_in_group(Global.GROUPS.BOMB):
+		_body.queue_free()
+	if _body.is_in_group(Global.GROUPS.BOMB):
 		damage(PlayerControll.atk+5)
 
 
-func _on_Area2D_area_entered(area):
-	if area.is_in_group(Global.GROUPS.SWORD):
+func _on_Area2D_area_entered(_area):
+	if _area.is_in_group(Global.GROUPS.SWORD):
 		damage(PlayerControll.atk)
+	if _area.is_in_group(Global.GROUPS.ARROW):
+		damage(PlayerControll.atk+1)
+		_area.queue_free()
 
 func damage(damageValue):
 		SoundController.play_effect(SoundController.EFFECTS.enemy_hit)

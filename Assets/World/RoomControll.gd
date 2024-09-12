@@ -35,6 +35,8 @@ func _ready():
 		Global.player_last_position = null
 	if "World_" in scene_name:
 		SoundController.play_music(SoundController.MUSIC.florest)
+	elif scene_name == "Dungeon_9":
+		SoundController.stop_music()
 	elif "Dungeon_" in scene_name:
 		SoundController.play_music(SoundController.MUSIC.dungeon)
 	elif scene_name == "Dungeon_Mini_Boss":

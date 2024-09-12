@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enviroment/Fire_Wall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Enemy/Boss/Dark_Lord.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/World/Dungeon/boss_fight.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Animations/smoke.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=6]
 [ext_resource path="res://Assets/TextBox/Text_Box.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Enviroment/Thunder.tscn" type="PackedScene" id=8]
@@ -109,13 +108,7 @@ frame = 38
 position = Vector2( 8, 11.5 )
 shape = SubResource( 2 )
 
-[node name="Smoke2" parent="." index="8" instance=ExtResource( 5 )]
-position = Vector2( 121, 7 )
-
-[node name="Smoke3" parent="." index="9" instance=ExtResource( 5 )]
-position = Vector2( 104, 7 )
-
-[node name="Sword_Points" type="Node2D" parent="." index="11"]
+[node name="Sword_Points" type="Node2D" parent="." index="9"]
 
 [node name="Movement" type="Node2D" parent="Sword_Points" index="0"]
 
@@ -187,9 +180,9 @@ position = Vector2( 144, 96 )
 [node name="Position2D4" type="Position2D" parent="Sword_Points/Spawn_Points" index="3"]
 position = Vector2( 184, 80 )
 
-[node name="World_Swords" type="Node2D" parent="." index="12"]
+[node name="World_Swords" type="Node2D" parent="." index="10"]
 
-[node name="Flying_Dragon_Points" type="Node2D" parent="." index="13"]
+[node name="Flying_Dragon_Points" type="Node2D" parent="." index="11"]
 
 [node name="Left" type="Position2D" parent="Flying_Dragon_Points" index="0"]
 position = Vector2( -64, 64 )
@@ -206,7 +199,7 @@ position = Vector2( 112, 200 )
 [node name="Landing" type="Position2D" parent="Flying_Dragon_Points" index="4"]
 position = Vector2( 112, 96 )
 
-[node name="Dark_Lord_Positions" type="Node2D" parent="." index="14"]
+[node name="Dark_Lord_Positions" type="Node2D" parent="." index="12"]
 position = Vector2( 0, 1 )
 
 [node name="Position2D" type="Position2D" parent="Dark_Lord_Positions" index="0"]

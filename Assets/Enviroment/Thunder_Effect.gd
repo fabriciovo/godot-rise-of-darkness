@@ -11,8 +11,6 @@ func start_florest_dark_mage():
 	yield(animation,"animation_finished")
 	SoundController.play_music(SoundController.MUSIC.cursed_voices)
 
-
-
 func spawn_dark_mage():
 	match mage_name:
 		"left_dark_mage":
@@ -21,7 +19,6 @@ func spawn_dark_mage():
 			spawn_right_dark_mage()
 		_:
 			return
-		
 
 func spawn_right_dark_mage():
 	var _temp = dark_florest_mage.instance()

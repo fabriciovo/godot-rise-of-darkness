@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 30
+var max_hp = 30000
 var max_ap = 5
 var max_mp = 15
 var hp = max_hp setget set_hp
@@ -9,15 +9,15 @@ var mp = max_mp setget set_mp
 var xp = 0 setget set_xp 
 var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
-var atk = 3 setget set_atk
+var atk = 30 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
-var equiped_item = [-1,-1] 
+var equiped_item = [-1,0] 
 var relics = []
 var key = 0
 var base_speed = 30
-var dash_unlocked = false
+var dash_unlocked = true
 var neck_of_protection = false
 var ring_of_souls = false
 var souls_quest_completed = false

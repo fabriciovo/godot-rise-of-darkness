@@ -7,6 +7,7 @@ onready var thunder = $Thunder
 var sword_spawn_points
 var sword_boss = preload("res://Assets/Enemy/Boss/World_Enemy_Sword.tscn")
 var flying_dragon = preload("res://Assets/Enviroment/Flying_Dragon.tscn")
+var smoke = preload("res://Assets/Animations/smoke.tscn")
 
 var dark_lord
 var phase = 0
@@ -21,12 +22,14 @@ func start():
 	Global.cutscene = false
 
 func intro_dialog():
+	SoundController.play_music(SoundController.MUSIC.cursed_voices)
 	text_box.dialog_name = "dark_lord_intro.json"
 	text_box.start_dialog()
 
 func _on_Text_Box_on_end_dialog():
 	match phase:
 		0:
+			SoundController.play_music(SoundController.MUSIC.boss_phase_1)
 			var _world_swords = get_tree().current_scene.get_node("World_Swords")
 			for sword_pos in sword_spawn_points:
 				var _sword_inst = sword_boss.instance()
@@ -35,10 +38,12 @@ func _on_Text_Box_on_end_dialog():
 				phase_one_timer.start(60)
 				hide_dark_lord()
 		1:
+			SoundController.play_music(SoundController.MUSIC.boss_phase_2)
 			var _flying_dragon_inst = flying_dragon.instance()
 			get_tree().current_scene.add_child(_flying_dragon_inst)
 			hide_dark_lord()
 		2:
+			SoundController.play_music(SoundController.MUSIC.boss_phase_3)
 			dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
 			dark_lord.start()
 			Global.stop = false
@@ -50,6 +55,7 @@ func _on_Text_Box_on_end_dialog():
 			dark_lord.Destroy()
 			
 			yield(get_tree().create_timer(3.0), "timeout")
+			SoundController.play_music(SoundController.MUSIC.ending)
 			var _scene_instance = get_tree().change_scene("res://Assets/EndGame/End_1.tscn")
 
 func hide_dark_lord():
@@ -72,10 +78,13 @@ func dragon_death():
 	text_box.start_dialog()
 
 func create_smoke():
-	var _smoke_2 = get_parent().get_node("Smoke2")
-	var _smoke_3 = get_parent().get_node("Smoke3")
-	_smoke_2.start_animation()
-	_smoke_3.start_animation()
+	var _gate = get_parent().get_node("gate")
+	var _smoke_1 = smoke.instance()
+	var _smoke_2 = smoke.instance()
+	_smoke_1.global_position = _gate.get_node("Sprite").global_position
+	_smoke_2.global_position = _gate.get_node("Sprite2").global_position
+	add_child(_smoke_1)
+	add_child(_smoke_2)
 
 func _on_Dark_Lord_start_ending():
 	Global.stop = true
