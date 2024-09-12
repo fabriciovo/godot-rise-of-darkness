@@ -107,7 +107,6 @@ func get_world_data():
 		"dead_objects": dead_objects,
 		"walls_objects": walls_objects,
 		"key_gate": key_gate,
-		"cutscene": cutscene,
 		"player_last_position": player_last_position,
 		"player_last_scene": player_last_scene,
 		"boss_gate": boss_gate,
@@ -135,8 +134,6 @@ func set_world_data(data):
 		walls_objects = data["walls_objects"]
 	if data.has("key_gate"):
 		key_gate = data["key_gate"]
-	if data.has("cutscene"):
-		cutscene = data["cutscene"]
 	if data.has("player_last_position"):
 		player_last_position = data["player_last_position"]
 	if data.has("player_last_scene"):

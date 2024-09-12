@@ -30,7 +30,7 @@ func _ready():
 	points = get_tree().current_scene.get_node("Dark_Lord_Positions").get_children()
 	player = get_tree().current_scene.get_node("Player")
 	battle_unit_xp = 50
-	battle_unit_max_hp = 50
+	battle_unit_max_hp = 150
 	battle_unit_damage = 10
 	battle_unit_hp = battle_unit_max_hp
 

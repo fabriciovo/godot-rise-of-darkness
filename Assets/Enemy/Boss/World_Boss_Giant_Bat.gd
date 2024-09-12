@@ -4,6 +4,7 @@ onready var positions = get_tree().current_scene.get_node("Bat_Positions").get_c
 
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
+var soul = preload("res://Assets/Enviroment/Soul.tscn")
 
 var ID = name
 
@@ -101,3 +102,9 @@ func damage(damageValue):
 		$Animation_Player.play("Boss_Giant_Bat_Normal")
 		if battle_unit_hp <= 0:
 			Destroy()
+
+func create_soul():
+	var temp_soul = soul.instance()
+	temp_soul.ID = ID
+	temp_soul.global_position = global_position
+	get_parent().add_child(temp_soul)

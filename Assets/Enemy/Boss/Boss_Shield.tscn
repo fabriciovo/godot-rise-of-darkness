@@ -5,7 +5,6 @@
 [sub_resource type="GDScript" id=3]
 script/source = "extends KinematicBody2D
 
-
 var radius = 33.0
 var angle = 0.0
 onready var center_sprite = get_node(\"Sprite\")
@@ -13,6 +12,7 @@ onready var center_sprite = get_node(\"Sprite\")
 export(int) var x_pos
 export(int) var y_pos
 export(int) var dir
+
 var battle_unit_damage = 5
 func _ready():
 	add_to_group(Global.GROUPS.ENEMY)

@@ -232,6 +232,8 @@ tracks/0/keys = {
 }
 
 [node name="Dark_Lord" type="Area2D"]
+collision_layer = 13
+collision_mask = 13
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

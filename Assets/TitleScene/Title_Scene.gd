@@ -40,6 +40,7 @@ func _on_Load_Game_pressed():
 	Ui.game_start()
 	Global.in_game = true
 	var _scene_instance = get_tree().change_scene("res://Assets/World/World_0.tscn")
+	
 
 func _on_Quit_pressed():
 	get_tree().quit()

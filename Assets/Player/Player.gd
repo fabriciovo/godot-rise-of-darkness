@@ -79,13 +79,14 @@ func get_input():
 	change_action_area_direction()
 
 func action(value):
+	if casting: return
 	if ap > 0 and value != -1:
 		$AP_Timer.start(.8)
 		match PlayerControll.equiped_item[value]:
 			Global.WEAPONS.SWORD:
 				create_sword(value)
 			Global.WEAPONS.BOW:
-				if ap >= 3:
+				if ap >= 1 and mp >= 1:
 					create_arrow()
 			Global.WEAPONS.BOMB:
 				if mp >= 3:
@@ -224,7 +225,8 @@ func create_bomb():
 	get_tree().get_current_scene().add_child(bomb_object)
 
 func create_arrow():
-	set_ap(ap-3)
+	set_ap(ap-1)
+	set_mp(mp-1)
 	var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
 	arrow_object.global_position = global_position
 	match dir:
@@ -361,7 +363,7 @@ func movement():
 				shield_area.knockback_vector = velocity * 2
 			else:
 				$PlayerAnimation.stop()
-		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2 and PlayerControll.dash_unlocked:
+		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2 and not casting and PlayerControll.dash_unlocked:
 			dash()
 		velocity = velocity.normalized() * speed
 

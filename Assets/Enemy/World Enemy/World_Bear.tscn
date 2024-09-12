@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/enemy_bear.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Bear.gd" type="Script" id=2]
@@ -20,8 +20,8 @@ shader = SubResource( 3 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 6.5 )
 
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 6, 1.5 )
+[sub_resource type="CircleShape2D" id=18]
+radius = 7.07107
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -164,6 +164,9 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -2.82843, 2.47487 ), Vector2( 0.176773, -2.12132 ), Vector2( -7.07107, -0.707108 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 8, 0.75 )
+
 [node name="World_Bear" type="KinematicBody2D"]
 z_index = 2
 collision_layer = 4
@@ -185,7 +188,6 @@ collision_layer = 4
 collision_mask = 15
 
 [node name="Area_Shape" type="CollisionShape2D" parent="Area"]
-position = Vector2( 0, 10 )
 shape = SubResource( 18 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -211,7 +213,14 @@ cast_to = Vector2( 0, 67 )
 [node name="Rush_Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Detect_Wall_Area" type="Area2D" parent="." groups=["ENEMY"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_Wall_Area"]
+position = Vector2( 0, 9 )
+shape = SubResource( 19 )
+
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Rush_Timer" to="." method="_on_Rush_Timer_timeout"]
+[connection signal="body_entered" from="Detect_Wall_Area" to="." method="_on_Detect_Wall_Area_body_entered"]
