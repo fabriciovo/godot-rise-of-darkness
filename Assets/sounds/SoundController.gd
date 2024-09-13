@@ -25,6 +25,7 @@ const MUSIC = {
 	boss_phase_2 = preload("res://Assets/sounds/Music/04 Requiem for the Beast (LOOP).wav"),
 	boss_phase_3 = preload("res://Assets/sounds/Music/03 Never Give Up (LOOP).wav"),
 	ending = preload("res://Assets/sounds/Music/florest.wav"),
+
 }
 
 const EFFECTS = {
@@ -43,7 +44,18 @@ const EFFECTS = {
 	sword_slash = preload("res://Assets/sounds/Sword_Slash.wav"),
 	dash = preload("res://Assets/sounds/Dash.wav"),
 	staff_heal = preload("res://Assets/sounds/Staff_Heal.wav"),
-	
+	ui_accept = preload("res://Assets/sounds/Staff_Heal.wav"),
+	ui_pause = preload("res://Assets/sounds/Staff_Heal.wav"),
+	ui_dialog_text = preload("res://Assets/sounds/Staff_Heal.wav"),
+	ui_updgrade = preload("res://Assets/sounds/Staff_Heal.wav"),
+	spawn_chest = preload("res://Assets/sounds/Staff_Heal.wav"),
+	spawn_gate = preload("res://Assets/sounds/Staff_Heal.wav"),
+	bear_wall_hit = preload("res://Assets/sounds/Staff_Heal.wav"),
+	gate_desapear =  preload("res://Assets/sounds/Staff_Heal.wav"),
+	open_gate_with_key = preload("res://Assets/sounds/Staff_Heal.wav"),
+	soul_pick_up = preload("res://Assets/sounds/Item:Coin 1.wav"),
+	level_up = preload("res://Assets/sounds/Positive 8.wav"),
+	game_over = preload("res://Assets/sounds/Negative 9.wav"),
 }
 
 func play_music(_sound):

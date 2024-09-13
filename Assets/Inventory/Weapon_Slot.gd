@@ -22,7 +22,7 @@ func set_weapon_type(_weapon_type):
 		icon = bow_icon
 	elif weapon_type == Global.WEAPONS.BOMB:
 		icon = bomb_icon
-	if weapon_type == Global.WEAPONS.SHIELD:
+	elif weapon_type == Global.WEAPONS.SHIELD:
 		icon = shield_icon
 
 

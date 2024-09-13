@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 30000
+var max_hp = 1
 var max_ap = 5
 var max_mp = 15
 var hp = max_hp setget set_hp
@@ -9,15 +9,15 @@ var mp = max_mp setget set_mp
 var xp = 0 setget set_xp 
 var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
-var atk = 30 setget set_atk
+var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
-var inventory = []
-var equiped_item = [-1,0] 
+var inventory = [0]
+var equiped_item = [0,-1] 
 var relics = []
 var key = 0
 var base_speed = 30
-var dash_unlocked = true
+var dash_unlocked = false
 var neck_of_protection = false
 var ring_of_souls = false
 var souls_quest_completed = false
@@ -149,6 +149,8 @@ func player_data():
 		"base_speed": base_speed,
 		"points": points,
 		"inventory": inventory,
+		"weapons": weapons,
+		"equiped_item": equiped_item,
 		"key": key,
 		"relics": relics,
 		"dash_unlocked": dash_unlocked,
@@ -185,6 +187,12 @@ func load_player_data(data):
 		inventory.clear()
 		for item in data["inventory"]:
 			set_inventory_item(item) 
+	if data.has("weapons"):
+		#weapons = data["weapons"]
+		pass
+	if data.has("equiped_item"):
+		pass
+		#equiped_item = data["equiped_item"]
 	if data.has("relics"):
 		relics = data["relics"]
 	if data.has("base_speed"):

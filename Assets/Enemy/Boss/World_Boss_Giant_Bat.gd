@@ -57,11 +57,9 @@ func _on_Attack_Timer_timeout():
 func _on_Idle_Timer_timeout():
 	find_new_position()
 	idle = false
-	var aggressive = rand_range(0,100)
-	if aggressive >= 50:
-		$Attack_Timer.wait_time = 1
-	else:
-		$Attack_Timer.wait_time = 3
+	randomize()
+	var _time = rand_range(1,4)
+	$Attack_Timer.start(_time)
 
 func set_attack_values():
 	if not player: return

@@ -146,8 +146,10 @@ func _physics_process(_delta):
 func _process(_delta):
 	if PlayerControll.dead:
 		$PlayerAnimation.play("death")
+		SoundController.stop_music()
 		Global.stop = true
 		yield($PlayerAnimation,"animation_finished")
+		SoundController.play_effect(SoundController.EFFECTS.game_over)
 		var _chnage_scene = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 	if get_item_anim: return
 	if(!Global.stop):
@@ -225,8 +227,9 @@ func create_bomb():
 	get_tree().get_current_scene().add_child(bomb_object)
 
 func create_arrow():
-	set_ap(ap-1)
+	set_ap(ap-2)
 	set_mp(mp-1)
+	create_text(-1,tr("MP"))
 	var arrow_object = preload("res://Assets/Enviroment/Arrow_Object.tscn").instance()
 	arrow_object.global_position = global_position
 	match dir:
@@ -448,3 +451,7 @@ func check_projectile_collision(_body):
 		damage(_body.damage)
 		_body.queue_free()
 	
+func create_text(_value, _string):
+	var _text = float_text.instance()
+	_text.set_text(_string + str(_value))
+	add_child(_text)

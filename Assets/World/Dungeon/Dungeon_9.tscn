@@ -53,6 +53,7 @@ extents = Vector2( 16, 7.5 )
 script = ExtResource( 4 )
 
 [node name="Thunder" parent="boss_fight" index="0" instance=ExtResource( 8 )]
+layer = 10
 
 [node name="Text_Box_Layer" type="CanvasLayer" parent="boss_fight" index="1"]
 layer = 3

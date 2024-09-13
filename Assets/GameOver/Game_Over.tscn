@@ -44,23 +44,38 @@ vframes = 5
 [node name="Control" type="Control" parent="."]
 margin_top = 1.0
 margin_right = 224.0
-margin_bottom = 41.0
+margin_bottom = 172.0
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = 82.0
-margin_top = 22.0
-margin_right = 142.0
-margin_bottom = 35.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -62.5
+margin_right = 112.0
+margin_bottom = -45.5
+theme = ExtResource( 3 )
 text = "GAME OVER"
 align = 1
 valign = 1
 
 [node name="Button" type="Button" parent="Control"]
-margin_left = 82.0
-margin_top = 94.0
-margin_right = 142.0
-margin_bottom = 110.0
+visible = false
+anchor_left = 0.375
+anchor_top = 0.678
+anchor_right = 0.629
+anchor_bottom = 0.76
+margin_top = -14.938
+margin_right = 0.104004
+margin_bottom = -14.96
 theme = ExtResource( 3 )
 text = "RESTART"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
