@@ -121,17 +121,7 @@ tracks/0/keys = {
 }
 
 [node name="Flying_Dragon" type="Node2D"]
-z_index = 10
-z_as_relative = false
 script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1.90735e-06, 0 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
-hframes = 9
-vframes = 4
-frame = 9
 
 [node name="Animation_Player" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
@@ -140,5 +130,14 @@ anims/down_scale = SubResource( 2 )
 anims/landing = SubResource( 5 )
 anims/side = SubResource( 3 )
 anims/up = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.90735e-06, 0 )
+scale = Vector2( 2, 2 )
+z_index = 200
+texture = ExtResource( 1 )
+hframes = 9
+vframes = 4
+frame = 9
 
 [connection signal="animation_finished" from="Animation_Player" to="." method="_on_Animation_Player_animation_finished"]

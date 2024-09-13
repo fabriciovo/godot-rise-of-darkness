@@ -63,6 +63,7 @@ func _on_Animation_Player_animation_finished(_anim_name):
 		$Sprite.scale.x = 2
 		$Sprite.scale.y = 2
 	if _anim_name == "landing":
+		Global.stop = true
 		visible = false
 		var _inst = dragon.instance()
 		_inst.position = position
@@ -70,6 +71,4 @@ func _on_Animation_Player_animation_finished(_anim_name):
 		visible = false
 		yield(get_tree().create_timer(3), "timeout")
 		Global.stop = false
-		Global.cutscene = false
-		
 		queue_free()

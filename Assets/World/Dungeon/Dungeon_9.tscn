@@ -230,6 +230,9 @@ position = Vector2( 64, 63 )
 [node name="Position2D9" type="Position2D" parent="Dark_Lord_Positions" index="8"]
 position = Vector2( 112, 95 )
 
+[node name="Canvas_Layer" type="CanvasLayer" parent="." index="13"]
+layer = 20
+
 [connection signal="on_end_dialog" from="boss_fight/Text_Box_Layer/Text_Box" to="boss_fight" method="_on_Text_Box_on_end_dialog"]
 [connection signal="timeout" from="boss_fight/Phase_One" to="boss_fight" method="_on_Phase_One_timeout"]
 [connection signal="start_ending" from="Entities/Dark_Lord" to="boss_fight" method="_on_Dark_Lord_start_ending"]

@@ -4,6 +4,8 @@ onready var text_box = $Text_Box_Layer/Text_Box
 onready var phase_one_timer = $Phase_One
 onready var thunder = $Thunder
 
+
+var phase_one_wait_time = 60
 var sword_spawn_points
 var sword_boss = preload("res://Assets/Enemy/Boss/World_Enemy_Sword.tscn")
 var flying_dragon = preload("res://Assets/Enviroment/Flying_Dragon.tscn")
@@ -35,13 +37,15 @@ func _on_Text_Box_on_end_dialog():
 				var _sword_inst = sword_boss.instance()
 				_sword_inst.position = sword_pos.position
 				_world_swords.add_child(_sword_inst)
-				phase_one_timer.start(60)
+				phase_one_timer.start(phase_one_wait_time)
 				hide_dark_lord()
 		1:
 			SoundController.play_music(SoundController.MUSIC.boss_phase_2)
 			var _flying_dragon_inst = flying_dragon.instance()
-			get_tree().current_scene.add_child(_flying_dragon_inst)
+			get_tree().current_scene.get_node("Canvas_Layer").add_child(_flying_dragon_inst)
 			hide_dark_lord()
+			Global.stop = false
+			Global.cutscene = false
 		2:
 			SoundController.play_music(SoundController.MUSIC.boss_phase_3)
 			dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
