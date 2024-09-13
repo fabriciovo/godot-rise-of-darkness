@@ -32,6 +32,7 @@ func trigger_dialog_box():
 func _on_Text_Box_on_end_dialog():
 	var quest_step = Global.NPCS_QUEST_STEP_TRACK.Wanny
 	if quest_step == 0:
+		SoundController.stop_music()
 		Global.QUESTS["FIND_WANNY"].Completed = true
 		Global.NPCS_QUEST_STEP_TRACK.Wanny+=1
 		Ui.quests_panel.add_quest("SOULS_QUEST")
@@ -44,7 +45,8 @@ func _on_Text_Box_on_end_dialog():
 		$Text_Box_Layer/Text_Box.start_dialog()
 		return
 	elif quest_step == 1:
-		pass
+		print("aaaaaaaaaaaaaaa")
+		SoundController.play_music(SoundController.MUSIC.florest)
 	elif quest_step == 2:
 		pass
 	elif quest_step == 4:

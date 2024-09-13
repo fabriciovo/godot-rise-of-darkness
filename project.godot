@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Enviroment/Bomb_Object.gd"
 }, {
-"base": "Node2D",
+"base": "Area2D",
 "class": "Boss_Bat",
 "language": "GDScript",
 "path": "res://Assets/Enemy/Boss/World_Boss_Giant_Bat.gd"

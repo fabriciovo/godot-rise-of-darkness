@@ -1,4 +1,4 @@
-class_name Boss_Bat extends Node2D
+class_name Boss_Bat extends Area2D
 onready var player = get_tree().current_scene.get_node("Player")
 onready var positions = get_tree().current_scene.get_node("Bat_Positions").get_children()
 
@@ -77,6 +77,8 @@ func Destroy():
 	queue_free()
 
 func _on_Area2D_body_entered(_body):
+	if _body.is_in_group(Global.GROUPS.PLAYER):
+		_body.damage(battle_unit_damage)
 	if _body.is_in_group(Global.GROUPS.ARROW):
 		damage(PlayerControll.atk+1)
 		_body.queue_free()

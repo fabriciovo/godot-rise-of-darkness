@@ -30,7 +30,7 @@ const MUSIC = {
 
 const EFFECTS = {
 	player_hit = preload("res://Assets/sounds/Player_Hit.wav"),
-	enemy_hit = preload("res://Assets/sounds/Enemy_Hit.wav"),
+	enemy_hit = preload("res://Assets/sounds/Character Hit 8.wav"),
 	enemy_die = preload("res://Assets/sounds/Enemy_Die.wav"),
 	player_die = preload("res://Assets/sounds/Player_Hit.wav"),
 	bomb_explode = preload("res://Assets/sounds/Player_Hit.wav"),
@@ -61,6 +61,8 @@ const EFFECTS = {
 func play_music(_sound):
 	if _sound != music.stream:
 		music.stream = _sound
+		music.play()
+	elif not music.playing:
 		music.play()
 
 func stop_music():

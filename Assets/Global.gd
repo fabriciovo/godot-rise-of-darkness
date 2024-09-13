@@ -79,7 +79,7 @@ var QUESTS = {
 		"Description": "COLLECT_SOULS_DESCRIPTION",
 		"Has_Track": true,
 		"Progress": 0,
-		"Goal": 100,
+		"Goal": 50,
 		"Unlocked": false,
 		"Completed": false
 	},
