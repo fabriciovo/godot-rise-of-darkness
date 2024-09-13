@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/UI/defaultTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/UI/Sound Panel.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=3]
 
@@ -13,7 +12,7 @@ margin_left = -72.0
 margin_top = -24.0
 margin_right = 72.0
 margin_bottom = 24.0
-theme = ExtResource( 1 )
+theme = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
@@ -30,8 +29,9 @@ align = 1
 [node name="SFX" type="Label" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
+margin_left = 4.0
 margin_top = -9.0
-margin_right = 144.0
+margin_right = 52.0
 margin_bottom = 9.0
 focus_mode = 2
 theme = ExtResource( 3 )
@@ -39,10 +39,10 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "SFX_TEXT"
 
 [node name="SFX_Slider" type="HSlider" parent="SFX"]
-margin_left = 62.0
-margin_top = 1.0
-margin_right = 138.0
-margin_bottom = 17.0
+margin_left = 60.0
+margin_top = -1.0
+margin_right = 136.0
+margin_bottom = 15.0
 theme = ExtResource( 3 )
 max_value = 1.0
 step = 0.1
@@ -51,17 +51,19 @@ value = 1.0
 [node name="Music" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -18.0
-margin_right = 143.0
+margin_left = 3.0
+margin_top = -17.0
+margin_right = 146.0
+margin_bottom = 1.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "MUSIC_TEXT"
 
 [node name="Music_Slider" type="HSlider" parent="Music"]
-margin_left = 62.0
-margin_top = 2.0
-margin_right = 138.0
-margin_bottom = 18.0
+margin_left = 61.0
+margin_top = -2.0
+margin_right = 137.0
+margin_bottom = 14.0
 theme = ExtResource( 3 )
 max_value = 1.0
 step = 0.1

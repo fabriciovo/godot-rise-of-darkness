@@ -6,6 +6,7 @@ onready var text_label = $Text_Label
 var ring_icon = preload("res://Sprites/Button/ring_relic_icon.png")
 var neckalce_icon = preload("res://Sprites/Button/necklace_relic_icon.png")
 var boots_of_speed_icon = preload("res://Sprites/Button/boots_of_speed_icon.png")
+var ring_of_souls_icon = preload("res://Sprites/Button/ring_of_souls_icon.png")
 
 func set_relics():
 	relic_list[0].grab_focus()
@@ -24,7 +25,7 @@ func set_relics():
 			relic_list[2].disabled = false
 			relic_list[2].text = ""
 		if relic == Global.RELICS.RING_OF_SOULS:
-			relic_list[3].icon = boots_of_speed_icon
+			relic_list[3].icon = ring_of_souls_icon
 			relic_list[3].disabled = false
 			relic_list[3].text = ""
 

@@ -121,8 +121,8 @@ WANNY_START_QUEST_5;Don't worry about the monsters you've already killed.;Não s
 WANNY_START_QUEST_6;You can still collect those souls.;Você ainda pode coletar essas almas.
 WANNY_START_QUEST_7;This ring is not just for collecting souls.;Esse anel não serve apenas para coletar as almas.
 WANNY_START_QUEST_8;Let's use their power to recover your Hero skill.;Vamos usar o poder delas, para recuperar sua habilidade Heroi.
-WANNY_START_QUEST_9;But for that, you need to collect at least 100 souls.;Mas para isso você precisa pelo menos coletar 100 almas.
-WANNY_START_QUEST_10;Bring the ring back to me once you've collected 100 souls.;Me traga o anel aqui quando tiver coletado as 100 almas.
+WANNY_START_QUEST_9;But for that, you need to collect at least 50 souls.;Mas para isso você precisa pelo menos coletar 50 almas.
+WANNY_START_QUEST_10;Bring the ring back to me once you've collected 50 souls.;Me traga o anel aqui quando tiver coletado as 50 almas.
 WANNY_START_QUEST_11;Then you'll have the power to destroy the Dark Lord.;Assim você terá o poder para destruir o Lorde das Trevas.
 YOU_GET_RING_OF_SOULS;You received the Ring of Souls.;Você recebeu o Anel das Almas.
 WANNY_COLLECT_SOULS_COMPLETED_0;Now the Ring of Souls is at full power.;Agora o Anel das Almas está com seu poder total.
@@ -185,5 +185,9 @@ DARK_LORD_ENDING_5;And when they do... you will wish... I had finished you...;E 
 NECROMANCER_DIALOG_0;I am the Necromancer Mage!;Eu sou o Mago Necromante!
 NECROMANCER_DIALOG_1;Don't worry hero...;Não se preocupe, herói...
 NECROMANCER_DIALOG_2;Your suffer will end here;Seu sofrimento terminará aqui.
-;;
+DARK_LORD_PHASE_ONE_0;I've just been getting started, hero.;Estou apenas comecando heroi.
+DARK_LORD_PHASE_ONE_1;I've been going easy on you until now.;Peguei leve com voce até agora.
+DARK_LORD_PHASE_ONE_2;But the time has come...;Mas já esta na hora...
+DARK_LORD_PHASE_ONE_3;"UNLEASH THE BEAST!!!""";SOLTEM A BESTA!!!
+NECROMANCER_NAME;Necromancer;Necromante
 ;;

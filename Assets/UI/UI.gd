@@ -48,11 +48,13 @@ func _process(_delta):
 	else:
 		item_1.visible = true
 		item_1.frame = PlayerControll.equiped_item[0]
+		item_1.frame_coords.y = 2
 	if PlayerControll.equiped_item[1] < 0:
 		item_2.visible = false
 	else:
 		item_2.visible = true
 		item_2.frame = PlayerControll.equiped_item[1]
+		item_2.frame_coords.y = 2
 	if pause_options.visible and Global.cutscene:
 		pause_options.visible = false
 

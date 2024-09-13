@@ -257,7 +257,6 @@ screen=false
 
 [gui]
 
-theme/custom="res://Assets/UI/defaultTheme.tres"
 theme/custom_font="res://Assets/UI/DefaultFont.tres"
 
 [importer_defaults]

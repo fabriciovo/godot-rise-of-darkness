@@ -38,7 +38,7 @@ func _on_Text_Box_on_end_dialog():
 		Ui.quests_panel.add_quest("SOULS_QUEST")
 		$Text_Box_Layer/Text_Box.dialog_name = "get_relic_3.json"
 		PlayerControll.set_relic_item(Global.RELICS.RING_OF_SOULS)
-		player.set_item_texture(0, "relics")
+		player.set_item_texture(3, "relics")
 		player.play_get_item_animation()
 		var player_animator = player.get_node("PlayerAnimation")
 		yield(player_animator, "animation_finished")

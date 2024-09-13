@@ -53,7 +53,7 @@ const EFFECTS = {
 	bear_wall_hit = preload("res://Assets/sounds/Staff_Heal.wav"),
 	gate_desapear =  preload("res://Assets/sounds/Staff_Heal.wav"),
 	open_gate_with_key = preload("res://Assets/sounds/Staff_Heal.wav"),
-	soul_pick_up = preload("res://Assets/sounds/Item:Coin 1.wav"),
+	soul_pick_up = preload("res://Assets/sounds/Item Coin 1.wav"),
 	level_up = preload("res://Assets/sounds/Positive 8.wav"),
 	game_over = preload("res://Assets/sounds/Negative 9.wav"),
 }

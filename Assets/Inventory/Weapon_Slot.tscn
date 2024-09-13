@@ -8,7 +8,6 @@ margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
 theme = ExtResource( 1 )
-custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
 disabled = true
 shortcut_in_tooltip = false
 button_mask = 0
