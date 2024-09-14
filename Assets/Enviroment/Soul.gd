@@ -22,6 +22,7 @@ func _on_Area2D_body_entered(body):
 					PlayerControll.set_hp(PlayerControll.hp+1)
 					PlayerControll.set_mp(PlayerControll.mp+1)
 					PlayerControll.set_xp(1)
+					SoundController.play_effect(SoundController.EFFECTS.soul_pick_up)
 					if Global.QUESTS["SOULS_QUEST"].Progress == Global.QUESTS["SOULS_QUEST"].Goal:
 						Global.QUESTS["SOULS_QUEST"].Completed = true
 			queue_free()
