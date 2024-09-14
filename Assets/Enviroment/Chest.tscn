@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Enviroment/Chest.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=2]
-[ext_resource path="res://Assets/UI/InteractionButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/TextBox/Text_Box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Enviroment/Gate_Static_Body.gd" type="Script" id=5]
 
@@ -32,12 +31,8 @@ script = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chest_Static_Body"]
 shape = SubResource( 2 )
 
-[node name="InteractionButton" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 11, -15 )
-z_index = 1
-
 [node name="Text_Box_Layer" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="Text_Box" parent="Text_Box_Layer" instance=ExtResource( 4 )]
 

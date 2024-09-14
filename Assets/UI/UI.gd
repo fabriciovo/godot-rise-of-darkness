@@ -103,8 +103,8 @@ func show_hidden_panels():
 func open_settings():
 	settings_panel.visible = !settings_panel.visible
 	if settings_panel.visible:
-		settings_panel.get_node("Sound Panel/SFX").get_focus_owner()
-		settings_panel.get_node("Sound Panel/SFX").grab_focus()
+		settings_panel.get_node("Sound Panel/SFX/SFX_Slider").get_focus_owner()
+		settings_panel.get_node("Sound Panel/SFX/SFX_Slider").grab_focus()
 
 func check_if_settings_is_open():
 	if settings_panel.visible:

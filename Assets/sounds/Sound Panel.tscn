@@ -16,54 +16,55 @@ theme = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -72.0
-margin_right = 72.0
-margin_bottom = 18.0
+margin_left = 2.0
+margin_right = 142.0
+margin_bottom = 10.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "SOUND_TITLE"
 align = 1
 
 [node name="SFX" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 4.0
-margin_top = -9.0
-margin_right = 52.0
-margin_bottom = 9.0
-focus_mode = 2
+margin_left = 2.0
+margin_top = 14.0
+margin_right = 142.0
+margin_bottom = 24.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "SFX_TEXT"
 
 [node name="SFX_Slider" type="HSlider" parent="SFX"]
-margin_left = 60.0
-margin_top = -1.0
-margin_right = 136.0
-margin_bottom = 15.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -6.0
+margin_top = -3.0
+margin_right = 70.0
+margin_bottom = 3.0
 theme = ExtResource( 3 )
 max_value = 1.0
 step = 0.1
 value = 1.0
 
 [node name="Music" type="Label" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = -17.0
-margin_right = 146.0
-margin_bottom = 1.0
+margin_left = 2.0
+margin_top = 28.0
+margin_right = 142.0
+margin_bottom = 38.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "MUSIC_TEXT"
 
 [node name="Music_Slider" type="HSlider" parent="Music"]
-margin_left = 61.0
-margin_top = -2.0
-margin_right = 137.0
-margin_bottom = 14.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -6.0
+margin_top = -3.0
+margin_right = 70.0
+margin_bottom = 3.0
 theme = ExtResource( 3 )
 max_value = 1.0
 step = 0.1

@@ -59,8 +59,6 @@ layer = 10
 layer = 3
 
 [node name="Text_Box" parent="boss_fight/Text_Box_Layer" index="0" instance=ExtResource( 7 )]
-margin_top = -62.0
-margin_bottom = -2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="boss_fight" index="2"]
 autoplay = "start_boss"

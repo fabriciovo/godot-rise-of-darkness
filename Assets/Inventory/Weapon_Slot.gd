@@ -24,6 +24,8 @@ func set_weapon_type(_weapon_type):
 		icon = bomb_icon
 	elif weapon_type == Global.WEAPONS.SHIELD:
 		icon = shield_icon
+	else:
+		icon = null
 
 
 func set_focus(value):

@@ -7,7 +7,6 @@ export(int, "Sword/Boot of Speed",
 "Bomb/necklace of protection", 
 "Heal/Ring of souls", "Key", "Shield" ) var item = 0
 
-onready var interactButton = get_node("InteractionButton")
 onready var text_box = $Text_Box_Layer/Text_Box
 
 var ID = ""
@@ -17,7 +16,6 @@ var player_anim = null
 
 func _ready():
 	add_to_group(Global.GROUPS.STATIC)
-	interactButton.visible = false;
 	ID = name
 
 func _input(_event):
