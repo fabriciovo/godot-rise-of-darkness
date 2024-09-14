@@ -39,13 +39,13 @@ item = 3
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="World_Wood_Monster_wr0" parent="Entities" instance=ExtResource( 9 )]
+[node name="World_Wood_Monster_wr2_0" parent="Entities" instance=ExtResource( 9 )]
 position = Vector2( 128, 44 )
 
-[node name="World_Wood_Monster_wr1" parent="Entities" instance=ExtResource( 9 )]
+[node name="World_Wood_Monster_wr2_1" parent="Entities" instance=ExtResource( 9 )]
 position = Vector2( 186, 81 )
 
-[node name="World_Wood_Monster_wr2" parent="Entities" instance=ExtResource( 9 )]
+[node name="World_Wood_Monster_wr2_2" parent="Entities" instance=ExtResource( 9 )]
 position = Vector2( 61, 115 )
 
 [node name="Door_Dark_Mage" parent="." instance=ExtResource( 6 )]

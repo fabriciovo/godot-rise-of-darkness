@@ -124,15 +124,14 @@ func on_wall_hit():
 	speed = const_speed
 
 func _on_Area_area_entered(_area):
-	if _area.is_in_group(Global.GROUPS.SWORD):
+	if _area.is_in_group(Global.GROUPS.SWORD) and not hit:
 		damage(knockback,  PlayerControll.atk)
-	if _area.is_in_group(Global.GROUPS.SHIELD) and not wall_hit and attacking:
+	if _area.is_in_group(Global.GROUPS.SHIELD) and not hit and not wall_hit and attacking:
 		knockback = _area.knockback_vector * 10
 		on_wall_hit()
-	if _area.is_in_group(Global.GROUPS.ARROW):
+	if _area.is_in_group(Global.GROUPS.ARROW) and not hit:
 		damage(knockback,  PlayerControll.atk+1)
 		_area.queue_free()
-
 
 func _on_Detect_Wall_Area_body_entered(_body):
 	if rushing and not wall_hit:
