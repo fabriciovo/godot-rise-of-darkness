@@ -133,3 +133,6 @@ func _on_Detect_Wall_Area_body_entered(_body):
 
 func set_wall_hit_anim_speed():
 	speed = 0
+
+func Enable():
+	set_physics_process(true);

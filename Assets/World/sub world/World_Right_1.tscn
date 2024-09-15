@@ -37,7 +37,7 @@ tile_data = PoolIntArray( -1, 41, 0, -65536, 41, 0, -65535, 41, 0, -65534, 41, 0
 position = Vector2( 162, 30 )
 
 [node name="World_Wood_Monster_wr1_0" parent="Entities" instance=ExtResource( 6 )]
-position = Vector2( 60, 66 )
+position = Vector2( 60, 65 )
 
 [node name="World_Wood_Monster_wr1_1" parent="Entities" instance=ExtResource( 6 )]
 position = Vector2( 106, 41 )
