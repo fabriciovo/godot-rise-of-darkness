@@ -18,7 +18,7 @@ void fragment(){
 shader = SubResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 6.5 )
+extents = Vector2( 6, 6 )
 
 [sub_resource type="CircleShape2D" id=18]
 radius = 7.07107
@@ -179,7 +179,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 8, 0.75 )
+extents = Vector2( 6, 0.75 )
 
 [node name="World_Bear" type="KinematicBody2D"]
 z_index = 2
@@ -194,7 +194,6 @@ hframes = 4
 vframes = 5
 
 [node name="Body_Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1.5 )
 shape = SubResource( 1 )
 
 [node name="Area" type="Area2D" parent="."]
@@ -230,7 +229,7 @@ one_shot = true
 [node name="Detect_Wall_Area" type="Area2D" parent="." groups=["ENEMY"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_Wall_Area"]
-position = Vector2( 0, 9 )
+position = Vector2( 0, 8 )
 shape = SubResource( 19 )
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]

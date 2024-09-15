@@ -68,14 +68,14 @@ func pick_random_direction():
 			direction_offset = Vector2.RIGHT
 			detect_wall_area.rotation_degrees = 90
 			detect_wall_area.position = Vector2.RIGHT
-			detect_wall_area.position = Vector2(-10,0)
+			detect_wall_area.position = Vector2(-8,0)
 		3:
 			bear_anim.play("bear_left")
 			spr.flip_h = false
 			direction = Vector2.RIGHT
 			direction_offset = Vector2.LEFT
 			detect_wall_area.rotation_degrees = 90
-			detect_wall_area.position = Vector2(10,0)
+			detect_wall_area.position = Vector2(8,0)
 	if not raycast.enabled:
 		raycast.enabled = true
 
