@@ -17,6 +17,8 @@ func _ready():
 
 func _on_Start_Necromancer_Fight_body_entered(_body):
 	if _body.is_in_group(Global.GROUPS.PLAYER) and not start:
+		SoundController.stop_music()
+		SoundController.play_music(SoundController.MUSIC.cursed_voices)
 		start = true
 		Global.stop = true
 		Global.cutscene = true
@@ -42,5 +44,6 @@ func start_text_box():
 	text_box.start_dialog()
 
 func _on_Text_Box_on_end_dialog():
+	SoundController.play_music(SoundController.MUSIC.invasion)
 	Global.stop = false
 	Global.cutscene = false

@@ -50,7 +50,7 @@ func _on_Attack_Timer_timeout():
 	get_tree().get_current_scene().add_child(attack)
 	yield(anim, "animation_finished")
 	attacking = false
-	direction.x = const_speed
+	direction.x = const_speed * rand_range(2,-2)
 
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW):

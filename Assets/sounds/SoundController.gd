@@ -25,7 +25,6 @@ const MUSIC = {
 	boss_phase_2 = preload("res://Assets/sounds/Music/04 Requiem for the Beast (LOOP).wav"),
 	boss_phase_3 = preload("res://Assets/sounds/Music/03 Never Give Up (LOOP).wav"),
 	ending = preload("res://Assets/sounds/Music/florest.wav"),
-
 }
 
 const EFFECTS = {

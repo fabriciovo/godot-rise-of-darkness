@@ -39,8 +39,6 @@ func _ready():
 		SoundController.stop_music()
 	elif "Dungeon_" in scene_name:
 		SoundController.play_music(SoundController.MUSIC.dungeon)
-	elif scene_name == "Dungeon_Mini_Boss":
-		SoundController.play_music(SoundController.MUSIC.miniboss)
 	elif scene_name == "Dungeon_9":
 		SoundController.play_music(SoundController.MUSIC.boss)
 	if scene_name == "Dungeon_0" and Global.door_name == "Dungeon_exit":

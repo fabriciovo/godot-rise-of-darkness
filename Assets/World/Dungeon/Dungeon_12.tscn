@@ -12,10 +12,10 @@
 [ext_resource path="res://Assets/Enviroment/Skulls.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 16.5, 23.5 )
+extents = Vector2( 16.25, 23.6875 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15.5, 10 )
+extents = Vector2( 16, 15.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 31.5, 7.5 )
@@ -53,11 +53,11 @@ collision_layer = 11
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Static/Watter_Collision_sides" index="0"]
-position = Vector2( 80.5, 105.5 )
+position = Vector2( 80, 105.625 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enviroment/Static/Watter_Collision_sides" index="1"]
-position = Vector2( 144.5, 106 )
+position = Vector2( 144.25, 105.688 )
 shape = SubResource( 4 )
 
 [node name="Bridge" type="Node2D" parent="Enviroment/Static" index="2"]
@@ -69,7 +69,7 @@ script = ExtResource( 8 )
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 327686, 66, 0, 327687, 66, 0, 393222, 65, 0, 393223, 65, 0, 458758, 65, 0, 458759, 65, 0, 524294, 65, 0, 524295, 65, 0 )
+tile_data = PoolIntArray( 327686, 66, 0, 327687, 66, 0, 393222, 65, 0, 393223, 65, 0, 458758, 65, 0, 458759, 65, 0 )
 
 [node name="Bridge_Collision" type="StaticBody2D" parent="Enviroment/Static/Bridge" index="1"]
 collision_layer = 11
@@ -77,7 +77,7 @@ collision_mask = 3
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Static/Bridge/Bridge_Collision" index="0"]
-position = Vector2( 112.5, 106 )
+position = Vector2( 112, 112.5 )
 shape = SubResource( 2 )
 
 [node name="Watter_Collision_Up" type="StaticBody2D" parent="Enviroment/Static" index="3"]
@@ -99,7 +99,7 @@ position = Vector2( 45, 80 )
 [node name="Dungeon_14" parent="." index="7" instance=ExtResource( 6 )]
 position = Vector2( 112, 131 )
 rotation = 3.14159
-target_scene = "res://Assets/World/Dungeon/Dungeon_World_Necromancer.tscn"
+target_scene = "res://Assets/World/Dungeon/Dungeon_Necromancer.tscn"
 door_name = "Dungeon_14"
 
 [node name="Dungeon_11" parent="." index="8" instance=ExtResource( 6 )]
