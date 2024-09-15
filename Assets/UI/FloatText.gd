@@ -7,7 +7,6 @@ func _process(delta):
 	set_position(pos)
 	pos.y -= speed * delta
 
-
 func _on_Change_Speed_timeout():
 	speed = 0
 

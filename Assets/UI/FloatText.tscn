@@ -9,6 +9,13 @@ anchor_bottom = 0.071
 margin_right = -0.0240002
 margin_bottom = -0.0700006
 theme = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 0
+custom_constants/shadow_as_outline = 3
 text = "-0"
 script = ExtResource( 1 )
 
