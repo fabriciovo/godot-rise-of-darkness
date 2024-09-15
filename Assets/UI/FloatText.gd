@@ -2,7 +2,6 @@ extends Label
 var speed = 51
 var pos = Vector2.ZERO
 
-
 func _process(delta):
 	set_position(pos)
 	pos.y -= speed * delta

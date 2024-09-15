@@ -26,22 +26,24 @@ script = ExtResource( 3 )
 margin_left = 8.0
 margin_top = 191.0
 margin_right = 216.0
-margin_bottom = 905.0
+margin_bottom = 316.0
 theme = ExtResource( 1 )
-bbcode_enabled = true
-bbcode_text = "END_GAME_TEXT"
 meta_underlined = false
 text = "END_GAME_TEXT"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
 [node name="Sprite" type="Sprite" parent="Text_Container"]
+visible = false
 position = Vector2( 100, 948 )
 scale = Vector2( 6.5, 5.42857 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Text_Container"]
-margin_top = 1012.0
-margin_right = 220.0
-margin_bottom = 1318.0
+margin_left = 2.0
+margin_top = 321.0
+margin_right = 222.0
+margin_bottom = 354.0
+theme = ExtResource( 1 )
 text = "ENDING_LABEL_TEXT"
+align = 1

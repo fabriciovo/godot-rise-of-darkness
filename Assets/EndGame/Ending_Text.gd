@@ -6,6 +6,7 @@ var speed = 8
 func _ready():
 	Global.in_game = false
 	Ui.game_ui.visible = false
+	container.get_node("Text").bbcode_text = tr("END_GAME_TEXT")
 
 func _input(_event):
 	if  _event.is_action_pressed("action_1"):
