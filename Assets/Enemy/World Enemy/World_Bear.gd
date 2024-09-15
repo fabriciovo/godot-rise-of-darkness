@@ -32,7 +32,6 @@ func initialize_movement_control():
 	pick_random_direction()
 
 func _physics_process(_delta):
-	if wall_hit: return
 	if battle_unit_hp <= 0: return
 	update_random_direction_timer(_delta)
 	move_enemy(_delta)
@@ -81,7 +80,6 @@ func pick_random_direction():
 		raycast.enabled = true
 
 func move_enemy(_delta):
-	if attacking: return
 	raycast.cast_to = direction * 67
 	var _dir = move_and_slide(direction * speed * _delta)
 
@@ -95,7 +93,7 @@ func on_player_detected():
 	attacking = true
 	speed = 0
 	bear_anim.playback_speed = 3
-	$Rush_Timer.start(2)
+	$Rush_Timer.start(1)
 
 func _on_Rush_Timer_timeout():
 	rushing = true
@@ -107,21 +105,17 @@ func on_wall_hit():
 	bear_anim.play("bear_wall_hit")
 	bear_anim.playback_speed = 0.4
 	wall_hit = true
+	speed = const_speed
 	var offset
 	if knockback == Vector2.ZERO:
-		offset = direction_offset * 20
+		offset = direction_offset
 	else:
 		offset = knockback * 1
-	var remaining_time = 1
-	while remaining_time > 0:
-		var delta = get_process_delta_time()
-		remaining_time -= delta
-		var _dir = move_and_slide(offset)
-		yield(get_tree().create_timer(delta), "timeout")
+	direction = offset
 	yield(bear_anim, "animation_finished")
+	speed = const_speed 
 	wall_hit = false
 	rushing = false
-	speed = const_speed
 
 func _on_Area_area_entered(_area):
 	if _area.is_in_group(Global.GROUPS.SWORD) and not hit:
@@ -136,3 +130,6 @@ func _on_Area_area_entered(_area):
 func _on_Detect_Wall_Area_body_entered(_body):
 	if rushing and not wall_hit:
 		on_wall_hit()
+
+func set_wall_hit_anim_speed():
+	speed = 0

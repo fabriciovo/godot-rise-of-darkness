@@ -119,6 +119,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 0, 1, 2, 3, 0 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_wall_hit_anim_speed"
+} ]
+}
 
 [sub_resource type="Animation" id=16]
 resource_name = "damage_anim"

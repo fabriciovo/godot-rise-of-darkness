@@ -6,6 +6,7 @@ var directions = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 var key_chest
 
 func _ready():
+	battle_unit_xp = 25
 	intro_dialog = "fire_mage.json"
 	dath_dialog = "fire_mage_death.json"
 	key_chest = get_tree().current_scene.key_chest
