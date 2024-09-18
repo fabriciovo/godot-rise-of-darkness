@@ -1,10 +1,9 @@
 extends Node2D
 
 var player = null
-var dialog_name = ["ronan_dialog_1.json", "ronan_dialog_1.json", "ronan_dialog_2.json", "ronan_dialog_2.json"]
+var dialog_name = ["ronan_dialog_1.json", "ronan_dialog_1.json", "ronan_dialog_2.json", "ronan_dialog_2.json","ronan_dialog_quest_completed.json"]
 var can_talk = true
 var sword_chest
-
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 
 
@@ -16,7 +15,7 @@ func _ready():
 		sword_chest.visible = true
 		
 	if Global.QUESTS["FIND_WANNY"].Completed:
-		dialog_name = "ronan_dialog_1.json"
+		Global.NPCS_QUEST_STEP_TRACK.Ronan = 4
 
 func _input(_event):
 	if not player: return

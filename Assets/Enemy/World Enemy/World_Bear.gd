@@ -93,7 +93,7 @@ func on_player_detected():
 	attacking = true
 	speed = 0
 	bear_anim.playback_speed = 3
-	$Rush_Timer.start(1)
+	$Rush_Timer.start(0.6)
 
 func _on_Rush_Timer_timeout():
 	rushing = true
