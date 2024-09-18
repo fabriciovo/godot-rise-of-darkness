@@ -1,7 +1,7 @@
 class_name Boss_Bat extends Area2D
+onready var invincible_timer = $Invincible_Timer
 onready var player = get_tree().current_scene.get_node("Player")
 onready var positions = get_tree().current_scene.get_node("Bat_Positions").get_children()
-
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
 var soul = preload("res://Assets/Enviroment/Soul.tscn")
@@ -20,6 +20,7 @@ var battle_unit_max_hp = 100
 var battle_unit_damage = 10
 var battle_unit_hp = battle_unit_max_hp
 var has_soul = true
+var hit = false
 
 func _ready():
 	ID = name
@@ -58,7 +59,7 @@ func _on_Idle_Timer_timeout():
 	find_new_position()
 	idle = false
 	randomize()
-	var _time = rand_range(1,4)
+	var _time = rand_range(2,4)
 	$Attack_Timer.start(_time)
 
 func set_attack_values():
@@ -94,20 +95,27 @@ func _on_Area2D_area_entered(_area):
 		_area.queue_free()
 
 func damage(damageValue):
-		SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
-		var text = damage_text.instance()
-		text.set_text(str(damageValue))
-		add_child(text)
-		battle_unit_hp -= damageValue
-		$Animation_Player.play("damage_anim")
-		yield($Animation_Player, "animation_finished")
-		$Sprite.modulate = Color(1,1,1,1)
-		$Animation_Player.play("Boss_Giant_Bat_Normal")
-		if battle_unit_hp <= 0:
-			Destroy()
+	if hit: return
+	hit = true
+	invincible_timer.start(1);
+	SoundController.play_effect(SoundController.EFFECTS.enemy_hit)
+	var text = damage_text.instance()
+	text.set_text(str(damageValue))
+	add_child(text)
+	battle_unit_hp -= damageValue
+	$Animation_Player.play("damage_anim")
+	yield($Animation_Player, "animation_finished")
+	$Animation_Player.play("Boss_Giant_Bat_Normal")
+	if battle_unit_hp <= 0:
+		Destroy()
 
 func create_soul():
 	var temp_soul = soul.instance()
 	temp_soul.ID = ID
 	temp_soul.global_position = global_position
 	get_parent().add_child(temp_soul)
+
+
+func _on_Invincible_Timer_timeout():
+	$Sprite.modulate = Color(1,1,1,1)
+	hit = false
