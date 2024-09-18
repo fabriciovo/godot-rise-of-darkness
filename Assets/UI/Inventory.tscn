@@ -11,13 +11,14 @@ script = ExtResource( 4 )
 
 [node name="Weapon_Info" type="RichTextLabel" parent="."]
 anchor_left = 0.366071
-anchor_top = 0.0396825
+anchor_top = 0.031746
 anchor_right = 0.973214
 anchor_bottom = 0.952381
 theme = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "gdfgsdfdsg"
 text = "gdfgsdfdsg"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true
 }

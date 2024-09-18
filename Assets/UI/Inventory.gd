@@ -21,22 +21,18 @@ func set_weapons():
 			weapons_list[1].icon = bow_icon
 			weapons_list[1].text = "BOW_NAME"
 			weapons_list[1].disabled = false
-			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
 		elif PlayerControll.inventory[_index] == Global.WEAPONS.BOMB: 
 			weapons_list[2].icon = bomb_icon
 			weapons_list[2].text = "BOMB_NAME"
 			weapons_list[2].disabled = false
-			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
 		elif PlayerControll.inventory[_index] == Global.WEAPONS.HEAL: 
 			weapons_list[3].icon = staff_icon
 			weapons_list[3].text = "HEAL_STAFF_NAME"
 			weapons_list[3].disabled = false
-			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
 		elif PlayerControll.inventory[_index] == Global.WEAPONS.SHIELD: 
 			weapons_list[4].icon = shield_icon
 			weapons_list[4].text = "SHIELD_NAME"
 			weapons_list[4].disabled = false
-			weapon_info.bbcode_text = tr("SWORD_DESCRIPTION")
 	weapons_list[0].grab_focus()
 
 func _on_Sword_focus_entered():
@@ -58,8 +54,8 @@ func _on_Bomb_focus_entered():
 		weapon_info.bbcode_text = "????"
 
 func _on_Heal_focus_entered():
-	if weapons_list[3].text == "STAFF_NAME":
-		weapon_info.bbcode_text = tr("STAFF_DESCRIPTION")
+	if weapons_list[3].text == "HEAL_STAFF_NAME":
+		weapon_info.bbcode_text = tr("HEAL_STAFF_DESCRIPTION")
 	else:
 		weapon_info.bbcode_text = "????"
 

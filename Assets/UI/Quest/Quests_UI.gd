@@ -33,4 +33,4 @@ func _on_quest_button_focus_entered(_quest_key):
 		if _quest["Progress"] == _quest["Goal"]:
 			_quest["Completed"] = true
 	if _quest["Completed"]:
-		quest_info.bbcode_text += "\n Completed"
+		quest_info.bbcode_text += "\n" + tr("COMPLETED")
