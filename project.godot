@@ -254,6 +254,8 @@ window/stretch/aspect="keep"
 
 font=false
 screen=false
+m=false
+mapp=false
 
 [gui]
 

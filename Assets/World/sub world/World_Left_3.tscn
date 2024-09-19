@@ -37,7 +37,7 @@ target_scene = "res://Assets/World/sub world/World_Left_2.tscn"
 door_name = "Door_Secret_Chest"
 
 [node name="Door_Left_8" parent="." index="6" instance=ExtResource( 2 )]
-position = Vector2( 10, 96 )
+position = Vector2( 12, 96 )
 rotation = -1.5708
 target_scene = "res://Assets/World/sub world/World_Left_8.tscn"
 door_name = "Door"
