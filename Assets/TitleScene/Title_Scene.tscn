@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://Assets/TitleScene/Credits.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/TitleScene/Title_Scene.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/UI/Fonts/Greenscr.ttf" type="DynamicFontData" id=4]
@@ -163,32 +164,40 @@ theme = ExtResource( 3 )
 
 [node name="Start" type="Button" parent="Pause_Button_Container"]
 margin_right = 132.0
-margin_bottom = 14.0
+margin_bottom = 12.0
 rect_pivot_offset = Vector2( -175, 213 )
 theme = ExtResource( 3 )
 shortcut_in_tooltip = false
 text = "START_GAME"
 
 [node name="Options" type="Button" parent="Pause_Button_Container"]
-margin_top = 18.0
+margin_top = 16.0
 margin_right = 132.0
-margin_bottom = 32.0
+margin_bottom = 28.0
 theme = ExtResource( 3 )
 text = "OPTIONS"
 
 [node name="Load_Game" type="Button" parent="Pause_Button_Container"]
-margin_top = 36.0
+margin_top = 32.0
 margin_right = 132.0
-margin_bottom = 50.0
+margin_bottom = 44.0
 theme = ExtResource( 3 )
 text = "LOAD_GAME"
 
 [node name="Quit" type="Button" parent="Pause_Button_Container"]
+visible = false
 margin_top = 54.0
 margin_right = 132.0
 margin_bottom = 68.0
 theme = ExtResource( 3 )
 text = "QUIT"
+
+[node name="Credits" type="Button" parent="Pause_Button_Container"]
+margin_top = 54.0
+margin_right = 132.0
+margin_bottom = 68.0
+theme = ExtResource( 3 )
+text = "CREDITS"
 
 [node name="Title_Animation" type="Sprite" parent="."]
 position = Vector2( 111, 69 )
@@ -217,9 +226,13 @@ color = Color( 1, 1, 1, 0 )
 execute = 0
 duration = 1.0
 
+[node name="Credits" parent="." instance=ExtResource( 1 )]
+visible = false
+
 [connection signal="pressed" from="Pause_Button_Container/Start" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Load_Game" to="." method="_on_Load_Game_pressed"]
 [connection signal="pressed" from="Pause_Button_Container/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Pause_Button_Container/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="end_fade_in" from="Transition_Start_Game" to="." method="_on_Transition_Start_Game_end_fade_in"]
 [connection signal="end_fade_out" from="Transition_Start_Game" to="." method="_on_Transition_Start_Game_end_fade_out"]

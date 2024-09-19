@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/UI/Game_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/TitleScene/Credits.gd" type="Script" id=2]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Developer
+Fabricio Varisco Oliveira
+
+Artist
+Gabriel Caraffa De Vargas 
+
+Assets pack
+1-Bit Kingdom with expansion
+by Vyrell
+
+Music/SFX:
+JRPG 8-Bit/Chiptune Music/SFX
+
+Dark Dissimulation, An 8-Bit Metroidvania Music & SFX Pack
+by Joel Francis Burford"
+text = "Developer
+Fabricio Varisco Oliveira
+
+Artist
+Gabriel Caraffa De Vargas 
+
+Assets pack
+1-Bit Kingdom with expansion
+by Vyrell
+
+Music/SFX:
+JRPG 8-Bit/Chiptune Music/SFX
+
+Dark Dissimulation, An 8-Bit Metroidvania Music & SFX Pack
+by Joel Francis Burford"

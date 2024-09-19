@@ -63,3 +63,11 @@ func _on_Transition_Start_Game_end_fade_in():
 
 func play_thunder_sound():
 	SoundController.play_effect(SoundController.EFFECTS.thunder)
+
+
+func _on_Credits_pressed():
+	$Credits.visible = true
+	var current_focus_control = get_focus_owner()
+	if current_focus_control:
+		current_focus_control.release_focus()
+		
