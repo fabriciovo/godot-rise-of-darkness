@@ -330,9 +330,6 @@ texture = ExtResource( 1 )
 hframes = 9
 vframes = 5
 frame = 12
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="PlayerAnimation" type="AnimationPlayer" parent="."]
 "anims/Nova Animação" = SubResource( 1 )

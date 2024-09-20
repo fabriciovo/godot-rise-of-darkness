@@ -46,7 +46,7 @@ position = Vector2( 106, 41 )
 position = Vector2( 29, 31 )
 
 [node name="Door_World_Right_1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 176, 116 )
+position = Vector2( 177, 122 )
 rotation = -3.14159
 target_scene = "res://Assets/World/sub world/World_Right_0.tscn"
 door_name = "Door_World_Right_1"

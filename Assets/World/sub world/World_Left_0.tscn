@@ -4,6 +4,7 @@
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=2]
 
 [node name="World_Left_0" instance=ExtResource( 1 )]
+position = Vector2( -1, 0 )
 
 [node name="Player" parent="." index="1"]
 position = Vector2( 212, 96 )

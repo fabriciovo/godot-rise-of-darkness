@@ -15,3 +15,6 @@ frame = 0
 
 [node name="Text_Box_Layer" parent="." index="2"]
 layer = 3
+
+[node name="Text_Box" parent="Text_Box_Layer" index="0"]
+visible = false

@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 30000
+var max_hp = 30
 var max_ap = 5
 var max_mp = 15
 var hp = max_hp setget set_hp
@@ -64,7 +64,8 @@ func set_inventory_item(_value):
 	inventory.push_front(_value)
 	for i in weapons.size():
 		if weapons[i] == -1:
-			set_weapon(_value)
+			set_weapon(_value, i)
+			print(_value)
 			return
 
 func set_relic_item(value):
@@ -81,10 +82,8 @@ func set_relic_item(value):
 			pass
 	relics.push_front(value)
 
-func set_weapon(value):
-	weapons.push_front(value)
-	var weapon_list = get_node("/root/Ui").get_node("Game_UI")
-	weapon_list.add_weapon(value)
+func set_weapon(_value,_index):
+	weapons[_index] = _value
 
 func update_weapon_slot(_weapon_type,_slot):
 	weapons[_slot] = _weapon_type
