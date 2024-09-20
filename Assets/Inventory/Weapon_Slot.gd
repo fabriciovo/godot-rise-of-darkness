@@ -14,6 +14,7 @@ func _ready():
 
 func set_weapon_type(_weapon_type):
 	weapon_type = _weapon_type
+	print(weapon_type)
 	if weapon_type == Global.WEAPONS.SWORD:
 		icon = sword_icon
 	elif weapon_type == Global.WEAPONS.HEAL:
@@ -36,4 +37,5 @@ func set_focus(value):
 		modulate = Color(1,1,1,1)
 
 func _on_equip_weapon(_weapon_type, _slot):
+
 	PlayerControll.set_equiped_item(_weapon_type, _slot)

@@ -84,6 +84,10 @@ func set_relic_item(value):
 
 func set_weapon(_value,_index):
 	weapons[_index] = _value
+	print(_value)
+	print(_index)
+	var weapon_list = get_node("/root/Ui").get_node("Game_UI")
+	weapon_list.add_weapon(_value)
 
 func update_weapon_slot(_weapon_type,_slot):
 	weapons[_slot] = _weapon_type

@@ -7,6 +7,12 @@ onready var weapons_list = $Items/Weapons/Inventory_List/Weapons_Center_Containe
 var grab = false
 var weapon_slot_index = -1
 
+func add_weapon(_weapon):
+	for weapon_slot in weapons_list:
+		if weapon_slot.weapon_type == -1:
+			weapon_slot.set_weapon_type(_weapon)
+			return
+
 func update_weapon_slot(_weapon):
 	if weapon_slot_index != -1:
 		for weapon in weapons_list:
