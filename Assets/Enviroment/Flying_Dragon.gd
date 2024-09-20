@@ -49,7 +49,7 @@ func move_to_point(_delta):
 				target_index+=1
 		elif target_index == 3:
 			anim.play("down")
-			position = position.move_toward(down_pos, _delta * speed)
+			position = position.move_toward(down_pos, _delta * 30)
 		elif target_index == 4:
 			anim.play("landing")
 			position = position.move_toward(landing_pos, _delta * 30 )

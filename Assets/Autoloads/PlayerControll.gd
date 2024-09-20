@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 30
+var max_hp = 30000
 var max_ap = 5
 var max_mp = 15
 var hp = max_hp setget set_hp

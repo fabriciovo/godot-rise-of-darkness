@@ -133,7 +133,7 @@ position = Vector2( 183, -56 )
 position = Vector2( 246, -36 )
 
 [node name="Position2D8" type="Position2D" parent="Sword_Points/Movement" index="7"]
-position = Vector2( 268, -6 )
+position = Vector2( 352, -43 )
 
 [node name="Position2D9" type="Position2D" parent="Sword_Points/Movement" index="8"]
 position = Vector2( 220, -49 )
