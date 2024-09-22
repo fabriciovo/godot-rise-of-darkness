@@ -329,7 +329,6 @@ func change_action_area_direction():
 
 func execute_action():
 	if Input.is_action_just_pressed("action_1"):
-		print(PlayerControll.equiped_item)
 		if PlayerControll.equiped_item[0] != -1 and not dashing:
 			action(0)
 	elif Input.is_action_just_pressed("action_2") and not dashing:
@@ -367,7 +366,7 @@ func movement():
 				shield_area.knockback_vector = velocity * 2
 			else:
 				$PlayerAnimation.stop()
-		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2 and not casting and PlayerControll.dash_unlocked:
+		if Input.is_action_just_pressed("action_dash") and not dashing and ap >= 2 and not casting and PlayerControll.dash_unlocked and not shield_area.visible:
 			dash()
 		velocity = velocity.normalized() * speed
 

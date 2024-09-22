@@ -6,7 +6,7 @@ var directions = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 var key_chest
 
 func _ready():
-	battle_unit_xp = 25
+	battle_unit_xp = 50
 	intro_dialog = "fire_mage.json"
 	dath_dialog = "fire_mage_death.json"
 	key_chest = get_tree().current_scene.key_chest
@@ -31,6 +31,7 @@ func _on_Text_Box_on_end_dialog():
 		Global.stop = false
 		Global.cutscene = false
 		Global.dark_mages.fire_mage = true
+		PlayerControll.set_xp(battle_unit_xp)
 		Global.QUESTS["DEFEAT_DARK_MAGES"].Progress+=1
 		queue_free()
 
