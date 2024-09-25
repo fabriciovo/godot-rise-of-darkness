@@ -45,7 +45,6 @@ func _on_Text_Box_on_end_dialog():
 		$Text_Box_Layer/Text_Box.start_dialog()
 		return
 	elif quest_step == 1:
-		print("aaaaaaaaaaaaaaa")
 		SoundController.play_music(SoundController.MUSIC.florest)
 	elif quest_step == 2:
 		pass

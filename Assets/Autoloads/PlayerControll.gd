@@ -65,7 +65,6 @@ func set_inventory_item(_value):
 	for i in weapons.size():
 		if weapons[i] == -1:
 			set_weapon(_value, i)
-			print(_value)
 			return
 
 func set_relic_item(value):
@@ -84,8 +83,6 @@ func set_relic_item(value):
 
 func set_weapon(_value,_index):
 	weapons[_index] = _value
-	print(_value)
-	print(_index)
 	var weapon_list = get_node("/root/Ui").get_node("Game_UI")
 	weapon_list.add_weapon(_value)
 
@@ -190,11 +187,6 @@ func load_player_data(data):
 		inventory.clear()
 		for item in data["inventory"]:
 			set_inventory_item(item) 
-	if data.has("weapons"):
-		#weapons = data["weapons"]
-		pass
-	if data.has("equiped_item"):
-		pass
 		#equiped_item = data["equiped_item"]
 	if data.has("relics"):
 		relics = data["relics"]

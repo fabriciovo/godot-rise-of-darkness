@@ -14,7 +14,6 @@ func _ready():
 
 func set_weapon_type(_weapon_type):
 	weapon_type = _weapon_type
-	print(weapon_type)
 	if weapon_type == Global.WEAPONS.SWORD:
 		icon = sword_icon
 	elif weapon_type == Global.WEAPONS.HEAL:

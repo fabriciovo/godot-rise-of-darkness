@@ -78,24 +78,23 @@ func get_input():
 	execute_action()
 	change_action_area_direction()
 
-func action(value):
+func action(_value):
 	if casting: return
-	if ap > 0 and value != -1:
+	if ap > 0 and _value != -1:
 		$AP_Timer.start(.8)
-		match PlayerControll.equiped_item[value]:
-			Global.WEAPONS.SWORD:
-				create_sword(value)
-			Global.WEAPONS.BOW:
+		if  Global.WEAPONS.SWORD == _value:
+			create_sword(_value)
+		elif Global.WEAPONS.BOW  == _value:
 				if ap >= 1 and mp >= 1:
 					create_arrow()
-			Global.WEAPONS.BOMB:
+		elif Global.WEAPONS.BOMB  == _value:
 				if mp >= 3:
 					create_bomb()
 					set_mp(mp-3)
 					var text = float_text.instance()
 					text.set_text("MP -3")
 					add_child(text)
-			Global.WEAPONS.HEAL: 
+		elif Global.WEAPONS.HEAL == _value: 
 				if mp >= 3 and hp < PlayerControll.max_hp:
 					get_item_frame = 3 
 					casting = true
@@ -114,9 +113,9 @@ func action(value):
 						heal()
 						set_mp(mp-3)
 						casting = false
-					
-			Global.WEAPONS.SHIELD:
-				create_shield()
+		elif Global.WEAPONS.SHIELD == _value:
+			create_shield()
+			
 		match dir:
 			"right":
 				$PlayerAnimation.play("action_right")
