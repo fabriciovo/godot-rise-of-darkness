@@ -69,8 +69,10 @@ anims/damage_anim = ExtResource( 3 )
 
 [node name="Attack_Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="Idle_Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Body_Shape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, -1 )
@@ -79,6 +81,7 @@ shape = SubResource( 4 )
 [node name="Invincible_Timer" type="Timer" parent="."]
 
 [node name="Change_Pos_Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

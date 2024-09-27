@@ -315,8 +315,8 @@ radius = 8.0
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 9.5, 8.44445 )
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 9.6, 8.95833 )
+[sub_resource type="CircleShape2D" id=23]
+radius = 12.8002
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
@@ -395,7 +395,7 @@ frame = 26
 
 [node name="Shield_Area_Collision" type="CollisionShape2D" parent="Shield_Area"]
 position = Vector2( -3.8147e-07, -0.0694447 )
-shape = SubResource( 19 )
+shape = SubResource( 23 )
 
 [node name="AP_Timer" type="Timer" parent="."]
 

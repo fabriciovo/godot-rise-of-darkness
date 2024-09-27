@@ -126,4 +126,6 @@ func _on_Invincible_Timer_timeout():
 
 
 func _on_Change_Pos_Timer_timeout():
+	idle = false
 	find_new_position()
+	$Idle_Timer.start(3)
