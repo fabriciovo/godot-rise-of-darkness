@@ -3,8 +3,8 @@
 [ext_resource path="res://Sprites/Collectibles_nobg_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/enemy_projectile.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 4.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2, 2 )
 
 [node name="Enemy_Projectile" type="Area2D"]
 z_index = 2

@@ -21,7 +21,7 @@ func _ready():
 func configure_battle_unit():
 	ID = name
 	battle_unit_xp = 10
-	battle_unit_max_hp = 30
+	battle_unit_max_hp = 15
 	battle_unit_damage = 3
 	battle_unit_hp = battle_unit_max_hp
 	const_speed = 300

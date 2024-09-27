@@ -148,7 +148,6 @@ func _process(_delta):
 		SoundController.stop_music()
 		Global.stop = true
 		yield($PlayerAnimation,"animation_finished")
-		SoundController.play_effect(SoundController.EFFECTS.game_over)
 		var _chnage_scene = get_tree().change_scene("res://Assets/GameOver/Game_Over.tscn")
 	if get_item_anim: return
 	if(!Global.stop):

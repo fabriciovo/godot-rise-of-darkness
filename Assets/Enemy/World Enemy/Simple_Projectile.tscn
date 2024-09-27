@@ -3,8 +3,8 @@
 [ext_resource path="res://Assets/Enemy/World Enemy/Simple_Projectile.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Collectibles_nobg_16x16.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 4.00316
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2, 2 )
 
 [node name="Simple_Projectile" type="Area2D"]
 collision_mask = 3
@@ -19,7 +19,7 @@ hframes = 6
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1.159 )
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]

@@ -59,7 +59,7 @@ item = 2
 position = Vector2( 111, 85 )
 
 [node name="Position2D" type="Position2D" parent="Bat_Positions"]
-position = Vector2( -136, 112 )
+position = Vector2( -101, 52 )
 
 [node name="Position2D5" type="Position2D" parent="Bat_Positions"]
 position = Vector2( 218, -60 )
@@ -95,16 +95,16 @@ position = Vector2( -48, 1 )
 position = Vector2( -1, 96 )
 
 [node name="Position2D7" type="Position2D" parent="Bat_Positions"]
-position = Vector2( 34, -150 )
+position = Vector2( 1, -108 )
 
 [node name="Position2D2" type="Position2D" parent="Bat_Positions"]
-position = Vector2( -184, 19 )
+position = Vector2( -123, 1 )
 
 [node name="Position2D8" type="Position2D" parent="Bat_Positions"]
-position = Vector2( 140, -118 )
+position = Vector2( 107, -79 )
 
 [node name="Position2D3" type="Position2D" parent="Bat_Positions"]
-position = Vector2( 121, 65 )
+position = Vector2( 104, 51 )
 
 [node name="Position2D4" type="Position2D" parent="Bat_Positions"]
-position = Vector2( -133, -109 )
+position = Vector2( -106, -80 )

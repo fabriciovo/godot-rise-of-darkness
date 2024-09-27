@@ -14,7 +14,6 @@ var attack = false
 var player_target = null
 var idle = false
 var target = null
-var rng = RandomNumberGenerator.new()
 var battle_unit_xp = 100
 var battle_unit_max_hp = 100
 var battle_unit_damage = 10
@@ -26,6 +25,7 @@ func _ready():
 	ID = name
 	add_to_group(Global.GROUPS.ENEMY)
 	find_new_position()
+	$Idle_Timer.start(3)
 
 func _process(_delta):
 	if not player or not positions: return
@@ -36,34 +36,38 @@ func _process(_delta):
 		move_to_another_point(_delta)
 
 func attack_player(_delta):
+	print("zxz")
 	var target_position = player_target - direction
 	position = position.move_toward(target_position, _delta * speed * 8)
 	if position == target_position:
+		print("asddascxzcx")
 		idle = true
 		attack = false
-		$Idle_Timer.start(2)
+		$Change_Pos_Timer.start(3)
+
 
 func move_to_another_point(_delta):
 	var target_position = target - direction
 	position = position.move_toward(target_position, _delta * speed)
 
 func find_new_position():
-	rng.randomize()
-	var value = rng.randi_range(0, positions.size()-1)
+	randomize()
+	var value = randi() % positions.size()
 	target = positions[value].position
 
 func _on_Attack_Timer_timeout():
 	set_attack_values()
 
 func _on_Idle_Timer_timeout():
-	find_new_position()
-	idle = false
-	randomize()
-	var _time = rand_range(2,4)
-	$Attack_Timer.start(_time)
+	idle = true
+	$Attack_Timer.start(3)
 
 func set_attack_values():
 	if not player: return
+	print("asdadsasdasd")
+	idle = false
+	print(idle)
+	print("asdadsasdasd")
 	player_target = player.position
 	direction = (player_target - position).normalized()
 	attack = true
@@ -119,3 +123,7 @@ func create_soul():
 func _on_Invincible_Timer_timeout():
 	$Sprite.modulate = Color(1,1,1,1)
 	hit = false
+
+
+func _on_Change_Pos_Timer_timeout():
+	find_new_position()

@@ -68,8 +68,7 @@ anims/RESET = SubResource( 3 )
 anims/damage_anim = ExtResource( 3 )
 
 [node name="Attack_Timer" type="Timer" parent="."]
-wait_time = 8.0
-autostart = true
+wait_time = 2.0
 
 [node name="Idle_Timer" type="Timer" parent="."]
 
@@ -79,8 +78,11 @@ shape = SubResource( 4 )
 
 [node name="Invincible_Timer" type="Timer" parent="."]
 
+[node name="Change_Pos_Timer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Attack_Timer" to="." method="_on_Attack_Timer_timeout"]
 [connection signal="timeout" from="Idle_Timer" to="." method="_on_Idle_Timer_timeout"]
 [connection signal="timeout" from="Invincible_Timer" to="." method="_on_Invincible_Timer_timeout"]
+[connection signal="timeout" from="Change_Pos_Timer" to="." method="_on_Change_Pos_Timer_timeout"]
