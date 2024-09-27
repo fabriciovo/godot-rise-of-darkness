@@ -7,9 +7,14 @@ var key_chest
 
 func _ready():
 	battle_unit_xp = 50
-	intro_dialog = "fire_mage.json"
-	dath_dialog = "fire_mage_death.json"
 	key_chest = get_tree().current_scene.key_chest
+
+
+func init_dialog():
+	intro_dialog = "fire_mage.json"
+	death_dialog = "dark_mage_death.json"
+	text_box.dialog_name = intro_dialog
+	text_box.start_dialog()
 
 func create_projectile():
 	if Global.stop: return

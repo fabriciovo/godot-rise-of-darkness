@@ -15,7 +15,7 @@ var points = []
 var ID = name
 
 var intro_dialog = ""
-var dath_dialog = ""
+var death_dialog = ""
 
 var battle_unit_xp = 50
 var battle_unit_max_hp = 75
@@ -27,11 +27,14 @@ var invincible = false
 var hiding = false
 
 func _ready():
-	intro_dialog = "dark_mage.json"
-	dath_dialog = "dark_mage_death.json"
 	add_to_group(Global.GROUPS.ENEMY)
 	animation.play("dark_mage_intro")
 	points = get_tree().current_scene.get_node("Points").get_children()
+	init_dialog()
+
+func init_dialog():
+	intro_dialog = "dark_mage.json"
+	death_dialog = "dark_mage_death.json"
 	text_box.dialog_name = intro_dialog
 	text_box.start_dialog()
 
@@ -45,7 +48,7 @@ func Destroy():
 	SoundController.play_effect(SoundController.EFFECTS.positive_10)
 	Global.dead_enemies.push_front({"id": ID, "soul": has_soul})
 	Global.cutscene = true
-	text_box.dialog_name = dath_dialog 
+	text_box.dialog_name = death_dialog 
 	text_box.start_dialog()
 	
 

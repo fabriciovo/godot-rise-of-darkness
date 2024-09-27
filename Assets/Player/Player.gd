@@ -82,19 +82,19 @@ func action(_value):
 	if casting: return
 	if ap > 0 and _value != -1:
 		$AP_Timer.start(.8)
-		if  Global.WEAPONS.SWORD == _value:
+		if  Global.WEAPONS.SWORD == PlayerControll.equiped_item[_value]:
 			create_sword(_value)
-		elif Global.WEAPONS.BOW  == _value:
+		elif Global.WEAPONS.BOW == PlayerControll.equiped_item[_value]:
 				if ap >= 1 and mp >= 1:
 					create_arrow()
-		elif Global.WEAPONS.BOMB  == _value:
+		elif Global.WEAPONS.BOMB  == PlayerControll.equiped_item[_value]:
 				if mp >= 3:
 					create_bomb()
 					set_mp(mp-3)
 					var text = float_text.instance()
 					text.set_text("MP -3")
 					add_child(text)
-		elif Global.WEAPONS.HEAL == _value: 
+		elif Global.WEAPONS.HEAL == PlayerControll.equiped_item[_value]: 
 				if mp >= 3 and hp < PlayerControll.max_hp:
 					get_item_frame = 3 
 					casting = true
@@ -113,7 +113,7 @@ func action(_value):
 						heal()
 						set_mp(mp-3)
 						casting = false
-		elif Global.WEAPONS.SHIELD == _value:
+		elif Global.WEAPONS.SHIELD == PlayerControll.equiped_item[_value]:
 			create_shield()
 			
 		match dir:

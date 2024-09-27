@@ -36,11 +36,9 @@ func _process(_delta):
 		move_to_another_point(_delta)
 
 func attack_player(_delta):
-	print("zxz")
 	var target_position = player_target - direction
 	position = position.move_toward(target_position, _delta * speed * 8)
 	if position == target_position:
-		print("asddascxzcx")
 		idle = true
 		attack = false
 		$Change_Pos_Timer.start(3)
@@ -64,10 +62,7 @@ func _on_Idle_Timer_timeout():
 
 func set_attack_values():
 	if not player: return
-	print("asdadsasdasd")
 	idle = false
-	print(idle)
-	print("asdadsasdasd")
 	player_target = player.position
 	direction = (player_target - position).normalized()
 	attack = true

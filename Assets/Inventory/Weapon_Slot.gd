@@ -36,5 +36,4 @@ func set_focus(value):
 		modulate = Color(1,1,1,1)
 
 func _on_equip_weapon(_weapon_type, _slot):
-
 	PlayerControll.set_equiped_item(_weapon_type, _slot)
