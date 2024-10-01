@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Dark_Mage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Fire_Mage.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Fire_Mage.png" type="Texture" id=3]
 
 [node name="World_Fire_Mage" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+hframes = 6
+vframes = 1
