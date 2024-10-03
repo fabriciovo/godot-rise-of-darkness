@@ -10,7 +10,6 @@ extents = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Fire_Mage_Projectile_body_entered"]

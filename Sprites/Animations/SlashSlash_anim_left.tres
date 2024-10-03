@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/Animations/Slash/sword3.png" type="Texture" id=3]
 
 [resource]
-resource_name = "Slash_anim"
+resource_name = "slash_0_anim"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")

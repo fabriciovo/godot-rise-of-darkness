@@ -191,7 +191,11 @@ func create_sword(_value):
 	action_area.visible = true
 	action_area.get_node("action").visible = true
 	var _action_area_anim = action_area.get_node("action").get_node("AnimationPlayer")
-	_action_area_anim.play("Slash_anim")
+	randomize()
+	var _slash = action_area.get_node("action")
+	var _slash_index = rand_range(0, _slash.slash_list.size()-1)
+	var _slash_anim = _slash.slash_list[_slash_index]
+	_action_area_anim.play(_slash_anim)
 	action_collision.disabled = false
 	SoundController.play_effect_with_random_pitch(SoundController.EFFECTS.sword_slash, 1.4)
 	action_sprite.frame = PlayerControll.equiped_item[_value]

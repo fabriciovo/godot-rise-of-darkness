@@ -7,7 +7,7 @@ onready var animation = $Animation_Dark_Mage
 onready var text_box = $Text_Box_Layer/Text_Box
 
 var dark_explosion = preload("res://Assets/Enemy/World Enemy/Dark_Mage_Explosion_Area.tscn")
-
+var dark_portal = preload("res://Assets/Enemy/Dark_Portal.tscn")
 var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
@@ -69,19 +69,19 @@ func change_postion():
 	if Global.stop: return
 	if battle_unit_hp <= 0: return
 	invincible = true
-	hiding = true
-	animation.play("hide")
-	yield(animation, "animation_finished")
-	global_position = get_random_pos()
-	animation.play("show")
-	yield(animation, "animation_finished")
+	var _current_scene = get_tree().current_scene
+	var _random_pos = get_random_pos()
+	var _dark_portal_instance = dark_portal.instance()
+	var _dark_portal_start_instance = dark_portal.instance()
+	_dark_portal_start_instance.global_position = global_position
+	_dark_portal_instance.global_position = _random_pos
+	_current_scene.add_child(_dark_portal_instance)
+	_current_scene.add_child(_dark_portal_start_instance)
+	yield(_dark_portal_instance.get_node("AnimationPlayer"), "animation_finished")
+	global_position = _random_pos 
 	invincible = false
-	hiding = false
 	attack_player()
-	if battle_unit_hp > 20:
-		$Change_Position_Timer.start(3)
-	else:
-		$Change_Position_Timer.start(2)
+	$Change_Position_Timer.start(3)
 
 func attack_player():
 	if Global.stop: return
@@ -93,11 +93,15 @@ func _on_Change_Position_Timer_timeout():
 
 func get_random_pos():
 	var _size = points.size()
+	var _new_pos = Vector2(0, 0)
 	if _size == 0:
-		return Vector2(0,0)
+		return _new_pos
 	else:
 		var random_index = randi() % _size
-		return points[random_index].position
+		_new_pos = points[random_index].position
+	if _new_pos == global_position:
+		return get_random_pos() 
+	return _new_pos
 
 func _on_Damage_Area_area_entered(area):
 	if invincible or hiding: return
@@ -132,7 +136,7 @@ func _on_Text_Box_on_end_dialog():
 		Global.stop = false
 		Global.cutscene = false
 		SoundController.transition_to_music(SoundController.MUSIC.invasion)
-		$Change_Position_Timer.start(2)
+		change_postion()
 	else:
 		SoundController.play_music(SoundController.MUSIC.florest)
 		Global.stop = false

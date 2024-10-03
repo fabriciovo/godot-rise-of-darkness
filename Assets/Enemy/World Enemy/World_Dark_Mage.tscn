@@ -69,7 +69,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "Attack"
-length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -80,7 +79,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 0 ]
+"values": [ 1, 2, 1 ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -151,10 +150,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6, 1.3, 1.9 ),
+"times": PoolRealArray( 0, 0.6, 1.3, 2.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 5, 0, 1 ]
+"values": [ 0, 5, 4, 1 ]
 }
 
 [sub_resource type="Animation" id=9]

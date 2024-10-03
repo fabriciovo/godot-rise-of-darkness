@@ -374,6 +374,7 @@ scale = Vector2( 0.625, 0.5625 )
 script = ExtResource( 4 )
 
 [node name="action" parent="Action_Area" instance=ExtResource( 3 )]
+z_index = 0
 
 [node name="AreaCollision" type="CollisionShape2D" parent="Action_Area"]
 shape = SubResource( 18 )
