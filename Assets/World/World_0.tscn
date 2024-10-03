@@ -74,4 +74,7 @@ position = Vector2( 206, 97 )
 rotation = 1.5708
 
 [node name="Block_Door_Can_Go_Back" parent="." instance=ExtResource( 1 )]
-position = Vector2( 96, 166 )
+position = Vector2( 96, 168 )
+__meta__ = {
+"_edit_group_": true
+}
