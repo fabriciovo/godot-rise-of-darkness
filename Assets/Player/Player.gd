@@ -193,7 +193,7 @@ func create_sword(_value):
 	var _action_area_anim = action_area.get_node("action").get_node("AnimationPlayer")
 	randomize()
 	var _slash = action_area.get_node("action")
-	var _slash_index = rand_range(0, _slash.slash_list.size()-1)
+	var _slash_index = rand_range(0, _slash.slash_list.size())
 	var _slash_anim = _slash.slash_list[_slash_index]
 	_action_area_anim.play(_slash_anim)
 	action_collision.disabled = false

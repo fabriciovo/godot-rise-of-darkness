@@ -3,11 +3,11 @@ extends World_Enemy
 onready var anim = $AnimationPlayer
 onready var sprite = $Sprite
 onready var text_box = $Text_Box_Layer/Text_Box
+onready var playback_speed = $AnimationPlayer.playback_speed
 
 var direction = Vector2.ZERO
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var attacking = false
-
 func _ready():
 	battle_unit_max_hp = 100
 	battle_unit_damage = 10
@@ -26,9 +26,9 @@ func _physics_process(_delta):
 		direction = direction.bounce(collision.normal)
 	direction.y = 0
 	if direction.x >= 1:
-		sprite.flip_h = true
-	else:
 		sprite.flip_h = false
+	else:
+		sprite.flip_h = true
 	if direction.x != 0:
 		anim.play("sides")
 
@@ -40,6 +40,7 @@ func _on_Timer_timeout():
 
 func _on_Attack_Timer_timeout():
 	randomize()
+	$AnimationPlayer.playback_speed = playback_speed
 	$Attack_Timer.start(rand_range(1,4))
 	if Global.stop or Global.cutscene: return
 	var attack = projectile.instance()
@@ -47,10 +48,13 @@ func _on_Attack_Timer_timeout():
 	direction.x = 0
 	attacking = true
 	anim.play("attack_anim")
-	get_tree().get_current_scene().add_child(attack)
 	yield(anim, "animation_finished")
+	get_tree().get_current_scene().add_child(attack)
 	attacking = false
-	direction.x = const_speed * rand_range(2,-2)
+	var _new_speed = rand_range(2,-2)
+	direction.x = const_speed * _new_speed
+	$AnimationPlayer.playback_speed = $AnimationPlayer.playback_speed * _new_speed
+	
 
 func _on_Area_body_entered(body):
 	if body.is_in_group(Global.GROUPS.ARROW):
