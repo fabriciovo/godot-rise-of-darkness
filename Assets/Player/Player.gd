@@ -321,7 +321,7 @@ func change_action_area_direction():
 	elif dir == "down":
 		action_area.get_node("action").flip_h = true
 		action_area.get_node("action").rotation_degrees = -90
-		action_area.position.x = -3
+		action_area.position.x = 3
 		action_area.position.y = 14
 		#Shield
 		shield_area.position.x = -3
