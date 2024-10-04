@@ -68,7 +68,16 @@ func damage(damageValue):
 func change_postion():
 	if Global.stop: return
 	if battle_unit_hp <= 0: return
-	invincible = true
+	dark_portal_teleport()
+	attack_player()
+	$Change_Position_Timer.start(3)
+
+func attack_player():
+	if Global.stop: return
+	animation.play("Attack")
+	yield(animation, "animation_finished")
+
+func dark_portal_teleport():
 	var _current_scene = get_tree().current_scene
 	var _random_pos = get_random_pos()
 	var _dark_portal_instance = dark_portal.instance()
@@ -79,14 +88,6 @@ func change_postion():
 	_current_scene.add_child(_dark_portal_start_instance)
 	yield(_dark_portal_instance.get_node("AnimationPlayer"), "animation_finished")
 	global_position = _random_pos 
-	invincible = false
-	attack_player()
-	$Change_Position_Timer.start(3)
-
-func attack_player():
-	if Global.stop: return
-	animation.play("Attack")
-	yield(animation, "animation_finished")
 
 func _on_Change_Position_Timer_timeout():
 	change_postion()

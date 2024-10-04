@@ -13,6 +13,8 @@ var smoke = preload("res://Assets/Animations/smoke.tscn")
 var damage_text = preload("res://Assets/UI/FloatText.tscn")
 var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
 var fire_projectile = preload("res://Assets/Enemy/World Enemy/Fire_Mage_Projectile.tscn")
+var dark_portal = preload("res://Assets/Enemy/Dark_Portal.tscn")
+var thunder = preload("res://Assets/Enviroment/Thunder.tscn")
 
 var points = []
 var player
@@ -26,6 +28,8 @@ var invincible = false
 var hiding = false
 
 func _ready():
+	$Animation_Dark_Mage.stop()
+	dark_portal_intro_anim()
 	set_monitoring(false)
 	points = get_tree().current_scene.get_node("Dark_Lord_Positions").get_children()
 	player = get_tree().current_scene.get_node("Player")
@@ -77,11 +81,15 @@ func start():
 
 func get_random_pos():
 	var _size = points.size()
+	var _new_pos = Vector2(0, 0)
 	if _size == 0:
-		return Vector2(0,0)
+		return _new_pos
 	else:
 		var random_index = randi() % _size
-		return points[random_index].position
+		_new_pos = points[random_index].position
+	if _new_pos == global_position:
+		return get_random_pos() 
+	return _new_pos
 
 func damage(damageValue):
 	invincible = true
@@ -119,13 +127,44 @@ func change_postion():
 	hiding = false
 	attack_player()
 	$Change_Position_Timer.start(3)
-	
+
+func dark_portal_teleport():
+	var _current_scene = get_tree().current_scene
+	var _random_pos = get_random_pos()
+	var _dark_portal_instance = dark_portal.instance()
+	var _dark_portal_start_instance = dark_portal.instance()
+	_dark_portal_start_instance.global_position = global_position
+	_dark_portal_instance.global_position = _random_pos
+	_current_scene.add_child(_dark_portal_instance)
+	_current_scene.add_child(_dark_portal_start_instance)
+	yield(_dark_portal_instance.get_node("AnimationPlayer"), "animation_finished")
+	global_position = _random_pos 
+
 func _on_Invincible_Timer_timeout():
 	invincible = false
 	spr.modulate = Color(1,1,1,1)
 
 func _on_Change_Position_Timer_timeout():
 	change_postion()
+
+func dark_portal_intro_anim():
+	visible = false
+	var _dark_portal_inst = dark_portal.instance()
+	var _thunder_inst = thunder.instance()
+	_dark_portal_inst.global_position = global_position
+	_thunder_inst.get_node("AnimationPlayer").play("flash 2")
+	get_parent().call_deferred("add_child", _thunder_inst)
+	get_parent().call_deferred("add_child", _dark_portal_inst)
+	yield(_dark_portal_inst.get_node("AnimationPlayer"), "animation_finished")
+	visible = true
+
+func dark_portal_anim():
+	visible = false
+	var _dark_portal_inst = dark_portal.instance()
+	_dark_portal_inst.global_position = global_position
+	get_parent().call_deferred("add_child", _dark_portal_inst)
+	yield(_dark_portal_inst.get_node("AnimationPlayer"), "animation_finished")
+	visible = true
 
 func _on_Dark_Lord_area_entered(_area):
 	if _area.is_in_group(Global.GROUPS.SWORD) and not invincible:

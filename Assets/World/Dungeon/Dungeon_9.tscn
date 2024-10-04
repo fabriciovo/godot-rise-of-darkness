@@ -81,6 +81,7 @@ position = Vector2( 72, 24 )
 position = Vector2( 152, 24 )
 
 [node name="Dark_Lord" parent="Entities" index="0" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 112, 94 )
 
 [node name="gate" type="KinematicBody2D" parent="." index="7"]

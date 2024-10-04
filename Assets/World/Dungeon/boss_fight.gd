@@ -27,6 +27,7 @@ func intro_dialog():
 	SoundController.play_music(SoundController.MUSIC.cursed_voices)
 	text_box.dialog_name = "dark_lord_intro.json"
 	text_box.start_dialog()
+	dark_lord.get_node("Animation_Dark_Mage").play("dark_mage_intro")
 
 func _on_Text_Box_on_end_dialog():
 	match phase:
