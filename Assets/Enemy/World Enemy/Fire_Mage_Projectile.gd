@@ -1,7 +1,7 @@
 class_name Fire_Mage_Projectile extends Simple_Projectile
 
 var fire_enemy = preload("res://Assets/Enemy/World Enemy/World_Fire_Spirit.tscn")
-var smoke = preload("res://Assets/Animations/smoke.tscn")
+var smoke = preload("res://Assets/Animations/Fire_Spirit_Spawn_Effect.tscn")
 func _ready():
 	speed = 20
 	$Timer.start(2)
