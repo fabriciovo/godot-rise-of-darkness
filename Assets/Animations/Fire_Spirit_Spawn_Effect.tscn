@@ -37,6 +37,7 @@ tracks/0/keys = {
 [node name="Fire_Spirit_Spawn_Effect" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 hframes = 2
 
