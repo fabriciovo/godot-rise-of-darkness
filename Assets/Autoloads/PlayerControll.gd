@@ -1,6 +1,6 @@
 extends Node
 
-var max_hp = 300
+var max_hp = 30
 var max_ap = 5
 var max_mp = 15
 var hp = max_hp setget set_hp
@@ -9,7 +9,7 @@ var mp = max_mp setget set_mp
 var xp = 0 setget set_xp 
 var xp_to_level_up = 100 setget set_xp_to_level_up
 var level = 1 setget set_level
-var atk = 600 setget set_atk
+var atk = 3 setget set_atk
 var points = 0 setget set_points
 var weapons = [-1,-1,-1,-1]
 var inventory = []
