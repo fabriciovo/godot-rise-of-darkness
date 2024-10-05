@@ -143,6 +143,7 @@ tracks/3/keys = {
 }
 
 [node name="World_Enemy_Sword" type="Area2D"]
+z_index = 5
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

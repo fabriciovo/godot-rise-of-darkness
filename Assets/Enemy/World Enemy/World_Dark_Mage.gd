@@ -27,6 +27,9 @@ var invincible = false
 var hiding = false
 
 func _ready():
+	init()
+
+func init():
 	add_to_group(Global.GROUPS.ENEMY)
 	animation.play("dark_mage_intro")
 	points = get_tree().current_scene.get_node("Points").get_children()
@@ -78,6 +81,7 @@ func attack_player():
 	yield(animation, "animation_finished")
 
 func dark_portal_teleport():
+	
 	var _current_scene = get_tree().current_scene
 	var _random_pos = get_random_pos()
 	var _dark_portal_instance = dark_portal.instance()
@@ -87,6 +91,7 @@ func dark_portal_teleport():
 	_current_scene.add_child(_dark_portal_instance)
 	_current_scene.add_child(_dark_portal_start_instance)
 	yield(_dark_portal_instance.get_node("AnimationPlayer"), "animation_finished")
+	if Global.cutscene or Global.stop: return
 	global_position = _random_pos 
 
 func _on_Change_Position_Timer_timeout():

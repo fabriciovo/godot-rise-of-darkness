@@ -49,7 +49,6 @@ func _on_Text_Box_on_end_dialog():
 			Global.cutscene = false
 		2:
 			SoundController.play_music(SoundController.MUSIC.boss_phase_3)
-			dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
 			dark_lord.start()
 			Global.stop = false
 			Global.cutscene = false
@@ -73,11 +72,16 @@ func _on_Phase_One_timeout():
 	Global.cutscene = true
 	phase += 1
 	dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
+	yield(dark_lord.get_node("Animation_Dark_Mage"), "animation_finished")
+	dark_lord.get_node("Animation_Dark_Mage").play("dark_mage_intro")
 	text_box.dialog_name = "dark_lord_phase_one.json"
 	text_box.start_dialog()
 
 func dragon_death():
 	yield(get_tree().create_timer(2), "timeout")
+	dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
+	yield(dark_lord.get_node("Animation_Dark_Mage"), "animation_finished")
+	dark_lord.get_node("Animation_Dark_Mage").play("dark_lord_angry")
 	phase += 1
 	text_box.dialog_name = "dark_lord_dragon_death.json"
 	text_box.start_dialog()

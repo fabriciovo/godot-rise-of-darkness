@@ -138,6 +138,6 @@ z_index = 200
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 4
-frame = 9
+frame = 10
 
 [connection signal="animation_finished" from="Animation_Player" to="." method="_on_Animation_Player_animation_finished"]
