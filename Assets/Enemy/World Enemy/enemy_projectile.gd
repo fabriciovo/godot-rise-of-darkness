@@ -1,4 +1,4 @@
-extends Area2D
+class_name Enemy_Projectile extends Area2D
 
 var damage = 12
 var obj = null

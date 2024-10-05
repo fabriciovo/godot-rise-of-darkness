@@ -6,7 +6,7 @@ onready var text_box = $Text_Box_Layer/Text_Box
 onready var playback_speed = $AnimationPlayer.playback_speed
 
 var direction = Vector2.ZERO
-var projectile = preload("res://Assets/Enemy/World Enemy/enemy_projectile.tscn")
+var projectile = preload("res://Assets/Enemy/Necromancer_Projectile.tscn")
 var attacking = false
 func _ready():
 	battle_unit_max_hp = 100

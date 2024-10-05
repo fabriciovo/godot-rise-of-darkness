@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skull_projectile.png-c72073da0d329baec7926fc1e57361a9.stex"
+path="res://.import/necromancer_projectile.png-c8331c333bee570704d06b157ab33a87.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/skull_projectile.png"
-dest_files=[ "res://.import/skull_projectile.png-c72073da0d329baec7926fc1e57361a9.stex" ]
+source_file="res://Sprites/necromancer_projectile.png"
+dest_files=[ "res://.import/necromancer_projectile.png-c8331c333bee570704d06b157ab33a87.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
