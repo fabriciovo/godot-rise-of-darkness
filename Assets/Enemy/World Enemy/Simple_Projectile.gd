@@ -9,6 +9,7 @@ func _ready():
 	add_to_group(Global.GROUPS.ENEMY_PROJECTILES)
 	if direction == Vector2.ZERO:
 		direction = Vector2.RIGHT
+	rotation = direction.angle()
 
 func _physics_process(_delta):
 	if Global.stop: return

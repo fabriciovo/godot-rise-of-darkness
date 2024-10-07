@@ -1,10 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Enemy/World Enemy/Simple_Projectile.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Collectibles_nobg_16x16.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/fire_spirit_projectile.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2, 2 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "anim"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
 
 [node name="Simple_Projectile" type="Area2D"]
 collision_mask = 3
@@ -15,8 +47,7 @@ position = Vector2( 5.96046e-08, -1.19209e-07 )
 z_index = 3
 z_as_relative = false
 texture = ExtResource( 2 )
-hframes = 6
-vframes = 2
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
@@ -26,6 +57,11 @@ shape = SubResource( 1 )
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "anim"
+anims/RESET = SubResource( 2 )
+anims/anim = SubResource( 3 )
 
 [connection signal="area_entered" from="." to="." method="_on_Simple_Projectile_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Simple_Projectile_body_entered"]

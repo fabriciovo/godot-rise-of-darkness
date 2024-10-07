@@ -5,6 +5,7 @@ var smoke = preload("res://Assets/Animations/Fire_Spirit_Spawn_Effect.tscn")
 func _ready():
 	speed = 20
 	$Timer.start(2)
+	rotation = direction.angle()
 
 func _process(_delta):
 	if is_out_of_bounds():
