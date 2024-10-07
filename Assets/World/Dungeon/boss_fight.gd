@@ -64,6 +64,8 @@ func _on_Text_Box_on_end_dialog():
 
 func hide_dark_lord():
 	dark_lord.get_node("Animation_Dark_Mage").play("hide")
+	yield(dark_lord.get_node("Animation_Dark_Mage"), "animation_finished")
+	dark_lord.visible = false
 
 func _on_Phase_One_timeout():
 	var world_swords = get_parent().find_node("World_Swords")
@@ -72,6 +74,7 @@ func _on_Phase_One_timeout():
 	Global.cutscene = true
 	phase += 1
 	dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
+	dark_lord.visible = true
 	yield(dark_lord.get_node("Animation_Dark_Mage"), "animation_finished")
 	dark_lord.get_node("Animation_Dark_Mage").play("dark_mage_intro")
 	text_box.dialog_name = "dark_lord_phase_one.json"
@@ -79,6 +82,7 @@ func _on_Phase_One_timeout():
 
 func dragon_death():
 	yield(get_tree().create_timer(2), "timeout")
+	dark_lord.visible = true
 	dark_lord.get_node("Animation_Dark_Mage").play_backwards("hide")
 	yield(dark_lord.get_node("Animation_Dark_Mage"), "animation_finished")
 	dark_lord.get_node("Animation_Dark_Mage").play("dark_lord_angry")
