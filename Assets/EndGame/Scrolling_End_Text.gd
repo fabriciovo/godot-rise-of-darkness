@@ -3,7 +3,7 @@ class_name Scrolling_End_Text extends Node2D
 onready var parent = get_parent()
 
 func _process(_delta):
-	if(position.y <= -315):
+	if(position.y <= -317):
 		parent.speed = 0
 		if (Input.is_action_just_released("start")):
 			SoundController.stop_music()
