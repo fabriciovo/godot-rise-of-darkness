@@ -6,7 +6,7 @@ func _ready():
 	Global.in_game = false
 	Ui.visible = false
 	$AnimationPlayer.play("game_over")
-	SoundController.play_effect(SoundController.EFFECTS.game_over)
+	SoundController.play_music(SoundController.EFFECTS.game_over)
 
 func _on_Button_pressed():
 	Global.player_last_position = Vector2.ZERO

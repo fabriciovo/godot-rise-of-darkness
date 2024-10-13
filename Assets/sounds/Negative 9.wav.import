@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Negative 9.wav-bdbcb28bbdc31d14dedf466582916563.samp
 
 [params]
 
-force/8_bit=false
+force/8_bit=true
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100
