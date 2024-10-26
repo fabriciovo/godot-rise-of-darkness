@@ -84,6 +84,8 @@ position = Vector2( 136, 24 )
 
 [node name="Water" type="StaticBody2D" parent="Enviroment" index="2"]
 light_mask = 0
+collision_layer = 13
+collision_mask = 13
 
 [node name="TileMap" type="TileMap" parent="Enviroment/Water" index="0"]
 tile_set = ExtResource( 4 )
@@ -134,6 +136,8 @@ door_name = "Dungeon_14"
 script = ExtResource( 3 )
 
 [node name="Start_Necromancer_Fight" type="Area2D" parent="Necromancer_Animation" index="0"]
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer_Animation/Start_Necromancer_Fight" index="0"]
 position = Vector2( 112.5, 32 )
