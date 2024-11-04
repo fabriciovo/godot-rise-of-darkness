@@ -20,24 +20,26 @@ func update_weapon_slot(_weapon):
 				weapon.set_weapon_type(-1)
 		weapons_list[weapon_slot_index].set_weapon_type(_weapon)
 
-func _process(_delta):
-	focus_controller()
 
 func _input(_event):
 	if _event.is_action_pressed("weapons_right") and visible:
+		grab = true
 		weapon_slot_index += 1
 		if weapon_slot_index > weapons_list.size()-1:
 			weapon_slot_index = weapons_list.size()-1
-		grab = true
 	if _event.is_action_pressed("weapons_left") and visible:
+		grab = true
 		weapon_slot_index -= 1
 		if weapon_slot_index < 0:
 			weapon_slot_index = 0
-		grab = true
-	if _event.is_action_pressed("equip_weapon_1") and grab:
+	if _event.is_action_pressed("action_1") and grab:
 		emit_signal("on_equip_weapon", weapons_list[weapon_slot_index].weapon_type, 0)
-	if _event.is_action_pressed("equip_weapon_2") and grab:
+		grab = false
+		weapons_list[weapon_slot_index].set_focus(false)
+	if _event.is_action_pressed("action_2") and grab:
 		emit_signal("on_equip_weapon", weapons_list[weapon_slot_index].weapon_type, 1)
+		grab = false
+
 
 func focus_controller():
 	for i in weapons_list.size():
@@ -45,4 +47,3 @@ func focus_controller():
 			weapons_list[i].set_focus(true)
 		else:
 			weapons_list[i].set_focus(false)
-	pass

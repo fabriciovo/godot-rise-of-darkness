@@ -24,7 +24,7 @@ UNLOCKED_ITEM;????;????
 SELECT_EN;English;Inglês
 SELECT_PT;Portuguese;Português
 SELECT_LANGUAGE_TITLE;Select your language;Selecione seu idioma
-Z_TO_CONFIRM;Press Z to confirm;Precione Z para confirmar
+SELECT_LANGUAGE;Press J to confirm;Precione J para confirmar
 COLLECT_SOULS_DESCRIPTION;Defeat monsters and collect their souls. Once you have 50 souls, return to speak with Wanny.;Elimine monstros e colete suas almas. Ao conseguir as 50 almas, volte para falar com a Wanny.
 CANT_GO_BACK;Don't give up on your adventure, Hero.;Não desista de sua aventura, Herói.
 INTRODUCTION;"
@@ -47,7 +47,7 @@ RONAN_QUEST_4;By pressing {start}, you will open the Quests panel.;Ao pressionar
 OPEN_CHEST_SWORD_1;Congratulations, you got the Sword.;Parabéns, você pegou a Espada.
 OPEN_CHEST_SWORD_2;It will go straight to your quick inventory, located at the bottom of the screen.;Ela irá direto ao seu inventário rápido, localizado na parte inferior da tela.
 OPEN_CHEST_SWORD_3;To equip it, press the A or S keys to move through the quick inventory.;Para equipá-la, pressione as teclas A ou S para se movimentar pelo inventário rápido.
-OPEN_CHEST_SWORD_4;Then press D or F to equip it in the respective Z or X slots.;Depois, pressione D ou F para equipá-la nos respectivos espaços Z ou X.
+OPEN_CHEST_SWORD_4;Then press D or F to equip it in the respective {action_1} or {action_2} slots.;Depois, pressione D ou F para equipá-la nos respectivos espaços {action_1} ou {action_2}.
 OPEN_CHEST_SWORD_5;You can also check the Inventory panel by pressing {start}.;Você também pode checar o painel de Inventário pelo {start}.
 SAVE_BUTTON_TEXT;Save;Salvar
 SOUND_TITLE;Sound;Som
@@ -133,7 +133,7 @@ ANA_HEAL_PLAYER;Ana heals the player.;Ana cura o jogador.
 YOU_GET_BOOTS_OF_SPEED_0;Congratulations! You got the Boots of Speed.;Parabéns! Você pegou as Botas da Velocidade.
 YOU_GET_BOOTS_OF_SPEED_1;This relic grants additional speed to the Hero.;Essa relíquia concede velocidade adicional ao Herói.
 YOU_GET_RING_OF_DASH_0;Congratulations! You got the Ring of Dash.;Parabéns! Você pegou o Anel do Lampejo.
-YOU_GET_RING_OF_DASH_1;This relic can be used by pressing C.;Essa relíquia pode ser utilizada ao pressionar C.
+YOU_GET_RING_OF_DASH_1;This relic can be used by pressing {action_dash}.;Essa relíquia pode ser utilizada ao pressionar {action_dash}.
 YOU_GET_RING_OF_DASH_2;Now you can dodge monsters and their attacks.;Agora você pode desviar de monstros e de seus ataques.
 YOU_GET_NEK_OF_PROTECTION_0;Congratulations! You got the Necklace of Protection.;Parabéns! Você pegou o Colar da Proteção.
 YOU_GET_NEK_OF_PROTECTION_1;This necklace grants protection to the Hero, blocking any monster attack.;Esse colar concede uma proteção ao Herói, bloqueando qualquer ataque de um monstro.

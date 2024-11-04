@@ -2,9 +2,11 @@ extends Control
 onready var en_btn = $Pause_Button_Container/EN
 onready var pt_btn = $Pause_Button_Container/PT
 onready var transition = $Transition_Start_Game
+onready var confirmation_label = $Confirmation_Label
 
 func _ready():
 	Global.in_game = false
+
 	en_btn.set_focus_mode(Control.FOCUS_ALL)
 	en_btn.grab_focus()
 

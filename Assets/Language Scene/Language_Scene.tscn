@@ -25,6 +25,8 @@ margin_right = 98.5
 margin_bottom = 20.0
 theme = ExtResource( 4 )
 text = "SELECT_LANGUAGE_TITLE"
+align = 1
+valign = 1
 
 [node name="Confirmation_Label" type="Label" parent="."]
 anchor_top = 1.0
@@ -32,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -19.0
 theme = ExtResource( 4 )
-text = "Z_TO_CONFIRM"
+text = "SELECT_LANGUAGE"
 align = 1
 valign = 1
 
