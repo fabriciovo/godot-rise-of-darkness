@@ -23,7 +23,6 @@ func _process(_delta):
 	focus_controller()
 
 func _input(_event):
-	print(weapon_slot_index)
 	if _event.is_action_pressed("weapons_left") and visible:
 		grab = false
 		weapon_slot_index = -1
