@@ -24,7 +24,7 @@ var souls_quest_completed = false
 var dead = false
 var float_text = preload("res://Assets/UI/FloatText.tscn")
 var level_up_text_box = preload("res://Assets/TextBox/Text_Box_Level_Up.tscn")
-
+var just_equipped = false
 func increase_max_hp():
 	points-=1
 	max_hp += 1

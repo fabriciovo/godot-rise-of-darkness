@@ -79,7 +79,10 @@ func get_input():
 	change_action_area_direction()
 
 func action(_value):
-	if casting: return
+	if casting or Ui.grab_fast_item: return
+	if PlayerControll.just_equipped:
+		PlayerControll.just_equipped = false
+		return
 	if ap > 0 and _value != -1:
 		$AP_Timer.start(.8)
 		if  Global.WEAPONS.SWORD == PlayerControll.equiped_item[_value]:
@@ -331,6 +334,8 @@ func change_action_area_direction():
 
 func execute_action():
 	if Input.is_action_just_pressed("action_1"):
+		print(PlayerControll.equiped_item[0])
+		print(PlayerControll.equiped_item[1])
 		if PlayerControll.equiped_item[0] != -1 and not dashing:
 			action(0)
 	elif Input.is_action_just_pressed("action_2") and not dashing:
