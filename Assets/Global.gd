@@ -5,12 +5,14 @@ var door_name = null
 
 var stop = false
 var dialog = false
+var cutscene = false
+
 var dead_enemies = []
 var open_chests = []
 var dead_objects = []
 var walls_objects = []
 var key_gate = []
-var cutscene = false
+var skull_altar = [false,false,false,false] 
 
 var player_last_position = Vector2.ZERO
 var player_last_scene = ""

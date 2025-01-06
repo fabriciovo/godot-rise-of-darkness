@@ -1,17 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Slime.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Enemy/World Enemy/World_Bat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Enviroment/Skulls.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/World_spritesheet_16x16.png" type="Texture" id=4]
 [ext_resource path="res://Assets/World/Dungeon/Dungeon_master.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Enviroment/Explosive_Object.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enviroment/Static_Object.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/World/Dungeon/Scripts/Boss_Gate.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Actions/Door.tscn" type="PackedScene" id=9]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 8 )
 
 [node name="Dungeon_6" instance=ExtResource( 5 )]
 
@@ -38,30 +33,6 @@ position = Vector2( 81, 108 )
 
 [node name="Static_Object6" parent="Enviroment/Static" index="5" instance=ExtResource( 7 )]
 position = Vector2( 150, 108 )
-
-[node name="Boss_Gate" type="Node2D" parent="." index="4"]
-position = Vector2( 112, 128 )
-script = ExtResource( 8 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Boss_Gate" index="0"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss_Gate/StaticBody2D" index="0"]
-position = Vector2( 0, 8 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Boss_Gate/StaticBody2D" index="1"]
-position = Vector2( -8, 8 )
-texture = ExtResource( 4 )
-hframes = 9
-vframes = 18
-frame = 38
-
-[node name="Sprite3" type="Sprite" parent="Boss_Gate/StaticBody2D" index="2"]
-position = Vector2( 8, 8 )
-texture = ExtResource( 4 )
-hframes = 9
-vframes = 18
-frame = 38
 
 [node name="World_Bat_d6_0" parent="Entities" index="0" instance=ExtResource( 2 )]
 position = Vector2( 48, 48 )
@@ -95,24 +66,24 @@ frame = 3
 position = Vector2( 203, 96 )
 frame = 3
 
-[node name="Dungeon_7" parent="." index="7" instance=ExtResource( 9 )]
+[node name="Dungeon_7" parent="." index="6" instance=ExtResource( 9 )]
 position = Vector2( 112, 13 )
 target_scene = "res://Assets/World/Dungeon/Dungeon_7.tscn"
 door_name = "Dungeon_7"
 
-[node name="Dungeon_8" parent="." index="8" instance=ExtResource( 9 )]
+[node name="Dungeon_8" parent="." index="7" instance=ExtResource( 9 )]
 position = Vector2( 112, 133 )
 rotation = -3.14159
 target_scene = "res://Assets/World/Dungeon/Dungeon_8.tscn"
 door_name = "Dungeon_6"
 
-[node name="Dungeon_5" parent="." index="9" instance=ExtResource( 9 )]
+[node name="Dungeon_5" parent="." index="8" instance=ExtResource( 9 )]
 position = Vector2( 13, 80 )
 rotation = -1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_5.tscn"
 door_name = "Dungeon_5"
 
-[node name="Dungeon_12" parent="." index="10" instance=ExtResource( 9 )]
+[node name="Dungeon_12" parent="." index="9" instance=ExtResource( 9 )]
 position = Vector2( 212, 80 )
 rotation = 1.5708
 target_scene = "res://Assets/World/Dungeon/Dungeon_10.tscn"
