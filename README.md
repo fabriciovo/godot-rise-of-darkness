@@ -47,13 +47,3 @@ You are the last Guardian of Light. Stripped of much of your former power after 
 | A / S          | Select item in quick inventory         |
 | D / F          | Equip selected item (Z / X slot)       |
 | Space          | Open chests, gates (if you have a key) |
-
-## Credits
-
-- **Developer & Designer**: Fabricio Varisco Oliveira  
-- **Art Asset Pack**: Vyrell — [1‑Bit Kingdom](https://itch.io/c/4204588/1-bit-kingdom)  
-- **Additional Sprites**: Gabriel Caraffa De Vargas  
-- **Music & SFX**: Joel Francis Burford — [Dark Dissimulation](https://joelfrancisburford.itch.io/dark-dissimulation-an-8-bit-metroidvania-music-sfx-pack), [JRPG 8‑Bit/Chiptune](https://joelfrancisburford.itch.io/free-jrpg-8-bitchiptune-music-sfx-sample-pack)  
-- **UX Guidance**: Nancy Gauer Groff  
-- **Testers**: Renan Jefremovas, Matheus Carneiro, Igor Katzer de Sá  
-- **Engine**: [Godot 3.5](https://godotengine.org)  
