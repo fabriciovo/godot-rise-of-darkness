@@ -1,7 +1,5 @@
 # Rise of Darkness
 
-![Rise of Darkness](https://img.itch.zone/aW1nLzYyMDE4NDguanBn/original/6W7nx2.jpg)
-
 > **Explore a devastated world**  
 > In *Rise of Darkness*, you traverse the remnants of a once‑thriving land now consumed by shadows. Every step you take is filled with danger, as treacherous landscapes and dark creatures stand between you and hope. From cursed forests to crumbling ruins, your journey is packed with relentless challenges: deadly enemies, cunning traps, and ancient puzzles that guard the way forward. Along the way, uncover powerful relics and long‑lost secrets—but only those with courage and skill will survive the darkness and restore light to the world.
 
