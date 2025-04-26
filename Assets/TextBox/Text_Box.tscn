@@ -10,7 +10,6 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -60.0
-rect_clip_content = true
 theme = ExtResource( 3 )
 script = ExtResource( 4 )
 
@@ -58,3 +57,20 @@ fokpoaskfopaskfopkaskopfakosdfaopkdopakdopkapdkoaopkdaopdkakosdsoakd"
 autowrap = true
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 224.0
+margin_bottom = 60.0
+
+[node name="Panel" type="Panel" parent="Control"]
+margin_left = 147.0
+margin_top = -12.0
+margin_right = 223.0
+margin_bottom = 1.0
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 151.0
+margin_top = -10.0
+margin_right = 224.0
+text = "PRESS_Z"
+align = 1

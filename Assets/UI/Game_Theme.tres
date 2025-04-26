@@ -1,15 +1,11 @@
-[gd_resource type="Theme" load_steps=15 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://Assets/UI/Fonts/dogicabold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/UI/Button9FrameHover.tres" type="StyleBox" id=2]
 [ext_resource path="res://Assets/UI/Panel9Frame.tres" type="StyleBox" id=3]
-[ext_resource path="res://Images/Button9SliceHover.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/Button9FramePressed.tres" type="StyleBox" id=5]
-[ext_resource path="res://Images/Panel9Slice.png" type="Texture" id=6]
-[ext_resource path="res://Images/Button9SlicePressed.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 6, 6 )
 margin_left = 2.0
 margin_right = 2.0
@@ -18,7 +14,6 @@ margin_bottom = 2.0
 modulate_color = Color( 1, 1, 1, 0.137255 )
 
 [sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 6, 6 )
 margin_left = 1.0
 margin_right = 1.0
@@ -43,7 +38,6 @@ border_width_bottom = 1
 border_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 6, 6 )
 margin_left = 1.0
 margin_right = 1.0
@@ -58,7 +52,6 @@ extra_spacing_bottom = 2
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 6, 6 )
 
 [resource]
@@ -69,9 +62,9 @@ Button/styles/focus = ExtResource( 2 )
 Button/styles/hover = ExtResource( 2 )
 Button/styles/normal = SubResource( 8 )
 Button/styles/pressed = ExtResource( 5 )
-HSlider/icons/grabber = ExtResource( 6 )
-HSlider/icons/grabber_disabled = ExtResource( 7 )
-HSlider/icons/grabber_highlight = ExtResource( 4 )
+HSlider/icons/grabber = null
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = null
 HSlider/styles/grabber_area = SubResource( 5 )
 HSlider/styles/grabber_area_highlight = SubResource( 6 )
 HSlider/styles/slider = SubResource( 7 )
